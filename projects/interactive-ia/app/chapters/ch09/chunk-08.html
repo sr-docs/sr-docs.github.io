@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testing Labels With Users — Chapter 9 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 9</a>
+      <span aria-hidden="true">›</span>
+      <span>Testing Labels With Users</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 8 of 8">8 of 8</div>
+    <div class="mini-nav__links">
+      <a href="chunk-07.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="index.html">Chapter overview →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Testing Labels With Users
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Labels should be tested with real, representative users — not just during initial design, but again after launch, since a labeling system that made sense on paper can still fail once real people encounter it in context. One simple technique is asking participants to describe what they expect to find at a link's destination before they click it, then comparing that expectation to what's actually there.
+      </p>
+      <p>
+        Two methods covered earlier in this course are particularly effective for label testing specifically. Card sorts — open, modified-Delphi, or closed — reveal how people understand structure, categories, and the words that should describe them. Free-listing surfaces a domain's vocabulary and boundaries directly from participants, without the researcher's own assumptions shaping what gets tested in the first place.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      A label that made perfect sense in a design review can still fail its first real test — the only way to know for certain is asking the people who were never in that room.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch09-chunk-08" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A government digital service needs to test labeling decisions at three different stages of the project.
+        </p>
+        <p>
+          <strong>Stage 1, early Discovery:</strong> the team wants to understand what terms citizens actually use for a complex bureaucratic process, before any labels have been proposed.<br>
+          <strong>Stage 2, mid-Design:</strong> the team has a proposed set of primary navigation labels and wants to know whether citizens would group content correctly under them.<br>
+          <strong>Stage 3, post-launch:</strong> the team wants to know whether the live navigation labels are causing users to rely on search rather than browsing.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          1. Which method is most appropriate for Stage 1, understanding citizens' vocabulary before any labels exist?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="stage-1" value="free-listing">
+            <span class="exercise__option-text">Free-listing</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="stage-1" value="closed-sort">
+            <span class="exercise__option-text">Closed card sort</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="stage-1" value="search-logs">
+            <span class="exercise__option-text">Search-log analytics on the not-yet-launched site</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          2. Which method is most appropriate for Stage 2, testing whether citizens would group content correctly under proposed labels?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="stage-2" value="closed-sort">
+            <span class="exercise__option-text">Closed card sort</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="stage-2" value="free-listing-2">
+            <span class="exercise__option-text">Free-listing</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="stage-2" value="post-launch-analytics">
+            <span class="exercise__option-text">Post-launch usage analytics</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          3. Which method is most appropriate for Stage 3, understanding a live site's navigation-versus-search behavior?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="stage-3" value="search-log-analysis">
+            <span class="exercise__option-text">Search-log analysis on the live site</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="stage-3" value="free-listing-3">
+            <span class="exercise__option-text">Free-listing</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="stage-3" value="open-sort">
+            <span class="exercise__option-text">Open card sort</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          For Stage 2 specifically, explain what a closed card sort at this stage cannot tell the team — what question would still be open even after a successful closed sort — and what method might be needed to answer it.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p><strong>1 — Free-listing.</strong> With no labels proposed yet and a need to understand citizens' own vocabulary from scratch, free-listing is built for exactly this moment — surfacing a domain's language and boundaries directly from participants before any structure is imposed on them.</p>
+
+      <p><strong>2 — Closed card sort.</strong> Testing whether citizens would correctly group content under an already-proposed set of labels is precisely what a closed sort evaluates — it uses predefined categories and checks whether real users' groupings match the team's intent.</p>
+
+      <p><strong>3 — Search-log analysis on the live site.</strong> Understanding whether real, live users are turning to search over browsing requires actual usage data from the running site — logs of what people are typing when navigation alone hasn't gotten them where they need to go.</p>
+
+      <span class="feedback__highlight">
+        A closed card sort can confirm whether citizens group content the way the team intended, but it can't tell the team whether the label wording itself is the best possible choice — a citizen might sort content correctly under a label while still finding that label mildly confusing, non-native, or not quite how they'd phrase it themselves, simply because the closed sort constrains them to the categories already provided rather than asking what they'd call something in their own words. An open card sort, or circling back to free-listing with the same participants, would be better suited to answering that separate question about word choice itself, since both let participants generate language rather than just react to language the team already chose.
+      </span>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-07.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 9 · 8 of 8</span>
+    <a href="../ch10/chunk-01.html" class="chunk-footer__next-chapter">Next: Chapter 10 <span>· Foundations of Navigation Design</span> →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cross-persona tensions · NimbusWiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<template id="__bundler_thumbnail" data-bg-color="#fdfcf8">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(180 120)">
+      <circle cx="420" cy="80"  r="64" fill="#fdfcf8" stroke="#1d2126" stroke-width="3"/>
+      <circle cx="120" cy="500" r="64" fill="#fdfcf8" stroke="#1d2126" stroke-width="3"/>
+      <circle cx="720" cy="500" r="64" fill="#fdfcf8" stroke="#1d2126" stroke-width="3"/>
+      <line x1="420" y1="80" x2="720" y2="500" stroke="#1d2126" stroke-width="8"/>
+      <line x1="120" y1="500" x2="720" y2="500" stroke="#1d2126" stroke-width="5"/>
+      <line x1="420" y1="80" x2="120" y2="500" stroke="#6b727b" stroke-width="2" stroke-dasharray="8 6"/>
+      <circle cx="420" cy="290" r="48" fill="#fdfcf8" stroke="#b14a2f" stroke-width="3"/>
+      <text x="420" y="298" text-anchor="middle" font-family="Inter" font-weight="700" font-size="20" fill="#b14a2f" letter-spacing="2">T4</text>
+    </g>
+  </svg>
+</template>
+<style>
+  :root {
+    --paper: #fdfcf8;
+    --ink: #1d2126;
+    --ink-2: #3a3f46;
+    --ink-3: #6b727b;
+    --rule: #1d2126;
+    --rule-soft: #b9b8b1;
+    --peak: #b14a2f;
+
+    --mark-tint: #dfe9ee;
+    --kay-tint: #c8d4ad;
+    --angie-tint: #d6cf9b;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #efece4;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.4;
+  }
+
+  /* Fluid wrap, no fixed width, no horizontal scroll at any viewport */
+  .wrap {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 28px 32px 24px;
+    background: var(--paper);
+  }
+
+  .title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin: 0 0 4px;
+    line-height: 1.2;
+  }
+  .title em {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 20px;
+    color: var(--ink-2);
+    margin-left: 8px;
+  }
+  .subtitle {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    color: var(--ink-2);
+    margin: 0 0 14px;
+    font-size: 15px;
+    max-width: 1100px;
+  }
+
+  .method-note {
+    margin: 0 0 18px;
+    padding: 10px 14px;
+    border-left: 3px solid var(--rule);
+    background: rgba(29, 33, 38, 0.04);
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ink-2);
+    line-height: 1.55;
+    max-width: 1100px;
+  }
+  .method-note .label {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-right: 8px;
+  }
+
+  .frame {
+    border: 2px solid var(--rule);
+  }
+
+  /* Top row: visual + disciplines */
+  .top-row {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    border-bottom: 2px solid var(--rule);
+  }
+  .visual-cell {
+    padding: 24px 26px 28px;
+    border-right: 2px solid var(--rule);
+    position: relative;
+    min-width: 0;
+  }
+  .disciplines-cell {
+    padding: 24px 26px 28px;
+    min-width: 0;
+  }
+  .section-h {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin: 0 0 14px;
+  }
+  .section-h em {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 500;
+    color: var(--ink-2);
+    font-size: 13px;
+    margin-left: 8px;
+  }
+
+  .triangle-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .legend {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule-soft);
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--ink-2);
+    justify-content: center;
+  }
+  .legend-item { display: inline-flex; align-items: center; gap: 8px; }
+  .legend-line {
+    display: inline-block;
+    width: 36px;
+    height: 0;
+    border-top: 5px solid var(--ink);
+  }
+  .legend-line.medium { border-top-width: 3px; }
+  .legend-line.dashed { border-top: 1.5px dashed var(--ink-3); }
+  .legend-dot {
+    display: inline-block;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 2.5px solid var(--peak);
+  }
+
+  /* Disciplines list */
+  .disciplines {
+    counter-reset: discipline;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .disciplines li {
+    counter-increment: discipline;
+    padding: 14px 0 14px 48px;
+    border-top: 1px solid var(--rule-soft);
+    position: relative;
+    font-size: 13.5px;
+    color: var(--ink);
+    line-height: 1.5;
+    text-wrap: pretty;
+  }
+  .disciplines li:first-child { border-top: 0; padding-top: 4px; }
+  .disciplines li:last-child { padding-bottom: 4px; }
+  .disciplines li::before {
+    content: counter(discipline, decimal-leading-zero);
+    position: absolute;
+    left: 0; top: 14px;
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--peak);
+    letter-spacing: 0.04em;
+  }
+  .disciplines li:first-child::before { top: 4px; }
+  .disciplines li b { font-weight: 600; }
+
+  /* Tensions grid */
+  .tensions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .tension {
+    padding: 22px 26px 24px;
+    border-right: 2px solid var(--rule);
+    border-bottom: 2px solid var(--rule);
+    background: var(--paper);
+    position: relative;
+    min-width: 0;
+  }
+  .tension:nth-child(2n) { border-right: 0; }
+  .tension:nth-last-child(-n+2) { border-bottom: 0; }
+  .tension-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule-soft);
+    flex-wrap: wrap;
+  }
+  .tension-num {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .tension-num em {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 500;
+    color: var(--ink-2);
+    font-size: 13px;
+    margin-left: 6px;
+  }
+  .tension-personas {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 2px 10px;
+    border: 1.5px solid var(--ink);
+    white-space: nowrap;
+  }
+  .tension-personas.peak {
+    border-color: var(--peak);
+    color: var(--peak);
+  }
+  .wants {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .wants.three { grid-template-columns: 1fr 1fr 1fr; }
+  .wants-cell {
+    padding: 12px 14px;
+    background: var(--paper);
+    border: 1px solid var(--rule-soft);
+    min-width: 0;
+  }
+  .wants-cell.mark { background: var(--mark-tint); }
+  .wants-cell.kay { background: var(--kay-tint); }
+  .wants-cell.angie { background: var(--angie-tint); }
+  .wants-h {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 5px;
+  }
+  .wants-h em {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 500;
+    color: var(--ink-2);
+    font-size: 11.5px;
+    margin-left: 4px;
+  }
+  .wants-body {
+    font-size: 12.5px;
+    color: var(--ink);
+    line-height: 1.5;
+    text-wrap: pretty;
+  }
+  .resolution {
+    padding: 12px 14px;
+    background: rgba(29, 33, 38, 0.05);
+    border-left: 3px solid var(--ink);
+    font-size: 12.5px;
+    color: var(--ink);
+    line-height: 1.55;
+    text-wrap: pretty;
+  }
+  .resolution b {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .source {
+    margin-top: 14px;
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--ink-3);
+    text-align: right;
+  }
+  .source b {
+    font-style: normal;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    font-size: 11px;
+  }
+
+  /* === Responsive breakpoints === */
+
+  /* Medium viewports: stack the visual above the disciplines */
+  @media (max-width: 1100px) {
+    .top-row { grid-template-columns: 1fr; }
+    .visual-cell {
+      border-right: 0;
+      border-bottom: 2px solid var(--rule);
+    }
+  }
+
+  /* Narrow viewports: stack tension cards, stack wants cells inside each */
+  @media (max-width: 760px) {
+    .wrap { padding: 22px 18px 20px; }
+    .title { font-size: 22px; letter-spacing: 0.12em; }
+    .title em {
+      font-size: 16px;
+      display: block;
+      margin-left: 0;
+      margin-top: 4px;
+    }
+    .visual-cell, .disciplines-cell, .tension { padding-left: 18px; padding-right: 18px; }
+    .tensions-grid { grid-template-columns: 1fr; }
+    .tension {
+      border-right: 0;
+      border-bottom: 2px solid var(--rule);
+    }
+    .tension:last-child { border-bottom: 0; }
+    .wants { grid-template-columns: 1fr; }
+    .wants.three { grid-template-columns: 1fr; }
+    .legend { gap: 14px; }
+  }
+
+  @media print {
+    body { background: #fff; }
+    .wrap { box-shadow: none; margin: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <h1 class="title">Cross-Persona Tensions in NimbusWiz</h1>
+
+  <div class="frame">
+
+    <!-- ============ TOP ROW: TRIANGLE + DISCIPLINES ============ -->
+    <div class="top-row">
+
+      <!-- ====== Triangle visual ====== -->
+      <div class="visual-cell">
+        <h3 class="section-h">The triangle <em>· three personas, four tensions</em></h3>
+
+        <svg class="triangle-svg" viewBox="0 0 800 720" xmlns="http://www.w3.org/2000/svg">
+
+          <!-- Mark ↔ Angie : two tensions (T1, T3), heaviest line -->
+          <line x1="400" y1="160" x2="640" y2="540" stroke="#1d2126" stroke-width="6"/>
+
+          <!-- Kay ↔ Angie : one tension (T2), medium line -->
+          <line x1="160" y1="540" x2="640" y2="540" stroke="#1d2126" stroke-width="3"/>
+
+          <!-- Mark ↔ Kay : no named dyadic tension, thin dashed -->
+          <line x1="400" y1="160" x2="160" y2="540" stroke="#6b727b" stroke-width="1.5" stroke-dasharray="6 5"/>
+
+          <!-- Centre node for T4 (all three) -->
+          <circle cx="400" cy="413" r="44" fill="#fdfcf8" stroke="#b14a2f" stroke-width="3"/>
+          <text x="400" y="408" text-anchor="middle"
+                font-family="Inter, sans-serif" font-weight="700"
+                font-size="14" letter-spacing="2" fill="#b14a2f">T4</text>
+          <text x="400" y="428" text-anchor="middle"
+                font-family="Lora, serif" font-style="italic"
+                font-size="11" fill="#3a3f46">automation</text>
+
+          <!-- Persona node: Mark (top) -->
+          <g>
+            <circle cx="400" cy="160" r="58" fill="#fdfcf8" stroke="#1d2126" stroke-width="3"/>
+            <g transform="translate(400 160)">
+              <circle cx="0" cy="-8" r="11" fill="none" stroke="#1d2126" stroke-width="2"/>
+              <path d="M-22 30 C -20 18, -12 13, 0 13 C 12 13, 20 18, 22 30"
+                    fill="none" stroke="#1d2126" stroke-width="2" stroke-linecap="round"/>
+            </g>
+            <text x="400" y="100" text-anchor="middle"
+                  font-family="Inter, sans-serif" font-weight="700"
+                  font-size="17" letter-spacing="3" fill="#1d2126">MARK</text>
+            <text x="400" y="80" text-anchor="middle"
+                  font-family="Lora, serif" font-style="italic"
+                  font-size="13" fill="#3a3f46">DevOps Engineer</text>
+          </g>
+
+          <!-- Persona node: Kay (bottom-left) -->
+          <g>
+            <circle cx="160" cy="540" r="58" fill="#fdfcf8" stroke="#1d2126" stroke-width="3"/>
+            <g transform="translate(160 540)">
+              <circle cx="0" cy="-8" r="11" fill="none" stroke="#1d2126" stroke-width="2"/>
+              <path d="M-22 30 C -20 18, -12 13, 0 13 C 12 13, 20 18, 22 30"
+                    fill="none" stroke="#1d2126" stroke-width="2" stroke-linecap="round"/>
+            </g>
+            <text x="160" y="630" text-anchor="middle"
+                  font-family="Inter, sans-serif" font-weight="700"
+                  font-size="17" letter-spacing="3" fill="#1d2126">KAY</text>
+            <text x="160" y="650" text-anchor="middle"
+                  font-family="Lora, serif" font-style="italic"
+                  font-size="13" fill="#3a3f46">System Administrator</text>
+          </g>
+
+          <!-- Persona node: Angie (bottom-right) -->
+          <g>
+            <circle cx="640" cy="540" r="58" fill="#fdfcf8" stroke="#1d2126" stroke-width="3"/>
+            <g transform="translate(640 540)">
+              <circle cx="0" cy="-8" r="11" fill="none" stroke="#1d2126" stroke-width="2"/>
+              <path d="M-22 30 C -20 18, -12 13, 0 13 C 12 13, 20 18, 22 30"
+                    fill="none" stroke="#1d2126" stroke-width="2" stroke-linecap="round"/>
+            </g>
+            <text x="640" y="630" text-anchor="middle"
+                  font-family="Inter, sans-serif" font-weight="700"
+                  font-size="17" letter-spacing="3" fill="#1d2126">ANGIE</text>
+            <text x="640" y="650" text-anchor="middle"
+                  font-family="Lora, serif" font-style="italic"
+                  font-size="13" fill="#3a3f46">Technical Manager</text>
+          </g>
+
+          <!-- Edge label: Mark ↔ Angie (T1 + T3) -->
+          <g transform="translate(540 360)">
+            <rect x="-72" y="-32" width="144" height="64" fill="#fdfcf8" stroke="#1d2126" stroke-width="1.5" rx="3"/>
+            <text x="0" y="-12" text-anchor="middle"
+                  font-family="Inter, sans-serif" font-weight="700"
+                  font-size="12" letter-spacing="2" fill="#1d2126">T1 · T3</text>
+            <text x="0" y="6" text-anchor="middle"
+                  font-family="Lora, serif" font-style="italic"
+                  font-size="11.5" fill="#3a3f46">confidence score</text>
+            <text x="0" y="22" text-anchor="middle"
+                  font-family="Lora, serif" font-style="italic"
+                  font-size="11.5" fill="#3a3f46">rollback button</text>
+          </g>
+
+          <!-- Edge label: Kay ↔ Angie (T2) -->
+          <g transform="translate(400 540)">
+            <rect x="-78" y="-22" width="156" height="44" fill="#fdfcf8" stroke="#1d2126" stroke-width="1.5" rx="3"/>
+            <text x="0" y="-4" text-anchor="middle"
+                  font-family="Inter, sans-serif" font-weight="700"
+                  font-size="12" letter-spacing="2" fill="#1d2126">T2</text>
+            <text x="0" y="13" text-anchor="middle"
+                  font-family="Lora, serif" font-style="italic"
+                  font-size="11.5" fill="#3a3f46">alerts vs. visibility</text>
+          </g>
+
+          <!-- Edge label: Mark ↔ Kay (no named dyadic tension) -->
+          <g transform="translate(260 360)">
+            <text x="0" y="0" text-anchor="middle"
+                  font-family="Lora, serif" font-style="italic"
+                  font-size="11" fill="#6b727b">no named dyadic tension</text>
+          </g>
+
+        </svg>
+
+        <div class="legend">
+          <div class="legend-item"><span class="legend-line"></span>two tensions</div>
+          <div class="legend-item"><span class="legend-line medium"></span>one tension</div>
+          <div class="legend-item"><span class="legend-line dashed"></span>none named</div>
+          <div class="legend-item"><span class="legend-dot"></span>spans all three (T4)</div>
+        </div>
+      </div>
+
+      <!-- ====== Design disciplines ====== -->
+      <div class="disciplines-cell">
+        <h3 class="section-h">Design disciplines <em>· what the four tensions imply</em></h3>
+        <ol class="disciplines">
+          <li><b>Layer surfaces, don't flatten them.</b> The same data renders differently for different readers. The confidence score and the rollback feature are both examples.</li>
+          <li><b>Default to the quieter persona on notification, the louder on visibility.</b> Wake up Kay only when you must. Show Angie everything.</li>
+          <li><b>Distinguish intent in the data model, not just the UI.</b> Planned rollback and failed rollback are different events. The product's schema should know that before the dashboard does.</li>
+          <li><b>Gate automation features on all three personas, not just the one they were built for.</b> An AI feature that serves Mark but alienates Kay will fail in adoption regardless of its technical strength.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- ============ TENSION DETAIL CARDS (2x2) ============ -->
+    <div class="tensions-grid">
+
+      <!-- T1 -->
+      <div class="tension">
+        <div class="tension-head">
+          <div class="tension-num">T1 <em>· The confidence score</em></div>
+          <div class="tension-personas">MARK ↔ ANGIE</div>
+        </div>
+        <div class="wants">
+          <div class="wants-cell mark">
+            <div class="wants-h">Mark wants <em>the denominator</em></div>
+            <div class="wants-body">A score he can audit: what data went into 84%, what it excludes, how reliable it has been historically.</div>
+          </div>
+          <div class="wants-cell angie">
+            <div class="wants-h">Angie wants <em>the translation</em></div>
+            <div class="wants-body">"High confidence" rendered as "proceed with comfort" or "pause until we learn more." Ninety seconds before her board meeting.</div>
+          </div>
+        </div>
+        <div class="resolution">
+          <b>Resolution</b>Layered presentation. Default view is Angie's translation, plainly worded. One click away is Mark's audit panel: inputs, exclusions, historical calibration. Same score, rendered twice for different readers.
+        </div>
+      </div>
+
+      <!-- T2 -->
+      <div class="tension">
+        <div class="tension-head">
+          <div class="tension-num">T2 <em>· Alert sensitivity vs. status visibility</em></div>
+          <div class="tension-personas">KAY ↔ ANGIE</div>
+        </div>
+        <div class="wants">
+          <div class="wants-cell kay">
+            <div class="wants-h">Kay wants <em>fewer alerts, tuned to signal</em></div>
+            <div class="wants-body">She mutes alerts to protect her sleep. Two weeks of false positives and she stops trusting the channel.</div>
+          </div>
+          <div class="wants-cell angie">
+            <div class="wants-h">Angie wants <em>status visibility</em></div>
+            <div class="wants-body">She asks why nobody escalated. A quiet dashboard surprises her in the board meeting.</div>
+          </div>
+        </div>
+        <div class="resolution">
+          <b>Resolution</b>Severity is tuned for Kay; summary visibility is unmuted for Angie. Kay adjusts thresholds against her own false-positive ratio. Angie sees a rolling count of warnings and criticals, whether or not Kay was woken up by them. A product decision about who gets woken up vs. who gets informed, not a UX setting.
+        </div>
+      </div>
+
+      <!-- T3 -->
+      <div class="tension">
+        <div class="tension-head">
+          <div class="tension-num">T3 <em>· The rollback button</em></div>
+          <div class="tension-personas">MARK ↔ ANGIE</div>
+        </div>
+        <div class="wants">
+          <div class="wants-cell mark">
+            <div class="wants-h">Mark values <em>the button</em></div>
+            <div class="wants-body">A rollback-heavy system reads as reassuring: he has an out under pressure.</div>
+          </div>
+          <div class="wants-cell angie">
+            <div class="wants-h">Angie values <em>the metric</em></div>
+            <div class="wants-body">A rollback-heavy system reads as alarming: the program looks unstable in executive reporting.</div>
+          </div>
+        </div>
+        <div class="resolution">
+          <b>Resolution</b>Distinguish in the data model between "rollback used as designed" (a planned safety net) and "rollback triggered by an unexpected failure" (a program signal). The first is what Mark needs to see normalized. The second is what Angie needs to see surfaced. Combining them is a data-model failure, not a UI choice.
+        </div>
+      </div>
+
+      <!-- T4 -->
+      <div class="tension">
+        <div class="tension-head">
+          <div class="tension-num">T4 <em>· The automation boundary</em></div>
+          <div class="tension-personas peak">ALL THREE</div>
+        </div>
+        <div class="wants three">
+          <div class="wants-cell kay">
+            <div class="wants-h">Kay wants <em>knowledge captured</em></div>
+            <div class="wants-body">Her institutional memory shared, not erased. She annotates; her voice survives.</div>
+          </div>
+          <div class="wants-cell mark">
+            <div class="wants-h">Mark wants <em>judgment trained</em></div>
+            <div class="wants-body">A tool that makes him smarter, not one that closes tickets while he sleeps.</div>
+          </div>
+          <div class="wants-cell angie">
+            <div class="wants-h">Angie wants <em>engineers empowered</em></div>
+            <div class="wants-body">A program that adds leverage to her team, not one that argues for headcount cuts.</div>
+          </div>
+        </div>
+        <div class="resolution">
+          <b>Resolution · doesn't resolve cleanly</b>Every new AI or automation feature in NimbusWiz must answer three questions before it ships. Does it respect Kay's desire to share, not erase, her knowledge? Does it train Mark's judgment rather than substitute for it? Does it make Angie's engineers more valuable, or less? Any feature that fails one will face resistance out of proportion to its technical quality.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script data-sr-docs-blog-fix>(function(){function fix(h){if(!h)return h;return h.replace(/^\/projects\/nimbuswiz\/blog\//,"/blog/")}document.addEventListener("click",function(e){var a=e.target&&e.target.closest&&e.target.closest("a");if(!a)return;var href=a.getAttribute("href");var next=fix(href);if(next&&next!==href){e.preventDefault();if(a.target==="_blank")window.open(next,"_blank","noopener");else location.assign(next)}},true);document.querySelectorAll("a[href*='/blog/']").forEach(function(a){a.setAttribute("href",fix(a.getAttribute("href")))});})();</script><script src="/js/site-chrome.js"></script></body>
+</html>

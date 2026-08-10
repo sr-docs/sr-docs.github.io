@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompt Documentation Template — Chapter 13 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 13</a>
+      <span aria-hidden="true">›</span>
+      <span>Prompt Documentation Template</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 3 of 5">3 of 5</div>
+    <div class="mini-nav__links">
+      <a href="index.html">← Chapter overview</a>
+      <span class="spacer"></span>
+      <a href="chunk-04.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Prompt Documentation Template
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        A prompt that worked once and lives in someone's chat history is not a team asset. Documentation is what turns it into one: what the prompt is for, what inputs it needs, what good output looks like, and — most usefully — when not to use it. This prompt generates that documentation in a consistent shape, which is what makes a collection of twenty prompts read as a library rather than as twenty personal notes.
+      </p>
+      <p>
+        The sections readers actually use are the ones most people skip when writing documentation by hand: sample input, sample output, and known limitations. Fill those in with something real even if you abbreviate it, because a documented prompt with an invented example teaches the wrong expectations to everyone who copies it. When you review what comes back, read the "when not to use" section hardest. If the model could not name a case where the prompt fails, it probably did not understand the prompt, and it certainly cannot warn the next person away from misusing it.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      Documentation is how a prompt survives the person who wrote it. The limitations section is the part that keeps the next person out of trouble.
+    </p>
+
+  </section>
+
+
+  <section class="prompt-fill" id="prompt-documentation-template" aria-labelledby="prompt-fill-label-prompt-documentation-template">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-prompt-documentation-template">
+      Try It With Your Data — Prompt Documentation Template
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt does</summary>
+      <div class="prompt-fill__guidance-body prompt-fill__guidance-body--simple">
+        <p>Create standardized documentation for prompts used in IA workflows, ensuring prompts are reusable, maintainable, and shareable across teams.</p>
+        <ul><li>Documenting prompts for team libraries</li><li>Creating prompt playbooks</li><li>Standardizing prompt format across organization</li><li>Preparing prompts for handoff to other teams</li></ul>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">Create standardized documentation for this prompt:
+
+THE PROMPT:
+{{THE_PROMPT_TO_DOCUMENT}}
+
+USAGE CONTEXT:
+- What IA task this prompt supports: {{IA_TASK_SUPPORTED}}
+- When to use this prompt: {{WHEN_TO_USE_IT}}
+- Who typically uses it: {{WHO_USES_IT}}
+- Typical input sources: {{TYPICAL_INPUT_SOURCES}}
+
+SAMPLE USAGE:
+- Sample input: {{SAMPLE_INPUT}}
+- Sample output: {{SAMPLE_OUTPUT}}
+
+KNOWN ISSUES:
+- Limitations: {{LIMITATIONS}}
+- Edge cases: {{EDGE_CASES}}
+- Prerequisites: {{PREREQUISITES}}
+
+Generate documentation following this template:
+
+PROMPT DOCUMENTATION TEMPLATE:
+
+1. METADATA
+   - Prompt name (descriptive, action-oriented)
+   - Version number
+   - Last updated date
+   - Author/maintainer
+   - Category/tags
+
+2. PURPOSE
+   - One-sentence description
+   - Detailed explanation
+   - Problem this prompt solves
+
+3. WHEN TO USE
+   - Ideal use cases
+   - Prerequisites
+   - When NOT to use
+
+4. INPUTS
+   - Required inputs with format specs
+   - Optional inputs
+   - Input quality requirements
+
+5. THE PROMPT
+   - Full prompt text
+   - Placeholders clearly marked
+   - Instructions for customization
+
+6. OUTPUTS
+   - Expected output format
+   - Sample output
+   - Quality indicators (what good looks like)
+
+7. VARIATIONS
+   - Simplified version
+   - Advanced version
+   - Domain-specific versions
+
+8. VALIDATION
+   - How to verify output quality
+   - Common issues to check
+   - Red flags indicating poor results
+
+9. INTEGRATION
+   - How this fits in larger workflows
+   - Prompts that come before/after
+   - Dependencies
+
+10. CHANGELOG
+    - Version history
+    - What changed and why
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-prompt-documentation-template-the-prompt-to-document">The prompt to document</label>
+        <span class="prompt-fill__hint">Paste the full prompt text</span>
+        <textarea id="pf-prompt-documentation-template-the-prompt-to-document" class="js-prompt-input" data-token="THE_PROMPT_TO_DOCUMENT" data-placeholder="Paste the full prompt text" placeholder="Paste the full prompt text"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-prompt-documentation-template-ia-task-supported">IA task supported</label>
+        <span class="prompt-fill__hint">What task this prompt supports</span>
+        <input type="text" id="pf-prompt-documentation-template-ia-task-supported" class="js-prompt-input" data-token="IA_TASK_SUPPORTED" data-placeholder="What task this prompt supports" placeholder="What task this prompt supports">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-prompt-documentation-template-when-to-use-it">When to use it</label>
+        <span class="prompt-fill__hint">The situation this fits</span>
+        <input type="text" id="pf-prompt-documentation-template-when-to-use-it" class="js-prompt-input" data-token="WHEN_TO_USE_IT" data-placeholder="The situation this fits" placeholder="The situation this fits">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-prompt-documentation-template-who-uses-it">Who uses it</label>
+        <span class="prompt-fill__hint">Typical role</span>
+        <input type="text" id="pf-prompt-documentation-template-who-uses-it" class="js-prompt-input" data-token="WHO_USES_IT" data-placeholder="Typical role" placeholder="Typical role">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-prompt-documentation-template-typical-input-sources">Typical input sources</label>
+        <span class="prompt-fill__hint">Where input usually comes from</span>
+        <input type="text" id="pf-prompt-documentation-template-typical-input-sources" class="js-prompt-input" data-token="TYPICAL_INPUT_SOURCES" data-placeholder="Where input usually comes from" placeholder="Where input usually comes from">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-prompt-documentation-template-sample-input">Sample input</label>
+        <span class="prompt-fill__hint">Example of what a user provides</span>
+        <textarea id="pf-prompt-documentation-template-sample-input" class="js-prompt-input" data-token="SAMPLE_INPUT" data-placeholder="Example of what a user provides" placeholder="Example of what a user provides"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-prompt-documentation-template-sample-output">Sample output</label>
+        <span class="prompt-fill__hint">Example of what the AI produces</span>
+        <textarea id="pf-prompt-documentation-template-sample-output" class="js-prompt-input" data-token="SAMPLE_OUTPUT" data-placeholder="Example of what the AI produces" placeholder="Example of what the AI produces"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-prompt-documentation-template-limitations">Limitations</label>
+        <span class="prompt-fill__hint">What the prompt doesn&#x27;t do well</span>
+        <input type="text" id="pf-prompt-documentation-template-limitations" class="js-prompt-input" data-token="LIMITATIONS" data-placeholder="What the prompt doesn&#x27;t do well" placeholder="What the prompt doesn&#x27;t do well">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-prompt-documentation-template-edge-cases">Edge cases</label>
+        <span class="prompt-fill__hint">When results may be unreliable</span>
+        <input type="text" id="pf-prompt-documentation-template-edge-cases" class="js-prompt-input" data-token="EDGE_CASES" data-placeholder="When results may be unreliable" placeholder="When results may be unreliable">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-prompt-documentation-template-prerequisites">Prerequisites</label>
+        <span class="prompt-fill__hint">What must be true for it to work</span>
+        <input type="text" id="pf-prompt-documentation-template-prerequisites" class="js-prompt-input" data-token="PREREQUISITES" data-placeholder="What must be true for it to work" placeholder="What must be true for it to work">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="index.html">← Chapter overview</a>
+    <span class="chunk-footer__center">Chapter 13 · 3 of 5</span>
+    <a href="chunk-04.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/prompt-fill.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

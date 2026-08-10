@@ -1,0 +1,22 @@
+{
+  "cleanUrls": false,
+  "directoryListing": false,
+  "redirects": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/blog", "destination": "/blog/index.html" },
+    { "source": "/blog/", "destination": "/blog/index.html" },
+    { "source": "/projects", "destination": "/projects/index.html" },
+    { "source": "/projects/", "destination": "/projects/index.html" },
+    { "source": "/projects/nimbuswiz", "destination": "/projects/nimbuswiz/index.html" },
+    { "source": "/projects/nimbuswiz/", "destination": "/projects/nimbuswiz/index.html" },
+    { "source": "/projects/nimbuswiz/blog", "destination": "/blog/index.html" },
+    { "source": "/projects/nimbuswiz/blog/", "destination": "/blog/index.html" },
+    { "source": "/projects/nimbuswiz/blog/:slug", "destination": "/blog/:slug" },
+    { "source": "/projects/interactive-ia", "destination": "/projects/interactive-ia/index.html" },
+    { "source": "/projects/interactive-ia/", "destination": "/projects/interactive-ia/index.html" },
+    { "source": "/projects/interactive-ia/app", "destination": "/projects/interactive-ia/app/index.html" },
+    { "source": "/projects/interactive-ia/app/", "destination": "/projects/interactive-ia/app/index.html" },
+    { "source": "/projects/purpose", "destination": "/projects/purpose/index.html" },
+    { "source": "/projects/purpose/", "destination": "/projects/purpose/index.html" }
+  ]
+}

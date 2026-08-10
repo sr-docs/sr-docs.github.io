@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developing a Controlled Vocabulary — Chapter 7 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 7</a>
+      <span aria-hidden="true">›</span>
+      <span>Developing a Controlled Vocabulary</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 9 of 10">9 of 10</div>
+    <div class="mini-nav__links">
+      <a href="chunk-08.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-10.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Developing a Controlled Vocabulary
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Building a controlled vocabulary follows a sequence, even though the steps often overlap in practice. It starts with research: conducting and analyzing user research such as card sorting, learning from search-log analytics to see the actual vocabulary people already use, and analyzing existing content and interviewing content owners to understand the domain. From there, you define a design strategy — what type of controlled vocabulary the situation actually calls for — often captured in a metadata matrix that helps prioritize which vocabularies are worth developing at all.
+      </p>
+      <p>
+        Only after that groundwork do you gather candidate terms from all these sources into a terminology matrix, decide on preferred terms, identify their variant, broader, narrower, and related terms, and then implement, test, and document the result. Skipping straight to defining preferred terms without the research groundwork is one of the most common ways this process goes wrong — the vocabulary ends up reflecting what the team assumed rather than what users and the domain actually require.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      A controlled vocabulary built before the research is really just an organization's internal jargon, formalized and given the appearance of authority it hasn't actually earned yet.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch07-chunk-09" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A national news organization is developing a controlled vocabulary for its digital archive of thirty years of journalism across politics, business, sport, culture, and science. The archive grows daily. Multiple journalists, editors, and archivists will be responsible for tagging content, and the vocabulary needs to support both internal search and public-facing topic navigation.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          Which of the following should happen first, before the team starts defining any preferred terms?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="first-step" value="research-first">
+            <span class="exercise__option-text">Conduct search-log analysis and content analysis to understand the archive's actual scope and the vocabulary users already search with</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="first-step" value="terms-first">
+            <span class="exercise__option-text">Have the most senior editor define the preferred terms directly, based on decades of journalism experience</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="first-step" value="implement-first">
+            <span class="exercise__option-text">Implement the vocabulary in the CMS immediately, refining terms as issues come up in production</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          A vocabulary for a thirty-year, daily-growing news archive faces a specific challenge that a smaller, more stable content collection wouldn't: language and topics in the news constantly evolve. Identify which part of the development process this challenge affects most, and propose how the team should handle it on an ongoing basis rather than as a one-time task.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>Conducting search-log analysis and content analysis first is correct.</strong> The development process begins with research — understanding the archive's actual scope and the vocabulary people already use — before any preferred terms get defined. Relying on one senior editor's personal judgment, however experienced, substitutes one person's internal mental model for the broader research the process calls for, and risks producing a vocabulary that reflects how that editor thinks rather than how the full range of journalists, archivists, and public users actually search and describe topics. Implementing directly into the CMS without this groundwork risks building the entire technical structure around assumptions that research would have corrected far more cheaply upfront.
+      </p>
+
+      <span class="feedback__highlight">
+        The challenge of thirty years of evolving language and daily new content affects vocabulary maintenance most directly — this is fundamentally a documentation and governance question, not a one-time research task. The source material is explicit that developing a controlled vocabulary requires ongoing effort as a domain evolves, and this news archive is about as demanding a case as that gets: political terminology shifts, new beats emerge, and yesterday's breaking-news topic becomes tomorrow's historical category.
+      </span>
+
+      <p>
+        A reasonable ongoing approach is treating vocabulary maintenance as a recurring editorial responsibility rather than a project with an end date — periodically reviewing search logs for new or shifting terms, giving journalists and archivists a clear, documented process for proposing new preferred terms as new topics emerge, and keeping the vocabulary's documentation current so future team members understand not just what the preferred terms are, but why specific terminology decisions were made.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-08.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 7 · 9 of 10</span>
+    <a href="chunk-10.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

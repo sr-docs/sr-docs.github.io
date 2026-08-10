@@ -1,0 +1,95 @@
+# Path item for /fleet/{system_id}/metrics
+# Operations: get system metrics (GET)
+
+get:
+  operationId: getSystemMetrics
+  summary: Get system metrics
+  description: |
+    Returns current health metrics and time-series data for a system.
+    Each metric includes the current value, trend direction, and a data
+    series for the selected time range.
+
+    Requires `fleet:read` scope.
+  tags: [Monitoring]
+  parameters:
+    - name: system_id
+      in: path
+      required: true
+      description: The unique system ID.
+      schema:
+        type: string
+      example: n2k-alpha-001
+    - name: range
+      in: query
+      description: Time range for series data.
+      required: false
+      schema:
+        type: string
+        enum: ['1h', '24h', '7d', '30d']
+        default: '24h'
+      example: 7d
+  responses:
+    '200':
+      description: System metrics and time series.
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/monitoring.yaml#/MetricsResponse'
+          example:
+            system_id: n2k-alpha-001
+            range: 7d
+            metrics:
+              stability_index:
+                current: 86
+                trend: stable
+                series:
+                  - timestamp: "2026-04-03T00:00:00Z"
+                    value: 84
+                  - timestamp: "2026-04-10T00:00:00Z"
+                    value: 86
+              responsiveness_score:
+                current: 79
+                trend: up
+                series:
+                  - timestamp: "2026-04-03T00:00:00Z"
+                    value: 74
+                  - timestamp: "2026-04-10T00:00:00Z"
+                    value: 79
+              network_interaction:
+                current: 74
+                trend: stable
+                series:
+                  - timestamp: "2026-04-03T00:00:00Z"
+                    value: 73
+                  - timestamp: "2026-04-10T00:00:00Z"
+                    value: 74
+            retrieved_at: "2026-04-10T16:00:00Z"
+    '401':
+      $ref: '../../schemas/common.yaml#/responses/Unauthorized'
+    '404':
+      $ref: '../../schemas/common.yaml#/responses/NotFound'
+  x-codeSamples:
+    - lang: bash
+      label: cURL
+      source: |
+        curl -X GET "https://api.nimbuswiz.io/v1/fleet/n2k-alpha-001/metrics?range=7d" \
+          -H "Authorization: Bearer YOUR_API_KEY"
+    - lang: javascript
+      label: JavaScript
+      source: |
+        const response = await fetch(
+          'https://api.nimbuswiz.io/v1/fleet/n2k-alpha-001/metrics?range=7d',
+          { headers: { Authorization: 'Bearer YOUR_API_KEY' } }
+        );
+        const metrics = await response.json();
+    - lang: python
+      label: Python
+      source: |
+        import requests
+
+        response = requests.get(
+            'https://api.nimbuswiz.io/v1/fleet/n2k-alpha-001/metrics',
+            params={'range': '7d'},
+            headers={'Authorization': 'Bearer YOUR_API_KEY'}
+        )
+        metrics = response.json()

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matrix and Hybrid Structures — Chapter 4 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 4</a>
+      <span aria-hidden="true">›</span>
+      <span>Matrix and Hybrid Structures</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 5 of 9">5 of 9</div>
+    <div class="mini-nav__links">
+      <a href="chunk-04.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-06.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Matrix and Hybrid Structures
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        A matrix structure, as Jesse James Garrett describes it, lets users move through content along two or more dimensions — horizontally, vertically, and in a three-dimensional matrix, laterally as well. Garrett cautions that using more than three dimensions for a primary navigation system creates real usability problems. A matrix serves a purpose similar to a database with faceted metadata: it lets people view the same content from different perspectives, and when each dimension serves a different audience's need, a matrix can create genuinely useful, audience-focused points of entry.
+      </p>
+      <p>
+        Most large digital information spaces don't rely on a single structural pattern at all — they combine several into a <strong>hybrid structure</strong>. A hierarchy typically provides the overarching structure, a database pattern often organizes a homogeneous subset of the content, hypertext links weave in cross-references throughout, and a linear sequence might guide users through a specific tour or process. Combining patterns lets a single information space accommodate genuinely different types of content and user needs within one coherent whole.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      A hybrid structure isn't a compromise or a failure to choose — for anything beyond a small, simple site, it's usually the only honest answer.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch04-chunk-05" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A large public university's website needs to serve prospective students, current students, faculty, researchers, and the general public, with content spanning admissions, course catalogs, research publications, campus events, and administrative services.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          Which combination of structural patterns would most reasonably underlie a site of this scope?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="combination" value="hierarchy-only">
+            <span class="exercise__option-text">A single strict hierarchy alone, with no other patterns needed</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="combination" value="hybrid">
+            <span class="exercise__option-text">A hierarchy as the overarching structure, combined with a database for the course catalog, and a matrix for content that genuinely needs multiple audience-based entry points</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="combination" value="hypertext-only">
+            <span class="exercise__option-text">A pure hypertext structure with no hierarchy at all, letting all pages link freely</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="combination" value="linear-only">
+            <span class="exercise__option-text">A single linear sequence guiding every visitor through the same fixed path</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          Identify one specific type of content on this university site that would benefit from a matrix structure specifically, and explain which two or more audience dimensions it would need to serve.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>Correct: a hierarchy as the overarching structure, combined with a database for the course catalog, and a matrix for multi-audience content.</strong> A site of this scope and heterogeneity is a textbook case for a hybrid structure. A single pattern applied uniformly — a pure hierarchy, pure hypertext, or a single linear sequence — cannot reasonably serve admissions information, a structured course catalog, research publications, and administrative services all at once. Each of those content types has different structural needs.
+      </p>
+
+      <span class="feedback__highlight">
+        The course catalog is a strong candidate for a matrix structure specifically, since it plausibly needs to serve at least two distinct audience dimensions — for example, a prospective student browsing courses by subject of personal interest, and a current student checking which courses satisfy a specific degree requirement. Structuring the catalog as a matrix lets both audiences view the same underlying course data along whichever dimension matches their need, without maintaining two separate copies of the catalog.
+      </span>
+
+      <p>
+        Even here, Garrett's caution still applies: it would be tempting to add a third or fourth dimension — say, by instructor or by semester — but the source material is explicit that more than three dimensions in a primary navigation system creates real usability problems. Two clear, well-chosen dimensions usually serve people better than four dimensions that overwhelm them with combinations.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-04.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 4 · 5 of 9</span>
+    <a href="chunk-06.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

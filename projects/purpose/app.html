@@ -1,0 +1,3298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finding Your Purpose - Interactive Exercise</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --zen-primary: #FF6B35;
+            --zen-primary-light: #FF8960;
+            --zen-secondary: #4FC3F7;
+            --zen-tertiary: #8BC34A;
+            --zen-accent: #FFE082;
+            --zen-background: #FFF8F3;
+            --zen-surface: #FFFFFF;
+            --zen-border: #F5E6D3;
+            --zen-text: #2E2E2E;
+            --zen-text-secondary: #6B6B6B;
+            --zen-success: #8BC34A;
+            --zen-warning: #FFB74D;
+            --zen-info: #4FC3F7;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--zen-background);
+            color: var(--zen-text);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+h1 {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+        .zen-card {
+            background: var(--zen-surface);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(255, 107, 53, 0.08);
+            border: 2px solid var(--zen-border);
+            padding: 2rem;
+        }
+
+        .zen-button {
+            background: linear-gradient(135deg, #FF6B35 0%, #FF8960 100%);
+            color: white;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 16px;
+            padding: 0.875rem 2rem;
+            transition: all 0.2s;
+            box-shadow: 0 4px 16px rgba(255, 107, 53, 0.25);
+        }
+
+        .zen-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        .zen-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .zen-button.secondary {
+            background: white;
+            color: var(--zen-primary);
+            border: 2px solid var(--zen-primary);
+            box-shadow: none;
+        }
+
+        .zen-textarea {
+            border: 2px solid var(--zen-border);
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            width: 100%;
+            resize: none;
+            min-height: 60px;
+            transition: all 0.3s;
+            overflow: hidden;
+        }
+
+        .zen-textarea:focus {
+            border-color: var(--zen-primary);
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -320px;
+            width: 320px;
+            height: 100vh;
+            background: white;
+            box-shadow: 2px 0 20px rgba(0,0,0,0.1);
+            transition: left 0.3s;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .sidebar.open {
+            left: 0;
+        }
+
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            z-index: 999;
+        }
+
+        .sidebar-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        /* Save indicator */
+        .save-indicator {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            font-size: 0.875rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .save-indicator.show {
+            opacity: 1;
+        }
+
+        /* Response input helper text */
+        .input-helper {
+            font-size: 0.75rem;
+            color: var(--zen-text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        /* Sticky Progress Bar */
+        .sticky-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            z-index: 100;
+            padding: 0.75rem 0;
+        }
+
+        .progress-steps {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .progress-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--zen-border);
+            transition: all 0.3s;
+        }
+
+        .progress-dot.completed {
+            background: var(--zen-success);
+        }
+
+        .progress-dot.active {
+            background: var(--zen-primary);
+            width: 16px;
+            height: 16px;
+        }
+
+        .progress-line {
+            width: 40px;
+            height: 2px;
+            background: var(--zen-border);
+        }
+
+        .progress-line.completed {
+            background: var(--zen-success);
+        }
+
+        .progress-label {
+            font-size: 0.7rem;
+            color: var(--zen-text-secondary);
+            display: none;
+        }
+
+        .progress-step.active .progress-label {
+            display: block;
+            color: var(--zen-primary);
+            font-weight: 600;
+        }
+
+        @media (min-width: 768px) {
+            .progress-label {
+                display: block;
+            }
+        }
+
+        /* Collapsible Sections */
+        .collapsible-section {
+            border: 1px solid var(--zen-border);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            background: white;
+        }
+
+        .collapsible-header {
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 107, 53, 0.02);
+            transition: all 0.2s;
+        }
+
+        .collapsible-header:hover {
+            background: rgba(255, 107, 53, 0.05);
+        }
+
+        .collapsible-header.active {
+            background: rgba(255, 107, 53, 0.08);
+        }
+
+        .collapsible-icon {
+            transition: transform 0.3s;
+            font-size: 1.2rem;
+            color: var(--zen-primary);
+        }
+
+        .collapsible-header.active .collapsible-icon {
+            transform: rotate(180deg);
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .collapsible-content.active {
+            max-height: 2000px;
+            transition: max-height 0.5s ease-in;
+        }
+
+        .collapsible-body {
+            padding: 1.5rem;
+        }
+
+        /* Circle Progress Indicators */
+        .circle-progress {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .progress-circle {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--zen-border);
+            transition: all 0.3s;
+        }
+
+        .progress-circle.filled {
+            background: var(--zen-primary);
+            animation: fillPop 0.3s ease-out;
+        }
+
+        @keyframes fillPop {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .progress-text {
+            font-size: 0.75rem;
+            color: var(--zen-text-secondary);
+        }
+
+        .progress-text.good {
+            color: var(--zen-success);
+            font-weight: 600;
+        }
+
+        .progress-text.partial {
+            color: var(--zen-warning);
+        }
+
+        /* Prompt Sidebar */
+        .prompt-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: white;
+            box-shadow: -2px 0 20px rgba(0,0,0,0.15);
+            transition: right 0.3s;
+            z-index: 1001;
+            overflow-y: auto;
+        }
+
+        .prompt-sidebar.open {
+            right: 0;
+        }
+
+        .prompt-sidebar-header {
+            padding: 1.5rem;
+            border-bottom: 2px solid var(--zen-border);
+            background: var(--zen-background);
+        }
+
+        .prompt-sidebar-body {
+            padding: 1.5rem;
+        }
+
+        .prompt-card {
+            background: white;
+            border: 2px solid var(--zen-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .prompt-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--zen-primary);
+            margin-bottom: 1rem;
+        }
+
+        .prompt-progress {
+            font-size: 0.85rem;
+            color: var(--zen-text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .prompt-actions {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        /* SVG Venn Diagram */
+        .venn-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .venn-svg {
+            width: 100%;
+            height: auto;
+        }
+
+        .venn-circle {
+            fill: transparent;
+            stroke: var(--zen-primary);
+            stroke-width: 2;
+            opacity: 0.3;
+            transition: all 0.3s;
+        }
+
+        .venn-circle:hover {
+            opacity: 0.5;
+        }
+
+        .venn-overlap {
+            fill: var(--zen-primary);
+            opacity: 0.1;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .venn-overlap:hover,
+        .venn-overlap.drag-over {
+            opacity: 0.25;
+        }
+
+        .venn-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            fill: var(--zen-text);
+            pointer-events: none;
+        }
+
+        .venn-item {
+            cursor: move;
+            user-select: none;
+        }
+
+        /* Tooltip */
+        .tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            max-width: 300px;
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .tooltip.show {
+            opacity: 1;
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 0.5rem 0.5rem;
+            background: rgba(79, 195, 247, 0.05);
+            border: 2px dashed var(--zen-info);
+            border-radius: 16px;
+            margin: 2rem 0;
+        }
+
+        .empty-state-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Info Box */
+        .info-box {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            background: rgba(79, 195, 247, 0.08);
+            border-left: 4px solid var(--zen-info);
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .info-box.warning {
+            background: rgba(255, 183, 77, 0.08);
+            border-left-color: var(--zen-warning);
+        }
+
+        .info-box.success {
+            background: rgba(139, 195, 74, 0.08);
+            border-left-color: var(--zen-success);
+        }
+
+        /* Accordion for Step 5 */
+        .accordion-item {
+            border: 1px solid var(--zen-border);
+            border-radius: 12px;
+            margin-bottom: 0.75rem;
+            overflow: hidden;
+            background: white;
+        }
+
+        .accordion-header {
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            transition: all 0.2s;
+        }
+
+        .accordion-header:hover {
+            background: rgba(255, 107, 53, 0.03);
+        }
+
+        .accordion-header.answered {
+            background: rgba(139, 195, 74, 0.05);
+        }
+
+        .accordion-title {
+            flex: 1;
+            font-weight: 500;
+        }
+
+        .accordion-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .accordion-checkmark {
+            color: var(--zen-success);
+            font-weight: bold;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .accordion-content.active {
+            max-height: 1000px;
+            transition: max-height 0.5s ease-in;
+        }
+
+        .accordion-body {
+            padding: 1.5rem;
+            border-top: 1px solid var(--zen-border);
+        }
+
+        /* Response Chip */
+        .response-chip {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: white;
+            border: 2px solid var(--zen-border);
+            border-radius: 20px;
+            margin: 0.25rem;
+            cursor: move;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .response-chip:hover {
+            border-color: var(--zen-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.15);
+        }
+
+        .response-chip.dragging {
+            opacity: 0.5;
+        }
+
+        .response-chip.love {
+            border-color: #FF6B6B;
+            color: #FF6B6B;
+        }
+
+        .response-chip.good_at {
+            border-color: #4ECDC4;
+            color: #4ECDC4;
+        }
+
+        .response-chip.needs {
+            border-color: #95E1D3;
+            color: #2D8B7C;
+        }
+
+        .response-chip.paid_for {
+            border-color: #FFE66D;
+            color: #D4A400;
+        }
+
+        /* Drop Zone */
+        .drop-zone {
+            min-height: 100px;
+            border: 2px dashed var(--zen-border);
+            border-radius: 12px;
+            padding: 1rem;
+            transition: all 0.2s;
+        }
+
+        .drop-zone.drag-over {
+            border-color: var(--zen-primary);
+            background: rgba(255, 107, 53, 0.05);
+        }
+
+        .empty-state {
+    transition: all 0.3s ease;
+}
+
+.empty-state:hover {
+    border-color: var(--zen-primary) !important;
+    background: rgba(255, 107, 53, 0.05);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.15);
+}
+
+        /* Action Header */
+        .action-header {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--zen-primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Instruction Text */
+        .instruction {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Context Text */
+        .context {
+            font-size: 0.9rem;
+            color: var(--zen-text-secondary);
+            font-style: italic;
+            padding: 1rem;
+            background: rgba(255, 107, 53, 0.05);
+            border-left: 3px solid var(--zen-primary);
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        /* Hide elements initially */
+        .main-content {
+            padding-top: 70px;
+        }
+
+        /* Button variants */
+        .zen-button.small {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        .zen-button.icon {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Print Styles */
+        @media print {
+            .sticky-progress,
+            .sidebar,
+            .sidebar-overlay,
+            .prompt-sidebar,
+            .tooltip,
+            .zen-button,
+            button {
+                display: none !important;
+            }
+            
+            .main-content {
+                padding-top: 0;
+            }
+            
+            .zen-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            
+            .collapsible-content {
+                max-height: none !important;
+            }
+            
+            body {
+                background: white;
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .prompt-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+            
+            .prompt-sidebar.open {
+                right: 0;
+            }
+            
+            .response-chip {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
+            
+            .venn-container {
+                display: none;
+            }
+            
+            .sticky-progress {
+                padding: 0.5rem 0;
+            }
+            
+            .progress-steps {
+                gap: 0.25rem;
+            }
+            
+            .action-header {
+                font-size: 1.25rem;
+            }
+            
+            .zen-card {
+                padding: 1.5rem;
+            }
+        }
+
+/* Ikigai Diagram Animation */
+.ikigai-diagram-container svg circle {
+    animation: gentlePulse 3s ease-in-out infinite;
+}
+
+.ikigai-diagram-container svg circle:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.ikigai-diagram-container svg circle:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.ikigai-diagram-container svg circle:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.ikigai-diagram-container svg circle:nth-child(4) {
+    animation-delay: 0.9s;
+}
+
+@keyframes gentlePulse {
+    0%, 100% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 0.85;
+    }
+}
+
+.ikigai-diagram-container svg circle[r="20"] {
+    animation: ikigaiGlow 2s ease-in-out infinite;
+}
+
+@keyframes ikigaiGlow {
+    0%, 100% {
+        opacity: 0.95;
+        filter: drop-shadow(0 0 5px #F4C542);
+    }
+    50% {
+        opacity: 1;
+        filter: drop-shadow(0 0 10px #F4C542);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .ikigai-diagram-container {
+        padding: 10px;
+    }
+}
+
+/* Custom Modal Styles */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 9998;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.modal-overlay.active {
+    display: block;
+}
+
+.custom-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    max-width: 500px;
+    width: 90%;
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+.custom-modal.active {
+    display: block;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -45%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.custom-modal-content {
+    padding: 2rem;
+}
+
+.custom-modal-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--zen-text);
+    margin-bottom: 1rem;
+}
+
+.custom-modal-message {
+    color: var(--zen-text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.custom-modal-input-wrapper {
+    margin-bottom: 1.5rem;
+}
+
+.custom-modal-input {
+    width: 100%;
+    padding: 0.875rem;
+    border: 2px solid var(--zen-border);
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.custom-modal-input:focus {
+    outline: none;
+    border-color: var(--zen-primary);
+    box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
+}
+
+.custom-modal-buttons {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.custom-modal-buttons button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+}
+
+.modal-btn-primary {
+    background: linear-gradient(135deg, #FF6B35 0%, #FF8960 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.25);
+}
+
+.modal-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 107, 53, 0.3);
+}
+
+.modal-btn-secondary {
+    background: white;
+    color: var(--zen-primary);
+    border: 2px solid var(--zen-primary);
+}
+
+.modal-btn-secondary:hover {
+    background: var(--zen-background);
+}
+
+.modal-btn-tertiary {
+    background: #f5f5f5;
+    color: var(--zen-text-secondary);
+}
+
+.modal-btn-tertiary:hover {
+    background: #e5e5e5;
+}
+    </style>
+</head>
+<body>
+    <!-- Sticky Progress Bar -->
+    <div class="sticky-progress" id="stickyProgress">
+        <div class="progress-steps" id="progressSteps"></div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="sidebar" id="sidebar">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold">💾 Saved Sessions</h3>
+                <button onclick="closeSidebar()" class="text-2xl hover:text-orange-500" aria-label="Close saved sessions sidebar">&times;</button>
+            </div>
+            
+            <button onclick="saveCurrentSession()" class="zen-button w-full mb-4">
+                💾 Save Current Session
+            </button>
+            
+            <div id="sessionsList">
+                <!-- Sessions will be listed here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Prompt Sidebar -->
+    <div class="sidebar-overlay" id="promptOverlay"></div>
+    <div class="prompt-sidebar" id="promptSidebar">
+        <div class="prompt-sidebar-header">
+            <div class="flex justify-between items-center mb-2">
+                <h3 class="text-xl font-bold">💡 Reflection Prompts</h3>
+                <button onclick="closePromptSidebar()" class="text-2xl" aria-label="Close reflection prompts sidebar">&times;</button>
+            </div>
+            <p class="text-sm text-gray-600" id="promptSubtitle">Let these questions guide your reflection</p>
+        </div>
+        <div class="prompt-sidebar-body" id="promptSidebarBody"></div>
+    </div>
+
+    <!-- Tooltip -->
+    <div class="tooltip" id="tooltip"></div>
+
+    <!-- Main App -->
+    <div class="min-h-screen p-4 main-content">
+        <!-- Top Bar -->
+        <div class="max-w-6xl mt-8 mx-auto mb-4 flex justify-between items-center">
+            <button onclick="openSidebar()" class="zen-button secondary icon" aria-label="Open saved sessions">
+                💾 Sessions
+            </button>
+            <button onclick="resetApp()" class="zen-button secondary icon" aria-label="Start a new journey">
+                🔄 Start Over
+            </button>
+        </div>
+
+        <!-- App Container -->
+        <div class="max-w-6xl mx-auto">
+            <div id="appContent"></div>
+        </div>
+    </div>
+
+    <!-- Save Indicator -->
+    <div class="save-indicator" id="saveIndicator">
+        ✓ Progress saved
+    </div>
+
+    <!-- Custom Modal -->
+    <div class="modal-overlay" id="customModalOverlay" onclick="closeCustomModal()"></div>
+    <div class="custom-modal" id="customModal">
+        <div class="custom-modal-content">
+            <h3 class="custom-modal-title" id="modalTitle"></h3>
+            <p class="custom-modal-message" id="modalMessage"></p>
+            <div class="custom-modal-input-wrapper" id="modalInputWrapper" style="display: none;">
+                <input type="text" class="custom-modal-input" id="modalInput">
+            </div>
+            <div class="custom-modal-buttons" id="modalButtons"></div>
+        </div>
+    </div>
+
+    <script>
+        // Constants
+        const CIRCLES = {
+            LOVE: 'love',
+            NEEDS: 'needs',
+            PAID_FOR: 'paid_for',
+            GOOD_AT: 'good_at'
+        };
+
+        const OVERLAP_TYPES = {
+            PASSION: 'passion',
+            MISSION: 'mission',
+            PROFESSION: 'profession',
+            VOCATION: 'vocation',
+            IKIGAI: 'ikigai'
+        };
+
+        const CIRCLE_LABELS = {
+            love: 'What You Love',
+            needs: 'What the World Needs',
+            paid_for: 'What You Can Be Paid For',
+            good_at: 'What You Are Good At'
+        };
+
+        const CONFIG = {
+            TOOLTIP_TIMEOUT: 5000,
+            SAVE_DEBOUNCE_MS: 500,
+            AUTOFOCUS_DELAY: 50
+        };
+
+        // Security: XSS Protection Utility
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Utility: Debounce function
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Utility: Memoization function
+        function memoize(func) {
+            const cache = new Map();
+            return function(...args) {
+                const key = JSON.stringify(args);
+                if (cache.has(key)) {
+                    return cache.get(key);
+                }
+                const result = func.apply(this, args);
+                cache.set(key, result);
+                return result;
+            };
+        }
+
+        // DOM Cache for performance
+        const domCache = {
+            _cache: {},
+            get(id) {
+                if (!this._cache[id]) {
+                    this._cache[id] = document.getElementById(id);
+                }
+                return this._cache[id];
+            },
+            clear() {
+                this._cache = {};
+            }
+        };
+
+        // Custom Modal Functions
+        function showModal(options) {
+            const overlay = document.getElementById('customModalOverlay');
+            const modal = document.getElementById('customModal');
+            const title = document.getElementById('modalTitle');
+            const message = document.getElementById('modalMessage');
+            const inputWrapper = document.getElementById('modalInputWrapper');
+            const input = document.getElementById('modalInput');
+            const buttons = document.getElementById('modalButtons');
+
+            title.textContent = options.title || '';
+            message.textContent = options.message || '';
+
+            // Handle input field
+            if (options.input) {
+                inputWrapper.style.display = 'block';
+                input.value = '';
+                input.placeholder = options.placeholder || '';
+                setTimeout(() => input.focus(), 100);
+            } else {
+                inputWrapper.style.display = 'none';
+            }
+
+            // Handle buttons
+            buttons.innerHTML = '';
+            (options.buttons || []).forEach(btn => {
+                const button = document.createElement('button');
+                button.textContent = btn.text;
+                button.className = btn.class || 'modal-btn-primary';
+                button.onclick = () => {
+                    if (btn.onClick) {
+                        const value = options.input ? input.value : null;
+                        btn.onClick(value);
+                    }
+                    if (btn.closeOnClick !== false) {
+                        closeCustomModal();
+                    }
+                };
+                buttons.appendChild(button);
+            });
+
+            overlay.classList.add('active');
+            modal.classList.add('active');
+        }
+
+        function closeCustomModal() {
+            const overlay = document.getElementById('customModalOverlay');
+            const modal = document.getElementById('customModal');
+            overlay.classList.remove('active');
+            modal.classList.remove('active');
+        }
+
+        // Helper: Show Alert Modal
+        function showAlert(title, message, callback) {
+            showModal({
+                title: title,
+                message: message,
+                buttons: [{
+                    text: 'OK',
+                    class: 'modal-btn-primary',
+                    onClick: callback
+                }]
+            });
+        }
+
+        // Helper: Show Confirm Modal
+        function showConfirm(title, message, onConfirm, onCancel) {
+            showModal({
+                title: title,
+                message: message,
+                buttons: [
+                    {
+                        text: 'Cancel',
+                        class: 'modal-btn-tertiary',
+                        onClick: onCancel
+                    },
+                    {
+                        text: 'Confirm',
+                        class: 'modal-btn-primary',
+                        onClick: onConfirm
+                    }
+                ]
+            });
+        }
+
+        // Helper: Show Input Modal
+        function showPrompt(title, message, placeholder, onSubmit, onCancel) {
+            showModal({
+                title: title,
+                message: message,
+                input: true,
+                placeholder: placeholder,
+                buttons: [
+                    {
+                        text: 'Cancel',
+                        class: 'modal-btn-tertiary',
+                        onClick: onCancel
+                    },
+                    {
+                        text: 'Save',
+                        class: 'modal-btn-primary',
+                        onClick: onSubmit
+                    }
+                ]
+            });
+        }
+
+        // Application State
+        const appState = {
+            currentStep: 1,
+            answers: {
+                love: [],
+                needs: [],
+                paid_for: [],
+		good_at: []
+            },
+            overlaps: {
+                passion: [],
+                mission: [],
+                profession: [],
+                vocation: []
+            },
+            ikigai: [],
+            step4Analysis: [],
+            step5Reflections: {},
+            promptMode: {
+                active: false,
+                currentCircle: null,
+                currentPromptIndex: 0
+            },
+            expandedSections: {
+                step2Intro: false,
+                step2Circles: {}
+            }
+        };
+
+        // State Management Helper Functions
+        const StateManager = {
+            setAnswer(circle, index, value) {
+                if (appState.answers[circle] && index >= 0 && index < appState.answers[circle].length) {
+                    appState.answers[circle][index] = value;
+                    saveState();
+                }
+            },
+
+            addAnswer(circle, value = '') {
+                if (appState.answers[circle]) {
+                    appState.answers[circle].push(value);
+                    saveState();
+                }
+            },
+
+            removeAnswer(circle, index) {
+                if (appState.answers[circle] && index >= 0 && index < appState.answers[circle].length) {
+                    appState.answers[circle].splice(index, 1);
+                    saveState();
+                }
+            },
+
+            addToOverlap(type, item) {
+                if (appState.overlaps[type] && !appState.overlaps[type].includes(item)) {
+                    appState.overlaps[type].push(item);
+                    saveState();
+                }
+            },
+
+            removeFromOverlap(type, item) {
+                if (appState.overlaps[type]) {
+                    appState.overlaps[type] = appState.overlaps[type].filter(i => i !== item);
+                    saveState();
+                }
+            },
+
+            addToIkigai(item) {
+                if (!appState.ikigai.includes(item)) {
+                    appState.ikigai.push(item);
+                    saveState();
+                }
+            },
+
+            removeFromIkigai(item) {
+                appState.ikigai = appState.ikigai.filter(i => i !== item);
+                saveState();
+            },
+
+            setReflection(key, value) {
+                appState.step5Reflections[key] = value;
+                saveState();
+            },
+
+            setCurrentStep(step) {
+                if (step >= 1 && step <= 6) {
+                    appState.currentStep = step;
+                    saveState();
+                }
+            }
+        };
+
+        // PDF Text Content (Verbatim from PDF)
+        const PDF_CONTENT = {
+            intro: {
+                title: "Finding Your Purpose",
+                subtitle: "Your Reason for Being",
+                text: "How do you feel when you wake up every day? Excited, or wishing it were the weekend already?\n\nPeople who live with purpose are known to be happier, stronger, and more fulfilled, even when life gets tough. Their sense of meaning stems from friends, family, work, faith, pets, or hobbies, for example.\n\nWhat gives your life meaning? Let's find out!"
+            },
+            step1: {
+                title: "Step 1: Understand what ikigai means",
+                text: "The secret to a long and happy life is to live with purpose every day. Living a life with meaning and value can make you happier, more content, more resilient through hard times, and more likely to influence the lives of others. People can find meaning from many different sources: relationships, work, religion, or hobbies, for example. What gives you a sense of meaning or purpose in life, even when faced with adversity, hardship, and suffering?",
+                note: "This is a deeply personal exercise that requires time, practice, and patience. Don't rush yourself!"
+            },
+            step2: {
+                title: "Step 2: Filling in your purpose chart",
+                intro: "This is an ongoing process of self-reflection. Your purpose is likely to change with your circumstances over time, so revisit this exercise every 6-12 months to explore different possibilities as you grow.\n\nIn each circle, take a few minutes to think about each question, and enter any words, phrases, and ideas that are relevant to you.",
+                love: {
+                    title: "What You Love",
+                    text: "Think of the things you love in any aspect of life: your work, your family, volunteer activities, or personal interests and hobbies, for example."
+                },
+                needs: {
+                    title: "What the World Needs",
+                    text: "As social beings, we thrive when we are needed; we feel useful, valuable, and full of purpose. What product or service can you offer that you think your friends, family, and immediate community need? Even helping one single person counts!"
+                },
+                paid_for: {
+                    title: "What You Can Be Paid For",
+                    text: "A job where you can apply your talents, share your passion, and get paid for is the foundation for a happier, more fulfilling life. Consider your previous employment positions: What were you good at? Did you excel at anything in particular when employed in those roles?"
+                },
+good_at: {
+                    title: "What You Are Good At",
+                    text: "Think about your skills, your strengths, and all the things you are capable of doing well, no matter how big or small. It could be something that comes naturally to you, that people find helpful, or that you have worked hard to achieve."
+                }
+            },
+            step3: {
+                title: "Step 3: Find convergences",
+                text: "Now that you have spent some time thinking and writing down your responses, you might notice that some of your answers appear in multiple circles of your ikigai chart or that some answers are closely related. For instance, if you love teaching (what you love) and you believe the world would benefit from more knowledge (what the world needs), there is a clear overlap between these two. In this step, you will look for similarities between the answers in each of the four circles. These overlapping areas will help you find your ikigai.\n\nAny responses that fit into more than one of two adjacent circles should be written in the overlapping section that lies in between these two circles. For instance, if a response appears in the circle 'what you love' and also in the circle 'what the world needs,' then write this response in the overlapping space between the two circles labeled 'your mission.' Fill in the remaining sections of your ikigai chart in the same way.\n\nWrite any response that fits into all four circles in the center of your ikigai chart. This response is your key to a more fulfilling and meaningful life.",
+                definitions: {
+                    passion: {
+                        title: "What you love + what you are good at = Your Passion",
+                        text: "If any item listed in 'what you love' also appears in 'what you are good at,' then you have found your passion. When activities fall into these two categories, you might experience a feeling of satisfaction, but you might also feel that you are not contributing as much to the world as you could. Importantly, no matter how passionate you are about something, if you receive no financial reward for it, it is not sustainable in the long term."
+                    },
+                    mission: {
+                        title: "What you love + what the world needs = Your Mission",
+                        text: "If any item listed in 'what you love' also appears in 'what the world needs,' then you have found your mission. When activities fall into these two categories, you are likely to experience delight and fullness, but you are also likely to notice a distinct absence of income and financial stability."
+                    },
+                    profession: {
+                        title: "What you are good at + what you can be paid for = Your Profession",
+                        text: "If any item listed in 'what you are good at' also appears in 'what you can be paid for,' then you have found your profession. You might feel comfortable during these activities; however, doing something that you do not love and that the world does not need can make your work and efforts feel trivial."
+                    },
+                    vocation: {
+                        title: "What you can be paid for + what the world needs = Your Vocation",
+                        text: "If any item listed in 'what you can be paid for' also appears in 'what the world needs,' then you have found your vocation. These activities can have a positive influence on the world and have the bonus of providing an income. However, not being good at your job can create anxiety, and without love for what you are doing, the experience can feel empty and unfulfilling."
+                    },
+                    ikigai: {
+                        title: "All four circles = Your Ikigai",
+                        text: "Does something appear in all four circles? When any response appears in what you love, what you're good at, what you can be paid for, and what the world needs, you have found your ikigai. Discovering your ikigai means that you have found something that is meaningful, fulfilling, and sustainable."
+                    }
+                }
+            },
+            step4: {
+                title: "Step 4: What's missing in your puzzle?",
+                text: "Think about actions you can take so that a response appears in more circles."
+            },
+            step5: {
+                title: "Step 5: Address the missing circle(s)",
+                intro: "The questions below are designed to get you thinking about how you can develop specific circles to nudge the activity at hand towards your purpose.",
+                love: {
+                    title: "Can you turn this activity into something you enjoy and love to do?",
+                    intro: "",
+                    questions: [
+                        "What aspects of this activity do you dislike? Why?",
+                        "Is there a way to make these aspects more enjoyable or less of a problem? For instance, you could work together with someone, let others take care of these aspects, or develop enough skills so that they require less effort.",
+                        "List 3 positive things about this activity.",
+                        "What aspects of this activity do you enjoy and feel a connection with? What steps can you take to do more of these?",
+                        "What aspects of this activity are you curious about? Are there any areas you are interested in learning more about?",
+                        "In what ways does this activity benefit you?",
+                        "How has this activity helped you grow and develop as a person?",
+                        "What skills have you developed by doing this activity?"
+                    ]
+                },
+                good_at: {
+                    title: "You may need to commit time and effort to enhance your skills, techniques, and knowledge to truly enjoy a particular activity.",
+                    intro: "",
+                    questions: [
+                        "Why do you think you are not good at this activity?",
+                        "Excessively high standards can be counterproductive. Is it possible that you are more skilled than you give yourself credit for?",
+                        "What skills would be most useful for this activity?",
+                        "Which of these skills do you possess? What actions can you take to improve these skills further?",
+                        "Which of these skills do you not possess? What actions can you take to learn these skills?",
+                        "Make a list of people who excel at this activity. What skills or strengths do they possess?",
+                        "Which of these skills do you possess?",
+                        "Think of someone who would be a good mentor, how might they help you improve your skills?"
+                    ]
+                },
+                paid_for: {
+                    title: "Find creative ways of monetizing this activity so that it provides a desirable - yet realistic - income.",
+                    intro: "",
+                    questions: [
+                        "Is being paid for this activity important to you?",
+                        "What are the main reasons you do not currently get paid for this activity?",
+                        "How can you work on these barriers so that you might begin to earn an income?",
+                        "Are you skilled enough at this activity? If not, how can you improve your performance to increase people's willingness to pay for your talents?",
+                        "How have other people earned money from this activity or related activities?",
+                        "What similar activities might provide an income?",
+                        "In what ways could you earn money from this activity alongside your current job? For instance, if you love to create art, you might consider opening an online shop.",
+                        "List 3 ways you could profit from your passion."
+                    ]
+                },
+                needs: {
+                    title: "How would you connect this activity with what your society needs?",
+                    intro: "",
+                    questions: [
+                        "Can you think of a way in which your activity/theme could be of value to others? If so, how?",
+                        "Can you think of applying your theme/activity in such a way that it could make a positive contribution to the world?",
+                        "What do the people in your immediate society (e.g., your friends, family, and peers) need?",
+                        "In what ways can you meet their needs using this activity?",
+                        "Write down all the different ways in which you can share this activity with others. Try thinking outside the box; for example, you might choose to write a regular blog about the activity and share your passion with the world.",
+                        "Is this activity something that you can teach others around you or online?",
+                        "How might this activity contribute positively to those around you?"
+                    ]
+                }
+            }
+        };
+
+        // Appendix A Prompts (Verbatim from PDF)
+        const PROMPTS = {
+            love: [
+"What makes you feel happiest or puts a smile on your face?",
+"What activities excite you so much that you lose track of time?",
+"Who do you love spending time with?",
+"What did you love to do as a child?",
+"If money didn’t matter, what would you spend your time doing?",
+"What people, places, or activities make you feel alive and never bored?",
+"What topics or interests can you talk about for hours?",
+"What are your values, and how do you use them every day?",
+"Where do you find beauty?",
+"If you could be the best at one thing, what would it be?",
+"What five things do you cherish most? (Enter your responses as individual entries)",
+            ],
+            paid_for: [
+"Which jobs, positions, or tasks spark your interest?",
+"What kind of work have you been paid well for in the past, or are earning well from now?",
+"What would you be working as if you were not in your current job?",
+"What do people need that you can offer, and would they be willing to pay for it?",
+"Can this work provide the income you need now and in the long term?",
+"What does the competition look like? Can you spot a niche?",
+            ],
+            needs: [
+"What problems or needs do you see in your community that you’d like to help solve?",
+"What changes would you like to see in the world, and how might you inspire them?",
+"How would you love to contribute or get more involved in your community?",
+"What can you offer, teach, or do that brings meaning or help to others?",
+"What issues in your community or the world touch you emotionally?",
+"Think of three skills you have that are in high demand.",
+"If you could get a message across to a large group of people, what would it be?",
+"Will your work still be relevant a decade from now?",
+            ],
+            good_at: [
+"What skills or activities have you devoted significant time to practicing or learning?",
+"What skills or parts of your work come most naturally or easily to you?",
+"What talents or activities do you excel at naturally, the ones others notice too?",
+"What do people frequently ask you for help with?",
+"What achievements or recognitions are you most proud of?",
+"What skills would you love to develop further, and does that excite you?",
+"If you had to teach something, what would you teach?",
+"With more experience or learning, could you become among the best at what you do?",
+           ]
+        };
+
+ // Initialize App
+function initApp() {
+    loadState();
+    render();
+    
+    // Add sidebar overlay click handler after DOM is ready
+    const overlay = document.getElementById('sidebarOverlay');
+    if (overlay) {
+        overlay.addEventListener('click', closeSidebar);
+    }
+}
+        // Render Current Step
+        function render() {
+            const content = domCache.get('appContent');
+            if (!content) {
+                console.error('appContent element not found');
+                return;
+            }
+
+            // Clear DOM cache on re-render since elements will be recreated
+            domCache.clear();
+
+            // Render sticky progress bar
+            renderStickyProgress();
+
+            switch(appState.currentStep) {
+                case 1:
+                    content.innerHTML = renderIntro();
+                    break;
+                case 2:
+                    content.innerHTML = renderStep2();
+                    setupStep2Handlers();
+                    break;
+                case 3:
+                    content.innerHTML = renderStep3();
+                    setupStep3Handlers();
+                    break;
+                case 4:
+                    content.innerHTML = renderStep4();
+                    setupStep4Handlers();
+                    break;
+                case 5:
+                    content.innerHTML = renderStep5();
+                    setupStep5Handlers();
+                    break;
+                case 6:
+                    content.innerHTML = renderResults();
+                    break;
+            }
+        }
+
+// Render Ikigai Venn Diagram for Landing Page
+function renderIkigaiDiagram() {
+    return `
+        <div class="ikigai-diagram-container" style="max-width: 400px; margin: 0 auto; padding: 5px;">
+            <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto;">
+                <!-- Define gradients and filters for better visuals -->
+                <defs>
+                    <!-- Soft shadow filter -->
+                    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+                        <feOffset dx="0" dy="2" result="offsetblur"/>
+                        <feComponentTransfer>
+                            <feFuncA type="linear" slope="0.3"/>
+                        </feComponentTransfer>
+                        <feMerge>
+                            <feMergeNode/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+                
+                <!-- Background circles with transparency -->
+                <!-- Top circle: What You Love (blue-gray) -->
+                <circle cx="200" cy="120" r="90" fill="#B8C5D0" opacity="0.7" filter="url(#softShadow)"/>
+                
+                <!-- Right circle: What the World Needs (coral) -->
+                <circle cx="270" cy="200" r="90" fill="#FFB4A8" opacity="0.7" filter="url(#softShadow)"/>
+                
+                <!-- Bottom circle: What You Can Be Paid For (gray) -->
+                <circle cx="200" cy="280" r="90" fill="#C5C5C5" opacity="0.7" filter="url(#softShadow)"/>
+                
+                <!-- Left circle: What You're Good At (coral-pink) -->
+                <circle cx="130" cy="200" r="90" fill="#FFB4A8" opacity="0.7" filter="url(#softShadow)"/>
+                
+                <!-- Center Ikigai circle (golden) -->
+                <circle cx="200" cy="200" r="20" fill="#F4C542" opacity="0.95" stroke="#D4A017" stroke-width="2"/>
+                
+                <!-- Labels -->
+                <!-- Top label -->
+                <text x="200" y="60" text-anchor="middle" font-size="14" font-weight="bold" fill="#2C3E50">
+                    YOU LOVE IT
+                </text>
+                
+                <!-- Right label -->
+                <text x="280" y="205" text-anchor="start" font-size="13" font-weight="bold" fill="#2C3E50">
+                    <tspan x="280" dy="0">THE WORLD</tspan>
+                    <tspan x="280" dy="16">NEEDS IT</tspan>
+                </text>
+                
+                <!-- Bottom label -->
+                <text x="200" y="345" text-anchor="middle" font-size="13" font-weight="bold" fill="#2C3E50">
+                    <tspan x="200" dy="0">YOU ARE</tspan>
+                    <tspan x="200" dy="16">PAID FOR IT</tspan>
+                </text>
+                
+                <!-- Left label -->
+                <text x="40" y="205" text-anchor="start" font-size="13" font-weight="bold" fill="#2C3E50">
+                    <tspan x="40" dy="0">YOU ARE</tspan>
+                    <tspan x="40" dy="16">GREAT AT IT</tspan>
+                </text>
+                
+                <!-- Center Ikigai label -->
+                <text x="200" y="205" text-anchor="middle" font-size="12" font-weight="bold" fill="#2C3E50">
+                    PURPOSE
+                </text>
+                
+            </svg>
+        </div>
+    `;
+}
+
+        // Render Sticky Progress Bar
+        function renderStickyProgress() {
+            const steps = [
+                { num: 1, label: 'Welcome' },
+                { num: 2, label: 'Your Circles' },
+                { num: 3, label: 'Find Convergences' },
+                { num: 4, label: 'Explore Gaps' },
+                { num: 5, label: 'Reflect Deeply' },
+                { num: 6, label: 'Your Insights' }
+            ];
+
+            const progressSteps = domCache.get('progressSteps');
+            if (!progressSteps) return;
+
+            progressSteps.innerHTML = steps.map((step, index) => {
+                const isActive = appState.currentStep === step.num;
+                const isCompleted = appState.currentStep > step.num;
+                const showLine = index < steps.length - 1;
+
+                return `
+                    <div class="progress-step ${isActive ? 'active' : ''} ${isCompleted ? 'completed' : ''}">
+                        <div class="progress-dot ${isActive ? 'active' : ''} ${isCompleted ? 'completed' : ''}"></div>
+                        <span class="progress-label">${step.label}</span>
+                    </div>
+                    ${showLine ? `<div class="progress-line ${isCompleted ? 'completed' : ''}"></div>` : ''}
+                `;
+            }).join('');
+        }
+
+        // Render Introduction
+        function renderIntro() {
+            return `
+                <div class="zen-card max-w-4xl mx-auto text-center">
+                    <h1 class="text-4xl font-bold mb-2">${PDF_CONTENT.intro.title}</h1>
+                    <p class="text-xl text-gray-500 mb-4">${PDF_CONTENT.intro.subtitle}</p>
+                   
+                    <div class="prose max-w-none">
+                        ${PDF_CONTENT.intro.text.split('\n\n').map(p => `<p class="mb-4">${p}</p>`).join('')}
+</div>
+                    <div class="text-center">
+                     <!-- Add the Ikigai Diagram -->
+            	 ${renderIkigaiDiagram()}
+                        <button onclick="startJourney()" class="zen-button">
+                            Begin Your Journey →
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function toggleIntroDetail() {
+            const detail = document.getElementById('introDetail');
+            detail.classList.toggle('active');
+        }
+
+        function startJourney() {
+            appState.currentStep = 2;
+            saveState();
+            render();
+        }
+
+        // Render Step 2 - Fill Circles (Enhanced UX)
+        function renderStep2() {
+            const circles = ['love', 'needs', 'paid_for', 'good_at'];
+            const currentCircle = circles[appState.step2CurrentCircle || 0];
+            const circleIndex = appState.step2CurrentCircle || 0;
+            
+            const circleNames = {
+                love: 'What You Love',
+                needs: 'What the World Needs',
+                paid_for: 'What You Can Be Paid For',
+                good_at: 'What You Are Good At'
+            };
+
+            const circleContent = {
+                love: PDF_CONTENT.step2.love,
+                needs: PDF_CONTENT.step2.needs,
+                paid_for: PDF_CONTENT.step2.paid_for,
+                good_at: PDF_CONTENT.step2.good_at
+            };
+
+            // Get progress for each circle
+            function getCircleProgress(circle) {
+                const count = appState.answers[circle].length;
+                if (count === 0) return { status: 'empty', text: 'Not started', color: 'gray' };
+                if (count <= 2) return { status: 'partial', text: 'Keep going...', color: 'orange' };
+                if (count <= 4) return { status: 'good', text: '✓ Good', color: 'green' };
+                return { status: 'great', text: '✓ Great!', color: 'green' };
+            }
+
+            return `
+                <div class="zen-card max-w-4xl mx-auto">
+                    <h2 class="action-header">${PDF_CONTENT.step2.title}</h2>
+                    ${PDF_CONTENT.step2.intro.split('\n\n').map(p => `<p class="mb-3">${p}</p>`).join('')}
+                    <div class="info-box mb-6">
+                        <div class="text-sm">
+                            ${PDF_CONTENT.step1.note}
+                        </div>
+                    </div>
+
+                    <!-- Circle Selection with Progress -->
+                    <div class="flex gap-2 mb-6 flex-wrap">
+                        ${circles.map((c, i) => {
+                            const progress = getCircleProgress(c);
+                            const count = appState.answers[c].length;
+                            return `
+                                <button 
+                                    onclick="selectCircle(${i})"
+                                    class="px-4 py-3 rounded-lg transition-all flex-1 min-w-[150px] ${i === circleIndex ? 'bg-orange-500 text-white' : 'bg-gray-100 hover:bg-gray-200'}"
+                                >
+                                    <div class="font-medium text-sm">${circleNames[c]}</div>
+                                    <div class="circle-progress mt-2 justify-center">
+                                        ${[0,1,2,3,4].map(dot => `
+                                            <div class="progress-circle ${dot < count ? 'filled' : ''}"></div>
+                                        `).join('')}
+                                    </div>
+                                    <div class="progress-text mt-1 ${progress.status === 'good' || progress.status === 'great' ? 'good' : progress.status === 'partial' ? 'partial' : ''}">${count} ${count === 1 ? 'response' : 'responses'} added - ${progress.text}</div>
+                                </button>
+                            `;
+                        }).join('')}
+                    </div>
+
+                    <!-- Current Circle Content (Collapsible) -->
+                    <div class="border-l-4 border-orange-500 pl-6 mb-6 bg-orange-50 rounded-r-xl p-4">
+                        <h3 class="text-2xl font-bold mb-3">${circleContent[currentCircle].title}</h3>
+                        ${circleContent[currentCircle].text.split('\n\n').map(p => `<p class="mb-3">${p}</p>`).join('')}
+                        </div>
+
+<!-- Input Area -->
+                    <div class="mb-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <label class="font-semibold text-lg">Your responses:</label>
+                            <button onclick="openPromptSidebar('${currentCircle}')" class="zen-button secondary small icon">
+                                💡 Need inspiration?
+                            </button>
+                        </div>
+
+                        ${appState.answers[currentCircle].length === 0 ? `
+                            <div class="empty-state mb-4 cursor-pointer hover:border-orange-300 transition-colors" onclick="addAnswerField('${currentCircle}', true)" style="cursor: pointer;">
+                                <p class="text-gray-600 mb-0">Take a moment to reflect. Tap here when you're ready to share your thoughts.</p>
+                            </div>
+                        ` : ''}
+
+                        <div class="space-y-3 mb-4" id="responses-${currentCircle}">
+                            ${appState.answers[currentCircle].map((answer, i) => `
+                                <div class="flex gap-2">
+                                    <div class="flex-1">
+                                        <textarea
+                                            class="zen-textarea"
+                                            data-circle="${currentCircle}"
+                                            data-index="${i}"
+                                        >${escapeHtml(answer)}</textarea>
+                                        <p class="input-helper">💡 Tip: Press Enter to save and add another response field</p>
+                                    </div>
+                                    <button onclick="removeAnswer('${currentCircle}', ${i})" class="text-red-500 px-4 hover:text-red-700" aria-label="Remove response">×</button>
+                                </div>
+                            `).join('')}
+                        </div>
+
+                    </div>
+
+                    <!-- Navigation -->
+                    <div class="flex justify-between pt-6 border-t">
+                        ${circleIndex > 0 ? `
+                            <button onclick="previousCircle()" class="zen-button secondary">
+                                ← Previous Circle
+                            </button>
+                        ` : '<div></div>'}
+                        
+                        ${circleIndex < 3 ? `
+                            <button onclick="nextCircle()" class="zen-button">
+                                Next Circle →
+                            </button>
+                        ` : `
+                            <button onclick="completeStep2()" class="zen-button">
+                                Find Convergences →
+                            </button>
+                        `}
+                    </div>
+                </div>
+            `;
+        }
+
+        function setupStep2Handlers() {
+            // Setup Enter key handling for all textareas
+            const textareas = document.querySelectorAll('.zen-textarea');
+
+            if (!textareas || textareas.length === 0) {
+                console.warn('No textareas found in setupStep2Handlers');
+                return;
+            }
+
+            textareas.forEach(textarea => {
+                if (!textarea) return;
+
+                // Handle input to update state
+                textarea.addEventListener('input', function() {
+                    const circle = this.dataset.circle;
+                    const index = parseInt(this.dataset.index);
+                    if (circle && !isNaN(index)) {
+                        updateAnswer(circle, index, this.value);
+                    }
+
+                    // Auto-resize
+                    autoResizeTextarea(this);
+                });
+
+                // Handle Enter key
+                textarea.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+
+                        const circle = this.dataset.circle;
+                        const index = parseInt(this.dataset.index);
+
+                        if (!circle || isNaN(index)) return;
+
+                        // Save current value
+                        updateAnswer(circle, index, this.value);
+
+                        // Add new field and focus it
+                        addAnswerField(circle, true);
+                    }
+                });
+
+                // Initial resize
+                autoResizeTextarea(textarea);
+            });
+        }
+
+        // Toggle collapsible sections
+        function toggleSection(sectionId) {
+            appState.expandedSections[sectionId] = !appState.expandedSections[sectionId];
+            render();
+        }
+
+        function toggleCircleSection(circle) {
+            if (!appState.expandedSections.step2Circles) {
+                appState.expandedSections.step2Circles = {};
+            }
+            appState.expandedSections.step2Circles[circle] = !appState.expandedSections.step2Circles[circle];
+            render();
+        }
+
+        // Prompt Sidebar Functions
+        function openPromptSidebar(circle) {
+            appState.promptMode.active = true;
+            appState.promptMode.currentCircle = circle;
+            appState.promptMode.currentPromptIndex = 0;
+            
+            renderPromptSidebar();
+            
+            document.getElementById('promptSidebar').classList.add('open');
+            document.getElementById('promptOverlay').classList.add('active');
+        }
+
+        function closePromptSidebar() {
+            document.getElementById('promptSidebar').classList.remove('open');
+            document.getElementById('promptOverlay').classList.remove('active');
+            appState.promptMode.active = false;
+        }
+
+        function renderPromptSidebar() {
+            const circle = appState.promptMode.currentCircle;
+            const prompts = PROMPTS[circle];
+            const currentIndex = appState.promptMode.currentPromptIndex;
+            const currentPrompt = prompts[currentIndex];
+            
+            const circleNames = {
+                love: 'What You Love',
+                needs: 'What the World Needs',
+                paid_for: 'What You Can Be Paid For',
+                good_at: 'What You Are Good At'
+            };
+            
+            document.getElementById('promptSubtitle').textContent = circleNames[circle];
+            document.getElementById('promptSidebarBody').innerHTML = `
+                <div class="info-box mb-4" style="background: #fff3cd; border-color: #ffc107;">
+                    <span>💡</span>
+                    <div>
+                        <strong>How these prompts help:</strong>
+                        <p class="text-sm mt-1">Feeling stuck? Use these prompts to explore different angles and uncover deeper insights. Skip any that don't resonate; return anytime for fresh inspiration.</p>
+                    </div>
+                </div>
+                <div class="prompt-card">
+                    <div class="prompt-progress">
+                        Prompt ${currentIndex + 1} of ${prompts.length}
+                    </div>
+                    <div class="prompt-question">${currentPrompt}</div>
+                    <textarea
+                        id="promptResponse"
+                        class="zen-textarea"
+                        rows="6"
+                        placeholder="There are no wrong answers!"
+                    ></textarea>
+                    <div class="prompt-actions">
+                        <button onclick="skipPrompt()" class="zen-button secondary small">
+                            Skip Question
+                        </button>
+                        <button onclick="saveAndNextPrompt()" class="zen-button small">
+                            Save & Next →
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <button onclick="closePromptSidebar()" class="text-sm text-gray-600 hover:text-gray-800">
+                        Close
+                    </button>
+                </div>
+            `;
+        }
+
+        function skipPrompt() {
+            const circle = appState.promptMode.currentCircle;
+            const prompts = PROMPTS[circle];
+            
+            appState.promptMode.currentPromptIndex++;
+            
+            if (appState.promptMode.currentPromptIndex >= prompts.length) {
+                closePromptSidebar();
+                return;
+            }
+            
+            renderPromptSidebar();
+        }
+
+        function saveAndNextPrompt() {
+            const response = document.getElementById('promptResponse').value.trim();
+            
+            if (response) {
+                const circle = appState.promptMode.currentCircle;
+                appState.answers[circle].push(response);
+                saveState();
+            }
+            
+            skipPrompt();
+            
+            // Update the main view to show the new response
+            render();
+        }
+
+        // Overlay click handlers
+        document.getElementById('promptOverlay').addEventListener('click', closePromptSidebar);
+
+        function autoResizeTextarea(textarea) {
+            textarea.style.height = 'auto';
+            textarea.style.height = Math.max(60, textarea.scrollHeight) + 'px';
+        }
+
+        function selectCircle(index) {
+            appState.step2CurrentCircle = index;
+            render();
+        }
+
+        function updateAnswer(circle, index, value) {
+            StateManager.setAnswer(circle, index, value);
+        }
+
+        function addAnswerField(circle, autoFocus = false) {
+            StateManager.addAnswer(circle, '');
+            render();
+
+            if (autoFocus) {
+                // Focus the newly created textarea
+                setTimeout(() => {
+                    const textareas = document.querySelectorAll(`textarea[data-circle="${circle}"]`);
+                    const newTextarea = textareas[textareas.length - 1];
+                    if (newTextarea) {
+                        newTextarea.focus();
+                    }
+                }, CONFIG.AUTOFOCUS_DELAY);
+            }
+        }
+
+        function removeAnswer(circle, index) {
+            StateManager.removeAnswer(circle, index);
+            render();
+        }
+
+        function previousCircle() {
+            appState.step2CurrentCircle = Math.max(0, (appState.step2CurrentCircle || 0) - 1);
+            render();
+        }
+
+        function nextCircle() {
+            appState.step2CurrentCircle = Math.min(3, (appState.step2CurrentCircle || 0) + 1);
+            render();
+        }
+
+        function completeStep2() {
+            // Clean up empty responses
+            Object.keys(appState.answers).forEach(key => {
+                appState.answers[key] = appState.answers[key].filter(a => a && a.trim() !== '');
+            });
+
+            // Check which circles are empty
+            const emptyCircles = [];
+            Object.entries(appState.answers).forEach(([circle, answers]) => {
+                if (!answers || answers.length === 0) {
+                    emptyCircles.push(CIRCLE_LABELS[circle]);
+                }
+            });
+
+            if (emptyCircles.length === 0) {
+                appState.currentStep = 3;
+                appState.step2CurrentCircle = 0;
+                saveState();
+                render();
+            } else {
+                const circleList = emptyCircles.join(', ');
+                showAlert(
+                    'Let\'s Complete These Circles',
+                    `Each circle helps build your complete ikigai picture. Please add responses to: ${circleList}. Take your time to reflect on each question.`
+                );
+            }
+        }
+
+        // Render Step 3 - Find Overlaps (Enhanced with SVG Venn)
+        function renderStep3() {
+            const overlapDefinitions = {
+                passion: PDF_CONTENT.step3.definitions.passion.text,
+                mission: PDF_CONTENT.step3.definitions.mission.text,
+                profession: PDF_CONTENT.step3.definitions.profession.text,
+                vocation: PDF_CONTENT.step3.definitions.vocation.text,
+                ikigai: PDF_CONTENT.step3.definitions.ikigai.text
+            };
+
+            return `
+                <div class="zen-card max-w-6xl mx-auto">
+                    <h2 class="action-header">${PDF_CONTENT.step3.title}</h2>
+                    <p class="instruction mb-4">
+                        Now that you have spent some time thinking and writing down your responses, you might notice that some of your answers appear in multiple circles of your ikigai chart. Look for similarities between the answers in each of the four circles.
+                    </p>
+                    <div class="info-box mb-6">
+                        <span>💡</span>
+                        <div>
+                            <strong>What are convergences?</strong>
+                            <p class="text-sm mt-1">Convergences (or overlaps) are items that fit into more than one circle. For example, if you love teaching AND you're good at it, that's a convergence! These overlapping areas help reveal your passions, mission, profession, vocation, and ultimately your ikigai.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <!-- Source Responses -->
+                        <div>
+    <div class="flex justify-between items-center mb-4">
+        <h3 class="font-bold text-lg">Your Responses</h3>
+    </div>
+    <p class="text-sm text-gray-600 mb-3">💡 Drag items from here into the converging zones on the right that best match them.</p>
+                            
+                            <div class="space-y-4">
+                                ${renderSourceCircle('love', '❤️ What You Love', '#6b6b6b')}
+                                ${renderSourceCircle('needs', '🌍 What the World Needs', '#6b6b6b')}
+                                ${renderSourceCircle('paid_for', '💰 What You Can Be Paid For', '#6b6b6b')}
+                                ${renderSourceCircle('good_at', '⭐ What You Are Good At', '#6b6b6b')}
+                            </div>
+                        ${renderVennDiagram()}
+</div>
+
+                        <!-- Venn Diagram Visualization -->
+                        <div>
+                            <h3 class="font-bold text-lg mb-2">Converging Zones</h3>
+                            <p class="text-sm text-gray-600 mb-4">These zones represent where your circles overlap. Drop items here that fit multiple circles.</p>
+
+                            <!-- Overlap Lists -->
+                            <div class="mt-6 space-y-3">
+                                ${renderOverlapArea('passion', '🔥 Passion: What You Are Good At + What You Love', overlapDefinitions.passion)}
+				${renderOverlapArea('mission', '🎯 Mission: What You Love + What the World Needs', overlapDefinitions.mission)}
+                                ${renderOverlapArea('profession', '💼 Profession: What You Can Be Paid For + What You Are Good At', overlapDefinitions.profession)}
+				${renderOverlapArea('vocation', '🌟 Vocation: What the World Needs + What You Can Be Paid For', overlapDefinitions.vocation)}
+
+
+
+
+                                
+                                <div class="bg-orange-50 border-2 border-orange-300 rounded-xl p-4">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <h4 class="font-bold text-orange-600">✨ Your Purpose (All Four Circles)</h4>
+                                        <button class="text-sm text-orange-600" onclick="showTooltip(event, 'ikigai')" aria-label="Learn more about ikigai">ⓘ</button>
+                                    </div>
+                                    <div class="drop-zone min-h-[80px]" data-zone="ikigai" ondrop="handleDrop(event)" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)">
+                                        ${appState.ikigai.map(item => `
+                                            <div class="response-chip bg-orange-100 border-orange-400" draggable="true" data-item="${escapeHtml(item)}" data-source="ikigai">
+                                                ${escapeHtml(item)}
+                                            </div>
+                                        `).join('')}
+                                        ${appState.ikigai.length === 0 ? '<p class="text-gray-400 text-sm p-4">Drag items that fit ALL FOUR circles here</p>' : ''}
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    ${appState.overlaps.passion.length === 0 && appState.overlaps.mission.length === 0 &&
+                      appState.overlaps.profession.length === 0 && appState.overlaps.vocation.length === 0 &&
+                      appState.ikigai.length === 0 ? `
+                        <div class="info-box warning">
+                            <span>⚠️</span>
+                            <div>
+                                <strong>No convergences identified yet</strong>
+                                <p class="text-sm mt-1">You haven't categorized any responses yet. Drag items from your responses into the converging zones that match, or use the guide mode for help identifying which items fit together.</p>
+                                <button onclick="startGuideMode()" class="zen-button small mt-2">
+                                    🎯 Help Me Categorize
+                                </button>
+                            </div>
+                        </div>
+                    ` : ''}
+
+
+<div class="flex justify-between items-center pt-6 border-t">
+    <button onclick="goToStep(2)" class="zen-button secondary">
+        ← Back to Your Circles
+    </button>
+    <button onclick="completeStep3()" class="zen-button">
+        Explore What's Missing →
+    </button>
+</div>
+                </div>
+            `;
+        }
+
+        function renderSourceCircle(circle, label, color) {
+    return `
+        <div class="mb-4">
+            <h4 class="font-semibold mb-2" style="color: ${color}">${label}</h4>
+            <div class="drop-zone space-y-2 min-h-[60px] p-2 border-2 border-dashed border-gray-300 rounded-lg"
+                 data-zone="${circle}"
+                 ondrop="handleDrop(event)"
+                 ondragover="handleDragOver(event)"
+                 ondragleave="handleDragLeave(event)">
+                ${appState.answers[circle].map((item, i) => `
+                    <div class="response-chip ${circle}" draggable="true" data-item="${escapeHtml(item)}" data-source="${circle}" data-index="${i}">
+                        ${escapeHtml(item)}
+                    </div>
+                `).join('')}
+                ${appState.answers[circle].length === 0 ? '<p class="text-gray-400 text-xs p-2">No items</p>' : ''}
+            </div>
+        </div>
+    `;
+}
+
+        function renderOverlapArea(type, label, definition) {
+            return `
+                <div class="border-2 border-gray-200 rounded-xl p-3">
+                    <div class="flex justify-between items-center mb-2">
+                        <h4 class="font-semibold text-sm">${label}</h4>
+                        <button class="text-sm text-gray-600" onclick="showTooltip(event, '${type}')" aria-label="Learn more about ${type}">ⓘ</button>
+                    </div>
+                    <div class="drop-zone min-h-[60px]" data-zone="${type}" ondrop="handleDrop(event)" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)">
+                        ${appState.overlaps[type].map(item => `
+                            <div class="response-chip" draggable="true" data-item="${escapeHtml(item)}" data-source="${type}">
+                                ${escapeHtml(item)}
+                            </div>
+                        `).join('')}
+                        ${appState.overlaps[type].length === 0 ? '<p class="text-gray-400 text-xs p-2">Drop items here</p>' : ''}
+                    </div>
+                </div>
+            `;
+        }
+
+function renderVennDiagram() {
+    // Count items in each area
+    const counts = {
+        love: appState.answers.love.length,
+        needs: appState.answers.needs.length,
+        paid_for: appState.answers.paid_for.length,
+        good_at: appState.answers.good_at.length,
+        passion: appState.overlaps.passion.length,
+        mission: appState.overlaps.mission.length,
+        profession: appState.overlaps.profession.length,
+        vocation: appState.overlaps.vocation.length,
+        ikigai: appState.ikigai.length
+    };
+
+    return `
+        <div class="venn-container bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 border-2 border-gray-200">
+            <svg class="venn-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <!-- Gradients for overlap areas -->
+                    <radialGradient id="passionGrad" cx="50%" cy="50%">
+                        <stop offset="0%" style="stop-color:#FF6B35;stop-opacity:0.3" />
+                        <stop offset="100%" style="stop-color:#FF6B35;stop-opacity:0.1" />
+                    </radialGradient>
+                    <radialGradient id="missionGrad" cx="50%" cy="50%">
+                        <stop offset="0%" style="stop-color:#4FC3F7;stop-opacity:0.3" />
+                        <stop offset="100%" style="stop-color:#4FC3F7;stop-opacity:0.1" />
+                    </radialGradient>
+                    <radialGradient id="professionGrad" cx="50%" cy="50%">
+                        <stop offset="0%" style="stop-color:#8BC34A;stop-opacity:0.3" />
+                        <stop offset="100%" style="stop-color:#8BC34A;stop-opacity:0.1" />
+                    </radialGradient>
+                    <radialGradient id="vocationGrad" cx="50%" cy="50%">
+                        <stop offset="0%" style="stop-color:#FFE082;stop-opacity:0.3" />
+                        <stop offset="100%" style="stop-color:#FFE082;stop-opacity:0.1" />
+                    </radialGradient>
+                </defs>
+                
+                <!-- Main Circles (transparent with colored borders) -->
+                <circle cx="250" cy="150" r="120" fill="none" stroke="#FF6B6B" stroke-width="3" opacity="0.7" />
+                <circle cx="170" cy="280" r="120" fill="none" stroke="#4ECDC4" stroke-width="3" opacity="0.7" />
+                <circle cx="330" cy="280" r="120" fill="none" stroke="#95E1D3" stroke-width="3" opacity="0.7" />
+                <circle cx="250" cy="330" r="120" fill="none" stroke="#FFE66D" stroke-width="3" opacity="0.7" />
+                
+                <!-- Shaded Overlap Regions -->
+                <!-- Passion: Love + Good At (top-left) -->
+                <ellipse cx="200" cy="200" rx="70" ry="60" fill="url(#passionGrad)" />
+                
+                <!-- Mission: Love + Needs (top-right) -->
+                <ellipse cx="300" cy="200" rx="70" ry="60" fill="url(#missionGrad)" />
+                
+                <!-- Profession: Good At + Paid For (bottom-left) -->
+                <ellipse cx="200" cy="310" rx="70" ry="60" fill="url(#professionGrad)" />
+                
+                <!-- Vocation: Needs + Paid For (bottom-right) -->
+                <ellipse cx="300" cy="310" rx="70" ry="60" fill="url(#vocationGrad)" />
+                
+                <!-- Center Ikigai highlight -->
+                <circle cx="250" cy="250" r="40" fill="#FF6B35" opacity="0.8" />
+                
+                <!-- Main Circle Labels with counts -->
+                <text x="250" y="60" text-anchor="middle" font-size="16" font-weight="700" fill="#FF6B6B">Love</text>
+                <text x="250" y="80" text-anchor="middle" font-size="12" fill="#666">(${counts.love} items)</text>
+                
+                <text x="420" y="295" text-anchor="middle" font-size="16" font-weight="700" fill="#95E1D3">Needs</text>
+                <text x="420" y="315" text-anchor="middle" font-size="12" fill="#666">(${counts.needs} items)</text>
+                
+                <text x="250" y="470" text-anchor="middle" font-size="16" font-weight="700" fill="#E6C200">Paid For</text>
+                <text x="250" y="490" text-anchor="middle" font-size="12" fill="#666">(${counts.paid_for} items)</text>
+                
+                <text x="80" y="295" text-anchor="middle" font-size="16" font-weight="700" fill="#4ECDC4">Good At</text>
+                <text x="80" y="315" text-anchor="middle" font-size="12" fill="#666">(${counts.good_at} items)</text>
+                
+                <!-- Overlap Area Labels with counts -->
+                <text x="200" y="185" text-anchor="middle" font-size="11" font-weight="700" fill="#FF6B35">PASSION</text>
+                <text x="200" y="200" text-anchor="middle" font-size="10" fill="#FF6B35">(${counts.passion})</text>
+                
+                <text x="300" y="185" text-anchor="middle" font-size="11" font-weight="700" fill="#4FC3F7">MISSION</text>
+                <text x="300" y="200" text-anchor="middle" font-size="10" fill="#4FC3F7">(${counts.mission})</text>
+                
+                <text x="300" y="325" text-anchor="middle" font-size="11" font-weight="700" fill="#E6A500">VOCATION</text>
+                <text x="300" y="340" text-anchor="middle" font-size="10" fill="#E6A500">(${counts.vocation})</text>
+                
+                <text x="200" y="325" text-anchor="middle" font-size="11" font-weight="700" fill="#8BC34A">PROFESSION</text>
+                <text x="200" y="340" text-anchor="middle" font-size="10" fill="#8BC34A">(${counts.profession})</text>
+                
+                <!-- Center Ikigai Label -->
+                <text x="250" y="245" text-anchor="middle" fill="white" font-size="11" font-weight="bold">YOUR</text>
+                <text x="250" y="260" text-anchor="middle" fill="white" font-size="11" font-weight="bold">PURPOSE</text>
+                <text x="250" y="275" text-anchor="middle" fill="white" font-size="10">(${counts.ikigai})</text>
+            </svg>
+                    </div>
+    `;
+}
+        // Tooltip functionality
+        function showTooltip(event, type) {
+            const tooltip = domCache.get('tooltip');
+            if (!tooltip) return;
+
+            const definitions = {
+                passion: PDF_CONTENT.step3.definitions.passion.text,
+                mission: PDF_CONTENT.step3.definitions.mission.text,
+                profession: PDF_CONTENT.step3.definitions.profession.text,
+                vocation: PDF_CONTENT.step3.definitions.vocation.text,
+                ikigai: PDF_CONTENT.step3.definitions.ikigai.text
+            };
+
+            tooltip.textContent = definitions[type];
+            tooltip.classList.add('show');
+
+            const rect = event.target.getBoundingClientRect();
+            tooltip.style.left = rect.left + 'px';
+            tooltip.style.top = (rect.bottom + 10) + 'px';
+
+            setTimeout(() => {
+                tooltip.classList.remove('show');
+            }, CONFIG.TOOLTIP_TIMEOUT);
+        }
+
+        // Guide Mode for Step 3
+        function startGuideMode() {
+            // Collect all responses
+            const allItems = [];
+            ['love', 'needs', 'paid_for', 'good_at'].forEach(circle => {
+                appState.answers[circle].forEach(item => {
+                    allItems.push({ item, circle });
+                });
+            });
+            
+            if (allItems.length === 0) {
+                showAlert('Add Your Responses First', 'You\'ll need to add responses in Step 2 before using the guide mode.');
+                return;
+            }
+            
+            // Create guide modal
+            let currentIndex = 0;
+            
+            function renderGuideCard() {
+                if (currentIndex >= allItems.length) {
+                    closeGuideMode();
+                    return;
+                }
+                
+                const { item } = allItems[currentIndex];
+                
+                return `
+                    <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2000; background: white; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); padding: 2rem; max-width: 500px; width: 90%;">
+                        <h3 class="text-xl font-bold mb-4">Item ${currentIndex + 1} of ${allItems.length}</h3>
+                        <div class="bg-orange-50 p-4 rounded-xl mb-4">
+                            <p class="font-medium">"${item}"</p>
+                        </div>
+                        <p class="mb-4 text-sm text-gray-600">Which convergences does this fit? Select all that apply:</p>
+                        <div class="space-y-2 mb-6">
+                            <label class="flex items-center gap-2 p-3 border-2 rounded-lg cursor-pointer hover:bg-gray-50">
+                                <input type="checkbox" name="overlap" value="passion" class="w-4 h-4">
+                                <div>
+                                    <div class="font-medium">🔥 Passion (Love + Good At)</div>
+                                </div>
+                            </label>
+                            <label class="flex items-center gap-2 p-3 border-2 rounded-lg cursor-pointer hover:bg-gray-50">
+                                <input type="checkbox" name="overlap" value="mission" class="w-4 h-4">
+                                <div>
+                                    <div class="font-medium">🎯 Mission (Love + World Needs)</div>
+                                </div>
+                            </label>
+                            <label class="flex items-center gap-2 p-3 border-2 rounded-lg cursor-pointer hover:bg-gray-50">
+                                <input type="checkbox" name="overlap" value="profession" class="w-4 h-4">
+                                <div>
+                                    <div class="font-medium">💼 Profession (Good At + Paid For)</div>
+                                </div>
+                            </label>
+                            <label class="flex items-center gap-2 p-3 border-2 rounded-lg cursor-pointer hover:bg-gray-50">
+                                <input type="checkbox" name="overlap" value="vocation" class="w-4 h-4">
+                                <div>
+                                    <div class="font-medium">🌟 Vocation (World Needs + Paid For)</div>
+                                </div>
+                            </label>
+                            <label class="flex items-center gap-2 p-3 border-2 border-orange-400 rounded-lg cursor-pointer hover:bg-orange-50">
+                                <input type="checkbox" name="overlap" value="ikigai" class="w-4 h-4">
+                                <div>
+                                    <div class="font-medium text-orange-600">✨ Ikigai (All Four Circles)</div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="flex gap-2">
+                            <button onclick="skipGuideItem()" class="zen-button secondary flex-1">Skip This Item</button>
+                            <button onclick="saveGuideItem()" class="zen-button flex-1">Save & Next →</button>
+                        </div>
+                        <button onclick="closeGuideMode()" class="text-sm text-gray-600 hover:text-gray-800 mt-4 block w-full text-center">Close</button>
+                    </div>
+                    <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1999;" onclick="closeGuideMode()"></div>
+                `;
+            }
+            
+            window.skipGuideItem = function() {
+                currentIndex++;
+                document.getElementById('guideModal').innerHTML = renderGuideCard();
+            };
+            
+            window.saveGuideItem = function() {
+                const { item } = allItems[currentIndex];
+                const checkboxes = document.querySelectorAll('input[name="overlap"]:checked');
+                
+                checkboxes.forEach(cb => {
+                    const zone = cb.value;
+                    if (zone === 'ikigai') {
+                        if (!appState.ikigai.includes(item)) {
+                            appState.ikigai.push(item);
+                        }
+                    } else {
+                        if (!appState.overlaps[zone].includes(item)) {
+                            appState.overlaps[zone].push(item);
+                        }
+                    }
+                });
+                
+                saveState();
+                currentIndex++;
+                
+                if (currentIndex >= allItems.length) {
+                    closeGuideMode();
+                    render();
+                } else {
+                    document.getElementById('guideModal').innerHTML = renderGuideCard();
+                }
+            };
+            
+            window.closeGuideMode = function() {
+                const modal = document.getElementById('guideModal');
+                if (modal) modal.remove();
+                render();
+            };
+            
+            // Create modal
+            const modal = document.createElement('div');
+            modal.id = 'guideModal';
+            modal.innerHTML = renderGuideCard();
+            document.body.appendChild(modal);
+        }
+
+        function setupStep3Handlers() {
+            // Setup drag and drop for response chips
+            const draggables = document.querySelectorAll('.response-chip');
+            draggables.forEach(item => {
+                item.addEventListener('dragstart', handleDragStart);
+                item.addEventListener('dragend', handleDragEnd);
+            });
+        }
+
+        let draggedItem = null;
+
+        function handleDragStart(e) {
+            draggedItem = e.target;
+            e.target.classList.add('dragging');
+            e.dataTransfer.effectAllowed = 'move';
+            e.dataTransfer.setData('text/html', e.target.innerHTML);
+        }
+
+        function handleDragEnd(e) {
+            e.target.classList.remove('dragging');
+        }
+
+        function handleDragOver(e) {
+            if (e.preventDefault) {
+                e.preventDefault();
+            }
+            const dropZone = e.target.closest('.drop-zone');
+            if (dropZone) {
+                dropZone.classList.add('drag-over');
+            }
+            e.dataTransfer.dropEffect = 'move';
+            return false;
+        }
+
+        function handleDragLeave(e) {
+            const dropZone = e.target.closest('.drop-zone');
+            if (dropZone) {
+                dropZone.classList.remove('drag-over');
+            }
+        }
+
+        function handleDrop(e) {
+    if (e.stopPropagation) {
+        e.stopPropagation();
+    }
+    
+    const dropZone = e.target.closest('.drop-zone');
+    if (!dropZone) return false;
+    
+    dropZone.classList.remove('drag-over');
+    
+    const zone = dropZone.dataset.zone;
+    const item = draggedItem.dataset.item;
+    const source = draggedItem.dataset.source;
+    
+    // Don't do anything if dropping in the same zone
+    if (source === zone) {
+        return false;
+    }
+    
+    // Check if dropping back to a source circle (love, needs, paid_for, good_at)
+    const sourceCircles = ['love', 'needs', 'paid_for', 'good_at'];
+    const overlapZones = ['passion', 'mission', 'profession', 'vocation', 'ikigai'];
+    
+    if (sourceCircles.includes(zone)) {
+        // Dropping back to a source circle
+        // Remove from the specific overlap it came from (if it came from an overlap)
+        if (overlapZones.includes(source)) {
+            if (source === 'ikigai') {
+                StateManager.removeFromIkigai(item);
+            } else {
+                StateManager.removeFromOverlap(source, item);
+            }
+        }
+        // Note: We don't add it back to the source circle because it was never removed from there
+    } else {
+        // Dropping to an overlap zone
+        // Add to new zone
+        if (zone === 'ikigai') {
+            StateManager.addToIkigai(item);
+        } else {
+            StateManager.addToOverlap(zone, item);
+        }
+
+        // Remove from source if it was an overlap zone (moving between overlaps)
+        if (overlapZones.includes(source)) {
+            if (source === 'ikigai') {
+                StateManager.removeFromIkigai(item);
+            } else {
+                StateManager.removeFromOverlap(source, item);
+            }
+        }
+        // Note: If source is a circle (love, needs, etc.), we don't remove it from there
+        // because items can exist in both their source circle AND in overlaps
+    }
+
+    render();
+
+    return false;
+}
+
+        function completeStep3() {
+            appState.currentStep = 4;
+            saveState();
+            render();
+        }
+
+// Memoized Step 4 Analysis Calculator
+const calculateStep4Analysis = memoize((answers, overlaps, ikigai) => {
+    // Build a map of unique items and track which SOURCE CIRCLES they actually appear in
+    const itemMap = new Map();
+
+    // First, scan all source circles to see where each item actually exists
+    const allCircles = ['love', 'needs', 'paid_for', 'good_at'];
+
+    // Helper function to normalize item text for comparison
+    const normalizeItem = (item) => item.toLowerCase().trim();
+
+    // Build map from source circles (Step 2 answers)
+    allCircles.forEach(circle => {
+        if (!answers[circle]) return;
+        answers[circle].forEach(item => {
+            const itemNormalized = normalizeItem(item);
+
+            if (!itemMap.has(itemNormalized)) {
+                itemMap.set(itemNormalized, {
+                    originalText: item,
+                    presentInCircles: new Set(),
+                    inOverlaps: [],
+                    isIkigai: false
+                });
+            }
+
+            itemMap.get(itemNormalized).presentInCircles.add(circle);
+        });
+    });
+
+    // Now check which items appear in overlaps (for display purposes only)
+    Object.entries(overlaps).forEach(([type, items]) => {
+        if (!items) return;
+        items.forEach(item => {
+            const itemNormalized = normalizeItem(item);
+
+            if (itemMap.has(itemNormalized)) {
+                itemMap.get(itemNormalized).inOverlaps.push(type);
+            }
+        });
+    });
+
+    // Check ikigai items
+    if (ikigai) {
+        ikigai.forEach(item => {
+            const itemNormalized = normalizeItem(item);
+
+            if (itemMap.has(itemNormalized)) {
+                itemMap.get(itemNormalized).isIkigai = true;
+            }
+        });
+    }
+
+    // Build analysis array - only include items that are in at least one overlap or ikigai
+    const analysis = [];
+
+    itemMap.forEach((data) => {
+        // Only include if item is in overlaps or ikigai
+        if (data.inOverlaps.length > 0 || data.isIkigai) {
+            const present = Array.from(data.presentInCircles);
+            const missing = allCircles.filter(c => !data.presentInCircles.has(c));
+
+            analysis.push({
+                activity: data.originalText,
+                type: data.isIkigai ? 'ikigai' : data.inOverlaps[0], // Use first overlap type for display
+                present: present,
+                missing: missing
+            });
+        }
+    });
+
+    return analysis;
+});
+
+// Render Step 4 - Identify Missing Circles
+function renderStep4() {
+    // Use memoized calculation
+    const analysis = calculateStep4Analysis(
+        appState.answers,
+        appState.overlaps,
+        appState.ikigai
+    );
+
+    appState.step4Analysis = analysis;
+    saveStateImmediate(); // Use immediate save for step transitions
+
+    return `
+        <div class="zen-card max-w-6xl mx-auto">
+            <h2 class="action-header">${PDF_CONTENT.step4.title}</h2>
+            <p class="instruction mb-4">
+                ${PDF_CONTENT.step4.text}
+            </p>
+            <div class="info-box mb-6">
+                <span>🎯</span>
+                <div>
+                    <strong>Why Missing Circles Matter</strong>
+                    <p class="text-sm mt-1">Understanding what's missing helps you see what to develop or change to move closer to your ikigai. These gaps reveal opportunities for growth, learning, or shifts in how you approach these activities.</p>
+                </div>
+            </div>
+
+            ${analysis.length === 0 ? `
+                <div class="empty-state">
+                    <div class="empty-state-icon">⚠️</div>
+                    <p class="text-gray-600 mb-4">You haven't identified any convergences yet. Please go back to Step 3 and categorize your responses.</p>
+                    <button onclick="goToStep(3)" class="zen-button">
+                        Go Back to Step 3
+                    </button>
+                </div>
+            ` : `
+                <div class="overflow-x-auto mb-6">
+                    <table class="w-full border-collapse">
+                        <thead>
+                            <tr class="bg-gray-50">
+                                <th class="border border-gray-300 px-4 py-3 text-left">Activity/Theme</th>
+                                <th class="border border-gray-300 px-4 py-3 text-left">Appears in these circles</th>
+                                <th class="border border-gray-300 px-4 py-3 text-left">Missing in these circles</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${analysis.map((item, i) => `
+                                <tr class="${i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}">
+                                    <td class="border border-gray-300 px-4 py-3 font-medium">
+                                        ${escapeHtml(item.activity)}
+                                        ${item.type === 'ikigai' ? '<span class="ml-2 text-xs bg-orange-500 text-white px-2 py-1 rounded">Ikigai!</span>' : ''}
+                                    </td>
+                                    <td class="border border-gray-300 px-4 py-3">
+                                        <ul class="text-sm">
+                                            ${item.present.map(c => `<li>▪ ${CIRCLE_LABELS[c]}</li>`).join('')}
+                                        </ul>
+                                    </td>
+                                    <td class="border border-gray-300 px-4 py-3">
+                                        ${item.missing.length === 0 ?
+                                            '<span class="text-green-600 font-semibold">Nothing - Completed!</span>' :
+                                            `<ul class="text-sm text-orange-600">${item.missing.map(c => `<li>▪ ${CIRCLE_LABELS[c]}</li>`).join('')}</ul>`
+                                        }
+                                    </td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="flex justify-between pt-6 border-t">
+                    <button onclick="goToStep(3)" class="zen-button secondary">
+                        ← Back to Find Convergences
+                    </button>
+                    <button onclick="completeStep4()" class="zen-button">
+                        Reflect Deeply →
+                    </button>
+                </div>
+            `}
+        </div>
+    `;
+}
+        function setupStep4Handlers() {
+            // No specific handlers needed
+        }
+
+        function completeStep4() {
+            if (appState.step4Analysis.length === 0) {
+                showAlert('Complete Step 3 First', 'Please categorize your responses in Step 3 before continuing. Use the drag-and-drop or guide mode to identify your convergences.');
+                return;
+            }
+            appState.currentStep = 5;
+            appState.step5CurrentActivity = 0;
+            saveState();
+            render();
+        }
+
+        // Render Step 5 - Address Missing Circles (Enhanced with Accordion)
+        function renderStep5() {
+            const activities = appState.step4Analysis.filter(a => a.missing.length > 0);
+            
+            if (activities.length === 0) {
+                // No missing circles - can proceed directly
+                return `
+                    <div class="zen-card max-w-4xl mx-auto text-center">
+                        <h2 class="text-3xl font-bold mb-4">Congratulations! 🎉</h2>
+                        <p class="text-xl mb-6">All your activities are completed across the four circles. You're ready to know your Purpose!</p>
+                        <button onclick="completeStep5()" class="zen-button">
+                            View Your Purpose Results →
+                        </button>
+                    </div>
+                `;
+            }
+
+            const currentIndex = appState.step5CurrentActivity || 0;
+            const currentActivity = activities[currentIndex];
+
+            // Get questions for missing circles
+            const questionsToAsk = [];
+            currentActivity.missing.forEach(circle => {
+                const section = PDF_CONTENT.step5[circle];
+                if (section) {
+                    questionsToAsk.push({
+                        circle: circle,
+                        title: section.title,
+                        intro: section.intro,
+                        questions: section.questions
+                    });
+                }
+            });
+
+            const activityKey = `${currentActivity.activity}`;
+            
+            // Calculate progress
+            let totalQuestions = 0;
+            let answeredQuestions = 0;
+            questionsToAsk.forEach(section => {
+                section.questions.forEach((q, qIndex) => {
+                    totalQuestions++;
+                    const responseKey = `${activityKey}|${section.circle}|${qIndex}`;
+                    if (appState.step5Reflections[responseKey]?.trim()) {
+                        answeredQuestions++;
+                    }
+                });
+            });
+
+            return `
+                <div class="zen-card max-w-5xl mx-auto">
+                    <h2 class="action-header">${PDF_CONTENT.step5.title}</h2>
+                    <p class="instruction mb-6">
+                        ${PDF_CONTENT.step5.intro}
+                    </p>
+
+                    <!-- Activity Card -->
+                    <div class="bg-orange-50 border-2 border-orange-300 rounded-xl p-6 mb-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2">Activity: "${escapeHtml(currentActivity.activity)}"</h3>
+                                <div class="text-sm space-y-1">
+                                    <p><strong>Present in:</strong> ${currentActivity.present.map(c => CIRCLE_LABELS[c]).join(', ')}</p>
+                                    <p><strong>Missing from:</strong> <span class="text-orange-600 font-semibold">${currentActivity.missing.map(c => CIRCLE_LABELS[c]).join(', ')}</span></p>
+                                </div>
+                            </div>
+                            <div class="text-sm text-gray-600 text-right">
+                                <div>Activity ${currentIndex + 1} of ${activities.length}</div>
+                                <div class="mt-2">
+                                    <div class="font-semibold">${answeredQuestions} of ${totalQuestions} questions</div>
+                                    <div class="w-32 h-2 bg-gray-200 rounded-full mt-1">
+                                        <div class="h-full bg-orange-500 rounded-full transition-all" style="width: ${(answeredQuestions/totalQuestions*100)}%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion Questions -->
+                    ${questionsToAsk.map((section, sectionIndex) => `
+                        <div class="border-l-4 border-orange-500 pl-6 mb-6">
+                            <h3 class="text-xl font-bold mb-2">${section.title}</h3>
+                            <p class="mb-4 text-gray-600">${section.intro}</p>
+                            
+                            <div class="space-y-2">
+                                ${section.questions.map((question, qIndex) => {
+                                    const responseKey = `${activityKey}|${section.circle}|${qIndex}`;
+                                    const savedResponse = appState.step5Reflections[responseKey] || '';
+                                    const isAnswered = savedResponse.trim().length > 0;
+                                    const accordionId = `accordion-${sectionIndex}-${qIndex}`;
+                                    
+                                    return `
+                                        <div class="accordion-item">
+                                            <div class="accordion-header ${isAnswered ? 'answered' : ''}" onclick="toggleAccordion('${accordionId}')">
+                                                <div class="accordion-title">
+                                                    <strong>Q${qIndex + 1}:</strong> ${question}
+                                                </div>
+                                                <div class="accordion-status">
+                                                    ${isAnswered ? '<span class="accordion-checkmark">✓</span>' : ''}
+                                                    <span class="collapsible-icon">▼</span>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-content" id="${accordionId}">
+                                                <div class="accordion-body">
+                                                    <textarea
+                                                        class="zen-textarea"
+                                                        rows="4"
+                                                        placeholder="Your honest thoughts matter most..."
+                                                        onchange="saveReflection('${escapeHtml(responseKey)}', this.value)"
+                                                    >${escapeHtml(savedResponse)}</textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </div>
+                    `).join('')}
+
+                    <div class="flex justify-end gap-2 mb-4">
+                        <button onclick="expandAllAccordions()" class="zen-button secondary small">
+                            Expand All
+                        </button>
+                        <button onclick="collapseAllAccordions()" class="zen-button secondary small">
+                            Collapse All
+                        </button>
+                    </div>
+
+                    <div class="flex justify-between pt-6 border-t">
+                        ${currentIndex > 0 ? `
+                            <button onclick="previousActivity()" class="zen-button secondary">
+                                ← Previous Activity
+                            </button>
+                        ` : `
+                            <button onclick="goToStep(4)" class="zen-button secondary">
+                                ← Back to Explore Gaps
+                            </button>
+                        `}
+                        
+                        ${currentIndex < activities.length - 1 ? `
+                            <button onclick="nextActivity()" class="zen-button">
+                                Next Activity →
+                            </button>
+                        ` : `
+                            <button onclick="completeStep5()" class="zen-button">
+                                Complete Reflection & View Results →
+                            </button>
+                        `}
+                    </div>
+                </div>
+            `;
+        }
+
+        function setupStep5Handlers() {
+            // Handlers are inline
+        }
+
+        // Accordion functions
+        function toggleAccordion(accordionId) {
+            const content = document.getElementById(accordionId);
+            const wasActive = content.classList.contains('active');
+            
+            // Close all accordions
+            document.querySelectorAll('.accordion-content').forEach(ac => {
+                ac.classList.remove('active');
+            });
+            
+            // Open this one if it wasn't active
+            if (!wasActive) {
+                content.classList.add('active');
+            }
+        }
+
+        function expandAllAccordions() {
+            document.querySelectorAll('.accordion-content').forEach(ac => {
+                ac.classList.add('active');
+            });
+        }
+
+        function collapseAllAccordions() {
+            document.querySelectorAll('.accordion-content').forEach(ac => {
+                ac.classList.remove('active');
+            });
+        }
+
+        function saveReflection(key, value) {
+            StateManager.setReflection(key, value);
+            showSaveIndicator();
+        }
+
+        function previousActivity() {
+            appState.step5CurrentActivity = Math.max(0, (appState.step5CurrentActivity || 0) - 1);
+            render();
+        }
+
+        function nextActivity() {
+            appState.step5CurrentActivity = (appState.step5CurrentActivity || 0) + 1;
+            render();
+        }
+
+        function completeStep5() {
+            appState.currentStep = 6;
+            saveState();
+            render();
+        }
+
+        // Render Results
+        function renderResults() {
+            return `
+                <div class="zen-card max-w-6xl mx-auto">
+                    <h1 class="text-4xl font-bold text-center mb-8">Congratulations on completing this journey!</h1>
+
+                    ${appState.ikigai.length > 0 ? `
+                        <div class="bg-gradient-to-br from-orange-50 to-orange-100 border-4 border-orange-500 rounded-2xl p-8 mb-8 text-center">
+                            <h2 class="text-3xl font-bold text-orange-600 mb-4">✨ Your Ikigai ✨</h2>
+                            <p class="text-gray-700 mb-6">${PDF_CONTENT.step3.definitions.ikigai.text}</p>
+                            <div class="space-y-3">
+                                ${appState.ikigai.map(item => `
+                                    <div class="text-2xl font-bold bg-white rounded-xl p-4 shadow-md">${escapeHtml(item)}</div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    ` : `
+                        <div class="info-box warning mb-8">
+                            
+                            <div>
+                                <h3 class="font-bold mb-2">No Complete Ikigai Yet</h3>
+                                <p class="text-sm">You haven't identified an activity that appears in all four circles. This is normal! The convergences below show you're making progress. Continue refining and exploring these areas.</p>
+                            </div>
+                        </div>
+                    `}
+
+<!-- Complete Responses and Overlaps Summary -->
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-bold mb-4">📋 Your Complete Responses</h2>
+                        <p class="text-gray-600 mb-6">Here's a complete summary of your ikigai journey. Review these insights every 6-12 months and update them as your life evolves.</p>
+
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <!-- Left Column: Four Circles -->
+                            <div>
+                                <h3 class="text-lg font-semibold mb-4 text-gray-700">The Four Circles</h3>
+                                <div class="space-y-6">
+                                    ${Object.entries(appState.answers).map(([circle, items]) => `
+                                        <div class="border-l-4 border-gray-300 pl-4">
+                                            <h4 class="font-bold mb-2 text-base">${CIRCLE_LABELS[circle]}</h4>
+                                            <ul class="space-y-1">
+                                                ${items.map(item => `<li class="text-sm text-gray-700">▪ ${escapeHtml(item)}</li>`).join('')}
+                                            </ul>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            
+                            <!-- Right Column: Overlapping Areas -->
+                            <div>
+                                <h3 class="text-lg font-semibold mb-4 text-gray-700">Key Convergences</h3>
+                                ${Object.values(appState.overlaps).some(arr => arr.length > 0) || appState.ikigai.length > 0 ? `
+                                    <div class="space-y-6">
+                                        ${appState.overlaps.passion.length > 0 ? `
+                                            <div class="border-l-4 border-orange-400 pl-4">
+                                                <h4 class="font-bold mb-2 text-base">🔥 Your Passion</h4>
+                                                <p class="text-xs text-gray-600 mb-2">What you love + What you're good at</p>
+                                                <ul class="space-y-1">
+                                                    ${appState.overlaps.passion.map(item => `<li class="text-sm text-gray-700">▪ ${escapeHtml(item)}</li>`).join('')}
+                                                </ul>
+                                            </div>
+                                        ` : ''}
+
+                                        ${appState.overlaps.mission.length > 0 ? `
+                                            <div class="border-l-4 border-blue-400 pl-4">
+                                                <h4 class="font-bold mb-2 text-base">🎯 Your Mission</h4>
+                                                <p class="text-xs text-gray-600 mb-2">What you love + What the world needs</p>
+                                                <ul class="space-y-1">
+                                                    ${appState.overlaps.mission.map(item => `<li class="text-sm text-gray-700">▪ ${escapeHtml(item)}</li>`).join('')}
+                                                </ul>
+                                            </div>
+                                        ` : ''}
+
+                                        ${appState.overlaps.profession.length > 0 ? `
+                                            <div class="border-l-4 border-green-400 pl-4">
+                                                <h4 class="font-bold mb-2 text-base">💼 Your Profession</h4>
+                                                <p class="text-xs text-gray-600 mb-2">What you're good at + What you can be paid for</p>
+                                                <ul class="space-y-1">
+                                                    ${appState.overlaps.profession.map(item => `<li class="text-sm text-gray-700">▪ ${escapeHtml(item)}</li>`).join('')}
+                                                </ul>
+                                            </div>
+                                        ` : ''}
+
+                                        ${appState.overlaps.vocation.length > 0 ? `
+                                            <div class="border-l-4 border-yellow-400 pl-4">
+                                                <h4 class="font-bold mb-2 text-base">🌟 Your Vocation</h4>
+                                                <p class="text-xs text-gray-600 mb-2">What the world needs + What you can be paid for</p>
+                                                <ul class="space-y-1">
+                                                    ${appState.overlaps.vocation.map(item => `<li class="text-sm text-gray-700">▪ ${escapeHtml(item)}</li>`).join('')}
+                                                </ul>
+                                            </div>
+                                        ` : ''}
+
+                                        ${appState.ikigai.length > 0 ? `
+                                            <div class="border-l-4 border-orange-500 pl-4 bg-orange-50 py-3 pr-3 rounded-r-lg">
+                                                <h4 class="font-bold mb-2 text-base text-orange-700">✨ Your Ikigai</h4>
+                                                <p class="text-xs text-gray-600 mb-2">All four circles</p>
+                                                <ul class="space-y-1">
+                                                    ${appState.ikigai.map(item => `<li class="text-sm text-gray-800 font-medium">▪ ${escapeHtml(item)}</li>`).join('')}
+                                                </ul>
+                                            </div>
+                                        ` : ''}
+                                    </div>
+                                ` : `
+                                    <p class="text-sm text-gray-500 italic">No overlapping areas identified yet.</p>
+                                `}
+                            </div>
+                        </div>
+                    </div>
+
+<!-- Collapsible: Step 5 Reflections -->
+                    ${Object.keys(appState.step5Reflections).length > 0 ? `
+                        <div class="collapsible-section mb-8">
+                            <div class="collapsible-header" onclick="toggleReflectionsDetail()">
+                                <h3 class="text-2xl font-bold">Your Reflections on Missing Circles</h3>
+                                <span class="collapsible-icon">▼</span>
+                            </div>
+                            <div class="collapsible-content" id="reflectionsDetail">
+                                <div class="collapsible-body">
+                                    ${renderReflectionsSummary()}
+                                </div>
+                            </div>
+                        </div>
+                    ` : ''}
+
+
+                    <div class="flex flex-wrap gap-4 justify-between pt-8 border-t">
+    <button onclick="goToStep(4)" class="zen-button secondary icon">
+        ← Back to Explore Gaps
+    </button>
+    <div class="flex flex-wrap gap-4">
+        <button onclick="printResults()" class="zen-button secondary icon">
+            🖨️ Print or Save as PDF
+        </button>
+        <button onclick="resetApp()" class="zen-button secondary icon">
+            🔄 Start New Journey
+        </button>
+    </div>
+</div>
+                </div>
+            `;
+        }
+
+        function toggleResultsDetail() {
+            const detail = document.getElementById('resultsDetail');
+            detail.classList.toggle('active');
+        }
+
+function toggleReflectionsDetail() {
+            const detail = document.getElementById('reflectionsDetail');
+            detail.classList.toggle('active');
+        }
+
+        function renderReflectionsSummary() {
+            // Group reflections by activity
+            const reflectionsByActivity = {};
+
+            Object.entries(appState.step5Reflections).forEach(([key, value]) => {
+                if (!value || !value.trim()) return; // Skip empty reflections
+
+                const [activity, circle, questionIndex] = key.split('|');
+
+                if (!reflectionsByActivity[activity]) {
+                    reflectionsByActivity[activity] = {};
+                }
+
+                if (!reflectionsByActivity[activity][circle]) {
+                    reflectionsByActivity[activity][circle] = [];
+                }
+
+                reflectionsByActivity[activity][circle].push({
+                    questionIndex: parseInt(questionIndex),
+                    response: value
+                });
+            });
+
+            if (Object.keys(reflectionsByActivity).length === 0) {
+                return '<p class="text-gray-500 text-center py-8">No reflections recorded yet.</p>';
+            }
+
+            const circleTitles = {
+                love: PDF_CONTENT.step5.love.title,
+                needs: PDF_CONTENT.step5.needs.title,
+                paid_for: PDF_CONTENT.step5.paid_for.title,
+                good_at: PDF_CONTENT.step5.good_at.title
+            };
+
+            let html = '';
+
+            Object.entries(reflectionsByActivity).forEach(([activity, circles]) => {
+                html += `
+                    <div class="mb-8 pb-8 border-b last:border-b-0">
+                        <h4 class="text-xl font-bold mb-4 text-orange-600">Activity: "${escapeHtml(activity)}"</h4>
+
+                        ${Object.entries(circles).map(([circle, reflections]) => {
+                            const circleContent = PDF_CONTENT.step5[circle];
+
+                            return `
+                                <div class="mb-6 bg-gray-50 rounded-xl p-6">
+                                    <h5 class="font-bold text-lg mb-2">${circleTitles[circle]}</h5>
+                                    <p class="text-sm text-gray-600 mb-4 italic">"${CIRCLE_LABELS[circle]}" was missing</p>
+
+                                    <div class="space-y-4">
+                                        ${reflections.map(reflection => {
+                                            const question = circleContent.questions[reflection.questionIndex];
+                                            return `
+                                                <div class="bg-white rounded-lg p-4 border-l-4 border-orange-400">
+                                                    <p class="font-semibold text-sm mb-2 text-gray-700">Q${reflection.questionIndex + 1}: ${question}</p>
+                                                    <p class="text-sm text-gray-800">${escapeHtml(reflection.response)}</p>
+                                                </div>
+                                            `;
+                                        }).join('')}
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                `;
+            });
+
+            return html;
+        }
+
+        // Navigation
+        function goToStep(step) {
+            appState.currentStep = step;
+            saveState();
+            render();
+        }
+
+        // Session Management
+        function openSidebar() {
+            document.getElementById('sidebar').classList.add('open');
+            document.getElementById('sidebarOverlay').classList.add('active');
+            loadSessionsList();
+        }
+
+        function closeSidebar() {
+            document.getElementById('sidebar').classList.remove('open');
+            document.getElementById('sidebarOverlay').classList.remove('active');
+        }
+
+        function saveCurrentSession() {
+            showPrompt(
+                'Give This Journey a Name',
+                'You can return to it anytime from the Sessions menu.',
+                'e.g., "My First Exploration" or "Career Reflection 2025"',
+                (name) => {
+                    if (!name || !name.trim()) {
+                        showAlert('Name Required', 'Please enter a name for your session.');
+                        return;
+                    }
+
+                    try {
+                        const sessions = JSON.parse(localStorage.getItem('ikigai-sessions') || '[]');
+                        sessions.push({
+                            name: escapeHtml(name.trim()),
+                            timestamp: new Date().toISOString(),
+                            state: JSON.parse(JSON.stringify(appState))
+                        });
+                        localStorage.setItem('ikigai-sessions', JSON.stringify(sessions));
+
+                        showSaveIndicator();
+                        loadSessionsList();
+                        showAlert('Session Saved', `Your session "${escapeHtml(name.trim())}" has been saved.`);
+                    } catch (e) {
+                        console.error('Failed to save session:', e);
+                        if (e.name === 'QuotaExceededError') {
+                            showAlert('Storage Full', 'Your browser storage is full. To save this session, delete some old sessions from the Sessions menu first.');
+                        } else {
+                            showAlert('Save Failed', 'Unable to save your session. Please check your browser settings and try again.');
+                        }
+                    }
+                },
+                null // onCancel
+            );
+        }
+
+        function loadSessionsList() {
+            try {
+                const sessions = JSON.parse(localStorage.getItem('ikigai-sessions') || '[]');
+                const list = document.getElementById('sessionsList');
+
+                if (!list) {
+                    console.warn('Sessions list element not found');
+                    return;
+                }
+
+                if (sessions.length === 0) {
+                    list.innerHTML = '<div class="text-gray-500 text-sm"><p class="font-semibold mb-1">No saved sessions yet</p><p class="text-xs">Sessions let you save and revisit your ikigai journey anytime. You can save your current progress as a session from the main menu.</p></div>';
+                    return;
+                }
+
+                list.innerHTML = sessions.map((session, i) => `
+                    <div class="border border-gray-200 rounded-lg p-3 mb-2 bg-white hover:shadow-md transition-shadow">
+                        <div class="font-semibold">${escapeHtml(session.name)}</div>
+                        <div class="text-xs text-gray-500 mb-2">Saved on ${new Date(session.timestamp).toLocaleDateString()} at ${new Date(session.timestamp).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})}</div>
+                        <div class="flex gap-2">
+                            <button onclick="loadSession(${i})" class="text-sm px-3 py-1 bg-orange-500 text-white rounded hover:bg-orange-600">Load</button>
+                            <button onclick="deleteSession(${i})" class="text-sm px-3 py-1 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">Delete</button>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (e) {
+                console.error('Failed to load sessions list:', e);
+                const list = document.getElementById('sessionsList');
+                if (list) {
+                    list.innerHTML = '<p class="text-red-500 text-sm">Failed to load sessions</p>';
+                }
+            }
+        }
+
+        function loadSession(index) {
+            try {
+                const sessions = JSON.parse(localStorage.getItem('ikigai-sessions') || '[]');
+                if (sessions[index]) {
+                    Object.assign(appState, sessions[index].state);
+                    saveStateImmediate(); // Use immediate save when loading session
+                    render();
+                    closeSidebar();
+                }
+            } catch (e) {
+                console.error('Failed to load session:', e);
+                showAlert('Could Not Load Session', 'This session\'s data appears to be corrupted. Please try another session or start fresh.');
+            }
+        }
+
+        function deleteSession(index) {
+            try {
+                const sessions = JSON.parse(localStorage.getItem('ikigai-sessions') || '[]');
+                const sessionName = sessions[index]?.name || 'this session';
+
+                showConfirm(
+                    'Delete Session?',
+                    `Delete "${sessionName}"? This can't be undone.`,
+                    () => {
+                        try {
+                            sessions.splice(index, 1);
+                            localStorage.setItem('ikigai-sessions', JSON.stringify(sessions));
+                            loadSessionsList();
+                            showAlert('Session Deleted', 'The session has been removed from your saved sessions.');
+                        } catch (e) {
+                            console.error('Failed to delete session:', e);
+                            showAlert('Delete Failed', 'Unable to delete the session. Please refresh the page and try again.');
+                        }
+                    },
+                    null // onCancel
+                );
+            } catch (e) {
+                console.error('Failed to load sessions:', e);
+                showAlert('Error', 'Could not load session information.');
+            }
+        }
+
+        // State Management with Error Handling
+        function saveStateImmediate() {
+            try {
+                const stateString = JSON.stringify(appState);
+                localStorage.setItem('ikigai-current-state', stateString);
+                showSaveIndicator();
+            } catch (e) {
+                console.error('Failed to save state:', e);
+                if (e.name === 'QuotaExceededError') {
+                    showAlert('Storage Full', 'You\'re running low on storage space. Try deleting some old sessions to free up space.');
+                } else {
+                    showAlert('Save Failed', 'Unable to save your progress. Please check your browser settings or try refreshing the page.');
+                }
+            }
+        }
+
+        // Debounced version for frequent updates
+        const saveState = debounce(saveStateImmediate, CONFIG.SAVE_DEBOUNCE_MS);
+
+        function loadState() {
+            try {
+                const saved = localStorage.getItem('ikigai-current-state');
+                if (saved) {
+                    const savedState = JSON.parse(saved);
+                    Object.assign(appState, savedState);
+
+                    // Ensure expandedSections exists
+                    if (!appState.expandedSections) {
+                        appState.expandedSections = {
+                            step2Intro: false,
+                            step2Circles: {}
+                        };
+                    }
+
+                    // Ensure promptMode exists
+                    if (!appState.promptMode) {
+                        appState.promptMode = {
+                            active: false,
+                            currentCircle: null,
+                            currentPromptIndex: 0
+                        };
+                    }
+                }
+            } catch (e) {
+                console.error('Failed to load state:', e);
+                // State remains at default initialization - silently start fresh
+            }
+        }
+
+        function showSaveIndicator() {
+            const indicator = domCache.get('saveIndicator');
+            if (!indicator) return;
+
+            indicator.classList.add('show');
+            setTimeout(() => {
+                indicator.classList.remove('show');
+            }, 2000);
+        }
+
+        function resetApp() {
+            showModal({
+                title: 'Start a New Journey?',
+                message: 'This will clear your current progress and start fresh. Your work is auto-saved. Would you like to save it as a session first?',
+                buttons: [
+                    {
+                        text: 'Cancel',
+                        class: 'modal-btn-tertiary',
+                        onClick: null
+                    },
+                    {
+                        text: 'Save as Session First',
+                        class: 'modal-btn-secondary',
+                        onClick: () => {
+                            closeCustomModal();
+                            saveCurrentSession();
+                        }
+                    },
+                    {
+                        text: 'Start Fresh',
+                        class: 'modal-btn-primary',
+                        onClick: () => {
+                            localStorage.removeItem('ikigai-current-state');
+                            location.reload();
+                        }
+                    }
+                ]
+            });
+        }
+
+        // Export Functions
+        function exportToPDF() {
+            showAlert(
+                'PDF Export Coming Soon!',
+                'For now, use the Print button and select "Save as PDF" from your browser\'s print dialog. This will create a beautiful PDF with all your responses and insights.'
+            );
+        }
+
+        function printResults() {
+            window.print();
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', initApp);
+
+        // Close sidebar on overlay click
+        // document.getElementById('sidebarOverlay').addEventListener('click', closeSidebar);
+    </script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

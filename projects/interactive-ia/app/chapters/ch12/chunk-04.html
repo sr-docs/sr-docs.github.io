@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ordering and Ranking Search Results — Chapter 12 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 12</a>
+      <span aria-hidden="true">›</span>
+      <span>Ordering and Ranking Results</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 4 of 11">4 of 11</div>
+    <div class="mini-nav__links">
+      <a href="chunk-03.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-05.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Ordering and Ranking Search Results
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Simple sorting — alphabetically, chronologically, numerically — is deterministic and predictable, but most search systems default to ranking by relevance instead, weighing factors like keyword frequency, where a term appears on the page, and how different fields are weighted against each other. Relevance isn't the only useful ranking option, though: recency ranking surfaces the newest content first, popularity ranking surfaces what's been viewed, purchased, or cited most, and document-type ranking can prioritize one kind of content over another when that distinction matters to the searcher's goal.
+      </p>
+      <p>
+        AI-powered ranking approaches extend beyond traditional keyword-based relevance, incorporating semantic meaning, broader context, and patterns in user behavior to judge relevance in ways a simple keyword-frequency count never could.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      Relevance ranking is the default for a reason, but "default" and "correct for this specific query" aren't always the same thing — sometimes what a searcher actually needs is simply the newest thing, or the thing everyone else already found useful.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch12-chunk-04" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> Four search contexts on the same large news and analysis platform.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          1. A user searching for the latest developments in an ongoing political story that's still unfolding.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="context-1" value="recency">
+            <span class="exercise__option-text">Recency</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="context-1" value="alphabetical">
+            <span class="exercise__option-text">Alphabetical</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="context-1" value="popularity">
+            <span class="exercise__option-text">Popularity</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          2. A researcher looking for the most authoritative and widely cited analysis of a historical event from years ago.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="context-2" value="popularity">
+            <span class="exercise__option-text">Popularity</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="context-2" value="recency-2">
+            <span class="exercise__option-text">Recency</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="context-2" value="chronological">
+            <span class="exercise__option-text">Chronological</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          3. A reader looking for gift ideas for a specific type of person, wanting to see what other readers found most useful.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="context-3" value="popularity">
+            <span class="exercise__option-text">Popularity</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="context-3" value="recency-3">
+            <span class="exercise__option-text">Recency</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="context-3" value="numerical">
+            <span class="exercise__option-text">Numerical</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          4. A journalist needing to find every article the platform has ever published on a specific organization.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="context-4" value="document-type-or-relevance">
+            <span class="exercise__option-text">Document type or comprehensive relevance ranking, prioritizing completeness over any single ordering</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="context-4" value="recency-4">
+            <span class="exercise__option-text">Recency alone</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="context-4" value="popularity-4">
+            <span class="exercise__option-text">Popularity alone</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          For the researcher in context 2, explain the specific tension between relevance ranking and recency ranking, and argue a position on how the system should resolve it for this particular searcher.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p><strong>1 — Recency.</strong> An unfolding story is exactly the case where the newest content is almost always the most useful — recency ranking directly serves this need.</p>
+
+      <p><strong>2 — Popularity.</strong> "Most authoritative and widely cited" is fundamentally a popularity signal — this researcher wants what other credible sources have already validated, not necessarily the newest take.</p>
+
+      <p><strong>3 — Popularity.</strong> Wanting to see what other readers found most useful is a direct popularity-ranking request, even though the underlying query is about gift ideas rather than news.</p>
+
+      <p><strong>4 — Document type or comprehensive relevance, prioritizing completeness.</strong> A journalist needing every article on a topic cares about recall above all — no single ranking order matters as much as making sure nothing relevant gets left out or buried too deep to find.</p>
+
+      <span class="feedback__highlight">
+        For the researcher in context 2, relevance ranking and recency ranking genuinely pull in different directions: relevance ranking would tend to surface content based on keyword match and general authority signals, while pure recency ranking would push the newest coverage to the top regardless of whether it's actually the most authoritative treatment of an event from years ago. Given that this researcher explicitly wants the most authoritative and widely cited analysis — not the most recent — the system should weight popularity and citation signals over recency here, since ranking by newness alone could bury the well-established, heavily-cited piece beneath a recent but less substantial article that simply happens to be newer.
+      </span>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-03.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 12 · 4 of 11</span>
+    <a href="chunk-05.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

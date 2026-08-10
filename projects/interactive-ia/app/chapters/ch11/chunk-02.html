@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desktop Navigation Layouts — Chapter 11 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 11</a>
+      <span aria-hidden="true">›</span>
+      <span>Desktop Navigation Layouts</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 2 of 6">2 of 6</div>
+    <div class="mini-nav__links">
+      <a href="chunk-01.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-03.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Desktop Navigation Layouts
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Five layouts cover most desktop navigation needs. <strong>Horizontal global only</strong> is the simplest — one bar, best suited to shallow, broad structures with few top-level categories. <strong>Stacked horizontal bars</strong> add a secondary bar beneath the primary one, giving more room for categories without going vertical. <strong>Horizontal global with vertical local</strong> pairs a top bar for site-wide navigation with a sidebar for navigating within whatever section someone is currently in. <strong>Vertical global only</strong> puts the entire navigation in a sidebar, which suits spaces with many top-level categories or labels that vary a lot in length — multilingual sites, for instance, where translated labels can be unpredictable lengths. <strong>Vertical global and local</strong> nests both levels together in one sidebar, often with expandable sections.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      The right layout usually reveals itself once you look honestly at two things: how many top-level categories the content actually has, and how much that number needs room to grow.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch11-chunk-02" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> Four information spaces, each needing a desktop navigation layout.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          1. A news organization with twenty top-level content categories and deep local navigation within each one.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="space-1" value="vertical-global-only">
+            <span class="exercise__option-text">Vertical global only</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="space-1" value="horizontal-only">
+            <span class="exercise__option-text">Horizontal global only</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="space-1" value="horizontal-vertical-local">
+            <span class="exercise__option-text">Horizontal global with vertical local</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          2. A small professional services firm with five service areas and minimal hierarchy beneath them.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="space-2" value="horizontal-only">
+            <span class="exercise__option-text">Horizontal global only</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="space-2" value="vertical-both">
+            <span class="exercise__option-text">Vertical global and local</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="space-2" value="stacked">
+            <span class="exercise__option-text">Stacked horizontal bars</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          3. A large enterprise intranet that will be translated into fourteen languages, with labels varying significantly in length across translations.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="space-3" value="vertical-global-only-3">
+            <span class="exercise__option-text">Vertical global only</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="space-3" value="horizontal-only-3">
+            <span class="exercise__option-text">Horizontal global only</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="space-3" value="stacked-3">
+            <span class="exercise__option-text">Stacked horizontal bars</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          4. A government agency website serving three distinct audience groups, each with their own separate content hierarchy.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="space-4" value="horizontal-vertical-local-4">
+            <span class="exercise__option-text">Horizontal global with vertical local</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="space-4" value="horizontal-only-4">
+            <span class="exercise__option-text">Horizontal global only</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="space-4" value="vertical-global-only-4">
+            <span class="exercise__option-text">Vertical global only</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          For the news organization in question 1, name one layout that would definitely not work well, and explain specifically why twenty top-level categories rules it out.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p><strong>1 — Horizontal global with vertical local.</strong> Twenty top-level categories with deep local navigation within each needs a layout that can accommodate broad global navigation while still giving each section room for its own detailed local structure — exactly what this combination provides.</p>
+
+      <p><strong>2 — Horizontal global only.</strong> Five service areas with minimal hierarchy is a small, shallow structure — precisely the case the simplest layout is built for, with no need for the added complexity of local navigation or a sidebar.</p>
+
+      <p><strong>3 — Vertical global only.</strong> Fourteen languages with unpredictable label lengths is the classic case for a vertical layout, since a sidebar accommodates varying label lengths far more gracefully than a horizontal bar, which has a fixed, limited width that long translated labels can easily overflow.</p>
+
+      <p><strong>4 — Horizontal global with vertical local.</strong> Three distinct audiences each with their own separate hierarchy benefits from a global bar that lets visitors choose their audience path, paired with vertical local navigation that then serves each audience's specific deep structure once they've made that choice.</p>
+
+      <span class="feedback__highlight">
+        For the news organization, horizontal global only would definitely not work. Twenty top-level categories displayed as a single horizontal bar would either crowd the available space unreadably or force many categories to wrap or truncate — this layout is explicitly suited to shallow, broad structures with few categories, and twenty is well beyond what a single horizontal row can present clearly, regardless of how the local navigation within each category is handled.
+      </span>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-01.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 11 · 2 of 6</span>
+    <a href="chunk-03.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

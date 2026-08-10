@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom GPT/Project System Instructions Generator — Chapter 13 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 13</a>
+      <span aria-hidden="true">›</span>
+      <span>Custom GPT/Project System Instructions Generator</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 1 of 5">1 of 5</div>
+    <div class="mini-nav__links">
+      <a href="index.html">← Chapter overview</a>
+      <span class="spacer"></span>
+      <a href="chunk-02.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Custom GPT/Project System Instructions Generator
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        A prompt you retype every week is a prompt you should have turned into a tool. Custom GPTs in ChatGPT and Projects in Claude let you fix a set of <strong>system instructions</strong> once — a role, a workflow, evaluation criteria, an output format — so every conversation starts from the same footing instead of from whatever you happen to remember to include. This prompt writes those instructions for you. Reach for it when an IA task recurs on a real schedule: reviewing proposed labels against a house style, auditing navigation depth, sanity-checking a taxonomy before it ships.
+      </p>
+      <p>
+        What you get back tracks almost entirely with how specifically you describe the tool's boundaries. "Helps with IA" produces a generic assistant. "Reviews proposed category labels against our style guide, flags any label longer than three words or containing internal jargon, and always asks which audience the label is for before answering" produces a tool. Then read the generated instructions as a skeptic. Does the workflow ask you for the inputs it needs before offering an opinion, and does it say what it will <em>not</em> do? Instructions with no stated limits tend to produce confident answers about things the tool was never given.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      A Custom GPT is only as reusable as its constraints are explicit. Vague instructions don't give you a flexible tool — they give you an unpredictable one.
+    </p>
+
+  </section>
+
+
+  <section class="prompt-fill" id="custom-gpt-instructions-generator" aria-labelledby="prompt-fill-label-custom-gpt-instructions-generator">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-custom-gpt-instructions-generator">
+      Try It With Your Data — Custom GPT/Project System Instructions Generator
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt does</summary>
+      <div class="prompt-fill__guidance-body prompt-fill__guidance-body--simple">
+        <p>Generate comprehensive system instructions for Custom GPTs (ChatGPT) or Claude Projects that create specialized, reusable IA tools with consistent behavior, validation checks, and domain expertise.</p>
+        <ul><li>Creating reusable AI tools for repeated IA tasks</li><li>Building team-shared IA assistants</li><li>Converting successful prompts into persistent tools</li><li>Establishing consistent IA evaluation criteria across projects</li></ul>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">Create system instructions for a Custom GPT/Claude Project that {{TOOL_PURPOSE}}.
+
+TOOL DETAILS:
+- Name: {{TOOL_NAME}}
+- Primary function: {{PRIMARY_FUNCTION}}
+- Target users: {{TARGET_USERS}}
+- Domain: {{DOMAIN}}
+
+TASKS THIS TOOL SHOULD HANDLE:
+{{TASKS_THIS_TOOL_SHOULD_HANDLE}}
+
+WORKFLOW REQUIREMENTS:
+{{WORKFLOW_REQUIREMENTS}}
+
+OUTPUT REQUIREMENTS:
+{{OUTPUT_REQUIREMENTS}}
+
+QUALITY CRITERIA:
+{{QUALITY_CRITERIA}}
+
+Generate complete system instructions including:
+
+1. IDENTITY AND ROLE
+   - Clear expert persona
+   - Domain expertise definition
+   - Boundaries (what tool does and doesn't do)
+
+2. WORKFLOW DEFINITION
+   - Step-by-step process the tool follows
+   - Questions to ask users before proceeding
+   - Checkpoints and validation steps
+
+3. EVALUATION CRITERIA
+   - Specific criteria the tool applies
+   - Scoring/rating systems
+   - Quality thresholds
+
+4. OUTPUT FORMATTING
+   - Consistent output structure
+   - Required sections
+   - Formatting conventions
+
+5. INTERACTION GUIDELINES
+   - How to handle incomplete input
+   - How to ask clarifying questions
+   - When to provide alternatives vs. recommendations
+
+6. VALIDATION BEHAVIORS
+   - What the tool should always check
+   - Red flags to identify
+   - When to flag for human review
+
+7. KNOWLEDGE BASE RECOMMENDATIONS
+   - Reference documents to upload
+   - Examples to include
+   - Checklists or frameworks to reference
+
+Format as ready-to-paste system instructions for Custom GPT or Claude Project.
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-custom-gpt-instructions-generator-tool-purpose">Tool purpose</label>
+        <span class="prompt-fill__hint">e.g. &quot;audits documentation against our style guide&quot;</span>
+        <input type="text" id="pf-custom-gpt-instructions-generator-tool-purpose" class="js-prompt-input" data-token="TOOL_PURPOSE" data-placeholder="e.g. &quot;audits documentation against our style guide&quot;" placeholder="e.g. &quot;audits documentation against our style guide&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-custom-gpt-instructions-generator-tool-name">Tool name</label>
+        <span class="prompt-fill__hint">What you&#x27;ll call it</span>
+        <input type="text" id="pf-custom-gpt-instructions-generator-tool-name" class="js-prompt-input" data-token="TOOL_NAME" data-placeholder="What you&#x27;ll call it" placeholder="What you&#x27;ll call it">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-custom-gpt-instructions-generator-primary-function">Primary function</label>
+        <span class="prompt-fill__hint">What the tool does</span>
+        <input type="text" id="pf-custom-gpt-instructions-generator-primary-function" class="js-prompt-input" data-token="PRIMARY_FUNCTION" data-placeholder="What the tool does" placeholder="What the tool does">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-custom-gpt-instructions-generator-target-users">Target users</label>
+        <span class="prompt-fill__hint">Who will use this tool</span>
+        <input type="text" id="pf-custom-gpt-instructions-generator-target-users" class="js-prompt-input" data-token="TARGET_USERS" data-placeholder="Who will use this tool" placeholder="Who will use this tool">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-custom-gpt-instructions-generator-domain">Domain</label>
+        <span class="prompt-fill__hint">e.g. &quot;API documentation&quot;, &quot;enterprise knowledge base&quot;</span>
+        <input type="text" id="pf-custom-gpt-instructions-generator-domain" class="js-prompt-input" data-token="DOMAIN" data-placeholder="e.g. &quot;API documentation&quot;, &quot;enterprise knowledge base&quot;" placeholder="e.g. &quot;API documentation&quot;, &quot;enterprise knowledge base&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-custom-gpt-instructions-generator-tasks-this-tool-should-handle">Tasks this tool should handle</label>
+        <span class="prompt-fill__hint">One per line</span>
+        <textarea id="pf-custom-gpt-instructions-generator-tasks-this-tool-should-handle" class="js-prompt-input" data-token="TASKS_THIS_TOOL_SHOULD_HANDLE" data-placeholder="One per line" placeholder="One per line"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-custom-gpt-instructions-generator-workflow-requirements">Workflow requirements</label>
+        <span class="prompt-fill__hint">How it should guide users, what to ask upfront, what to validate</span>
+        <textarea id="pf-custom-gpt-instructions-generator-workflow-requirements" class="js-prompt-input" data-token="WORKFLOW_REQUIREMENTS" data-placeholder="How it should guide users, what to ask upfront, what to validate" placeholder="How it should guide users, what to ask upfront, what to validate"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-custom-gpt-instructions-generator-output-requirements">Output requirements</label>
+        <span class="prompt-fill__hint">Format, level of detail, required sections</span>
+        <textarea id="pf-custom-gpt-instructions-generator-output-requirements" class="js-prompt-input" data-token="OUTPUT_REQUIREMENTS" data-placeholder="Format, level of detail, required sections" placeholder="Format, level of detail, required sections"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-custom-gpt-instructions-generator-quality-criteria">Quality criteria</label>
+        <span class="prompt-fill__hint">Standards to apply, things to always check, red flags to catch</span>
+        <textarea id="pf-custom-gpt-instructions-generator-quality-criteria" class="js-prompt-input" data-token="QUALITY_CRITERIA" data-placeholder="Standards to apply, things to always check, red flags to catch" placeholder="Standards to apply, things to always check, red flags to catch"></textarea>
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="index.html">← Chapter overview</a>
+    <span class="chunk-footer__center">Chapter 13 · 1 of 5</span>
+    <a href="chunk-02.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/prompt-fill.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

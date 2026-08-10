@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automatically Refining Search Queries — Chapter 12 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 12</a>
+      <span aria-hidden="true">›</span>
+      <span>Automatically Refining Search Queries</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 3 of 11">3 of 11</div>
+    <div class="mini-nav__links">
+      <a href="chunk-02.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-04.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Automatically Refining Search Queries
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Several techniques quietly improve a search query before or during retrieval, without requiring the searcher to do anything differently. Spelling checking and autocorrection catch typos and suggest fixes. Stemming and lemmatization reduce words to a common root, so "running," "runs," and "ran" all match content about "run" — stemming does this with simple rules, while lemmatization uses a dictionary-based approach that's slower but more accurate. Controlled vocabulary integration automatically maps a searcher's variant term to the system's preferred term. Stop words — common connective words like "the" or "of" — get filtered out since they carry no real search meaning. And "search for similar pages" functionality lets someone find more of what a specific result already gave them, without composing a fresh query.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      Each of these techniques fixes a different, specific failure — which means diagnosing which one actually happened matters more than reaching for whichever fix comes to mind first.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch12-chunk-03" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A hospital's patient information website receives large volumes of searches. A search log analysis has identified five recurring failure patterns.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          1. Users consistently misspell medical terms — "diabetis" instead of "diabetes."
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-1" value="spelling">
+            <span class="exercise__option-text">Spelling correction</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-1" value="stemming">
+            <span class="exercise__option-text">Stemming</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-1" value="stop-words">
+            <span class="exercise__option-text">Stop words</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          2. Users search "allergies" but the content is written using "allergy," and the two don't match.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-2" value="stemming">
+            <span class="exercise__option-text">Stemming or lemmatization</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-2" value="spelling-2">
+            <span class="exercise__option-text">Spelling correction</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-2" value="controlled-vocab">
+            <span class="exercise__option-text">Controlled vocabulary integration</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          3. Users search using the colloquial term "heart attack," but all the site's content is written using the clinical term "myocardial infarction," with no connection between them.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-3" value="controlled-vocab">
+            <span class="exercise__option-text">Controlled vocabulary integration</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-3" value="stemming-3">
+            <span class="exercise__option-text">Stemming</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-3" value="stop-words-3">
+            <span class="exercise__option-text">Stop words</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          4. A search for "the treatment for the flu" returns poor results because the system is treating "the" and "for" as meaningful search terms, diluting the actually important words.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-4" value="stop-words">
+            <span class="exercise__option-text">Stop words</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-4" value="spelling-4">
+            <span class="exercise__option-text">Spelling correction</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-4" value="controlled-vocab-4">
+            <span class="exercise__option-text">Controlled vocabulary integration</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          5. A user finds one genuinely helpful article about managing a chronic condition and wants to find more articles like it, without composing a new search.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-5" value="similar-pages">
+            <span class="exercise__option-text">Search for similar pages</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-5" value="stemming-5">
+            <span class="exercise__option-text">Stemming</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-5" value="spelling-5">
+            <span class="exercise__option-text">Spelling correction</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          Failure 3, the colloquial-versus-clinical terminology gap, could plausibly be addressed by either stemming or controlled vocabulary integration. Explain why controlled vocabulary integration is the better fit here specifically, and what stemming alone would fail to solve.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p><strong>1 — Spelling correction.</strong> A misspelled term needs correction to the intended word — exactly what spelling checking and autocorrection exist to catch.</p>
+
+      <p><strong>2 — Stemming or lemmatization.</strong> "Allergy" and "allergies" share the same root, so reducing both to a common form is exactly the kind of variation stemming or lemmatization handles.</p>
+
+      <p><strong>3 — Controlled vocabulary integration.</strong> "Heart attack" and "myocardial infarction" aren't grammatical variants of the same word — they're two entirely different terms for the same concept, which is precisely what controlled vocabulary mapping is built to bridge.</p>
+
+      <p><strong>4 — Stop words.</strong> "The" and "for" carry no real search meaning and should be filtered out so the meaningful terms — "treatment" and "flu" — drive the results instead.</p>
+
+      <p><strong>5 — Search for similar pages.</strong> Finding more content like one already-successful result, without composing a new query, is exactly what this feature is designed for.</p>
+
+      <span class="feedback__highlight">
+        Stemming only handles variations of the same word sharing a common root — it could never connect "heart attack" to "myocardial infarction," since these are two completely different words with no shared root at all. Controlled vocabulary integration is built specifically for this situation: mapping distinct terms that refer to the same underlying concept, regardless of whether they share any linguistic root. This is a good example of why matching the fix to the actual failure matters — reaching for stemming here would do nothing at all to solve the problem, no matter how well-implemented the stemming itself was.
+      </span>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="prompt-fill" id="query-analysis" aria-labelledby="prompt-fill-label-query-analysis">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-query-analysis">
+      Try It With Your Data — Query Analysis
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt is made of (RICE breakdown)</summary>
+      <div class="prompt-fill__guidance-body">
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">R</span>
+          <h4>Role</h4>
+          <p>Casts the AI as: You&#x27;re a search analyst specializing in user query analysis and search behavior.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">I</span>
+          <h4>Instructions</h4>
+          <p>Names 5 specific outputs to produce, so the response comes back structured rather than a general summary.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">C</span>
+          <h4>Context</h4>
+          <p>Site/product, Content available, Search technology and Known issues tell the AI what your specific situation is, not a generic one.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">E</span>
+          <h4>Expected format</h4>
+          <p>Query analysis with actionable recommendations</p>
+        </div>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[R - ROLE]
+You're a search analyst specializing in user query analysis and search behavior.
+
+[I - INSTRUCTIONS]
+Analyze these search queries from {{QUERY_SOURCE}}:
+
+{{QUERIES_WITH_FREQUENCY}}
+
+For each query or query cluster:
+1. Classify intent (navigational/informational/transactional)
+2. Identify the underlying user need
+3. Map to existing content (if any)
+4. Identify vocabulary gaps
+5. Recommend improvements
+
+[C - CONTEXT]
+Site/product: {{SITE_OR_PRODUCT}}
+Content available: {{EXISTING_CONTENT_OVERVIEW}}
+Search technology: {{SEARCH_TECHNOLOGY}}
+Known issues: {{KNOWN_ISSUES}}
+
+[E - EXPECTED FORMAT]
+Query analysis with actionable recommendations
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-query-analysis-query-source">Query source</label>
+        <span class="prompt-fill__hint">e.g. &quot;site search logs, last 90 days&quot;</span>
+        <input type="text" id="pf-query-analysis-query-source" class="js-prompt-input" data-token="QUERY_SOURCE" data-placeholder="e.g. &quot;site search logs, last 90 days&quot;" placeholder="e.g. &quot;site search logs, last 90 days&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-query-analysis-queries-with-frequency">Queries with frequency</label>
+        <span class="prompt-fill__hint">One per line: query — frequency/count</span>
+        <textarea id="pf-query-analysis-queries-with-frequency" class="js-prompt-input" data-token="QUERIES_WITH_FREQUENCY" data-placeholder="One per line: query — frequency/count" placeholder="One per line: query — frequency/count"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-query-analysis-site-or-product">Site or product</label>
+        <span class="prompt-fill__hint">Brief description</span>
+        <input type="text" id="pf-query-analysis-site-or-product" class="js-prompt-input" data-token="SITE_OR_PRODUCT" data-placeholder="Brief description" placeholder="Brief description">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-query-analysis-existing-content-overview">Existing content overview</label>
+        <span class="prompt-fill__hint">Brief overview</span>
+        <input type="text" id="pf-query-analysis-existing-content-overview" class="js-prompt-input" data-token="EXISTING_CONTENT_OVERVIEW" data-placeholder="Brief overview" placeholder="Brief overview">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-query-analysis-search-technology">Search technology</label>
+        <span class="prompt-fill__hint">What kind of search you have.</span>
+        <select id="pf-query-analysis-search-technology" class="js-prompt-input" data-token="SEARCH_TECHNOLOGY">
+          <option value="Basic">Basic</option>
+          <option value="Faceted">Faceted</option>
+          <option value="AI-powered">AI-powered</option>
+        </select>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-query-analysis-known-issues">Known issues</label>
+        <span class="prompt-fill__hint">Search complaints or zero-result patterns</span>
+        <input type="text" id="pf-query-analysis-known-issues" class="js-prompt-input" data-token="KNOWN_ISSUES" data-placeholder="Search complaints or zero-result patterns" placeholder="Search complaints or zero-result patterns">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="prompt-fill" id="synonym-generator" aria-labelledby="prompt-fill-label-synonym-generator">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-synonym-generator">
+      Try It With Your Data — Synonym Generator
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt is made of (RICE breakdown)</summary>
+      <div class="prompt-fill__guidance-body">
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">R</span>
+          <h4>Role</h4>
+          <p>Casts the AI as: You&#x27;re a search optimization specialist focused on vocabulary and synonym mapping.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">I</span>
+          <h4>Instructions</h4>
+          <p>Names 5 specific outputs to produce, so the response comes back structured rather than a general summary.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">C</span>
+          <h4>Context</h4>
+          <p>Domain, Audience and Search system tell the AI what your specific situation is, not a generic one.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">E</span>
+          <h4>Expected format</h4>
+          <p>Structured synonym dictionary ready for implementation</p>
+        </div>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[R - ROLE]
+You're a search optimization specialist focused on vocabulary and synonym mapping.
+
+[I - INSTRUCTIONS]
+Generate synonyms for these terms in {{DOMAIN}} context:
+
+{{TERMS}}
+
+For each term provide:
+1. Direct synonyms (same meaning)
+2. Related terms (close meaning)
+3. User variations (how users search)
+4. Common misspellings
+5. Abbreviations/acronyms
+
+Consider:
+- Technical vs. casual language
+- Industry-specific terminology
+- Regional/international variations
+
+[C - CONTEXT]
+Domain: {{INDUSTRY_OR_TOPIC}}
+Audience: {{AUDIENCE_EXPERTISE_LEVEL}}
+Search system: {{SEARCH_SYSTEM_TYPE}}
+
+[E - EXPECTED FORMAT]
+Structured synonym dictionary ready for implementation
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-synonym-generator-domain">Domain</label>
+        <span class="prompt-fill__hint">e.g. &quot;cloud infrastructure&quot;</span>
+        <input type="text" id="pf-synonym-generator-domain" class="js-prompt-input" data-token="DOMAIN" data-placeholder="e.g. &quot;cloud infrastructure&quot;" placeholder="e.g. &quot;cloud infrastructure&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-synonym-generator-terms">Terms</label>
+        <span class="prompt-fill__hint">One per line</span>
+        <textarea id="pf-synonym-generator-terms" class="js-prompt-input" data-token="TERMS" data-placeholder="One per line" placeholder="One per line"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-synonym-generator-industry-or-topic">Industry or topic</label>
+        <span class="prompt-fill__hint">Brief description</span>
+        <input type="text" id="pf-synonym-generator-industry-or-topic" class="js-prompt-input" data-token="INDUSTRY_OR_TOPIC" data-placeholder="Brief description" placeholder="Brief description">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-synonym-generator-audience-expertise-level">Audience expertise level</label>
+        <span class="prompt-fill__hint">e.g. &quot;beginner&quot;, &quot;expert&quot;</span>
+        <input type="text" id="pf-synonym-generator-audience-expertise-level" class="js-prompt-input" data-token="AUDIENCE_EXPERTISE_LEVEL" data-placeholder="e.g. &quot;beginner&quot;, &quot;expert&quot;" placeholder="e.g. &quot;beginner&quot;, &quot;expert&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-synonym-generator-search-system-type">Search system type</label>
+        <span class="prompt-fill__hint">How your search matches text.</span>
+        <select id="pf-synonym-generator-search-system-type" class="js-prompt-input" data-token="SEARCH_SYSTEM_TYPE">
+          <option value="Exact match">Exact match</option>
+          <option value="Fuzzy">Fuzzy</option>
+          <option value="AI">AI</option>
+        </select>
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-02.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 12 · 3 of 11</span>
+    <a href="chunk-04.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="../../assets/js/prompt-fill.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

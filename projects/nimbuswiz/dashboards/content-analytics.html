@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>NimbusWiz docs — content analytics</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f8f8f6;
+    --surface: #ffffff;
+    --surface2: #f1efe8;
+    --border: rgba(0,0,0,0.1);
+    --text: #1a1a18;
+    --muted: #6b6b67;
+    --hint: #9b9b96;
+    --blue: #2563eb;
+    --blue-bg: #eff6ff;
+    --green: #16a34a;
+    --green-bg: #f0fdf4;
+    --amber: #d97706;
+    --amber-bg: #fffbeb;
+    --red: #dc2626;
+    --red-bg: #fef2f2;
+    --purple: #7c3aed;
+    --purple-bg: #f5f3ff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f0f0d;
+      --surface: #1a1a18;
+      --surface2: #242420;
+      --border: rgba(255,255,255,0.1);
+      --text: #e0ddd6;
+      --muted: #9b9b96;
+      --hint: #6b6b67;
+      --blue: #60a5fa;
+      --blue-bg: #1e2a3a;
+      --green: #4ade80;
+      --green-bg: #0f2a1a;
+      --amber: #fbbf24;
+      --amber-bg: #2a1f0a;
+      --red: #f87171;
+      --red-bg: #2a0f0f;
+      --purple: #c4b5fd;
+      --purple-bg: #1e1530;
+    }
+  }
+  body { background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, sans-serif; font-size: 14px; line-height: 1.6; padding: 0; }
+  .shell { max-width: 900px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+  .header { margin-bottom: 1.5rem; }
+  .header h1 { font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .header p { font-size: 13px; color: var(--muted); }
+  .tabs { display: flex; gap: 4px; background: var(--surface2); border-radius: 10px; padding: 4px; margin-bottom: 1.5rem; }
+  .tab { flex: 1; padding: 8px 12px; border: none; border-radius: 7px; background: transparent; color: var(--muted); font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.15s; text-align: center; }
+  .tab.active { background: var(--surface); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .tab:hover:not(.active) { color: var(--text); }
+  .panel { display: none; }
+  .panel.active { display: block; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 1.5rem; }
+  .kpi { background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+  .kpi-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+  .kpi-value { font-size: 24px; font-weight: 600; color: var(--text); margin-bottom: 4px; line-height: 1.2; }
+  .kpi-delta { font-size: 12px; }
+  .kpi-delta.up { color: var(--green); }
+  .kpi-delta.down { color: var(--red); }
+  .kpi-delta.neutral { color: var(--muted); }
+  .charts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 1.5rem; }
+  @media (max-width: 600px) { .charts { grid-template-columns: 1fr; } }
+  .chart-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; padding: 16px; }
+  .chart-card.wide { grid-column: 1 / -1; }
+  .chart-title { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 12px; }
+  .chart-sub { font-size: 11px; color: var(--muted); margin-bottom: 12px; margin-top: -8px; }
+  canvas { max-height: 200px; }
+  .insight-band { background: var(--blue-bg); border: 0.5px solid var(--border); border-radius: 10px; padding: 14px 16px; margin-bottom: 1.5rem; }
+  .insight-band h3 { font-size: 13px; font-weight: 600; color: var(--blue); margin-bottom: 6px; }
+  .insight-band ul { padding-left: 16px; font-size: 13px; color: var(--text); }
+  .insight-band li { margin-bottom: 4px; }
+  .gap-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .gap-table th { text-align: left; padding: 8px 10px; font-weight: 500; color: var(--muted); border-bottom: 0.5px solid var(--border); font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .gap-table td { padding: 8px 10px; border-bottom: 0.5px solid var(--border); color: var(--text); }
+  .gap-table tr:last-child td { border-bottom: none; }
+  .pill { display: inline-block; font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 20px; }
+  .pill.high { background: var(--red-bg); color: var(--red); }
+  .pill.med { background: var(--amber-bg); color: var(--amber); }
+  .pill.low { background: var(--green-bg); color: var(--green); }
+  .note { font-size: 11px; color: var(--hint); margin-top: 1.5rem; padding-top: 1rem; border-top: 0.5px solid var(--border); }
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="header">
+    <h1>NimbusWiz docs — content analytics</h1>
+    <p>90-day simulated usage data · Switch roles to see a tailored view</p>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('cs')">Content Strategist</button>
+    <button class="tab" onclick="switchTab('pm')">Product Manager</button>
+    <button class="tab" onclick="switchTab('sl')">Support Lead</button>
+  </div>
+
+  <!-- CONTENT STRATEGIST -->
+  <div id="panel-cs" class="panel active">
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="kpi-label">Total page views</div>
+        <div class="kpi-value">28,450</div>
+        <div class="kpi-delta up">↑ 14% vs prev 90d</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Avg time on page</div>
+        <div class="kpi-value">3m 42s</div>
+        <div class="kpi-delta up">↑ 22s vs prev 90d</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Search success rate</div>
+        <div class="kpi-value">74%</div>
+        <div class="kpi-delta down">↓ 3pts vs prev 90d</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Unanswered queries</div>
+        <div class="kpi-value">12</div>
+        <div class="kpi-delta neutral">Distinct search terms</div>
+      </div>
+    </div>
+    <div class="insight-band">
+      <h3>Key signals for content strategy</h3>
+      <ul>
+        <li>Getting Started and KB FAQ drive 44% of all traffic — onboarding content is working.</li>
+        <li>Modernize page has the highest drop-off (62%) — users aren't completing the simulation step.</li>
+        <li>"Rollback" searched 340 times with no strong result match — a content gap.</li>
+        <li>Search success rate declined 3pts — likely tied to new API reference pages not yet indexed.</li>
+      </ul>
+    </div>
+    <div class="charts">
+      <div class="chart-card wide">
+        <div class="chart-title">Page views by section — last 90 days</div>
+        <canvas id="cs-bar"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Weekly traffic trend</div>
+        <canvas id="cs-line"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Drop-off rate by page</div>
+        <div class="chart-sub">% of users who left without clicking further</div>
+        <canvas id="cs-dropoff"></canvas>
+      </div>
+    </div>
+    <div class="chart-card wide" style="margin-bottom:1.5rem">
+      <div class="chart-title">Content gaps — top unanswered search queries</div>
+      <table class="gap-table">
+        <thead><tr><th>Search term</th><th>Searches</th><th>Result quality</th><th>Priority</th></tr></thead>
+        <tbody>
+          <tr><td>rollback</td><td>340</td><td>No direct match</td><td><span class="pill high">High</span></td></tr>
+          <tr><td>quirk profile setup</td><td>218</td><td>Partial match</td><td><span class="pill high">High</span></td></tr>
+          <tr><td>webhook signature</td><td>184</td><td>Partial match</td><td><span class="pill med">Med</span></td></tr>
+          <tr><td>export audit log</td><td>142</td><td>No direct match</td><td><span class="pill med">Med</span></td></tr>
+          <tr><td>API key expiry</td><td>98</td><td>Partial match</td><td><span class="pill low">Low</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- PRODUCT MANAGER -->
+  <div id="panel-pm" class="panel">
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="kpi-label">Docs coverage</div>
+        <div class="kpi-value">87%</div>
+        <div class="kpi-delta up">↑ 12pts — new API ref added</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">API docs views</div>
+        <div class="kpi-value">8,240</div>
+        <div class="kpi-delta up">↑ 31% vs prev 90d</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Release note adoption</div>
+        <div class="kpi-value">64%</div>
+        <div class="kpi-delta neutral">Users viewing within 7d</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Feature-doc correlation</div>
+        <div class="kpi-value">0.78</div>
+        <div class="kpi-delta up">Strong positive signal</div>
+      </div>
+    </div>
+    <div class="insight-band">
+      <h3>Key signals for product</h3>
+      <ul>
+        <li>API reference traffic up 31% — developer integrations are accelerating. Webhook and auth pages are top.</li>
+        <li>Modernization Advisor docs have low views relative to feature usage — users may be skipping the recommendation step.</li>
+        <li>Simulation page drop-off (62%) correlates with lower deployment completion rate — docs may not be reducing friction enough.</li>
+        <li>13% of features have no corresponding doc page — primarily newer automation event hooks.</li>
+      </ul>
+    </div>
+    <div class="charts">
+      <div class="chart-card wide">
+        <div class="chart-title">Docs views vs feature usage — by pipeline stage</div>
+        <div class="chart-sub">Indexed to 100. Gap indicates under-documented or over-documented stages.</div>
+        <canvas id="pm-compare"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">API reference traffic — by endpoint group</div>
+        <canvas id="pm-api"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Docs coverage by feature area</div>
+        <canvas id="pm-coverage"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUPPORT LEAD -->
+  <div id="panel-sl" class="panel">
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="kpi-label">KB deflection rate</div>
+        <div class="kpi-value">68%</div>
+        <div class="kpi-delta up">↑ 5pts vs prev 90d</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Tickets deflected (est.)</div>
+        <div class="kpi-value">1,840</div>
+        <div class="kpi-delta up">Based on KB visits before ticket</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Top failing search</div>
+        <div class="kpi-value">rollback</div>
+        <div class="kpi-delta down">340 unresolved searches</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Avg article helpfulness</div>
+        <div class="kpi-value">4.1/5</div>
+        <div class="kpi-delta neutral">Based on 620 ratings</div>
+      </div>
+    </div>
+    <div class="insight-band">
+      <h3>Key signals for support</h3>
+      <ul>
+        <li>KB deflection up 5pts — the troubleshooting FAQ and simulation articles are resolving issues before escalation.</li>
+        <li>340 "rollback" searches end without resolution — this is the #1 content gap driving tickets.</li>
+        <li>Deployment troubleshooting page has 68% helpfulness — lowest rated article. Needs a rewrite.</li>
+        <li>Getting Started FAQ deflects the most tickets (est. 420) — onboarding content is the highest ROI page.</li>
+      </ul>
+    </div>
+    <div class="charts">
+      <div class="chart-card wide">
+        <div class="chart-title">Estimated ticket deflection by KB article</div>
+        <canvas id="sl-deflect"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Article helpfulness ratings</div>
+        <canvas id="sl-helpful"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Support ticket topics (last 90d)</div>
+        <div class="chart-sub">Topics that escalated despite KB availability</div>
+        <canvas id="sl-tickets"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <p class="note">Data is simulated for portfolio demonstration using realistic NimbusWiz docs usage patterns. The same dashboard structure applies to any docs platform — swap the data source and the insights update automatically. Tracking implemented via Plausible (privacy-first, no cookies).</p>
+</div>
+
+<script>
+const BLUE = '#2563eb', BLUE_L = '#bfdbfe';
+const GREEN = '#16a34a', GREEN_L = '#bbf7d0';
+const AMBER = '#d97706', AMBER_L = '#fde68a';
+const RED = '#dc2626', RED_L = '#fecaca';
+const PURPLE = '#7c3aed', PURPLE_L = '#ddd6fe';
+const GRAY = '#6b7280', GRAY_L = '#e5e7eb';
+
+const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const textColor = dark ? '#9b9b96' : '#6b6b67';
+const gridColor = dark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)';
+
+Chart.defaults.color = textColor;
+Chart.defaults.font.family = 'system-ui, -apple-system, sans-serif';
+Chart.defaults.font.size = 11;
+
+const base = {
+  responsive: true,
+  maintainAspectRatio: true,
+  plugins: { legend: { display: false } },
+  scales: {
+    x: { grid: { color: gridColor }, ticks: { color: textColor } },
+    y: { grid: { color: gridColor }, ticks: { color: textColor } }
+  }
+};
+
+function barOpts(horizontal) {
+  return {
+    ...base,
+    indexAxis: horizontal ? 'y' : 'x',
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: { color: gridColor }, ticks: { color: textColor } },
+      y: { grid: { color: gridColor }, ticks: { color: textColor } }
+    }
+  };
+}
+
+// CS charts
+new Chart('cs-bar', {
+  type: 'bar',
+  data: {
+    labels: ['Getting Started','KB FAQ','Register','API Ref','Monitor','Deploy','Assess','Advisor','Modernize','Audit Logs'],
+    datasets: [{
+      data: [4200,3800,3100,2900,2400,2200,1900,1600,1200,420],
+      backgroundColor: [BLUE,BLUE,BLUE_L,BLUE_L,BLUE_L,BLUE_L,BLUE_L,BLUE_L,BLUE_L,BLUE_L],
+      borderRadius: 4
+    }]
+  },
+  options: { ...barOpts(false), scales: { x: { grid: { color: gridColor }, ticks: { color: textColor, maxRotation: 35 } }, y: { grid: { color: gridColor }, ticks: { color: textColor } } } }
+});
+
+new Chart('cs-line', {
+  type: 'line',
+  data: {
+    labels: ['W1','W2','W3','W4','W5','W6','W7','W8','W9','W10','W11','W12','W13'],
+    datasets: [{
+      data: [1820,1950,2100,2080,2240,2190,2310,2280,2420,2380,2510,2490,2680],
+      borderColor: BLUE, backgroundColor: BLUE_L + '40',
+      fill: true, tension: 0.4, pointRadius: 2
+    }]
+  },
+  options: base
+});
+
+new Chart('cs-dropoff', {
+  type: 'bar',
+  data: {
+    labels: ['Modernize','Assess','Deploy','Advisor','Monitor','Register'],
+    datasets: [{
+      data: [62,48,41,35,28,22],
+      backgroundColor: [RED,AMBER,AMBER,AMBER_L,GREEN_L,GREEN_L],
+      borderRadius: 4
+    }]
+  },
+  options: { ...barOpts(true), scales: { x: { grid: { color: gridColor }, ticks: { color: textColor, callback: v => v+'%' } }, y: { grid: { color: gridColor }, ticks: { color: textColor } } } }
+});
+
+// PM charts
+new Chart('pm-compare', {
+  type: 'bar',
+  data: {
+    labels: ['Register','Assess','Advise','Modernize','Deploy','Monitor'],
+    datasets: [
+      { label: 'Docs views', data: [100,82,44,38,71,88], backgroundColor: BLUE, borderRadius: 4 },
+      { label: 'Feature usage', data: [100,91,87,82,79,76], backgroundColor: GRAY_L, borderRadius: 4 }
+    ]
+  },
+  options: {
+    ...base,
+    plugins: { legend: { display: true, labels: { color: textColor, font: { size: 11 } } } }
+  }
+});
+
+new Chart('pm-api', {
+  type: 'bar',
+  data: {
+    labels: ['Auth','Fleet','Deployments','Webhooks','Monitoring','Scans'],
+    datasets: [{ data: [2840,2200,1680,980,340,200], backgroundColor: PURPLE, borderRadius: 4 }]
+  },
+  options: barOpts(false)
+});
+
+new Chart('pm-coverage', {
+  type: 'doughnut',
+  data: {
+    labels: ['Documented','Partially documented','Not documented'],
+    datasets: [{ data: [87,6,7], backgroundColor: [GREEN,AMBER,RED], borderWidth: 0, hoverOffset: 4 }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: true,
+    plugins: { legend: { display: true, position: 'bottom', labels: { color: textColor, font: { size: 11 }, padding: 12 } } }
+  }
+});
+
+// SL charts
+new Chart('sl-deflect', {
+  type: 'bar',
+  data: {
+    labels: ['Getting Started FAQ','Troubleshooting FAQ','Simulation','Deployment','Monitor','Assessment'],
+    datasets: [{ data: [420,310,280,180,140,90], backgroundColor: GREEN, borderRadius: 4 }]
+  },
+  options: barOpts(false)
+});
+
+new Chart('sl-helpful', {
+  type: 'bar',
+  data: {
+    labels: ['Getting Started','KB FAQ','Simulation','Monitor','Assessment','Deployment Troubleshoot'],
+    datasets: [{ data: [4.7,4.5,4.3,4.2,4.0,3.1], backgroundColor: [GREEN,GREEN,GREEN,GREEN_L,AMBER_L,RED], borderRadius: 4 }]
+  },
+  options: {
+    ...barOpts(false),
+    scales: {
+      x: { grid: { color: gridColor }, ticks: { color: textColor, maxRotation: 30 } },
+      y: { grid: { color: gridColor }, ticks: { color: textColor }, min: 0, max: 5 }
+    }
+  }
+});
+
+new Chart('sl-tickets', {
+  type: 'doughnut',
+  data: {
+    labels: ['Rollback process','Quirk Profile','Webhook config','Simulation failure','API key rotation','Other'],
+    datasets: [{ data: [34,22,18,14,8,4], backgroundColor: [RED,AMBER,AMBER_L,BLUE_L,GRAY_L,GRAY_L], borderWidth: 0 }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: true,
+    plugins: { legend: { display: true, position: 'bottom', labels: { color: textColor, font: { size: 11 }, padding: 10 } } }
+  }
+});
+
+function switchTab(id) {
+  document.querySelectorAll('.tab').forEach((t,i) => t.classList.toggle('active', ['cs','pm','sl'][i] === id));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+}
+</script>
+<script data-sr-docs-blog-fix>(function(){function fix(h){if(!h)return h;return h.replace(/^\/projects\/nimbuswiz\/blog\//,"/blog/")}document.addEventListener("click",function(e){var a=e.target&&e.target.closest&&e.target.closest("a");if(!a)return;var href=a.getAttribute("href");var next=fix(href);if(next&&next!==href){e.preventDefault();if(a.target==="_blank")window.open(next,"_blank","noopener");else location.assign(next)}},true);document.querySelectorAll("a[href*='/blog/']").forEach(function(a){a.setAttribute("href",fix(a.getAttribute("href")))});})();</script><script src="/js/site-chrome.js"></script></body>
+</html>

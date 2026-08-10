@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompt-to-Template Converter — Chapter 13 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 13</a>
+      <span aria-hidden="true">›</span>
+      <span>Prompt-to-Template Converter</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 4 of 5">4 of 5</div>
+    <div class="mini-nav__links">
+      <a href="index.html">← Chapter overview</a>
+      <span class="spacer"></span>
+      <a href="chunk-05.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Prompt-to-Template Converter
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Every so often you write a prompt that works unusually well — the output comes back structured, specific, and useful on the first try. The instinct is to save it. The better move is to convert it, separating the parts that were specific to that one project from the parts that made it work at all. This prompt does that separation: it identifies the variables, names them as placeholders, and leaves the structure that was doing the work intact.
+      </p>
+      <p>
+        The conversion is only as good as your account of why the original worked. Say "it gave a good answer" and you will get a template generalised past the point of usefulness, with every specific instruction replaced by a placeholder. Say "it worked because I gave it our three audience types and told it to reject any label over three words" and the template keeps the constraint while parameterising the audience. Test the result by filling it in for a genuinely different case. If you find yourself editing the fixed text rather than just the placeholders, the variables were drawn in the wrong places.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      Templating is a judgement about what stays constant, not a find-and-replace on the specifics. Over-generalise and you throw away the reason the prompt worked.
+    </p>
+
+  </section>
+
+
+  <section class="prompt-fill" id="prompt-to-template-converter" aria-labelledby="prompt-fill-label-prompt-to-template-converter">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-prompt-to-template-converter">
+      Try It With Your Data — Prompt-to-Template Converter
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt does</summary>
+      <div class="prompt-fill__guidance-body prompt-fill__guidance-body--simple">
+        <p>Convert ad-hoc prompts that worked well into reusable templates with clear placeholders, consistent structure, and documentation for repeated use.</p>
+        <ul><li>After discovering a prompt that worked particularly well</li><li>Standardizing team prompt practices</li><li>Creating prompt libraries from individual successes</li><li>Building templates for common IA tasks</li></ul>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">Convert this ad-hoc prompt into a reusable template:
+
+ORIGINAL PROMPT (with actual values):
+{{THE_PROMPT_THAT_WORKED_WELL}}
+
+CONTEXT:
+- Task this prompt accomplished: {{TASK_ACCOMPLISHED}}
+- Why it worked well: {{WHY_IT_WORKED_WELL}}
+- Variations I might need: {{VARIATIONS_YOU_MIGHT_NEED}}
+- Who else might use this: {{WHO_ELSE_MIGHT_USE_THIS}}
+
+CONVERSION REQUIREMENTS:
+
+1. IDENTIFY VARIABLES
+   - Which parts are specific to this use case?
+   - What would change for different uses?
+   - What stays constant every time?
+
+2. CREATE PLACEHOLDERS
+   - Name placeholders descriptively [LIKE_THIS]
+   - Group related placeholders logically
+   - Distinguish required vs optional
+
+3. ADD CONTEXT MARKERS
+   - Where does structure need explanation?
+   - What format guidance helps users?
+   - What examples clarify expectations?
+
+4. PRESERVE WHAT WORKED
+   - Keep the prompt structure that made it effective
+   - Maintain the tone and approach
+   - Preserve specific instructions that drove quality
+
+5. ADD TEMPLATE METADATA
+   - Clear name describing the template
+   - Brief purpose statement
+   - When to use / not use
+
+OUTPUT FORMAT:
+1. Reusable template with placeholders
+2. Placeholder guide (what each placeholder needs)
+3. Example filled-in version
+4. Tips for best results
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-prompt-to-template-converter-the-prompt-that-worked-well">The prompt that worked well</label>
+        <span class="prompt-fill__hint">Paste the original, filled-in prompt</span>
+        <textarea id="pf-prompt-to-template-converter-the-prompt-that-worked-well" class="js-prompt-input" data-token="THE_PROMPT_THAT_WORKED_WELL" data-placeholder="Paste the original, filled-in prompt" placeholder="Paste the original, filled-in prompt"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-prompt-to-template-converter-task-accomplished">Task accomplished</label>
+        <span class="prompt-fill__hint">What it did</span>
+        <input type="text" id="pf-prompt-to-template-converter-task-accomplished" class="js-prompt-input" data-token="TASK_ACCOMPLISHED" data-placeholder="What it did" placeholder="What it did">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-prompt-to-template-converter-why-it-worked-well">Why it worked well</label>
+        <span class="prompt-fill__hint">What made the results good</span>
+        <input type="text" id="pf-prompt-to-template-converter-why-it-worked-well" class="js-prompt-input" data-token="WHY_IT_WORKED_WELL" data-placeholder="What made the results good" placeholder="What made the results good">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-prompt-to-template-converter-variations-you-might-need">Variations you might need</label>
+        <span class="prompt-fill__hint">Different use cases to support</span>
+        <input type="text" id="pf-prompt-to-template-converter-variations-you-might-need" class="js-prompt-input" data-token="VARIATIONS_YOU_MIGHT_NEED" data-placeholder="Different use cases to support" placeholder="Different use cases to support">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-prompt-to-template-converter-who-else-might-use-this">Who else might use this</label>
+        <span class="prompt-fill__hint">Target audience</span>
+        <input type="text" id="pf-prompt-to-template-converter-who-else-might-use-this" class="js-prompt-input" data-token="WHO_ELSE_MIGHT_USE_THIS" data-placeholder="Target audience" placeholder="Target audience">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="index.html">← Chapter overview</a>
+    <span class="chunk-footer__center">Chapter 13 · 4 of 5</span>
+    <a href="chunk-05.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/prompt-fill.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

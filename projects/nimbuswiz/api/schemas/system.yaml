@@ -1,0 +1,102 @@
+# Schemas for the Fleet resource: System object and request body.
+
+System:
+  type: object
+  description: A registered system in NimbusWiz.
+  properties:
+    id:
+      type: string
+      example: n2k-alpha-001
+      description: >
+        Unique system identifier. Format `n2k-[name]-[number]`.
+        Immutable after registration.
+    name:
+      type: string
+      example: Alpha Fleet Primary
+      description: Human-readable system name.
+    status:
+      type: string
+      enum: [registered, scanning, assessment_complete, modernizing, deployed, monitoring]
+      example: monitoring
+      description: Current lifecycle stage of the system.
+    stability_score:
+      type: integer
+      nullable: true
+      example: 86
+      description: Composite health score (0-100). `null` until first scan completes.
+    responsiveness_score:
+      type: integer
+      nullable: true
+      example: 79
+      description: Response time and throughput score (0-100).
+    network_interaction:
+      type: integer
+      nullable: true
+      example: 74
+      description: Network reliability and latency score (0-100).
+    flight_profile:
+      type: string
+      nullable: true
+      enum: [performance_focused, stability_focused, efficiency_focused]
+      example: performance_focused
+      description: Operational priority that influences Advisor recommendations.
+    upgrade_profile:
+      type: string
+      nullable: true
+      enum: [stable, performance, extended]
+      example: performance
+      description: Upgrade strategy currently applied to this system.
+    certification_type:
+      type: string
+      nullable: true
+      enum: [class_a, class_b, class_c]
+      example: class_b
+      description: Certification class set at registration.
+    last_upgrade:
+      type: string
+      format: date-time
+      nullable: true
+      example: "2026-03-15T09:41:00Z"
+      description: ISO 8601 timestamp of the most recent completed deployment.
+    registered_at:
+      type: string
+      format: date-time
+      example: "2026-01-10T08:00:00Z"
+      description: ISO 8601 timestamp when the system was registered.
+    updated_at:
+      type: string
+      format: date-time
+      nullable: true
+      example: "2026-04-10T14:05:00Z"
+      description: ISO 8601 timestamp of the most recent metadata update.
+
+RegisterSystemRequest:
+  type: object
+  required: [id, name, certification_type]
+  properties:
+    id:
+      type: string
+      example: n2k-beta-002
+      description: Unique system ID. Must match `n2k-[name]-[number]` format.
+    name:
+      type: string
+      example: Beta Fleet Secondary
+      description: Human-readable system name.
+    certification_type:
+      type: string
+      enum: [class_a, class_b, class_c]
+      example: class_b
+      description: Certification class. Cannot be changed after registration.
+    upgrade_profile:
+      type: string
+      enum: [stable, performance, extended]
+      example: stable
+      description: Initial upgrade profile. Defaults to `stable`.
+    flight_profile:
+      type: string
+      enum: [performance_focused, stability_focused, efficiency_focused]
+      example: stability_focused
+      description: Operational priority for Advisor recommendations.
+    notes:
+      type: string
+      description: Optional free-text notes about this system.

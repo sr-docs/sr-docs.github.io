@@ -1,0 +1,356 @@
+{
+  "card-sort-analysis": {
+    "category": "Research Synthesis",
+    "purpose": "After completing a card sort study",
+    "title": "Card Sort Analysis",
+    "href": "chapters/ch05/chunk-01.html"
+  },
+  "category-label-synthesis": {
+    "category": "Research Synthesis",
+    "purpose": "After open card sort to standardize category names",
+    "title": "Category Label Synthesis",
+    "href": "chapters/ch05/chunk-01.html"
+  },
+  "conflict-resolution": {
+    "category": "Research Synthesis",
+    "purpose": "When card sort data shows significant disagreement (&lt;40% consensus)",
+    "title": "Conflict Resolution",
+    "href": "chapters/ch05/chunk-02.html"
+  },
+  "similarity-matrix-generator": {
+    "category": "Research Synthesis",
+    "purpose": "Analyzing card sort results quantitatively",
+    "title": "Similarity Matrix Generator",
+    "href": "chapters/ch05/chunk-02.html"
+  },
+  "hierarchical-cluster-analysis": {
+    "category": "Research Synthesis",
+    "purpose": "After completing a card sort study with 20+ participants",
+    "title": "Hierarchical Cluster Analysis",
+    "href": "chapters/ch05/chunk-02.html"
+  },
+  "tree-test-analysis": {
+    "category": "Research Synthesis",
+    "purpose": "Validating proposed navigation structure",
+    "title": "Tree Test Analysis",
+    "href": "chapters/ch05/chunk-04.html"
+  },
+  "quality-criteria": {
+    "category": "Content Modeling",
+    "purpose": "Starting a content audit",
+    "title": "Quality Criteria Definition",
+    "href": "chapters/ch06/chunk-01.html"
+  },
+  "duplicate-detection": {
+    "category": "Content Audit",
+    "purpose": "During content audit to find redundancy",
+    "title": "Duplicate Detection",
+    "href": "chapters/ch06/chunk-03.html"
+  },
+  "age-staleness-analyzer": {
+    "category": "Content Audit",
+    "purpose": "Identify outdated content based on update dates, product version history, and staleness signals. Prioritize content refresh based on user impact and staleness severity.",
+    "title": "Age and Staleness Analyzer",
+    "href": "chapters/ch06/chunk-03.html"
+  },
+  "quality-pattern-analysis": {
+    "category": "Content Audit",
+    "purpose": "After completing content inventory with quality signals",
+    "title": "Quality Pattern Analysis",
+    "href": "chapters/ch06/chunk-03.html"
+  },
+  "audit-framework": {
+    "category": "Content Audit",
+    "purpose": "Starting a new content audit project",
+    "title": "Audit Framework",
+    "href": "chapters/ch06/chunk-04.html"
+  },
+  "multi-pass-audit-strategy": {
+    "category": "Content Audit",
+    "purpose": "Design phased audit approaches for complex content audits, breaking analysis into focused passes that build on each other: structure → category-level → cross-category relationships.",
+    "title": "Multi-Pass Audit Strategy",
+    "href": "chapters/ch06/chunk-04.html"
+  },
+  "quality-assessment": {
+    "category": "Content Audit",
+    "purpose": "Deep-dive quality review during audit",
+    "title": "Quality Assessment",
+    "href": "chapters/ch06/chunk-04.html"
+  },
+  "standards-compliance-check": {
+    "category": "Content Audit",
+    "purpose": "Auditing content against Diátaxis framework",
+    "title": "Standards Compliance Check",
+    "href": "chapters/ch06/chunk-04.html"
+  },
+  "gap-analysis": {
+    "category": "Content Audit",
+    "purpose": "After content inventory to find holes",
+    "title": "Gap Analysis",
+    "href": "chapters/ch06/chunk-05.html"
+  },
+  "competitive-gap-analysis": {
+    "category": "Content Audit",
+    "purpose": "Planning documentation roadmap",
+    "title": "Competitive Gap Analysis",
+    "href": "chapters/ch06/chunk-06.html"
+  },
+  "content-type-discovery": {
+    "category": "Content Modeling",
+    "purpose": "Starting content modeling from scratch",
+    "title": "Content Type Discovery",
+    "href": "chapters/ch06/chunk-07.html"
+  },
+  "classification-prompt": {
+    "category": "Content Modeling",
+    "purpose": "Reorganizing documentation by content type",
+    "title": "Content Classification",
+    "href": "chapters/ch06/chunk-07.html"
+  },
+  "schema-generator": {
+    "category": "Content Modeling",
+    "purpose": "Designing CMS content structures",
+    "title": "Metadata Schema Generator",
+    "href": "chapters/ch06/chunk-07.html"
+  },
+  "relationship-mapper": {
+    "category": "Content Modeling",
+    "purpose": "Designing content models with interconnected types",
+    "title": "Relationship Mapper",
+    "href": "chapters/ch06/chunk-07.html"
+  },
+  "hierarchical-generator": {
+    "category": "Taxonomy",
+    "purpose": "Creating primary taxonomy from scratch",
+    "title": "Hierarchical Taxonomy Generator",
+    "href": "chapters/ch07/chunk-04.html"
+  },
+  "exploratory-pattern": {
+    "category": "Taxonomy",
+    "purpose": "Unsure which organizational approach is best",
+    "title": "Exploratory Taxonomy Pattern",
+    "href": "chapters/ch07/chunk-04.html"
+  },
+  "diataxis-integration": {
+    "category": "Taxonomy",
+    "purpose": "Documentation projects following Diátaxis methodology",
+    "title": "Diátaxis Integration Pattern",
+    "href": "chapters/ch07/chunk-04.html"
+  },
+  "taxonomy-validator": {
+    "category": "Taxonomy",
+    "purpose": "After generating a new taxonomy",
+    "title": "Taxonomy Validator",
+    "href": "chapters/ch07/chunk-04.html"
+  },
+  "balance-validator": {
+    "category": "Taxonomy",
+    "purpose": "After generating or refining a taxonomy",
+    "title": "Balance Validator",
+    "href": "chapters/ch07/chunk-04.html"
+  },
+  "refinement-pattern": {
+    "category": "Taxonomy",
+    "purpose": "Taxonomy has balance issues (one category too large)",
+    "title": "Taxonomy Refinement Pattern",
+    "href": "chapters/ch07/chunk-04.html"
+  },
+  "polyhierarchy-analysis": {
+    "category": "Taxonomy",
+    "purpose": "Content logically belongs in multiple places",
+    "title": "Polyhierarchy Analysis Pattern",
+    "href": "chapters/ch07/chunk-07.html"
+  },
+  "faceted-classification": {
+    "category": "Taxonomy",
+    "purpose": "Content needs multiple access paths (by topic, type, difficulty, language)",
+    "title": "Faceted Classification",
+    "href": "chapters/ch07/chunk-08.html"
+  },
+  "quote-extraction": {
+    "category": "Research Synthesis",
+    "purpose": "Extract significant quotes from user research transcripts and categorize them by theme, sentiment, and relevance for use in personas, journey maps, and stakeholder presentations.",
+    "title": "Quote Extraction and Categorization",
+    "href": "chapters/ch08/chunk-02.html"
+  },
+  "seo-keyword-research": {
+    "category": "Search & Findability",
+    "purpose": "Planning new documentation content",
+    "title": "SEO Keyword Research",
+    "href": "chapters/ch08/chunk-06.html"
+  },
+  "content-model-diagram": {
+    "category": "IA Documentation",
+    "purpose": "Documenting content type structures",
+    "title": "Content Model Diagram",
+    "href": "chapters/ch08/chunk-07.html"
+  },
+  "faceted-taxonomy-visualizer": {
+    "category": "IA Documentation",
+    "purpose": "Create visual diagrams for faceted classification systems showing multiple dimensions (facets), their values, and how they combine. Uses Mermaid mindmap or flowchart syntax.",
+    "title": "Faceted Taxonomy Visualizer",
+    "href": "chapters/ch08/chunk-07.html"
+  },
+  "user-flow-diagram": {
+    "category": "IA Documentation",
+    "purpose": "Create user flow diagrams in Mermaid syntax showing how users navigate through information architecture to accomplish specific goals, including decision points, success paths, and error handling.",
+    "title": "User Flow Diagram Generator",
+    "href": "chapters/ch08/chunk-07.html"
+  },
+  "sitemap-generator": {
+    "category": "IA Documentation",
+    "purpose": "Documenting existing site structure",
+    "title": "Sitemap Generator",
+    "href": "chapters/ch08/chunk-08.html"
+  },
+  "ascii-sitemap-generator": {
+    "category": "IA Documentation",
+    "purpose": "Generate text-based hierarchical sitemaps using ASCII tree characters, including page counts, percentage distributions, and content type annotations. Ideal for quick documentation, plain-text environments, and version control.",
+    "title": "ASCII Sitemap Generator",
+    "href": "chapters/ch08/chunk-08.html"
+  },
+  "sitemap-to-mermaid": {
+    "category": "IA Documentation",
+    "purpose": "Convert ASCII tree sitemaps into Mermaid flowchart syntax for visual rendering in documentation platforms, presentations, and web pages.",
+    "title": "Sitemap-to-Mermaid Converter",
+    "href": "chapters/ch08/chunk-08.html"
+  },
+  "stakeholder-sitemap-views": {
+    "category": "IA Documentation",
+    "purpose": "Generate tailored sitemap views for different stakeholders (executives, developers, content authors) that emphasize the information most relevant to each audience while using the same underlying structure.",
+    "title": "Stakeholder-Specific Sitemap Views",
+    "href": "chapters/ch08/chunk-08.html"
+  },
+  "survey-analysis-suite": {
+    "category": "Research Synthesis",
+    "purpose": "After conducting user surveys about documentation experience",
+    "title": "Survey Analysis Suite",
+    "href": "chapters/ch09/chunk-05.html"
+  },
+  "navigation-generator": {
+    "category": "Navigation",
+    "purpose": "Creating navigation for new site/product",
+    "title": "Navigation Generator",
+    "href": "chapters/ch10/chunk-01.html"
+  },
+  "depth-breadth-analyzer": {
+    "category": "Navigation",
+    "purpose": "Evaluate navigation structures for optimal balance between depth (number of levels) and breadth (items per level), identifying when navigation is too deep, too shallow, or well-balanced.",
+    "title": "Navigation Depth/Breadth Analyzer",
+    "href": "chapters/ch10/chunk-02.html"
+  },
+  "mobile-navigation-auditor": {
+    "category": "Navigation",
+    "purpose": "Evaluate navigation structures specifically for mobile device constraints including thumb zones, screen size limitations, touch targets, and mobile-specific interaction patterns.",
+    "title": "Mobile Navigation Auditor",
+    "href": "chapters/ch11/chunk-03.html"
+  },
+  "navigation-label-optimizer": {
+    "category": "Navigation",
+    "purpose": "Preparing navigation for launch",
+    "title": "Navigation Label Optimizer",
+    "href": "chapters/ch11/chunk-05.html"
+  },
+  "label-variation-generator": {
+    "category": "Navigation",
+    "purpose": "Testing navigation labels before user research",
+    "title": "Label Variation Generator",
+    "href": "chapters/ch11/chunk-05.html"
+  },
+  "information-scent-evaluator": {
+    "category": "Navigation",
+    "purpose": "Testing proposed navigation labels",
+    "title": "Information Scent Evaluator",
+    "href": "chapters/ch11/chunk-05.html"
+  },
+  "navigation-validator": {
+    "category": "Navigation",
+    "purpose": "Comprehensively audit AI-generated or proposed navigation structures before implementation, checking structure quality, label clarity, completeness, and usability red flags.",
+    "title": "Navigation Validation",
+    "href": "chapters/ch11/chunk-06.html"
+  },
+  "search-sprint-task-generator": {
+    "category": "Search & Findability",
+    "purpose": "Generate prioritized, actionable sprint tasks for improving search and findability based on audit findings. Breaks down search improvements into specific, estimable work items suitable for sprint planning.",
+    "title": "Search Optimization Sprint Task Generator",
+    "href": "chapters/ch12/chunk-02.html"
+  },
+  "title-metadata-optimizer": {
+    "category": "Search & Findability",
+    "purpose": "Improving content discoverability",
+    "title": "Title &amp; Metadata Optimizer",
+    "href": "chapters/ch12/chunk-02.html"
+  },
+  "query-analysis": {
+    "category": "Search & Findability",
+    "purpose": "Analyzing search logs to improve content",
+    "title": "Query Analysis",
+    "href": "chapters/ch12/chunk-03.html"
+  },
+  "synonym-generator": {
+    "category": "Search & Findability",
+    "purpose": "Building search synonym dictionary",
+    "title": "Synonym Generator",
+    "href": "chapters/ch12/chunk-03.html"
+  },
+  "faceted-search-designer": {
+    "category": "Search & Findability",
+    "purpose": "Building filtered search interfaces",
+    "title": "Faceted Search Designer",
+    "href": "chapters/ch12/chunk-07.html"
+  },
+  "custom-gpt-instructions-generator": {
+    "category": "No-Code Tools",
+    "purpose": "Generate comprehensive system instructions for Custom GPTs (ChatGPT) or Claude Projects that create specialized, reusable IA tools with consistent behavior, validation checks, and domain expertise.",
+    "title": "Custom GPT/Project System Instructions Generator",
+    "href": "chapters/ch13/chunk-01.html"
+  },
+  "prompt-chain-designer": {
+    "category": "No-Code Tools",
+    "purpose": "Design multi-step prompt workflows where the output of one prompt becomes the input to the next, creating systematic processes for complex IA tasks with built-in validation checkpoints.",
+    "title": "Prompt Chain Designer",
+    "href": "chapters/ch13/chunk-02.html"
+  },
+  "prompt-documentation-template": {
+    "category": "No-Code Tools",
+    "purpose": "Create standardized documentation for prompts used in IA workflows, ensuring prompts are reusable, maintainable, and shareable across teams.",
+    "title": "Prompt Documentation Template",
+    "href": "chapters/ch13/chunk-03.html"
+  },
+  "prompt-to-template-converter": {
+    "category": "No-Code Tools",
+    "purpose": "Convert ad-hoc prompts that worked well into reusable templates with clear placeholders, consistent structure, and documentation for repeated use.",
+    "title": "Prompt-to-Template Converter",
+    "href": "chapters/ch13/chunk-04.html"
+  },
+  "research-validation-checkpoint": {
+    "category": "Research Synthesis",
+    "purpose": "Validate AI-assisted research synthesis against original data, checking for hallucinations, misinterpretations, and unsupported conclusions before using findings for IA decisions.",
+    "title": "Research Validation Checkpoint",
+    "href": "chapters/ch13/chunk-05.html"
+  },
+  "interview-theme-analysis": {
+    "category": "Research Synthesis",
+    "purpose": "Analyzing user interviews for IA insights",
+    "title": "Interview Theme Analysis",
+    "href": "chapters/ch14/chunk-01.html"
+  },
+  "mental-model-mapper": {
+    "category": "Research Synthesis",
+    "purpose": "After conducting user interviews about information-seeking behavior",
+    "title": "Mental Model Mapper",
+    "href": "chapters/ch14/chunk-02.html"
+  },
+  "pain-point-synthesis": {
+    "category": "Research Synthesis",
+    "purpose": "Synthesizing findings across multiple research sources",
+    "title": "Pain Point Synthesis",
+    "href": "chapters/ch14/chunk-03.html"
+  },
+  "cross-method-synthesis": {
+    "category": "Research Synthesis",
+    "purpose": "After completing multiple research methods (card sorts, interviews, surveys, analytics)",
+    "title": "Cross-Method Synthesis",
+    "href": "chapters/ch14/chunk-04.html"
+  }
+}

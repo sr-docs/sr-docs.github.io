@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hybrid Organization Schemes — Chapter 4 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 4</a>
+      <span aria-hidden="true">›</span>
+      <span>Hybrid Organization Schemes</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 8 of 9">8 of 9</div>
+    <div class="mini-nav__links">
+      <a href="chunk-07.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-09.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Hybrid Organization Schemes
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        A hybrid organization scheme combines multiple schemes to serve different needs within the same information space — often using one scheme at a higher level of the hierarchy and a different scheme at a lower level, or offering two alternative paths to the same content. The U.S. House of Representatives' directory of representatives illustrates this well: it's organized primarily "By State and District" — a geographical and numerical scheme — with an alternative "By Last Name" path that's fundamentally alphabetical.
+      </p>
+      <p>
+        Hybrid schemes can genuinely serve people better when done carefully, but the source material is blunt about the risk: combine schemes carelessly and you create what it calls an "unusable Frankenstein-monster mashup." As a general rule, using a single scheme across an information space's primary content makes that content easier for people to understand as a coherent whole.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      A hybrid scheme should feel like two clear doors into the same room — not a maze where nobody agrees on the layout.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch04-chunk-08" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A government services website organizes its content with a hybrid scheme: at the top level, content is split by audience — "For Residents," "For Businesses," "For Visitors" — but within "For Residents," content is then organized topically — "Housing," "Utilities," "Transportation."
+        </p>
+        <p>
+          Separately, a small subset of urgent public-safety content — severe weather alerts, emergency contacts — appears both under "For Residents" and again under "For Visitors," but uses different terminology and slightly different content in each location. User research shows that residents looking for the same emergency information under both audience sections get confused about which version is current.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          Where does this hybrid scheme break down?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="breakdown" value="unworkable">
+            <span class="exercise__option-text">The overall audience-then-topic combination is inherently unworkable</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="breakdown" value="duplication">
+            <span class="exercise__option-text">The audience-then-topic combination is fine, but the duplicated emergency content across sections uses inconsistent terminology and content, creating confusion</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="breakdown" value="single-scheme">
+            <span class="exercise__option-text">The problem is that a single scheme wasn't used throughout</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="breakdown" value="none">
+            <span class="exercise__option-text">There's no breakdown here — this reflects a well-designed hybrid scheme</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          Propose a specific fix for the duplicated emergency content, consistent with how the source material describes handling the same underlying information accessed through more than one path, as in the House of Representatives example.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>The audience-then-topic combination is fine, but the duplicated emergency content across sections uses inconsistent terminology and content, creating confusion.</strong> Layering audience at the top level and topic within "For Residents" is a common, reasonable hybrid pattern — it isn't itself the source of the breakdown here. The actual failure is that the same underlying information was duplicated with inconsistent terminology and content rather than genuinely shared between the two access paths.
+      </p>
+
+      <span class="feedback__highlight">
+        This is the important contrast with the House of Representatives example. "By State and District" and "By Last Name" are two different organizational views onto the exact same underlying directory records — not two separately maintained copies that can drift apart. The government site's emergency content, by contrast, was duplicated and then edited independently in each location, which is exactly how the two versions ended up inconsistent and confusing residents about which one was current.
+      </span>
+
+      <p>
+        The fix follows directly from that contrast: maintain the emergency content once, as a single source, and surface it through both the "For Residents" and "For Visitors" paths via linking or a shared content component — the same way the House of Representatives directory presents one set of records through two organizational doors, rather than keeping two versions that can silently fall out of sync.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-07.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 4 · 8 of 9</span>
+    <a href="chunk-09.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

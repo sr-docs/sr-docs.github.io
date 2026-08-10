@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Principles — Chapter 3 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 3</a>
+      <span aria-hidden="true">›</span>
+      <span>Navigation Principles</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 4 of 5">4 of 5</div>
+    <div class="mini-nav__links">
+      <a href="chunk-03.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-05.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Navigation Principles
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Once people are oriented, navigation principles determine whether they can actually get where they're going. Provide the appropriate navigation options at each decision point — enough links to cover what's needed, but not so many that people are overwhelmed. Avoid presenting too many options at once; progressive disclosure can group and hide subordinate links until they're needed. Keep wayfinding information clear and consistent across the entire space. Simplify navigation by grouping related links together, and make sure the links within each group are clearly distinguishable from one another.
+      </p>
+      <p>
+        For very large or complex spaces, consider providing an overview — a site map, directory, or index — as a supplementary aid. Jared Spool has argued that investing in a stronger core navigation system with better information scent delivers more value than adding a site map or breadcrumbs on top of a weak one. Jakob Nielsen counters that site maps and breadcrumbs still offer real, if secondary, value even when the core navigation is solid.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      A navigation system with too many links looks generous. In practice, it just moves the cognitive burden from finding information to filtering options.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch03-chunk-04" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A mid-sized retailer's navigation system is redesigned. The new global navigation bar has 22 top-level links, all displayed at once with no grouping. Three of the links have overlapping, similarly-worded labels: "Outdoor Living," "Outdoor &amp; Patio," and "Garden &amp; Outdoor." There is no site map or index anywhere on the site.
+        </p>
+        <p>
+          User testing complaints: <em>"I can't tell which of these three outdoor categories has what I'm looking for."</em> <em>"There are so many options at the top I don't know where to start."</em> <em>"I gave up and just used Google to find your return policy page instead of searching your site."</em>
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          1. Which navigation principle is most directly violated by having 22 top-level links displayed at once?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="violation-1" value="too-many">
+            <span class="exercise__option-text">Don't dump every destination into one long top bar</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="violation-1" value="group">
+            <span class="exercise__option-text">Cluster related destinations so the bar reads as a few families</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="violation-1" value="consistent">
+            <span class="exercise__option-text">Keep breadcrumbs and section markers identical on every page</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="violation-1" value="none">
+            <span class="exercise__option-text">No problem — a longer bar always gives shoppers more control</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          2. Which principle is most directly violated by the three overlapping, similarly-worded category labels?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="violation-2" value="distinguishable">
+            <span class="exercise__option-text">Sibling labels in a group must mean different things at a glance</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="violation-2" value="decision-point">
+            <span class="exercise__option-text">Offer whatever links the shopper might need at this step</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="violation-2" value="group">
+            <span class="exercise__option-text">Put related links under one heading so the bar is shorter</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="violation-2" value="none">
+            <span class="exercise__option-text">No problem — near-duplicate labels help SEO catch more queries</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          The user who gave up and used Google for the return policy suggests the site also has no supplementary overview tool. Referencing the Spool/Nielsen disagreement from the concept section, make a case for whether this retailer should invest first in fixing the core navigation, or in adding a site map, given what this scenario tells you.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>1 — Avoid presenting too many navigation options at once.</strong> Twenty-two ungrouped top-level links is a direct violation of this principle — the complaint "I don't know where to start" is precisely the symptom this principle exists to prevent.
+      </p>
+
+      <p>
+        <strong>2 — Links within a group must be clearly distinguishable.</strong> "Outdoor Living," "Outdoor &amp; Patio," and "Garden &amp; Outdoor" all sound like they could contain the same products. This principle exists specifically to prevent labels from overlapping to the point where users can't tell them apart.
+      </p>
+
+      <span class="feedback__highlight">
+        Given the evidence in this scenario, the stronger case leans toward Spool's position: fix the core navigation first. Both user complaints point directly at structural problems — too many undifferentiated options, and overlapping labels — not at "the content is hard to find within an otherwise clear structure." Layering a site map on top of 22 confusing, overlapping-labeled links wouldn't resolve the confusion; it would just offer a second, parallel way to encounter the same unclear categories.
+      </span>
+
+      <p>
+        That said, Nielsen's point isn't wrong in general — a site map can still have value once the core structure is sound, since some users specifically look for that kind of overview regardless of how good the navigation is. The lesson here is less about which expert is "right" and more about reading the specific evidence in front of you: this scenario's complaints point to a structural problem, so a structural fix should come before a supplementary one.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-03.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 3 · 4 of 5</span>
+    <a href="chunk-05.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

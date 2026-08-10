@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Hub-and-Spoke Pattern — Chapter 4 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 4</a>
+      <span aria-hidden="true">›</span>
+      <span>Hub and Spoke</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 4 of 9">4 of 9</div>
+    <div class="mini-nav__links">
+      <a href="chunk-03.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-05.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      The Hub-and-Spoke Pattern
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        In a hub-and-spoke structure, a central hub page is the single entry point from which users navigate to individual spoke pages, then return to the hub before moving to another spoke. This reflects a common browsing behavior — click a link, view its content, return, click another link. Hub-and-spoke is very common in mobile apps and can work well for information spaces with a limited scope or for individual sections within a larger space, though it's less common as the structure for an entire large information space. More complex versions nest smaller hub-and-spoke structures within individual spokes.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      Hub-and-spoke works well when each visit is a self-contained errand. It works poorly when the user's actual task requires moving fluidly between several pieces of content at once.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch04-chunk-04" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A mobile app for a financial services company structures its multi-step loan application as a hub-and-spoke pattern. A central "Application Hub" screen lists all required sections — Income, Employment, Assets, References — and completing any one section always returns the user to the Application Hub before they can start the next section.
+        </p>
+        <p>
+          Users complain that completing the full application "feels exhausting," and say they wish they could move directly from one section to the next without detouring back to the hub every time.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          Is hub-and-spoke the right structural pattern for this specific task?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="pattern-fit" value="yes-intended">
+            <span class="exercise__option-text">Yes — the pattern is working exactly as intended</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="pattern-fit" value="no-linear">
+            <span class="exercise__option-text">No — a linear sequence would better fit a task that has a required order and a clear endpoint</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="pattern-fit" value="no-hypertext">
+            <span class="exercise__option-text">No — this should be a pure hypertext structure with no required order at all</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="pattern-fit" value="yes-redesign-hub">
+            <span class="exercise__option-text">Yes, but the hub screen itself needs a redesign, not the underlying pattern</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          Explain why the specific complaint — needing to detour back to the hub before every next section — is a natural consequence of the hub-and-spoke pattern rather than a bug in its implementation.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>No — a linear sequence would better fit a task that has a required order and a clear endpoint.</strong> The loan application has exactly the traits the source material associates with a linear sequence: a defined set of steps, a required order, and a clear endpoint — submission. Hub-and-spoke is built around a different behavior entirely: visiting individual, largely self-contained spokes and returning to a central hub between each one.
+      </p>
+
+      <span class="feedback__highlight">
+        This is not an implementation flaw — it's the pattern behaving exactly as designed, applied to a task it was never meant to serve. The mandatory return-to-hub between every section is hub-and-spoke's defining behavior, not an accident of this particular build. No redesign of the hub screen itself would remove that friction, because the friction comes from the pattern's basic structure, not its visual execution.
+      </span>
+
+      <p>
+        A linear sequence would let users move directly from Income to Employment to Assets to References using Next and Previous controls, with a visible list of steps showing their progress toward the clear endpoint of submission — addressing the "exhausting" complaint directly, because it removes the repeated, unnecessary detour that hub-and-spoke requires by design.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-03.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 4 · 4 of 9</span>
+    <a href="chunk-05.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

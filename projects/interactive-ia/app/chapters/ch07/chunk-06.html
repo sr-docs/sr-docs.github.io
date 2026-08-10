@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ontologies — Chapter 7 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 7</a>
+      <span aria-hidden="true">›</span>
+      <span>Ontologies</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 6 of 10">6 of 10</div>
+    <div class="mini-nav__links">
+      <a href="chunk-05.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-07.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Ontologies
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        An ontology is a formal, machine-readable specification of a controlled vocabulary, built to represent large numbers of very specific semantic relationships within a domain. Where a thesaurus is designed for people to browse and search, an ontology is designed for machines to reason with — it defines classes, their attributes, the relationships between them, and even inference rules that let software draw new conclusions from what's explicitly stated. The Resource Description Framework, an official web standard, expresses these relationships as triples — subject, predicate, object — such as "Cat is a type of Pet," which a machine can process directly.
+      </p>
+      <p>
+        Building an ontology is significant work, and the source material is clear that organizations should generally adopt or extend an existing shared ontology within their domain community rather than building their own from scratch, since interoperability depends on different systems agreeing on the same underlying model.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      A thesaurus helps a person find the right term. An ontology helps a machine understand that two differently-worded facts actually mean the same thing — which is a fundamentally different, and much harder, problem to solve.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch07-chunk-06" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A healthcare technology company is building a knowledge system that needs to connect patient symptoms, diagnoses, treatments, medications, and contraindications across multiple medical specialties — and needs software to automatically flag when a prescribed medication conflicts with a patient's existing condition. A colleague argues that a well-maintained thesaurus would be sufficient for this project.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          Is the colleague's argument that a thesaurus alone would suffice correct?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="assessment" value="thesaurus-insufficient">
+            <span class="exercise__option-text">No — automatically detecting conflicts between medications and conditions requires machine-processable relationships and inference, which is what an ontology provides and a thesaurus does not</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="assessment" value="thesaurus-sufficient">
+            <span class="exercise__option-text">Yes — a thesaurus's broader, narrower, and related terms are sufficient to represent all of this</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="assessment" value="neither-needed">
+            <span class="exercise__option-text">Neither is needed — a simple synonym ring would be enough</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          The colleague's underlying concern — cost and complexity — is legitimate even if the conclusion is wrong. Identify one genuine limitation or cost of building an ontology that the colleague's worry is pointing at.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>No — a thesaurus alone would not suffice.</strong> Automatically flagging a medication-condition conflict requires software to reason over relationships — to combine "this medication treats condition X" with "this patient has condition Y" with "condition Y is a contraindication for this medication class" and draw a conclusion no human explicitly stated. A thesaurus's broader, narrower, and related terms are built for humans to browse and search, not for machines to run inference over. This is precisely the gap an ontology's inference rules and formal, machine-readable relationships are designed to fill.
+      </p>
+
+      <span class="feedback__highlight">
+        The colleague's underlying worry is legitimate, though: ontologies require significant investment to build correctly, and the source material is explicit that building one from scratch is generally the wrong move — the better path is adopting or extending an existing, shared ontology within the medical domain, of which several already exist for exactly this kind of clinical relationship data, rather than a single company attempting to construct medical-domain reasoning capability entirely on its own.
+      </span>
+
+      <p>
+        This distinction matters generally: the question isn't "thesaurus versus ontology" as if picking a fancier tool. It's whether the actual requirement is human search and browsing, which a thesaurus serves well, or automated machine reasoning, which requires an ontology's more demanding, but fundamentally different, kind of structure.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-05.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 7 · 6 of 10</span>
+    <a href="chunk-07.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

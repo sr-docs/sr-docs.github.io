@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content and Technology Constraints — Chapter 8 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 8</a>
+      <span aria-hidden="true">›</span>
+      <span>Content and Technology Constraints</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 4 of 8">4 of 8</div>
+    <div class="mini-nav__links">
+      <a href="chunk-03.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-05.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Understanding the Organization's Content and Its Implementation Technology
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Before defining an IA strategy, you need a real understanding of what content already exists, what's planned, and what gaps need filling — drawing on content-owner interviews and, ideally, a facilitated content-strategy meeting with the range of people who plan, create, and manage that content. If no dedicated content strategist is on the team, the IA may need to take on part of that role directly, since a viable content strategy is a prerequisite for a workable IA strategy, not a parallel, unrelated task.
+      </p>
+      <p>
+        Just as important is understanding the technology the content will actually live in — particularly the CMS, its capabilities, and its limitations. This means asking developers direct questions: what platforms and devices need to be supported, whether the system can structure content the way the design calls for, whether it supports content reuse and personalization, and what constraints already exist. In an ideal world, technology would be built to match whatever the design strategy requires. In practice, most projects inherit technology choices that are already made, and the design strategy has to be realistic about working within those constraints — reserving the harder conversation about acquiring new technology for cases where the existing limitations would seriously compromise the business goals or the user experience.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      An IA strategy that ignores what the CMS can actually do isn't ambitious — it's just a plan for a second, more painful round of renegotiation once implementation starts.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch08-chunk-04" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> An IA consultant is working with a retail organization on a website redesign. Content analysis has revealed a large, heterogeneous product collection with significant duplication, several content types that would clearly benefit from structured templates, and a strong case for faceted navigation so customers can filter products by size, color, material, and price simultaneously.
+        </p>
+        <p>
+          The development team then shares their technology constraints: the existing CMS does not support faceted metadata at all, content reuse across templates is limited, and the development timeline rules out replacing the CMS before launch.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          Given both the content findings and the technology constraints, what should the consultant propose?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="proposal" value="realistic-strategy">
+            <span class="exercise__option-text">A realistic IA strategy that works within the current CMS's actual capabilities now, while documenting faceted navigation as a clearly justified future technology investment</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="proposal" value="ignore-constraints">
+            <span class="exercise__option-text">Design the full faceted navigation strategy anyway, and let the development team figure out how to implement it within the timeline</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="proposal" value="abandon-findings">
+            <span class="exercise__option-text">Abandon the content findings entirely and design only around whatever the CMS already happens to do well</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          Identify one specific IA decision from this scenario worth pushing back on the development team about, versus one the consultant should simply accept and design around. Explain what makes the two different.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>Proposing a realistic strategy that works within current constraints, while documenting faceted navigation as a justified future investment, is correct.</strong> Ignoring the technology constraints and designing the full faceted strategy anyway sets the development team up to either miss the deadline or deliver something that doesn't actually work — the source material is explicit that most projects have to design realistically within inherited technology choices, not around them. But abandoning the content findings entirely goes too far in the other direction: the duplication and structured-template opportunities the content analysis surfaced are real and don't depend on faceted metadata support at all, so there's no reason to discard genuinely actionable findings just because one specific recommendation hit a technical wall.
+      </p>
+
+      <span class="feedback__highlight">
+        The distinction between what to push back on and what to accept comes down to impact on core business goals versus preference. The lack of faceted metadata support is worth escalating as a real conversation — if faceted navigation would meaningfully affect conversion or findability for a large product catalog, that's exactly the kind of business-critical gap the source material says justifies raising the harder question of acquiring more capable technology, even if the answer turns out to be "not before this launch, but plan for it next." The limited content reuse across templates is more reasonably something to accept and design around for now — restructuring the content model to reduce duplication as much as the current CMS allows, without holding the whole project hostage to a capability that isn't strictly necessary to hit the redesign's core goals.
+      </span>
+
+      <p>
+        This reflects the balance the source material describes: default to designing within existing technology, but don't treat every constraint as equally non-negotiable — reserve pushback for the constraints that would actually compromise what the business is trying to achieve.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-03.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 8 · 4 of 8</span>
+    <a href="chunk-05.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

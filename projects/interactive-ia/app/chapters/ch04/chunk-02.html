@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Relational Database Pattern — Chapter 4 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 4</a>
+      <span aria-hidden="true">›</span>
+      <span>Relational Database</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 2 of 9">2 of 9</div>
+    <div class="mini-nav__links">
+      <a href="chunk-01.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-03.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      The Relational Database Pattern
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        A relational database structure organizes content as records that share the same fields, stored in tables where rows are individual records and columns are attributes. This pattern works best for large collections of fairly homogeneous content, where the same components need to be displayed in different ways across different pages — search results and product pages showing the same product data, for instance.
+      </p>
+      <p>
+        A database requires at least one field with a clearly distinguishable value for each record, and it isn't suited to heterogeneous content that lacks that kind of uniformity. Faceted metadata extends the database pattern further: facets are independent sets of categories that describe the same content from different angles — a recipe site, for example, might use facets for meal, course, cooking method, main ingredient, dietary restriction, and cuisine, letting users approach the same recipes from whichever angle matches their need.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      The test for whether a database structure fits isn't how much content you have — it's whether that content is uniform enough to describe with the same set of fields.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch04-chunk-02" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> Three content collections. Assess whether a database structure fits each one.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          1. A recipe website with 5,000 recipes, each having consistent attributes: ingredients, cook time, cuisine, dietary tags, and ratings.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="recipe-site" value="fits">
+            <span class="exercise__option-text">Database fits well</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="recipe-site" value="no-fit">
+            <span class="exercise__option-text">Database doesn't fit</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="recipe-site" value="ambiguous">
+            <span class="exercise__option-text">Ambiguous</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          2. A company's "About Us" section, containing a mission statement, a leadership bio page, a company history timeline, and a careers page — four entirely different content types with no shared structure.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="about-us" value="fits">
+            <span class="exercise__option-text">Database fits well</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="about-us" value="no-fit">
+            <span class="exercise__option-text">Database doesn't fit</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="about-us" value="ambiguous">
+            <span class="exercise__option-text">Ambiguous</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          3. A university's faculty directory, where most entries have name, department, and office hours, but a growing number of faculty pages also include embedded video lectures, downloadable syllabi, and personal research blogs of wildly varying structure.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="faculty-directory" value="fits">
+            <span class="exercise__option-text">Database fits well</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="faculty-directory" value="no-fit">
+            <span class="exercise__option-text">Database doesn't fit</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="faculty-directory" value="ambiguous">
+            <span class="exercise__option-text">Ambiguous</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          For the faculty directory, argue a position: does the growing variety of content mean the database pattern should be abandoned, or adapted? Explain your reasoning.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>1 — Database fits well.</strong> Every recipe shares the same fields — ingredients, cook time, cuisine, dietary tags, ratings — across all 5,000 entries. This is exactly the uniform, homogeneous content the database pattern is built for, and it's a natural candidate for faceted metadata on top of it.
+      </p>
+
+      <p>
+        <strong>2 — Database doesn't fit.</strong> A mission statement, a bio page, a history timeline, and a careers page share no common fields at all. This is heterogeneous content, which the source material explicitly says a database structure isn't suited to. A hierarchy or hypertext pattern fits this content far better.
+      </p>
+
+      <p>
+        <strong>3 — Ambiguous.</strong> The core directory data — name, department, office hours — is uniform enough for a database. But the growing variety of embedded video, syllabi, and personal blogs introduces exactly the kind of heterogeneity the database pattern struggles with.
+      </p>
+
+      <span class="feedback__highlight">
+        The stronger case is adapting rather than abandoning. The underlying directory record — name, department, office hours — remains genuinely uniform across every faculty member and continues to justify a database structure. The variable content doesn't have to break that: it can exist as flexible additional fields or as hypertext links layered onto the same database record, rather than forcing the whole directory into a different pattern. This is a common real-world situation — most large information spaces end up as hybrid structures precisely because pure uniformity is rare once a space grows large enough.
+      </span>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-01.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 4 · 2 of 9</span>
+    <a href="chunk-03.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creating Personas — Chapter 8 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 8</a>
+      <span aria-hidden="true">›</span>
+      <span>Creating Personas</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 2 of 8">2 of 8</div>
+    <div class="mini-nav__links">
+      <a href="chunk-01.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-03.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Synthesizing Research and Creating Personas
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        A persona is a user archetype representing a distinct set of behavior patterns and goals, built by triangulating qualitative and quantitative research rather than by guessing. The process starts by identifying the different roles your users occupy, then mapping the behavioral characteristics research participants actually displayed against those roles, looking for clusters that suggest a genuine, distinct pattern rather than one-off individual quirks. Each persona needs both accomplishment goals — what they want to achieve — and an experience goal — how they want to feel while doing it.
+      </p>
+      <p>
+        Not every persona carries equal weight. A <strong>primary persona</strong> represents the main target for a given role and drives the initial design focus. A <strong>secondary persona</strong> is similar with minor differences, accommodated once the primary's needs are met. A <strong>supplemental persona</strong> has no genuinely unique needs and mainly exists to satisfy stakeholders who want to see their favorite user type represented — it shouldn't actually drive design decisions. And a <strong>negative persona</strong> explicitly represents a type of user the product is not being designed for, which helps prevent stakeholders from being pulled toward serving someone outside the actual target.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      Two personas that differ only in job title but share the same goals, behaviors, and painpoints aren't two personas — they're one persona wearing two different name tags.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch08-chunk-02" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A team designing a digital platform for independent financial advisers has produced four personas from user research.
+        </p>
+        <p>
+          <strong>Persona A — "Efficient Erin":</strong> A solo adviser managing 80+ client portfolios, wants to minimize time spent on administrative tasks, values speed and automation, feels anxious when a tool slows her down during a client call.
+        </p>
+        <p>
+          <strong>Persona B — "Thorough Tom":</strong> A solo adviser managing 60 client portfolios, wants detailed control over every calculation, distrusts automation, feels satisfied only when he's personally verified every number.
+        </p>
+        <p>
+          <strong>Persona C — "Growth-Focused Grace":</strong> A solo adviser managing 75 client portfolios, wants to spend less time on admin so she can prospect for new clients, feels frustrated by repetitive manual entry. Her goals and behaviors closely mirror Persona A's, differing mainly in her additional interest in prospecting features.
+        </p>
+        <p>
+          <strong>Persona D — "Enterprise Ethan":</strong> Represents a compliance officer at a 500-adviser wealth management firm, who would only ever use a completely different, enterprise-tier product the team has explicitly decided not to build.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          1. Which persona should be designated primary for the core "solo adviser managing daily client work" use case?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="primary" value="erin">
+            <span class="exercise__option-text">Erin — efficiency-focused, matches the largest and most clearly defined behavior pattern</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="primary" value="tom">
+            <span class="exercise__option-text">Tom — thoroughness-focused</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="primary" value="ethan">
+            <span class="exercise__option-text">Ethan — enterprise compliance officer</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          2. What should happen to Persona D, "Enterprise Ethan"?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="ethan-designation" value="negative">
+            <span class="exercise__option-text">Designate him a negative persona — explicitly outside who this product is being designed for</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="ethan-designation" value="primary">
+            <span class="exercise__option-text">Designate him primary, since enterprise clients are valuable</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="ethan-designation" value="secondary">
+            <span class="exercise__option-text">Designate him secondary</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          Persona C, "Growth-Focused Grace," closely mirrors Persona A's goals and behaviors. Explain what this similarity suggests about how Grace should be classified, and what the team should do about her one distinguishing interest — prospecting features — once that classification is made.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>1 — Erin is the strongest primary persona candidate.</strong> Between Erin and Tom, both represent genuinely distinct, well-differentiated behavior patterns — but the scenario describes Erin's efficiency-and-automation-focused pattern as more prevalent among the described solo advisers, and it aligns with what's typically the larger opportunity for a platform aimed at daily client work at scale. Tom remains a legitimate secondary persona: distinct enough in his distrust of automation and desire for manual verification to matter, but representing a narrower slice of the target audience than Erin.
+      </p>
+
+      <p>
+        <strong>2 — Ethan should be a negative persona.</strong> He explicitly represents a type of user — an enterprise compliance officer needing a different, enterprise-tier product the team has decided not to build — that falls outside the platform's actual target. Making this explicit as a negative persona helps the team resist stakeholder pressure to add enterprise-compliance features that would serve a user this product was never meant to serve.
+      </p>
+
+      <span class="feedback__highlight">
+        Grace's close similarity to Erin in goals and behaviors is exactly the signal that she shouldn't be treated as a separate primary persona — she should be classified as secondary, since her pattern differs from Erin's only in one respect: her added interest in prospecting features. Once that classification is made, the design work should proceed by designing for Erin's needs first, then incorporating whatever prospecting-related additions would serve Grace, as long as those additions don't compromise the experience Erin's design already delivers.
+      </span>
+
+      <p>
+        This is precisely the discipline the primary/secondary distinction exists to enforce: rather than treating four personas as four equally weighted design targets, the team can focus their core design effort on Erin, extend thoughtfully for Tom and Grace's specific differences, and consciously exclude Ethan's needs entirely.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="prompt-fill" id="quote-extraction" aria-labelledby="prompt-fill-label-quote-extraction">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-quote-extraction">
+      Try It With Your Data — Quote Extraction and Categorization
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt does</summary>
+      <div class="prompt-fill__guidance-body prompt-fill__guidance-body--simple">
+        <p>Extract significant quotes from user research transcripts and categorize them by theme, sentiment, and relevance for use in personas, journey maps, and stakeholder presentations.</p>
+        <ul><li>After conducting user interviews</li><li>Processing usability test recordings/transcripts</li><li>Mining support conversations for insights</li><li>Building evidence for IA recommendations</li></ul>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">Extract and categorize significant quotes from this research transcript:
+
+TRANSCRIPT:
+{{TRANSCRIPT}}
+
+RESEARCH CONTEXT:
+- Research objective: {{RESEARCH_OBJECTIVE}}
+- Participant role: {{PARTICIPANT_ROLE}}
+- Session type: {{SESSION_TYPE}}
+
+EXTRACTION CRITERIA:
+
+Look for quotes that are:
+1. INSIGHTFUL - Reveal user mental models, expectations, or frustrations
+2. SPECIFIC - Describe concrete behaviors or scenarios
+3. EMOTIONAL - Express strong feelings (positive or negative)
+4. QUOTABLE - Could be used in presentations or documentation
+5. ACTIONABLE - Point to specific problems or opportunities
+
+CATEGORIZE BY:
+
+1. THEME
+   - Navigation/Findability
+   - Content Quality
+   - Terminology/Labels
+   - Mental Models
+   - Workflow/Tasks
+   - Pain Points
+   - Successes/Delights
+   - Feature Requests
+   - [Add themes relevant to your research]
+
+2. SENTIMENT
+   - Positive (delight, satisfaction, praise)
+   - Negative (frustration, confusion, complaint)
+   - Neutral (observation, description)
+
+3. IA RELEVANCE
+   - High: Directly impacts IA decisions
+   - Medium: Provides context for IA
+   - Low: Valuable but tangential to IA
+
+4. USAGE POTENTIAL
+   - Persona quote (captures user voice)
+   - Journey map moment (specific touchpoint)
+   - Stakeholder presentation (persuasive/memorable)
+   - Design requirement (specific need)
+
+OUTPUT FORMAT:
+1. Extracted quotes with context
+2. Categorization tags
+3. Quote significance explanation
+4. Recommended usage
+5. Summary of key themes discovered
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-quote-extraction-transcript">Transcript</label>
+        <span class="prompt-fill__hint">Paste the interview or research transcript</span>
+        <textarea id="pf-quote-extraction-transcript" class="js-prompt-input" data-token="TRANSCRIPT" data-placeholder="Paste the interview or research transcript" placeholder="Paste the interview or research transcript"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-quote-extraction-research-objective">Research objective</label>
+        <span class="prompt-fill__hint">What you were trying to learn</span>
+        <input type="text" id="pf-quote-extraction-research-objective" class="js-prompt-input" data-token="RESEARCH_OBJECTIVE" data-placeholder="What you were trying to learn" placeholder="What you were trying to learn">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-quote-extraction-participant-role">Participant role</label>
+        <span class="prompt-fill__hint">e.g. &quot;new developer&quot;, &quot;admin user&quot;</span>
+        <input type="text" id="pf-quote-extraction-participant-role" class="js-prompt-input" data-token="PARTICIPANT_ROLE" data-placeholder="e.g. &quot;new developer&quot;, &quot;admin user&quot;" placeholder="e.g. &quot;new developer&quot;, &quot;admin user&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-quote-extraction-session-type">Session type</label>
+        <span class="prompt-fill__hint">What kind of session this was.</span>
+        <select id="pf-quote-extraction-session-type" class="js-prompt-input" data-token="SESSION_TYPE">
+          <option value="Interview">Interview</option>
+          <option value="Usability test">Usability test</option>
+          <option value="Support call">Support call</option>
+        </select>
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-01.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 8 · 2 of 8</span>
+    <a href="chunk-03.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="../../assets/js/prompt-fill.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

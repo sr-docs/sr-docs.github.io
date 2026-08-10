@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Types of Labels — Chapter 9 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 9</a>
+      <span aria-hidden="true">›</span>
+      <span>Types of Labels</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 2 of 8">2 of 8</div>
+    <div class="mini-nav__links">
+      <a href="chunk-01.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-03.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Types of Labels
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Not every label does the same job. <strong>Navigation labels</strong> derive much of their meaning from the hierarchy they sit within, and the labels leading to a home page or section main pages carry the most weight of all. <strong>Indexing terms</strong> — categories, tags, keywords assigned through a CMS — support both browsing and search at once, and often draw from a controlled vocabulary to stay consistent. <strong>Filtering control labels</strong> need to clearly represent the scope of what a checkbox or dropdown actually narrows, especially when several filters sit inside a collapsed group. <strong>Contextual link labels</strong> within body content can afford to be generic — "Learn More" works fine when the surrounding text and page title already provide context — but a reference link to another page should generally use that page's actual title. <strong>Page titles</strong> orient a user by confirming where they've landed, ideally echoing the language of whatever link brought them there, while <strong>subheadings</strong> structure the content within the page itself.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      A confusing label rarely announces which type it is — but tracing a user's hesitation back to the specific type of label that failed them is usually the fastest way to know exactly what to fix.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch09-chunk-02" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A user is navigating a large e-learning platform to find a specific course and enroll in it. At four points in her journey, she hesitates, backtracks, or makes the wrong choice.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          1. She's unsure whether the primary navigation link "Programs" or "Courses" is where she should click to browse individual classes — both sound plausible, and the site offers no further context.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-1" value="navigation">
+            <span class="exercise__option-text">Navigation label failure</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-1" value="indexing">
+            <span class="exercise__option-text">Indexing term failure</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-1" value="filtering">
+            <span class="exercise__option-text">Filtering control failure</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          2. On the course listing page, she wants to narrow results to beginner-level courses, but the filter is labeled simply "Level 1," with no indication of what that actually means in practice.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-2" value="filtering">
+            <span class="exercise__option-text">Filtering control failure</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-2" value="page-title">
+            <span class="exercise__option-text">Page title failure</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-2" value="contextual">
+            <span class="exercise__option-text">Contextual link failure</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          3. She clicks into a course and isn't sure she's on the right page — there's no page title visible anywhere, just the course description starting immediately at the top.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-3" value="page-title">
+            <span class="exercise__option-text">Page title failure</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-3" value="navigation-3">
+            <span class="exercise__option-text">Navigation label failure</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-3" value="indexing-3">
+            <span class="exercise__option-text">Indexing term failure</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          4. Partway down the course page, a link labeled "Learn More" appears with no surrounding context at all — no heading above it, no indication of what it leads to.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-4" value="contextual">
+            <span class="exercise__option-text">Contextual link failure</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-4" value="filtering-4">
+            <span class="exercise__option-text">Filtering control failure</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-4" value="subheading-4">
+            <span class="exercise__option-text">Subheading failure</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          For point 4, explain specifically why "Learn More" is not inherently a bad label — and what context, if present, would have made it work fine.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p><strong>1 — Navigation label failure.</strong> "Programs" versus "Courses" as ambiguous top-level navigation options, with no further context to disambiguate them, is a direct navigation labeling problem.</p>
+
+      <p><strong>2 — Filtering control failure.</strong> A filter labeled "Level 1" with no explanation of what that level actually means fails to represent the scope it controls — exactly what a filtering label needs to do.</p>
+
+      <p><strong>3 — Page title failure.</strong> A missing page title means she has no confirmation of where she's landed — the core job a page title exists to do.</p>
+
+      <p><strong>4 — Contextual link failure.</strong> A generic "Learn More" link dropped with no surrounding context provides no information scent at all about what it leads to.</p>
+
+      <span class="feedback__highlight">
+        "Learn More" is not inherently a bad label — the source material is clear that generic contextual labels like this work fine when the surrounding context does the work of clarifying their destination. If this link had appeared directly beneath a subheading like "Instructor Qualifications," or immediately after a sentence introducing the instructor by name, "Learn More" would clearly and reasonably point toward more detail on that specific topic. The failure here isn't the words themselves — it's that the label was dropped with no heading, no introductory sentence, and no surrounding context at all to anchor its meaning.
+      </span>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-01.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 9 · 2 of 8</span>
+    <a href="chunk-03.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

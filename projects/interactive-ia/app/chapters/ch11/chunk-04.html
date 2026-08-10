@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progressive Disclosure — Chapter 11 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 11</a>
+      <span aria-hidden="true">›</span>
+      <span>Progressive Disclosure</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 4 of 6">4 of 6</div>
+    <div class="mini-nav__links">
+      <a href="chunk-03.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-05.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Progressive Disclosure in Navigation
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Progressive disclosure hides subordinate information until someone deliberately asks for it, and it shows up across nearly every navigation pattern — drop-downs revealing subordinate links beneath a horizontal bar item, accordions expanding a section of a vertical menu, tree views opening one level of a hierarchy at a time. Small visual cues do the signaling: carets or triangles, plus and minus signs, right-pointing arrows that rotate or change once expanded.
+      </p>
+      <p>
+        What makes progressive disclosure work is consistency — the same visual cue needs to mean the same thing everywhere it appears. A caret that expands one section but functions as a plain decorative icon somewhere else teaches people the wrong lesson about how to interact with it.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      Progressive disclosure isn't one technique used the same way everywhere — it's a principle applied differently depending on what's being hidden and why, and each application needs to be judged on its own terms.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch11-chunk-04" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A university website uses progressive disclosure in four places.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          1. The horizontal global navigation bar reveals a section's local navigation as a drop-down when clicked, showing five to eight relevant links for that section.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="implementation-1" value="appropriate">
+            <span class="exercise__option-text">Appropriate — a manageable number of relevant links revealed only when needed</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="implementation-1" value="friction">
+            <span class="exercise__option-text">Creates unnecessary friction</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          2. A mobile hamburger menu uses sequential drill-down screens that go four levels deep before reaching an actual page, with no way to see more than one level at a time.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="implementation-2" value="friction">
+            <span class="exercise__option-text">Creates unnecessary friction — four sequential taps with no overview is a heavy interaction cost just to reach content</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="implementation-2" value="appropriate-2">
+            <span class="exercise__option-text">Appropriate</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          3. On course detail pages, an accordion hides the tuition fees and entry requirements by default, requiring a tap to reveal information that nearly every visitor to this page actually needs.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="implementation-3" value="friction">
+            <span class="exercise__option-text">Creates unnecessary friction — hiding information nearly everyone needs defeats the purpose of progressive disclosure</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="implementation-3" value="appropriate-3">
+            <span class="exercise__option-text">Appropriate</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          4. A vertical sidebar uses a tree view with plus and minus signs to expand subcategories within the academic departments listing, where most visitors only need one or two departments at a time.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="implementation-4" value="appropriate">
+            <span class="exercise__option-text">Appropriate — most visitors benefit from keeping irrelevant departments collapsed rather than seeing the entire structure at once</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="implementation-4" value="friction">
+            <span class="exercise__option-text">Creates unnecessary friction</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          For implementation 3, propose a specific fix that still uses progressive disclosure somewhere on the page, but stops hiding the fees and entry requirements themselves.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p><strong>1 — Appropriate.</strong> A drop-down revealing a manageable, relevant set of links only when a visitor engages with that section is progressive disclosure doing exactly what it's meant to do.</p>
+
+      <p><strong>2 — Creates unnecessary friction.</strong> Four sequential levels with no overview at any point is a heavy interaction cost, and it compounds with each additional level — this is a case where hiding information has gone too far relative to what it actually saves in screen space.</p>
+
+      <p><strong>3 — Creates unnecessary friction.</strong> Progressive disclosure exists to hide information most people don't need by default. Fees and entry requirements are close to universally needed by anyone reading a course page, so hiding them defeats the purpose rather than serving it.</p>
+
+      <p><strong>4 — Appropriate.</strong> When most visitors genuinely only care about one or two departments out of many, collapsing the rest by default is a reasonable, low-cost way to reduce visual clutter without hiding anything most visitors actually need.</p>
+
+      <span class="feedback__highlight">
+        These four examples share the same underlying pattern the concept section describes: progressive disclosure isn't uniformly good or bad — its appropriateness depends entirely on whether what's being hidden is something most visitors need by default. Implementations 1 and 4 hide things most visitors don't need yet. Implementations 2 and 3 hide things most visitors do need, which is where the friction comes from.
+      </span>
+
+      <p>
+        A reasonable fix for implementation 3: show fees and entry requirements directly on the page by default, with no disclosure control at all, and reserve an accordion instead for genuinely secondary information most visitors wouldn't need immediately — something like detailed accreditation history or a full list of past faculty publications, content that's legitimately useful to some visitors but not central to most people's decision to view the page.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-03.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 11 · 4 of 6</span>
+    <a href="chunk-05.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

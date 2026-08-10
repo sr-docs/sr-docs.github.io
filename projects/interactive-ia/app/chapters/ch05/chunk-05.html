@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usage Data Analytics — Chapter 5 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 5</a>
+      <span aria-hidden="true">›</span>
+      <span>Usage Data Analytics</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 5 of 7">5 of 7</div>
+    <div class="mini-nav__links">
+      <a href="chunk-04.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-06.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Usage Data Analytics
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Where card sorting and tree testing capture a snapshot from a research session, usage data analytics tracks how real users behave on an existing information space over time. Several metrics are especially useful to information architects specifically: page views and unique page views reveal which pages or categories are popular versus underperforming; bounce rates on category pages often signal poor labeling, since users arrive and immediately leave without engaging further; entrance rates identify which pages people land on first, where a surprisingly low entrance rate on an important page can point to labeling or findability problems; and site search-query volume reveals what people are searching for, which is a direct window into gaps in the navigation.
+      </p>
+      <p>
+        Analytics data answers <em>what</em> is happening at scale, but not <em>why</em>. Interpreting it well means pairing it with complementary qualitative research — the kind covered elsewhere in this chapter — rather than treating the numbers alone as a complete explanation.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      Analytics can tell you that thousands of people bounced off a category page. It can't tell you whether they left confused, uninterested, or satisfied — that's a different kind of research entirely.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch05-chunk-05" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A web analytics report for a large retail website shows the following: the "Winter Accessories" category page has a bounce rate of 78 percent, far higher than other category pages. The site's internal search shows a high volume of queries for "gloves" and "scarves" — terms that don't appear anywhere in the "Winter Accessories" category's navigation label or subcategory names. The category's entrance rate is unusually low compared to how much traffic the category ultimately receives through search.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          What does this combination of findings most strongly suggest?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="interpretation" value="labeling-mismatch">
+            <span class="exercise__option-text">A labeling mismatch — the category's navigation terminology doesn't match the vocabulary users actually search with, so people bypass browsing and rely on search instead</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="interpretation" value="server-issue">
+            <span class="exercise__option-text">A server performance issue causing the page to load slowly</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="interpretation" value="low-demand">
+            <span class="exercise__option-text">Low overall customer demand for winter accessories</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="interpretation" value="no-conclusion">
+            <span class="exercise__option-text">No reasonable conclusion can be drawn from this data</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          This analytics data tells you what's happening, but not why users are bouncing specifically. Propose one complementary qualitative research method from earlier in this chapter that would help confirm the labeling explanation directly.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>A labeling mismatch is the strongest interpretation.</strong> The search-query volume for "gloves" and "scarves" tells you customers want this content and know roughly what to call it — but those exact terms are missing from the category's navigation label and subcategory names. The high bounce rate and unusually low entrance rate relative to search traffic both point the same direction: people aren't finding this category by browsing, because the labels don't match their vocabulary, so they either give up or fall back on search entirely.
+      </p>
+
+      <span class="feedback__highlight">
+        This is exactly the kind of finding search-query volume is well suited to reveal, as the source material notes — it's a direct window into gaps in the navigation. But analytics alone can only point at the pattern; it can't confirm that labeling is the actual cause rather than, say, unappealing product images or pricing.
+      </span>
+
+      <p>
+        A strong complementary method here is an open card sort or free-listing exercise with target customers, asking them what they'd call this category and what related items they'd expect to find grouped with it. If customers consistently produce terms like "gloves" and "scarves" rather than "Winter Accessories," that directly confirms the labeling mismatch the analytics data only suggested, and gives the team concrete replacement terminology to test.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-04.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 5 · 5 of 7</span>
+    <a href="chunk-06.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

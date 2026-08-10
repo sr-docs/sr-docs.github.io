@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Key Components of Information Architecture — Chapter 1 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 1</a>
+      <span aria-hidden="true">›</span>
+      <span>Key Components of IA</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 5 of 5">5 of 5</div>
+    <div class="mini-nav__links">
+      <a href="chunk-04.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="index.html">Chapter overview →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      The Key Components of Information Architecture
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Six components make up the practice of IA. <strong>Taxonomy</strong> classifies content into categories. <strong>Metadata</strong> describes attributes of individual content objects. <strong>Labeling</strong> gives categories, links, and pages clear names. <strong>Organizational structure</strong> determines the overall shape of the information space. <strong>Navigation systems</strong> let people move through that structure. <strong>Search systems</strong> let people find content directly, without browsing.
+      </p>
+      <p>
+        Each component is covered in depth later in this course. For now, the important idea is that they work together as a system — a weakness in one component often surfaces as a symptom somewhere else, which makes diagnosing real IA problems harder than it first appears.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      A missing metadata field rarely looks like a metadata problem to the user. It looks like "I searched and nothing came up" or "I found the file but had no idea if it was current." Diagnosing IA problems means tracing the symptom back to its actual source.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch01-chunk-05" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A user is trying to renew a business license on a state government website. She searches "renew license" and gets no useful results — the actual page is titled "Business Registration Continuation Form," language she never would have guessed.
+        </p>
+        <p>
+          She gives up on search and tries browsing instead. She finds a "Business Services" category, but it dumps forty links into one long, uncategorized list with no subgrouping at all.
+        </p>
+        <p>
+          Eventually she finds a file called <strong>Form 27B</strong>. It has no description, no indication of what it's for, and no visible date — she can't tell if it's the current version or something outdated.
+        </p>
+      </div>
+
+      <fieldset style="border:none; padding:0; margin-bottom: 1.5rem;">
+        <legend style="font-size:1rem; line-height:1.65; margin-bottom:0.75rem; font-weight:500;">
+          1. Her search for "renew license" returned nothing useful. Which component is most directly responsible?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-1" value="taxonomy">
+            <span class="exercise__option-text">Taxonomy</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-1" value="metadata">
+            <span class="exercise__option-text">Metadata</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-1" value="labeling">
+            <span class="exercise__option-text">Labeling</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-1" value="navigation">
+            <span class="exercise__option-text">Navigation</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset style="border:none; padding:0; margin-bottom: 1.5rem;">
+        <legend style="font-size:1rem; line-height:1.65; margin-bottom:0.75rem; font-weight:500;">
+          2. The "Business Services" category dumps forty links with no subgrouping. Which component is failing?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-2" value="taxonomy">
+            <span class="exercise__option-text">Taxonomy / organizational structure</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-2" value="metadata">
+            <span class="exercise__option-text">Metadata</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-2" value="labeling">
+            <span class="exercise__option-text">Labeling</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-2" value="search">
+            <span class="exercise__option-text">Search</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset style="border:none; padding:0; margin-bottom: 1.75rem;">
+        <legend style="font-size:1rem; line-height:1.65; margin-bottom:0.75rem; font-weight:500;">
+          3. "Form 27B" gives no indication of its purpose or currency. Which component is missing?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-3" value="taxonomy">
+            <span class="exercise__option-text">Taxonomy</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-3" value="metadata">
+            <span class="exercise__option-text">Metadata</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-3" value="labeling">
+            <span class="exercise__option-text">Labeling</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-3" value="navigation">
+            <span class="exercise__option-text">Navigation</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          With a limited budget, you can only fix one of these three problems first. Which would you fix, and why — which failure is most likely turning away the largest number of users?
+        </label>
+        <textarea
+          id="justification"
+          name="justification"
+          required
+          placeholder="Write a few sentences."
+        ></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>1 — Labeling.</strong> The page exists and the search system found it correctly by title — the problem is that the title, "Business Registration Continuation Form," uses none of the language a real user would type. This is a mismatch between organizational terminology and user vocabulary, which is a labeling failure, not a search engine failure.
+      </p>
+
+      <p>
+        <strong>2 — Taxonomy / organizational structure.</strong> Forty links with no subgrouping means no one ever broke "Business Services" down into meaningful subcategories. The category exists, but it isn't actually organized — it's just a bucket.
+      </p>
+
+      <p>
+        <strong>3 — Metadata.</strong> A file with no description and no visible date is missing descriptive and administrative metadata. The label "Form 27B" alone tells the user nothing about what it is or whether they can trust it.
+      </p>
+
+      <span class="feedback__highlight">
+        There's no single right answer on priority, but the strongest case is fixing the labeling problem first. It's the very first point of contact — most users search before they browse, so a labeling fix that lets "renew license" find the right page removes the failure before the user ever reaches the taxonomy or metadata problems. Fixing taxonomy or metadata alone wouldn't help someone who never gets past the search box.
+      </span>
+
+      <p>
+        That said, a reasonable case exists for taxonomy too — if a meaningful number of users start by browsing rather than searching, cleaning up the forty-link dump would have equally broad impact. The right answer depends on data you don't have yet in this scenario: how users are actually arriving at this problem. That's exactly the kind of question the research methods later in this course are designed to answer.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-04.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 1 · 5 of 5</span>
+    <a href="../ch02/chunk-01.html" class="chunk-footer__next-chapter">Next: Chapter 2 <span>· How People Seek Information</span> →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

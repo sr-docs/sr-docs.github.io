@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IA Governance — Chapter 8 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 8</a>
+      <span aria-hidden="true">›</span>
+      <span>IA Governance</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 9 of 9">9 of 9</div>
+    <div class="mini-nav__links">
+      <a href="chunk-08.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="index.html">Chapter overview →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Governing Information Architecture After Launch
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        A shipped IA starts decaying the day the next team adds a page in the wrong place. Governance is the set of agreements that slow that decay: who may create a top-level label, what evidence is required to add a category, how redirects and aliases are handled when something is renamed, and how often the structure is reviewed against search logs and support tickets. Without those agreements, every release becomes a quiet renegotiation of the map.
+      </p>
+      <p>
+        Good governance is light enough that teams still ship, and strict enough that exceptions are visible. A practical pattern is a small IA review for changes that touch navigation, taxonomy, or cross-site templates — not for every content edit — plus a living style guide for labels and a changelog of structural decisions. Metrics matter here: rising "no results" queries, growing orphan pages, and support contacts about findability are governance signals, not only content bugs.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      Strategy decides what the structure should be. Governance decides what happens the hundredth time someone wants to bend it.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch08-chunk-09" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> Six months after launch, a product marketing team wants a new top-level nav item for a campaign microsite. Engineering can ship it in a day. Support reports that customers already confuse two similarly named sections. There is no documented owner for navigation changes.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          What is the most governance-appropriate next step before adding the top-level item?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="gov" value="review">
+            <span class="exercise__option-text">Pause the top-level add, name an owner for nav changes, and require a short review that weighs the campaign need against existing label confusion</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="gov" value="ship">
+            <span class="exercise__option-text">Ship the nav item immediately — campaigns are time-sensitive and governance can catch up later</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="gov" value="freeze">
+            <span class="exercise__option-text">Freeze all navigation changes for a year so the structure never drifts</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="gov" value="hide">
+            <span class="exercise__option-text">Add the item but hide it from the sitemap and search index so only campaign traffic sees it</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          Propose one lightweight rule this organization could adopt so campaign teams can still move fast without silently rewriting the IA.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>Pause, name an owner, and review against known confusion.</strong> Shipping first treats navigation as disposable UI. A total freeze treats it as untouchable stone. Hiding the item from sitemaps and search creates a second, invisible IA. Governance that works here is a named decision path that can still say yes — just not silently.
+      </p>
+
+      <span class="feedback__highlight">
+        A lightweight rule that often works: campaign destinations may be linked from content and banners freely, but new <em>top-level</em> labels require a short IA review and a sunset or merge plan dated in the changelog. Speed stays available; permanent map changes stay deliberate.
+      </span>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-08.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 8 · 9 of 9</span>
+    <a href="../ch09/chunk-01.html" class="chunk-footer__next-chapter">Next: Chapter 9 <span>· Labeling Information</span> →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

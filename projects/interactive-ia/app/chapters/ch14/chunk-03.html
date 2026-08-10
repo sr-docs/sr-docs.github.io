@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pain Point Synthesis — Chapter 14 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 14</a>
+      <span aria-hidden="true">›</span>
+      <span>Pain Point Synthesis</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 3 of 4">3 of 4</div>
+    <div class="mini-nav__links">
+      <a href="index.html">← Chapter overview</a>
+      <span class="spacer"></span>
+      <a href="chunk-04.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Pain Point Synthesis
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        A list of problems is not a plan. This prompt turns research into IA pain points that each carry a description, the evidence behind them, how often and how badly they bite, a root cause, and a category: findability, navigation, labeling, content gaps, or search. The categories do real work. They tell you which problems are secretly the same problem, and six complaints that all sort into labeling are one naming decision rather than six tickets.
+      </p>
+      <p>
+        Give it whatever business context you have, because severity is not a property of the problem alone — a rare failure on a signup path can outrank a frequent annoyance somewhere quiet. The root-cause column is where to be most skeptical. Models are fluent at producing plausible causes, and a stated cause is only worth as much as the evidence sitting next to it. "People can't find pricing because the label is unclear" and "because pricing is three levels deep" call for different fixes, and your research either distinguishes them or it does not. Where it does not, the honest output is that you need another round.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      Prioritising pain points is where research turns into an IA decision. Categorising them first is what stops you fixing the same problem five times.
+    </p>
+
+  </section>
+
+
+  <section class="prompt-fill" id="pain-point-synthesis" aria-labelledby="prompt-fill-label-pain-point-synthesis">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-pain-point-synthesis">
+      Try It With Your Data — Pain Point Synthesis
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt is made of (RICE breakdown)</summary>
+      <div class="prompt-fill__guidance-body">
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">R</span>
+          <h4>Role</h4>
+          <p>Casts the AI as: You&#x27;re a UX researcher synthesizing user pain points from research data.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">I</span>
+          <h4>Instructions</h4>
+          <p>Names 6 specific outputs to produce, so the response comes back structured rather than a general summary.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">C</span>
+          <h4>Context</h4>
+          <p>Research sources, User type, Current IA and Business context tell the AI what your specific situation is, not a generic one.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">E</span>
+          <h4>Expected format</h4>
+          <p>Prioritized pain point matrix with recommendations</p>
+        </div>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[R - ROLE]
+You're a UX researcher synthesizing user pain points from research data.
+
+[I - INSTRUCTIONS]
+Identify and prioritize IA-related pain points from this research:
+
+{{RESEARCH_DATA}}
+
+For each pain point:
+1. Clear description of the problem
+2. Evidence from research
+3. User impact assessment (frequency + severity)
+4. Business impact (if known)
+5. Root cause analysis
+6. Potential solutions
+
+Categorize by:
+- Findability (can't find content)
+- Navigation (structure problems)
+- Labeling (terminology issues)
+- Content gaps (missing information)
+- Search (search functionality)
+
+[C - CONTEXT]
+Research sources: {{RESEARCH_SOURCES}}
+User type: {{USER_TYPE}}
+Current IA: {{CURRENT_IA}}
+Business context: {{BUSINESS_CONTEXT}}
+
+[E - EXPECTED FORMAT]
+Prioritized pain point matrix with recommendations
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-pain-point-synthesis-research-data">Research data</label>
+        <span class="prompt-fill__hint">Paste interviews, surveys, support tickets, analytics — whatever you have</span>
+        <textarea id="pf-pain-point-synthesis-research-data" class="js-prompt-input" data-token="RESEARCH_DATA" data-placeholder="Paste interviews, surveys, support tickets, analytics — whatever you have" placeholder="Paste interviews, surveys, support tickets, analytics — whatever you have"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-pain-point-synthesis-research-sources">Research sources</label>
+        <span class="prompt-fill__hint">What data you&#x27;re using</span>
+        <input type="text" id="pf-pain-point-synthesis-research-sources" class="js-prompt-input" data-token="RESEARCH_SOURCES" data-placeholder="What data you&#x27;re using" placeholder="What data you&#x27;re using">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-pain-point-synthesis-user-type">User type</label>
+        <span class="prompt-fill__hint">Brief description</span>
+        <input type="text" id="pf-pain-point-synthesis-user-type" class="js-prompt-input" data-token="USER_TYPE" data-placeholder="Brief description" placeholder="Brief description">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-pain-point-synthesis-current-ia">Current IA</label>
+        <span class="prompt-fill__hint">Existing structure</span>
+        <input type="text" id="pf-pain-point-synthesis-current-ia" class="js-prompt-input" data-token="CURRENT_IA" data-placeholder="Existing structure" placeholder="Existing structure">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-pain-point-synthesis-business-context">Business context</label>
+        <span class="prompt-fill__hint">Relevant business goals</span>
+        <input type="text" id="pf-pain-point-synthesis-business-context" class="js-prompt-input" data-token="BUSINESS_CONTEXT" data-placeholder="Relevant business goals" placeholder="Relevant business goals">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="index.html">← Chapter overview</a>
+    <span class="chunk-footer__center">Chapter 14 · 3 of 4</span>
+    <a href="chunk-04.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/prompt-fill.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

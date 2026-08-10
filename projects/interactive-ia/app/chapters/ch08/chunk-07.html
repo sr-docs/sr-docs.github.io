@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Communicating Conceptual Models — Chapter 8 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 8</a>
+      <span aria-hidden="true">›</span>
+      <span>Communicating Conceptual Models</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 7 of 8">7 of 8</div>
+    <div class="mini-nav__links">
+      <a href="chunk-06.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-08.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Envisioning and Communicating Conceptual Models
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Different moments in an IA project call for different deliverables. Usage scenarios and storyboards work well for conveying vision and building empathy, especially for stakeholders who aren't going to read detailed documentation. Topic maps and diagrams help explore what content a space should cover and how it interrelates, often used early during ideation. Site maps depict overall structure and navigation paths, informing labeling and navigation design — useful whether as a rough hierarchical list early on or a refined diagram later. Wireframes depict the logical structure of individual pages, informing content models and visual hierarchy without getting into visual design details, and are typically reserved for key pages, reusable templates, or pages that are unusually complex.
+      </p>
+      <p>
+        Choosing the right deliverable means matching it to the audience and the moment: a concise, business-case-oriented deliverable for executives deciding whether to fund the work is a very different artifact from the detailed structural guidance a development team needs to actually build it.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      Showing a detailed wireframe to an executive deciding whether to fund a project, or a vague storyboard to a developer who needs to build the thing, both waste the same resource — everyone's limited attention, spent on the wrong level of detail at the wrong moment.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch08-chunk-07" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> An IA team is working on a large e-commerce platform redesign. They need to communicate their structural thinking at three different moments: first, to C-level executives to secure budget approval for the redesign; second, to the content team, to align on what new content needs to be created to support the new structure; third, to a remote development team who will implement the design without ongoing access to the IA team once handoff happens.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          1. Which deliverable is most appropriate for securing executive budget approval?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="deliverable-1" value="scenario">
+            <span class="exercise__option-text">A usage scenario or storyboard illustrating the business impact and improved customer experience</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="deliverable-1" value="wireframe">
+            <span class="exercise__option-text">A detailed, fully annotated wireframe of every page template</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="deliverable-1" value="site-map">
+            <span class="exercise__option-text">A rough, unlabeled hierarchical sketch with no context</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          3. Which deliverable is most appropriate for the remote development team, who won't have ongoing access to the IA team after handoff?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="deliverable-3" value="detailed-wireframes">
+            <span class="exercise__option-text">Detailed, fully annotated wireframes and site maps that leave minimal ambiguity</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="deliverable-3" value="storyboard-only">
+            <span class="exercise__option-text">A brief storyboard alone, with no further detail</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="deliverable-3" value="verbal-only">
+            <span class="exercise__option-text">A single verbal conversation with no written documentation</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          For the content team specifically, what deliverable from this section would help them understand what new content needs to be created, and why would the executive-facing deliverable from question 1 be insufficient for this purpose?
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>1 — A usage scenario or storyboard is correct.</strong> Executives deciding whether to fund a redesign need to understand the business impact and the improved experience quickly, without wading through implementation detail — exactly what scenarios and storyboards are built to convey. A fully detailed wireframe of every template would bury the business case in structural detail executives don't need to make a funding decision, and an unlabeled sketch with no context wouldn't communicate anything at all.
+      </p>
+
+      <p>
+        <strong>3 — Detailed, fully annotated wireframes and site maps are correct.</strong> A remote team without ongoing access to the IA team needs documentation that leaves minimal ambiguity, since there's no opportunity for a quick clarifying conversation once questions come up during implementation. A brief storyboard or a single verbal conversation would leave far too much open to interpretation for a team that can't easily follow up.
+      </p>
+
+      <span class="feedback__highlight">
+        For the content team, a site map or topic map showing the full structure — including any new sections or categories the redesign introduces — is the more useful deliverable, since it lets them see exactly where new content needs to exist and how it relates to what already does. The executive-facing scenario or storyboard is insufficient for this purpose because it's deliberately high-level and illustrative rather than structurally complete — it's built to sell the vision, not to map out the actual content gaps the content team needs to fill.
+      </span>
+
+      <p>
+        The underlying principle across all three cases is the same: match the deliverable's fidelity and focus to what that specific audience actually needs to do next, rather than defaulting to one format for every audience regardless of purpose.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="prompt-fill" id="content-model-diagram" aria-labelledby="prompt-fill-label-content-model-diagram">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-content-model-diagram">
+      Try It With Your Data — Content Model Diagram
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt is made of (RICE breakdown)</summary>
+      <div class="prompt-fill__guidance-body">
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">R</span>
+          <h4>Role</h4>
+          <p>Casts the AI as: You&#x27;re a content strategist creating content model documentation.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">I</span>
+          <h4>Instructions</h4>
+          <p>Names 5 specific outputs to produce, so the response comes back structured rather than a general summary.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">C</span>
+          <h4>Context</h4>
+          <p>System, Purpose and Existing model tell the AI what your specific situation is, not a generic one.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">E</span>
+          <h4>Expected format</h4>
+          <p>Complete content model with all types and relationships</p>
+        </div>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[R - ROLE]
+You're a content strategist creating content model documentation.
+
+[I - INSTRUCTIONS]
+Generate a content model diagram for {{DOMAIN}}:
+
+Content types to model:
+{{CONTENT_TYPES}}
+
+For each type, document:
+1. Type name and description
+2. Core attributes (required fields)
+3. Optional attributes
+4. Relationships to other types
+5. Example instance
+
+Format:
+- {{OUTPUT_FORMAT}}
+
+[C - CONTEXT]
+System: {{SYSTEM}}
+Purpose: {{PURPOSE}}
+Existing model: {{EXISTING_MODEL}}
+
+[E - EXPECTED FORMAT]
+Complete content model with all types and relationships
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-content-model-diagram-domain">Domain</label>
+        <span class="prompt-fill__hint">e.g. &quot;API documentation&quot;</span>
+        <input type="text" id="pf-content-model-diagram-domain" class="js-prompt-input" data-token="DOMAIN" data-placeholder="e.g. &quot;API documentation&quot;" placeholder="e.g. &quot;API documentation&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-content-model-diagram-content-types">Content types</label>
+        <span class="prompt-fill__hint">One per line</span>
+        <textarea id="pf-content-model-diagram-content-types" class="js-prompt-input" data-token="CONTENT_TYPES" data-placeholder="One per line" placeholder="One per line"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-content-model-diagram-output-format">Output format</label>
+        <span class="prompt-fill__hint">Pick a format.</span>
+        <select id="pf-content-model-diagram-output-format" class="js-prompt-input" data-token="OUTPUT_FORMAT">
+          <option value="Text">Text</option>
+          <option value="Markdown">Markdown</option>
+          <option value="Mermaid">Mermaid</option>
+          <option value="ERD">ERD</option>
+        </select>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-content-model-diagram-system">System</label>
+        <span class="prompt-fill__hint">Your CMS, database, or platform</span>
+        <input type="text" id="pf-content-model-diagram-system" class="js-prompt-input" data-token="SYSTEM" data-placeholder="Your CMS, database, or platform" placeholder="Your CMS, database, or platform">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-content-model-diagram-purpose">Purpose</label>
+        <span class="prompt-fill__hint">Why you&#x27;re building this.</span>
+        <select id="pf-content-model-diagram-purpose" class="js-prompt-input" data-token="PURPOSE">
+          <option value="Documentation">Documentation</option>
+          <option value="Implementation">Implementation</option>
+          <option value="Audit">Audit</option>
+        </select>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-content-model-diagram-existing-model">Existing model</label>
+        <span class="prompt-fill__hint">If documenting current state</span>
+        <input type="text" id="pf-content-model-diagram-existing-model" class="js-prompt-input" data-token="EXISTING_MODEL" data-placeholder="If documenting current state" placeholder="If documenting current state">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="prompt-fill" id="faceted-taxonomy-visualizer" aria-labelledby="prompt-fill-label-faceted-taxonomy-visualizer">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-faceted-taxonomy-visualizer">
+      Try It With Your Data — Faceted Taxonomy Visualizer
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt does</summary>
+      <div class="prompt-fill__guidance-body prompt-fill__guidance-body--simple">
+        <p>Create visual diagrams for faceted classification systems showing multiple dimensions (facets), their values, and how they combine. Uses Mermaid mindmap or flowchart syntax.</p>
+        <ul><li>Documenting faceted search/filter systems</li><li>Designing multi-dimensional classification schemes</li><li>Communicating taxonomy structure to stakeholders</li><li>Planning filter UI for documentation or product catalogs</li></ul>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">Create a visual diagram for this faceted taxonomy:
+
+FACETS AND VALUES:
+
+{{FACET_1}}
+
+{{FACET_2}}
+
+[Continue for all facets]
+
+FACET RELATIONSHIPS:
+{{FACET_RELATIONSHIPS}}
+
+EXAMPLE COMBINATIONS:
+{{EXAMPLE_COMBINATIONS}}
+
+DIAGRAM REQUIREMENTS:
+
+Option A - Mindmap (for overview):
+- Use Mermaid mindmap syntax
+- Central node = taxonomy name
+- Branches = facets
+- Sub-branches = facet values
+- Color-code by facet
+
+Option B - Flowchart (for showing combinations):
+- Use Mermaid flowchart syntax
+- Show how facets combine
+- Include example paths
+- Show total combination count
+
+OUTPUT:
+1. Mermaid diagram code (valid syntax)
+2. Legend explaining the visualization
+3. Combination statistics (total possible combinations)
+4. Example queries enabled by this faceted system
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-faceted-taxonomy-visualizer-facet-1">Facet 1</label>
+        <span class="prompt-fill__hint">Name, description, values, required or optional — however you have it</span>
+        <textarea id="pf-faceted-taxonomy-visualizer-facet-1" class="js-prompt-input" data-token="FACET_1" data-placeholder="Name, description, values, required or optional — however you have it" placeholder="Name, description, values, required or optional — however you have it"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-faceted-taxonomy-visualizer-facet-2">Facet 2</label>
+        <span class="prompt-fill__hint">Name, description, values, required or optional</span>
+        <textarea id="pf-faceted-taxonomy-visualizer-facet-2" class="js-prompt-input" data-token="FACET_2" data-placeholder="Name, description, values, required or optional" placeholder="Name, description, values, required or optional"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-faceted-taxonomy-visualizer-facet-relationships">Facet relationships</label>
+        <span class="prompt-fill__hint">e.g. &quot;If Content Type = Tutorial, Difficulty is required&quot;</span>
+        <textarea id="pf-faceted-taxonomy-visualizer-facet-relationships" class="js-prompt-input" data-token="FACET_RELATIONSHIPS" data-placeholder="e.g. &quot;If Content Type = Tutorial, Difficulty is required&quot;" placeholder="e.g. &quot;If Content Type = Tutorial, Difficulty is required&quot;"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-faceted-taxonomy-visualizer-example-combinations">Example combinations</label>
+        <span class="prompt-fill__hint">One or two example filter combinations</span>
+        <textarea id="pf-faceted-taxonomy-visualizer-example-combinations" class="js-prompt-input" data-token="EXAMPLE_COMBINATIONS" data-placeholder="One or two example filter combinations" placeholder="One or two example filter combinations"></textarea>
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="prompt-fill" id="user-flow-diagram" aria-labelledby="prompt-fill-label-user-flow-diagram">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-user-flow-diagram">
+      Try It With Your Data — User Flow Diagram Generator
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt does</summary>
+      <div class="prompt-fill__guidance-body prompt-fill__guidance-body--simple">
+        <p>Create user flow diagrams in Mermaid syntax showing how users navigate through information architecture to accomplish specific goals, including decision points, success paths, and error handling.</p>
+        <ul><li>Documenting user journeys through documentation</li><li>Mapping findability paths for key tasks</li><li>Identifying friction points in navigation</li><li>Creating IA deliverables for stakeholder review</li></ul>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">Create a user flow diagram showing how users {{GOAL}}.
+
+FLOW DETAILS:
+- Starting point: {{STARTING_POINT}}
+- Goal: {{GOAL_DETAIL}}
+- Key decision points: {{KEY_DECISION_POINTS}}
+- Known pain points: {{KNOWN_PAIN_POINTS}}
+
+DIAGRAM REQUIREMENTS:
+Use Mermaid flowchart syntax with:
+- Rounded rectangles ([( )]) for start/end points
+- Regular rectangles ([ ]) for action steps
+- Diamond shapes ({ }) for decision points
+- Different colors/styles for:
+  - Success path (green tones)
+  - Error/confusion path (red/orange tones)
+  - Decision points (blue tones)
+- Annotations for pain points using emoji (😕 for confusion, ✓ for success)
+- Clear labels on all decision branches (Yes/No, or specific options)
+
+INCLUDE:
+1. Primary success path (happy path)
+2. Alternative valid paths
+3. Error recovery paths (what happens when users get stuck)
+4. Decision point labels that match real user thinking
+5. Exit points (both successful completion and abandonment)
+
+OUTPUT:
+Valid Mermaid flowchart syntax ready for rendering.
+Add a brief legend explaining the color coding.
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-user-flow-diagram-goal">Goal</label>
+        <span class="prompt-fill__hint">e.g. &quot;successfully implement OAuth 2.0&quot;</span>
+        <input type="text" id="pf-user-flow-diagram-goal" class="js-prompt-input" data-token="GOAL" data-placeholder="e.g. &quot;successfully implement OAuth 2.0&quot;" placeholder="e.g. &quot;successfully implement OAuth 2.0&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-user-flow-diagram-starting-point">Starting point</label>
+        <span class="prompt-fill__hint">e.g. &quot;Documentation homepage&quot;</span>
+        <input type="text" id="pf-user-flow-diagram-starting-point" class="js-prompt-input" data-token="STARTING_POINT" data-placeholder="e.g. &quot;Documentation homepage&quot;" placeholder="e.g. &quot;Documentation homepage&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-user-flow-diagram-goal-detail">Goal detail</label>
+        <span class="prompt-fill__hint">e.g. &quot;Successfully implement OAuth 2.0&quot;</span>
+        <input type="text" id="pf-user-flow-diagram-goal-detail" class="js-prompt-input" data-token="GOAL_DETAIL" data-placeholder="e.g. &quot;Successfully implement OAuth 2.0&quot;" placeholder="e.g. &quot;Successfully implement OAuth 2.0&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-user-flow-diagram-key-decision-points">Key decision points</label>
+        <span class="prompt-fill__hint">e.g. &quot;New vs experienced user&quot;, &quot;OAuth vs API keys&quot;</span>
+        <input type="text" id="pf-user-flow-diagram-key-decision-points" class="js-prompt-input" data-token="KEY_DECISION_POINTS" data-placeholder="e.g. &quot;New vs experienced user&quot;, &quot;OAuth vs API keys&quot;" placeholder="e.g. &quot;New vs experienced user&quot;, &quot;OAuth vs API keys&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-user-flow-diagram-known-pain-points">Known pain points</label>
+        <span class="prompt-fill__hint">Where users get stuck (optional)</span>
+        <input type="text" id="pf-user-flow-diagram-known-pain-points" class="js-prompt-input" data-token="KNOWN_PAIN_POINTS" data-placeholder="Where users get stuck (optional)" placeholder="Where users get stuck (optional)">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-06.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 8 · 7 of 8</span>
+    <a href="chunk-08.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="../../assets/js/prompt-fill.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

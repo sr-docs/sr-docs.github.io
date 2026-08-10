@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Known-Item and Exploratory Behaviors — Chapter 2 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 2</a>
+      <span aria-hidden="true">›</span>
+      <span>Known-Item and Exploratory Behaviors</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 8 of 8">8 of 8</div>
+    <div class="mini-nav__links">
+      <a href="chunk-07.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="index.html">Chapter overview →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Known-Item and Exploratory Behaviors
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        People display two broad classes of information-seeking behavior. <strong>Known-item behaviors</strong> happen when a person is looking for a specific item they already know exists: searching for a known item, browsing directly to a known item's location, returning to an item found before, or seeking an update to something they already track. <strong>Exploratory behaviors</strong> happen when a person doesn't know exactly what they need: exploratory browsing, where they discover things serendipitously; exploratory searching, where they try various queries and refine as they go; and the integration of the two, where people alternate between searching and browsing within the same session.
+      </p>
+      <p>
+        These behaviors depend on specific, distinct IA support. Known-item behaviors rely heavily on accurate labeling and reliable search. Exploratory behaviors rely on strong navigation, related-content links, and good information scent throughout.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      A redesign that quietly breaks known-item behaviors — by renaming a category or removing a feature users relied on — can look fine in a walkthrough and still cause a wave of support tickets the week it launches.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch02-chunk-08" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A software company relaunches its documentation site. Before the redesign: a persistent search bar on every page, stable URLs, and a "browse by product" navigation tree that let users drill down to the exact page they needed.
+        </p>
+        <p>
+          After the redesign: search was removed from interior pages (it now appears only on the homepage), the browse tree was replaced with a single long-scrolling page per product, and several URLs changed without redirects.
+        </p>
+        <p>
+          Two weeks post-launch, support tickets include: <em>"I used to be able to search from any page and now I can't."</em> <em>"The link I bookmarked to a specific setup step is broken."</em> <em>"I don't want to scroll through everything — I just want to jump straight to the section I need."</em>
+        </p>
+      </div>
+
+      <fieldset style="border:none; padding:0; margin-bottom: 1.5rem;">
+        <legend style="font-size:1rem; line-height:1.65; margin-bottom:0.75rem; font-weight:500;">
+          1. Which behavior is most directly broken by removing search from interior pages?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="broken-1" value="exploratory-browsing">
+            <span class="exercise__option-text">Exploratory browsing</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="broken-1" value="known-item-search">
+            <span class="exercise__option-text">Searching for known items</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="broken-1" value="exploratory-search">
+            <span class="exercise__option-text">Exploratory searching</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="broken-1" value="returning">
+            <span class="exercise__option-text">Returning to known items</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset style="border:none; padding:0; margin-bottom: 1.75rem;">
+        <legend style="font-size:1rem; line-height:1.65; margin-bottom:0.75rem; font-weight:500;">
+          2. Which behavior is most directly broken by changing URLs without redirects?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="broken-2" value="exploratory-browsing">
+            <span class="exercise__option-text">Exploratory browsing</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="broken-2" value="returning">
+            <span class="exercise__option-text">Returning to known items</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="broken-2" value="updates">
+            <span class="exercise__option-text">Seeking updated information</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="broken-2" value="exploratory-search">
+            <span class="exercise__option-text">Exploratory searching</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          The complaint about not wanting to scroll through everything reflects a third broken behavior. Name it, and propose one specific fix for the long-scrolling page structure.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>1 — Searching for known items.</strong> Users who already knew what they wanted relied on search from wherever they landed. Removing it from interior pages breaks this behavior directly — they now have to navigate back to the homepage just to search, which many won't realize they need to do.
+      </p>
+
+      <p>
+        <strong>2 — Returning to known items.</strong> A bookmarked link is the clearest expression of this behavior — the user found something valuable once and expected to return to that exact location. Removing the URL without a redirect breaks the return path entirely.
+      </p>
+
+      <span class="feedback__highlight">
+        The third complaint — not wanting to scroll through everything to find a specific section — describes browsing to find a known item. Before the redesign, the browse tree let users drill down directly to the exact page they needed without reading through unrelated content. The long-scrolling page structure removed that direct path and replaced it with a format that only supports reading everything in sequence, which serves nobody who already knows what they're looking for.
+      </span>
+
+      <p>
+        Reasonable fixes include restoring a persistent, sitewide search bar; implementing redirects for every changed URL so bookmarks and external links continue to work; and adding an in-page table of contents with anchor links on the long-scrolling pages, so users can jump directly to a section without scrolling past everything else. None of these fixes require reverting the redesign entirely — they specifically target the known-item behaviors that got broken along the way.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-07.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 2 · 8 of 8</span>
+    <a href="../ch03/chunk-01.html" class="chunk-footer__next-chapter">Next: Chapter 3 <span>· Design Principles</span> →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

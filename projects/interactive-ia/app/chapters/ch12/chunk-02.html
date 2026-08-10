@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optimizing Search Result Quality — Chapter 12 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 12</a>
+      <span aria-hidden="true">›</span>
+      <span>Optimizing Search Result Quality</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 2 of 11">2 of 11</div>
+    <div class="mini-nav__links">
+      <a href="chunk-01.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-03.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Optimizing Search Result Quality
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        What a search system actually searches shapes everything about its quality. Indexing specific semantic elements — a title field versus a body field — lets a system weight matches differently depending on where a term appears. Search zones divide content into separate areas that can be indexed and searched with different rules. Latent semantic indexing goes further still, using statistical techniques to find conceptually related content even when the exact keywords don't match at all.
+      </p>
+      <p>
+        All of this optimization work has to balance two competing goals: precision, the percentage of returned results that are actually relevant, and recall, the percentage of all genuinely relevant content the search actually manages to surface. Pushing hard on one of these tends to cost you the other — a system tuned to guarantee every result is relevant will often miss some genuinely useful matches, and a system tuned to catch everything relevant will often let some irrelevant noise through with it.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      A search system that returns three results, all perfectly relevant, hasn't necessarily done a better job than one that returns thirty, some of them noise — it depends entirely on whether the thing the user actually needed was inside those thirty or left out of the three.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch12-chunk-02" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A professional association's member resource library has an internal search system with four recurring problems.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          1. A search for a precise technical term returns hundreds of loosely related results, most of which aren't actually what the searcher needed.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-1" value="precision">
+            <span class="exercise__option-text">A precision problem — too many irrelevant results diluting the relevant ones</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-1" value="recall">
+            <span class="exercise__option-text">A recall problem</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          2. A search for a common concept returns nothing at all, because the member library uses different terminology than the member typed.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-2" value="recall">
+            <span class="exercise__option-text">A recall problem — genuinely relevant content exists but isn't being retrieved</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-2" value="precision-2">
+            <span class="exercise__option-text">A precision problem</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          3. A search for a known document title fails to find it, because the search system is indexing navigation menu text rather than actual page content.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-3" value="what-is-indexed">
+            <span class="exercise__option-text">A problem with what's being indexed — the system is searching the wrong content entirely</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-3" value="stemming">
+            <span class="exercise__option-text">A stemming problem</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          4. A search for a topic that spans several content zones only retrieves results from a single zone, missing relevant material elsewhere.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-4" value="search-zones">
+            <span class="exercise__option-text">A search zones problem — zones are being searched in isolation rather than together</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-4" value="lsi">
+            <span class="exercise__option-text">A latent semantic indexing problem specifically</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          For failure 2, explain what trade-off fixing this recall problem could introduce, and why that trade-off matters when deciding how aggressively to fix it.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p><strong>1 — A precision problem.</strong> Hundreds of loosely related results for a precise query means too much irrelevant material is getting through — the defining signature of low precision.</p>
+
+      <p><strong>2 — A recall problem.</strong> Relevant content genuinely exists but isn't being retrieved because of a terminology mismatch — exactly what a recall failure looks like, and a strong candidate for controlled vocabulary integration to fix.</p>
+
+      <p><strong>3 — A problem with what's being indexed.</strong> The search system is searching the wrong content entirely — navigation text instead of actual page content — which no amount of query refinement could fix, since the real content was never indexed in the first place.</p>
+
+      <p><strong>4 — A search zones problem.</strong> Zones being searched in isolation, rather than together or with appropriate cross-zone weighting, causes exactly this kind of incomplete retrieval for topics that legitimately span more than one zone.</p>
+
+      <span class="feedback__highlight">
+        Fixing failure 2 by broadening the system's ability to match different terminology to the same concept — for example, through latent semantic indexing or a controlled vocabulary — could reduce precision as a trade-off. The same broadening that helps someone find content described with different words can also start surfacing more loosely related results for other queries, since the system is now casting a wider net by design. This is exactly the precision-recall tension the concept section describes: the fix for one failure mode can quietly introduce the other, which is why tuning search quality is rarely a one-directional improvement.
+      </span>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="prompt-fill" id="search-sprint-task-generator" aria-labelledby="prompt-fill-label-search-sprint-task-generator">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-search-sprint-task-generator">
+      Try It With Your Data — Search Optimization Sprint Task Generator
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt does</summary>
+      <div class="prompt-fill__guidance-body prompt-fill__guidance-body--simple">
+        <p>Generate prioritized, actionable sprint tasks for improving search and findability based on audit findings. Breaks down search improvements into specific, estimable work items suitable for sprint planning.</p>
+        <ul><li>After completing a search/findability audit</li><li>Planning search improvement sprints</li><li>Creating actionable backlog from findability recommendations</li><li>Prioritizing search fixes by impact and effort</li></ul>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">Generate sprint tasks from these search/findability audit findings:
+
+AUDIT FINDINGS:
+{{AUDIT_FINDINGS}}
+
+Example format:
+- Issue 1: [Description of findability problem]
+- Issue 2: [Description of search problem]
+- Issue 3: [Description of navigation gap]
+
+SPRINT CONTEXT:
+- Sprint length: {{SPRINT_LENGTH}}
+- Available capacity: {{AVAILABLE_CAPACITY}}
+- Team capabilities: {{TEAM_CAPABILITIES}}
+- Technical constraints: {{TECHNICAL_CONSTRAINTS}}
+
+TASK GENERATION REQUIREMENTS:
+
+1. BREAK DOWN each finding into actionable tasks
+   - Tasks should be completable by one person
+   - Each task has clear acceptance criteria
+   - Tasks should be 2-8 hours of work
+
+2. CATEGORIZE tasks by type:
+   - Content: Metadata, descriptions, keywords, titles
+   - Technical: Search config, indexing, algorithms
+   - UX: Navigation, filters, results display
+   - Analytics: Tracking, measurement, dashboards
+
+3. ESTIMATE effort:
+   - Small: 2-4 hours
+   - Medium: 4-8 hours
+   - Large: 8-16 hours (should probably be split)
+
+4. PRIORITIZE by:
+   - User impact (how many affected, how severely)
+   - Implementation effort
+   - Dependencies (what blocks what)
+   - Quick wins vs. strategic improvements
+
+5. IDENTIFY dependencies:
+   - What must happen before this task?
+   - What does this task unblock?
+
+OUTPUT FORMAT:
+1. Prioritized task list with estimates
+2. Sprint recommendation (what fits in capacity)
+3. Backlog items for future sprints
+4. Success metrics for the sprint
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-search-sprint-task-generator-audit-findings">Audit findings</label>
+        <span class="prompt-fill__hint">Paste your findings, or list known issues</span>
+        <textarea id="pf-search-sprint-task-generator-audit-findings" class="js-prompt-input" data-token="AUDIT_FINDINGS" data-placeholder="Paste your findings, or list known issues" placeholder="Paste your findings, or list known issues"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-search-sprint-task-generator-sprint-length">Sprint length</label>
+        <span class="prompt-fill__hint">Number of weeks</span>
+        <input type="text" id="pf-search-sprint-task-generator-sprint-length" class="js-prompt-input" data-token="SPRINT_LENGTH" data-placeholder="Number of weeks" placeholder="Number of weeks">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-search-sprint-task-generator-available-capacity">Available capacity</label>
+        <span class="prompt-fill__hint">Hours or story points</span>
+        <input type="text" id="pf-search-sprint-task-generator-available-capacity" class="js-prompt-input" data-token="AVAILABLE_CAPACITY" data-placeholder="Hours or story points" placeholder="Hours or story points">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-search-sprint-task-generator-team-capabilities">Team capabilities</label>
+        <span class="prompt-fill__hint">Skills available — content, dev, design</span>
+        <input type="text" id="pf-search-sprint-task-generator-team-capabilities" class="js-prompt-input" data-token="TEAM_CAPABILITIES" data-placeholder="Skills available — content, dev, design" placeholder="Skills available — content, dev, design">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-search-sprint-task-generator-technical-constraints">Technical constraints</label>
+        <span class="prompt-fill__hint">What&#x27;s not possible this sprint</span>
+        <input type="text" id="pf-search-sprint-task-generator-technical-constraints" class="js-prompt-input" data-token="TECHNICAL_CONSTRAINTS" data-placeholder="What&#x27;s not possible this sprint" placeholder="What&#x27;s not possible this sprint">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="prompt-fill" id="title-metadata-optimizer" aria-labelledby="prompt-fill-label-title-metadata-optimizer">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-title-metadata-optimizer">
+      Try It With Your Data — Title &amp; Metadata Optimizer
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt is made of (RICE breakdown)</summary>
+      <div class="prompt-fill__guidance-body">
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">R</span>
+          <h4>Role</h4>
+          <p>Casts the AI as: You&#x27;re a technical content strategist specializing in metadata and SEO for documentation.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">I</span>
+          <h4>Instructions</h4>
+          <p>Names 4 specific outputs to produce, so the response comes back structured rather than a general summary.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">C</span>
+          <h4>Context</h4>
+          <p>Content type, Target audience, Common search queries and Current issues tell the AI what your specific situation is, not a generic one.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">E</span>
+          <h4>Expected format</h4>
+          <p>Before/after comparison with rationale</p>
+        </div>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[R - ROLE]
+You're a technical content strategist specializing in metadata and SEO for documentation.
+
+[I - INSTRUCTIONS]
+Optimize titles and metadata for these content pieces:
+
+{{CONTENT_WITH_CURRENT_TITLES}}
+
+Optimize for:
+1. Search discoverability (user query matching)
+2. Information scent (clear about what's inside)
+3. Consistency (pattern across similar content)
+4. Scanability (easy to distinguish in lists)
+
+Constraints:
+- Title max: {{TITLE_MAX_LENGTH}} characters
+- Description max: {{DESCRIPTION_MAX_LENGTH}} characters
+- {{ADDITIONAL_REQUIREMENTS}}
+
+[C - CONTEXT]
+Content type: {{CONTENT_TYPE}}
+Target audience: {{TARGET_AUDIENCE}}
+Common search queries: {{COMMON_SEARCH_QUERIES}}
+Current issues: {{CURRENT_ISSUES}}
+
+[E - EXPECTED FORMAT]
+Before/after comparison with rationale
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-title-metadata-optimizer-content-with-current-titles">Content with current titles</label>
+        <span class="prompt-fill__hint">One per line: current title (+ description if you have it)</span>
+        <textarea id="pf-title-metadata-optimizer-content-with-current-titles" class="js-prompt-input" data-token="CONTENT_WITH_CURRENT_TITLES" data-placeholder="One per line: current title (+ description if you have it)" placeholder="One per line: current title (+ description if you have it)"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-title-metadata-optimizer-title-max-length">Title max length</label>
+        <span class="prompt-fill__hint">Character limit</span>
+        <input type="text" id="pf-title-metadata-optimizer-title-max-length" class="js-prompt-input" data-token="TITLE_MAX_LENGTH" data-placeholder="Character limit" placeholder="Character limit">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-title-metadata-optimizer-description-max-length">Description max length</label>
+        <span class="prompt-fill__hint">Character limit</span>
+        <input type="text" id="pf-title-metadata-optimizer-description-max-length" class="js-prompt-input" data-token="DESCRIPTION_MAX_LENGTH" data-placeholder="Character limit" placeholder="Character limit">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-title-metadata-optimizer-additional-requirements">Additional requirements</label>
+        <span class="prompt-fill__hint">Any other requirements</span>
+        <input type="text" id="pf-title-metadata-optimizer-additional-requirements" class="js-prompt-input" data-token="ADDITIONAL_REQUIREMENTS" data-placeholder="Any other requirements" placeholder="Any other requirements">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-title-metadata-optimizer-content-type">Content type</label>
+        <span class="prompt-fill__hint">Brief description</span>
+        <input type="text" id="pf-title-metadata-optimizer-content-type" class="js-prompt-input" data-token="CONTENT_TYPE" data-placeholder="Brief description" placeholder="Brief description">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-title-metadata-optimizer-target-audience">Target audience</label>
+        <span class="prompt-fill__hint">Who this is for</span>
+        <input type="text" id="pf-title-metadata-optimizer-target-audience" class="js-prompt-input" data-token="TARGET_AUDIENCE" data-placeholder="Who this is for" placeholder="Who this is for">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-title-metadata-optimizer-common-search-queries">Common search queries</label>
+        <span class="prompt-fill__hint">If known</span>
+        <input type="text" id="pf-title-metadata-optimizer-common-search-queries" class="js-prompt-input" data-token="COMMON_SEARCH_QUERIES" data-placeholder="If known" placeholder="If known">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-title-metadata-optimizer-current-issues">Current issues</label>
+        <span class="prompt-fill__hint">Problems with current titles</span>
+        <input type="text" id="pf-title-metadata-optimizer-current-issues" class="js-prompt-input" data-token="CURRENT_ISSUES" data-placeholder="Problems with current titles" placeholder="Problems with current titles">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-01.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 12 · 2 of 11</span>
+    <a href="chunk-03.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="../../assets/js/prompt-fill.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

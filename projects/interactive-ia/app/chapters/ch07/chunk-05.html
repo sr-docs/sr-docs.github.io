@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thesauri — Chapter 7 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 7</a>
+      <span aria-hidden="true">›</span>
+      <span>Thesauri</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 5 of 10">5 of 10</div>
+    <div class="mini-nav__links">
+      <a href="chunk-04.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-06.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Thesauri
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        A thesaurus is the most commonly used controlled vocabulary in digital information spaces — a highly structured, database-resident vocabulary that comprehends preferred terms, variant terms, broader and narrower terms, and related terms all at once, with every relationship reciprocal in both directions. Three variants exist, each with a different scope of ambition. A <strong>classic thesaurus</strong> supports keyword search, synonym management, hierarchical navigation, and associative linking all together — the most powerful option, and also the most labor-intensive and costly to build and maintain. An <strong>indexing thesaurus</strong> supports the indexing process itself but doesn't map users' variant search terms back to preferred ones, making it less powerful than a classic thesaurus but considerably less costly. A <strong>searching thesaurus</strong> exists specifically to improve search over free-text content — news archives, third-party content — where manual indexing would be too costly to attempt; it increases recall, sometimes at the expense of precision, and its cost doesn't scale with the volume of content the way indexing effort does.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      All three thesaurus types solve a version of the same problem — but a classic thesaurus tries to solve it everywhere at once, while indexing and searching thesauri each pick one battle and fight only that one.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch07-chunk-05" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A scientific publisher is building a search system for a database of peer-reviewed papers across biology, chemistry, and environmental science. Content is indexed manually by subject librarians. Users range from domain experts who know precise terminology to graduate students still learning the field's vocabulary. The publisher has a limited budget for ongoing maintenance.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          Given the mix of expert and novice users, the manual indexing already in place, and the limited maintenance budget, which thesaurus type is the best fit?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="thesaurus-type" value="classic">
+            <span class="exercise__option-text">Classic thesaurus</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="thesaurus-type" value="indexing">
+            <span class="exercise__option-text">Indexing thesaurus</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="thesaurus-type" value="searching">
+            <span class="exercise__option-text">Searching thesaurus</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          Explain what capability the two thesaurus types you didn't choose would have added, and why that capability doesn't justify the added cost given this publisher's specific situation.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>A classic thesaurus is the strongest fit here — even though it's the most expensive option.</strong> This scenario has two features that specifically call for its full capability set: manual indexing is already in place, which a classic thesaurus is built to support directly, and the audience spans from domain experts to graduate students still learning the vocabulary, which is exactly the situation synonym management and hierarchical navigation exist to serve — mapping a novice's imprecise search term to the precise term an expert indexer used.
+      </p>
+
+      <span class="feedback__highlight">
+        An indexing thesaurus would have supported the manual indexing process itself, but without synonym management, a graduate student searching with an imprecise or informal term wouldn't get mapped to the correct preferred term — undermining exactly the population this publisher most needs to serve well. A searching thesaurus would have been well suited to a large free-text archive where manual indexing wasn't feasible, but that's not this situation: subject librarians are already indexing manually, so a searching thesaurus would be solving a problem this publisher doesn't actually have, while leaving the real cross-terminology search problem unaddressed.
+      </span>
+
+      <p>
+        The limited maintenance budget is a genuine constraint worth taking seriously, but it argues for planning realistically for a classic thesaurus's ongoing cost — perhaps scoping it narrower at first and expanding over time — rather than choosing a cheaper option that wouldn't actually solve the core problem this specific audience has.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-04.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 7 · 5 of 10</span>
+    <a href="chunk-06.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

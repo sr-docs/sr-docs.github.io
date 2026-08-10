@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interview Theme Analysis — Chapter 14 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 14</a>
+      <span aria-hidden="true">›</span>
+      <span>Interview Theme Analysis</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 1 of 4">1 of 4</div>
+    <div class="mini-nav__links">
+      <a href="index.html">← Chapter overview</a>
+      <span class="spacer"></span>
+      <a href="chunk-02.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Interview Theme Analysis
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Interview transcripts contain IA evidence that a general summary will flatten. When a participant says "I gave up and just searched for it," that is a navigation finding. When three participants call the same thing by a name that appears nowhere in your navigation, that is a labeling finding. This prompt asks for those specific reads — finding behavior, mental models, navigation friction, vocabulary, expectation gaps — rather than an overall summary, and it requires a participant count and a supporting quote beside every theme.
+      </p>
+      <p>
+        Paste in excerpts rather than your notes about the excerpts. The participants' own words are the point, and summarising strips out exactly the vocabulary you are trying to capture. Giving the participant count matters too, because it is what lets you catch the most common failure in AI-assisted synthesis: a theme presented as widespread that traces back to one talkative person. When you read the output, check each theme against its own quote and count. If the quote does not plainly say what the theme claims, the theme is an interpretation, and interpretations belong in a separate column from evidence.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      A theme without a count and a quote is an opinion with a citation style. The count is what tells you whether to act on it.
+    </p>
+
+  </section>
+
+
+  <section class="prompt-fill" id="interview-theme-analysis" aria-labelledby="prompt-fill-label-interview-theme-analysis">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-interview-theme-analysis">
+      Try It With Your Data — Interview Theme Analysis
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt is made of (RICE breakdown)</summary>
+      <div class="prompt-fill__guidance-body">
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">R</span>
+          <h4>Role</h4>
+          <p>Casts the AI as: You&#x27;re a UX researcher extracting information architecture insights from interview data.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">I</span>
+          <h4>Instructions</h4>
+          <p>Names 5 specific outputs to produce, so the response comes back structured rather than a general summary.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">C</span>
+          <h4>Context</h4>
+          <p>Research context, Number of participants, User type and Current IA tell the AI what your specific situation is, not a generic one.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">E</span>
+          <h4>Expected format</h4>
+          <p>Thematic analysis with quoted evidence and IA recommendations</p>
+        </div>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[R - ROLE]
+You're a UX researcher extracting information architecture insights from interview data.
+
+[I - INSTRUCTIONS]
+Analyze these interview excerpts for IA-related themes:
+
+{{INTERVIEW_EXCERPTS}}
+
+Focus on:
+1. How users describe finding information
+2. Mental models for content organization
+3. Navigation pain points
+4. Vocabulary users use (vs. system vocabulary)
+5. Expectations vs. reality gaps
+
+For each theme:
+- Quote supporting evidence
+- Note participant count
+- Assess strength of theme
+- Derive IA recommendation
+
+[C - CONTEXT]
+Research context: {{RESEARCH_CONTEXT}}
+Number of participants: {{NUMBER_OF_PARTICIPANTS}}
+User type: {{USER_TYPE}}
+Current IA: {{CURRENT_IA}}
+
+[E - EXPECTED FORMAT]
+Thematic analysis with quoted evidence and IA recommendations
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-interview-theme-analysis-interview-excerpts">Interview excerpts</label>
+        <span class="prompt-fill__hint">Paste the relevant sections of your interviews</span>
+        <textarea id="pf-interview-theme-analysis-interview-excerpts" class="js-prompt-input" data-token="INTERVIEW_EXCERPTS" data-placeholder="Paste the relevant sections of your interviews" placeholder="Paste the relevant sections of your interviews"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-interview-theme-analysis-research-context">Research context</label>
+        <span class="prompt-fill__hint">What prompted these interviews</span>
+        <input type="text" id="pf-interview-theme-analysis-research-context" class="js-prompt-input" data-token="RESEARCH_CONTEXT" data-placeholder="What prompted these interviews" placeholder="What prompted these interviews">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-interview-theme-analysis-number-of-participants">Number of participants</label>
+        <span class="prompt-fill__hint">Whole number</span>
+        <input type="text" id="pf-interview-theme-analysis-number-of-participants" class="js-prompt-input" data-token="NUMBER_OF_PARTICIPANTS" data-placeholder="Whole number" placeholder="Whole number">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-interview-theme-analysis-user-type">User type</label>
+        <span class="prompt-fill__hint">Brief description</span>
+        <input type="text" id="pf-interview-theme-analysis-user-type" class="js-prompt-input" data-token="USER_TYPE" data-placeholder="Brief description" placeholder="Brief description">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-interview-theme-analysis-current-ia">Current IA</label>
+        <span class="prompt-fill__hint">Existing structure, if relevant</span>
+        <input type="text" id="pf-interview-theme-analysis-current-ia" class="js-prompt-input" data-token="CURRENT_IA" data-placeholder="Existing structure, if relevant" placeholder="Existing structure, if relevant">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="index.html">← Chapter overview</a>
+    <span class="chunk-footer__center">Chapter 14 · 1 of 4</span>
+    <a href="chunk-02.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/prompt-fill.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

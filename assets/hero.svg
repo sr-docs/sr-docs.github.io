@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9eb9cb"/>
+      <stop offset="45%" stop-color="#c5d6e3"/>
+      <stop offset="100%" stop-color="#e8eef4"/>
+    </linearGradient>
+    <linearGradient id="ridge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0b6e6e" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#15202b" stop-opacity="0.75"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#15202b" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+  <path d="M0 620 C220 520 380 700 560 580 C740 460 880 640 1060 540 C1240 440 1400 560 1600 480 L1600 900 L0 900 Z" fill="url(#ridge)"/>
+  <circle cx="1180" cy="210" r="86" fill="#f5f8fb" fill-opacity="0.55"/>
+  <circle cx="1180" cy="210" r="54" fill="#b85c38" fill-opacity="0.28"/>
+  <g fill="none" stroke="#15202b" stroke-opacity="0.22" stroke-width="2">
+    <path d="M180 210h220"/>
+    <path d="M180 240h150"/>
+    <path d="M180 270h190"/>
+    <path d="M1280 640h180"/>
+    <path d="M1320 670h140"/>
+  </g>
+</svg>

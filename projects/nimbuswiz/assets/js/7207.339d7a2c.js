@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcontent_portfolio=self.webpackChunkcontent_portfolio||[]).push([["7207"],{31226(e,o,t){t.d(o,{createInfoServices:()=>c.v});var c=t(73954);t(93345)}}]);

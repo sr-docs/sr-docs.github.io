@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assessing the Need for Search — Chapter 12 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 12</a>
+      <span aria-hidden="true">›</span>
+      <span>Assessing the Need for Search</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 1 of 11">1 of 11</div>
+    <div class="mini-nav__links">
+      <a href="index.html">← Chapter overview</a>
+      <span class="spacer"></span>
+      <a href="chunk-02.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Challenges of Searching and Assessing the Need for Search
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Searching is cognitively demanding in a way browsing usually isn't — a person has to formulate a query, choose the right words, and then interpret a list of results, all before they've actually found anything. That cost means search isn't automatically the right investment for every information space. It earns its place in large or deep spaces, content that changes frequently enough that browsing structures can't keep pace, situations where users already know precisely what they're looking for, and collections too large to browse through effectively no matter how well organized.
+      </p>
+      <p>
+        The reverse is just as true: a small, shallow space with a primarily exploratory audience and easily browsable content may not need a dedicated search system at all — building one anyway spends effort solving a problem that doesn't really exist yet.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      Search isn't a feature every site deserves by default — it's a specific answer to a specific set of conditions, and building it where those conditions don't exist is effort spent solving a problem nobody actually has.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch12-chunk-01" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> Three information spaces, each considering whether to build an internal search system.
+        </p>
+        <p>
+          <strong>Space A:</strong> A small charity's website, forty pages of fairly stable content, a well-organized navigation system, visited mostly by occasional visitors who generally know what they're looking for.<br>
+          <strong>Space B:</strong> A large corporate intranet with thousands of documents across dozens of departments, frequent content updates, and employees who regularly report failing to find policies and procedures they know exist somewhere.<br>
+          <strong>Space C:</strong> A medium-sized e-commerce store with three hundred products in a clean, well-structured category hierarchy, whose customers largely browse rather than search.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          1. Does Space A need a dedicated internal search system?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="space-a" value="no">
+            <span class="exercise__option-text">No — small, stable, well-organized, and browsable already serves this audience well</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="space-a" value="yes">
+            <span class="exercise__option-text">Yes — every site benefits from search</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          2. Does Space B need a dedicated internal search system?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="space-b" value="yes">
+            <span class="exercise__option-text">Yes — large, deep, frequently changing content with users who know specific items exist but can't find them is exactly the case search is built for</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="space-b" value="no">
+            <span class="exercise__option-text">No — better navigation alone would fully resolve this</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          For Space C, identify one single change to the scenario that would most likely reverse the recommendation — something that would flip whether search is genuinely needed.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>1 — No, Space A doesn't need dedicated search.</strong> Small, stable, well-organized, and browsable by an audience that generally knows what it wants describes almost exactly the conditions where search isn't necessary. Building one here would be solving a problem this particular space doesn't actually have.
+      </p>
+
+      <p>
+        <strong>2 — Yes, Space B clearly needs it.</strong> Large scale, frequent change, and users who already know a specific item exists but can't locate it is precisely the combination of conditions that makes search worth the investment — this is closer to a textbook case than an edge case.
+      </p>
+
+      <span class="feedback__highlight">
+        For Space C, the single most likely reversal is a significant increase in product catalog size. Three hundred products in a clean hierarchy is genuinely browsable, but if that catalog grew to several thousand products — even while keeping the same category structure — browsing alone would become far less practical, and search would become the more reasonable investment even without any other change to customer behavior. Scale alone, independent of anything else in the scenario, is often the single variable that flips this kind of recommendation.
+      </span>
+
+      <p>
+        This is a useful habit to build: rather than treating "does this space need search" as a fixed yes-or-no fact about a space, it's worth identifying which specific factor is doing the most work in your assessment — because that's usually the factor most likely to change and force a different answer later.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="index.html">← Chapter overview</a>
+    <span class="chunk-footer__center">Chapter 12 · 1 of 11</span>
+    <a href="chunk-02.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

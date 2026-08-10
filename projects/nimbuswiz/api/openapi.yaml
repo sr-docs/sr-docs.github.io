@@ -1,0 +1,82 @@
+openapi: 3.0.3
+
+info:
+  title: NimbusWiz API
+  version: '1.0'
+  description: |
+    A design-spec REST API for NimbusWiz. The prototype has no live backend:
+    the endpoints below are written as if I were specing them for an
+    engineering team.
+
+    All requests would be authenticated with a Bearer token. Include the API
+    key in the `Authorization` header of every request:
+
+    ```
+    Authorization: Bearer YOUR_API_KEY
+    ```
+
+    Two endpoints are documented as samples: register a system and read
+    system metrics. Other resources (scans, deployments, alerts) would
+    follow the same conventions but aren't written out.
+
+  contact:
+    name: NimbusWiz Developer Support
+    url: https://nimbuswiz-demo.vercel.app
+
+servers:
+  - url: https://api.nimbuswiz.io/v1
+    description: Design example (no live endpoint)
+
+security:
+  - BearerAuth: []
+
+tags:
+  - name: Fleet
+    description: |
+      A **System** is the primary resource in NimbusWiz. Each system represents
+      a registered legacy infrastructure unit tracked through the assessment,
+      modernization, and deployment lifecycle.
+
+      Systems have a stable ID (`n2k-[name]-[number]`), a `status` that
+      advances through the lifecycle, and scores that reflect current health.
+
+  - name: Monitoring
+    description: |
+      **Monitoring** endpoints provide real-time and historical health data for
+      systems post-deployment. Metrics include stability index, responsiveness
+      score, and network interaction, each with trend direction and time-series data.
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: >
+        API key generated in Developer Hub > API Keys inside NimbusWiz.
+        Include as Authorization: Bearer YOUR_API_KEY on every request.
+
+  schemas:
+    System:
+      $ref: './schemas/system.yaml#/System'
+    RegisterSystemRequest:
+      $ref: './schemas/system.yaml#/RegisterSystemRequest'
+    MetricsResponse:
+      $ref: './schemas/monitoring.yaml#/MetricsResponse'
+    MetricSeries:
+      $ref: './schemas/monitoring.yaml#/MetricSeries'
+    Error:
+      $ref: './schemas/common.yaml#/Error'
+
+  responses:
+    Unauthorized:
+      $ref: './schemas/common.yaml#/responses/Unauthorized'
+    Forbidden:
+      $ref: './schemas/common.yaml#/responses/Forbidden'
+    NotFound:
+      $ref: './schemas/common.yaml#/responses/NotFound'
+
+paths:
+  /fleet:
+    $ref: './paths/fleet/index.yaml'
+  /fleet/{system_id}/metrics:
+    $ref: './paths/monitoring/metrics.yaml'

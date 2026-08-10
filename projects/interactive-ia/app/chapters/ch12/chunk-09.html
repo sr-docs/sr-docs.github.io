@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personalized Search — Chapter 12 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 12</a>
+      <span aria-hidden="true">›</span>
+      <span>Personalized Search</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 9 of 11">9 of 11</div>
+    <div class="mini-nav__links">
+      <a href="chunk-08.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-10.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Personalized Search
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Personalized search tailors results to an individual through a three-step process: gathering data about that person's history and behavior, analyzing it to identify patterns and preferences, and presenting results reordered or filtered based on what that analysis found. It tends to work best for short-head queries — the common, high-volume searches where there's enough behavioral data to work with. New users present a real challenge here, since personalization has nothing to learn from yet, which is often called the cold-start problem.
+      </p>
+      <p>
+        Done well, personalization gets people to relevant results faster. Done carelessly, it risks the filter bubble: narrowing what someone sees to only what matches their established past behavior, which can quietly exclude genuinely relevant content simply because it doesn't fit the pattern the system has already learned.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      Personalization's entire value proposition — giving someone more of what they already like — is also its central risk, since "what they already like" and "what they actually need right now" aren't always the same thing.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch12-chunk-09" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A streaming platform for documentary films uses personalized search based on watch history, ratings, and demographic data. Three user situations are described.
+        </p>
+        <p>
+          <strong>User A</strong> regularly watches nature documentaries. She searches for a film about climate change, but her results only show nature-framed climate content, missing the political and economic angles the same search term also covers on the platform.<br>
+          <strong>User B</strong> is brand new, with no watch history at all, but the system is already making content assumptions based purely on demographic data collected at sign-up.<br>
+          <strong>User C</strong> has deliberately searched for content outside his usual viewing pattern, wanting to broaden his perspective, but his results keep defaulting back toward his established preferences anyway.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          Which user is experiencing the clearest case of the filter bubble risk?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="filter-bubble-user" value="user-a">
+            <span class="exercise__option-text">User A — her results are narrowed to only the framing that matches her past viewing, excluding other legitimate angles on the same topic</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="filter-bubble-user" value="user-b">
+            <span class="exercise__option-text">User B</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="filter-bubble-user" value="user-c">
+            <span class="exercise__option-text">User C</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          For User B and User C, identify the specific personalization failure each represents, and propose one design intervention for each that preserves the general benefits of personalization while addressing their specific problem.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>User A is the clearest filter bubble case.</strong> Her search results are being silently narrowed to match her established viewing pattern, excluding entire legitimate categories of relevant content on the same topic — exactly the risk the concept section describes, where personalization crosses from helpful into limiting.
+      </p>
+
+      <span class="feedback__highlight">
+        User B represents the cold-start problem, but in a particularly concerning form — rather than simply lacking enough data to personalize well, the system is filling that gap with demographic assumptions, which risks stereotyping a new user based on group characteristics rather than anything they've actually shown interest in individually. User C represents a different failure: even an explicit signal of intent to see something different is being overridden by the system's accumulated model of his past preferences, which suggests the personalization is weighted too heavily toward historical behavior and not responsive enough to an active, in-the-moment search signal.
+      </span>
+
+      <p>
+        A reasonable intervention for User B: rely on general popularity or curated recommendations rather than demographic inference for new users until enough individual behavioral data accumulates to personalize meaningfully and specifically to them. A reasonable intervention for User C: let an explicit search query that clearly diverges from established viewing patterns take precedence over the accumulated personalization model for that specific search, rather than letting historical preference data quietly pull the results back toward familiar territory when the user has directly signaled they want something different this time.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-08.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 12 · 9 of 11</span>
+    <a href="chunk-10.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

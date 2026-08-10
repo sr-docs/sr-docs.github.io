@@ -1,0 +1,135 @@
+<svg viewBox="0 0 680 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="pipeline-title pipeline-desc">
+<title id="pipeline-title">AI-enhanced documentation pipeline</title>
+<desc id="pipeline-desc">Three-layer pipeline: AI generation with prototype access, AI accuracy check, then human review and PR merge. New and maintenance tracks converge at the accuracy layer.</desc>
+
+<defs>
+  <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+    <path d="M0,0 L0,6 L8,3 z" fill="#888780"/>
+  </marker>
+  <marker id="arr-merge" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+    <path d="M0,0 L0,6 L8,3 z" fill="#5F5E5A"/>
+  </marker>
+</defs>
+
+<!-- Layer labels (left rail) -->
+<text x="18" y="108" font-size="10" font-weight="500" fill="#B4B2A9" font-family="system-ui, sans-serif" transform="rotate(-90,18,108)" text-anchor="middle">layer 1: generate</text>
+<text x="18" y="310" font-size="10" font-weight="500" fill="#B4B2A9" font-family="system-ui, sans-serif" transform="rotate(-90,18,310)" text-anchor="middle">layer 2: verify</text>
+<text x="18" y="490" font-size="10" font-weight="500" fill="#B4B2A9" font-family="system-ui, sans-serif" transform="rotate(-90,18,490)" text-anchor="middle">layer 3: human</text>
+
+<!-- Layer bands -->
+<rect x="36" y="44" width="632" height="172" rx="10" fill="#EEEDFE" opacity="0.5"/>
+<rect x="36" y="232" width="632" height="156" rx="10" fill="#E1F5EE" opacity="0.5"/>
+<rect x="36" y="404" width="632" height="172" rx="10" fill="#E6F1FB" opacity="0.5"/>
+
+<!-- ══ LAYER 1: GENERATE ══ -->
+
+<!-- track labels -->
+<text x="130" y="56" font-size="10" font-weight="500" fill="#534AB7" font-family="system-ui, sans-serif" text-anchor="middle">new pages</text>
+<text x="562" y="56" font-size="10" font-weight="500" fill="#5F5E5A" font-family="system-ui, sans-serif" text-anchor="middle">maintenance</text>
+
+<!-- prototype source -->
+<rect x="56" y="64" width="148" height="52" rx="6" fill="#2C2C2A"/>
+<text x="130" y="86" font-size="12" font-weight="500" fill="#D3D1C7" font-family="system-ui, sans-serif" text-anchor="middle">prototype source</text>
+<text x="130" y="102" font-size="10" fill="#888780" font-family="system-ui, sans-serif" text-anchor="middle">Root.tsx + components</text>
+
+<!-- arrow: prototype source → generate -->
+<line x1="130" y1="116" x2="130" y2="138" stroke="#888780" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- generate-draft script -->
+<rect x="56" y="140" width="148" height="52" rx="6" fill="#26215C"/>
+<text x="130" y="162" font-size="12" font-weight="500" fill="#CECBF6" font-family="system-ui, sans-serif" text-anchor="middle">generate-draft</text>
+<text x="130" y="178" font-size="10" fill="#AFA9EC" font-family="system-ui, sans-serif" text-anchor="middle">with-prototype.js</text>
+
+<!-- scaffold draft -->
+<rect x="236" y="140" width="148" height="52" rx="6" fill="#3C3489"/>
+<text x="310" y="162" font-size="12" font-weight="500" fill="#CECBF6" font-family="system-ui, sans-serif" text-anchor="middle">scaffold draft</text>
+<text x="310" y="178" font-size="10" fill="#AFA9EC" font-family="system-ui, sans-serif" text-anchor="middle">UI-accurate, placeholder-marked</text>
+
+<!-- arrow: generate → scaffold -->
+<line x1="204" y1="166" x2="234" y2="166" stroke="#888780" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- PR opened -->
+<rect x="416" y="140" width="128" height="52" rx="6" fill="#534AB7"/>
+<text x="480" y="162" font-size="12" font-weight="500" fill="#EEEDFE" font-family="system-ui, sans-serif" text-anchor="middle">PR opened</text>
+<text x="480" y="178" font-size="10" fill="#CECBF6" font-family="system-ui, sans-serif" text-anchor="middle">new branch, checklist</text>
+
+<!-- arrow: scaffold → PR -->
+<line x1="384" y1="166" x2="414" y2="166" stroke="#888780" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- existing published doc -->
+<rect x="476" y="64" width="172" height="52" rx="6" fill="#444441"/>
+<text x="562" y="86" font-size="12" font-weight="500" fill="#D3D1C7" font-family="system-ui, sans-serif" text-anchor="middle">existing published doc</text>
+<text x="562" y="102" font-size="10" fill="#888780" font-family="system-ui, sans-serif" text-anchor="middle">may have drifted from prototype</text>
+
+<!-- ══ LAYER 2: VERIFY ══ -->
+
+<!-- accuracy skill -->
+<rect x="186" y="252" width="308" height="56" rx="6" fill="#085041"/>
+<text x="340" y="275" font-size="12" font-weight="500" fill="#9FE1CB" font-family="system-ui, sans-serif" text-anchor="middle">nimbuswiz-doc-accuracy skill</text>
+<text x="340" y="293" font-size="10" fill="#5DCAA5" font-family="system-ui, sans-serif" text-anchor="middle">checks implementation status · backend behaviour · release state</text>
+
+<!-- accuracy output -->
+<rect x="186" y="332" width="308" height="44" rx="6" fill="#0F6E56"/>
+<text x="340" y="351" font-size="12" font-weight="500" fill="#E1F5EE" font-family="system-ui, sans-serif" text-anchor="middle">accuracy report + inline PR comments</text>
+<text x="340" y="367" font-size="10" fill="#9FE1CB" font-family="system-ui, sans-serif" text-anchor="middle">planned features flagged · gaps identified</text>
+
+<!-- arrow: skill → report -->
+<line x1="340" y1="308" x2="340" y2="330" stroke="#5DCAA5" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- Convergence arrows into accuracy skill -->
+<!-- From PR (new track) -->
+<line x1="480" y1="192" x2="480" y2="220" stroke="#5F5E5A" stroke-width="1.5"/>
+<line x1="480" y1="220" x2="340" y2="220" stroke="#5F5E5A" stroke-width="1.5"/>
+<line x1="340" y1="220" x2="340" y2="250" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arr-merge)"/>
+
+<!-- From existing doc (maintenance track) -->
+<line x1="562" y1="116" x2="562" y2="220" stroke="#5F5E5A" stroke-width="1.5" stroke-dasharray="4,3"/>
+<line x1="562" y1="220" x2="340" y2="220" stroke="#5F5E5A" stroke-width="0.5" stroke-dasharray="4,3"/>
+
+<!-- ══ LAYER 3: HUMAN ══ -->
+
+<!-- Vale lint -->
+<rect x="56" y="424" width="148" height="52" rx="6" fill="#0C447C"/>
+<text x="130" y="446" font-size="12" font-weight="500" fill="#B5D4F4" font-family="system-ui, sans-serif" text-anchor="middle">Vale lint</text>
+<text x="130" y="462" font-size="10" fill="#85B7EB" font-family="system-ui, sans-serif" text-anchor="middle">style + vocab check</text>
+
+<!-- human review -->
+<rect x="236" y="424" width="208" height="52" rx="6" fill="#185FA5"/>
+<text x="340" y="446" font-size="12" font-weight="500" fill="#E6F1FB" font-family="system-ui, sans-serif" text-anchor="middle">human review</text>
+<text x="340" y="462" font-size="10" fill="#B5D4F4" font-family="system-ui, sans-serif" text-anchor="middle">product judgment · prerequisite chain · audience</text>
+
+<!-- merge to main -->
+<rect x="476" y="424" width="148" height="52" rx="6" fill="#042C53"/>
+<text x="550" y="446" font-size="12" font-weight="500" fill="#B5D4F4" font-family="system-ui, sans-serif" text-anchor="middle">merge to main</text>
+<text x="550" y="462" font-size="10" fill="#85B7EB" font-family="system-ui, sans-serif" text-anchor="middle">no feature ships inaccurately</text>
+
+<!-- Arrows into layer 3 (from accuracy report) -->
+<line x1="340" y1="376" x2="340" y2="402" stroke="#5F5E5A" stroke-width="1.5"/>
+<line x1="340" y1="402" x2="130" y2="402" stroke="#5F5E5A" stroke-width="1.5"/>
+<line x1="130" y1="402" x2="130" y2="422" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arr)"/>
+<line x1="340" y1="402" x2="340" y2="422" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- arrows across layer 3 -->
+<line x1="204" y1="450" x2="234" y2="450" stroke="#888780" stroke-width="1.5" marker-end="url(#arr)"/>
+<line x1="444" y1="450" x2="474" y2="450" stroke="#888780" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- ══ CONTRIBUTION FOOTNOTES ══ -->
+<rect x="56" y="512" width="148" height="68" rx="6" fill="none" stroke="#D3D1C7" stroke-width="0.5"/>
+<text x="130" y="530" font-size="10" font-weight="500" fill="#888780" font-family="system-ui, sans-serif" text-anchor="middle">script gives you</text>
+<text x="130" y="547" font-size="10" fill="#888780" font-family="system-ui, sans-serif" text-anchor="middle">exact UI labels</text>
+<text x="130" y="562" font-size="10" fill="#888780" font-family="system-ui, sans-serif" text-anchor="middle">real element names</text>
+<text x="130" y="577" font-size="10" fill="#888780" font-family="system-ui, sans-serif" text-anchor="middle">correct structure</text>
+
+<rect x="236" y="512" width="208" height="68" rx="6" fill="none" stroke="#9FE1CB" stroke-width="0.5"/>
+<text x="340" y="530" font-size="10" font-weight="500" fill="#1D9E75" font-family="system-ui, sans-serif" text-anchor="middle">accuracy skill gives you</text>
+<text x="340" y="547" font-size="10" fill="#1D9E75" font-family="system-ui, sans-serif" text-anchor="middle">planned vs. shipped status</text>
+<text x="340" y="562" font-size="10" fill="#1D9E75" font-family="system-ui, sans-serif" text-anchor="middle">backend behaviour</text>
+<text x="340" y="577" font-size="10" fill="#1D9E75" font-family="system-ui, sans-serif" text-anchor="middle">rollback states · audit logging</text>
+
+<rect x="476" y="512" width="148" height="68" rx="6" fill="none" stroke="#85B7EB" stroke-width="0.5"/>
+<text x="550" y="530" font-size="10" font-weight="500" fill="#185FA5" font-family="system-ui, sans-serif" text-anchor="middle">human gives you</text>
+<text x="550" y="547" font-size="10" fill="#185FA5" font-family="system-ui, sans-serif" text-anchor="middle">product judgment</text>
+<text x="550" y="562" font-size="10" fill="#185FA5" font-family="system-ui, sans-serif" text-anchor="middle">audience fit</text>
+<text x="550" y="577" font-size="10" fill="#185FA5" font-family="system-ui, sans-serif" text-anchor="middle">the final sign-off</text>
+
+</svg>

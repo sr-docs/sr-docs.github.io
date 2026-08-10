@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URLs and Browser Titles — Chapter 9 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 9</a>
+      <span aria-hidden="true">›</span>
+      <span>URLs and Browser Titles</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 3 of 8">3 of 8</div>
+    <div class="mini-nav__links">
+      <a href="chunk-02.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-04.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Constructing URLs and Browser Titles
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        A URL is itself a label, and a human-readable one lets people understand a link's destination before clicking it, or confirm they've arrived at the right place after. Good URLs stay short, use common, correctly spelled words, and mirror the same terminology as the navigation system and content categories — so a page about power drills sits under a path like "/tools/power-drills" rather than an opaque string of characters. Pages should ideally persist forever; when a URL genuinely has to change, a redirect from the old address protects both users with old bookmarks and any links pointing in from elsewhere on the web.
+      </p>
+      <p>
+        A browser title is a related but distinct label — the metadata that appears on a browser tab, becomes the default name for a bookmark, and is exactly what search engines display as the clickable link text on a results page. A vague or generic browser title can quietly suppress traffic that would otherwise have clicked through, even when the underlying page content is exactly what the searcher wanted.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      A URL and a browser title are both promises made before a click happens — break either one, and a visitor either never clicks at all, or clicks and immediately doubts they're in the right place.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch09-chunk-03" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A software company recently migrated its marketing website to a new platform. Several URL and browser title problems have emerged since.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          1. The pricing page's URL changed from "/pricing" to "/page?id=3391&v=2," and the old URL now returns a plain error with no redirect.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-1" value="broken-redirect">
+            <span class="exercise__option-text">A human-readable URL was replaced with an opaque one, and the lack of a redirect breaks every existing bookmark and inbound link</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-1" value="fine">
+            <span class="exercise__option-text">This is a normal, acceptable outcome of a platform migration</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-1" value="only-title">
+            <span class="exercise__option-text">This is only a browser title problem, not a URL problem</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          2. A blog post about onboarding best practices has the browser title "Post-4821-Draft-FINAL2," left over from an internal file name.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-2" value="title-fails">
+            <span class="exercise__option-text">The browser title fails to represent the page's actual content, which will suppress clicks from search results even if the article ranks well</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-2" value="url-fails">
+            <span class="exercise__option-text">This is only a URL problem, not a browser title problem</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-2" value="no-issue">
+            <span class="exercise__option-text">No issue — internal file names make good browser titles</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          Propose corrected versions of both the pricing page's URL handling and the blog post's browser title.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>1 — A human-readable URL was replaced with an opaque one, and no redirect exists.</strong> "/pricing" told visitors exactly what they'd find before clicking; "/page?id=3391&v=2" tells them nothing. Compounding that, the lack of a redirect means every bookmark, every inbound link from elsewhere on the web, and every saved reference to the old URL now breaks outright rather than quietly forwarding people to the new location.
+      </p>
+
+      <p>
+        <strong>2 — The browser title fails to represent the page's actual content.</strong> "Post-4821-Draft-FINAL2" is internal production metadata that accidentally became public-facing. Anyone encountering this page in search results would see that meaningless string as the clickable link text, with nothing to indicate the page is actually about onboarding best practices — directly suppressing click-through regardless of how well the content itself ranks.
+      </p>
+
+      <span class="feedback__highlight">
+        The fix for the pricing page: restore a human-readable URL — "/pricing" — and if the underlying path genuinely had to change, implement a redirect from the old address to the new one, so existing bookmarks and inbound links continue to work rather than breaking outright. The fix for the blog post: replace the leftover internal file name with a descriptive browser title that reflects the actual content, something like "Onboarding Best Practices — [Company Name] Blog," so both search engines and visitors browsing tabs or bookmarks can immediately understand what the page contains.
+      </span>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-02.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 9 · 3 of 8</span>
+    <a href="chunk-04.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

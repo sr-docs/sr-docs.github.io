@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classification Challenges and Metadata — Chapter 7 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 7</a>
+      <span aria-hidden="true">›</span>
+      <span>Classification Challenges and Metadata</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 1 of 10">1 of 10</div>
+    <div class="mini-nav__links">
+      <a href="index.html">← Chapter overview</a>
+      <span class="spacer"></span>
+      <a href="chunk-02.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Why Classification Is Hard, and What Metadata Does About It
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Eleanor Roach's two principles of categorization explain why classification feels intuitive when it's right and jarring when it's wrong: <strong>cognitive economy</strong> means categories should give people maximum information for minimum mental effort, and <strong>perceived world structure</strong> means people expect digital categories to map onto the same kind of structure they perceive in the physical world. Morville and Rosenfeld identify four concrete challenges that make classification genuinely difficult in practice: <strong>ambiguity</strong>, since language itself is imprecise and category boundaries blur; <strong>heterogeneity</strong>, when content varies too much in type or granularity for one scheme to fit cleanly; <strong>differences in perspective</strong>, since people bring different mental models shaped by their own knowledge and experience; and <strong>internal politics</strong>, where departments disagree about categorization for reasons that have nothing to do with users.
+      </p>
+      <p>
+        Metadata is the tool that makes classification operational. Three types matter most: <strong>descriptive metadata</strong> — title, topic, keywords — describes what a content object actually is, and has the greatest impact on navigation and search. <strong>Structural metadata</strong> describes a content object's internal structure, enabling the same content to be assembled and displayed differently in different contexts. <strong>Administrative metadata</strong> — owner, dates, status — supports the business processes of managing that content, like workflow and publishing.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      Every "which category does this belong in" argument on a real project is usually one of these four challenges wearing a disguise — recognizing which one you're facing tells you what kind of resolution is even possible.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch07-chunk-01" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A large law firm has an internal knowledge base containing case notes, research memos, precedent documents, and client correspondence. Users consistently fail to find relevant documents even when they exist. Four specific problems have been identified.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          1. The category "Litigation" means something different to the corporate team than to the disputes team, and each group insists their definition is correct, causing documents to be filed inconsistently.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-1" value="ambiguity">
+            <span class="exercise__option-text">Ambiguity</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-1" value="heterogeneity">
+            <span class="exercise__option-text">Heterogeneity</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-1" value="perspective">
+            <span class="exercise__option-text">Differences in perspective</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-1" value="politics">
+            <span class="exercise__option-text">Internal politics</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          2. Case notes, video-recorded depositions, scanned handwritten documents, and structured billing records all need to sit in the same knowledge base, but no single classification approach fits all of them well.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-2" value="ambiguity">
+            <span class="exercise__option-text">Ambiguity</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-2" value="heterogeneity">
+            <span class="exercise__option-text">Heterogeneity</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-2" value="perspective">
+            <span class="exercise__option-text">Differences in perspective</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-2" value="politics">
+            <span class="exercise__option-text">Internal politics</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          3. Junior associates categorize documents by the specific legal task they were working on; senior partners expect documents categorized by client and matter number instead.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-3" value="ambiguity">
+            <span class="exercise__option-text">Ambiguity</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-3" value="heterogeneity">
+            <span class="exercise__option-text">Heterogeneity</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-3" value="perspective">
+            <span class="exercise__option-text">Differences in perspective</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-3" value="politics">
+            <span class="exercise__option-text">Internal politics</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          4. The firm's two largest practice groups are each refusing to adopt a shared classification scheme, insisting their own group's existing system stay in place, mainly because neither wants to lose control over how their documents are organized.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-4" value="ambiguity">
+            <span class="exercise__option-text">Ambiguity</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-4" value="heterogeneity">
+            <span class="exercise__option-text">Heterogeneity</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-4" value="perspective">
+            <span class="exercise__option-text">Differences in perspective</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-4" value="politics">
+            <span class="exercise__option-text">Internal politics</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          For problem 3, which type of metadata — descriptive, structural, or administrative — would most directly help resolve the disagreement between junior associates and senior partners, and why?
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p><strong>1 — Ambiguity.</strong> Two teams using the same word, "Litigation," to mean different things is a direct case of language's inherent imprecision creating unclear category boundaries.</p>
+
+      <p><strong>2 — Heterogeneity.</strong> Case notes, video depositions, scanned documents, and structured billing records are too dissimilar in type and structure for one classification approach to fit all of them cleanly.</p>
+
+      <p><strong>3 — Differences in perspective.</strong> Junior associates and senior partners bring different mental models shaped by their different roles — task-focused versus client-focused — to the same content.</p>
+
+      <p><strong>4 — Internal politics.</strong> The resistance here isn't really about which scheme is better — it's about control, which is exactly what the internal politics challenge describes.</p>
+
+      <span class="feedback__highlight">
+        For problem 3, administrative metadata is the most direct fix, since fields like client name and matter number are exactly the kind of business-context information administrative metadata is built to capture. Rather than forcing associates and partners to agree on a single categorization scheme, both client/matter administrative metadata and task-based descriptive metadata could be applied to the same document simultaneously — letting each group filter and browse by whichever attribute matches how they actually think, without requiring either side to give up their own mental model.
+      </span>
+
+      <p>
+        This is a useful general lesson: differences in perspective don't always need to be resolved by picking a winner. Sometimes the right fix is applying multiple metadata fields to the same content so different audiences can each find it their own way.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="index.html">← Chapter overview</a>
+    <span class="chunk-footer__center">Chapter 7 · 1 of 10</span>
+    <a href="chunk-02.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

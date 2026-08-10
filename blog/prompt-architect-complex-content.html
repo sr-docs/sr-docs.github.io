@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prompt architecting complex content · Blog</title>
+    <meta name="description" content="A few weeks ago in October, I completed two courses back-to-back, in prompt engineering and information architecture." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../js/theme-boot.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-start">
+        <a class="brand" href="../index.html">Sabita Rao's <span>Portfolio</span></a>
+        <nav class="nav nav--primary" aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../projects/index.html">Projects</a>
+          <a href="index.html" aria-current="page">Blog</a>
+        </nav>
+      </div>
+      <div class="header-tools">
+        <nav class="nav nav--meta" aria-label="About and social">
+          <a href="../about.html">About</a>
+          <a
+            href="https://linkedin.com/in/sabitarao"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+          <a
+            href="https://github.com/sr-docs"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <article class="prose">
+        <header class="post-header page-hero">
+          <time datetime="2025-11-12">November 12, 2025</time>
+          <h1>Prompt architecting complex content</h1>
+        </header>
+        <p>A few weeks ago in October, I completed two courses back-to-back, in prompt engineering and information architecture. The prompt engineering course taught me about using AI as an outline builder. The IA course gave me a comprehensive view of taxonomy, content modeling, navigation design, all the structured thinking that makes information findable and usable.</p>
+        <p>And I couldn&#39;t help but wonder: <em>Could I use prompt engineering to build a course about prompt engineering for information architects?</em></p>
+        <p>It wasn&#39;t just about creating a course. It was about testing my new skills and AI. Could I use my IA expertise to validate AI-generated content at scale? Could I set up guardrails that would maintain content credibility? How far could Claude and I get while staying truthful?</p>
+        <p>I decided to find out!</p>
+        <h3>The collaborative discovery</h3>
+        <p>I didn&#39;t start with &quot;Here&#39;s my outline, fill it out.&quot; I started with a question-asking prompt:</p>
+        <pre><code>Act as an expert information architect with expert prompt engineering skills. 
+        Help me design a course on prompt engineering for budding information architects. 
+        Ask me questions until you have enough data to develop this course.
+
+        Ask me the first question now.
+        </code></pre>
+        <p>Claude then asked me ten detailed questions. Far from surface-level, these were deep questions about target audiences, learning outcomes, technical approach, pain points to address, pedagogical style...questions that made me think harder about what I was actually trying to build.</p>
+        <p>What resulted was a comprehensive course design summary that transformed my idea into something truly substantial:</p>
+        <ul>
+        <li>16 hours of content across 4 weeks</li>
+        <li>Four major sections: Foundations, Core IA Tasks, Advanced Applications, Tool Building</li>
+        <li>Self-paced, practical, focused on real-world deliverables</li>
+        <li>No-code friendly but with optional prototyping</li>
+        </ul>
+        <h3>The meta-exercise structure</h3>
+        <p>This experiment fascinates me because it operates on three interconnected levels simultaneously. </p>
+        <ul>
+        <li><strong>Testing my IA knowledge</strong> by having me validate AI-generated IA concepts</li>
+        <li><strong>Testing my prompt engineering skills</strong> in building complex content systematically</li>
+        <li><strong>Testing Claude&#39;s capabilities</strong> with strict &quot;no hallucination&quot; directives</li>
+        </ul>
+        <pre><code class="language-mermaid">graph LR
+        IA[IA Expertise] --&gt;|validates| Content[Course Content]
+        Content --&gt;|demonstrates| PE[Prompt Engineering]
+        PE --&gt;|tests| IA
+        PE --&gt;|generates| Content
+        Content --&gt; Credibility{Credibility Check}
+        Credibility --&gt;|human audit| Truth[Truthful?]
+        Credibility --&gt;|skills audit| Next[Next Blog Post]
+
+        style Content fill:#e1f5ff
+        style Credibility fill:#fff4e1
+        style Truth fill:#f0f0f0
+        </code></pre>
+        <h3>Three days of generation</h3>
+        <p>Once I had the outline, I switched to a template-driven approach (another lesson from my prompt engineering course):</p>
+        <pre><code>Act as an outline expander information architect. Create a new outline 
+        for each bullet point in the content I give you. Then, develop detailed 
+        content for the outline. At the end, ask me for the next set of content 
+        to develop.
+
+        Start with Module n.n. Outline each bullet point and develop detailed 
+        content for them now.
+        </code></pre>
+        <p>This prompt became my workhorse. Module after module, Claude would:</p>
+        <ol>
+        <li>Take my content bullets</li>
+        <li>Expand them into detailed outlines</li>
+        <li>Flesh out the outlines with examples, exercises, code samples</li>
+        <li>Ask for the next module</li>
+        </ol>
+        <p>At the end of three days, I had 11 detailed modules with learning objectives, exercises, self-assessment projects, prompt pattern libraries, and code examples.</p>
+        <p>The consistency was remarkable. Despite being built in chunks over three days, the content flows seamlessly.</p>
+        <h3>The credibility paradox</h3>
+        <p>Let&#39;s get honest.</p>
+        <p><strong>What exceeded my expectations:</strong></p>
+        <ul>
+        <li>The depth and detail of generated content</li>
+        <li>The consistency across 11 modules using template prompts</li>
+        <li>The complexity of code examples that Claude produced</li>
+        <li>How well the high-level concepts aligned with actual IA principles</li>
+        </ul>
+        <p><strong>What I&#39;m still validating</strong>: Every. Single. Code. Example.</p>
+        <ul>
+        <li>Whether the exercises actually work as designed</li>
+        <li>If the prompt patterns produce the claimed results</li>
+        <li>Whether the examples are truly original (not memorized content)</li>
+        </ul>
+        <p>This is the most sobering part of the experiment: <strong>generation speed does NOT equal validation speed.</strong></p>
+        <p>I built the course in 3 days. I&#39;ve been validating and converting it to Mintlify for over a week now, and I&#39;m not done.</p>
+        <p>Module 2.2 (Content Modeling) required three runs of my template prompt because I kept hitting context window limits. I&#39;ve learned the hard way to break large tasks into mini-tasks that AI can handle comfortably.</p>
+        <p>The Taxonomy module (Module 2.1) is my favorite so far, because I actually learned from it while validating it. The content wasn&#39;t plagiarized, and wasn&#39;t based on existing course outlines. It was genuinely useful!</p>
+        <h3>Audit in progress</h3>
+        <p>This course exists in an interesting liminal space:</p>
+        <p><strong>What it IS:</strong></p>
+        <ul>
+        <li>A demonstration of what AI can do with expert guidance</li>
+        <li>A prompt engineering portfolio piece</li>
+        <li>An experiment in credibility guardrails</li>
+        <li>A learning tool for me about both IA and prompt engineering</li>
+        </ul>
+        <p><strong>What it is NOT (yet):</strong></p>
+        <ul>
+        <li>Ready to teach to others</li>
+        <li>Fully validated and tested</li>
+        <li>A finished product</li>
+        </ul>
+        <p>I&#39;m now tweaking the existing Claude Skills to help audit this course.</p>
+        <h3>What I&#39;ve learned about prompts</h3>
+        <p><strong>Prompts are powerful, powerful tools.</strong> They can make or break your AI experience.</p>
+        <p>The evolution of my prompting strategy sums it up:</p>
+        <ol>
+        <li><strong>Discovery phase</strong>: &quot;Ask me questions&quot; (Collaborative, exploratory)</li>
+        <li><strong>Structure phase</strong>: &quot;Generate an outline&quot; (Architectural, high-level)</li>
+        <li><strong>Expansion phase</strong>: &quot;Expand each bullet point&quot; (Systematic, detailed)</li>
+        </ol>
+        <p>Each phase required a different prompt architecture. The template-driven approach in phase 3 was crucial for maintaining consistency across 11 modules.</p>
+        <p>And my most critical insight: <strong>Fast generation requires slow validation.</strong></p>
+        <p>AI creating content &quot;in seconds&quot; is just the generation phase. Verifying accuracy, testing examples, checking for hallucinations, ensuring originality, and validating against domain expertise, that&#39;s where human expertise and knowledge become essential.</p>
+        <h3>Was this a successful experiment?</h3>
+        <p><em><strong>Absolutely.</strong></em></p>
+        <p>This is a prime example of &quot;Wow, look what AI can do with expert guidance!&quot;</p>
+        <p>The course demonstrates:</p>
+        <ul>
+        <li>How structured prompting can generate complex, consistent content</li>
+        <li>How domain expertise creates essential validation layers</li>
+        <li>How AI can be a genuine learning partner</li>
+        <li>How important it is to break large tasks into manageable chunks</li>
+        <li>The critical difference between generation and validation</li>
+        </ul>
+        <p><em>I&#39;m not done though.</em> This experiment continues through the audit phase, where I&#39;m using AI tools to audit AI-generated content about AI tools for information architects. Stay tuned for my next blog post!</p>
+        <p class="post-back"><a href="./">← Back to all posts</a></p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        <a href="../index.html">Home</a>
+        ·
+        <a href="https://github.com/sr-docs">GitHub</a>
+        · Built for GitHub Pages
+      </p>
+    </footer>
+    <script src="../js/theme.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/blog-redirect.js"></script>
+  </body>
+</html>

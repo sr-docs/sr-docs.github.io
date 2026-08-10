@@ -1,0 +1,86 @@
+[
+  {
+    "slug": "ai-assisted-docs-pipeline-guide",
+    "title": "What works and what breaks in an AI-assisted docs pipeline",
+    "description": "AI-generated docs look finished before they are, and that's the trap.",
+    "dateIso": "2026-05-09",
+    "dateShort": "May 9, 2026"
+  },
+  {
+    "slug": "structure-before-sentences",
+    "title": "Structure first, sentences next",
+    "description": "In a new project, asking \"what does the structure need to be?\" before \"what do I need to write?\" is what makes content scalable, maintainable, and navigable.",
+    "dateIso": "2026-03-06",
+    "dateShort": "Mar 6, 2026"
+  },
+  {
+    "slug": "why-i-documented-a-fictional-product",
+    "title": "Why I built a fictional product (and a documentation portfolio around it)",
+    "description": "Every technical writer who has built a portfolio has run into the same problem.",
+    "dateIso": "2026-02-28",
+    "dateShort": "Feb 28, 2026"
+  },
+  {
+    "slug": "content-ontology-pivot",
+    "title": "Unstructured content, the bane of RAG systems. Or is it?",
+    "description": "When I started my Prompt Engineering for IAs course generation experiment, it was meant to be a simple exercise to understand how context windows work.",
+    "dateIso": "2025-11-22",
+    "dateShort": "Nov 22, 2025"
+  },
+  {
+    "slug": "content-quality-numbers",
+    "title": "Demonstrating quantifiable improvements in content quality",
+    "description": "When you use AI to build an online course, how do you know if it's actually good? I can answer that in corporate speak: measure it.",
+    "dateIso": "2025-11-16",
+    "dateShort": "Nov 16, 2025"
+  },
+  {
+    "slug": "productivity-theater",
+    "title": "The one where Claude describes its Productivity Theater",
+    "description": "AKA: Why Claude, why? Note: This post is entirely AI-generated, and written from Claude's POV when I asked it to summarize why it kept ignoring my directives.",
+    "dateIso": "2025-11-14",
+    "dateShort": "Nov 14, 2025"
+  },
+  {
+    "slug": "prompt-architect-complex-content",
+    "title": "Prompt architecting complex content",
+    "description": "A few weeks ago in October, I completed two courses back-to-back, in prompt engineering and information architecture.",
+    "dateIso": "2025-11-12",
+    "dateShort": "Nov 12, 2025"
+  },
+  {
+    "slug": "analysis-paralysis",
+    "title": "Iterative auditing as a progress tracking mechanism",
+    "description": "The UX audit returned 18 findings on my Ikigai app (including a critical one that called the app \"boring\"!) Instead of diving into fix-mode right away, I chose…",
+    "dateIso": "2025-11-11",
+    "dateShort": "Nov 11, 2025"
+  },
+  {
+    "slug": "notion-mcp-audits",
+    "title": "Watching Claude build an audit system using Notion MCP",
+    "description": "I had built five audit skills for my Ikigai app - UX, Code Quality, Content Accuracy, Accessibility, and Security - where each one could analyze the app and…",
+    "dateIso": "2025-11-08",
+    "dateShort": "Nov 8, 2025"
+  },
+  {
+    "slug": "diving-into-ai",
+    "title": "Building an app from a PDF (because AI can!)",
+    "description": "AI and I built an interactive web app from a PDF, with drag-and-drop, auto-save, and an interactive five-step workflow, in a week!",
+    "dateIso": "2025-10-01",
+    "dateShort": "Oct 1, 2025"
+  },
+  {
+    "slug": "sabbaticals",
+    "title": "Sabbaticals - Yea or Nay?",
+    "description": "YEA! After 12 years of tech writing in the corporate world, I went on a sabbatical in 2016. I had no plan or alternate source of income. (Must say, a little…",
+    "dateIso": "2020-12-30",
+    "dateShort": "Dec 30, 2020"
+  },
+  {
+    "slug": "design-thinking",
+    "title": "Design Thinking for solo technical writers",
+    "description": "What does design thinking have to do with writing, or any task, really?",
+    "dateIso": "2020-04-11",
+    "dateShort": "Apr 11, 2020"
+  }
+]

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Information Foraging — Chapter 2 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 2</a>
+      <span aria-hidden="true">›</span>
+      <span>Information Foraging</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 4 of 8">4 of 8</div>
+    <div class="mini-nav__links">
+      <a href="chunk-03.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-05.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Information Foraging: Scent, Patches, and Diet
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Peter Pirolli and Stuart Card's information foraging theory compares information-seeking to animals foraging for food. People follow <strong>information scent</strong> — cues like link text, headings, and titles — to judge whether a path is likely to lead somewhere valuable, the way a forager senses they're getting "hotter" or "colder." An <strong>information patch</strong> is a cluster of valuable information — a section of a site, a document, a topic cluster. Foragers stay within a patch as long as it remains productive, then move to another once it's exhausted. Their <strong>information diet</strong> is the pattern of what they choose to pursue versus what they ignore, weighing expected value against the cost of pursuing it.
+      </p>
+      <p>
+        When scent is strong, people navigate confidently and find what they need. When scent is weak or absent, people either guess — effectively performing a random walk — or give up entirely. Strengthening scent means making the value of a path visible before the user has to commit to following it.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      Weak information scent doesn't just slow people down — it makes them stop trusting their own judgment about where to click next.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch02-chunk-04" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A user is browsing a university's course catalog trying to find an introductory statistics course that fits her schedule. She clicks a link labeled "Mathematics," which opens a long list of course codes — <em>MATH 2210</em>, <em>MATH 3105</em>, and so on — with no course titles or descriptions visible in the list. She has to click into each one individually to find out what it covers or when it meets.
+        </p>
+        <p>
+          After opening four courses and finding none of them are introductory statistics, she leaves the site.
+        </p>
+      </div>
+
+      <fieldset style="border:none; padding:0; margin-bottom: 1.5rem;">
+        <legend style="font-size:1rem; line-height:1.65; margin-bottom:0.75rem; font-weight:500;">
+          1. At what point does her information scent break down?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="breakdown-point" value="homepage">
+            <span class="exercise__option-text">Before she even starts — the homepage gives no indication of academic structure</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="breakdown-point" value="list">
+            <span class="exercise__option-text">At the course list — code-only labels give her no scent about which courses are relevant</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="breakdown-point" value="descriptions">
+            <span class="exercise__option-text">After she opens a course page — the descriptions themselves are unclear</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="breakdown-point" value="never">
+            <span class="exercise__option-text">Her scent never broke down; she simply gave up too early</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset style="border:none; padding:0; margin-bottom: 1.75rem;">
+        <legend style="font-size:1rem; line-height:1.65; margin-bottom:0.75rem; font-weight:500;">
+          2. Which part of Pirolli and Card's model does this failure most directly represent?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="model-part" value="patch">
+            <span class="exercise__option-text">A patch problem — the courses aren't grouped correctly</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="model-part" value="scent">
+            <span class="exercise__option-text">A scent problem — the cues available don't indicate value before commitment</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="model-part" value="diet">
+            <span class="exercise__option-text">A diet problem — she's pursuing the wrong category of information entirely</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          Propose a specific change to the course list that would restore scent without requiring her to click into every course individually.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>1 — At the course list.</strong> A course code like <em>MATH 2210</em> carries no information value to someone who doesn't already know the department's numbering conventions. The homepage got her to the right department, so the patch itself is likely fine — the breakdown happens specifically where she has to choose which course to open.
+      </p>
+
+      <p>
+        <strong>2 — A scent problem.</strong> This is not a patch issue — Mathematics is plausibly the correct patch for an introductory statistics course. It's not a diet issue either — she isn't choosing to pursue the wrong category, she simply has no cues available to judge value before clicking. The available cues (bare course codes) don't tell her anything about whether a given course is worth opening.
+      </p>
+
+      <span class="feedback__highlight">
+        This is a useful distinction to hold onto: scent problems and patch problems look similar from the outside — both result in the user leaving empty-handed — but they call for different fixes. A patch problem means the content is organized under the wrong category. A scent problem means the content might be organized correctly, but the cues at the decision point don't communicate value.
+      </span>
+
+      <p>
+        The direct fix here is to show course titles, level indicators, and a short one-line description directly in the list — so she can judge relevance without opening anything. This restores scent at exactly the point where it broke down, without requiring any change to how courses are categorized.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-03.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 2 · 4 of 8</span>
+    <a href="chunk-05.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

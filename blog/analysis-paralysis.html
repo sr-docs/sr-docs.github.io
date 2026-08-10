@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Iterative auditing as a progress tracking mechanism · Blog</title>
+    <meta name="description" content="The UX audit returned 18 findings on my Ikigai app (including a critical one that called the app &quot;boring&quot;!) Instead of diving into fix-mode right away, I chose…" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../js/theme-boot.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-start">
+        <a class="brand" href="../index.html">Sabita Rao's <span>Portfolio</span></a>
+        <nav class="nav nav--primary" aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../projects/index.html">Projects</a>
+          <a href="index.html" aria-current="page">Blog</a>
+        </nav>
+      </div>
+      <div class="header-tools">
+        <nav class="nav nav--meta" aria-label="About and social">
+          <a href="../about.html">About</a>
+          <a
+            href="https://linkedin.com/in/sabitarao"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+          <a
+            href="https://github.com/sr-docs"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <article class="prose">
+        <header class="post-header page-hero">
+          <time datetime="2025-11-11">November 11, 2025</time>
+          <h1>Iterative auditing as a progress tracking mechanism</h1>
+        </header>
+        <p>The UX audit returned 18 findings on my Ikigai app (including a critical one that called the app &quot;boring&quot;!) </p>
+        <p>Instead of diving into fix-mode right away, I chose to run the remaining audit skills I had built, thinking a complete picture would help before I start making any changes.</p>
+        <p>Looking back, this was both a good and a bad decision.</p>
+        <h3>The Marie Kondo approach to technical debt</h3>
+        <p>A year ago, I <em>Marie Kondo’d</em> my wardrobe and cut my belongings in half. The method worked for me because it made me analyze every single item I owned before deciding what to keep. Realizing the scope clearly is how I decided what actually mattered.</p>
+        <p>I wanted that same clarity with my audit findings. I planned to run every skill, collect every issue, and comprehend the scope before trying to fix anything, maybe even detect overlapping issues, if any. I made sure to document everything in Notion databases so nothing would get lost.</p>
+        <p>So Claude and I ran the accessibility audit next, then security, then content accuracy. No code review audit as we had generated enough data to work with now!</p>
+        <p>Claude Skills work like a charm. Claude had designed the Notion databases along with the skills, and seeing the findings directly filed into separate databases felt like having an expert team review my beginner code. Each audit filled its own database with severity ratings, specific recommendations, and links back to the audit session summaries.</p>
+        <p>Then I looked at the numbers.</p>
+        <pre><code>Total Issues: 87
+
+        ├─ Content Accuracy: 32 findings
+        ├─ Accessibility: 24 findings  
+        ├─ UX/UI: 18 findings (1 critical)
+        └─ Security: 13 findings
+        </code></pre>
+        <p><em><strong>Yikes.</strong></em></p>
+        <h3>The security wake-up call</h3>
+        <p>The security audit surfaced something I&#39;d been completely oblivious to while building: </p>
+        <blockquote>
+        <p>Cross-Site Scripting (XSS) vulnerabilities through unsanitized user input rendered via innerHTML, combined with localStorage data exposure risk across browser users.</p>
+        </blockquote>
+        <p>Seems obvious now, but as a non-coder building my first web app, I had no idea I was creating security holes. I&#39;d been focused on making the interface aesthetically pleasing while missing fundamental safety issues.</p>
+        <p>I&#39;ve since added a privacy warning to the app, but the finding exposed how much I didn&#39;t know about what I didn&#39;t know.</p>
+        <h3>The paradox of good data</h3>
+        <p>The problem with systematic AI audits is that they work exactly as designed.</p>
+        <p>87 documented issues, each with severity ratings and specific recommendations, organized across multiple Notion databases. No ambiguity about what needs fixing. No wondering if I missed something important. Just an overwhelming number of open issues staring back at me.</p>
+        <p>The same completeness that makes this data valuable makes it paralyzing. Where do you even start when you have 32 content accuracy findings alone?!</p>
+        <h3>Decisions, decisions</h3>
+        <pre><code>Should I start fixing issues immediately?
+
+        │
+        ├─ YES → Risk missing patterns across audits
+        │        Risk fixes breaking other things
+        │        Risk losing track of what changed
+        │        No version control = no progress history
+        │
+        └─ NO → See the full scope first
+                Understand overlaps (UX + Security?)
+                Plan a methodical approach
+                Set up proper tracking before touching code
+
+        Decision: Run all audits first, don&#39;t fix issues immediately
+
+        Result: 87 issues documented
+
+        Current Status: Still figuring out how much of the fix approach to automate
+        </code></pre>
+        <h3>What I&#39;m learning about prioritization</h3>
+        <p>It&#39;s easy to miss the forest for the trees. My technical writing background helps here, though. In documentation, we&#39;re often the chosen ones who understand what every part of a system does and how pieces connect. We can&#39;t fixate on perfecting one section while ignoring an overall structure that doesn&#39;t make sense.</p>
+        <p>My plan is to maintain a working app at all times, even if it&#39;s not the most polished version. Progress over perfection means the app remains functional through iterations, not beautiful, but certainly not broken. </p>
+        <blockquote>
+        <p><em><strong>Perfect</strong> is the enemy of <strong>Done</strong>!</em> </p>
+        </blockquote>
+        <h3>The current state</h3>
+        <p>Those 87 issues in Notion, unfixed, are both motivating and pressure-inducing. I have to remind myself that this is a personal project meant to be fun, that I&#39;m proving AI efficiency to myself, not shipping enterprise software. But the high number of findings does feel like a real-world scenario, and I want to approach this methodically, not just dive in randomly.</p>
+        <p>Current rumination: finalize a logical system for walking through fixes in order of actual priority, not in order of whatever catches my eye first. Start collaborating with Claude Code...</p>
+        <h3>GitHub comes first</h3>
+        <p>Before touching any code, I need version control in place. The app currently exists as a local file on my computer that I keep improving. It&#39;s way too easy to lose track of what changed and why.</p>
+        <p>This project is specifically about demonstrating how AI helps track improvements through connected tools, like Skills for automated auditing, Notion for issue documentation, and GitHub for code versioning. I want to showcase this progression and measure whether subsequent audits demonstrate actual improvement.</p>
+        <h3>The <em>real</em> discovery</h3>
+        <p>I built these audit skills thinking they&#39;d be one-time debugging tools. Run the audit, get the findings, fix the issues, done.</p>
+        <p>But documenting 87 issues systematically revealed something more valuable: this isn&#39;t a debugging tool, it&#39;s a <strong>progress tracking system</strong>.</p>
+        <p>When I run the same audits next week, next month, whenever, I&#39;ll have objective proof of whether things improved, stagnated, or regressed. No guessing whether changes made things better; I’ll have data showing what shifted and by how much.</p>
+        <p>The overwhelm comes from seeing everything at once. The value comes from being able to measure movement over time.</p>
+        <h3>What&#39;s next</h3>
+        <ol>
+        <li>Get the Ikigai app into GitHub with proper commit structure. Every fix should be a documented commit so there&#39;s a clear history of what changed.</li>
+        <li>Fix a small batch of issues manually to understand the patterns. Maybe start with the critical security findings, then see what other issues naturally resolve as side effects.</li>
+        <li>Run the audits again. Compare findings. See if the Claude skills can identify improvements, not just problems.</li>
+        </ol>
+        <p>The goal isn&#39;t to get to zero issues immediately. It is to establish a workflow where progress is visible, measurable, and documented, and where AI helps <strong>implement and track solutions</strong>.</p>
+        <p class="post-back"><a href="./">← Back to all posts</a></p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        <a href="../index.html">Home</a>
+        ·
+        <a href="https://github.com/sr-docs">GitHub</a>
+        · Built for GitHub Pages
+      </p>
+    </footer>
+        <script src="../js/theme.js"></script>
+<script src="../js/main.js"></script>
+    <script src="../js/blog-redirect.js"></script>
+  </body>
+</html>

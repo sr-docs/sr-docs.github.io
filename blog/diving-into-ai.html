@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Building an app from a PDF (because AI can!) · Blog</title>
+    <meta name="description" content="AI and I built an interactive web app from a PDF, with drag-and-drop, auto-save, and an interactive five-step workflow, in a week!" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../js/theme-boot.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-start">
+        <a class="brand" href="../index.html">Sabita Rao's <span>Portfolio</span></a>
+        <nav class="nav nav--primary" aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../projects/index.html">Projects</a>
+          <a href="index.html" aria-current="page">Blog</a>
+        </nav>
+      </div>
+      <div class="header-tools">
+        <nav class="nav nav--meta" aria-label="About and social">
+          <a href="../about.html">About</a>
+          <a
+            href="https://linkedin.com/in/sabitarao"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+          <a
+            href="https://github.com/sr-docs"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <article class="prose">
+        <header class="post-header page-hero">
+          <time datetime="2025-10-01">October 1, 2025</time>
+          <h1>Building an app from a PDF (because AI can!)</h1>
+        </header>
+        <p>AI and I built an interactive web app from a PDF, with drag-and-drop, auto-save, and an interactive five-step workflow, in a week! (I&#39;m thrilled about how well it works too!)</p>
+        <p>This project was about converting a PDF (and complex philosophical concepts) into intuitive user experiences while leveraging GitHub Copilot and Claude for rapid prototyping and problem-solving. </p>
+        <p>I&#39;m documenting what I&#39;ve learned about collaborating with AI to build something real.</p>
+        <h3>Why Ikigai</h3>
+        <p>I first learnt about “Ikigai” in the book <em>&#39;Ikigai: The Japanese Secret to a Long and Happy Life&#39; by Francesc Miralles and Hector Garcia</em>. Although I later discovered that the book, as well as the Positive Psychology PDF that this app is is based on, are nothing like the actual Japanese concept; they’re more a cultural appropriation of the eastern philosophy. </p>
+        <p><img src="../assets/img/ikigai.png" alt="Ikigai venn diagram"></p>
+        <p>That said, I find the framework insightful. The guided process of exploring passion, mission, vocation, and profession resonates with me, and I do think people could benefit from it as an interactive tool.</p>
+        <h3>The fear</h3>
+        <p>My biggest concern isn’t failure, it&#39;s not knowing how to handle AI-generated code if something goes wrong. If the code breaks or becomes messy, I wouldn&#39;t know where to begin fixing it, as a non-coder. I&#39;ve learned though, that the trick to working with AI is to build piece-by-piece, test frequently, and catch problems early.</p>
+        <h3>First prompt</h3>
+        <p>I started with:</p>
+        <blockquote>
+        <p><em><strong>I am building an Ikigai web-app based on the Ikigai PDF. Analyze the attached files and list the top improvements you would make to have a fully-functional, highly modern, well-designed interactive app that helps the reader find their Ikigai. 
+        <br/><br/>The PDF is the only source of information. 
+        Do not hallucinate new content about Ikigai, and do not create new artifacts unless asked to. 
+        Do not skim over or lose the details in the PDF. 
+        <br/><br/>Ask me questions on the intended behaviour, design, purpose, etc of the app until you have enough information for your research and analysis.</strong></em></p>
+        </blockquote>
+        <p>This prompt set the tone for everything. I established boundaries, provided constraints, and requested collaboration. It was a framework for how I wanted to work with AI.</p>
+        <h3>What clicked</h3>
+        <p>Prompt engineering felt abstract until I started practicing it. Prompts that clicked:</p>
+        <ul>
+        <li><strong>Few-shot prompts</strong>: Showing examples helped Claude understand my expectations better than lengthy explanations.</li>
+        <li><strong>Chain of thought prompts</strong>: Asking Claude to think through problems step-by-step before generating code reduced errors.</li>
+        <li><strong>Outline expansion prompts</strong>: Starting with a simple structure and expanding section by section kept things manageable.</li>
+        <li><strong>Flipped interaction prompts</strong>: Instead of telling Claude what to do, I&#39;d ask it to interview me about my goals. This made the collaboration feel more like partnership.</li>
+        </ul>
+        <h3>What I like about the app</h3>
+        <ul>
+        <li>Step 2: Guides users through questions about what they love, what they&#39;re good at, what the world needs, and what they can be paid for. The UI provides thoughtful prompts and self-reflective questions for each circle.</li>
+        <li>Step 3: Find overlapping responses, where users identify which responses fit into multiple circles, and overlaps reveal patterns.</li>
+        </ul>
+        <p>These steps feel deeply insightful. They&#39;re also the pages I plan to make more “mine” as the project evolves.</p>
+        <h3>What&#39;s next</h3>
+        <p>Now that Phase 1 is complete, here&#39;s the plan for Phase 2:</p>
+        <ol>
+        <li><p>Run the audit skills</p>
+        <p>Claude and I built 5 <em>Claude Skills</em> to audit the app:</p>
+        <ul>
+        <li>UX/UI audit</li>
+        <li>Code quality review</li>
+        <li>Content accuracy check</li>
+        <li>Accessibility audit</li>
+        <li>Security analysis</li>
+        </ul>
+        <p>I’ve set up Notion to track the issues that these Skills generate. Claude designed the (ten) databases required to store these issues by Skill type. All I had to do was nudge it in the direction I wanted. (<em>More about this in the next blog!</em>)</p>
+        </li>
+        <li><p>Fix issues</p>
+        <ul>
+        <li>Set up an issue tracker via GitHub MCP with Notion</li>
+        <li>Find a way to automate issue fixes (ambitious, I know)</li>
+        </ul>
+        </li>
+        </ol>
+        <h3>Frustrations and challenges</h3>
+        <p>Claude routinely generated code for alternate files without me asking for them. Sometimes even after I specifically told it not to, it would create new artifacts when all I needed was iterations on what we had.</p>
+        <p>I learned to use Claude Projects and project descriptions to set persistent context, and used a universal &#39;Truth Protocol&#39; to remind Claude of my working style. I even reset the chat a few times to get back on track. This wasn&#39;t Claude being bad; it was me learning how to communicate better.</p>
+        <p>I couldn&#39;t get the Notion MCP working initially because of conflicting setup info from both Claude and Notion - the documentation didn&#39;t align and I hit a wall. I have a similar challenge ahead: integrating with GitHub MCP to make app updates trackable through versions.</p>
+        <p>I&#39;m also about to run audit skills on the app for UX, accessibility, security, code quality, and content accuracy, and the resulting number of issues might get overwhelming.</p>
+        <h3>What I&#39;ve learned</h3>
+        <p>I&#39;m excited at having gotten this far! With AI, I just have to think an idea through and choose my prompts.
+        My top takeaways:</p>
+        <ol>
+        <li>AI slop is real. A human in the loop is non-negotiable. AI is a tool, not the solution.</li>
+        <li>Start with constraints. Tell the AI what not to do as clearly as what to do.</li>
+        <li>Collaborate, don&#39;t dictate. Ask AI to interview you about your goals before generating solutions.</li>
+        <li>Test frequently. The worst-case scenario isn&#39;t building something broken. It&#39;s building something you can&#39;t debug.</li>
+        <li>Use Projects to set persistent context. It saves you from repeating yourself.</li>
+        <li>Expect frustration; AI will misunderstand you, and you&#39;ll reset chats. That&#39;s part of the process!</li>
+        <li>Training in prompt engineering helped me a lot. I highly recommend the entire series by Prof Jules White, Vanderbilt University on Coursera.</li>
+        </ol>
+        <h3>Why this matters</h3>
+        <p>I enjoy research and problem solving. I haven&#39;t pinpointed my mission or even my <em>ikigai</em> yet, but I do enjoy the learning that came with building this app.
+        And maybe that&#39;s just it!</p>
+        <p class="post-back"><a href="./">← Back to all posts</a></p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        <a href="../index.html">Home</a>
+        ·
+        <a href="https://github.com/sr-docs">GitHub</a>
+        · Built for GitHub Pages
+      </p>
+    </footer>
+    <script src="../js/theme.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/blog-redirect.js"></script>
+  </body>
+</html>

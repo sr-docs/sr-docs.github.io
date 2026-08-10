@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Analysis Heuristics — Chapter 6 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 6</a>
+      <span aria-hidden="true">›</span>
+      <span>Content Analysis Heuristics</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 1 of 7">1 of 7</div>
+    <div class="mini-nav__links">
+      <a href="index.html">← Chapter overview</a>
+      <span class="spacer"></span>
+      <a href="chunk-02.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Content Analysis Heuristics
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Fred Leise developed eleven heuristics for qualitatively evaluating a content collection: <strong>collocation</strong> (are similar things grouped together where people would expect to find them), <strong>differentiation</strong> (can people tell dissimilar collections apart), <strong>completeness</strong> (are there gaps compared to what competitors offer, and does referenced content actually exist), <strong>information scent</strong> (do labels and headings use the audience's own language), <strong>bounded horizons</strong> (does the structure make the scope of the space clear), <strong>accessibility</strong>, <strong>multiple access paths</strong>, <strong>appropriate structure</strong> (does it match how the audience actually thinks and searches), <strong>consistency</strong> (do similar page types share a consistent structure), <strong>audience-relevance</strong>, and <strong>currency</strong> (is the content kept up to date).
+      </p>
+      <p>
+        Each heuristic can be rated on a five-point scale, from strongly deviating to strongly conforming, which turns a qualitative impression into something you can compare across a whole content collection and prioritize.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      Eleven heuristics can feel like a lot to hold in your head at once — but in practice, most real content problems trace back to just two or three of them showing up together.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch06-chunk-01" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A technology company recently merged two separate product support sites into one. The merged site has duplicate troubleshooting articles under different titles, several articles reference a "legacy dashboard" that was retired two years ago, and articles from the two original sites use inconsistent structures — one site always led with a summary and steps, the other buried the actual fix in the middle of long narrative paragraphs.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          1. Which heuristic is most directly violated by the duplicate troubleshooting articles under different titles?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="violation-1" value="differentiation">
+            <span class="exercise__option-text">Differentiation</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="violation-1" value="currency">
+            <span class="exercise__option-text">Currency</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="violation-1" value="accessibility">
+            <span class="exercise__option-text">Accessibility</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          2. Which heuristic is most directly violated by articles referencing a dashboard retired two years ago?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="violation-2" value="currency">
+            <span class="exercise__option-text">Currency</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="violation-2" value="collocation">
+            <span class="exercise__option-text">Collocation</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="violation-2" value="completeness">
+            <span class="exercise__option-text">Completeness</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          3. Which heuristic is most directly violated by the two original sites' inconsistent article structures?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="violation-3" value="consistency">
+            <span class="exercise__option-text">Consistency</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="violation-3" value="audience-relevance">
+            <span class="exercise__option-text">Audience-relevance</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="violation-3" value="bounded-horizons">
+            <span class="exercise__option-text">Bounded horizons</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          With limited time to fix everything at once, which of these three violations would you prioritize fixing first, and why?
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>1 — Differentiation.</strong> This heuristic asks whether people can tell dissimilar collections apart — duplicate articles under different titles do the opposite, making the same content look like two different things.
+      </p>
+
+      <p>
+        <strong>2 — Currency.</strong> References to a retired dashboard are precisely what the currency heuristic flags: content that hasn't been kept up to date, actively misleading anyone still relying on it.
+      </p>
+
+      <p>
+        <strong>3 — Consistency.</strong> Similar content — troubleshooting articles — failing to share a consistent structure is a direct consistency failure, and one the source material specifically calls out as damaging for page types people rely on repeatedly.
+      </p>
+
+      <span class="feedback__highlight">
+        There's a reasonable case for prioritizing currency first: outdated references to a retired dashboard could actively mislead a customer trying to fix a real problem right now, which is a more urgent risk than confusion or inconsistent formatting. But there's also a fair case for differentiation, since duplicate articles under different titles waste both user time and the support team's content-maintenance effort, and the confusion compounds every time someone searches and finds two competing "answers."
+      </span>
+
+      <p>
+        Either answer can be defended — what matters is reasoning from actual user and business impact, not just picking whichever heuristic sounds most severe in isolation.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="prompt-fill" id="quality-criteria" aria-labelledby="prompt-fill-label-quality-criteria">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-quality-criteria">
+      Try It With Your Data — Quality Criteria Definition
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt is made of (RICE breakdown)</summary>
+      <div class="prompt-fill__guidance-body">
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">R</span>
+          <h4>Role</h4>
+          <p>Casts the AI as: You are a content strategist helping define quality criteria for a content audit.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">I</span>
+          <h4>Instructions</h4>
+          <p>Names 5 specific outputs to produce, so the response comes back structured rather than a general summary.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">C</span>
+          <h4>Context</h4>
+          <p>My documentation covers, Primary audience and Key user goals tell the AI what your specific situation is, not a generic one.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">E</span>
+          <h4>Expected format</h4>
+          <p>For each criterion, provide: a name, a plain-language definition, how to measure it, and an example of a page that fails it.</p>
+        </div>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[R - ROLE]
+You are a content strategist helping define quality criteria for a content audit.
+
+[I - INSTRUCTIONS]
+Help me define 5-7 quality criteria appropriate for this content and audience.
+
+For each criterion:
+1. Name and definition
+2. What "good" looks like (5-star quality)
+3. What "poor" looks like (1-star quality)
+4. How to measure it (quantitative or qualitative indicators)
+5. Why it matters to users
+
+[C - CONTEXT]
+My documentation covers: {{WHAT_YOUR_DOCS_COVER}}
+Primary audience: {{PRIMARY_AUDIENCE}}
+Key user goals: {{KEY_USER_GOALS}}
+
+Focus on criteria that can be consistently applied across {{NUMBER_OF_PAGES}}+ pages.
+
+[E - EXPECTED FORMAT]
+For each criterion, provide:
+- Rating scale (1-5 stars)
+- Clear indicators at each level
+- Measurement approach
+- User impact statement
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-quality-criteria-what-your-docs-cover">What your docs cover</label>
+        <span class="prompt-fill__hint">One or two sentences</span>
+        <input type="text" id="pf-quality-criteria-what-your-docs-cover" class="js-prompt-input" data-token="WHAT_YOUR_DOCS_COVER" data-placeholder="One or two sentences" placeholder="One or two sentences">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-quality-criteria-primary-audience">Primary audience</label>
+        <span class="prompt-fill__hint">e.g. &quot;Backend developers, intermediate level&quot;</span>
+        <input type="text" id="pf-quality-criteria-primary-audience" class="js-prompt-input" data-token="PRIMARY_AUDIENCE" data-placeholder="e.g. &quot;Backend developers, intermediate level&quot;" placeholder="e.g. &quot;Backend developers, intermediate level&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-quality-criteria-key-user-goals">Key user goals</label>
+        <span class="prompt-fill__hint">What users need to accomplish</span>
+        <input type="text" id="pf-quality-criteria-key-user-goals" class="js-prompt-input" data-token="KEY_USER_GOALS" data-placeholder="What users need to accomplish" placeholder="What users need to accomplish">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-quality-criteria-number-of-pages">Number of pages</label>
+        <span class="prompt-fill__hint">Whole number, e.g. 200</span>
+        <input type="text" id="pf-quality-criteria-number-of-pages" class="js-prompt-input" data-token="NUMBER_OF_PAGES" data-placeholder="Whole number, e.g. 200" placeholder="Whole number, e.g. 200">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="index.html">← Chapter overview</a>
+    <span class="chunk-footer__center">Chapter 6 · 1 of 7</span>
+    <a href="chunk-02.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="../../assets/js/prompt-fill.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

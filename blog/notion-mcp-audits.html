@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Watching Claude build an audit system using Notion MCP · Blog</title>
+    <meta name="description" content="I had built five audit skills for my Ikigai app - UX, Code Quality, Content Accuracy, Accessibility, and Security - where each one could analyze the app and…" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../js/theme-boot.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-start">
+        <a class="brand" href="../index.html">Sabita Rao's <span>Portfolio</span></a>
+        <nav class="nav nav--primary" aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../projects/index.html">Projects</a>
+          <a href="index.html" aria-current="page">Blog</a>
+        </nav>
+      </div>
+      <div class="header-tools">
+        <nav class="nav nav--meta" aria-label="About and social">
+          <a href="../about.html">About</a>
+          <a
+            href="https://linkedin.com/in/sabitarao"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+          <a
+            href="https://github.com/sr-docs"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <article class="prose">
+        <header class="post-header page-hero">
+          <time datetime="2025-11-08">November 8, 2025</time>
+          <h1>Watching Claude build an audit system using Notion MCP</h1>
+        </header>
+        <p>I had built five audit skills for my Ikigai app - UX, Code Quality, Content Accuracy, Accessibility, and Security - where each one could analyze the app and generate unique, detailed findings as expert team personas. But the audit reports existed only as chat artifacts, and I wanted them in Notion where I could track fixes, link to GitHub issues, and measure progress over time.</p>
+        <p>On prompting, Claude suggested the database schemas I&#39;d need in Notion to track audits: ten databases - five for audit sessions, five for individual findings - all with proper schemas and relations between them. </p>
+        <p>I manually created one database in Notion to test the concept. Getting every property right - the select options, the number fields, the relations - took focus that would now need to last for ten databases.</p>
+        <p>So instead, I set up the Notion MCP connection and asked Claude to complete the task.</p>
+        <h3>The setup</h3>
+        <p>I followed <a href="https://developers.notion.com/docs/mcp">Notion&#39;s official MCP documentation</a>. After initial hiccups caused by Claude&#39;s integration docs, I created a Notion MCP -&gt; Claude integration, got the API key, and added it to Claude Desktop&#39;s config file. The authentication part was straightforward.</p>
+        <p>Fair warning though, this integration needs refreshing everyday (or maybe that&#39;s just Claude being moody?); Claude refuses to sync with Notion when I try to pick up database tasks from where I left off the previous evening. I always rejig the config now before starting a database sync.</p>
+        <p>Next, I directed Claude to write a Node.js setup script with checkpoint functionality in case anything failed midway. I needed it to create all ten databases with complete schemas, then link them together with relations. I can&#39;t, and didn&#39;t have to, write a single line of the setup code!</p>
+        <h3>The moment!</h3>
+        <p>I ran the command, and Claude started creating the databases. I switched to Notion and hit Refresh. Ten databases appeared! Each one properly configured: UX Audit Sessions with all its metrics, UX Findings with severity levels and status tracking, Code Quality Sessions, Code Quality Findings, everything. </p>
+        <p>It warranted a little dance!</p>
+        <h3>Running the first audit</h3>
+        <p>The app&#39;s first draft had obvious UX issues that jumped out at me immediately, and I wondered if the UX Auditor Skill would catch the same annoyances.</p>
+        <p>I typed: </p>
+        <blockquote>
+        <p>Use the UX Auditor skill. File: xyz.html. After the audit, save results to Notion.</p>
+        </blockquote>
+        <p>TBH, I half-expected something to break, or have Claude tell me there&#39;s a property mismatch or a missing field, or that some piece of code wasn&#39;t working. </p>
+        <p>Claude ran the audit and found 18 UX issues including one critical finding about the app being boring(!). The UX Auditor caught every issue that was bugging me at first glance, and then some. The audit was more nuanced than I expected, with detailed severity ratings and specific recommendations.</p>
+        <p>Claude then searched for the relevant Notion databases, created an audit session entry, created 18 individual finding entries, linked them all together, and gave me the Notion URLs.</p>
+        <p>Just like that.</p>
+        <h3>The two-database pattern</h3>
+        <p>I hadn&#39;t immediately understood why Claude created two databases per audit type initially, but it made sense as soon as I looked at the audit data.</p>
+        <p>For each skill:</p>
+        <ul>
+        <li><p>One database holds the session, the macro view: date, file analyzed, total findings count, severity distribution, overall scores. The executive summary, if you will.</p>
+        </li>
+        <li><p>The other holds individual findings, the details. Each specific issue with its location, current state, recommendation, effort estimate, and status.</p>
+        </li>
+        </ul>
+        <p>Sessions link to findings. Findings link back to sessions. You can view either the forest or the trees.</p>
+        <h3>The (technical) reality check</h3>
+        <p>I ran the Content Accuracy Checker skill to see if I’d just gotten lucky with the first audit or if this was a working idea. It was, to an extent, beginner’s luck. While the audit ran great and Claude managed to publish everything to Notion, we hit a technical issue toward the end, and the chat timed out. My Claude chat history has no record of those Content Accuracy findings! </p>
+        <p>This made me think about all the previous instances where I&#39;ve lost entire chats because Claude timed out or hit context limits. Maybe writing Claude outputs to a linked external database should be the norm for any work?</p>
+        <h3>What&#39;s next</h3>
+        <p>The integration works well. I have two audits completed with reports in Notion, ready to track. I want to turn Notion findings into GitHub issues now to track completion and link to release notes, etc.</p>
+        <p>The audit skills themselves could become measurement tools. If I keep the check parameters unchanged, running audits at regular intervals could give me an objective progress marker. </p>
+        <pre><code>Fix issues --&gt; run audit again --&gt; compare results = hard quality numbers!
+        </code></pre>
+        <h3>The learning</h3>
+        <p>I now know to keep my requests to Claude simple. The clearer and more direct the task, the better the results. No need to overthink the prompts.</p>
+        <p>This wasn&#39;t about me writing clever code or complex prompts. It was about Claude understanding the schemas needed and building them correctly. The manual work I&#39;d done on that first database taught me what properties mattered. But scaling that to ten databases with relations, the setup script, the database schemas, the Notion integration, the audit execution was all Claude.</p>
+        <p>(MCP FTW!)</p>
+        <p>Here are snapshots of the Notion audits:</p>
+        <p><img src="../assets/img/ux-audit.png" alt="ux-audit"></p>
+        <hr>
+        <p><img src="../assets/img/accessibility-audit.png" alt="accessibility-audit"></p>
+        <hr>
+        <p><img src="../assets/img/security-audit.png" alt="security-audit"></p>
+        <hr>
+        <p><img src="../assets/img/content-audit.png" alt="content audit"></p>
+        <p class="post-back"><a href="./">← Back to all posts</a></p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        <a href="../index.html">Home</a>
+        ·
+        <a href="https://github.com/sr-docs">GitHub</a>
+        · Built for GitHub Pages
+      </p>
+    </footer>
+    <script src="../js/theme.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/blog-redirect.js"></script>
+  </body>
+</html>

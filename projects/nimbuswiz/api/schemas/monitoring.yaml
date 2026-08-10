@@ -1,0 +1,57 @@
+# Schemas for the Monitoring resource: metrics objects.
+
+MetricsResponse:
+  type: object
+  properties:
+    system_id:
+      type: string
+      example: n2k-alpha-001
+    range:
+      type: string
+      example: 7d
+      description: The time range used for series data.
+    metrics:
+      type: object
+      properties:
+        stability_index:
+          $ref: '#/MetricSeries'
+        responsiveness_score:
+          $ref: '#/MetricSeries'
+        network_interaction:
+          $ref: '#/MetricSeries'
+    retrieved_at:
+      type: string
+      format: date-time
+      example: "2026-04-10T16:00:00Z"
+
+MetricSeries:
+  type: object
+  properties:
+    current:
+      type: integer
+      example: 86
+      description: Most recent value.
+    trend:
+      type: string
+      enum: [up, down, stable]
+      example: stable
+      description: |
+        Direction of change over the selected range.
+
+        | Value | Meaning |
+        |-------|---------|
+        | `up` | Metric has improved |
+        | `down` | Metric has declined |
+        | `stable` | Within +/- 3 points |
+    series:
+      type: array
+      items:
+        type: object
+        properties:
+          timestamp:
+            type: string
+            format: date-time
+            example: "2026-04-03T00:00:00Z"
+          value:
+            type: integer
+            example: 84

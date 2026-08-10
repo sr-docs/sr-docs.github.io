@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cross-Method Synthesis — Chapter 14 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 14</a>
+      <span aria-hidden="true">›</span>
+      <span>Cross-Method Synthesis</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 4 of 4">4 of 4</div>
+    <div class="mini-nav__links">
+      <a href="index.html">← Chapter overview</a>
+      <span class="spacer"></span>
+      <span></span>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Cross-Method Synthesis
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Every research method is wrong in its own particular way. Card sorts show how people group things when grouping is the task, which is not how they behave when they are trying to get something done. Analytics show what people did, not what they wanted. Interviews record what people say they do. A finding that survives across several methods is worth acting on; a finding from a single method is worth investigating. This prompt sorts findings into that distinction — converging, diverging, complementary — and attaches a confidence level to each.
+      </p>
+      <p>
+        Feed it findings rather than raw data from four sources at once, and state plainly which decisions the synthesis will inform, since that is what determines whether a given disagreement matters. Read the diverging-evidence section first and trust it least: the model will offer explanations for the contradictions, and those explanations are hypotheses, not findings. A real contradiction between methods usually means the methods measured different things, and working out which one answers your question is a judgement that stays with you.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      Confidence comes from methods that fail differently agreeing anyway. One method agreeing with itself is just one method.
+    </p>
+
+  </section>
+
+
+  <section class="prompt-fill" id="cross-method-synthesis" aria-labelledby="prompt-fill-label-cross-method-synthesis">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-cross-method-synthesis">
+      Try It With Your Data — Cross-Method Synthesis
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt does</summary>
+      <div class="prompt-fill__guidance-body prompt-fill__guidance-body--simple">
+        <p>Combines findings across research methods, separating high-confidence convergences from single-method signals.</p>
+        <ul><li>After completing multiple research methods (card sorts, interviews, surveys, analytics)</li><li>When findings from different methods seem to conflict</li><li>Before making major IA decisions to ensure evidence is solid</li><li>To prioritize which findings warrant action</li></ul>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[ROLE]
+You are a UX researcher synthesizing findings across multiple research methods 
+to identify high-confidence insights for information architecture decisions.
+
+[INSTRUCTIONS]
+Synthesize findings across these research methods:
+
+RESEARCH METHODS CONDUCTED:
+{{RESEARCH_METHODS_CONDUCTED}}
+
+KEY FINDINGS BY METHOD:
+
+{{METHOD_1_FINDINGS}}
+
+{{METHOD_2_FINDINGS}}
+
+{{METHOD_3_FINDINGS}}
+
+{{METHOD_4_FINDINGS}}
+
+Conduct cross-method analysis:
+
+1. **CONVERGING EVIDENCE:**
+   - Which findings appear across multiple methods?
+   - What patterns are validated by multiple data sources?
+   - What conclusions can we draw with high confidence?
+
+2. **DIVERGING EVIDENCE:**
+   - Where do methods contradict each other?
+   - How can contradictions be explained?
+   - What additional research might resolve conflicts?
+
+3. **COMPLEMENTARY INSIGHTS:**
+   - What does each method reveal that others don't?
+   - How do findings build on each other?
+   - What complete picture emerges?
+
+4. **CONFIDENCE LEVELS:**
+   - High confidence: Supported by 3+ methods
+   - Medium confidence: Supported by 2 methods
+   - Low confidence: Single method only
+
+5. **ACTIONABLE RECOMMENDATIONS:**
+   - Based on converging evidence, what IA changes are clearly needed?
+   - What should we prioritize?
+   - What needs further investigation?
+
+[CONTEXT]
+Research goal: {{RESEARCH_GOAL}}
+IA decisions this will inform: {{IA_DECISIONS_THIS_INFORMS}}
+
+[OUTPUT FORMAT]
+- Summary of high-confidence insights
+- Recommended IA changes with evidence citations
+- Research gaps requiring further investigation
+- Implementation priorities
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-cross-method-synthesis-research-methods-conducted">Research methods conducted</label>
+        <span class="prompt-fill__hint">One per line, e.g. &quot;Card sort: 25 participants&quot;</span>
+        <textarea id="pf-cross-method-synthesis-research-methods-conducted" class="js-prompt-input" data-token="RESEARCH_METHODS_CONDUCTED" data-placeholder="One per line, e.g. &quot;Card sort: 25 participants&quot;" placeholder="One per line, e.g. &quot;Card sort: 25 participants&quot;"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-cross-method-synthesis-method-1-findings">Method 1 findings</label>
+        <span class="prompt-fill__hint">Method name + its 3-5 key findings</span>
+        <textarea id="pf-cross-method-synthesis-method-1-findings" class="js-prompt-input" data-token="METHOD_1_FINDINGS" data-placeholder="Method name + its 3-5 key findings" placeholder="Method name + its 3-5 key findings"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-cross-method-synthesis-method-2-findings">Method 2 findings</label>
+        <span class="prompt-fill__hint">Method name + its 3-5 key findings</span>
+        <textarea id="pf-cross-method-synthesis-method-2-findings" class="js-prompt-input" data-token="METHOD_2_FINDINGS" data-placeholder="Method name + its 3-5 key findings" placeholder="Method name + its 3-5 key findings"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-cross-method-synthesis-method-3-findings">Method 3 findings</label>
+        <span class="prompt-fill__hint">Method name + its 3-5 key findings</span>
+        <textarea id="pf-cross-method-synthesis-method-3-findings" class="js-prompt-input" data-token="METHOD_3_FINDINGS" data-placeholder="Method name + its 3-5 key findings" placeholder="Method name + its 3-5 key findings"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-cross-method-synthesis-method-4-findings">Method 4 findings</label>
+        <span class="prompt-fill__hint">Method name + its 3-5 key findings</span>
+        <textarea id="pf-cross-method-synthesis-method-4-findings" class="js-prompt-input" data-token="METHOD_4_FINDINGS" data-placeholder="Method name + its 3-5 key findings" placeholder="Method name + its 3-5 key findings"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-cross-method-synthesis-research-goal">Research goal</label>
+        <span class="prompt-fill__hint">What you&#x27;re trying to learn</span>
+        <input type="text" id="pf-cross-method-synthesis-research-goal" class="js-prompt-input" data-token="RESEARCH_GOAL" data-placeholder="What you&#x27;re trying to learn" placeholder="What you&#x27;re trying to learn">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-cross-method-synthesis-ia-decisions-this-informs">IA decisions this informs</label>
+        <span class="prompt-fill__hint">What you&#x27;re deciding</span>
+        <input type="text" id="pf-cross-method-synthesis-ia-decisions-this-informs" class="js-prompt-input" data-token="IA_DECISIONS_THIS_INFORMS" data-placeholder="What you&#x27;re deciding" placeholder="What you&#x27;re deciding">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="index.html">← Chapter overview</a>
+    <span class="chunk-footer__center">Chapter 14 · 4 of 4</span>
+    <a href="../../index.html" class="chunk-footer__next-chapter">Back to course home →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/prompt-fill.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

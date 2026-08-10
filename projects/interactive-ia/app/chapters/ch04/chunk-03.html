@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hypertext and Linear Sequence — Chapter 4 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 4</a>
+      <span aria-hidden="true">›</span>
+      <span>Hypertext and Linear Sequence</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 3 of 9">3 of 9</div>
+    <div class="mini-nav__links">
+      <a href="chunk-02.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-04.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Two Opposite Patterns: Hypertext and Linear Sequence
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Hypertext imposes no overarching structure at all — content objects connect only through associative links, forming a web rather than a hierarchy. It's flexible and scalable, which makes it useful when an organization doesn't yet know what content it will create, as with wikis and knowledge bases. But that same flexibility is a weakness: without a clear structure, people can become lost, unable to find their way back to something they've already seen. In most cases, hypertext supplements a site's primary structural pattern rather than serving as the whole architecture.
+      </p>
+      <p>
+        A linear sequence sits at the opposite extreme: an ordered series of pages or steps that users move through in order, with a clear beginning, middle, and end. It suits limited-scope content like surveys, wizards, tests, and tours, where the user must generally follow the same path. A well-designed sequence needs a consistent title for the whole sequence, a subtitle identifying the current step, a visible list of steps showing progress, and clear Next and Previous controls — and it should be avoided whenever a sequence isn't genuinely necessary, since imposing one on content that doesn't require it just frustrates users.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      Hypertext trusts the user to find their own path. A linear sequence assumes there's only one path worth taking. Choosing the wrong one for your content creates exactly the opposite problem you were trying to solve.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch04-chunk-03" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A digital health platform needs to structure two distinct content areas.
+        </p>
+        <p>
+          <strong>Area A:</strong> A library of wellness articles — nutrition, exercise, mental health topics — that patients explore freely, at their own pace, following whatever interests them, with articles linking to related articles across topics.
+        </p>
+        <p>
+          <strong>Area B:</strong> A guided onboarding process for new patients that collects insurance information, medical history, and consent forms — steps that must be completed in a specific order before the patient can proceed to book their first appointment.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          1. Which structural pattern best fits Area A, the wellness article library?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="area-a" value="hypertext">
+            <span class="exercise__option-text">Hypertext</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="area-a" value="linear">
+            <span class="exercise__option-text">Linear sequence</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="area-a" value="hierarchy">
+            <span class="exercise__option-text">Hierarchy</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="area-a" value="database">
+            <span class="exercise__option-text">Database</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          2. Which structural pattern best fits Area B, the onboarding process?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="area-b" value="hypertext">
+            <span class="exercise__option-text">Hypertext</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="area-b" value="linear">
+            <span class="exercise__option-text">Linear sequence</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="area-b" value="hierarchy">
+            <span class="exercise__option-text">Hierarchy</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="area-b" value="database">
+            <span class="exercise__option-text">Database</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          Explain specifically what would go wrong for patients if these two patterns were swapped — if the wellness library were structured as a linear sequence, and the onboarding process were structured as hypertext.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>1 — Hypertext.</strong> Patients exploring freely, following their own interests, and moving between related articles across topics is exactly the associative, web-like browsing that hypertext supports.
+      </p>
+
+      <p>
+        <strong>2 — Linear sequence.</strong> A required order, a defined set of steps, and a clear endpoint — booking the first appointment — is precisely what a linear sequence is built for.
+      </p>
+
+      <span class="feedback__highlight">
+        Swapping these would create real problems, not just a mismatched feel. Structuring the wellness library as a linear sequence would force patients through a fixed order of articles, including many they have no interest in, just to reach the one they actually want — directly undermining the free exploration that makes the library useful in the first place. Structuring onboarding as hypertext would let patients wander into any step in any order, potentially skipping required medical history or consent forms entirely and reaching the appointment booking step without having completed them — a compliance and safety failure, not merely an inconvenient user experience.
+      </span>
+
+      <p>
+        This pairing illustrates why structural pattern choice isn't a stylistic preference — it encodes real constraints about what the content actually requires from the user, and getting it backwards can create consequences well beyond a clunky interface.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-02.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 4 · 3 of 9</span>
+    <a href="chunk-04.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Inventories — Chapter 6 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 6</a>
+      <span aria-hidden="true">›</span>
+      <span>Content Inventories</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 3 of 7">3 of 7</div>
+    <div class="mini-nav__links">
+      <a href="chunk-02.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-04.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Content Inventories
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        A content inventory catalogs what content actually exists — every page, document, and content object, and where it lives in the current structure. It's a necessary first step before any redesign, migration, or merger, because you can't restructure or improve what you haven't fully accounted for. Before starting, you need to decide the inventory's scope and granularity: whole pages, or the individual chunks and components pages are made of.
+      </p>
+      <p>
+        A typical inventory spreadsheet captures descriptive attributes — page ID, title, content type, topics, location — alongside governance attributes like author, owner, publication date, and status. For very large sites, doing the entire inventory in one pass can be impractical; a "rolling content inventory," working through one section at a time and cycling back around, is often more sustainable than trying to capture everything in a single exhausting effort.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      A content inventory is tedious in exactly the way that pays off later — every hour spent cataloging now is an hour someone doesn't have to spend guessing what exists once the redesign is underway.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch06-chunk-03" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A digital agency is preparing to migrate a regional newspaper's website to a new CMS. The site has run for twelve years and accumulated thousands of articles, several hundred static pages, multiple embedded media types, and an unknown number of broken links. The project timeline is eight weeks, with a small team available.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          Given the eight-week timeline and twelve years of accumulated content, which approach to conducting this inventory is most realistic?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="approach" value="single-pass-manual">
+            <span class="exercise__option-text">A single, fully manual pass cataloging every individual article by hand before the migration begins</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="approach" value="automated-plus-manual">
+            <span class="exercise__option-text">Automate the bulk of the inventory using a crawling tool or CMS export, then manually add governance details for the most important content</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="approach" value="skip-inventory">
+            <span class="exercise__option-text">Skip the inventory entirely and begin the migration directly, since it will only be discovered once and never needed again</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          Propose a page ID numbering scheme for this site that would let the team distinguish a static "About Us" page from an individual news article and from an embedded PDF linked within that article.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>Automating the bulk of the inventory, then adding manual detail selectively, is the realistic approach.</strong> Twelve years of accumulated articles makes a fully manual, page-by-page inventory impractical within eight weeks. The source material specifically recommends automating what you can — using a crawling tool or exporting structured data directly from the CMS — then layering manual detail on top only where it adds real value, rather than treating every single article as equally worth the team's limited hours.
+      </p>
+
+      <span class="feedback__highlight">
+        Skipping the inventory is the option to rule out clearly. For a CMS migration specifically, the source material is direct that a thorough inventory is essential — without one, the team has no reliable way to know what exists, what's safe to leave behind, and what would break silently during the move, including the unknown broken links already present.
+      </span>
+
+      <p>
+        A reasonable page ID scheme, following the numbering convention described in the source material: the home page as 0.0, top-level sections like "About Us" as 1.0, 2.0, and so on, individual pages within a section as 1.1, 1.2, individual news articles as their own numbered entries within an "Articles" section, and an embedded PDF linked within a specific article numbered relative to that article — for example, 3.4-PDF1. This lets the team distinguish a static page, an article, and an embedded document from one another at a glance, and trace exactly which article a given PDF belongs to.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="prompt-fill" id="duplicate-detection" aria-labelledby="prompt-fill-label-duplicate-detection">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-duplicate-detection">
+      Try It With Your Data — Duplicate Detection
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt is made of (RICE breakdown)</summary>
+      <div class="prompt-fill__guidance-body">
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">R</span>
+          <h4>Role</h4>
+          <p>Casts the AI as: You&#x27;re a content analyst specializing in identifying redundant and duplicate content.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">I</span>
+          <h4>Instructions</h4>
+          <p>Names 4 specific outputs to produce, so the response comes back structured rather than a general summary.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">C</span>
+          <h4>Context</h4>
+          <p>Content domain, Known history and User impact tell the AI what your specific situation is, not a generic one.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">E</span>
+          <h4>Expected format</h4>
+          <p>Grouped findings by severity with specific merge recommendations</p>
+        </div>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[R - ROLE]
+You're a content analyst specializing in identifying redundant and duplicate content.
+
+[I - INSTRUCTIONS]
+Analyze these content items for duplication and overlap:
+
+{{CONTENT_LIST}}
+
+Identify:
+1. Exact duplicates (same content, different URLs)
+2. Near-duplicates (90%+ similar)
+3. Overlapping content (significant shared sections)
+4. Competing content (same topic, different approach)
+
+For each finding:
+- List the affected items
+- Describe the overlap
+- Recommend action (merge, redirect, keep both)
+
+[C - CONTEXT]
+Content domain: {{CONTENT_DOMAIN}}
+Known history: {{KNOWN_HISTORY}}
+User impact: {{USER_IMPACT}}
+
+[E - EXPECTED FORMAT]
+Grouped findings by severity with specific merge recommendations
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-duplicate-detection-content-list">Content list</label>
+        <span class="prompt-fill__hint">Paste titles and short descriptions, one per line</span>
+        <textarea id="pf-duplicate-detection-content-list" class="js-prompt-input" data-token="CONTENT_LIST" data-placeholder="Paste titles and short descriptions, one per line" placeholder="Paste titles and short descriptions, one per line"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-duplicate-detection-content-domain">Content domain</label>
+        <span class="prompt-fill__hint">e.g. &quot;API reference docs&quot;</span>
+        <input type="text" id="pf-duplicate-detection-content-domain" class="js-prompt-input" data-token="CONTENT_DOMAIN" data-placeholder="e.g. &quot;API reference docs&quot;" placeholder="e.g. &quot;API reference docs&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-duplicate-detection-known-history">Known history</label>
+        <span class="prompt-fill__hint">Migrations, reorgs, or multiple authors that could explain overlap</span>
+        <input type="text" id="pf-duplicate-detection-known-history" class="js-prompt-input" data-token="KNOWN_HISTORY" data-placeholder="Migrations, reorgs, or multiple authors that could explain overlap" placeholder="Migrations, reorgs, or multiple authors that could explain overlap">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-duplicate-detection-user-impact">User impact</label>
+        <span class="prompt-fill__hint">How duplicate content affects users</span>
+        <input type="text" id="pf-duplicate-detection-user-impact" class="js-prompt-input" data-token="USER_IMPACT" data-placeholder="How duplicate content affects users" placeholder="How duplicate content affects users">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="prompt-fill" id="age-staleness-analyzer" aria-labelledby="prompt-fill-label-age-staleness-analyzer">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-age-staleness-analyzer">
+      Try It With Your Data — Age and Staleness Analyzer
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt does</summary>
+      <div class="prompt-fill__guidance-body prompt-fill__guidance-body--simple">
+        <p>Identify outdated content based on update dates, product version history, and staleness signals. Prioritize content refresh based on user impact and staleness severity.</p>
+        <ul><li>Regular content maintenance cycles</li><li>After product releases or major updates</li><li>When support tickets indicate outdated documentation</li><li>As part of comprehensive content audits</li></ul>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">Analyze content age and identify stale content requiring updates:
+
+CONTENT INVENTORY:
+{{CONTENT_INVENTORY}}
+
+Example format:
+Title | URL | Last Updated | Category
+"Getting Started" | /docs/start | 2024-01-15 | Onboarding
+"OAuth Guide" | /docs/auth/oauth | 2023-06-20 | Authentication
+...
+
+PRODUCT RELEASE HISTORY:
+{{PRODUCT_RELEASE_HISTORY}}
+
+Example:
+- v3.0 (2024-09-01): Major auth overhaul, new dashboard
+- v2.5 (2024-06-15): New webhook features, deprecated old endpoints
+- v2.0 (2024-01-01): Initial 2.x release, new API structure
+- v1.x (legacy): Deprecated, migration required
+
+STALENESS CRITERIA:
+
+1. CRITICAL STALENESS (Update immediately):
+   - Not updated since product change that directly affects content
+   - Contains deprecated features/API endpoints
+   - Screenshots/UI references no longer match product
+   - Code examples won't work with current version
+
+2. HIGH STALENESS (Update this month):
+   - >12 months since last update
+   - Related product area has changed
+   - High-traffic page with dated information
+   - User feedback indicates confusion
+
+3. MEDIUM STALENESS (Update this quarter):
+   - 6-12 months since last update
+   - Minor product changes may affect accuracy
+   - Lower-traffic content
+   - No user complaints but likely outdated
+
+4. LOW STALENESS (Review when convenient):
+   - 3-6 months since last update
+   - Conceptual content (changes less frequently)
+   - No known accuracy issues
+
+ANALYSIS REQUESTED:
+
+1. DATE-BASED ANALYSIS
+   - Content not updated since each major release
+   - Age distribution (% under 3mo, 3-6mo, 6-12mo, >12mo)
+   - Oldest content by category
+
+2. PRODUCT IMPACT ANALYSIS
+   - Content likely affected by v3.0 changes
+   - Content likely affected by v2.5 changes
+   - Content referencing deprecated features
+
+3. HIGH-RISK CONTENT
+   - High-traffic + old = priority (if traffic data available)
+   - Core user journey content that's outdated
+   - Content with high support ticket correlation (if known)
+
+4. STALENESS TIER ASSIGNMENT
+   - Assign each item to Critical/High/Medium/Low tier
+   - Explain reasoning for Critical and High assignments
+
+5. UPDATE PRIORITY QUEUE
+   - Rank top 20 items for update
+   - Include effort estimate (Simple refresh / Moderate rewrite / Major overhaul)
+   - Include recommended update actions
+
+OUTPUT FORMAT:
+- Summary statistics
+- Tiered staleness list
+- Priority update queue with action items
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-age-staleness-analyzer-content-inventory">Content inventory</label>
+        <span class="prompt-fill__hint">One row per page: Title | URL | Last Updated | Category</span>
+        <textarea id="pf-age-staleness-analyzer-content-inventory" class="js-prompt-input" data-token="CONTENT_INVENTORY" data-placeholder="One row per page: Title | URL | Last Updated | Category" placeholder="One row per page: Title | URL | Last Updated | Category"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-age-staleness-analyzer-product-release-history">Product release history</label>
+        <span class="prompt-fill__hint">One release per line, e.g. &quot;v3.0 (2024-09-01): Major auth overhaul&quot;</span>
+        <textarea id="pf-age-staleness-analyzer-product-release-history" class="js-prompt-input" data-token="PRODUCT_RELEASE_HISTORY" data-placeholder="One release per line, e.g. &quot;v3.0 (2024-09-01): Major auth overhaul&quot;" placeholder="One release per line, e.g. &quot;v3.0 (2024-09-01): Major auth overhaul&quot;"></textarea>
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="prompt-fill" id="quality-pattern-analysis" aria-labelledby="prompt-fill-label-quality-pattern-analysis">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-quality-pattern-analysis">
+      Try It With Your Data — Quality Pattern Analysis
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt does</summary>
+      <div class="prompt-fill__guidance-body prompt-fill__guidance-body--simple">
+        <p>Use this prompt when: During content audit to find redundancy.</p>
+        <ul><li>After completing content inventory with quality signals</li><li>When quality problems seem widespread but unclear where to focus</li><li>To distinguish systemic issues from one-off problems</li><li>Before allocating resources for content improvement</li></ul>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[ROLE]
+You are a content strategist analyzing quality patterns across a 
+documentation inventory to identify systemic issues and prioritize 
+improvements.
+
+[INSTRUCTIONS]
+Analyze quality patterns across this content inventory:
+
+INVENTORY DATA:
+{{INVENTORY_WITH_QUALITY_SIGNALS}}
+- Page title/URL
+- Last updated date
+- Word count
+- Content type
+- Category/section
+- Author (if available)
+- Traffic/views (if available)
+- Any quality ratings
+
+QUALITY CRITERIA TO APPLY:
+{{YOUR_QUALITY_CRITERIA}}
+- Completeness: Contains all necessary information
+- Currency: Updated within [timeframe]
+- Accuracy: Technical information is correct
+- Clarity: Well-written, scannable
+- Code examples: Working, well-commented
+- Consistency: Follows style guide
+
+Identify:
+
+1. **CLUSTERS OF QUALITY ISSUES:**
+   - Do certain categories have consistently lower quality?
+   - Are older items consistently worse?
+   - Do certain content types have more problems?
+   - Author-specific patterns (if data available)?
+
+2. **SYSTEMIC ISSUES vs. ONE-OFF PROBLEMS:**
+   - What patterns suggest systemic causes?
+   - What appears to be isolated issues?
+   - Root cause hypotheses for systemic issues
+
+3. **SECTIONS WHERE QUALITY IS HIGH:**
+   - What's consistently good?
+   - What patterns explain success?
+   - Can these patterns be replicated?
+
+4. **CORRELATION ANALYSIS:**
+   - Newer content = better quality?
+   - Longer content = more complete?
+   - High traffic = well-maintained?
+   - Content type correlates with quality?
+
+5. **PRIORITIZED IMPROVEMENT LIST:**
+   - Top 15 items for quality improvement
+   - Based on: user impact × severity × ease of fix
+   - Specific recommendations for each
+
+[CONTEXT]
+Total items in inventory: {{TOTAL_ITEMS_IN_INVENTORY}}
+Inventory age: {{INVENTORY_AGE_RANGE}}
+Known pain points: {{KNOWN_PAIN_POINTS}}
+
+[OUTPUT FORMAT]
+- Pattern summary with evidence
+- Root cause analysis
+- High-quality exemplars to learn from
+- Prioritized improvement list with recommendations
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-quality-pattern-analysis-inventory-with-quality-signals">Inventory with quality signals</label>
+        <span class="prompt-fill__hint">Paste rows including: title/URL, last updated, word count, content type, category, author, traffic, ratings — whatever you have</span>
+        <textarea id="pf-quality-pattern-analysis-inventory-with-quality-signals" class="js-prompt-input" data-token="INVENTORY_WITH_QUALITY_SIGNALS" data-placeholder="Paste rows including: title/URL, last updated, word count, content type, category, author, traffic, ratings — whatever you have" placeholder="Paste rows including: title/URL, last updated, word count, content type, category, author, traffic, ratings — whatever you have"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-quality-pattern-analysis-your-quality-criteria">Your quality criteria</label>
+        <span class="prompt-fill__hint">Paste the criteria you&#x27;re scoring against, or leave the defaults below</span>
+        <textarea id="pf-quality-pattern-analysis-your-quality-criteria" class="js-prompt-input" data-token="YOUR_QUALITY_CRITERIA" data-placeholder="Paste the criteria you&#x27;re scoring against, or leave the defaults below" placeholder="Paste the criteria you&#x27;re scoring against, or leave the defaults below"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-quality-pattern-analysis-total-items-in-inventory">Total items in inventory</label>
+        <span class="prompt-fill__hint">Whole number</span>
+        <input type="text" id="pf-quality-pattern-analysis-total-items-in-inventory" class="js-prompt-input" data-token="TOTAL_ITEMS_IN_INVENTORY" data-placeholder="Whole number" placeholder="Whole number">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-quality-pattern-analysis-inventory-age-range">Inventory age range</label>
+        <span class="prompt-fill__hint">e.g. &quot;2019 to 2026&quot;</span>
+        <input type="text" id="pf-quality-pattern-analysis-inventory-age-range" class="js-prompt-input" data-token="INVENTORY_AGE_RANGE" data-placeholder="e.g. &quot;2019 to 2026&quot;" placeholder="e.g. &quot;2019 to 2026&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-quality-pattern-analysis-known-pain-points">Known pain points</label>
+        <span class="prompt-fill__hint">From support tickets or research</span>
+        <input type="text" id="pf-quality-pattern-analysis-known-pain-points" class="js-prompt-input" data-token="KNOWN_PAIN_POINTS" data-placeholder="From support tickets or research" placeholder="From support tickets or research">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-02.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 6 · 3 of 7</span>
+    <a href="chunk-04.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="../../assets/js/prompt-fill.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

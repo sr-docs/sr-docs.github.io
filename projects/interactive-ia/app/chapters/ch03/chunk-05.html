@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Labeling and Search Principles — Chapter 3 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 3</a>
+      <span aria-hidden="true">›</span>
+      <span>Labeling and Search Principles</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 5 of 6">5 of 6</div>
+    <div class="mini-nav__links">
+      <a href="chunk-04.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-06.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Labeling and Search Principles
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Labeling principles govern how link labels, page titles, and other wayfinding elements communicate meaning. Create clear, easy-to-differentiate link labels. Make sure labels clearly convey what's at their destination. Clearly identify destination pages using terminology that matches the label that led there. Use familiar terminology throughout — the language your actual users use, not internal jargon. And create a consistent labeling system, so the same concept is always labeled the same way.
+      </p>
+      <p>
+        Search principles cover the internal search experience. Provide search as an alternative wayfinding path for people with disabilities, for whom navigation can be slow and laborious. Place the search box in a consistent location on every page. Check the spelling of search queries automatically. Ignore irrelevant words like articles and prepositions. Let users revise their query easily from the results page. Display the best results first, show the total number of results, and provide a helpful path forward when a search returns nothing.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      A search box that returns zero results with no suggestion of what to try next doesn't just fail to help — it actively tells the user the information probably doesn't exist at all.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch03-chunk-05" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A health information website uses "Wellness Resources" for a directory of self-help articles, and separately, "Health Resources" for a section containing appointment booking and insurance information — near-identical labels leading to entirely different content.
+        </p>
+        <p>
+          The site's search box appears in a different location on every page template. A search for "diabetis" (misspelled) returns a blank results page with no suggestion and no indication that the term was misspelled. When search results do appear, they show only a page title, with no date, snippet, or source information.
+        </p>
+        <p>
+          User complaints: <em>"I typed 'wellness resources' expecting self-help articles and ended up trying to book an appointment."</em> <em>"I can never find the search bar in the same place twice."</em> <em>"I searched for my condition and got literally nothing, with no idea why."</em>
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          1. Which principle is violated by the "Wellness Resources" / "Health Resources" label confusion?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="violation-1" value="familiar">
+            <span class="exercise__option-text">Use familiar terminology</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="violation-1" value="consistent-system">
+            <span class="exercise__option-text">Create a consistent labeling system</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="violation-1" value="destination">
+            <span class="exercise__option-text">Clearly identify destination pages</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="violation-1" value="all-three">
+            <span class="exercise__option-text">All three principles are violated together</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          2. Which search principle is violated by the search box appearing in a different location on every page?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="violation-2" value="consistent-location">
+            <span class="exercise__option-text">Place the search box in a consistent location</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="violation-2" value="best-first">
+            <span class="exercise__option-text">Display the best results first</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="violation-2" value="ignore-irrelevant">
+            <span class="exercise__option-text">Ignore irrelevant information in queries</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="violation-2" value="none">
+            <span class="exercise__option-text">No violation</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          3. Which principle is violated by the blank results page for the misspelled query?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="violation-3" value="spelling">
+            <span class="exercise__option-text">Check the spelling of search queries</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="violation-3" value="number">
+            <span class="exercise__option-text">Display the number of search results</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="violation-3" value="no-results">
+            <span class="exercise__option-text">Provide a solution for no-results situations</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="violation-3" value="both">
+            <span class="exercise__option-text">Both spelling and no-results guidance are violated together</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          The search results that do appear show only a page title, with no date, snippet, or source. Which principle does this violate, and why does that specific omission matter most on a health information website?
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>1 — All three principles are violated together.</strong> "Wellness Resources" and "Health Resources" fail to use terminology familiar enough to be distinct, fail to form a consistent system where similar names mean similar things, and fail to clearly identify what's actually at each destination. This is a case where one bad labeling decision touches multiple principles at once rather than cleanly isolating to just one.
+      </p>
+
+      <p>
+        <strong>2 — Place the search box in a consistent location.</strong> A search box that moves from page to page directly violates this principle — users can't build the habit of knowing where to look for it.
+      </p>
+
+      <p>
+        <strong>3 — Both spelling and no-results guidance are violated together.</strong> A misspelled query should ideally be caught and corrected automatically. Even if it isn't caught, the site still fails the separate principle of providing a solution when a search returns nothing — the blank page with no explanation leaves the user with no path forward at all.
+      </p>
+
+      <span class="feedback__highlight">
+        The missing dates, snippets, and source information violate the principle that search results should provide sufficient information scent. On a general-purpose site, this is a usability annoyance. On a health information site specifically, it's a trust and safety problem: without a date, a user can't tell whether medical guidance is current or years out of date; without a source, they can't judge whether the information is credible. A bare title gives someone no way to make that judgment before clicking through to potentially outdated or unreliable health guidance.
+      </span>
+
+      <p>
+        This scenario illustrates something worth carrying forward: the same design failure can range from mildly annoying to genuinely harmful depending entirely on the domain. Information scent matters everywhere, but what's missing from that scent — and what it costs the user — is not the same on every kind of site.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-04.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 3 · 5 of 6</span>
+    <a href="chunk-06.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

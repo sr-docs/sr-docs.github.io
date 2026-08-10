@@ -1,0 +1,53 @@
+# Shared schemas and response objects used across resource files.
+
+Error:
+  type: object
+  description: Standard error response returned for all 4xx and 5xx responses.
+  properties:
+    error:
+      type: string
+      example: not_found
+      description: Machine-readable error code.
+    message:
+      type: string
+      example: System n2k-unknown-999 does not exist.
+      description: Human-readable description of the error.
+    detail:
+      type: object
+      nullable: true
+      description: >
+        Additional context such as field names, values, or IDs involved.
+        Not present on all errors.
+      example:
+        system_id: n2k-unknown-999
+
+responses:
+  Unauthorized:
+    description: Missing, invalid, or revoked API key.
+    content:
+      application/json:
+        schema:
+          $ref: '#/Error'
+        example:
+          error: unauthorized
+          message: API key is invalid or has been revoked.
+
+  Forbidden:
+    description: Valid API key, but insufficient scope for this endpoint.
+    content:
+      application/json:
+        schema:
+          $ref: '#/Error'
+        example:
+          error: insufficient_scope
+          message: "This endpoint requires the 'fleet:write' scope."
+
+  NotFound:
+    description: The requested resource does not exist.
+    content:
+      application/json:
+        schema:
+          $ref: '#/Error'
+        example:
+          error: not_found
+          message: System n2k-unknown-999 does not exist.

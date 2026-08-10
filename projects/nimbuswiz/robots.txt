@@ -1,0 +1,84 @@
+# robots.txt for sabitarao.github.io
+# Last updated: 2026-05-05
+#
+# Standard search engines: allowed.
+# AI training crawlers: blocked across the entire site.
+# Prompt library pages: blocked for all bots, including search.
+
+# ─────────────────────────────────────────────────────────────
+# AI training and scraping crawlers (full disallow)
+# ─────────────────────────────────────────────────────────────
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: OAI-SearchBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Perplexity-User
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+User-agent: omgili
+Disallow: /
+
+User-agent: omgilibot
+Disallow: /
+
+# ─────────────────────────────────────────────────────────────
+# Prompt library pages: keep out of all indexes
+# ─────────────────────────────────────────────────────────────
+
+User-agent: *
+Disallow: /docs/live-experiments/prompt-library
+Disallow: /docs/live-experiments/prompt-library/
+
+# ─────────────────────────────────────────────────────────────
+# Sitemap
+# ─────────────────────────────────────────────────────────────
+
+Sitemap: https://sabitarao.github.io/sitemap.xml

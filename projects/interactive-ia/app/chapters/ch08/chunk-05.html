@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top-Down and Bottom-Up IA — Chapter 8 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 8</a>
+      <span aria-hidden="true">›</span>
+      <span>Top-Down and Bottom-Up IA</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 5 of 8">5 of 8</div>
+    <div class="mini-nav__links">
+      <a href="chunk-04.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-06.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Balancing Top-Down and Bottom-Up Information Architecture
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Top-down IA work focuses on the home page, section main pages, and landing pages — the structural navigation, organization schemes, and labeling that anticipate what a visitor needs the moment they arrive. It asks a specific set of questions at each level: where am I, what can I do here, is this the right place, how is this organized. Bottom-up IA work focuses on the detailed structure of individual pages — content modeling, chunking, sequencing — asking a parallel set of questions once someone has actually landed on a page: where am I now, what's here, what should I look at next.
+      </p>
+      <p>
+        Both are necessary, and neither substitutes for the other. A site with a beautifully organized top-level structure can still fail users if individual pages are a disorganized wall of text once they arrive. A site with perfectly structured individual pages can still fail if the overall navigation never gets them there in the first place. When stakeholders have already locked in the top-level structure before an IA gets involved, bottom-up work on page-level structure may be the only place left to add real value.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      Getting someone to the right neighborhood and getting them to the right house are two different jobs — a site can nail one and completely fail the other.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch08-chunk-05" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A B2B software company's product documentation site is generating two distinct kinds of user complaints. The first: "I have to guess which top-level section my task belongs to — the categories don't match how I actually think about my work." The second: "Once I find the right page, the information I need is scattered across the page with no consistent structure, and related details I need are buried in the middle of long paragraphs."
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          Which complaint describes a top-down failure, and which describes a bottom-up failure?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="classification" value="correct">
+            <span class="exercise__option-text">The first complaint (guessing which section) is top-down; the second (scattered page content) is bottom-up</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="classification" value="reversed">
+            <span class="exercise__option-text">The first complaint is bottom-up; the second is top-down</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="classification" value="both-same">
+            <span class="exercise__option-text">Both complaints describe the same type of failure</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          Propose a corrective approach for each complaint separately, and explain why fixing the top-level navigation categories wouldn't resolve the second complaint, or vice versa.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>The first complaint is top-down; the second is bottom-up.</strong> Guessing which top-level section a task belongs to is exactly the "where am I, is this the right place" failure that top-down work — organization schemes, section structure, labeling — exists to prevent. Scattered content and buried details on a page a user has already found is a page-level structure problem, which is what bottom-up content modeling and chunking exist to address.
+      </p>
+
+      <span class="feedback__highlight">
+        These two failures require genuinely different fixes because they occur at different points in the user's journey. Reorganizing the top-level navigation categories to better match how users think about their work would help someone find the right page faster, but it would do nothing to fix what happens once they arrive — the scattered, poorly chunked content on that page would still be scattered and poorly chunked regardless of how they got there. Conversely, restructuring individual pages into clear, well-labeled chunks would make each page easier to scan once reached, but wouldn't help a user who's still lost trying to figure out which section to click into in the first place.
+      </span>
+
+      <p>
+        A reasonable corrective approach: address the first complaint by revisiting the top-level organization scheme, likely through user research such as card sorting to understand how the actual audience categorizes their own tasks. Address the second by applying content modeling to the page templates — decomposing pages into well-labeled components with a consistent structure, so related information doesn't stay buried in unstructured paragraphs. Both need to happen; neither one is optional just because the other exists.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-04.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 8 · 5 of 8</span>
+    <a href="chunk-06.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

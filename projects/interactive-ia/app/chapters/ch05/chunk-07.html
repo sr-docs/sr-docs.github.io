@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search-Log Analytics — Chapter 5 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 5</a>
+      <span aria-hidden="true">›</span>
+      <span>Search-Log Analytics</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 7 of 7">7 of 7</div>
+    <div class="mini-nav__links">
+      <a href="chunk-06.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="index.html">Chapter overview →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Search-Log Analytics
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        A site's internal search log is a direct record of the actual words people use to describe what they want — arguably one of the most honest sources of vocabulary data available, since users type these terms with no awareness anyone is analyzing them. Lou Rosenfeld describes five approaches to analyzing this data: <strong>pattern analysis</strong>, which looks at trends in search behavior, vocabulary, and timing; <strong>failure analysis</strong>, which focuses on queries that return zero or poor results — these are top priority, since they represent confirmed, immediate findability failures; <strong>session analysis</strong>, which follows a single user's sequence of queries to see how their understanding evolves within one visit; <strong>audience analysis</strong>, which segments search behavior by user group; and <strong>goal-based analysis</strong>, which ties search performance directly to business KPIs.
+      </p>
+      <p>
+        Good search-log analysis balances two competing goals: precision, the percentage of returned results that are actually relevant, and recall, the percentage of all relevant content that the search actually surfaces. Learnings from search logs feed directly back into the rest of the IA work covered in this chapter — aligning controlled vocabulary and labels with users' real terms, identifying missing content, and informing where navigation or faceted search needs improvement.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      A zero-result search query is one of the rare moments where a user has told you, in their own words, exactly what they wanted and exactly where you failed to give it to them.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch05-chunk-07" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A search log analysis for a professional membership organization's website has produced these findings: the query "renew membership" is searched 400 times a month and returns zero results, because the actual page is titled "Annual Subscription Continuation"; the query "conference schedule" is searched 150 times a month and returns three moderately relevant results; and the query "code of ethics" is searched 20 times a month and returns zero results because no such page currently exists on the site.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          With limited resources to act on all three findings at once, which should the team prioritize fixing first?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="priority" value="renew-membership">
+            <span class="exercise__option-text">"Renew membership" — highest volume, zero results, caused by a labeling mismatch</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="priority" value="conference-schedule">
+            <span class="exercise__option-text">"Conference schedule" — moderate volume, some results returned</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="priority" value="code-of-ethics">
+            <span class="exercise__option-text">"Code of ethics" — lowest volume, zero results, caused by missing content</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          "Renew membership" and "code of ethics" both return zero results, but for different underlying reasons. Explain that difference, and why it means the two queries need different fixes even though both currently fail the same way.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>"Renew membership" should be prioritized first.</strong> Failure analysis treats zero-result and poor-result queries as top priority, and at 400 searches a month, this query represents by far the largest volume of confirmed, immediate findability failure on the site — twenty times the volume of "code of ethics" and more than double "conference schedule."
+      </p>
+
+      <span class="feedback__highlight">
+        The two zero-result queries fail for genuinely different reasons, which is exactly why failure analysis matters: it doesn't just count failures, it diagnoses their cause. "Renew membership" fails because of a labeling mismatch — the content exists, but under a name, "Annual Subscription Continuation," that doesn't match how members actually describe the action. "Code of ethics" fails because the content simply doesn't exist yet — no page has ever been written to answer that query.
+      </span>
+
+      <p>
+        These require different fixes entirely. The labeling mismatch can likely be resolved quickly — by renaming the page, adding "renew membership" as a synonym in the site's controlled vocabulary, or both — without creating any new content. The missing content problem requires an entirely different kind of work: someone has to research, write, and publish a code of ethics page before any search or labeling fix could possibly help. Treating both as the same type of "zero-result problem" would miss that one is a same-day fix and the other is a content-development project.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-06.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 5 · 7 of 7</span>
+    <a href="../ch06/chunk-01.html" class="chunk-footer__next-chapter">Next: Chapter 6 <span>· Understanding and Structuring Content</span> →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

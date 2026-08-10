@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taxonomies — Chapter 7 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 7</a>
+      <span aria-hidden="true">›</span>
+      <span>Taxonomies</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 4 of 10">4 of 10</div>
+    <div class="mini-nav__links">
+      <a href="chunk-03.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-05.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Taxonomies
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        A taxonomy is a top-down hierarchical classification scheme of preferred terms, dividing general concepts into progressively more specific ones through parent-child relationships. Three types of logical relationship can connect terms within a taxonomy: <strong>broader/narrower</strong>, the most common — "a narrower term is a kind of the broader term," like "oak is a tree"; <strong>instance-of</strong>, where a general category has specific, often proper-named instances, like "Zoom is an instance of an online-meeting application"; and <strong>whole/part</strong>, like "a page is part of a website."
+      </p>
+      <p>
+        Most taxonomies place each term in exactly one location — a strict hierarchy — but a <strong>polyhierarchy</strong> allows a term to appear in more than one place when a concept genuinely belongs in multiple categories, like a piano being both a percussion instrument and a stringed instrument. Polyhierarchy improves findability but is harder to maintain, so it's used sparingly rather than by default. Interestingly, the categories people find easiest to work with aren't at the very top or bottom of a taxonomy — mid-level categories, concrete enough to picture but general enough to be widely understood, are the most cognitively natural starting point for most people.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      "Animal" is too abstract to picture. "Himalayan cat" requires knowledge most people don't have. "Cat" sits in the middle — and that middle is where most people's natural thinking actually lives.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch07-chunk-04" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A media company's content taxonomy is being reviewed. Three structural problems have been identified in it.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          1. The taxonomy places "Podcasts" as a narrower term under "Articles," even though a podcast is a completely different kind of content object, not a subtype of an article.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-1" value="wrong-relationship">
+            <span class="exercise__option-text">A broader/narrower relationship has been misapplied to two things that aren't actually kinds of each other</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-1" value="correct-polyhierarchy">
+            <span class="exercise__option-text">This is a correctly applied polyhierarchy</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-1" value="no-issue">
+            <span class="exercise__option-text">No issue — this is a valid whole/part relationship</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          2. "The New York Times" appears in the taxonomy as a narrower term under the broader category "News Sources," treated the same way as a broader/narrower content category.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-2" value="should-be-instance">
+            <span class="exercise__option-text">This should be modeled as an instance-of relationship, not broader/narrower, since it's a specific named entity within a general category</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-2" value="correct-as-is">
+            <span class="exercise__option-text">This is correctly modeled as-is</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-2" value="should-be-part">
+            <span class="exercise__option-text">This should be modeled as a whole/part relationship instead</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          3. An article about a celebrity chef's restaurant opening has been placed under both "Food" and "Business," with no consistent rule for when this dual placement is allowed elsewhere in the taxonomy.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-3" value="inconsistent-polyhierarchy">
+            <span class="exercise__option-text">This is polyhierarchy being applied inconsistently, without a clear rule for when it's warranted</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-3" value="correct-instance">
+            <span class="exercise__option-text">This is a correctly applied instance-of relationship</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-3" value="no-issue-2">
+            <span class="exercise__option-text">No issue at all</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          Propose the correct structural fix for problem 1 — where should "Podcasts" actually sit in the taxonomy relative to "Articles"?
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>1 — A broader/narrower relationship has been misapplied.</strong> "A podcast is a kind of article" doesn't hold up — podcasts and articles are two different content types that happen to sit side by side, not one nested inside the other.
+      </p>
+
+      <p>
+        <strong>2 — Should be modeled as an instance-of relationship.</strong> "The New York Times" is a specific, named entity — an instance of the general category "News Sources" — which is a different logical relationship from broader/narrower and should be modeled that way to keep the taxonomy's relationships meaningful.
+      </p>
+
+      <p>
+        <strong>3 — Inconsistent polyhierarchy.</strong> Placing content in two categories isn't wrong on its own — polyhierarchy is a legitimate, if sparingly used, technique — but doing it without a consistent rule for when it applies is what creates the actual problem, since other similar articles may not receive the same dual placement.
+      </p>
+
+      <span class="feedback__highlight">
+        The correct fix for problem 1 is placing "Podcasts" as a sibling category to "Articles" — both narrower terms under a shared broader category like "Content Types" — rather than nesting one inside the other. This preserves the taxonomy's logical integrity: each level should only contain terms that are genuinely kinds of the level above them, and two unrelated content formats sitting at the same level, side by side, reflects their actual relationship far more accurately than forcing one to be a subtype of the other.
+      </span>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="prompt-fill" id="hierarchical-generator" aria-labelledby="prompt-fill-label-hierarchical-generator">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-hierarchical-generator">
+      Try It With Your Data — Hierarchical Taxonomy Generator
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt is made of (RICE breakdown)</summary>
+      <div class="prompt-fill__guidance-body">
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">R</span>
+          <h4>Role</h4>
+          <p>Casts the AI as: You&#x27;re an information architect specializing in software documentation taxonomies.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">I</span>
+          <h4>Instructions</h4>
+          <p>Spells out exactly what to analyze and return.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">C</span>
+          <h4>Context</h4>
+          <p>Target audience, Current problem and Business goal tell the AI what your specific situation is, not a generic one.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">E</span>
+          <h4>Expected format</h4>
+          <p>Output as markdown indented list with: top-level categories, one level of children, and a short scope note under each top-level label.</p>
+        </div>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[R - ROLE]
+You're an information architect specializing in software documentation taxonomies.
+
+[I - INSTRUCTIONS]
+Create a {{NUMBER_OF_LEVELS}}-level taxonomy organized by:
+- Level 1: {{LEVEL_1_PRINCIPLE}}
+- Level 2: {{LEVEL_2_PRINCIPLE}}
+- Level 3: {{LEVEL_3_PRINCIPLE}}
+
+Requirements:
+- Top level: 5-7 categories
+- Balanced distribution (no single category >40% of content)
+- Labels under {{MAX_LABEL_LENGTH}} characters
+- {{ADDITIONAL_REQUIREMENTS}}
+
+[C - CONTEXT]
+I have {{PAGES_CONTENT_DOMAIN}}
+{{MAIN_TOPICS_WITH_PAGE_COUNTS}}
+
+Target audience: {{TARGET_AUDIENCE}}
+Current problem: {{CURRENT_PROBLEM}}
+Business goal: {{BUSINESS_GOAL}}
+
+[E - EXPECTED FORMAT]
+Output as markdown indented list with:
+- Estimated page counts in (parentheses)
+- Percentage distribution for top-level categories
+- Content type tags [Tutorial], [How-to], [Reference], [Explanation]
+- 1-sentence description for each top-level category
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-hierarchical-generator-number-of-levels">Number of levels</label>
+        <span class="prompt-fill__hint">Whole number, e.g. 3</span>
+        <input type="text" id="pf-hierarchical-generator-number-of-levels" class="js-prompt-input" data-token="NUMBER_OF_LEVELS" data-placeholder="Whole number, e.g. 3" placeholder="Whole number, e.g. 3">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-hierarchical-generator-level-1-principle">Level 1 principle</label>
+        <span class="prompt-fill__hint">e.g. &quot;User task (what they want to accomplish)&quot;</span>
+        <input type="text" id="pf-hierarchical-generator-level-1-principle" class="js-prompt-input" data-token="LEVEL_1_PRINCIPLE" data-placeholder="e.g. &quot;User task (what they want to accomplish)&quot;" placeholder="e.g. &quot;User task (what they want to accomplish)&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-hierarchical-generator-level-2-principle">Level 2 principle</label>
+        <span class="prompt-fill__hint">e.g. &quot;Feature area&quot;</span>
+        <input type="text" id="pf-hierarchical-generator-level-2-principle" class="js-prompt-input" data-token="LEVEL_2_PRINCIPLE" data-placeholder="e.g. &quot;Feature area&quot;" placeholder="e.g. &quot;Feature area&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-hierarchical-generator-level-3-principle">Level 3 principle</label>
+        <span class="prompt-fill__hint">e.g. &quot;Content type&quot;</span>
+        <input type="text" id="pf-hierarchical-generator-level-3-principle" class="js-prompt-input" data-token="LEVEL_3_PRINCIPLE" data-placeholder="e.g. &quot;Content type&quot;" placeholder="e.g. &quot;Content type&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-hierarchical-generator-max-label-length">Max label length</label>
+        <span class="prompt-fill__hint">Character limit, e.g. 25</span>
+        <input type="text" id="pf-hierarchical-generator-max-label-length" class="js-prompt-input" data-token="MAX_LABEL_LENGTH" data-placeholder="Character limit, e.g. 25" placeholder="Character limit, e.g. 25">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-hierarchical-generator-additional-requirements">Additional requirements</label>
+        <span class="prompt-fill__hint">Any other requirements</span>
+        <input type="text" id="pf-hierarchical-generator-additional-requirements" class="js-prompt-input" data-token="ADDITIONAL_REQUIREMENTS" data-placeholder="Any other requirements" placeholder="Any other requirements">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-hierarchical-generator-pages-content-domain">Pages &amp; content domain</label>
+        <span class="prompt-fill__hint">e.g. &quot;200 pages of developer documentation&quot;</span>
+        <input type="text" id="pf-hierarchical-generator-pages-content-domain" class="js-prompt-input" data-token="PAGES_CONTENT_DOMAIN" data-placeholder="e.g. &quot;200 pages of developer documentation&quot;" placeholder="e.g. &quot;200 pages of developer documentation&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-hierarchical-generator-main-topics-with-page-counts">Main topics with page counts</label>
+        <span class="prompt-fill__hint">One per line, e.g. &quot;Authentication (40 pages)&quot;</span>
+        <textarea id="pf-hierarchical-generator-main-topics-with-page-counts" class="js-prompt-input" data-token="MAIN_TOPICS_WITH_PAGE_COUNTS" data-placeholder="One per line, e.g. &quot;Authentication (40 pages)&quot;" placeholder="One per line, e.g. &quot;Authentication (40 pages)&quot;"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-hierarchical-generator-target-audience">Target audience</label>
+        <span class="prompt-fill__hint">Brief description</span>
+        <input type="text" id="pf-hierarchical-generator-target-audience" class="js-prompt-input" data-token="TARGET_AUDIENCE" data-placeholder="Brief description" placeholder="Brief description">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-hierarchical-generator-current-problem">Current problem</label>
+        <span class="prompt-fill__hint">What&#x27;s wrong today</span>
+        <input type="text" id="pf-hierarchical-generator-current-problem" class="js-prompt-input" data-token="CURRENT_PROBLEM" data-placeholder="What&#x27;s wrong today" placeholder="What&#x27;s wrong today">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-hierarchical-generator-business-goal">Business goal</label>
+        <span class="prompt-fill__hint">What success looks like</span>
+        <input type="text" id="pf-hierarchical-generator-business-goal" class="js-prompt-input" data-token="BUSINESS_GOAL" data-placeholder="What success looks like" placeholder="What success looks like">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="prompt-fill" id="exploratory-pattern" aria-labelledby="prompt-fill-label-exploratory-pattern">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-exploratory-pattern">
+      Try It With Your Data — Exploratory Taxonomy Pattern
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt is made of (RICE breakdown)</summary>
+      <div class="prompt-fill__guidance-body">
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">R</span>
+          <h4>Role</h4>
+          <p>Casts the AI as: You&#x27;re an information architect exploring organizational approaches.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">I</span>
+          <h4>Instructions</h4>
+          <p>Names 3 specific outputs to produce, so the response comes back structured rather than a general summary.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">C</span>
+          <h4>Context</h4>
+          <p>Content, Audience, Content areas and Goals tell the AI what your specific situation is, not a generic one.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">E</span>
+          <h4>Expected format</h4>
+          <p>For each taxonomy option: the organizing principle, a sample top level, strengths, risks, and when you would choose it over the others.</p>
+        </div>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[R - ROLE]
+You're an information architect exploring organizational approaches.
+
+[I - INSTRUCTIONS]
+Generate {{NUMBER_OF_TAXONOMY_OPTIONS}} different taxonomies using different organizing principles:
+
+{{PRINCIPLE_1}}
+{{PRINCIPLE_2}}
+{{PRINCIPLE_3}}
+
+For each approach:
+- Show top 2 levels
+- Estimate page distribution
+- List 3 pros and 3 cons
+- Indicate which user type it serves best
+
+[C - CONTEXT]
+Content: {{CONTENT_PAGE_COUNT}}
+Audience: {{AUDIENCE}}
+Content areas: {{MAIN_CONTENT_AREAS}}
+Goals: {{PRIMARY_GOALS}}
+
+[E - EXPECTED FORMAT]
+For each taxonomy option:
+1. Visual structure (top 2 levels)
+2. Distribution percentages
+3. Pros/cons comparison
+4. Best suited for: [user type]
+5. Recommendation context: "Choose this if..."
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-exploratory-pattern-number-of-taxonomy-options">Number of taxonomy options</label>
+        <span class="prompt-fill__hint">Whole number, e.g. 3</span>
+        <input type="text" id="pf-exploratory-pattern-number-of-taxonomy-options" class="js-prompt-input" data-token="NUMBER_OF_TAXONOMY_OPTIONS" data-placeholder="Whole number, e.g. 3" placeholder="Whole number, e.g. 3">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-exploratory-pattern-principle-1">Principle 1</label>
+        <span class="prompt-fill__hint">Name and one-line description, e.g. &quot;Task-based: organized by what users want to do&quot;</span>
+        <input type="text" id="pf-exploratory-pattern-principle-1" class="js-prompt-input" data-token="PRINCIPLE_1" data-placeholder="Name and one-line description, e.g. &quot;Task-based: organized by what users want to do&quot;" placeholder="Name and one-line description, e.g. &quot;Task-based: organized by what users want to do&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-exploratory-pattern-principle-2">Principle 2</label>
+        <span class="prompt-fill__hint">Name and one-line description</span>
+        <input type="text" id="pf-exploratory-pattern-principle-2" class="js-prompt-input" data-token="PRINCIPLE_2" data-placeholder="Name and one-line description" placeholder="Name and one-line description">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-exploratory-pattern-principle-3">Principle 3</label>
+        <span class="prompt-fill__hint">Name and one-line description</span>
+        <input type="text" id="pf-exploratory-pattern-principle-3" class="js-prompt-input" data-token="PRINCIPLE_3" data-placeholder="Name and one-line description" placeholder="Name and one-line description">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-exploratory-pattern-content-page-count">Content &amp; page count</label>
+        <span class="prompt-fill__hint">e.g. &quot;API documentation with 200 pages&quot;</span>
+        <input type="text" id="pf-exploratory-pattern-content-page-count" class="js-prompt-input" data-token="CONTENT_PAGE_COUNT" data-placeholder="e.g. &quot;API documentation with 200 pages&quot;" placeholder="e.g. &quot;API documentation with 200 pages&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-exploratory-pattern-audience">Audience</label>
+        <span class="prompt-fill__hint">Brief description</span>
+        <input type="text" id="pf-exploratory-pattern-audience" class="js-prompt-input" data-token="AUDIENCE" data-placeholder="Brief description" placeholder="Brief description">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-exploratory-pattern-main-content-areas">Main content areas</label>
+        <span class="prompt-fill__hint">Comma-separated list</span>
+        <input type="text" id="pf-exploratory-pattern-main-content-areas" class="js-prompt-input" data-token="MAIN_CONTENT_AREAS" data-placeholder="Comma-separated list" placeholder="Comma-separated list">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-exploratory-pattern-primary-goals">Primary goals</label>
+        <span class="prompt-fill__hint">What you&#x27;re trying to achieve</span>
+        <input type="text" id="pf-exploratory-pattern-primary-goals" class="js-prompt-input" data-token="PRIMARY_GOALS" data-placeholder="What you&#x27;re trying to achieve" placeholder="What you&#x27;re trying to achieve">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="prompt-fill" id="diataxis-integration" aria-labelledby="prompt-fill-label-diataxis-integration">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-diataxis-integration">
+      Try It With Your Data — Diátaxis Integration Pattern
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt is made of (RICE breakdown)</summary>
+      <div class="prompt-fill__guidance-body">
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">R</span>
+          <h4>Role</h4>
+          <p>Casts the AI as: You&#x27;re an information architect who specializes in the Diátaxis framework.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">I</span>
+          <h4>Instructions</h4>
+          <p>Asks for a taxonomy that integrates all four Diátaxis types, using the structural approach you choose (Diátaxis-first, feature-first, or hybrid).</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">C</span>
+          <h4>Context</h4>
+          <p>Content and Features/Topics tell the AI what your specific situation is, not a generic one.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">E</span>
+          <h4>Expected format</h4>
+          <p>Output as indented list with: Diátaxis types as top level (or facets), topic categories beneath, and a note on where hybrid pages should live.</p>
+        </div>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[R - ROLE]
+You're an information architect who specializes in the Diátaxis framework.
+
+[I - INSTRUCTIONS]
+Create a {{LEVELS_CONTENT_TYPE}} that integrates all four Diátaxis content types.
+
+Approach: {{STRUCTURAL_APPROACH}}
+
+Structure:
+- Level 1: {{LEVEL_1_PRINCIPLE}}
+- Level 2: {{LEVEL_2_PRINCIPLE}}
+- Level 3: {{LEVEL_3_PRINCIPLE}}
+
+[C - CONTEXT]
+{{PAGE_COUNTS_BY_DI_TAXIS_TYPE}}
+
+Features/Topics:
+{{FEATURES_TOPICS_WITH_PAGE_COUNTS}}
+
+[E - EXPECTED FORMAT]
+Output as indented list with:
+- Diátaxis content-type tags on each item
+- Page counts and percentages
+- Rationale for structural choices
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-diataxis-integration-levels-content-type">Levels &amp; content type</label>
+        <span class="prompt-fill__hint">e.g. &quot;3-level taxonomy for our developer docs&quot;</span>
+        <input type="text" id="pf-diataxis-integration-levels-content-type" class="js-prompt-input" data-token="LEVELS_CONTENT_TYPE" data-placeholder="e.g. &quot;3-level taxonomy for our developer docs&quot;" placeholder="e.g. &quot;3-level taxonomy for our developer docs&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-diataxis-integration-structural-approach">Structural approach</label>
+        <span class="prompt-fill__hint">e.g. &quot;Option A: Diátaxis-first (content types at top level)&quot;, &quot;Option B: Feature-first with Diátaxis at lower levels&quot;, or &quot;Option C: Hybrid (user journey + Diátaxis)&quot;</span>
+        <input type="text" id="pf-diataxis-integration-structural-approach" class="js-prompt-input" data-token="STRUCTURAL_APPROACH" data-placeholder="e.g. &quot;Option A: Diátaxis-first (content types at top level)&quot;, &quot;Option B: Feature-first with Diátaxis at lower levels&quot;, or &quot;Option C: Hybrid (user journey + Diátaxis)&quot;" placeholder="e.g. &quot;Option A: Diátaxis-first (content types at top level)&quot;, &quot;Option B: Feature-first with Diátaxis at lower levels&quot;, or &quot;Option C: Hybrid (user journey + Diátaxis)&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-diataxis-integration-level-1-principle">Level 1 principle</label>
+        <span class="prompt-fill__hint">What organizes the top level</span>
+        <input type="text" id="pf-diataxis-integration-level-1-principle" class="js-prompt-input" data-token="LEVEL_1_PRINCIPLE" data-placeholder="What organizes the top level" placeholder="What organizes the top level">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-diataxis-integration-level-2-principle">Level 2 principle</label>
+        <span class="prompt-fill__hint">What organizes the second level</span>
+        <input type="text" id="pf-diataxis-integration-level-2-principle" class="js-prompt-input" data-token="LEVEL_2_PRINCIPLE" data-placeholder="What organizes the second level" placeholder="What organizes the second level">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-diataxis-integration-level-3-principle">Level 3 principle</label>
+        <span class="prompt-fill__hint">Usually the Diátaxis types themselves</span>
+        <input type="text" id="pf-diataxis-integration-level-3-principle" class="js-prompt-input" data-token="LEVEL_3_PRINCIPLE" data-placeholder="Usually the Diátaxis types themselves" placeholder="Usually the Diátaxis types themselves">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-diataxis-integration-page-counts-by-di-taxis-type">Page counts by Diátaxis type</label>
+        <span class="prompt-fill__hint">e.g. &quot;200 total: 40 tutorials, 60 how-tos, 80 reference, 20 explanation&quot;</span>
+        <textarea id="pf-diataxis-integration-page-counts-by-di-taxis-type" class="js-prompt-input" data-token="PAGE_COUNTS_BY_DI_TAXIS_TYPE" data-placeholder="e.g. &quot;200 total: 40 tutorials, 60 how-tos, 80 reference, 20 explanation&quot;" placeholder="e.g. &quot;200 total: 40 tutorials, 60 how-tos, 80 reference, 20 explanation&quot;"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-diataxis-integration-features-topics-with-page-counts">Features/topics with page counts</label>
+        <span class="prompt-fill__hint">One per line, e.g. &quot;Authentication (40 pages)&quot;</span>
+        <textarea id="pf-diataxis-integration-features-topics-with-page-counts" class="js-prompt-input" data-token="FEATURES_TOPICS_WITH_PAGE_COUNTS" data-placeholder="One per line, e.g. &quot;Authentication (40 pages)&quot;" placeholder="One per line, e.g. &quot;Authentication (40 pages)&quot;"></textarea>
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="prompt-fill" id="taxonomy-validator" aria-labelledby="prompt-fill-label-taxonomy-validator">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-taxonomy-validator">
+      Try It With Your Data — Taxonomy Validator
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt is made of (RICE breakdown)</summary>
+      <div class="prompt-fill__guidance-body">
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">R</span>
+          <h4>Role</h4>
+          <p>Casts the AI as: You are an information architect validating taxonomy balance and quality.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">I</span>
+          <h4>Instructions</h4>
+          <p>Names 4 specific outputs to produce, so the response comes back structured rather than a general summary.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">C</span>
+          <h4>Context</h4>
+          <p>Total pages, Target audience and Content domain tell the AI what your specific situation is, not a generic one.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">E</span>
+          <h4>Expected format</h4>
+          <p>Provide: a pass/fail per check, the specific nodes that fail, and a concrete rewrite for each failing label or relationship.</p>
+        </div>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[R - ROLE]
+You are an information architect validating taxonomy balance and quality.
+
+[I - INSTRUCTIONS]
+Analyze this taxonomy using the 5-Check validation system:
+
+TAXONOMY TO VALIDATE:
+{{TAXONOMY_TO_VALIDATE}}
+
+For each check, provide:
+1. Score (1-5 stars)
+2. Pass/Fail/Needs Review status
+3. Specific issues found
+4. Recommendations to fix
+
+VALIDATION THRESHOLDS:
+- Balance: No category exceeds 35% (warning at 36-40%, fail at >40%)
+- Depth: Appropriate for content volume (2 levels for <50 pages, 3 for 50-200)
+- Granularity: Items at same level have similar scope
+- Exclusivity: Content has clear primary home
+- Clarity: Labels are specific and predictive
+
+[C - CONTEXT]
+Total pages: {{TOTAL_PAGES}}
+Target audience: {{TARGET_AUDIENCE}}
+Content domain: {{CONTENT_DOMAIN}}
+
+[E - EXPECTED FORMAT]
+Provide:
+1. Individual check scores
+2. Overall taxonomy health score (0-100)
+3. Red flags requiring immediate attention
+4. Prioritized improvement recommendations</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-taxonomy-validator-taxonomy-to-validate">Taxonomy to validate</label>
+        <span class="prompt-fill__hint">Paste your taxonomy structure with page counts per category</span>
+        <textarea id="pf-taxonomy-validator-taxonomy-to-validate" class="js-prompt-input" data-token="TAXONOMY_TO_VALIDATE" data-placeholder="Paste your taxonomy structure with page counts per category" placeholder="Paste your taxonomy structure with page counts per category"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-taxonomy-validator-total-pages">Total pages</label>
+        <span class="prompt-fill__hint">Whole number</span>
+        <input type="text" id="pf-taxonomy-validator-total-pages" class="js-prompt-input" data-token="TOTAL_PAGES" data-placeholder="Whole number" placeholder="Whole number">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-taxonomy-validator-target-audience">Target audience</label>
+        <span class="prompt-fill__hint">Brief description</span>
+        <input type="text" id="pf-taxonomy-validator-target-audience" class="js-prompt-input" data-token="TARGET_AUDIENCE" data-placeholder="Brief description" placeholder="Brief description">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-taxonomy-validator-content-domain">Content domain</label>
+        <span class="prompt-fill__hint">e.g. &quot;developer documentation&quot;</span>
+        <input type="text" id="pf-taxonomy-validator-content-domain" class="js-prompt-input" data-token="CONTENT_DOMAIN" data-placeholder="e.g. &quot;developer documentation&quot;" placeholder="e.g. &quot;developer documentation&quot;">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="prompt-fill" id="balance-validator" aria-labelledby="prompt-fill-label-balance-validator">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-balance-validator">
+      Try It With Your Data — Balance Validator
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt does</summary>
+      <div class="prompt-fill__guidance-body prompt-fill__guidance-body--simple">
+        <p>Use this prompt when: Creating primary taxonomy from scratch.</p>
+        <ul><li>After generating or refining a taxonomy</li><li>Before finalizing navigation structure</li><li>When taxonomy feels &quot;off&quot; but you can&#x27;t pinpoint why</li><li>As part of systematic taxonomy validation (5-Check system)</li></ul>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[ROLE]
+You are an information architect validating taxonomy balance.
+
+[INSTRUCTIONS]
+Analyze this taxonomy for balance using these specific thresholds:
+
+BALANCE THRESHOLDS:
+- ✅ Balanced: No category exceeds 35%
+- ⚠️ Review: Any category 36-40%
+- ❌ Fail: Any category >40% OR <5%
+- 🚫 Red Flag: Catch-all labels, >10:1 size ratio
+
+Calculate:
+1. Percentage distribution for each top-level category
+2. Smallest vs. largest category spread (percentage point difference)
+3. Number of micro-categories (<8%)
+4. Ratio between largest and smallest categories
+5. Identify any catch-all labels ("Other", "Miscellaneous", "Advanced Topics")
+
+Provide scored assessment (0-100) with breakdown:
+- Balance score (30 points): Distribution across thresholds
+- Range score (25 points): Spread between smallest/largest
+- Category count score (20 points): Appropriate number of categories
+- Naming score (15 points): Clear, specific labels
+- Viability score (10 points): No micro-categories
+
+Flag all red flags and provide specific fixes if score <70.
+
+[CONTEXT]
+Taxonomy to validate:
+{{TAXONOMY_TO_VALIDATE}}
+
+Total pages: {{TOTAL_PAGES}}
+Target audience: {{TARGET_AUDIENCE}}
+
+[OUTPUT FORMAT]
+Category | Pages | % | Status
+[Category Name] | [#] | [%] | [✅/⚠️/❌/🚫]
+
+**Score:** [X]/100
+**Red Flags:** [List any found]
+**Recommendation:** [Specific fixes if score <70]</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-balance-validator-taxonomy-to-validate">Taxonomy to validate</label>
+        <span class="prompt-fill__hint">Paste your taxonomy structure with page counts per category</span>
+        <textarea id="pf-balance-validator-taxonomy-to-validate" class="js-prompt-input" data-token="TAXONOMY_TO_VALIDATE" data-placeholder="Paste your taxonomy structure with page counts per category" placeholder="Paste your taxonomy structure with page counts per category"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-balance-validator-total-pages">Total pages</label>
+        <span class="prompt-fill__hint">Whole number</span>
+        <input type="text" id="pf-balance-validator-total-pages" class="js-prompt-input" data-token="TOTAL_PAGES" data-placeholder="Whole number" placeholder="Whole number">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-balance-validator-target-audience">Target audience</label>
+        <span class="prompt-fill__hint">Brief description</span>
+        <input type="text" id="pf-balance-validator-target-audience" class="js-prompt-input" data-token="TARGET_AUDIENCE" data-placeholder="Brief description" placeholder="Brief description">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="prompt-fill" id="refinement-pattern" aria-labelledby="prompt-fill-label-refinement-pattern">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-refinement-pattern">
+      Try It With Your Data — Taxonomy Refinement Pattern
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt is made of (RICE breakdown)</summary>
+      <div class="prompt-fill__guidance-body">
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">R</span>
+          <h4>Role</h4>
+          <p>Casts the AI as: You&#x27;re an information architect refining an existing taxonomy.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">I</span>
+          <h4>Instructions</h4>
+          <p>Names 3 specific outputs to produce, so the response comes back structured rather than a general summary.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">C</span>
+          <h4>Context</h4>
+          <p>Total content, Audience and Business goal tell the AI what your specific situation is, not a generic one.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">E</span>
+          <h4>Expected format</h4>
+          <p>Output:</p>
+        </div>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[R - ROLE]
+You're an information architect refining an existing taxonomy.
+
+[I - INSTRUCTIONS]
+Refine this taxonomy based on validation feedback.
+
+Current structure:
+{{CURRENT_TAXONOMY}}
+
+Problems identified:
+{{PROBLEMS_IDENTIFIED}}
+
+Refinement requirements:
+{{REFINEMENT_REQUIREMENTS}}
+
+[C - CONTEXT]
+Total content: {{TOTAL_PAGES}} pages
+Audience: {{AUDIENCE}}
+Business goal: {{BUSINESS_GOAL}}
+
+[E - EXPECTED FORMAT]
+Output:
+1. Refined taxonomy structure
+2. Explanation of changes made
+3. How each problem was addressed
+4. Any trade-offs or remaining concerns
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-refinement-pattern-current-taxonomy">Current taxonomy</label>
+        <span class="prompt-fill__hint">Paste the taxonomy as it stands today</span>
+        <textarea id="pf-refinement-pattern-current-taxonomy" class="js-prompt-input" data-token="CURRENT_TAXONOMY" data-placeholder="Paste the taxonomy as it stands today" placeholder="Paste the taxonomy as it stands today"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-refinement-pattern-problems-identified">Problems identified</label>
+        <span class="prompt-fill__hint">One problem per line</span>
+        <textarea id="pf-refinement-pattern-problems-identified" class="js-prompt-input" data-token="PROBLEMS_IDENTIFIED" data-placeholder="One problem per line" placeholder="One problem per line"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-refinement-pattern-refinement-requirements">Refinement requirements</label>
+        <span class="prompt-fill__hint">One requirement or constraint per line</span>
+        <textarea id="pf-refinement-pattern-refinement-requirements" class="js-prompt-input" data-token="REFINEMENT_REQUIREMENTS" data-placeholder="One requirement or constraint per line" placeholder="One requirement or constraint per line"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-refinement-pattern-total-pages">Total pages</label>
+        <span class="prompt-fill__hint">Whole number</span>
+        <input type="text" id="pf-refinement-pattern-total-pages" class="js-prompt-input" data-token="TOTAL_PAGES" data-placeholder="Whole number" placeholder="Whole number">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-refinement-pattern-audience">Audience</label>
+        <span class="prompt-fill__hint">Brief description</span>
+        <input type="text" id="pf-refinement-pattern-audience" class="js-prompt-input" data-token="AUDIENCE" data-placeholder="Brief description" placeholder="Brief description">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-refinement-pattern-business-goal">Business goal</label>
+        <span class="prompt-fill__hint">What success looks like</span>
+        <input type="text" id="pf-refinement-pattern-business-goal" class="js-prompt-input" data-token="BUSINESS_GOAL" data-placeholder="What success looks like" placeholder="What success looks like">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-03.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 7 · 4 of 10</span>
+    <a href="chunk-05.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="../../assets/js/prompt-fill.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

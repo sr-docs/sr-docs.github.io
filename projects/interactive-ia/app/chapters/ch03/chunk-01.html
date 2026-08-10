@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Principles and Human Capabilities — Chapter 3 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 3</a>
+      <span aria-hidden="true">›</span>
+      <span>Human Capabilities</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 1 of 5">1 of 5</div>
+    <div class="mini-nav__links">
+      <a href="index.html">← Chapter overview</a>
+      <span class="spacer"></span>
+      <a href="chunk-02.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Design Principles and Human Capabilities
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        UX design principles are basic truths, laws, or assumptions that embody the accumulated knowledge of the researchers and designers who came before us. They're grounded in the study of human cognitive and physical capabilities, and they serve as a foundation for every design decision — especially when you're solving a complex or unfamiliar problem.
+      </p>
+      <p>
+        Several principles address human capabilities directly. William Lidwell, Kritina Holden, and Jill Butler define four characteristics of accessible design: <strong>perceptibility</strong> — everyone can perceive the interface; <strong>operability</strong> — everyone can interact with it; <strong>simplicity</strong> — everyone can comprehend and use it; and <strong>forgiveness</strong> — people feel safe because most interactions are reversible. Consistency spans four types: aesthetic, functional, internal, and external. People should be able to rely on <strong>recognition rather than recall</strong> — recognizing something they've seen before is far less demanding than pulling it from memory. And reducing <strong>cognitive load</strong> means making navigation options highly visible, eliminating unnecessary elements, and chunking content logically.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      These principles aren't abstract theory — they're the same reasons a familiar button placement feels safe to click, or an unlabeled icon feels risky to trust.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch03-chunk-01" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> An enterprise intranet redesign team made four decisions. Evaluate each against the human-capability principles.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          1. They moved the "Save" button to a different corner of the screen in each internal tool, because each tool's original vendor used a different layout.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="decision-1" value="consistency">
+            <span class="exercise__option-text">Violates consistency</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="decision-1" value="accessibility">
+            <span class="exercise__option-text">Violates accessibility</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="decision-1" value="simplicity">
+            <span class="exercise__option-text">Violates simplicity</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="decision-1" value="none">
+            <span class="exercise__option-text">No violation — follows good practice</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          2. They replaced text labels on the main navigation icons with icon-only buttons to "declutter" the interface, with no tooltips or alt text added.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="decision-2" value="consistency">
+            <span class="exercise__option-text">Violates consistency</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="decision-2" value="accessibility">
+            <span class="exercise__option-text">Violates accessibility</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="decision-2" value="user-control">
+            <span class="exercise__option-text">Violates user control</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="decision-2" value="none">
+            <span class="exercise__option-text">No violation</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          3. They added type-ahead search showing live match counts, and made all key navigation links visible without requiring a menu click to reveal them.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="decision-3" value="cognitive-load">
+            <span class="exercise__option-text">Violates reducing cognitive load</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="decision-3" value="consistency">
+            <span class="exercise__option-text">Violates consistency</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="decision-3" value="accessibility">
+            <span class="exercise__option-text">Violates accessibility</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="decision-3" value="none">
+            <span class="exercise__option-text">No violation — follows good practice</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          4. They packed forty links onto a single page with no chunking or grouping, arguing this lets users find everything "in one place."
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="decision-4" value="cognitive-load">
+            <span class="exercise__option-text">Violates reducing cognitive load</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="decision-4" value="consistency">
+            <span class="exercise__option-text">Violates consistency</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="decision-4" value="accessibility">
+            <span class="exercise__option-text">Violates accessibility</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="decision-4" value="none">
+            <span class="exercise__option-text">No violation</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          Decision 2 touches a second principle beyond the one you selected: recognition versus recall. Explain how removing text labels forces users to rely on recall instead of recognition.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p><strong>1 — Violates consistency.</strong> Different button placement across tools breaks both internal consistency (within the intranet as a system) and external consistency (with users' expectations from other software). People can't transfer what they've learned in one tool to the next.</p>
+
+      <p><strong>2 — Violates accessibility.</strong> Removing text labels without any alternative fails the perceptibility characteristic — not everyone can reliably interpret an unlabeled icon. This is a direct accessibility failure, not just a stylistic choice.</p>
+
+      <p><strong>3 — No violation — follows good practice.</strong> This decision directly reflects the guidance to reduce cognitive load by making navigation options highly visible. Live match counts and visible key links both support this principle rather than undermine it.</p>
+
+      <p><strong>4 — Violates reducing cognitive load.</strong> Forty ungrouped links on one page is the opposite of chunking content logically — one of the three explicit actions called out for reducing cognitive load.</p>
+
+      <span class="feedback__highlight">
+        Decision 2 is worth sitting with longer. Beyond the accessibility failure, it also violates recognition over recall: people should be able to rely on recognizing elements they've encountered before rather than pulling meaning from memory. A labeled icon lets someone recognize "Search" at a glance. An unlabeled magnifying-glass icon forces them to recall what that specific icon means in this specific tool — a small tax that adds up every time they use it, and one that experienced users pay just as much as new ones.
+      </span>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="index.html">← Chapter overview</a>
+    <span class="chunk-footer__center">Chapter 3 · 1 of 5</span>
+    <a href="chunk-02.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

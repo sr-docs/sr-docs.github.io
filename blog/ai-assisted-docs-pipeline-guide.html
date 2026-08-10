@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>What works and what breaks in an AI-assisted docs pipeline · Blog</title>
+    <meta name="description" content="AI-generated docs look finished before they are, and that's the trap." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../js/theme-boot.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-start">
+        <a class="brand" href="../index.html">Sabita Rao's <span>Portfolio</span></a>
+        <nav class="nav nav--primary" aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../projects/index.html">Projects</a>
+          <a href="index.html" aria-current="page">Blog</a>
+        </nav>
+      </div>
+      <div class="header-tools">
+        <nav class="nav nav--meta" aria-label="About and social">
+          <a href="../about.html">About</a>
+          <a
+            href="https://linkedin.com/in/sabitarao"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+          <a
+            href="https://github.com/sr-docs"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <article class="prose">
+        <header class="post-header page-hero">
+          <time datetime="2026-05-09">May 9, 2026</time>
+          <h1>What works and what breaks in an AI-assisted docs pipeline</h1>
+        </header>
+        <p>AI-generated docs look finished before they are, and that&#39;s the trap.</p>
+        <p>The structure is right, the tone is professional, the sections are in the correct order, it reads like documentation. But what you can&#39;t tell from a quick scan is whether the steps describe a UI that actually exists.</p>
+        <p>I built a three-layer pipeline to deal with it all. This post is about what each layer does, what it gets right, and what breaks if you skip it.</p>
+        <h2>Why a generation script is worth having</h2>
+        <p>The most tedious part of starting a new doc isn&#39;t the writing, it&#39;s the setup. Creating the file, adding frontmatter, getting the heading hierarchy right for the content type, making sure prerequisites are addressed...quite the list.</p>
+        <p>I used Claude to build a generation script that handles all that. <code>generate-draft.js</code> calls the Anthropic API with a system prompt that encodes your product context, controlled vocabulary, and content type structures. Give it a page title, a section, a content type, and an audience, and it gives back a correctly structured Markdown stub.</p>
+        <p>Keyword being <em>stub</em>. <em><strong>This is scaffolding, not writing</strong></em>.</p>
+        <p>It also handles the automation around the draft: writes the file to the correct path, creates a new branch, opens a pull request with a pre-flight checklist. Vale runs automatically on the PR, flagging controlled vocabulary violations and style issues. I, the human reviewer, see those inline comments alongside my own review.</p>
+        <p>So the review isn&#39;t &quot;read this and decide if it&#39;s good.&quot; It&#39;s &quot;complete these specific steps, resolve these specific warnings, then merge.&quot;</p>
+        <p>The placeholder markers are part of what makes this work: they&#39;re specific and hard to ignore. Not just &quot;fill this in,&quot; but &quot;fill in <em>this exact thing</em>, and here&#39;s why it needs to exist.&quot; </p>
+        <h2>The first thing that goes wrong: invented UI</h2>
+        <p>The initial script&#39;s system prompt used a baked-in product description that knew the product exists, but didn&#39;t know what was actually on the screen. So when I asked it to draft &quot;Configure alert thresholds&quot; for NimbusWiz, it produced steps that described a flight profile selector on the Monitoring screen, warning and critical threshold input fields, and a &quot;Test alert&quot; button; none of which existed in the prototype.</p>
+        <p>The model hadn&#39;t just left gaps where product-specific values were needed. It had invented whole interactions based on the fixed product description, which could alternately point to design docs or similar initial product ideas. </p>
+        <p>A user following those steps would get stuck immediately. The problem isn&#39;t just that the doc is wrong, it&#39;s that the doc <em>sounds</em> authoritative, which makes the incorrect version more dangerous than an obviously broken one.</p>
+        <p>The placeholder markers flag what the model knows it doesn&#39;t know. They don&#39;t flag what it made up confidently.</p>
+        <h3>My fix: give the script prototype access</h3>
+        <p>I had Claude build a second script: <code>generate-draft-with-prototype.js</code> loads the actual React component files before calling the API. You tell it which components are relevant via a <code>COMPONENT_HINTS</code> environment variable. It always loads <code>Root.tsx</code> for navigation labels. The system prompt then includes the real UI structure, and the model generates steps based on what&#39;s actually implemented.</p>
+        <p>For &quot;Deploy an upgrade profile,&quot; the difference was concrete. The prototype-aware script used the exact nav label &quot;Deployment&quot; from Root.tsx, named all seven columns in the history table including Deployment ID and Progress, identified all three phase status indicators by exact icon (green checkmark, blue pulsing dot, grey clock), and named the log levels <code>[INFO]</code>, <code>[WARN]</code>, and <code>[ERROR]</code> with their colour behaviour. Every one of those details came directly from reading <code>Deployment.tsx</code>.</p>
+        <p>A developer walking those steps wouldn&#39;t hit a wrong label or a missing column. Real progress!</p>
+        <h2>The second thing that goes wrong: rendered doesn&#39;t mean shipped</h2>
+        <p>When I compared the prototype-aware draft alongside a draft I&#39;d reviewed myself, the gap was instructive.</p>
+        <table>
+        <thead>
+        <tr>
+        <th>Dimension</th>
+        <th>Scripted doc with prototype source</th>
+        <th>Non-scripted doc</th>
+        </tr>
+        </thead>
+        <tbody><tr>
+        <td>Nav label</td>
+        <td>Exact from Root.tsx</td>
+        <td>Same</td>
+        </tr>
+        <tr>
+        <td>New Deployment status</td>
+        <td>Documented as implemented</td>
+        <td>Flagged as planned feature</td>
+        </tr>
+        <tr>
+        <td>View Full Logs status</td>
+        <td>Documented as implemented</td>
+        <td>Flagged as planned feature</td>
+        </tr>
+        <tr>
+        <td>Phase descriptions</td>
+        <td>Short, generic</td>
+        <td>Richer, actor-named</td>
+        </tr>
+        <tr>
+        <td>Rollback outcomes</td>
+        <td>Placeholder</td>
+        <td>Status sequence documented</td>
+        </tr>
+        <tr>
+        <td>Rollback limits</td>
+        <td>Not documented</td>
+        <td>In-progress only; contact admin after Completed</td>
+        </tr>
+        <tr>
+        <td>Audit logging</td>
+        <td>Not mentioned</td>
+        <td>Automatic logging documented</td>
+        </tr>
+        <tr>
+        <td>Before you begin</td>
+        <td>Vague, no cross-link</td>
+        <td>Specific prerequisite chain with link</td>
+        </tr>
+        </tbody></table>
+        <p>The script wins on surface UI detail but loses on everything behavioural.</p>
+        <p>The verified doc flagged two things the prototype-aware script missed entirely:</p>
+        <ul>
+        <li><em>&quot;New Deployment is a planned feature currently in progress.&quot;</em></li>
+        <li><em>&quot;View Full Logs is a planned feature currently in progress.&quot;</em></li>
+        </ul>
+        <p>The script treated both as fully implemented because the prototype renders those buttons whether the backend is ready or not. A React component doesn&#39;t know if a feature ships in this release. The source says the button exists. The script documents it as working.</p>
+        <p>A user following that draft would click <strong>New Deployment</strong> expecting something to happen. Nothing would.</p>
+        <p>This is the difference between <em>reading a UI</em> and <em>knowing the product</em>. The rollback section shows the same gap. The script left a placeholder: &quot;confirm rollback confirmation step and any conditions.&quot; The verified version documented the actual sequence: status changes to <strong>Rolling back</strong>, then <strong>Rolled back</strong>, rollback is only available while a deployment is in progress, and once it reaches <strong>Completed</strong> the user needs to contact their administrator. None of that is in the JSX.</p>
+        <h3>My fix: the accuracy skill</h3>
+        <p>I built a Claude skill - <em>doc-accuracy skill</em> - to check what prototype source alone can&#39;t: implementation status, backend behaviour, and release state against sources that go beyond the component files.</p>
+        <p>It catches planned features that may be documented as shipped, finds rollback states, audit logging behaviour, and confirmation flows. It produces a report with inline PR comments, so I, the human reviewer work from a checked result rather than doing the checking myself. Confirming a checked result is much faster and more reliable than starting from scratch.</p>
+        <p>For new pages, I run the accuracy skill after the generation script. For maintenance, I run it first, to identify what&#39;s drifted from the product, and to fix it.</p>
+        <h2>Why the human gate can&#39;t be automated</h2>
+        <p>Even with both AI layers in place, a human in the loop isn&#39;t optional.</p>
+        <p>The accuracy skill handles verifiable checks, such as does this button exist, does this navigation label match, is this feature flagged as in progress. But it can&#39;t make a judgment call about what a user actually needs to know before they start a task.</p>
+        <p>The &quot;Deploy an upgrade&quot; doc&#39;s <em>Before you begin</em> is a good example of product understanding that goes beyond reading the source code.
+        <img src="../assets/img/deploy-an-upgrade-profile-1.png" alt="frontmatter" title="Auto-generated frontmatter"><br/><em>Script-generated content</em></p>
+        <p><img src="../assets/img/final-upgrade-3.png" alt="frontmatter" title="Auto-generated frontmatter"><br/><em>Final content</em></p>
+        <p>If a feature is documented as working when it&#39;s only planned, and that doc ships to production, the damage isn&#39;t just a confusing user experience. It&#39;s a broken promise from the product to the user. The human reviewer is the last check on whether anything in the doc makes a claim the product can&#39;t yet keep.</p>
+        <p>This is a non-negotiable check that shouldn&#39;t be delegated to AI.</p>
+        <h2>The full pipeline</h2>
+        <p><img src="../assets/img/ai-docs-pipeline.svg" alt="Three-layer AI documentation pipeline: generate, verify, human gate"></p>
+        <p>For new pages: the prototype-aware script reads the relevant component files, generates a UI-accurate scaffold, and opens a PR on a new branch. The accuracy skill runs on the draft and surfaces what needs attention. Vale flags style and vocabulary issues. A human reviewer applies product judgment and signs off before anything merges.</p>
+        <p>For maintenance: the accuracy skill runs first to find what&#39;s drifted. The doc-writer skill fixes it. Then Vale, human review, PR.</p>
+        <h3>What could break at each layer</h3>
+        <p>Without prototype access in the script, you get structurally correct docs with invented UI. The placeholder markers flag what the model knows it doesn&#39;t know. They don&#39;t flag what it made up with confidence.</p>
+        <p>Without the accuracy skill, planned features get documented as shipped. The prototype renders the button. The script documents it as working. The reviewer reads it and it sounds plausible. It merges. A user clicks and nothing happens.</p>
+        <p>Without the human gate, you have a pipeline optimised for speed. It&#39;ll eventually publish something wrong, because product judgment, the correct prerequisite chain, and the distinction between &quot;this is how it works&quot; and &quot;this is how it was designed to work&quot; can&#39;t be automated.</p>
+        <h2>The underlying principle</h2>
+        <p>Fast generation requires slow validation.</p>
+        <p>The script makes generation faster and more accurate. The accuracy skill makes validation more systematic. But the human is the one who knows whether a claim the doc makes is a claim the product can actually keep.</p>
+        <p>None of these layers replaces the others, and that&#39;s the design.</p>
+        <p class="post-back"><a href="./">← Back to all posts</a></p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        <a href="../index.html">Home</a>
+        ·
+        <a href="https://github.com/sr-docs">GitHub</a>
+        · Built for GitHub Pages
+      </p>
+    </footer>
+        <script src="../js/theme.js"></script>
+<script src="../js/main.js"></script>
+    <script src="../js/blog-redirect.js"></script>
+  </body>
+</html>

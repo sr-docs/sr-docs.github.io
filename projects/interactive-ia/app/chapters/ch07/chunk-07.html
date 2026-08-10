@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semantic Networks — Chapter 7 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 7</a>
+      <span aria-hidden="true">›</span>
+      <span>Semantic Networks</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 7 of 10">7 of 10</div>
+    <div class="mini-nav__links">
+      <a href="chunk-06.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-08.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Semantic Networks
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        A semantic network, also called a knowledge graph, represents relationships between concepts using a directed graph of labeled <strong>nodes</strong> and labeled <strong>arcs</strong>. Each node represents a concept, category, or instance; each arc connects an ordered pair of nodes and describes the relationship between them, expressed as a subject-predicate-object triple. Four arc types are especially common: <strong>is-a</strong> links, which describe class and subclass relationships and form inheritance chains — the most common type; <strong>has-a</strong> links, describing an attribute or characteristic of a node; <strong>inst</strong> links, describing an instance-of relationship; and <strong>part-of</strong> links, describing a whole/part relationship.
+      </p>
+      <p>
+        Inheritance is central to how semantic networks work — a child node connected to a parent by an is-a link inherits the parent's attributes automatically, which is what makes the network more than just a collection of disconnected facts.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      A semantic network is a taxonomy that's been given a vocabulary for the connections themselves — instead of just "this is under that," it can say exactly how one thing relates to another, and let a machine follow that reasoning.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch07-chunk-07" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A museum is building a knowledge graph to connect its collection objects — artworks, artists, historical periods, geographic origins, materials, and techniques. Five relationships between collection objects need to be represented. For each one, identify the correct arc type.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          1. "This bronze sculpture was made using the lost-wax casting technique."
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="relationship-1" value="has-a">
+            <span class="exercise__option-text">Has-a: the sculpture has the attribute "lost-wax casting technique"</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="relationship-1" value="is-a">
+            <span class="exercise__option-text">Is-a: the sculpture is a kind of lost-wax casting technique</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="relationship-1" value="part-of">
+            <span class="exercise__option-text">Part-of: the sculpture is part of the technique</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          2. "This specific vase is an example of Ming dynasty porcelain."
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="relationship-2" value="inst">
+            <span class="exercise__option-text">Inst: the vase is an instance of Ming dynasty porcelain</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="relationship-2" value="has-a">
+            <span class="exercise__option-text">Has-a: the vase has the attribute Ming dynasty</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="relationship-2" value="part-of-2">
+            <span class="exercise__option-text">Part-of: the vase is part of the Ming dynasty</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          3. "Sculpture is a kind of visual art."
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="relationship-3" value="is-a">
+            <span class="exercise__option-text">Is-a: sculpture is a kind of visual art</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="relationship-3" value="inst-3">
+            <span class="exercise__option-text">Inst: sculpture is an instance of visual art</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="relationship-3" value="has-a-3">
+            <span class="exercise__option-text">Has-a: sculpture has the attribute visual art</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          4. "This fresco is part of the Sistine Chapel ceiling."
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="relationship-4" value="part-of-4">
+            <span class="exercise__option-text">Part-of: the fresco is part of the Sistine Chapel ceiling</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="relationship-4" value="is-a-4">
+            <span class="exercise__option-text">Is-a: the fresco is a kind of Sistine Chapel ceiling</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="relationship-4" value="has-a-4">
+            <span class="exercise__option-text">Has-a: the fresco has the attribute Sistine Chapel ceiling</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          5. "This painting has the attribute 'oil on canvas' as its medium."
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="relationship-5" value="has-a-5">
+            <span class="exercise__option-text">Has-a: the painting has the attribute "oil on canvas"</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="relationship-5" value="is-a-5">
+            <span class="exercise__option-text">Is-a: the painting is a kind of "oil on canvas"</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="relationship-5" value="inst-5">
+            <span class="exercise__option-text">Inst: the painting is an instance of "oil on canvas"</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          Which of these five relationships would participate in an inheritance chain — meaning the node on one side would automatically inherit attributes from the node on the other side? Name the relationship and explain what gets inherited.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p><strong>1 — Has-a.</strong> The casting technique is an attribute or characteristic of the sculpture, not a category it belongs to — this is a has-a relationship.</p>
+
+      <p><strong>2 — Inst.</strong> This specific vase is a concrete instance of the broader category "Ming dynasty porcelain" — the defining trait of an inst link.</p>
+
+      <p><strong>3 — Is-a.</strong> "Sculpture is a kind of visual art" is a class/subclass relationship, the clearest example of an is-a link, and it forms part of an inheritance chain.</p>
+
+      <p><strong>4 — Part-of.</strong> The fresco is a physical component of a larger whole, the Sistine Chapel ceiling — a whole/part relationship.</p>
+
+      <p><strong>5 — Has-a.</strong> "Oil on canvas" is an attribute of the painting, describing what it's made of, not a category the painting is a subtype of.</p>
+
+      <span class="feedback__highlight">
+        Relationship 3 — "Sculpture is a kind of visual art" — is the one that participates in an inheritance chain. Is-a links are specifically what form these chains: if "visual art" has certain shared attributes defined for it in the network, then "Sculpture," connected to it by an is-a link, automatically inherits those attributes without needing to have them separately defined. This is what makes is-a links structurally different from the other three arc types in this exercise — has-a, inst, and part-of describe a single relationship each, but is-a links are the ones that propagate shared characteristics downward through the network.
+      </span>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="prompt-fill" id="polyhierarchy-analysis" aria-labelledby="prompt-fill-label-polyhierarchy-analysis">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-polyhierarchy-analysis">
+      Try It With Your Data — Polyhierarchy Analysis Pattern
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt is made of (RICE breakdown)</summary>
+      <div class="prompt-fill__guidance-body">
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">R</span>
+          <h4>Role</h4>
+          <p>Casts the AI as: You&#x27;re an information architect analyzing content for polyhierarchy.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">I</span>
+          <h4>Instructions</h4>
+          <p>Names 4 specific outputs to produce, so the response comes back structured rather than a general summary.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">C</span>
+          <h4>Context</h4>
+          <p>User types, Common user tasks and Navigation constraints tell the AI what your specific situation is, not a generic one.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">E</span>
+          <h4>Expected format</h4>
+          <p>For each polyhierarchy item: the dual homes, why both are justified (or not), and a recommended primary placement with cross-links.</p>
+        </div>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[R - ROLE]
+You're an information architect analyzing content for polyhierarchy.
+
+[I - INSTRUCTIONS]
+Review this taxonomy and identify content that users might approach from multiple angles.
+
+Taxonomy:
+{{TAXONOMY}}
+
+For each piece of polyhierarchy content, specify:
+1. Title and current location
+2. Why it has multiple access paths (user scenarios)
+3. Recommended locations (primary + secondary)
+4. Implementation approach:
+   - Duplicate navigation pointers (single source)
+   - Cross-links (content in one place, linked from others)
+   - Contextual references (tailored intro linking to primary)
+
+[C - CONTEXT]
+User types: {{USER_TYPES}}
+Common user tasks: {{COMMON_USER_TASKS}}
+Navigation constraints: {{NAVIGATION_CONSTRAINTS}}
+
+[E - EXPECTED FORMAT]
+For each polyhierarchy item:
+- Current location
+- Secondary locations needed
+- User scenarios for each access path
+- Recommended implementation
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-polyhierarchy-analysis-taxonomy">Taxonomy</label>
+        <span class="prompt-fill__hint">Paste your current taxonomy structure</span>
+        <textarea id="pf-polyhierarchy-analysis-taxonomy" class="js-prompt-input" data-token="TAXONOMY" data-placeholder="Paste your current taxonomy structure" placeholder="Paste your current taxonomy structure"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-polyhierarchy-analysis-user-types">User types</label>
+        <span class="prompt-fill__hint">Comma-separated list</span>
+        <input type="text" id="pf-polyhierarchy-analysis-user-types" class="js-prompt-input" data-token="USER_TYPES" data-placeholder="Comma-separated list" placeholder="Comma-separated list">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-polyhierarchy-analysis-common-user-tasks">Common user tasks</label>
+        <span class="prompt-fill__hint">Comma-separated list</span>
+        <input type="text" id="pf-polyhierarchy-analysis-common-user-tasks" class="js-prompt-input" data-token="COMMON_USER_TASKS" data-placeholder="Comma-separated list" placeholder="Comma-separated list">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-polyhierarchy-analysis-navigation-constraints">Navigation constraints</label>
+        <span class="prompt-fill__hint">Any limitations to work within</span>
+        <input type="text" id="pf-polyhierarchy-analysis-navigation-constraints" class="js-prompt-input" data-token="NAVIGATION_CONSTRAINTS" data-placeholder="Any limitations to work within" placeholder="Any limitations to work within">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-06.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 7 · 7 of 10</span>
+    <a href="chunk-08.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="../../assets/js/prompt-fill.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

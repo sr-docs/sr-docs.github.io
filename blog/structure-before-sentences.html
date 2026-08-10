@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Structure first, sentences next · Blog</title>
+    <meta name="description" content="In a new project, asking &quot;what does the structure need to be?&quot; before &quot;what do I need to write?&quot; is what makes content scalable, maintainable, and navigable." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../js/theme-boot.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-start">
+        <a class="brand" href="../index.html">Sabita Rao's <span>Portfolio</span></a>
+        <nav class="nav nav--primary" aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../projects/index.html">Projects</a>
+          <a href="index.html" aria-current="page">Blog</a>
+        </nav>
+      </div>
+      <div class="header-tools">
+        <nav class="nav nav--meta" aria-label="About and social">
+          <a href="../about.html">About</a>
+          <a
+            href="https://linkedin.com/in/sabitarao"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+          <a
+            href="https://github.com/sr-docs"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <article class="prose">
+        <header class="post-header page-hero">
+          <time datetime="2026-03-06">March 6, 2026</time>
+          <h1>Structure first, sentences next</h1>
+        </header>
+        <p>In a new project, asking <em>&quot;what does the structure need to be?&quot;</em> before <em>&quot;what do I need to write?&quot;</em> is what makes content scalable, maintainable, and navigable.</p>
+        <p>When I built this portfolio, I made a deliberate decision to front-load structure before writing any substantive content. So I set up the IA, wired the sidebar, created placeholder pages, and got the CI/CD pipeline running in an intentional sequence.</p>
+        <h2>Placeholder pages from day one</h2>
+        <p>Even before I had any content, I created 32 placeholder pages, one for every planned page in the IA. The Docusaurus site builds cleanly from the first push because every page the sidebar references actually exists, even if it&#39;s just a heading and a one-line placeholder description.</p>
+        <p>This matters for a few reasons. </p>
+        <ol>
+        <li>The navigation structure is immediately visible and testable. If a section doesn&#39;t feel right at the structural level, I can catch that before I&#39;ve invested writing time in it. </li>
+        <li>The CI pipeline can run link checking without generating false failures from references to pages that don&#39;t exist yet. </li>
+        <li>It signals to anyone who opens the repo that the project was planned, not improvised.</li>
+        </ol>
+        <p>The placeholder approach also forced some useful thinking early. If I couldn&#39;t name a page and write a one-line description of what it would contain, that was a sign the page&#39;s purpose wasn&#39;t clear enough yet. Creating placeholders works as a lightweight content audit <em>before</em> the content exists.</p>
+        <p>This is what my first site scaffolding looked like:</p>
+        <pre><code>tw-ia-content-system/
+        ├── .github/
+        │   └── workflows/
+        │       ├── deploy.yml          ← lint + build + deploy pipeline
+        │       ├── vale.yml            ← style check on push or PR
+        │       ├── vale-pr.yml         ← Vale auto-fix and findings-report PR
+        │       └── ai-draft.yml        ← AI draft generation workflow
+        ├── docs/                       ← all portfolio content
+        │   ├── index.md                ← home page
+        │   ├── product-ideation/
+        │   ├── information-architecture/
+        │   ├── technical-documentation/
+        │   │   ├── user-guide/
+        │   │   ├── admin-guide/
+        │   │   ├── knowledge-base/
+        │   │   └── api-reference/
+        │   ├── docs-as-code/
+        │   ├── content-analytics/
+        │   ├── ai-experiments/
+        │   └── ux-writing/
+        ├── src/
+        │   ├── components/             ← custom React components (DemoEmbed, etc.)
+        │   └── css/custom.css          ← theme overrides
+        ├── static/
+        │   ├── img/                    ← design artifacts and images
+        │   └── dashboards/             ← standalone HTML dashboard files
+        ├── styles/
+        │   └── NimbusWiz/              ← custom Vale style rules
+        ├── scripts/
+        │   └── generate-draft.js       ← AI draft generation script
+        ├── .vale.ini                   ← Vale configuration
+        ├── docusaurus.config.js        ← site configuration
+        └── sidebars.js                 ← navigation structure
+        </code></pre>
+        <h2>Sidebar as an IA artifact</h2>
+        <p>The sidebars file in a Docusaurus project is easy to treat as a configuration detail, the thing you only update when you add pages. I treated it as the <em>primary</em> IA artifact and a document of intent that reflects the full planned structure, with sections and all sub-pages at the correct nesting depth.</p>
+        <p>Any collaborator who opens the repo can see the entire information architecture without reading a single content page. The structure is legible before the content exists.</p>
+        <h2>CI/CD live from the first commit</h2>
+        <p>The CI/CD pipeline (Vale style linting, markdownlint, and link checking) runs on every push, configured before any substantial content existed. </p>
+        <p>There&#39;s a specific choice I made that I want to call out: <code>continue-on-error: true</code> on the quality checks, and <code>if: false</code> on the deploy job.</p>
+        <p>The <code>continue-on-error</code> setting means the pipeline reports failures without blocking the build. During active development, I want to know if something is failing, but I don&#39;t want a lint warning on a placeholder page to block me from pushing. The warning is information. It doesn&#39;t need to be a gate until the content is production-ready.</p>
+        <p>The <code>if: false</code> on the deploy job is the WIP flag. Lint runs on every push, so quality enforcement is active and the feedback loop is tight, but the deploy to production only happens when I remove that flag. It&#39;s a simple mechanism that makes the difference between &quot;this is under construction&quot; and &quot;this is live&quot; explicit in the configuration rather than in a README.</p>
+        <p class="post-back"><a href="./">← Back to all posts</a></p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        <a href="../index.html">Home</a>
+        ·
+        <a href="https://github.com/sr-docs">GitHub</a>
+        · Built for GitHub Pages
+      </p>
+    </footer>
+    <script src="../js/theme.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/blog-redirect.js"></script>
+  </body>
+</html>

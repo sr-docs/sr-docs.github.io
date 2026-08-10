@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faceted Search — Chapter 12 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 12</a>
+      <span aria-hidden="true">›</span>
+      <span>Faceted Search</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 11 of 11">11 of 11</div>
+    <div class="mini-nav__links">
+      <a href="chunk-10.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="index.html">Chapter overview →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Faceted Search
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Faceted search builds directly on the faceted classification covered earlier in this course, integrating full-text search with facet-based browsing so people can narrow results along whichever independent attributes matter to them — price, brand, material, whatever the domain calls for. At real scale, this creates a genuine computational challenge: calculating accurate result counts for every possible combination of facets and values, in real time, across a large catalog, is far from trivial.
+      </p>
+      <p>
+        Not every facet deserves equal prominence — choosing which ones to surface, and which specific values within them to show by default, should be guided by usage frequency and business value rather than simply exposing everything the underlying data happens to contain. Facet controls typically take the form of checkboxes for multi-select options, radio buttons for single-select, and range sliders for continuous values like price. On mobile, faceted controls generally move into the same kind of full-screen overlay pattern that general filtering uses. For searchers who need more precision than faceted browsing alone offers, advanced or parametric search — letting someone combine multiple fields and operators directly — serves as a useful complement for power users.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      Faceted search doesn't replace the taxonomy underneath it — it gives people a second, third, and fourth door into the same building, each opening onto a different way of thinking about what's inside.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch12-chunk-11" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A large online wine retailer wants to implement faceted search across a catalog of eight thousand wines. Users currently know roughly what they want but can't express it as a keyword query. Available metadata includes country, region, grape variety, wine style, food pairing, price range, vintage year, producer, taste profile descriptors, and critic ratings. Mobile accounts for seventy percent of traffic. The development team has flagged that implementing all available facets at once will create significant computational overhead.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          Given the computational overhead concern, what should guide which facets actually get built first?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="approach" value="prioritize-usage">
+            <span class="exercise__option-text">Ship the few facets shoppers use most (country, grape, price, pairing) before exposing every metadata field</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="approach" value="all-at-once">
+            <span class="exercise__option-text">Expose all ten metadata fields as facets on day one so nothing is hidden from power users</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="approach" value="none">
+            <span class="exercise__option-text">Drop facets and invest only in better keyword ranking and synonyms</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          Propose a mobile layout approach for these facets given that seventy percent of traffic is mobile, and address the over-constraining risk specifically for the price range and taste profile combination — a shopper who sets a narrow price range and a very specific taste profile together.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>Prioritizing facets by usage frequency and business value is correct.</strong> The concept section is direct that not every facet deserves equal prominence, and that choice should be guided by what customers actually use and what matters to the business — not simply exposing every field the underlying data happens to contain. Given the computational overhead the development team has already flagged, building all ten fields as facets simultaneously would compound an acknowledged technical risk for marginal benefit, since some fields — producer or vintage year, for instance — are plausibly less commonly used for browsing than country, grape variety, price, or food pairing. Skipping faceted search entirely would fail the stated user need directly: customers who know roughly what they want but can't express it as a keyword query are exactly the audience faceted browsing serves.
+      </p>
+
+      <span class="feedback__highlight">
+        With seventy percent mobile traffic, these facets should use the same full-screen overlay or bottom-sheet pattern general mobile filtering relies on, rather than trying to cram multiple facet categories into limited on-screen space alongside the wine listings themselves. For the price-range-and-taste-profile over-constraining risk, the platform should show live result counts as each facet is applied and, if the combination approaches zero results, suggest which specific facet to relax — most likely recommending the shopper widen the price range slightly, since price is often the more flexible of the two criteria for someone who has a specific taste preference but a softer budget ceiling.
+      </span>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-10.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 12 · 11 of 11</span>
+    <a href="../ch13/chunk-01.html" class="chunk-footer__next-chapter">Next: Chapter 13 · Appendix <span>· AI Tools for IA Prototyping</span> →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

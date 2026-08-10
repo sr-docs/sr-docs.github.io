@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Elements and Desktop Patterns — Chapter 11 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 11</a>
+      <span aria-hidden="true">›</span>
+      <span>Navigation Elements and Desktop Patterns</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 1 of 6">1 of 6</div>
+    <div class="mini-nav__links">
+      <a href="index.html">← Chapter overview</a>
+      <span class="spacer"></span>
+      <a href="chunk-02.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Fundamental Navigation Elements and Desktop Patterns
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Every navigation system is built from a small set of fundamental elements. Hyperlinks are the basic building block, with distinct states — unvisited, visited, hover, active, focus — that quietly communicate status to the user. Icons, logos, and images can serve as links too, often paired with text for clarity, and action buttons are a distinct category from links entirely: they trigger an action rather than take someone somewhere, with their own states and relative visual weight signaling primary versus secondary importance.
+      </p>
+      <p>
+        On desktop, these elements combine into recognizable patterns. Horizontal navigation bars are the most common top-level pattern but have limited room for items. Drop-down menus and megamenus reveal subordinate links on interaction — megamenus in particular suit wide, flat content structures where many categories need to be visible at once. Vertical navigation menus, often paired with accordions or tree views, handle deep or numerous categories better than a horizontal bar ever could. Navigation drawers and rails offer more compact, often collapsible alternatives when screen space is at a premium even on desktop.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      Every navigation pattern is a trade-off between how much it reveals and how much space it costs — the mistake is picking a pattern without noticing which side of that trade-off actually matters for the content in front of you.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch11-chunk-01" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A financial services company has redesigned its public website's desktop navigation. The implementation includes: a horizontal global navigation bar with twelve top-level links; megamenus for three of those links, triggered on hover rather than click; no visual indication anywhere of the user's current location within the site; and four utility navigation items in the header represented as icons with no accompanying text labels.
+        </p>
+        <p>
+          User testing has produced several specific complaints about accidentally triggering the wrong megamenu, losing track of where they are after navigating a few pages deep, and being unsure what the unlabeled header icons actually do.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          1. Twelve top-level links is unusually high for a horizontal navigation bar. What problem does this create?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-1" value="too-many">
+            <span class="exercise__option-text">It overloads the limited horizontal space a top-level bar realistically has room for, crowding labels and increasing scanning effort</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-1" value="no-problem">
+            <span class="exercise__option-text">No problem — more top-level links always give users more direct access</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-1" value="wrong-pattern">
+            <span class="exercise__option-text">The problem is unrelated to the number of links and is really about megamenus</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          2. Users report accidentally triggering the wrong megamenu. What's the most likely cause, given the interaction described?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-2" value="hover-trigger">
+            <span class="exercise__option-text">Hover-triggered megamenus are easy to activate accidentally just by moving the mouse across the bar, unlike a deliberate click</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-2" value="too-few-links">
+            <span class="exercise__option-text">There are too few links in the megamenu</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-2" value="wrong-color">
+            <span class="exercise__option-text">The megamenu's color scheme is the likely cause</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          Propose specific corrections for the missing current-location indicator and the unlabeled header icons, referencing what each element needs to communicate.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>1 — It overloads the limited horizontal space.</strong> A horizontal navigation bar has a hard ceiling on how many labels it can present clearly before crowding sets in. Twelve top-level links pushes well past what this pattern comfortably supports, which is exactly the kind of situation where a different pattern — grouping into fewer top-level categories, or shifting to a vertical layout — becomes the better fit.
+      </p>
+
+      <p>
+        <strong>2 — Hover-triggered megamenus are the likely cause.</strong> A megamenu that opens on hover can trigger the instant a cursor merely passes over it en route somewhere else, with no deliberate action required. This is a well-known source of accidental activation, and it's precisely the kind of interaction problem that surfaces once real users, rather than designers moving carefully through a mockup, start using the navigation at normal speed.
+      </p>
+
+      <span class="feedback__highlight">
+        Together, these findings point to a pattern: several individually plausible decisions — more top-level links, hover-triggered reveals, icon-only utility items — combine into a navigation system that feels crowded and unpredictable in practice, even though none of them looks obviously wrong in isolation. This is common in real navigation problems: the failure is rarely one dramatic mistake, it's several reasonable-looking choices compounding together.
+      </span>
+
+      <p>
+        For current location, a visible highlight on the active top-level item, along with breadcrumbs on deeper pages, would give users a persistent, low-effort way to confirm where they are. For the unlabeled header icons, adding visible text labels alongside each icon — even small ones — would resolve the ambiguity directly, consistent with the general principle that icons should rarely stand alone without text to anchor their meaning.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="index.html">← Chapter overview</a>
+    <span class="chunk-footer__center">Chapter 11 · 1 of 6</span>
+    <a href="chunk-02.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

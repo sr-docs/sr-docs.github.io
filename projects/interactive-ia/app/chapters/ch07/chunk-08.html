@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faceted Classification — Chapter 7 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 7</a>
+      <span aria-hidden="true">›</span>
+      <span>Faceted Classification</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 8 of 10">8 of 10</div>
+    <div class="mini-nav__links">
+      <a href="chunk-07.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-09.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Faceted Classification
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Facets are independent, mutually exclusive attributes of content that together describe an entire domain — think of an outdoor gear catalog described simultaneously by activity, brand, price range, and season, where each of those is a separate facet a shopper can filter by independently. Facet analysis is an eight-step process: collect a representative content sample, briefly describe each item, compile a list of indexable concepts and preferred terms, decompose any compound concepts into simpler parts, create and refine the facets themselves, create and refine the ordered term lists within each facet, organize everything into a coherent classification scheme, and finally revise the content to conform to it.
+      </p>
+      <p>
+        Faceted classification earns its complexity in specific situations: new or emerging domains without an established vocabulary, interdisciplinary fields where different experts bring different perspectives, and large or complex information spaces where a single hierarchy — even a polyhierarchy — can't flexibly express items that genuinely belong along several independent dimensions at once.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      A strict hierarchy asks "where does this belong?" as if there's one right answer. Faceted classification asks "what are all the true things about this?" and lets someone find it along whichever one they happen to be thinking about.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch07-chunk-08" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> An online retailer selling outdoor equipment wants to improve findability across a catalog of four thousand products. A taxonomy already exists, organized by product type — tents, boots, backpacks, and so on. Users are consistently failing to find products when they approach the catalog by use case, season, skill level, or brand rather than product type.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          Given that users are searching along multiple independent dimensions the current taxonomy doesn't support, what should the retailer do?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="decision" value="add-facets">
+            <span class="exercise__option-text">Keep the existing product-type taxonomy as the primary structure, and add facets for use case, season, skill level, and brand as independent, filterable attributes</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="decision" value="replace-with-polyhierarchy">
+            <span class="exercise__option-text">Replace the taxonomy entirely with a deep polyhierarchy that places every product under every relevant combination of category</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="decision" value="ignore">
+            <span class="exercise__option-text">Leave the taxonomy as-is, since a well-designed product-type hierarchy should be sufficient on its own</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          Describe one scenario, still within this same outdoor retailer, where the existing product-type taxonomy alone — without facets — remains the more appropriate tool.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>Keeping the taxonomy and adding independent facets is the correct approach.</strong> Use case, season, skill level, and brand are each legitimate, independent dimensions along which a shopper might approach the same catalog — exactly the situation faceted classification is built for. Trying to force all of these combinations into a deep polyhierarchy would create an unwieldy, hard-to-maintain structure, since a single tent might then need to sit under dozens of category combinations rather than being described once, along several independent facets, and filtered dynamically.
+      </p>
+
+      <span class="feedback__highlight">
+        This is a common and effective real-world pattern the source material describes directly: for large product catalogs, combining a hierarchical taxonomy as the overarching structure with subordinate facets layered on top is often the most powerful approach — the taxonomy still gives the catalog its primary organizing structure, while facets let shoppers cut across it from whatever angle matches their actual need.
+      </span>
+
+      <p>
+        Even with facets added, the product-type taxonomy alone remains the right tool for something like generating the site's primary top-level navigation menu — a shopper landing on the homepage still benefits from a simple, stable "Tents / Boots / Backpacks" structure to orient themselves, even though the deeper filtering experience within each category benefits from facets once they've committed to browsing a specific product type.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="prompt-fill" id="faceted-classification" aria-labelledby="prompt-fill-label-faceted-classification">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-faceted-classification">
+      Try It With Your Data — Faceted Classification
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt does</summary>
+      <div class="prompt-fill__guidance-body prompt-fill__guidance-body--simple">
+        <p>Designs facet dimensions and values so the same content can be found along multiple meaningful paths.</p>
+        <ul><li>Content needs multiple access paths (by topic, type, difficulty, language)</li><li>Users need to combine filter criteria</li><li>Large content sets requiring filtering UI</li><li>Building documentation with multiple dimensions (e.g., API docs by language + topic + content type)</li></ul>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[ROLE]
+You're an information architect who designs faceted classification systems.
+
+[INSTRUCTIONS]
+Create a faceted taxonomy for {{CONTENT_DESCRIPTION}} that allows users to filter by:
+{{FACET_1}}
+{{FACET_2}}
+{{FACET_3}}
+{{FACET_4}}
+
+For each piece of content, assign values for all facets.
+
+Provide:
+1. Complete facet definition (facet names and allowed values)
+2. All content classified with all facets (table format)
+3. Most common filter combinations users might want
+4. Recommended default view (what users see first)
+5. Implementation notes for documentation platform
+
+[CONTEXT]
+Content inventory:
+{{CONTENT_ITEMS}}
+
+User needs:
+{{HOW_USERS_WILL_USE_FILTERS}}
+
+Platform constraints:
+{{PLATFORM_CONSTRAINTS}}
+
+[CONSTRAINTS]
+Ensure facet values are:
+- Mutually exclusive within each facet (content has ONE value per facet)
+- Comprehensive (cover all content)
+- User-friendly (match user language)
+- Balanced (avoid empty or near-empty facet values)
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-faceted-classification-content-description">Content description</label>
+        <span class="prompt-fill__hint">Brief description of the content</span>
+        <input type="text" id="pf-faceted-classification-content-description" class="js-prompt-input" data-token="CONTENT_DESCRIPTION" data-placeholder="Brief description of the content" placeholder="Brief description of the content">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-faceted-classification-facet-1">Facet 1</label>
+        <span class="prompt-fill__hint">Name and values, e.g. &quot;Difficulty (values: Beginner | Intermediate | Advanced)&quot;</span>
+        <input type="text" id="pf-faceted-classification-facet-1" class="js-prompt-input" data-token="FACET_1" data-placeholder="Name and values, e.g. &quot;Difficulty (values: Beginner | Intermediate | Advanced)&quot;" placeholder="Name and values, e.g. &quot;Difficulty (values: Beginner | Intermediate | Advanced)&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-faceted-classification-facet-2">Facet 2</label>
+        <span class="prompt-fill__hint">Name and values</span>
+        <input type="text" id="pf-faceted-classification-facet-2" class="js-prompt-input" data-token="FACET_2" data-placeholder="Name and values" placeholder="Name and values">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-faceted-classification-facet-3">Facet 3</label>
+        <span class="prompt-fill__hint">Name and values</span>
+        <input type="text" id="pf-faceted-classification-facet-3" class="js-prompt-input" data-token="FACET_3" data-placeholder="Name and values" placeholder="Name and values">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-faceted-classification-facet-4">Facet 4</label>
+        <span class="prompt-fill__hint">Name and values</span>
+        <input type="text" id="pf-faceted-classification-facet-4" class="js-prompt-input" data-token="FACET_4" data-placeholder="Name and values" placeholder="Name and values">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-faceted-classification-content-items">Content items</label>
+        <span class="prompt-fill__hint">Paste the list of content to classify</span>
+        <textarea id="pf-faceted-classification-content-items" class="js-prompt-input" data-token="CONTENT_ITEMS" data-placeholder="Paste the list of content to classify" placeholder="Paste the list of content to classify"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-faceted-classification-how-users-will-use-filters">How users will use filters</label>
+        <span class="prompt-fill__hint">Describe the filtering scenario</span>
+        <input type="text" id="pf-faceted-classification-how-users-will-use-filters" class="js-prompt-input" data-token="HOW_USERS_WILL_USE_FILTERS" data-placeholder="Describe the filtering scenario" placeholder="Describe the filtering scenario">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-faceted-classification-platform-constraints">Platform constraints</label>
+        <span class="prompt-fill__hint">Technical limitations</span>
+        <input type="text" id="pf-faceted-classification-platform-constraints" class="js-prompt-input" data-token="PLATFORM_CONSTRAINTS" data-placeholder="Technical limitations" placeholder="Technical limitations">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-07.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 7 · 8 of 10</span>
+    <a href="chunk-09.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="../../assets/js/prompt-fill.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

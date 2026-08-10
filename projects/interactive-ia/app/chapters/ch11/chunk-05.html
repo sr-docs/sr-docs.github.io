@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Design Deliverables — Chapter 11 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 11</a>
+      <span aria-hidden="true">›</span>
+      <span>Navigation Design Deliverables</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 5 of 6">5 of 6</div>
+    <div class="mini-nav__links">
+      <a href="chunk-04.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-06.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Visualizing Navigation Design and Producing Deliverables
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Navigation design deliverables move through increasing fidelity: sketches, then wireframes, then mockups, then interactive prototypes. Which fidelity is appropriate depends on the audience and the moment, echoing a principle that runs throughout this course — a rough sketch can align a team quickly in an early ideation session, while a fully annotated wireframe or clickable prototype is what a development team actually needs to build something correctly, especially without ongoing access to the design team during implementation. Reusable navigation components and wireframe templates speed up producing these deliverables consistently across many pages.
+      </p>
+      <p>
+        Presenting this work well matters as much as producing it. Facilitating a design review means setting a clear agenda and specific goals for the feedback being sought, and running an effective critique means keeping feedback focused on the work itself rather than the person who made it, pushing for specific and actionable comments rather than vague reactions, and making sure everyone in the room actually contributes rather than letting one voice dominate.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      A wireframe handed to a remote team with no annotations is really just a picture — the annotations are what turn a picture into instructions someone else can actually build from.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch11-chunk-05" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> An IA team is working on a navigation redesign for a large retail website. They face four distinct communication needs at different project moments: presenting three alternative navigation concepts to the client's leadership team for a decision; aligning the content team on what new navigation categories will require new content; handing off the finalized navigation structure to a remote development team who will implement it without ongoing access to the designers; and conducting usability testing on the new navigation with real participants.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          1. Which fidelity level is most appropriate for presenting three alternative concepts to leadership for a decision?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="moment-1" value="low-fidelity">
+            <span class="exercise__option-text">Low-fidelity sketches or wireframes — enough to compare the concepts clearly without investing in detail a rejected direction wouldn't need</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="moment-1" value="clickable-prototype">
+            <span class="exercise__option-text">A fully interactive clickable prototype for each of the three concepts</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="moment-1" value="annotated-spec">
+            <span class="exercise__option-text">A fully annotated development specification</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          2. Which fidelity level is most appropriate for the remote development team handoff?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="moment-2" value="annotated-wireframes">
+            <span class="exercise__option-text">Fully annotated, high-fidelity wireframes leaving minimal ambiguity</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="moment-2" value="rough-sketch">
+            <span class="exercise__option-text">A rough sketch with no annotation</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="moment-2" value="verbal-summary">
+            <span class="exercise__option-text">A brief verbal summary with no written documentation</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          For the content team alignment moment, propose the appropriate deliverable and explain what it needs to make clear that the leadership-facing deliverable from question 1 would not.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>1 — Low-fidelity sketches or wireframes.</strong> When three concepts are still being compared and one or more will be discarded, investing in full mockups or clickable prototypes for all three wastes effort on directions that won't survive the decision. Low-fidelity deliverables let leadership evaluate and choose between the concepts without the team over-investing before a direction is even confirmed.
+      </p>
+
+      <p>
+        <strong>2 — Fully annotated, high-fidelity wireframes.</strong> A remote team without ongoing access to the designers needs documentation precise enough to resolve questions on its own, since there's no easy way to just ask. A rough, unannotated sketch or a verbal summary would leave far too much open to interpretation for a team implementing without that safety net.
+      </p>
+
+      <span class="feedback__highlight">
+        For the content team, a site map or structural diagram showing exactly what new categories the redesign introduces — and therefore what content needs to be created for them — is the appropriate deliverable. The leadership-facing concept comparison from question 1 is deliberately high-level and built to support a decision between directions; it wouldn't give the content team the structural specificity they need to know precisely which new sections require new content, since that level of detail is exactly what a decision-stage deliverable is meant to leave out.
+      </span>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="prompt-fill" id="navigation-label-optimizer" aria-labelledby="prompt-fill-label-navigation-label-optimizer">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-navigation-label-optimizer">
+      Try It With Your Data — Navigation Label Optimizer
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt is made of (RICE breakdown)</summary>
+      <div class="prompt-fill__guidance-body">
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">R</span>
+          <h4>Role</h4>
+          <p>Casts the AI as: You&#x27;re a UX writer with expertise in SEO, accessibility, and cross-platform design.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">I</span>
+          <h4>Instructions</h4>
+          <p>Spells out exactly what to analyze and return.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">C</span>
+          <h4>Context</h4>
+          <p>Site/product, Target keywords and Current traffic issues tell the AI what your specific situation is, not a generic one.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">E</span>
+          <h4>Expected format</h4>
+          <p>Original vs. optimized comparison with rationale</p>
+        </div>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[R - ROLE]
+You're a UX writer with expertise in SEO, accessibility, and cross-platform design.
+
+[I - INSTRUCTIONS]
+Optimize these navigation labels for {{PLATFORM}}:
+
+{{CURRENT_LABELS}}
+
+Optimize for:
+- SEO: {{SEO_REQUIREMENT}}
+- Accessibility: {{ACCESSIBILITY_LEVEL}}
+- Character limit: {{CHARACTER_LIMIT}}
+- Cross-platform: {{CROSS_PLATFORM_TARGETS}}
+
+Current issues (if any):
+{{CURRENT_ISSUES}}
+
+[C - CONTEXT]
+Site/product: {{SITE_OR_PRODUCT}}
+Target keywords: {{TARGET_KEYWORDS}}
+Current traffic issues: {{CURRENT_TRAFFIC_ISSUES}}
+
+[E - EXPECTED FORMAT]
+Original vs. optimized comparison with rationale
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-navigation-label-optimizer-platform">Platform</label>
+        <span class="prompt-fill__hint">e.g. &quot;desktop web&quot;, &quot;mobile app&quot;</span>
+        <input type="text" id="pf-navigation-label-optimizer-platform" class="js-prompt-input" data-token="PLATFORM" data-placeholder="e.g. &quot;desktop web&quot;, &quot;mobile app&quot;" placeholder="e.g. &quot;desktop web&quot;, &quot;mobile app&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-navigation-label-optimizer-current-labels">Current labels</label>
+        <span class="prompt-fill__hint">One per line</span>
+        <textarea id="pf-navigation-label-optimizer-current-labels" class="js-prompt-input" data-token="CURRENT_LABELS" data-placeholder="One per line" placeholder="One per line"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-navigation-label-optimizer-seo-requirement">SEO requirement</label>
+        <span class="prompt-fill__hint">Is SEO a requirement, and what does it need?</span>
+        <input type="text" id="pf-navigation-label-optimizer-seo-requirement" class="js-prompt-input" data-token="SEO_REQUIREMENT" data-placeholder="Is SEO a requirement, and what does it need?" placeholder="Is SEO a requirement, and what does it need?">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-navigation-label-optimizer-accessibility-level">Accessibility level</label>
+        <span class="prompt-fill__hint">e.g. &quot;WCAG 2.1 AA&quot;</span>
+        <input type="text" id="pf-navigation-label-optimizer-accessibility-level" class="js-prompt-input" data-token="ACCESSIBILITY_LEVEL" data-placeholder="e.g. &quot;WCAG 2.1 AA&quot;" placeholder="e.g. &quot;WCAG 2.1 AA&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-navigation-label-optimizer-character-limit">Character limit</label>
+        <span class="prompt-fill__hint">Max characters per label</span>
+        <input type="text" id="pf-navigation-label-optimizer-character-limit" class="js-prompt-input" data-token="CHARACTER_LIMIT" data-placeholder="Max characters per label" placeholder="Max characters per label">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-navigation-label-optimizer-cross-platform-targets">Cross-platform targets</label>
+        <span class="prompt-fill__hint">Other platforms these labels must work on</span>
+        <input type="text" id="pf-navigation-label-optimizer-cross-platform-targets" class="js-prompt-input" data-token="CROSS_PLATFORM_TARGETS" data-placeholder="Other platforms these labels must work on" placeholder="Other platforms these labels must work on">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-navigation-label-optimizer-current-issues">Current issues</label>
+        <span class="prompt-fill__hint">Known problems with these labels</span>
+        <input type="text" id="pf-navigation-label-optimizer-current-issues" class="js-prompt-input" data-token="CURRENT_ISSUES" data-placeholder="Known problems with these labels" placeholder="Known problems with these labels">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-navigation-label-optimizer-site-or-product">Site or product</label>
+        <span class="prompt-fill__hint">Brief description</span>
+        <input type="text" id="pf-navigation-label-optimizer-site-or-product" class="js-prompt-input" data-token="SITE_OR_PRODUCT" data-placeholder="Brief description" placeholder="Brief description">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-navigation-label-optimizer-target-keywords">Target keywords</label>
+        <span class="prompt-fill__hint">If SEO is relevant</span>
+        <input type="text" id="pf-navigation-label-optimizer-target-keywords" class="js-prompt-input" data-token="TARGET_KEYWORDS" data-placeholder="If SEO is relevant" placeholder="If SEO is relevant">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-navigation-label-optimizer-current-traffic-issues">Current traffic issues</label>
+        <span class="prompt-fill__hint">If known</span>
+        <input type="text" id="pf-navigation-label-optimizer-current-traffic-issues" class="js-prompt-input" data-token="CURRENT_TRAFFIC_ISSUES" data-placeholder="If known" placeholder="If known">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="prompt-fill" id="label-variation-generator" aria-labelledby="prompt-fill-label-label-variation-generator">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-label-variation-generator">
+      Try It With Your Data — Label Variation Generator
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt is made of (RICE breakdown)</summary>
+      <div class="prompt-fill__guidance-body">
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">R</span>
+          <h4>Role</h4>
+          <p>Casts the AI as: You&#x27;re a UX writer specializing in navigation labels and information architecture terminology.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">I</span>
+          <h4>Instructions</h4>
+          <p>Spells out exactly what to analyze and return.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">C</span>
+          <h4>Context</h4>
+          <p>What this section contains, Current audience and Current problem with label tell the AI what your specific situation is, not a generic one.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">E</span>
+          <h4>Expected format</h4>
+          <p>Table comparing all variations with recommendation</p>
+        </div>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[R - ROLE]
+You're a UX writer specializing in navigation labels and information architecture terminology.
+
+[I - INSTRUCTIONS]
+Generate {{NUMBER_OF_VARIATIONS}} label variations for "{{CURRENT_LABEL}}" used in {{CONTEXT}}.
+
+For each variation provide:
+- The label itself
+- Tone (technical/friendly/neutral)
+- Pros and cons
+- Best audience fit
+
+Constraints:
+- Maximum {{MAX_CHARACTERS}} characters
+- {{STYLE_REQUIREMENTS}}
+
+[C - CONTEXT]
+What this section contains: {{WHAT_THIS_SECTION_CONTAINS}}
+Current audience: {{CURRENT_AUDIENCE}}
+Current problem with label: {{PROBLEM_WITH_CURRENT_LABEL}}
+
+[E - EXPECTED FORMAT]
+Table comparing all variations with recommendation
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-label-variation-generator-number-of-variations">Number of variations</label>
+        <span class="prompt-fill__hint">How many to generate, e.g. 5</span>
+        <input type="text" id="pf-label-variation-generator-number-of-variations" class="js-prompt-input" data-token="NUMBER_OF_VARIATIONS" data-placeholder="How many to generate, e.g. 5" placeholder="How many to generate, e.g. 5">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-label-variation-generator-current-label">Current label</label>
+        <span class="prompt-fill__hint">The label you&#x27;re replacing, e.g. &quot;Resources&quot;</span>
+        <input type="text" id="pf-label-variation-generator-current-label" class="js-prompt-input" data-token="CURRENT_LABEL" data-placeholder="The label you&#x27;re replacing, e.g. &quot;Resources&quot;" placeholder="The label you&#x27;re replacing, e.g. &quot;Resources&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-label-variation-generator-context">Context</label>
+        <span class="prompt-fill__hint">Where this label is used</span>
+        <input type="text" id="pf-label-variation-generator-context" class="js-prompt-input" data-token="CONTEXT" data-placeholder="Where this label is used" placeholder="Where this label is used">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-label-variation-generator-max-characters">Max characters</label>
+        <span class="prompt-fill__hint">Character limit</span>
+        <input type="text" id="pf-label-variation-generator-max-characters" class="js-prompt-input" data-token="MAX_CHARACTERS" data-placeholder="Character limit" placeholder="Character limit">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-label-variation-generator-style-requirements">Style requirements</label>
+        <span class="prompt-fill__hint">Any tone/style requirements</span>
+        <input type="text" id="pf-label-variation-generator-style-requirements" class="js-prompt-input" data-token="STYLE_REQUIREMENTS" data-placeholder="Any tone/style requirements" placeholder="Any tone/style requirements">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-label-variation-generator-what-this-section-contains">What this section contains</label>
+        <span class="prompt-fill__hint">Brief description</span>
+        <input type="text" id="pf-label-variation-generator-what-this-section-contains" class="js-prompt-input" data-token="WHAT_THIS_SECTION_CONTAINS" data-placeholder="Brief description" placeholder="Brief description">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-label-variation-generator-current-audience">Current audience</label>
+        <span class="prompt-fill__hint">Who uses this section</span>
+        <input type="text" id="pf-label-variation-generator-current-audience" class="js-prompt-input" data-token="CURRENT_AUDIENCE" data-placeholder="Who uses this section" placeholder="Who uses this section">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-label-variation-generator-problem-with-current-label">Problem with current label</label>
+        <span class="prompt-fill__hint">Why you need alternatives</span>
+        <input type="text" id="pf-label-variation-generator-problem-with-current-label" class="js-prompt-input" data-token="PROBLEM_WITH_CURRENT_LABEL" data-placeholder="Why you need alternatives" placeholder="Why you need alternatives">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="prompt-fill" id="information-scent-evaluator" aria-labelledby="prompt-fill-label-information-scent-evaluator">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-information-scent-evaluator">
+      Try It With Your Data — Information Scent Evaluator
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt is made of (RICE breakdown)</summary>
+      <div class="prompt-fill__guidance-body">
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">R</span>
+          <h4>Role</h4>
+          <p>Casts the AI as: You&#x27;re a UX researcher specializing in information scent and navigation usability.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">I</span>
+          <h4>Instructions</h4>
+          <p>Names 5 specific outputs to produce, so the response comes back structured rather than a general summary.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">C</span>
+          <h4>Context</h4>
+          <p>Site type, Target audience and User goals tell the AI what your specific situation is, not a generic one.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">E</span>
+          <h4>Expected format</h4>
+          <p>Structured evaluation with overall score and priority recommendations</p>
+        </div>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[R - ROLE]
+You're a UX researcher specializing in information scent and navigation usability.
+
+[I - INSTRUCTIONS]
+Evaluate the following navigation labels for information scent:
+
+{{NAVIGATION_LABELS}}
+
+For each label, evaluate:
+1. Information scent score (1-10)
+2. What users expect to find
+3. What they actually find (if different)
+4. Potential confusion points
+5. Improvement suggestion
+
+[C - CONTEXT]
+Site type: {{SITE_TYPE}}
+Target audience: {{TARGET_AUDIENCE}}
+User goals: {{USER_GOALS}}
+
+[E - EXPECTED FORMAT]
+Structured evaluation with overall score and priority recommendations
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-information-scent-evaluator-navigation-labels">Navigation labels</label>
+        <span class="prompt-fill__hint">One per line</span>
+        <textarea id="pf-information-scent-evaluator-navigation-labels" class="js-prompt-input" data-token="NAVIGATION_LABELS" data-placeholder="One per line" placeholder="One per line"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-information-scent-evaluator-site-type">Site type</label>
+        <span class="prompt-fill__hint">Brief description</span>
+        <input type="text" id="pf-information-scent-evaluator-site-type" class="js-prompt-input" data-token="SITE_TYPE" data-placeholder="Brief description" placeholder="Brief description">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-information-scent-evaluator-target-audience">Target audience</label>
+        <span class="prompt-fill__hint">User types</span>
+        <input type="text" id="pf-information-scent-evaluator-target-audience" class="js-prompt-input" data-token="TARGET_AUDIENCE" data-placeholder="User types" placeholder="User types">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-information-scent-evaluator-user-goals">User goals</label>
+        <span class="prompt-fill__hint">Common tasks</span>
+        <input type="text" id="pf-information-scent-evaluator-user-goals" class="js-prompt-input" data-token="USER_GOALS" data-placeholder="Common tasks" placeholder="Common tasks">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-04.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 11 · 5 of 6</span>
+    <a href="chunk-06.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="../../assets/js/prompt-fill.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

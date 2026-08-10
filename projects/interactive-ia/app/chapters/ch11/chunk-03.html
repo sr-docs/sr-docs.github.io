@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Navigation Patterns — Chapter 11 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 11</a>
+      <span aria-hidden="true">›</span>
+      <span>Mobile Navigation Patterns</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 3 of 6">3 of 6</div>
+    <div class="mini-nav__links">
+      <a href="chunk-02.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-04.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Mobile Navigation Patterns
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Mobile navigation patterns all wrestle with the same fundamental trade-off: discoverability versus screen real estate. A horizontal tab bar, typically holding three to five items and staying visible at all times, maximizes discoverability — users can always see their options — but eats into a small screen's already limited space. A hamburger menu does the opposite: it hides the navigation behind a single icon, freeing up nearly the whole screen for content, at the direct cost of making those options invisible until someone taps to reveal them.
+      </p>
+      <p>
+        Accordions and navigation drawers with sequential, drill-down menus offer ways to manage deep hierarchies within a hidden menu once it's open. Hub-and-spoke navigation, common in mobile apps, presents a central hub screen linking out to individual features, with users returning to that hub between visits to each spoke.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      A tab bar keeps everything visible but takes up space every single visitor pays for, whether they need it or not. A hamburger menu costs nothing visually until the moment someone actually needs to navigate — and then it costs them a tap, and a little bit of trust that the right option is even in there.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch11-chunk-03" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A recipe website is redesigning its mobile experience. The site has a moderately complex hierarchy — eight top-level cuisine categories, each with multiple subcategories, plus a secondary hierarchy organized by dietary requirement, cooking time, and occasion. The primary user behavior on mobile is exploratory browsing rather than known-item seeking, and the product team wants maximum content visibility on the home screen.
+        </p>
+        <p>
+          Two team members disagree: one wants a tab bar with five icons for quick access to top categories; the other wants a hamburger menu with accordions to accommodate the full depth of the hierarchy without cluttering the screen.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          Given the emphasis on exploratory browsing and maximum content visibility, which approach fits better?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="pattern-choice" value="hamburger-accordion">
+            <span class="exercise__option-text">Hamburger menu with accordions — it preserves screen space for content, which matters more here than constant visibility of every category given how deep and varied the hierarchy is</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="pattern-choice" value="tab-bar">
+            <span class="exercise__option-text">Tab bar with five icons</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          Name the specific discoverability trade-off your chosen pattern accepts, and propose one additional navigation feature that would help mitigate it.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>The hamburger menu with accordions is the stronger fit.</strong> A tab bar realistically holds three to five items, which can't come close to representing eight top-level cuisine categories plus an entirely separate secondary hierarchy by dietary requirement, cooking time, and occasion — something would have to be omitted or compressed regardless. A hamburger menu with accordions can house that full depth without permanently occupying screen space, which directly serves the team's stated goal of maximizing content visibility on the home screen.
+      </p>
+
+      <span class="feedback__highlight">
+        The trade-off being accepted here is discoverability: hiding the navigation behind a hamburger icon means the full richness of the hierarchy — all eight cuisines, all the secondary filtering options — is invisible until someone deliberately taps to open it. For a site whose primary behavior is exploratory browsing, this is a real cost, since exploratory users benefit especially from seeing options laid out in front of them rather than having to go looking for a menu first.
+      </span>
+
+      <p>
+        A reasonable mitigation is featuring a curated selection of popular or seasonal recipes directly on the home screen, outside the hidden menu entirely — giving exploratory browsers something immediately visible to engage with, so the full hierarchy sitting behind the hamburger icon isn't the only way into the site's content. This doesn't eliminate the discoverability trade-off, but it offsets it by giving the majority use case — casual, exploratory browsing — a visible starting point that doesn't depend on the hidden menu at all.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="prompt-fill" id="mobile-navigation-auditor" aria-labelledby="prompt-fill-label-mobile-navigation-auditor">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-mobile-navigation-auditor">
+      Try It With Your Data — Mobile Navigation Auditor
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt does</summary>
+      <div class="prompt-fill__guidance-body prompt-fill__guidance-body--simple">
+        <p>Evaluate navigation structures specifically for mobile device constraints including thumb zones, screen size limitations, touch targets, and mobile-specific interaction patterns.</p>
+        <ul><li>Auditing responsive navigation designs</li><li>Evaluating mobile-first documentation sites</li><li>Before launching mobile app documentation</li><li>When mobile analytics show high bounce rates</li></ul>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">Audit this navigation for mobile usability:
+
+NAVIGATION STRUCTURE:
+{{NAVIGATION_STRUCTURE}}
+
+MOBILE CONTEXT:
+- Mobile menu pattern: {{MOBILE_MENU_PATTERN}}
+- Mobile traffic: {{MOBILE_TRAFFIC_SHARE}}% of total traffic
+- Primary mobile use cases: {{PRIMARY_MOBILE_USE_CASES}}
+- Current mobile issues (if known): {{CURRENT_MOBILE_ISSUES}}
+
+MOBILE AUDIT CRITERIA:
+
+1. THUMB ZONE ANALYSIS
+   - Can primary navigation be reached with thumb?
+   - Are critical actions in "easy reach" zone?
+   - Any important items in "hard to reach" corners?
+
+2. DEPTH & TAP COUNT
+   - How many taps to reach key content?
+   - Maximum depth before users get lost?
+   - "Accordion hell" - too many nested menus?
+
+3. TOUCH TARGET SIZING
+   - Are menu items large enough (minimum 44x44px)?
+   - Adequate spacing between tap targets?
+   - Any precision-tap requirements?
+
+4. SCREEN REAL ESTATE
+   - Navigation taking too much space?
+   - Content visible vs navigation chrome ratio?
+   - Menu items cut off or requiring scroll?
+
+5. COGNITIVE LOAD
+   - How many items visible at once (7±2 ideal)?
+   - Clear hierarchy in collapsed state?
+   - Can users maintain orientation?
+
+6. PATTERN APPROPRIATENESS
+   - Is the menu pattern right for this content?
+   - Hamburger hiding critical navigation?
+   - Bottom nav limited to 5 items max?
+
+7. COMMON MOBILE ANTI-PATTERNS
+   - Hover-dependent interactions
+   - Tiny close buttons (< 44px)
+   - Modal takeovers blocking content
+   - Carousels requiring precise swipe
+   - Links too close together
+
+OUTPUT FORMAT:
+1. Mobile navigation scorecard (1-5 per criterion)
+2. Critical issues requiring immediate fix
+3. Recommended mobile navigation pattern
+4. Specific improvement recommendations
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-mobile-navigation-auditor-navigation-structure">Navigation structure</label>
+        <span class="prompt-fill__hint">Paste your current navigation or sitemap</span>
+        <textarea id="pf-mobile-navigation-auditor-navigation-structure" class="js-prompt-input" data-token="NAVIGATION_STRUCTURE" data-placeholder="Paste your current navigation or sitemap" placeholder="Paste your current navigation or sitemap"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-mobile-navigation-auditor-mobile-menu-pattern">Mobile menu pattern</label>
+        <span class="prompt-fill__hint">Pick the pattern you use.</span>
+        <select id="pf-mobile-navigation-auditor-mobile-menu-pattern" class="js-prompt-input" data-token="MOBILE_MENU_PATTERN">
+          <option value="Hamburger">Hamburger</option>
+          <option value="Bottom nav">Bottom nav</option>
+          <option value="Tabs">Tabs</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-mobile-navigation-auditor-mobile-traffic-share">Mobile traffic share</label>
+        <span class="prompt-fill__hint">Percentage of total traffic, e.g. 45</span>
+        <input type="text" id="pf-mobile-navigation-auditor-mobile-traffic-share" class="js-prompt-input" data-token="MOBILE_TRAFFIC_SHARE" data-placeholder="Percentage of total traffic, e.g. 45" placeholder="Percentage of total traffic, e.g. 45">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-mobile-navigation-auditor-primary-mobile-use-cases">Primary mobile use cases</label>
+        <span class="prompt-fill__hint">What users do on mobile</span>
+        <input type="text" id="pf-mobile-navigation-auditor-primary-mobile-use-cases" class="js-prompt-input" data-token="PRIMARY_MOBILE_USE_CASES" data-placeholder="What users do on mobile" placeholder="What users do on mobile">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-mobile-navigation-auditor-current-mobile-issues">Current mobile issues</label>
+        <span class="prompt-fill__hint">Known pain points, if any</span>
+        <input type="text" id="pf-mobile-navigation-auditor-current-mobile-issues" class="js-prompt-input" data-token="CURRENT_MOBILE_ISSUES" data-placeholder="Known pain points, if any" placeholder="Known pain points, if any">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-02.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 11 · 3 of 6</span>
+    <a href="chunk-04.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="../../assets/js/prompt-fill.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

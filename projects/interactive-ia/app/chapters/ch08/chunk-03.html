@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writing Usage Scenarios — Chapter 8 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 8</a>
+      <span aria-hidden="true">›</span>
+      <span>Writing Usage Scenarios</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 3 of 8">3 of 8</div>
+    <div class="mini-nav__links">
+      <a href="chunk-02.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-04.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Writing Usage Scenarios
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        If a persona is a character, a usage scenario is the plot — a story of how that persona interacts with a proposed information space to accomplish something real. Scenarios describe the future, not the present: they envision an ideal experience unconstrained by existing business or technical limitations, which is precisely what makes them useful for opening up genuine design possibilities rather than just reproducing what already exists.
+      </p>
+      <p>
+        A well-formed scenario stays focused on behavior — what the persona is trying to do and why — rather than describing specific interface elements like buttons or menus. Writing one generally moves through establishing context, describing the persona's goals and motivations, analyzing the tasks involved, walking through a realistic happy-path version of events, considering what obstacles might arise, exploring more complex variants, and finally defining what a successful outcome actually looks like for that persona.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      A scenario that describes which button someone clicks has already quietly become a design specification. A scenario that describes what someone is trying to accomplish is still doing its actual job — leaving the "how" open for design to solve.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch08-chunk-03" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A UX team has written three usage scenarios for a healthcare patient portal, each meant to represent the same persona's need to review recent lab results.
+        </p>
+        <p>
+          <strong>Scenario A:</strong> "Maria just received a notification that her lab results are ready. She's anxious to know whether her cholesterol levels have improved since her last visit, since she's been working hard on her diet. She logs in wanting a fast answer and enough context to understand whether she needs to worry or can relax."
+        </p>
+        <p>
+          <strong>Scenario B:</strong> "Maria logs in, clicks the blue 'Results' tab in the top navigation bar, then clicks the dropdown menu to filter by 'Last 30 Days,' then clicks on the cholesterol panel entry to expand it, then clicks 'Compare to Previous' to see the trend line."
+        </p>
+        <p>
+          <strong>Scenario C:</strong> "Maria wants to view her health information."
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          Which scenario is well-formed — focused on behavior, context, and motivation without specifying interface details?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="well-formed" value="a">
+            <span class="exercise__option-text">Scenario A</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="well-formed" value="b">
+            <span class="exercise__option-text">Scenario B</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="well-formed" value="c">
+            <span class="exercise__option-text">Scenario C</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          Scenario B has drifted into interface specification, and Scenario C is too abstract to be useful for design. Rewrite one sentence from each — just one per scenario — to demonstrate the correction, without turning either into a full rewrite.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write your corrected sentences here, one for each scenario."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>Scenario A is well-formed.</strong> It establishes context (a notification prompted the visit), motivation (anxiety about cholesterol given recent diet effort), and what success looks like (enough clarity to know whether to worry or relax) — all without dictating a single interface element. This leaves the actual "how" open for design to solve, which is exactly what a scenario at this stage should do.
+      </p>
+
+      <span class="feedback__highlight">
+        Scenario B has quietly become a specification rather than a scenario — "clicks the blue Results tab," "clicks the dropdown menu," "clicks Compare to Previous" are all interface decisions that should be the outcome of design work informed by a scenario like A, not baked into the scenario itself. Writing scenarios this way forecloses design options before they've been explored — if the team later discovers a better interaction pattern than tabs and dropdowns, a scenario written this specifically actively resists that discovery.
+      </span>
+
+      <p>
+        Scenario C fails in the opposite direction — "wants to view her health information" is a goal so generic it could describe almost any patient doing almost anything on the portal. It provides no context, no specific motivation, and no way to judge what a successful outcome would actually look like for Maria in this moment. A corrected version of Scenario B's opening sentence might read: "Maria wants to see whether her cholesterol has changed since her last test" — behavior and goal, no interface. A corrected version of Scenario C might read: "Maria wants to know if a specific recent lab result is normal or something she should be concerned about" — specific enough to be useful, but still free of any interface assumption.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-02.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 8 · 3 of 8</span>
+    <a href="chunk-04.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

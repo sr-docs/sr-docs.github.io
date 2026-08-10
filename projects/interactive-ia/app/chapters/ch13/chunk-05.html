@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Validation Checkpoint — Chapter 13 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 13</a>
+      <span aria-hidden="true">›</span>
+      <span>Research Validation Checkpoint</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 5 of 5">5 of 5</div>
+    <div class="mini-nav__links">
+      <a href="index.html">← Chapter overview</a>
+      <span class="spacer"></span>
+      <span></span>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Research Validation Checkpoint
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Ask a model to synthesise research and it will produce something that reads like a finding whether or not the data supports it. Patterns come back stronger than the evidence warrants, paraphrases appear inside quotation marks, and a theme two participants mentioned becomes what "users" want. None of this is announced — the output looks the same either way. This prompt is a gate rather than a generator: it walks each claim in a synthesis back to the source material and asks what actually supports it.
+      </p>
+      <p>
+        For that to mean anything you have to supply the original data, not a summary of it. Validating a synthesis against another synthesis just launders the same errors. Expect the check to be genuinely useful on quote accuracy and pattern strength, and less dependable on the inference step, where it is evaluating reasoning of exactly the kind it produces itself. Treat a clean pass as a reason to look harder at the conclusions rather than a reason to stop looking, and hand-check a few claims — some flagged, some not — before any of it reaches a stakeholder.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      The check runs against the source data or it isn't a check. A validation pass on a summary tells you the summary is internally consistent, which was never the question.
+    </p>
+
+  </section>
+
+
+  <section class="prompt-fill" id="research-validation-checkpoint" aria-labelledby="prompt-fill-label-research-validation-checkpoint">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-research-validation-checkpoint">
+      Try It With Your Data — Research Validation Checkpoint
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt does</summary>
+      <div class="prompt-fill__guidance-body prompt-fill__guidance-body--simple">
+        <p>Validate AI-assisted research synthesis against original data, checking for hallucinations, misinterpretations, and unsupported conclusions before using findings for IA decisions.</p>
+        <ul><li>After AI generates personas, journey maps, or research summaries</li><li>Before presenting research findings to stakeholders</li><li>When AI-generated insights will drive IA decisions</li><li>As quality gate in research synthesis workflows</li></ul>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">Validate this AI-generated research synthesis against the original source data:
+
+AI-GENERATED SYNTHESIS:
+{{AI_GENERATED_SYNTHESIS}}
+
+ORIGINAL SOURCE DATA:
+{{ORIGINAL_SOURCE_DATA}}
+
+RESEARCH OBJECTIVES:
+- {{RESEARCH_OBJECTIVES}}
+
+VALIDATION CHECKLIST:
+
+1. CLAIM VERIFICATION
+   For each factual claim or insight in the synthesis:
+   - Is there direct supporting evidence in the source data?
+   - Quote the specific evidence that supports it
+   - Flag if no evidence found (potential hallucination)
+
+2. QUOTE ACCURACY
+   For each quote used in the synthesis:
+   - Is it verbatim from the source?
+   - Is it used in appropriate context?
+   - Flag any paraphrased-as-quoted or out-of-context usage
+
+3. PATTERN VALIDATION
+   For each pattern or theme identified:
+   - How many data points support this pattern?
+   - Is the pattern strength accurately represented?
+   - Flag overstatements (e.g., "all users" when only 2 mentioned it)
+
+4. MISSING CONTEXT
+   - What important information from sources was omitted?
+   - Are there contradicting data points not mentioned?
+   - Were outlier perspectives excluded?
+
+5. INFERENCE CHECK
+   For conclusions or recommendations:
+   - Is the logic from data → conclusion sound?
+   - Are assumptions stated or hidden?
+   - Could the data support alternative interpretations?
+
+6. CONFIDENCE CALIBRATION
+   - Are certainty levels appropriate given sample size?
+   - Should hedging language be added/removed?
+
+OUTPUT FORMAT:
+1. Validation summary (Pass/Needs Revision/Fail)
+2. Verified claims with evidence citations
+3. Flagged issues requiring correction
+4. Recommended revisions
+5. Confidence assessment</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-research-validation-checkpoint-ai-generated-synthesis">AI-generated synthesis</label>
+        <span class="prompt-fill__hint">Paste the persona, journey map, or summary the AI produced</span>
+        <textarea id="pf-research-validation-checkpoint-ai-generated-synthesis" class="js-prompt-input" data-token="AI_GENERATED_SYNTHESIS" data-placeholder="Paste the persona, journey map, or summary the AI produced" placeholder="Paste the persona, journey map, or summary the AI produced"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-research-validation-checkpoint-original-source-data">Original source data</label>
+        <span class="prompt-fill__hint">Paste the original transcripts, notes, or data</span>
+        <textarea id="pf-research-validation-checkpoint-original-source-data" class="js-prompt-input" data-token="ORIGINAL_SOURCE_DATA" data-placeholder="Paste the original transcripts, notes, or data" placeholder="Paste the original transcripts, notes, or data"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-research-validation-checkpoint-research-objectives">Research objectives</label>
+        <span class="prompt-fill__hint">What the research was trying to learn</span>
+        <input type="text" id="pf-research-validation-checkpoint-research-objectives" class="js-prompt-input" data-token="RESEARCH_OBJECTIVES" data-placeholder="What the research was trying to learn" placeholder="What the research was trying to learn">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="index.html">← Chapter overview</a>
+    <span class="chunk-footer__center">Chapter 13 · 5 of 5</span>
+    <a href="../ch14/chunk-01.html" class="chunk-footer__next-chapter">Next: Chapter 14 <span>· Research Synthesis Toolkit</span> →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/prompt-fill.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

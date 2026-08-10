@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Icons and Translation — Chapter 9 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 9</a>
+      <span aria-hidden="true">›</span>
+      <span>Icons and Translation</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 4 of 8">4 of 8</div>
+    <div class="mini-nav__links">
+      <a href="chunk-03.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-05.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Icons and Translation: Labeling Under Constraint
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Icons work best when every concept in a set can be represented clearly as a physical object — a magnifying glass for search, a house for home — and struggle badly with abstract concepts that have no natural visual form. Even when icons work, combining them with text labels is generally the safer choice; relying on icons alone risks leaving part of the audience guessing, and only truly frequent users tend to learn a purely visual vocabulary well enough to navigate by icon alone.
+      </p>
+      <p>
+        Translation introduces a different kind of constraint. Labels can grow by as much as fifty percent in length once translated, which means layouts built tightly around short English labels can break under languages that simply need more room to say the same thing. Some languages also form long, unbroken compound words that resist natural line wrapping, and literal translation can occasionally produce a phrase that means something completely different from what was intended. The safest approach is considering translation needs from the start, rather than trying to retrofit a rigid layout after the fact.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      A label that works perfectly in English and a label that survives translation into six languages are not the same design problem — and building for only the first one means rebuilding later, under pressure, for the second.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch09-chunk-04" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A travel booking platform is expanding from English-only to six additional languages, including Arabic and one other right-to-left script. The current navigation system relies on icons paired with text for some links but uses icon-only buttons for others, has a URL structure with English words embedded directly in category paths, and uses several idiomatic English calls to action, including a checkout button labeled "Let's Roll."
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          Which current design decision will cause the most serious problems once translated into all six new languages?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="worst-problem" value="icon-only">
+            <span class="exercise__option-text">The icon-only buttons, since without accompanying text they offer nothing for translation to attach to, leaving non-English speakers with the same ambiguity English speakers already have</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="worst-problem" value="url-structure">
+            <span class="exercise__option-text">The English words embedded in URL paths, since this is purely a cosmetic issue with no real user impact</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="worst-problem" value="none">
+            <span class="exercise__option-text">None of these will cause meaningful problems</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          The idiomatic checkout button "Let's Roll" is also a real risk. Explain specifically why idiomatic phrases like this are dangerous in translation, and propose three labeling principles the team should adopt before internationalization begins.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>The icon-only buttons are the most serious problem.</strong> Text labels can be translated; a bare icon with no accompanying text has nothing for translation to improve. If those icons were already ambiguous for some English-speaking users, that same ambiguity carries over entirely unchanged into every new language — translation simply can't fix a labeling problem that was never expressed in words to begin with. The English-in-URL issue is real but far lower stakes by comparison; it affects technical readability of the path, not comprehension of the interface itself.
+      </p>
+
+      <span class="feedback__highlight">
+        Idiomatic phrases like "Let's Roll" are dangerous specifically because their meaning doesn't come from the individual words — a literal translation could produce something nonsensical or, worse, something that reads as genuinely confusing or even alarming in another language and culture, since the phrase's actual meaning ("let's proceed" or "let's get started") has nothing to do with what the individual translated words would literally say.
+      </span>
+
+      <p>
+        Three reasonable principles for this team going forward: first, always pair icons with text labels rather than relying on icon-only buttons, so every visual element has translatable text attached to it. Second, avoid idioms, slang, and culturally specific phrasing in favor of plain, literal language that translates predictably — "Complete Purchase" instead of "Let's Roll." Third, design layouts with flexible width for labels from the start, anticipating that translated text may run up to fifty percent longer, and test the right-to-left script specifically, since Arabic will also require the interface's overall reading direction and layout to adapt, not just the individual words.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-03.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 9 · 4 of 8</span>
+    <a href="chunk-05.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompt Chain Designer — Chapter 13 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 13</a>
+      <span aria-hidden="true">›</span>
+      <span>Prompt Chain Designer</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 2 of 5">2 of 5</div>
+    <div class="mini-nav__links">
+      <a href="index.html">← Chapter overview</a>
+      <span class="spacer"></span>
+      <a href="chunk-03.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Prompt Chain Designer
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Some IA tasks are too big for one prompt. Ask a model to read forty interview excerpts, derive themes, propose a taxonomy, and validate that taxonomy against the themes, and you will get something plausible for all four steps and dependable for none — the later steps quietly invent the evidence the earlier steps were supposed to supply. A <strong>prompt chain</strong> splits the work into stages, each with its own prompt, its own output format, and a point where you look at the result before it becomes the input to the next stage.
+      </p>
+      <p>
+        Chains earn their complexity when there is a genuine handoff: discovery producing material that analysis consumes, analysis producing candidates that synthesis ranks. They are wasted effort when the stages are really one question cut into pieces. Be concrete about where a human has to look, because that is the part a model will otherwise design away in the interest of a tidy workflow. Then read the chain it produces and check the handoffs specifically — if stage three's prompt does not name the exact output stage two produced, the chain breaks the first time you run it.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      The value of a chain isn't the number of steps. It's the checkpoints between them — the places where a wrong turn gets caught before it's baked into everything downstream.
+    </p>
+
+  </section>
+
+
+  <section class="prompt-fill" id="prompt-chain-designer" aria-labelledby="prompt-fill-label-prompt-chain-designer">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-prompt-chain-designer">
+      Try It With Your Data — Prompt Chain Designer
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt does</summary>
+      <div class="prompt-fill__guidance-body prompt-fill__guidance-body--simple">
+        <p>Design multi-step prompt workflows where the output of one prompt becomes the input to the next, creating systematic processes for complex IA tasks with built-in validation checkpoints.</p>
+        <ul><li>Complex IA tasks that can&#x27;t be done in a single prompt</li><li>Tasks requiring multiple analysis phases (discovery → analysis → synthesis)</li><li>Workflows needing human review between steps</li><li>Creating reusable multi-step processes for teams</li></ul>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">Design a prompt chain workflow for {{TASK_DESCRIPTION}}.
+
+TASK OVERVIEW:
+- Goal: {{FINAL_OUTCOME_DESIRED}}
+- Input: {{STARTING_INPUT}}
+- Output: {{DELIVERABLE_NEEDED}}
+- Complexity: {{WHY_MULTIPLE_STEPS}}
+
+WORKFLOW REQUIREMENTS:
+- Number of stages: {{NUMBER_OF_STAGES}}
+- Human checkpoints: {{HUMAN_CHECKPOINTS}}
+- Validation needs: {{VALIDATION_NEEDS}}
+
+For each stage in the chain, provide:
+
+1. STAGE NAME AND PURPOSE
+   - What this stage accomplishes
+   - Why it's a separate step (not combined with others)
+
+2. INPUTS
+   - What data/content this stage receives
+   - What context from previous stages is needed
+
+3. THE PROMPT
+   - Complete, ready-to-use prompt text
+   - Uses RICE framework (Role, Instructions, Context, Examples)
+   - Specifies exact output format
+
+4. EXPECTED OUTPUT
+   - What this stage produces
+   - Format specification
+   - What gets passed to next stage
+
+5. VALIDATION CHECKPOINT
+   - What to verify before proceeding
+   - Human review questions
+   - Go/no-go criteria
+
+6. HANDOFF INSTRUCTIONS
+   - How to prepare output for next stage
+   - What to copy/paste
+   - Any transformations needed
+
+ALSO PROVIDE:
+- Visual workflow diagram (ASCII or description)
+- Estimated time per stage
+- Common failure points and how to recover
+- Tips for maintaining context across stages
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-prompt-chain-designer-task-description">Task description</label>
+        <span class="prompt-fill__hint">Brief description of the complex task</span>
+        <input type="text" id="pf-prompt-chain-designer-task-description" class="js-prompt-input" data-token="TASK_DESCRIPTION" data-placeholder="Brief description of the complex task" placeholder="Brief description of the complex task">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-prompt-chain-designer-final-outcome-desired">Final outcome desired</label>
+        <span class="prompt-fill__hint">What you want at the end</span>
+        <input type="text" id="pf-prompt-chain-designer-final-outcome-desired" class="js-prompt-input" data-token="FINAL_OUTCOME_DESIRED" data-placeholder="What you want at the end" placeholder="What you want at the end">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-prompt-chain-designer-starting-input">Starting input</label>
+        <span class="prompt-fill__hint">What data or content you start with</span>
+        <input type="text" id="pf-prompt-chain-designer-starting-input" class="js-prompt-input" data-token="STARTING_INPUT" data-placeholder="What data or content you start with" placeholder="What data or content you start with">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-prompt-chain-designer-deliverable-needed">Deliverable needed</label>
+        <span class="prompt-fill__hint">What you need to end up with</span>
+        <input type="text" id="pf-prompt-chain-designer-deliverable-needed" class="js-prompt-input" data-token="DELIVERABLE_NEEDED" data-placeholder="What you need to end up with" placeholder="What you need to end up with">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-prompt-chain-designer-why-multiple-steps">Why multiple steps</label>
+        <span class="prompt-fill__hint">Why this can&#x27;t be one prompt</span>
+        <input type="text" id="pf-prompt-chain-designer-why-multiple-steps" class="js-prompt-input" data-token="WHY_MULTIPLE_STEPS" data-placeholder="Why this can&#x27;t be one prompt" placeholder="Why this can&#x27;t be one prompt">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-prompt-chain-designer-number-of-stages">Number of stages</label>
+        <span class="prompt-fill__hint">A number, or &quot;determine optimal&quot;</span>
+        <input type="text" id="pf-prompt-chain-designer-number-of-stages" class="js-prompt-input" data-token="NUMBER_OF_STAGES" data-placeholder="A number, or &quot;determine optimal&quot;" placeholder="A number, or &quot;determine optimal&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-prompt-chain-designer-human-checkpoints">Human checkpoints</label>
+        <span class="prompt-fill__hint">Where human review is needed</span>
+        <input type="text" id="pf-prompt-chain-designer-human-checkpoints" class="js-prompt-input" data-token="HUMAN_CHECKPOINTS" data-placeholder="Where human review is needed" placeholder="Where human review is needed">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-prompt-chain-designer-validation-needs">Validation needs</label>
+        <span class="prompt-fill__hint">What must be verified between steps</span>
+        <input type="text" id="pf-prompt-chain-designer-validation-needs" class="js-prompt-input" data-token="VALIDATION_NEEDS" data-placeholder="What must be verified between steps" placeholder="What must be verified between steps">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="index.html">← Chapter overview</a>
+    <span class="chunk-footer__center">Chapter 13 · 2 of 5</span>
+    <a href="chunk-03.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/prompt-fill.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

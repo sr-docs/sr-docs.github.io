@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Information Ecosystems — Chapter 1 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <!-- ==========================================
+       MINI-NAV
+  =========================================== -->
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="../ch01/index.html">Chapter 1</a>
+      <span aria-hidden="true">›</span>
+      <span>Information Ecosystems</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 3 of 5">3 of 5</div>
+    <div class="mini-nav__links">
+      <a href="chunk-02.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-04.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <!-- ==========================================
+       CONCEPT
+  =========================================== -->
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Information Ecosystems
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Every digital information space exists within a broader ecosystem — a network of interconnected users, content, business goals, and context. None of these components operates independently. The users bring their mental models and information needs. The content must serve both the users and the business. The business has strategic goals that shape what gets built and why. The context includes the competitive landscape, other information spaces the organization runs, and the channels through which people access information.
+      </p>
+      <p>
+        Effective information architects design for the whole ecosystem, not just the individual page or product in front of them. When one component is neglected, the consequences show up elsewhere — often in ways that are difficult to diagnose without understanding the system.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      Think of it like a building: the structure, the people who use it, and the neighbourhood it sits in all affect whether the building works. You can't design just the interior and call it done.
+    </p>
+
+  </section>
+
+
+  <!-- ==========================================
+       EXERCISE
+  =========================================== -->
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch01-chunk-03" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> Meridian is a mid-sized financial services company redesigning their customer portal. The project has been running for four months. Here's what the team has done so far:
+        </p>
+        <p>
+          They conducted twelve user interviews and have detailed personas representing three distinct customer types. They audited all existing content and have a complete content inventory. The development team has confirmed a CMS that supports structured content and faceted navigation.
+        </p>
+        <p>
+          The lead IA presents the proposed information architecture to the steering committee. The head of Marketing immediately objects: <em>"This structure doesn't reflect our product strategy at all. We're about to launch two new product lines, and I have no idea where they'd live in this. And why are we organizing by customer type? Our competitors organize by product."</em>
+        </p>
+        <p>
+          The IA is caught off guard. The project has been running for four months and this is the first time anyone from Marketing has raised these concerns.
+        </p>
+      </div>
+
+      <!-- Question -->
+      <fieldset style="border:none; padding:0; margin-bottom: 1.75rem;">
+        <legend style="font-size:1rem; line-height:1.75; margin-bottom:1rem; font-weight:500;">
+          Which component of the information ecosystem did this team neglect, and what is the most likely consequence of that neglect for the IA?
+        </legend>
+
+        <ul class="exercise__options" role="list">
+
+          <li>
+            <label class="exercise__option js-option">
+              <input type="radio" name="ecosystem-component" value="users">
+              <span class="exercise__option-text">
+                <strong>Users</strong> — the team didn't research actual customers deeply enough, so the personas don't reflect real information needs.
+              </span>
+            </label>
+          </li>
+
+          <li>
+            <label class="exercise__option js-option">
+              <input type="radio" name="ecosystem-component" value="content">
+              <span class="exercise__option-text">
+                <strong>Content</strong> — the content inventory is incomplete, so the new product lines have no home in the proposed structure.
+              </span>
+            </label>
+          </li>
+
+          <li>
+            <label class="exercise__option js-option">
+              <input type="radio" name="ecosystem-component" value="business">
+              <span class="exercise__option-text">
+                <strong>Business</strong> — the team designed without understanding the organization's strategy and competitive context, so the IA doesn't align with business goals.
+              </span>
+            </label>
+          </li>
+
+          <li>
+            <label class="exercise__option js-option">
+              <input type="radio" name="ecosystem-component" value="context">
+              <span class="exercise__option-text">
+                <strong>Context</strong> — the team didn't analyse competitor information spaces, so they missed an industry-standard organizational pattern.
+              </span>
+            </label>
+          </li>
+
+        </ul>
+      </fieldset>
+
+      <!-- Justification -->
+      <div class="exercise__justification">
+        <label for="justification">
+          What should the team do now — and what does this situation reveal about when in the process business stakeholders should be involved?
+        </label>
+        <textarea
+          id="justification"
+          name="justification"
+          required
+          placeholder="Write a few sentences. There's no single correct answer here — think through the practical consequences."
+          aria-describedby="justification-hint"
+        ></textarea>
+        <span id="justification-hint" class="sr-only">
+          Write at least a sentence or two before committing.
+        </span>
+      </div>
+
+      <!-- Commit -->
+      <button
+        type="button"
+        class="exercise__commit js-commit"
+        disabled
+        aria-label="Commit your answer and reveal feedback"
+      >
+        Commit answer
+      </button>
+
+      <!-- Complete indicator (hidden until commit) -->
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <!-- ==========================================
+       FEEDBACK (hidden until commit)
+  =========================================== -->
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        The correct answer is <strong>Business</strong> — though the competitor point in the Context option is real and worth noting separately.
+      </p>
+
+      <span class="feedback__highlight">
+        The team conducted thorough user research and content analysis, but they never engaged with business stakeholders to understand Meridian's product strategy, competitive positioning, or upcoming launches. The Marketing head's objection isn't a late-stage preference — it's a foundational misalignment that has been sitting undetected for four months.
+      </span>
+
+      <p>
+        The consequence is significant. An IA organized around customer types may be the right answer for users, but if it contradicts the business's product strategy, it will be rejected — or worse, implemented and then undermined by stakeholders who route around it. An information architecture is a tangible expression of business strategy. When the strategy hasn't been understood, the IA expresses the wrong thing.
+      </p>
+
+      <p>
+        <strong>On the competitor point:</strong> the Marketing head mentions it, but it's a symptom of the business neglect rather than a separate problem. Had the team conducted stakeholder research early, the competitive landscape would have surfaced as part of understanding the business context.
+      </p>
+
+      <p>
+        <strong>What the team should do now:</strong> pause and conduct stakeholder interviews before proceeding. The IA strategy needs to be grounded in the business strategy before the structural decisions can be validated. This means going back to the steering committee — including Marketing — to understand the product roadmap, the competitive positioning, and what the portal is meant to accomplish commercially.
+      </p>
+
+      <p>
+        <strong>What this reveals about timing:</strong> business stakeholders should be involved at the very start of Discovery — before personas are created, before content is inventoried, and certainly before structural decisions are made. Their input defines the constraints within which all other IA decisions operate. Involving them at the presentation stage, after the work is done, means discovering fundamental misalignments when change is most expensive.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==========================================
+       CHUNK FOOTER NAV
+  =========================================== -->
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-02.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 1 · 3 of 5</span>
+    <a href="chunk-04.html">Next chunk →</a>
+  </nav>
+
+</div><!-- /course-wrap -->
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

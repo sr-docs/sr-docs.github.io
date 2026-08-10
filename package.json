@@ -1,0 +1,17 @@
+{
+  "name": "sr-docs.github.io",
+  "version": "1.0.0",
+  "description": "Portfolio landing site for [sr-docs.github.io](https://sr-docs.github.io) — projects, static HTML demos, blog, and about.",
+  "main": "index.js",
+  "scripts": {
+    "convert-blog": "node scripts/convert-blog.mjs",
+    "build:nimbuswiz": "node scripts/build-nimbuswiz.mjs",
+    "preview": "npx --yes serve -c serve.json -l 3456 ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "marked": "^18.0.9"
+  }
+}

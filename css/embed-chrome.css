@@ -1,0 +1,238 @@
+/* Portfolio chrome only — safe to load over self-contained apps (e.g. Docusaurus). */
+.site-header--embed,
+.site-footer--embed {
+  --ink: #15202b;
+  --ink-soft: #3d4f5f;
+  --mist: #e7eef5;
+  --paper: #f5f8fb;
+  --line: rgba(21, 32, 43, 0.12);
+  --accent: #0b6e6e;
+  --accent-deep: #084f4f;
+  --header-bg: rgba(245, 248, 251, 0.92);
+  --card-bg: rgba(255, 255, 255, 0.55);
+  --card-bg-hover: rgba(255, 255, 255, 0.82);
+  --card-border-hover: rgba(11, 110, 110, 0.35);
+  --font-display: "DM Sans", system-ui, sans-serif;
+  --font-ui: "DM Sans", system-ui, sans-serif;
+}
+
+html[data-theme="dark"] .site-header--embed,
+html[data-theme="dark"] .site-footer--embed {
+  --ink: #e8eef4;
+  --ink-soft: #9aadbd;
+  --mist: #1a2430;
+  --paper: #121a22;
+  --line: rgba(232, 238, 244, 0.12);
+  --accent: #3db8b8;
+  --accent-deep: #6fd4d4;
+  --header-bg: rgba(18, 26, 34, 0.92);
+  --card-bg: rgba(26, 36, 48, 0.72);
+  --card-bg-hover: rgba(32, 44, 58, 0.92);
+  --card-border-hover: rgba(61, 184, 184, 0.4);
+}
+
+.site-header--embed {
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  padding: 0.9rem 1.5rem;
+  backdrop-filter: blur(14px);
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-ui);
+}
+
+.site-header--embed .brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.site-header--embed .brand span {
+  color: var(--accent);
+}
+
+.site-header--embed .header-start {
+  display: flex;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  min-width: 0;
+}
+
+.site-header--embed .header-tools {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin-left: auto;
+}
+
+.site-header--embed .nav {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: 0.92rem;
+}
+
+.site-header--embed .nav--meta {
+  justify-content: flex-end;
+}
+
+@media (max-width: 1100px) {
+  .site-header--embed {
+    gap: 0.75rem 1rem;
+    padding: 0.8rem 1.15rem;
+  }
+
+  .site-header--embed .header-start,
+  .site-header--embed .header-tools {
+    gap: 0.75rem 1rem;
+  }
+
+  .site-header--embed .nav {
+    gap: 0.9rem;
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 860px) {
+  .site-header--embed {
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 0.75rem;
+    row-gap: 0.55rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .site-header--embed .header-start,
+  .site-header--embed .header-tools,
+  .site-header--embed .nav--primary,
+  .site-header--embed .nav--meta {
+    display: contents;
+  }
+
+  .site-header--embed .brand {
+    order: 1;
+    font-size: 1rem;
+  }
+
+  .site-header--embed .theme-toggle {
+    order: 1;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .site-header--embed::after {
+    content: "";
+    order: 2;
+    flex-basis: 100%;
+    height: 0;
+  }
+
+  .site-header--embed a:not(.brand) {
+    order: 3;
+    font-size: 0.88rem;
+  }
+}
+
+.site-header--embed .nav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  position: relative;
+}
+
+.site-header--embed .nav a:hover,
+.site-header--embed .nav a[aria-current="page"] {
+  color: var(--ink);
+}
+
+.site-header--embed .theme-toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 2.15rem;
+  height: 2.15rem;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--card-bg);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.site-header--embed .theme-toggle:hover {
+  background: var(--card-bg-hover);
+  border-color: var(--card-border-hover);
+  color: var(--accent-deep);
+}
+
+.site-header--embed .theme-toggle svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  display: block;
+}
+
+.site-header--embed .theme-toggle .icon-sun,
+html[data-theme="dark"] .site-header--embed .theme-toggle .icon-moon {
+  display: none;
+}
+
+html[data-theme="dark"] .site-header--embed .theme-toggle .icon-sun {
+  display: block;
+}
+
+.site-footer--embed {
+  border-top: 1px solid var(--line);
+  padding: 1.5rem;
+  text-align: center;
+  font-family: var(--font-ui);
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  background: var(--paper);
+}
+
+.site-footer--embed a {
+  color: inherit;
+}
+
+/* Do not flex-layout the body around Docusaurus — it breaks Infima/docs layout. */
+body.has-site-chrome {
+  margin: 0;
+}
+
+/* Docusaurus already has its own shell; portfolio chrome replaces the top bar. */
+body.has-site-chrome .navbar,
+body.has-site-chrome .theme-layout-navbar {
+  display: none !important;
+}
+
+/* Prefer the portfolio embed footer over the Docusaurus site footer. */
+body.has-site-chrome .theme-layout-footer,
+body.has-site-chrome .footer {
+  display: none !important;
+}
+
+body.has-site-chrome #__docusaurus {
+  min-height: 0;
+}
+
+/* Remove reserved offset for the hidden Infima fixed navbar. */
+body.has-site-chrome {
+  --ifm-navbar-height: 0px;
+}
+
+body.has-site-chrome .main-wrapper {
+  padding-top: 0 !important;
+}
+
+@media (max-width: 640px) {
+  .site-header--embed a:not(.brand) {
+    font-size: 0.85rem;
+  }
+}

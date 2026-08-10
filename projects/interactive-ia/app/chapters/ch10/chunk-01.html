@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Design Concerns and Guidelines — Chapter 10 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 10</a>
+      <span aria-hidden="true">›</span>
+      <span>Navigation Design Concerns and Guidelines</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 1 of 5">1 of 5</div>
+    <div class="mini-nav__links">
+      <a href="index.html">← Chapter overview</a>
+      <span class="spacer"></span>
+      <a href="chunk-02.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Navigation Design: Key Concerns, Objectives, and Guidelines
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        A navigation system has to satisfy several concerns at once: understanding real user needs through both generative and evaluative research, supporting the genuinely nonlinear way people actually seek information, reflecting the underlying information architecture accurately, providing labels clear enough to scan quickly, and laying elements out consistently enough that their placement itself communicates meaning. The underlying objectives these concerns serve are balancing the breadth and depth of the structural navigation, fulfilling business requirements, and — often overlooked — building the brand's credibility, since a navigation system that works well quietly earns trust with every successful click.
+      </p>
+      <p>
+        Several concrete guidelines follow from this. Support both vertical movement through the hierarchy and lateral movement across it, without cluttering the interface in the process. Keep breadth and depth balanced at every level. Give the most prominent placement to links leading to the most important content. Group related links together, following the same logic that makes visually proximate things read as related. Keep the layout of navigation elements consistent across the entire space. And always make the user's current location visible, whether through highlighting or breadcrumbs, so they never have to wonder where they are.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      Every one of these guidelines can be violated quietly and separately — a navigation system rarely fails because of one dramatic mistake, but because several small violations compound on top of each other.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch10-chunk-01" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A regional airline's website navigation is described as follows. The global navigation bar shows the number of links its content warrants without regard to breadth limits, so it's crowded and dense. The "Book a Flight" link — the site's single most important action — sits buried as the sixth item in a long list, with no special visual prominence. Related links, like "Baggage Policy" and "Check-In Times," are scattered in different parts of the navigation rather than grouped together. And nothing on any page indicates which section of the site the user is currently viewing.
+        </p>
+        <p>
+          Quarterly data shows declining conversion on the booking funnel and increasing calls to customer support.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          1. Which specific guideline violation is most directly connected to declining booking conversion?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="conversion-cause" value="prominence">
+            <span class="exercise__option-text">"Book a Flight" lacking prominent placement, despite being the single most important action on the site</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="conversion-cause" value="grouping">
+            <span class="exercise__option-text">Related links being scattered rather than grouped</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="conversion-cause" value="location">
+            <span class="exercise__option-text">Missing current-location indicators</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          2. Which specific guideline violation is most directly connected to increasing support calls, where customers are likely asking questions the site should answer on its own?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="support-cause" value="grouping">
+            <span class="exercise__option-text">Related links like "Baggage Policy" and "Check-In Times" being scattered rather than grouped together, making them hard to find together when a traveler needs both</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="support-cause" value="prominence-2">
+            <span class="exercise__option-text">"Book a Flight" lacking prominence</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="support-cause" value="breadth">
+            <span class="exercise__option-text">The navigation bar being crowded</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          With limited engineering time, prioritize these guideline violations in order of likely business impact, and briefly justify the order you chose.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>1 — "Book a Flight" lacking prominent placement.</strong> The guideline is explicit that the most important content deserves the most prominent placement. Burying the site's single primary conversion action as the sixth item in a dense list directly works against the goal of getting visitors to complete a booking — every extra moment spent scanning for it is an opportunity for someone to give up.
+      </p>
+
+      <p>
+        <strong>2 — Scattered related links.</strong> A traveler needing both baggage policy and check-in time information represents exactly the kind of related-task pairing the grouping guideline exists to serve. When those links live in different, disconnected parts of the navigation, customers who can't easily find one while looking at the other are far more likely to just call support instead of continuing to hunt.
+      </p>
+
+      <span class="feedback__highlight">
+        A reasonable priority order, given the business metrics described: fix "Book a Flight" prominence first, since it connects most directly to declining conversion — the site's core commercial function. Fix the scattered related-link grouping second, since it connects directly to the rising support costs. The crowded navigation bar and missing location indicators are real violations too, but neither has as clear a direct line to the two specific business metrics given in this scenario, so they're reasonable to address once the two highest-impact fixes are underway.
+      </span>
+
+      <p>
+        This is the kind of reasoning the source material's objectives section is pointing toward: navigation guidelines aren't equally urgent in every context — connecting each violation back to the actual business consequence it's producing is what turns a list of guidelines into an actionable priority order.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="prompt-fill" id="navigation-generator" aria-labelledby="prompt-fill-label-navigation-generator">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-navigation-generator">
+      Try It With Your Data — Navigation Generator
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt is made of (RICE breakdown)</summary>
+      <div class="prompt-fill__guidance-body">
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">R</span>
+          <h4>Role</h4>
+          <p>Casts the AI as: You&#x27;re a UX designer specializing in navigation design and information architecture.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">I</span>
+          <h4>Instructions</h4>
+          <p>Spells out exactly what to analyze and return.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">C</span>
+          <h4>Context</h4>
+          <p>Audience, Current problem and Goal tell the AI what your specific situation is, not a generic one.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">E</span>
+          <h4>Expected format</h4>
+          <p>Output: proposed top-level labels, what belongs under each, excluded items with reasons, and open questions for stakeholder review.</p>
+        </div>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[R - ROLE]
+You're a UX designer specializing in navigation design and information architecture.
+
+[I - INSTRUCTIONS]
+Generate navigation for {{SITE_OR_PRODUCT}} with these characteristics:
+
+Structure:
+- {{TOP_LEVEL_ITEMS}} top-level items
+- Maximum {{MAXIMUM_DEPTH}} levels deep
+- {{ITEMS_PER_LEVEL}} items per level
+
+Content to include:
+{{MAJOR_CONTENT_AREAS}}
+
+Requirements:
+- {{TECHNICAL_REQUIREMENTS}}
+- {{ACCESSIBILITY_NEEDS}}
+- {{LABEL_CONSTRAINTS}}
+
+[C - CONTEXT]
+Audience: {{AUDIENCE}}
+Current problem: {{CURRENT_PROBLEM}}
+Goal: {{GOAL}}
+
+[E - EXPECTED FORMAT]
+Output:
+1. Hierarchical structure with all levels
+2. Brief description of each section
+3. Rationale for organization
+4. Mobile/responsive considerations
+5. Accessibility notes
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-navigation-generator-site-or-product">Site or product</label>
+        <span class="prompt-fill__hint">Name or brief description</span>
+        <input type="text" id="pf-navigation-generator-site-or-product" class="js-prompt-input" data-token="SITE_OR_PRODUCT" data-placeholder="Name or brief description" placeholder="Name or brief description">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-navigation-generator-top-level-items">Top-level items</label>
+        <span class="prompt-fill__hint">Target number, e.g. 6</span>
+        <input type="text" id="pf-navigation-generator-top-level-items" class="js-prompt-input" data-token="TOP_LEVEL_ITEMS" data-placeholder="Target number, e.g. 6" placeholder="Target number, e.g. 6">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-navigation-generator-maximum-depth">Maximum depth</label>
+        <span class="prompt-fill__hint">Number of levels, e.g. 3</span>
+        <input type="text" id="pf-navigation-generator-maximum-depth" class="js-prompt-input" data-token="MAXIMUM_DEPTH" data-placeholder="Number of levels, e.g. 3" placeholder="Number of levels, e.g. 3">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-navigation-generator-items-per-level">Items per level</label>
+        <span class="prompt-fill__hint">Target number per level, e.g. 7</span>
+        <input type="text" id="pf-navigation-generator-items-per-level" class="js-prompt-input" data-token="ITEMS_PER_LEVEL" data-placeholder="Target number per level, e.g. 7" placeholder="Target number per level, e.g. 7">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-navigation-generator-major-content-areas">Major content areas</label>
+        <span class="prompt-fill__hint">One per line</span>
+        <textarea id="pf-navigation-generator-major-content-areas" class="js-prompt-input" data-token="MAJOR_CONTENT_AREAS" data-placeholder="One per line" placeholder="One per line"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-navigation-generator-technical-requirements">Technical requirements</label>
+        <span class="prompt-fill__hint">Any technical requirements</span>
+        <input type="text" id="pf-navigation-generator-technical-requirements" class="js-prompt-input" data-token="TECHNICAL_REQUIREMENTS" data-placeholder="Any technical requirements" placeholder="Any technical requirements">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-navigation-generator-accessibility-needs">Accessibility needs</label>
+        <span class="prompt-fill__hint">Any accessibility requirements</span>
+        <input type="text" id="pf-navigation-generator-accessibility-needs" class="js-prompt-input" data-token="ACCESSIBILITY_NEEDS" data-placeholder="Any accessibility requirements" placeholder="Any accessibility requirements">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-navigation-generator-label-constraints">Label constraints</label>
+        <span class="prompt-fill__hint">e.g. &quot;max 20 characters&quot;</span>
+        <input type="text" id="pf-navigation-generator-label-constraints" class="js-prompt-input" data-token="LABEL_CONSTRAINTS" data-placeholder="e.g. &quot;max 20 characters&quot;" placeholder="e.g. &quot;max 20 characters&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-navigation-generator-audience">Audience</label>
+        <span class="prompt-fill__hint">User types and expertise level</span>
+        <input type="text" id="pf-navigation-generator-audience" class="js-prompt-input" data-token="AUDIENCE" data-placeholder="User types and expertise level" placeholder="User types and expertise level">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-navigation-generator-current-problem">Current problem</label>
+        <span class="prompt-fill__hint">Navigation issues, if redesigning</span>
+        <input type="text" id="pf-navigation-generator-current-problem" class="js-prompt-input" data-token="CURRENT_PROBLEM" data-placeholder="Navigation issues, if redesigning" placeholder="Navigation issues, if redesigning">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-navigation-generator-goal">Goal</label>
+        <span class="prompt-fill__hint">What success looks like</span>
+        <input type="text" id="pf-navigation-generator-goal" class="js-prompt-input" data-token="GOAL" data-placeholder="What success looks like" placeholder="What success looks like">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="index.html">← Chapter overview</a>
+    <span class="chunk-footer__center">Chapter 10 · 1 of 5</span>
+    <a href="chunk-02.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="../../assets/js/prompt-fill.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

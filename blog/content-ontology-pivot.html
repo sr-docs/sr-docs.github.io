@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Unstructured content, the bane of RAG systems. Or is it? · Blog</title>
+    <meta name="description" content="When I started my Prompt Engineering for IAs course generation experiment, it was meant to be a simple exercise to understand how context windows work." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../js/theme-boot.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-start">
+        <a class="brand" href="../index.html">Sabita Rao's <span>Portfolio</span></a>
+        <nav class="nav nav--primary" aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../projects/index.html">Projects</a>
+          <a href="index.html" aria-current="page">Blog</a>
+        </nav>
+      </div>
+      <div class="header-tools">
+        <nav class="nav nav--meta" aria-label="About and social">
+          <a href="../about.html">About</a>
+          <a
+            href="https://linkedin.com/in/sabitarao"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+          <a
+            href="https://github.com/sr-docs"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <article class="prose">
+        <header class="post-header page-hero">
+          <time datetime="2025-11-22">November 22, 2025</time>
+          <h1>Unstructured content, the bane of RAG systems. Or is it?</h1>
+        </header>
+        <p>When I started my <em>Prompt Engineering for IAs</em> course generation experiment, it was meant to be a simple exercise to understand how context windows work. Somewhere along the way though, I found myself staring at 20000+ lines of unstructured text across 11 modules.</p>
+        <p>In it&#39;s current form, the course content is not AI-friendly, even though it is AI-generated, ironically. The reams of content are as fun as a textbook, minus diagrams at that. </p>
+        <p>I noticed structural patterns, conceptual relationships, and opportunities to make the content more manageable. And DITA is what I know. Modular DITA topics that could serve multiple use cases: learning paths, reference lookup, AI training data, video scripts, PDFs...seemed like the answer. </p>
+        <p>After a series of convoluted and partially-successful attempts to wrangle the freeflowing course content into DITA chunks, I had to pause and ask: &quot;Is DITA actually the right tool here?&quot; Because my immediate goal was to have AI systems parse it, and thereby help learners navigate it quicker. The current MDX format already makes it human-readable, I only need it to be machine-readable too.</p>
+        <h3>Pivoting from content structure to knowledge extraction</h3>
+        <p>The question I now asked was &quot;How do I extract this content for AI to understand and use it effectively?&quot; I figured an ontology would help this content to be queried by AI assistants, retrieved for RAG systems, and surfaced in conversational interfaces. </p>
+        <p>An ontology defines:</p>
+        <ol>
+        <li><strong>Entities</strong> - What types of knowledge objects exist</li>
+        <li><strong>Relationships</strong> - How they connect to each other</li>
+        <li><strong>Attributes</strong> - Metadata for filtering and retrieval</li>
+        <li><strong>Retrieval contexts</strong> - What questions each entity answers</li>
+        </ol>
+        <p>Instead of asking &quot;Is this a concept or a task?&quot; (DITA thinking), I asked:</p>
+        <ul>
+        <li>&quot;What knowledge does this represent?&quot;</li>
+        <li>&quot;What other knowledge does it connect to?&quot;</li>
+        <li>&quot;When would an AI need to surface this?&quot;</li>
+        </ul>
+        <p>This shifted the focus entirely:</p>
+        <table>
+        <thead>
+        <tr>
+        <th>Old Focus (DITA)</th>
+        <th>New Focus (Ontology)</th>
+        </tr>
+        </thead>
+        <tbody><tr>
+        <td>Content structure</td>
+        <td>Knowledge structure</td>
+        </tr>
+        <tr>
+        <td>Topic types (concept, task, reference)</td>
+        <td>Knowledge entities (framework, principle, pattern)</td>
+        </tr>
+        <tr>
+        <td>Reuse via embedding</td>
+        <td>Retrieval via semantic search</td>
+        </tr>
+        <tr>
+        <td>Consumer: publishing toolchain</td>
+        <td>Consumer: AI systems</td>
+        </tr>
+        <tr>
+        <td>Goal: maintain once, publish everywhere</td>
+        <td>Goal: AI understands meaning, not just text</td>
+        </tr>
+        </tbody></table>
+        <h3>Audit agent design</h3>
+        <p>I created an ontology audit agent in CoPilot with:</p>
+        <ul>
+        <li><h4>Entity identification rules</h4>
+        </li>
+        </ul>
+        <pre><code> IF content teaches a reusable mental model → Framework or Principle
+         IF content is an AI prompt meant to be copied → PromptPattern
+         IF content lists steps to follow → Workflow
+         IF content lists items to verify → Checklist
+         IF content helps choose between options → DecisionMatrix
+         IF content shows how something works → Example
+         IF content analyzes a real system → CaseStudy
+         IF content defines a term → Term
+         IF content warns against something → Warning
+        </code></pre>
+        <ul>
+        <li><h4>Relationship mapping process</h4>
+        <ol>
+        <li>Identify all entities in module</li>
+        <li>Map CONTAINS relationships (parent-child)</li>
+        <li>Map IMPLEMENTS relationships (pattern → principle)</li>
+        <li>Map PREREQUISITES (learning sequence)</li>
+        <li>Identify cross-module REFERENCES</li>
+        </ol>
+        </li>
+        <li><h4>Output structure</h4>
+        <p>Each audit produces:</p>
+        <ul>
+        <li>Entity inventory by type</li>
+        <li>Relationship map (visual hierarchy)</li>
+        <li>Prerequisite chain</li>
+        <li>Cross-module reference table</li>
+        <li>Retrieval contexts for each entity</li>
+        </ul>
+        </li>
+        </ul>
+        <h4>New audit (knowledge-focused)</h4>
+        <pre><code class="language-yaml">- id: validation-pyramid
+          entity: Framework
+          title: &quot;Validation Pyramid&quot;
+          lines: 1065-1350
+          
+          contains:
+            - level-1-quick-checks
+            - level-2-structural
+            - level-3-semantic
+            - level-4-user-validation
+            
+          validates: any-ai-output
+          
+          retrieval_contexts:
+            - &quot;How do I validate AI-generated content?&quot;
+            - &quot;What checks should I run before using AI output?&quot;
+            
+          prerequisites:
+            - ai-human-partnership-basics
+            
+          cross_module: [1-2, 2-1, 3-1]
+        </code></pre>
+        <p>This captured the <em>knowledge structure</em>, which is what AI systems need.</p>
+        <h3>The ontology layer of JSON files</h3>
+        <pre><code>#### The entity taxonomy
+
+          The course content analysis revealed these knowledge entity types:
+
+          | Entity type | Description | Examples |
+          |-------------|-------------|----------|
+          | **Framework** | Multi-part conceptual model | Validation Pyramid, IA Decision Framework |
+          | **Principle** | Core idea or guideline | AI-First zone, Progressive disclosure |
+          | **PromptPattern** | Reusable AI prompt with structure | Taxonomy generation, Refinement pattern |
+          | **Workflow** | Multi-step process | 4-round taxonomy refinement |
+          | **Checklist** | Actionable verification items | Quick checks, Structural validation |
+          | **DecisionMatrix** | Criteria for choosing options | Organizational approach matrix |
+          | **Example** | Illustrative scenario | Card sorting analysis |
+          | **CaseStudy** | Real-world application | Kubernetes docs structure |
+          | **Term** | Definition or glossary item | Polyhierarchy, Faceted classification |
+          | **Warning** | Critical caution or anti-pattern | Strategic red flags |
+          | **Tool** | Software or method | Tree testing, Card sorting |
+          | **Role** | Persona or user type | DevOps engineer, Content strategist |
+
+          This is fundamentally different from content type classification. It&#39;s about *what knowledge exists*, not *how content is formatted*.
+
+        #### Relationships
+
+          Relationships detail out how knowledge connects:
+
+          | Relationship | What it means | Example |
+          |--------------|---------------|---------|
+          | `CONTAINS` | Parent includes child | Framework CONTAINS Principle |
+          | `IMPLEMENTS` | Applies a concept | PromptPattern IMPLEMENTS Principle |
+          | `VALIDATES` | Checks correctness | Checklist VALIDATES Workflow |
+          | `DEMONSTRATES` | Shows how it works | Example DEMONSTRATES Principle |
+          | `PRECEDES` | Must come before | Module 1 PRECEDES Module 2 |
+          | `CONFLICTS_WITH` | Trade-off or tension | AI-First CONFLICTS_WITH Human-First |
+           
+          When an AI retrieves content, these relationships enable context:
+            - &quot;This is part of a larger framework. Here&#39;s the context&quot;
+            - &quot;Before understanding this, you need to know...&quot;
+            - &quot;Here&#39;s an example that demonstrates this principle&quot;
+            - &quot;This conflicts with what we discussed earlier. Here&#39;s how to think about the trade-off&quot;
+
+        #### Retrieval contexts: QnA
+
+          Each entity gets mapped to the questions it answers:
+
+          ```yaml
+          - id: validation-pyramid
+            entity: Framework
+            title: &quot;Validation Pyramid&quot;
+            retrieval_contexts:
+              - &quot;How do I validate AI-generated content?&quot;
+              - &quot;What checks should I run on a taxonomy?&quot;
+              - &quot;How thorough should my AI review be?&quot;
+          ```
+
+          This inverts the traditional content-first model. Instead of &quot;here&#39;s what we have, hope you can find it,&quot; it&#39;s &quot;here&#39;s what you might ask, and here&#39;s what answers it.&quot;
+        </code></pre>
+        <pre><code class="language-mermaid">flowchart TD
+            %% Nodes
+            subgraph Source[&quot;Source Content&quot;]
+                MDX[&quot;11 Course Modules (.mdx)&quot;]
+            end
+
+            subgraph Agent[&quot;AI Agent&quot;]
+                AuditAgent[&quot;Module Ontology Audit Agent&quot;]
+            end
+
+            subgraph Phase1[&quot;Phase 1: Individual Audits&quot;]
+                direction LR
+                note1[/&quot;Extracted:
+                - Frameworks
+                - Principles
+                - Prompt Patterns
+                - Checklists&quot;/]
+                AuditFiles[&quot;11 Audit Files (.md)&quot;]
+            end
+
+            subgraph Phase2[&quot;Phase 2: Consolidation&quot;]
+                direction LR
+                note2[/&quot;Processes:
+                - Merge Registries
+                - Deduplicate Entities
+                - Map Prerequisites
+                - Build Retrieval Index&quot;/]
+                Consolidated[&quot;Consolidated Ontology (.md)&quot;]
+            end
+
+            subgraph Phase3[&quot;Phase 3: Structured Export&quot;]
+                direction LR
+                note3[/&quot;Structured Data:
+                - entities.json
+                - relationships.json
+                - retrieval-index.json&quot;/]
+                JSON[&quot;JSON Files (.json)&quot;]
+            end
+
+            %% Relationships
+            MDX --&gt; AuditAgent
+            AuditAgent -- &quot;Reads &amp; Analyzes&quot; --&gt; AuditFiles
+            note1 --- AuditFiles
+            AuditFiles -- &quot;Consolidates&quot; --&gt; Consolidated
+            note2 --- Consolidated
+            Consolidated -- &quot;Exports&quot; --&gt; JSON
+            note3 --- JSON
+
+            %% Styling
+            style AuditAgent fill:#f96,stroke:#333,stroke-width:2px,color:white
+            style AuditFiles fill:#ff9,stroke:#333,stroke-width:1px
+            style Consolidated fill:#9cf,stroke:#333,stroke-width:2px
+            style JSON fill:#9f9,stroke:#333,stroke-width:2px
+        </code></pre>
+        <h3>What this layer enables</h3>
+        <h4>1. Smarter RAG retrieval</h4>
+        <pre><code> **Without ontology:** &quot;How do I validate a taxonomy?&quot; → keyword search returns any chunk mentioning &quot;validate&quot; and &quot;taxonomy&quot;
+
+         **With ontology:** 
+           - Retrieves the Validation Pyramid framework
+           - Includes child entities (Level 1-4 checklists)
+           - Notes that this validates AI output
+           - Excludes examples unless asked
+        </code></pre>
+        <h4>2. Prerequisite-aware responses</h4>
+        <pre><code> AI can check:
+           - If the user understood prerequisite concepts
+           - If not, surface foundational content first
+           - Build explanations that connect to prior knowledge
+        </code></pre>
+        <h4>3. Relationship-aware explanations</h4>
+        <pre><code> Instead of isolated chunks:
+           - &quot;The Validation Pyramid is a framework containing 4 levels...&quot;
+           - &quot;This relates to the AI-First/Human-First decision you learned earlier...&quot;
+           - &quot;Here&#39;s a prompt pattern that implements this principle...&quot;
+        </code></pre>
+        <h4>4. Conflict/trade-off awareness</h4>
+        <pre><code> When principles conflict, AI can explain:
+           - &quot;AI-First is appropriate here, but note the Human-First concerns about...&quot;
+           - &quot;This is a trade-off between efficiency and oversight...&quot;
+        </code></pre>
+        <h3>What this project demonstrates</h3>
+        <h4>Knowledge architecture</h4>
+        <table>
+        <thead>
+        <tr>
+        <th>Evidence</th>
+        <th>Competency</th>
+        </tr>
+        </thead>
+        <tbody><tr>
+        <td>12-type entity taxonomy</td>
+        <td>Ontology design</td>
+        </tr>
+        <tr>
+        <td>Relationship type definitions</td>
+        <td>Knowledge modeling</td>
+        </tr>
+        <tr>
+        <td>Retrieval context mapping</td>
+        <td>AI-ready content design</td>
+        </tr>
+        <tr>
+        <td>Prerequisite chains</td>
+        <td>Learning sequence design</td>
+        </tr>
+        </tbody></table>
+        <h4>Process design</h4>
+        <table>
+        <thead>
+        <tr>
+        <th>Element</th>
+        <th>Value</th>
+        </tr>
+        </thead>
+        <tbody><tr>
+        <td>Audit agent with methodology</td>
+        <td>Repeatable, documentable process</td>
+        </tr>
+        <tr>
+        <td>Entity identification heuristics</td>
+        <td>Systematic classification</td>
+        </tr>
+        <tr>
+        <td>Relationship mapping protocol</td>
+        <td>Consistent knowledge capture</td>
+        </tr>
+        <tr>
+        <td>Output template</td>
+        <td>Structured, usable artifacts</td>
+        </tr>
+        </tbody></table>
+        <h3>What I&#39;ve learned</h3>
+        <h4>About content architecture</h4>
+        <ul>
+        <li>Knowledge structure ≠ content structure</li>
+        <li>Relationships are as important as entities</li>
+        <li>User questions, not author convenience, drive good content organization</li>
+        <li>Human-readable content with explicit structure can become AI-ready content</li>
+        </ul>
+        <h4>About AI collaboration</h4>
+        <ul>
+        <li>AI is excellent at identifying patterns and generating structure</li>
+        <li>Strategic decisions (ontology design) require careful human judgment</li>
+        <li>Documenting methodology makes work reproducible</li>
+        </ul>
+        <h4>About ontology implementation paths</h4>
+        <ul>
+        <li><p><strong>Enhanced frontmatter</strong></p>
+        <p>The lightest implementation is to add structured metadata to existing MDX:</p>
+        <pre><code class="language-yaml">---
+        entity: Framework
+        id: validation-pyramid
+        contains: [level-1-checks, level-2-structural, level-3-semantic, level-4-user]
+        validates: any-ai-output
+        retrieval_contexts:
+            - &quot;How do I validate AI output?&quot;
+            - &quot;What checks should I run?&quot;
+        prerequisites: [ai-human-partnership-basics]
+        ---
+
+        ### The Validation Pyramid
+        ...
+        </code></pre>
+        <p>This can be parsed by AI systems or CI/CD tools without changing the authoring workflow.</p>
+        </li>
+        <li><p><strong>Structured knowledge base</strong></p>
+        <p>Export ontology as structured data:</p>
+        <pre><code>  ontology/
+          ├── entities/
+          │   ├── frameworks.yaml
+          │   ├── principles.yaml
+          │   ├── prompt-patterns.yaml
+          │   └── checklists.yaml
+          ├── relationships.yaml
+          ├── prerequisites.yaml
+          └── retrieval-index.yaml
+        </code></pre>
+        </li>
+        <li><p><strong>Knowledge graph</strong></p>
+        <p>For complex querying and AI integration:</p>
+        <pre><code class="language-cypher">  CREATE (vp:Framework {id: &#39;validation-pyramid&#39;})
+          CREATE (l1:Checklist {id: &#39;level-1-checks&#39;})
+          CREATE (vp)-[:CONTAINS]-&gt;(l1)
+          CREATE (l1)-[:VALIDATES]-&gt;(:Output {type: &#39;ai-generated&#39;})
+        </code></pre>
+        </li>
+        </ul>
+        <h3>Summary</h3>
+        <p>What started as a prompt engineering exercise became a knowledge architecture project. By shifting focus from content structure (DITA) to knowledge structure (ontology), I could:</p>
+        <ul>
+        <li>Design an entity taxonomy for learning content</li>
+        <li>Create relationship types that capture how knowledge connects</li>
+        <li>Build retrieval contexts that map user questions to content</li>
+        <li>Develop an audit methodology focused on meaning, not format</li>
+        <li>Position the content for AI consumption</li>
+        </ul>
+        <blockquote>
+        <p><em><strong>Crucial takeaway</strong>: This experiment does NOT prove that unstructured content is A-okay!<br/> None of the hoops that Gemini and I jumped through (multiple ontology audits, building JSON files with detailed contexts, or even scripts) would have been necessary if I had structured and modular content to begin with.
+        <br/>Right now, any update to the source files warrants updating the ontology files and retrieval index; not a process that would work in an enterprise setting.</em></p>
+        </blockquote>
+        <p>A distant goal in this experiment is to convert the 11 modules into structured data. <em>How</em> is another project, but I have a draft plan in place already.</p>
+        <pre><code class="language-text">START: MDX Source File
+          │
+          ▼
+        STEP 1: INTELLIGENT CHUNKING (Split by H2)
+          │
+          ▼
+        STEP 2: TWO-PASS TRANSFORMATION (The &quot;Expert&quot; Process)
+          │
+          ├─ INPUT: Single MDX Chunk + [Context: Diataxis Defs, ID Rules]
+          │
+          ├─ PASS 1: ANALYSIS AGENT (The &quot;Architect&quot;)
+          │   │  &quot;Analyze intent. Don&#39;t write content yet.&quot;
+          │   │
+          │   └─ OUTPUT: Metadata Object
+          │       ├─ Intent: &quot;Teach a concept&quot; vs &quot;Guide a procedure&quot;
+          │       ├─ Diataxis Mode: &quot;Explanation&quot;
+          │       └─ Prereqs: &quot;Refers to [Previous Topic]&quot;
+          │
+          ├─ PASS 2: TRANSFORMATION AGENT (The &quot;Writer&quot;)
+          │   │  &quot;Convert text to Schema using Pass 1 metadata.&quot;
+          │   │
+          │   ├─ CONSTRAINT: Allow structural reformatting (Paragraph -&gt; Steps)
+          │   ├─ CONSTRAINT: Ban fact fabrication
+          │   │
+          │   └─ OUTPUT: Structured JSON
+          │       ├─ type: &quot;Task&quot;
+          │       ├─ body: {
+          │       │    &quot;context&quot;: &quot;...&quot;,
+          │       │    &quot;steps&quot;: [&quot;1. Click...&quot;, &quot;2. Type...&quot;],
+          │       │    &quot;result&quot;: &quot;...&quot;
+          │       │  }
+          │       └─ artifacts: [ { &quot;type&quot;: &quot;example&quot;, &quot;content&quot;: &quot;...&quot; } ]
+          │
+          ▼
+        STEP 3: SEMANTIC VALIDATION
+          │
+          └─ Check: Does JSON &quot;steps&quot; count match source &quot;action verbs&quot;?
+              ├─ YES ──► Generate .dita file
+              └─ NO  ──► Flag for Review
+        </code></pre>
+        <p>Stay tuned!</p>
+        <p class="post-back"><a href="./">← Back to all posts</a></p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        <a href="../index.html">Home</a>
+        ·
+        <a href="https://github.com/sr-docs">GitHub</a>
+        · Built for GitHub Pages
+      </p>
+    </footer>
+    <script src="../js/theme.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/blog-redirect.js"></script>
+  </body>
+</html>

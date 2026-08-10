@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discovering Labels — Chapter 9 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 9</a>
+      <span aria-hidden="true">›</span>
+      <span>Discovering Labels</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 5 of 8">5 of 8</div>
+    <div class="mini-nav__links">
+      <a href="chunk-04.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-06.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Discovering Possible Labels for Categories
+      </h1>
+
+    <div class="concept__body">
+      <p>
+        Good labels rarely come from a single source. Analyzing existing content — page titles, subheadings, summaries — surfaces the vocabulary already in use. Competitive analysis reveals the conventions an entire domain has already converged on. User research, particularly open card sorting, captures the actual language real users apply when they group and name content themselves. Domain-specific controlled vocabularies or thesauri, where they already exist, bring a level of consistency that's hard to match from scratch. Subject-matter experts, technical support staff, and content authors all carry vocabulary a design team wouldn't otherwise have access to. And search-log analytics — the terms people actually type when looking for something — are some of the most honest evidence available, since nobody phrases a search query to be polite or on-brand.
+      </p>
+      <p>
+        No single source is sufficient on its own. Combining several, and cross-checking the terms they surface against each other, is what actually produces a labeling system grounded in reality rather than internal assumption.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      The team that already works inside an organization is often the worst-positioned group to guess what outsiders will call something — which is exactly why label discovery has to reach beyond the room the decision is being made in.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch09-chunk-05" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A team is designing the navigation for a new peer support platform for people experiencing mental health challenges. The domain is sensitive, and the vocabulary is genuinely contested — clinical terms, community-preferred terms, and outdated or stigmatizing terms all coexist for the same concepts. The target audience is diverse in age, background, and familiarity with mental health language. The team has eight weeks before navigation labels need to be finalized.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          Given the sensitivity of this domain and the contested vocabulary, which combination of methods would you prioritize in the eight weeks available?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="method-combo" value="research-heavy">
+            <span class="exercise__option-text">User research with actual community members, an open card sort to surface their own language, and consultation with subject-matter experts familiar with both clinical and community terminology</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="method-combo" value="competitive-only">
+            <span class="exercise__option-text">Competitive analysis of other platforms' labels alone, adopted directly with no further research</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="method-combo" value="internal-only">
+            <span class="exercise__option-text">Have the internal team define labels based on their own best judgment, without external input</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          Name one label discovery method from the concept section that you would explicitly avoid relying on for this specific platform, and explain why it's particularly risky in a domain where some existing terminology is actively stigmatizing.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>The research-heavy combination is correct.</strong> This domain has exactly the characteristics that call for direct engagement with real users rather than assumption: contested vocabulary, real stakes if terminology lands wrong, and a diverse audience whose members may not all share the same relationship to clinical versus community language. An open card sort captures how actual community members group and name these concepts themselves, user research surfaces their lived vocabulary directly, and subject-matter expert consultation helps the team understand the difference between clinically accurate and community-accepted terms — a distinction that matters enormously here and that internal guesswork alone could easily get wrong.
+      </p>
+
+      <span class="feedback__highlight">
+        Relying on competitive analysis alone would be particularly risky in this specific domain. Other mental health platforms may themselves be using outdated or clinically outmoded terminology, and simply adopting whatever labels are already common elsewhere risks propagating language the target community has already moved past or actively finds stigmatizing. Competitive analysis remains a useful input for understanding general conventions, but it shouldn't be the primary or sole source of labels here — it needs to be checked against direct community research, not treated as sufficient on its own.
+      </span>
+
+      <p>
+        This is a case where the general principle from the concept section — combine multiple sources rather than relying on one — matters more than usual, precisely because the cost of a wrong label in this domain isn't just user confusion, but the risk of genuinely alienating or hurting the people the platform exists to serve.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="prompt-fill" id="survey-analysis-suite" aria-labelledby="prompt-fill-label-survey-analysis-suite">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-survey-analysis-suite">
+      Try It With Your Data — Survey Analysis Suite
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt does</summary>
+      <div class="prompt-fill__guidance-body prompt-fill__guidance-body--simple">
+        <p>Synthesizes survey responses into IA-relevant themes with counts, quotes, and recommended actions.</p>
+        <ul><li>After conducting user surveys about documentation experience</li><li>To quantify qualitative findings from interviews</li><li>To validate label choices with user preference data</li><li>To identify findability problems at scale</li></ul>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[ROLE]
+You are a UX researcher analyzing survey data to recommend navigation labels
+and terminology for documentation.
+
+[INSTRUCTIONS]
+Analyze survey results on terminology preferences:
+
+SURVEY QUESTION:
+"{{SURVEY_QUESTION}}"
+
+RESULTS (n={{SAMPLE_SIZE}} respondents):
+{{RESULTS_BY_OPTION}}
+
+ADDITIONAL CONTEXT:
+- Target audience: {{TARGET_AUDIENCE}}
+- Current site label: {{CURRENT_SITE_LABEL}}
+- Competitive analysis: {{WHAT_COMPETITORS_USE}}
+
+Analyze:
+
+1. **Clear winner or split preference?**
+   - Is there a dominant preference (>50%)?
+   - Are top choices close enough that decision is difficult?
+   - Statistical significance considerations
+
+2. **Why might users prefer each option?**
+   - What does each term signal?
+   - Pros and cons of each option
+   - User mental model implications
+
+3. **Recommendation:**
+   - Best label choice with rationale
+   - Should we use combined labels?
+   - Alternative approaches if preference is split
+
+4. **Implementation notes:**
+   - Should old terms be redirected?
+   - Should we use synonyms in search?
+   - Content creation guidelines implications
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-survey-analysis-suite-survey-question">Survey question</label>
+        <span class="prompt-fill__hint">The exact question text you asked</span>
+        <input type="text" id="pf-survey-analysis-suite-survey-question" class="js-prompt-input" data-token="SURVEY_QUESTION" data-placeholder="The exact question text you asked" placeholder="The exact question text you asked">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-survey-analysis-suite-sample-size">Sample size</label>
+        <span class="prompt-fill__hint">Number of respondents</span>
+        <input type="text" id="pf-survey-analysis-suite-sample-size" class="js-prompt-input" data-token="SAMPLE_SIZE" data-placeholder="Number of respondents" placeholder="Number of respondents">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-survey-analysis-suite-results-by-option">Results by option</label>
+        <span class="prompt-fill__hint">One per line, e.g. &quot;&#x27;Settings&#x27; — 42% (105 responses)&quot;</span>
+        <textarea id="pf-survey-analysis-suite-results-by-option" class="js-prompt-input" data-token="RESULTS_BY_OPTION" data-placeholder="One per line, e.g. &quot;&#x27;Settings&#x27; — 42% (105 responses)&quot;" placeholder="One per line, e.g. &quot;&#x27;Settings&#x27; — 42% (105 responses)&quot;"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-survey-analysis-suite-target-audience">Target audience</label>
+        <span class="prompt-fill__hint">Brief description</span>
+        <input type="text" id="pf-survey-analysis-suite-target-audience" class="js-prompt-input" data-token="TARGET_AUDIENCE" data-placeholder="Brief description" placeholder="Brief description">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-survey-analysis-suite-current-site-label">Current site label</label>
+        <span class="prompt-fill__hint">The term you use today</span>
+        <input type="text" id="pf-survey-analysis-suite-current-site-label" class="js-prompt-input" data-token="CURRENT_SITE_LABEL" data-placeholder="The term you use today" placeholder="The term you use today">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-survey-analysis-suite-what-competitors-use">What competitors use</label>
+        <span class="prompt-fill__hint">Terms competitors use, if known</span>
+        <input type="text" id="pf-survey-analysis-suite-what-competitors-use" class="js-prompt-input" data-token="WHAT_COMPETITORS_USE" data-placeholder="Terms competitors use, if known" placeholder="Terms competitors use, if known">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-04.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 9 · 5 of 8</span>
+    <a href="chunk-06.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="../../assets/js/prompt-fill.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

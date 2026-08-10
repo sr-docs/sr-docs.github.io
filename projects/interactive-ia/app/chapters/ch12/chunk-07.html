@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filtering Search Results — Chapter 12 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 12</a>
+      <span aria-hidden="true">›</span>
+      <span>Filtering Search Results</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 7 of 11">7 of 11</div>
+    <div class="mini-nav__links">
+      <a href="chunk-06.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-08.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Filtering Search Results
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Filtering narrows a result set based on specific criteria, which is a different job from sorting — sorting reorders the same set of results, while filtering removes some of them from consideration entirely. Good filter design means clear labels, visibly showing which filters are currently active, and making them easy to remove or reset. When many filter types exist, collapsible groups keep the interface manageable, and on mobile, filters often move into a full-screen overlay or bottom sheet given how little space is available otherwise. Filtering and sorting typically work together — narrow the set with filters first, then sort whatever remains.
+      </p>
+      <p>
+        The real risk with filtering is over-constraining: stacking enough simultaneous filters can produce zero results, even when the underlying content the searcher actually wants does exist somewhere in the catalog. Handling this well means showing result counts before a filter is fully applied, or suggesting which specific filter to relax when a combination has gone too far.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      Filters that each make sense individually can still combine into a search with no possible answer — the interface's job is catching that moment before the searcher hits a wall they didn't see coming.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch12-chunk-07" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A job search platform is redesigning its search and filtering experience. The platform has a large database of job listings with consistent structured metadata — job title, company, location, salary range, job type, industry, experience level, remote options, and date posted. Mobile usage accounts for sixty percent of all searches. Users frequently complain that filtering produces zero results, particularly when they combine salary range with location and experience level filters.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          Given the zero-results complaint specifically tied to combining salary, location, and experience level, what should the platform do?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="approach" value="show-counts-suggest-relax">
+            <span class="exercise__option-text">Show live result counts as filters are applied, and when a combination produces zero results, suggest which specific filter to relax rather than leaving the searcher at a dead end</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="approach" value="remove-filters">
+            <span class="exercise__option-text">Remove salary range, location, and experience level as filters entirely, since they're causing the problem</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="approach" value="ignore">
+            <span class="exercise__option-text">Leave the filtering system as-is, since users should learn to combine filters more carefully</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          Given that sixty percent of searches happen on mobile, propose a specific mobile layout approach for these filters, and explain why it matters more here than it might on a desktop-first product.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>Showing live counts and suggesting which filter to relax is correct.</strong> Salary range, location, and experience level are all legitimate, individually useful filters — removing any of them would take away real value from users who genuinely need to narrow by those criteria for other searches that work fine. The actual problem isn't the filters themselves, it's the interface's failure to help users recover gracefully when a specific combination happens to over-constrain the result set. Showing counts as filters are applied lets someone see they're heading toward zero before committing fully, and suggesting which filter to relax turns a dead end into a next step.
+      </p>
+
+      <span class="feedback__highlight">
+        Removing the filters would be a real loss for the majority of searches where those same criteria work perfectly well — the fix belongs in how over-constraining is handled, not in eliminating useful filtering criteria. Telling users to combine filters more carefully ignores that this is fundamentally an interface design problem the platform is responsible for solving, not a training problem for users to work around on their own.
+      </span>
+
+      <p>
+        With sixty percent of searches happening on mobile, this platform should design its filters as a full-screen overlay or bottom sheet, consistent with the general mobile filtering pattern, rather than trying to compress several filter categories into limited on-screen space alongside the results list. This matters more here than it would for a desktop-first product because mobile screens have so much less room to display filter controls, active filter state, and results simultaneously — a cramped mobile filter experience would make the existing over-constraining problem even harder for users to diagnose and recover from, since they'd have even less visual context to notice a filter combination heading toward zero results.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="prompt-fill" id="faceted-search-designer" aria-labelledby="prompt-fill-label-faceted-search-designer">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-faceted-search-designer">
+      Try It With Your Data — Faceted Search Designer
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt is made of (RICE breakdown)</summary>
+      <div class="prompt-fill__guidance-body">
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">R</span>
+          <h4>Role</h4>
+          <p>Casts the AI as: You&#x27;re a search UX designer specializing in faceted navigation and filter design.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">I</span>
+          <h4>Instructions</h4>
+          <p>Names 5 specific outputs to produce, so the response comes back structured rather than a general summary.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">C</span>
+          <h4>Context</h4>
+          <p>Platform, Current browse experience and Pain points tell the AI what your specific situation is, not a generic one.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">E</span>
+          <h4>Expected format</h4>
+          <p>Complete facet specification with UX recommendations</p>
+        </div>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[R - ROLE]
+You're a search UX designer specializing in faceted navigation and filter design.
+
+[I - INSTRUCTIONS]
+Design a faceted search system for {{CONTENT_TYPE}}:
+
+Content inventory:
+{{CONTENT_VOLUME_AND_TYPES}}
+
+User needs:
+{{HOW_USERS_FIND_CONTENT}}
+
+Design:
+1. Facet categories (what users can filter by)
+2. Facet values (options within each category)
+3. Default state and behavior
+4. Multi-select rules
+5. Result count display
+
+Technical constraints:
+{{TECHNICAL_CONSTRAINTS}}
+
+[C - CONTEXT]
+Platform: {{PLATFORM}}
+Current browse experience: {{CURRENT_BROWSE_EXPERIENCE}}
+Pain points: {{PAIN_POINTS}}
+
+[E - EXPECTED FORMAT]
+Complete facet specification with UX recommendations
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-faceted-search-designer-content-type">Content type</label>
+        <span class="prompt-fill__hint">Brief description</span>
+        <input type="text" id="pf-faceted-search-designer-content-type" class="js-prompt-input" data-token="CONTENT_TYPE" data-placeholder="Brief description" placeholder="Brief description">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-faceted-search-designer-content-volume-and-types">Content volume and types</label>
+        <span class="prompt-fill__hint">Brief summary</span>
+        <input type="text" id="pf-faceted-search-designer-content-volume-and-types" class="js-prompt-input" data-token="CONTENT_VOLUME_AND_TYPES" data-placeholder="Brief summary" placeholder="Brief summary">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-faceted-search-designer-how-users-find-content">How users find content</label>
+        <span class="prompt-fill__hint">Brief description</span>
+        <input type="text" id="pf-faceted-search-designer-how-users-find-content" class="js-prompt-input" data-token="HOW_USERS_FIND_CONTENT" data-placeholder="Brief description" placeholder="Brief description">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-faceted-search-designer-technical-constraints">Technical constraints</label>
+        <span class="prompt-fill__hint">Platform limitations, performance requirements</span>
+        <input type="text" id="pf-faceted-search-designer-technical-constraints" class="js-prompt-input" data-token="TECHNICAL_CONSTRAINTS" data-placeholder="Platform limitations, performance requirements" placeholder="Platform limitations, performance requirements">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-faceted-search-designer-platform">Platform</label>
+        <span class="prompt-fill__hint">Where this search lives.</span>
+        <select id="pf-faceted-search-designer-platform" class="js-prompt-input" data-token="PLATFORM">
+          <option value="Web">Web</option>
+          <option value="Mobile">Mobile</option>
+          <option value="Both">Both</option>
+        </select>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-faceted-search-designer-current-browse-experience">Current browse experience</label>
+        <span class="prompt-fill__hint">Brief description</span>
+        <input type="text" id="pf-faceted-search-designer-current-browse-experience" class="js-prompt-input" data-token="CURRENT_BROWSE_EXPERIENCE" data-placeholder="Brief description" placeholder="Brief description">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-faceted-search-designer-pain-points">Pain points</label>
+        <span class="prompt-fill__hint">What&#x27;s not working today</span>
+        <input type="text" id="pf-faceted-search-designer-pain-points" class="js-prompt-input" data-token="PAIN_POINTS" data-placeholder="What&#x27;s not working today" placeholder="What&#x27;s not working today">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-06.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 12 · 7 of 11</span>
+    <a href="chunk-08.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="../../assets/js/prompt-fill.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

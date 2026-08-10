@@ -1,0 +1,112 @@
+# Path item for /fleet
+# Operations: register a system (POST)
+
+post:
+  operationId: registerSystem
+  summary: Register a system
+  description: |
+    Registers a new system in your NimbusWiz organization.
+    The system ID must be unique and match the format `n2k-[name]-[number]`.
+
+    Requires `fleet:write` scope.
+  tags: [Fleet]
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/system.yaml#/RegisterSystemRequest'
+        example:
+          id: n2k-beta-002
+          name: Beta Fleet Secondary
+          certification_type: class_b
+          upgrade_profile: stable
+          flight_profile: stability_focused
+  responses:
+    '201':
+      description: System registered successfully.
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/system.yaml#/System'
+          example:
+            id: n2k-beta-002
+            name: Beta Fleet Secondary
+            status: registered
+            stability_score: null
+            upgrade_profile: stable
+            flight_profile: stability_focused
+            registered_at: "2026-04-10T11:22:00Z"
+    '400':
+      description: Missing required field or invalid value.
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/common.yaml#/Error'
+          example:
+            error: missing_field
+            message: The 'id' field is required.
+            detail:
+              field: id
+    '401':
+      $ref: '../../schemas/common.yaml#/responses/Unauthorized'
+    '403':
+      $ref: '../../schemas/common.yaml#/responses/Forbidden'
+    '409':
+      description: A system with this ID already exists.
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/common.yaml#/Error'
+          example:
+            error: duplicate_system_id
+            message: A system with ID n2k-beta-002 already exists.
+  x-codeSamples:
+    - lang: bash
+      label: cURL
+      source: |
+        curl -X POST "https://api.nimbuswiz.io/v1/fleet" \
+          -H "Authorization: Bearer YOUR_API_KEY" \
+          -H "Content-Type: application/json" \
+          -d '{
+            "id": "n2k-beta-002",
+            "name": "Beta Fleet Secondary",
+            "certification_type": "class_b",
+            "upgrade_profile": "stable",
+            "flight_profile": "stability_focused"
+          }'
+    - lang: javascript
+      label: JavaScript
+      source: |
+        const response = await fetch('https://api.nimbuswiz.io/v1/fleet', {
+          method: 'POST',
+          headers: {
+            Authorization: 'Bearer YOUR_API_KEY',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            id: 'n2k-beta-002',
+            name: 'Beta Fleet Secondary',
+            certification_type: 'class_b',
+            upgrade_profile: 'stable',
+            flight_profile: 'stability_focused',
+          }),
+        });
+        const system = await response.json();
+    - lang: python
+      label: Python
+      source: |
+        import requests
+
+        response = requests.post(
+            'https://api.nimbuswiz.io/v1/fleet',
+            headers={'Authorization': 'Bearer YOUR_API_KEY'},
+            json={
+                'id': 'n2k-beta-002',
+                'name': 'Beta Fleet Secondary',
+                'certification_type': 'class_b',
+                'upgrade_profile': 'stable',
+                'flight_profile': 'stability_focused',
+            }
+        )
+        system = response.json()

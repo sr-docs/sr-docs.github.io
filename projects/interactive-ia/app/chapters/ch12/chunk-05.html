@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search UI Design Patterns — Chapter 12 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 12</a>
+      <span aria-hidden="true">›</span>
+      <span>Search UI Design Patterns</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 5 of 11">5 of 11</div>
+    <div class="mini-nav__links">
+      <a href="chunk-04.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-06.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Search User Interface Design Patterns
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        A search interface is built from a handful of recurring components, each with its own design requirements. The search bar or box needs to be visible and appropriately sized, ideally with placeholder text that hints at what kind of query works. The search button needs to be clearly discoverable, not just an ambiguous icon. Autocomplete finishes a partial query as someone types; autosuggest is a related but distinct pattern, offering additional popular or relevant query suggestions rather than simply completing the exact words already entered. Scoped search lets someone restrict their query to a specific section or category rather than the whole space, and the ability to save a query lets someone return to a useful search without reconstructing it from scratch.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      Autocomplete finishes your sentence. Autosuggest offers you a better one. Confusing the two in an interface — or building only one when the situation calls for both — quietly limits what the search experience can actually do.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch12-chunk-05" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A large online retailer's search interface has generated six specific user testing failures.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          1. Testers report they often don't notice the search bar at all, since it's a thin, low-contrast field tucked into a corner of the header.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-1" value="visibility">
+            <span class="exercise__option-text">Search bar visibility</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-1" value="autocomplete">
+            <span class="exercise__option-text">Autocomplete behavior</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-1" value="scoped-search">
+            <span class="exercise__option-text">Scoped search</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          2. Testers type a full product name and get no completion suggestions at all, even though the exact product exists in the catalog.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-2" value="autocomplete">
+            <span class="exercise__option-text">Missing or broken autocomplete</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-2" value="search-button">
+            <span class="exercise__option-text">Search button discoverability</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-2" value="saving-queries">
+            <span class="exercise__option-text">Saving queries</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          3. Testers want to search only within a category they've already navigated to, but there's no way to restrict the search to that section.
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-3" value="scoped-search">
+            <span class="exercise__option-text">Missing scoped search</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-3" value="autosuggest">
+            <span class="exercise__option-text">Autosuggest behavior</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="failure-3" value="visibility-3">
+            <span class="exercise__option-text">Search bar visibility</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          Propose corrections for failures 1 and 2, and explain the specific difference between autocomplete and autosuggest that failure 2's fix should account for.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p><strong>1 — Search bar visibility.</strong> A thin, low-contrast field tucked into a corner directly fails the basic requirement that a search bar needs to be visible and appropriately sized — no other design pattern issue is at play here.</p>
+
+      <p><strong>2 — Missing or broken autocomplete.</strong> Typing a full, correct product name and getting no completion suggestions is precisely an autocomplete failure — the system should be completing the query as the searcher types, especially when an exact match exists.</p>
+
+      <p><strong>3 — Missing scoped search.</strong> Wanting to restrict a search to a category already being browsed, with no way to do so, is a direct scoped search gap.</p>
+
+      <span class="feedback__highlight">
+        A reasonable fix for failure 1: increase the search bar's size and contrast, and give it a more prominent, consistent position in the header rather than a low-visibility corner placement. A reasonable fix for failure 2: implement autocomplete so that partial typing completes toward exact matching product names in real time. It's worth being precise about the distinction the concept section draws: autocomplete finishes what the searcher is already typing toward an exact match, while autosuggest offers a broader set of related or popular query suggestions that may go beyond literally completing the typed characters. Failure 2 specifically describes a missing exact-match completion, which points to an autocomplete fix rather than autosuggest — though this retailer could reasonably add autosuggest as a further enhancement on top of it.
+      </span>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-04.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 12 · 5 of 11</span>
+    <a href="chunk-06.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

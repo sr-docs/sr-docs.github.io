@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Modeling — Chapter 6 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 6</a>
+      <span aria-hidden="true">›</span>
+      <span>Content Modeling</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 7 of 7">7 of 7</div>
+    <div class="mini-nav__links">
+      <a href="chunk-06.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="index.html">Chapter overview →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Content Modeling
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Content modeling decomposes content into its logical components and elements, and it's what makes dynamic, structured pages possible. A static page is manually built and self-contained; a dynamic page is generated from a consistent set of components governed by a template. Structuring content this way enables real capabilities: contextual navigation through metadata-driven links between related pages, content chunked into well-labeled sections that improve scanability, and content reuse — the same underlying content displayed differently depending on where and how it appears.
+      </p>
+      <p>
+        A content model has three key elements: <strong>content types</strong>, the distinct kinds of content objects a space comprises, each sharing common attributes and a common purpose; <strong>content components</strong>, the logical parts each content type breaks down into, balanced against the cost and complexity of actually building and maintaining that many discrete pieces; and <strong>access structures</strong>, the metadata that defines how components and pages relate to and link with each other.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      Every reusable "related articles" list, every author bio that shows up consistently across dozens of pages, and every filterable product listing all trace back to the same underlying decision: someone modeled the content into components before building the page around it.
+      </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch06-chunk-07" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A recipe website is moving from static HTML pages — each recipe hand-built as a single unstructured page — to a CMS-driven architecture. The product team wants three specific capabilities: contextual navigation between related recipes, filtering by ingredient and dietary requirement, and personalized recipe recommendations.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          Which content model element is most directly responsible for enabling filtering by ingredient and dietary requirement?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="element-filtering" value="content-types">
+            <span class="exercise__option-text">Content types alone</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="element-filtering" value="components-metadata">
+            <span class="exercise__option-text">Content components broken out with structured, filterable metadata for each attribute</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="element-filtering" value="static-page">
+            <span class="exercise__option-text">Keeping each recipe as a single static, unstructured page</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          Which content model element is most directly responsible for enabling contextual navigation between related recipes?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="element-navigation" value="access-structures">
+            <span class="exercise__option-text">Access structures — metadata defining relationships between recipe pages</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="element-navigation" value="content-types-only">
+            <span class="exercise__option-text">Content types alone, with no metadata involved</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="element-navigation" value="static-page-again">
+            <span class="exercise__option-text">Keeping each recipe as a single static, unstructured page</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          Decompose a single recipe into its logical content components — list at least four — and explain how having these as separate components, rather than one unstructured block of text, supports the third capability the team wants: personalized recommendations.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>1 — Content components broken out with structured, filterable metadata for each attribute.</strong> Filtering by ingredient and dietary requirement requires that "ingredient" and "dietary requirement" exist as distinct, structured pieces of data on every recipe, not buried inside a single block of prose. A static, unstructured page has no way to support this at all — there's nothing for a filter to query against.
+      </p>
+
+      <p>
+        <strong>2 — Access structures.</strong> Contextual navigation between related recipes depends on metadata that defines how pages relate to each other — the access structures element of a content model. Without that relationship metadata, there's no mechanism for the site to know which recipes are actually related to which.
+      </p>
+
+      <span class="feedback__highlight">
+        A reasonable decomposition of a single recipe into components: an ingredients list component, a cook-time and difficulty component, a step-by-step instructions component, a dietary-tags component, and a ratings or reviews component — each with its own well-defined purpose, matching how the source material describes decomposing a content type into its constituent parts.
+      </span>
+
+      <p>
+        Having these as separate components, each with its own metadata, is exactly what makes personalized recommendations possible: a recommendation system needs structured signals to work with — this user has favorited several recipes tagged "vegetarian" with a short cook time, so surface similar recipes — and none of that reasoning is possible if a recipe exists only as one undifferentiated paragraph of text. This is the same underlying mechanism the source material describes for reusable content generally: separating content into components is what lets the same underlying data power multiple different features, not just the single page it originally appeared on.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="prompt-fill" id="content-type-discovery" aria-labelledby="prompt-fill-label-content-type-discovery">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-content-type-discovery">
+      Try It With Your Data — Content Type Discovery
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt is made of (RICE breakdown)</summary>
+      <div class="prompt-fill__guidance-body">
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">R</span>
+          <h4>Role</h4>
+          <p>Casts the AI as: You&#x27;re a content strategist analyzing documentation to create a content model.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">I</span>
+          <h4>Instructions</h4>
+          <p>Names 7 specific outputs to produce, so the response comes back structured rather than a general summary.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">C</span>
+          <h4>Context</h4>
+          <p>Content domain, Total pages and Target audience tell the AI what your specific situation is, not a generic one.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">E</span>
+          <h4>Expected format</h4>
+          <p>For each content type: a name, what job it does for the user, how it differs from nearby types, and one example URL or title.</p>
+        </div>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[R - ROLE]
+You're a content strategist analyzing documentation to create a content model.
+
+[I - INSTRUCTIONS]
+Analyze this content inventory and identify distinct content types.
+
+For each type identified:
+1. Name and clear definition
+2. Purpose (what does it do for users?)
+3. Target audience (who uses it?)
+4. Distinguishing characteristics (what makes it unique?)
+5. Examples from the inventory (3-5 titles)
+6. Typical attributes this type would need
+7. Estimated percentage of total content
+
+Also note any pages that don't fit clearly into a single type.
+
+[C - CONTEXT]
+Content domain: {{CONTENT_DOMAIN}}
+Total pages: {{TOTAL_PAGES}}
+Target audience: {{TARGET_AUDIENCE}}
+
+[E - EXPECTED FORMAT]
+For each content type:
+- Definition block
+- Characteristics list
+- Example titles
+- Suggested attributes
+- Percentage estimate
+
+Include summary distribution table at end.
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-content-type-discovery-content-domain">Content domain</label>
+        <span class="prompt-fill__hint">Brief description</span>
+        <input type="text" id="pf-content-type-discovery-content-domain" class="js-prompt-input" data-token="CONTENT_DOMAIN" data-placeholder="Brief description" placeholder="Brief description">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-content-type-discovery-total-pages">Total pages</label>
+        <span class="prompt-fill__hint">Whole number</span>
+        <input type="text" id="pf-content-type-discovery-total-pages" class="js-prompt-input" data-token="TOTAL_PAGES" data-placeholder="Whole number" placeholder="Whole number">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-content-type-discovery-target-audience">Target audience</label>
+        <span class="prompt-fill__hint">Who this content is for</span>
+        <input type="text" id="pf-content-type-discovery-target-audience" class="js-prompt-input" data-token="TARGET_AUDIENCE" data-placeholder="Who this content is for" placeholder="Who this content is for">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="prompt-fill" id="classification-prompt" aria-labelledby="prompt-fill-label-classification-prompt">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-classification-prompt">
+      Try It With Your Data — Content Classification
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt is made of (RICE breakdown)</summary>
+      <div class="prompt-fill__guidance-body">
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">R</span>
+          <h4>Role</h4>
+          <p>Casts the AI as: You are a content strategist and information architect who specializes in classifying documentation using the Diátaxis framework.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">I</span>
+          <h4>Instructions</h4>
+          <p>Names 5 specific outputs to produce, so the response comes back structured rather than a general summary.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">C</span>
+          <h4>Context</h4>
+          <p>Background tell the AI what your specific situation is, not a generic one.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">E</span>
+          <h4>Expected format</h4>
+          <p>Output as structured table: columns for page/title, proposed type, confidence, and a one-line reason grounded in the page content.</p>
+        </div>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[R - ROLE]
+You are a content strategist and information architect who specializes in classifying documentation using the Diátaxis framework.
+
+[I - INSTRUCTIONS]
+Classify these {{NUMBER_OF_PAGES}} documentation pages using the Diátaxis framework.
+
+For each page, provide:
+1. Page title
+2. Classification (Tutorial, How-to Guide, Reference, or Explanation)
+3. Brief reasoning (one sentence explaining why)
+4. Confidence level (high/medium/low)
+5. Notes (if hybrid or ambiguous)
+
+Requirements:
+- Use ONLY the four Diátaxis categories
+- Base classification on content PURPOSE, not just format
+- Flag any pages that don't fit cleanly (hybrid content)
+- Note pages that might need splitting
+
+[C - CONTEXT]
+Background:
+- {{CONTENT_DOMAIN}} documentation
+- Current organization: {{CURRENT_ORGANIZATION}}
+- User problem: {{USER_PROBLEM}}
+- Goal: {{GOAL}}
+
+Diátaxis definitions for reference:
+- Tutorial: Learning-oriented, step-by-step lesson, teaches by doing
+- How-to Guide: Task-oriented, solves specific problem, assumes knowledge
+- Reference: Information-oriented, describes the machinery, technical specs
+- Explanation: Understanding-oriented, clarifies concepts, discusses why
+
+[E - EXPECTED FORMAT]
+Output as structured table:
+| Page Title | Type | Reasoning | Confidence | Notes |</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-classification-prompt-number-of-pages">Number of pages</label>
+        <span class="prompt-fill__hint">Whole number</span>
+        <input type="text" id="pf-classification-prompt-number-of-pages" class="js-prompt-input" data-token="NUMBER_OF_PAGES" data-placeholder="Whole number" placeholder="Whole number">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-classification-prompt-content-domain">Content domain</label>
+        <span class="prompt-fill__hint">e.g. &quot;API&quot;</span>
+        <input type="text" id="pf-classification-prompt-content-domain" class="js-prompt-input" data-token="CONTENT_DOMAIN" data-placeholder="e.g. &quot;API&quot;" placeholder="e.g. &quot;API&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-classification-prompt-current-organization">Current organization</label>
+        <span class="prompt-fill__hint">Brief description of current structure</span>
+        <input type="text" id="pf-classification-prompt-current-organization" class="js-prompt-input" data-token="CURRENT_ORGANIZATION" data-placeholder="Brief description of current structure" placeholder="Brief description of current structure">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-classification-prompt-user-problem">User problem</label>
+        <span class="prompt-fill__hint">Why you&#x27;re reorganizing</span>
+        <input type="text" id="pf-classification-prompt-user-problem" class="js-prompt-input" data-token="USER_PROBLEM" data-placeholder="Why you&#x27;re reorganizing" placeholder="Why you&#x27;re reorganizing">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-classification-prompt-goal">Goal</label>
+        <span class="prompt-fill__hint">What you&#x27;re trying to achieve</span>
+        <input type="text" id="pf-classification-prompt-goal" class="js-prompt-input" data-token="GOAL" data-placeholder="What you&#x27;re trying to achieve" placeholder="What you&#x27;re trying to achieve">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="prompt-fill" id="schema-generator" aria-labelledby="prompt-fill-label-schema-generator">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-schema-generator">
+      Try It With Your Data — Metadata Schema Generator
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt is made of (RICE breakdown)</summary>
+      <div class="prompt-fill__guidance-body">
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">R</span>
+          <h4>Role</h4>
+          <p>Casts the AI as: You&#x27;re a content architect designing metadata schemas for documentation.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">I</span>
+          <h4>Instructions</h4>
+          <p>Spells out exactly what to analyze and return.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">C</span>
+          <h4>Context</h4>
+          <p>Content type definition tell the AI what your specific situation is, not a generic one.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">E</span>
+          <h4>Expected format</h4>
+          <p>Group attributes by category: required identifying fields, descriptive fields, relationship fields, and administrative/workflow fields.</p>
+        </div>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[R - ROLE]
+You're a content architect designing metadata schemas for documentation.
+
+[I - INSTRUCTIONS]
+Define all necessary attributes for the "{{CONTENT_TYPE}}" content type.
+
+For each attribute specify:
+- Field name (camelCase for consistency)
+- Data type (string, number, boolean, enum, array, object, date)
+- Required or optional
+- Description
+- Validation rules
+- Default value (if applicable)
+- Examples
+- How it's used (search, display, automation, etc.)
+
+[C - CONTEXT]
+- Platform: {{PLATFORM}}
+- Use cases: {{USE_CASES}}
+- Constraints: {{TECHNICAL_CONSTRAINTS}}
+
+Content type definition:
+- Purpose: {{PURPOSE}}
+- {{ADDITIONAL_CHARACTERISTICS}}
+
+[E - EXPECTED FORMAT]
+Group attributes by category:
+1. Basic Information (title, description, slug)
+2. {{DOMAIN_SPECIFIC_ATTRIBUTE_CATEGORY}} (e.g., Learning Metadata)
+3. Technical Details (if applicable)
+4. Organization (category, tags, order)
+5. Relationships (related content)
+6. Publishing Metadata (author, dates, status)
+
+End with example frontmatter showing all fields.
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-schema-generator-content-type">Content type</label>
+        <span class="prompt-fill__hint">e.g. &quot;API Reference Page&quot;</span>
+        <input type="text" id="pf-schema-generator-content-type" class="js-prompt-input" data-token="CONTENT_TYPE" data-placeholder="e.g. &quot;API Reference Page&quot;" placeholder="e.g. &quot;API Reference Page&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-schema-generator-platform">Platform</label>
+        <span class="prompt-fill__hint">e.g. Docusaurus, Contentful, custom CMS</span>
+        <input type="text" id="pf-schema-generator-platform" class="js-prompt-input" data-token="PLATFORM" data-placeholder="e.g. Docusaurus, Contentful, custom CMS" placeholder="e.g. Docusaurus, Contentful, custom CMS">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-schema-generator-use-cases">Use cases</label>
+        <span class="prompt-fill__hint">What this metadata should enable (search, filtering, etc.)</span>
+        <input type="text" id="pf-schema-generator-use-cases" class="js-prompt-input" data-token="USE_CASES" data-placeholder="What this metadata should enable (search, filtering, etc.)" placeholder="What this metadata should enable (search, filtering, etc.)">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-schema-generator-technical-constraints">Technical constraints</label>
+        <span class="prompt-fill__hint">Any technical limits</span>
+        <input type="text" id="pf-schema-generator-technical-constraints" class="js-prompt-input" data-token="TECHNICAL_CONSTRAINTS" data-placeholder="Any technical limits" placeholder="Any technical limits">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-schema-generator-purpose">Purpose</label>
+        <span class="prompt-fill__hint">What this content type does for users</span>
+        <input type="text" id="pf-schema-generator-purpose" class="js-prompt-input" data-token="PURPOSE" data-placeholder="What this content type does for users" placeholder="What this content type does for users">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-schema-generator-additional-characteristics">Additional characteristics</label>
+        <span class="prompt-fill__hint">Anything else that defines this content type</span>
+        <input type="text" id="pf-schema-generator-additional-characteristics" class="js-prompt-input" data-token="ADDITIONAL_CHARACTERISTICS" data-placeholder="Anything else that defines this content type" placeholder="Anything else that defines this content type">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-schema-generator-domain-specific-attribute-category">Domain-specific attribute category</label>
+        <span class="prompt-fill__hint">e.g. Learning Metadata</span>
+        <input type="text" id="pf-schema-generator-domain-specific-attribute-category" class="js-prompt-input" data-token="DOMAIN_SPECIFIC_ATTRIBUTE_CATEGORY" data-placeholder="e.g. Learning Metadata" placeholder="e.g. Learning Metadata">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="prompt-fill" id="relationship-mapper" aria-labelledby="prompt-fill-label-relationship-mapper">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-relationship-mapper">
+      Try It With Your Data — Relationship Mapper
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt does</summary>
+      <div class="prompt-fill__guidance-body prompt-fill__guidance-body--simple">
+        <p>Use this prompt when: Starting content modeling from scratch.</p>
+        <ul><li>Designing content models with interconnected types</li><li>Building navigation that shows related content</li><li>Planning cross-linking strategy</li><li>Implementing &quot;Related Content&quot; features</li></ul>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[ROLE]
+You're a content architect mapping relationships between content types.
+
+[INSTRUCTIONS]
+For the following content types, identify and document all meaningful relationships:
+
+Content types:
+{{CONTENT_TYPES}}
+
+For each relationship pair, specify:
+1. Relationship name (verb-based: "uses", "requires", "leads-to")
+2. Direction (A → B, B → A, or bidirectional ↔)
+3. Cardinality (one-to-one, one-to-many, many-to-many)
+4. Implementation approach (field type, where stored)
+5. Example with real content
+6. Use case (why this relationship matters to users)
+
+Then provide:
+- Visual relationship diagram (text-based)
+- Implementation schema (field definitions)
+- Example queries users might want
+- Priority ranking (which relationships to implement first)
+
+[CONTEXT]
+Platform: {{PLATFORM}}
+Content volume: {{CONTENT_VOLUME}}
+User needs: {{USER_NEEDS}}
+
+[CONSTRAINTS]
+- Focus on relationships that improve user navigation
+- Avoid redundant relationships
+- Consider maintenance burden of each relationship
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-relationship-mapper-content-types">Content types</label>
+        <span class="prompt-fill__hint">One per line: Type name — brief description</span>
+        <textarea id="pf-relationship-mapper-content-types" class="js-prompt-input" data-token="CONTENT_TYPES" data-placeholder="One per line: Type name — brief description" placeholder="One per line: Type name — brief description"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-relationship-mapper-platform">Platform</label>
+        <span class="prompt-fill__hint">Your CMS, SSG, or documentation platform</span>
+        <input type="text" id="pf-relationship-mapper-platform" class="js-prompt-input" data-token="PLATFORM" data-placeholder="Your CMS, SSG, or documentation platform" placeholder="Your CMS, SSG, or documentation platform">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-relationship-mapper-content-volume">Content volume</label>
+        <span class="prompt-fill__hint">Approximate counts per type</span>
+        <input type="text" id="pf-relationship-mapper-content-volume" class="js-prompt-input" data-token="CONTENT_VOLUME" data-placeholder="Approximate counts per type" placeholder="Approximate counts per type">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-relationship-mapper-user-needs">User needs</label>
+        <span class="prompt-fill__hint">How users navigate between content</span>
+        <input type="text" id="pf-relationship-mapper-user-needs" class="js-prompt-input" data-token="USER_NEEDS" data-placeholder="How users navigate between content" placeholder="How users navigate between content">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-06.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 6 · 7 of 7</span>
+    <a href="../ch07/chunk-01.html" class="chunk-footer__next-chapter">Next: Chapter 7 <span>· Classifying Information</span> →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="../../assets/js/prompt-fill.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generative Card-Sorting Methods — Chapter 5 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 5</a>
+      <span aria-hidden="true">›</span>
+      <span>Generative Card-Sorting Methods</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 1 of 7">1 of 7</div>
+    <div class="mini-nav__links">
+      <a href="index.html">← Chapter overview</a>
+      <span class="spacer"></span>
+      <a href="chunk-02.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Card Sorting and Generative Methods
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Card sorting is a foundational research method for understanding how people mentally organize information. You create a set of cards — usually 30 to 100 — each representing a content object, then ask participants to work with them to reveal their mental model of how that content should be structured and labeled. Sessions typically involve 6 to 12 participants, individually or in small groups of 3 to 5, and participants should think aloud so you understand the reasoning behind their choices, not just the outcome.
+      </p>
+      <p>
+        <strong>Open card sorting</strong> is the most common generative method: participants group the cards however feels natural to them, without predefined categories, then label the groups they've created themselves. This reveals both how people naturally group content and what terminology they'd use for the categories. <strong>Modified-Delphi card sorting</strong>, devised by Celeste Lyn Paul, takes a different approach: rather than each participant sorting independently, a seed participant creates an initial sort, and each subsequent participant refines that same evolving sort in turn, until the group reaches consensus. Because it produces a single structural model instead of many individual ones to reconcile, it's often more reliable and simpler to analyze — but it takes longer per session, since participants work sequentially rather than in parallel.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      Open card sorting shows you many individual mental models you then have to reconcile. Modified-Delphi trades that reconciliation work for a slower, more deliberate path to one shared model.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch05-chunk-01" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A UX team is redesigning a large corporate intranet. Two team members are arguing about which card-sorting method to use.
+        </p>
+        <p>
+          The project has a tight six-week timeline. The team already has a rough sense of the intranet's content domain from earlier stakeholder interviews, but no idea how employees would naturally group hundreds of policies, forms, and resources. One team member wants to run open card sorts with 10 individual employees, in parallel, this week. The other wants to run a single modified-Delphi session with a small group of employees representing different departments.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          Given the six-week timeline and the need to understand how a broad, unfamiliar employee base thinks about this content, which method should the team choose?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="method-choice" value="open">
+            <span class="exercise__option-text">Open card sorting with multiple individual employees in parallel</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="method-choice" value="delphi">
+            <span class="exercise__option-text">Modified-Delphi card sorting with one evolving group session</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          Whichever method you chose, explain what you would lose by not choosing the other one.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>Open card sorting with multiple individual employees is the stronger choice here.</strong> The team doesn't yet know how a broad, unfamiliar employee base naturally thinks about this content — that's precisely the discovery open card sorting is built for. Running it with multiple participants in parallel also fits the tight timeline far better: independent sessions can happen simultaneously, while modified-Delphi's sequential, one-at-a-time refinement process takes meaningfully longer per session.
+      </p>
+
+      <span class="feedback__highlight">
+        Choosing open card sorting means giving up the single, ready-to-use consensus model that modified-Delphi would have produced directly. Open sorts from 10 different employees will likely produce 10 different groupings and sets of labels, which the team will then need to reconcile — normalizing similar labels, looking for common patterns — before they have one structural model to act on. That reconciliation work is real, but it's a reasonable trade for discovering the actual diversity of employee mental models across departments, something a single modified-Delphi group session, run with only a handful of people, would be less likely to surface.
+      </span>
+
+      <p>
+        Modified-Delphi would have been the better choice if the team already had a rough structural hypothesis and needed a small, representative group to refine it into one coherent model efficiently — but that's not the situation described here, where the team is still discovering how employees think in the first place.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="prompt-fill" id="card-sort-analysis" aria-labelledby="prompt-fill-label-card-sort-analysis">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-card-sort-analysis">
+      Try It With Your Data — Card Sort Analysis
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt is made of (RICE breakdown)</summary>
+      <div class="prompt-fill__guidance-body">
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">R</span>
+          <h4>Role</h4>
+          <p>Casts the AI as: You&#x27;re a UX researcher specializing in card sorting analysis and information architecture.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">I</span>
+          <h4>Instructions</h4>
+          <p>Names 5 specific outputs to produce, so the response comes back structured rather than a general summary.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">C</span>
+          <h4>Context</h4>
+          <p>Domain, Current IA and Research question tell the AI what your specific situation is, not a generic one.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">E</span>
+          <h4>Expected format</h4>
+          <p>Structured analysis with actionable recommendations</p>
+        </div>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[R - ROLE]
+You're a UX researcher specializing in card sorting analysis and information architecture.
+
+[I - INSTRUCTIONS]
+Analyze this card sort data:
+
+Study type: {{STUDY_TYPE}}
+Participants: {{PARTICIPANTS}}
+Cards: {{CARDS}}
+
+{{YOUR_CARD_SORT_DATA}}
+
+Provide:
+1. Grouping patterns (most common clusters)
+2. Problematic cards (inconsistently sorted)
+3. Category consensus (for open sorts)
+4. Recommendation confidence levels
+5. IA recommendations
+
+[C - CONTEXT]
+Domain: {{DOMAIN}}
+Current IA: {{CURRENT_IA}}
+Research question: {{RESEARCH_QUESTION}}
+
+[E - EXPECTED FORMAT]
+Structured analysis with actionable recommendations
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-card-sort-analysis-study-type">Study type</label>
+        <span class="prompt-fill__hint">Choose the method you ran.</span>
+        <select id="pf-card-sort-analysis-study-type" class="js-prompt-input" data-token="STUDY_TYPE">
+          <option value="Open card sort">Open card sort</option>
+          <option value="Closed card sort">Closed card sort</option>
+          <option value="Hybrid card sort">Hybrid card sort</option>
+        </select>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-card-sort-analysis-participants">Participants</label>
+        <span class="prompt-fill__hint">Whole number, e.g. 25</span>
+        <input type="text" id="pf-card-sort-analysis-participants" class="js-prompt-input" data-token="PARTICIPANTS" data-placeholder="Whole number, e.g. 25" placeholder="Whole number, e.g. 25">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-card-sort-analysis-cards">Cards</label>
+        <span class="prompt-fill__hint">Whole number, e.g. 20</span>
+        <input type="text" id="pf-card-sort-analysis-cards" class="js-prompt-input" data-token="CARDS" data-placeholder="Whole number, e.g. 20" placeholder="Whole number, e.g. 20">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-card-sort-analysis-your-card-sort-data">Your card sort data</label>
+        <span class="prompt-fill__hint">Paste raw notes or a summary — e.g. &quot;20/25 grouped Card A + Card B together.&quot;</span>
+        <textarea id="pf-card-sort-analysis-your-card-sort-data" class="js-prompt-input" data-token="YOUR_CARD_SORT_DATA" data-placeholder="Paste raw notes or a summary — e.g. &quot;20/25 grouped Card A + Card B together.&quot;" placeholder="Paste raw notes or a summary — e.g. &quot;20/25 grouped Card A + Card B together.&quot;"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-card-sort-analysis-domain">Domain</label>
+        <span class="prompt-fill__hint">Short phrase, e.g. &quot;Payment API documentation&quot;</span>
+        <input type="text" id="pf-card-sort-analysis-domain" class="js-prompt-input" data-token="DOMAIN" data-placeholder="Short phrase, e.g. &quot;Payment API documentation&quot;" placeholder="Short phrase, e.g. &quot;Payment API documentation&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-card-sort-analysis-current-ia">Current IA</label>
+        <span class="prompt-fill__hint">One line, or &quot;none&quot;</span>
+        <input type="text" id="pf-card-sort-analysis-current-ia" class="js-prompt-input" data-token="CURRENT_IA" data-placeholder="One line, or &quot;none&quot;" placeholder="One line, or &quot;none&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-card-sort-analysis-research-question">Research question</label>
+        <span class="prompt-fill__hint">One sentence — what decision this should inform</span>
+        <input type="text" id="pf-card-sort-analysis-research-question" class="js-prompt-input" data-token="RESEARCH_QUESTION" data-placeholder="One sentence — what decision this should inform" placeholder="One sentence — what decision this should inform">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="prompt-fill" id="category-label-synthesis" aria-labelledby="prompt-fill-label-category-label-synthesis">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-category-label-synthesis">
+      Try It With Your Data — Category Label Synthesis
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt is made of (RICE breakdown)</summary>
+      <div class="prompt-fill__guidance-body">
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">R</span>
+          <h4>Role</h4>
+          <p>Casts the AI as: You&#x27;re a UX researcher synthesizing category labels from user research data.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">I</span>
+          <h4>Instructions</h4>
+          <p>Names 5 specific outputs to produce, so the response comes back structured rather than a general summary.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">C</span>
+          <h4>Context</h4>
+          <p>Domain, Audience, Existing terminology and Brand voice tell the AI what your specific situation is, not a generic one.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">E</span>
+          <h4>Expected format</h4>
+          <p>Label recommendations with supporting data</p>
+        </div>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[R - ROLE]
+You're a UX researcher synthesizing category labels from user research data.
+
+[I - INSTRUCTIONS]
+Analyze these user-created category labels from an open card sort:
+
+{{PARTICIPANT_CREATED_LABELS}}
+
+For each cluster:
+1. List all labels users created
+2. Identify patterns and themes
+3. Recommend a final label
+4. Provide rationale
+5. Note alternatives to test
+
+Consider:
+- Frequency of similar labels
+- Clarity and information scent
+- Alignment with user vocabulary
+- Consistency with site/product terminology
+
+[C - CONTEXT]
+Domain: {{DOMAIN}}
+Audience: {{AUDIENCE}}
+Existing terminology: {{EXISTING_TERMINOLOGY}}
+Brand voice: {{BRAND_VOICE}}
+
+[E - EXPECTED FORMAT]
+Label recommendations with supporting data
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-category-label-synthesis-participant-created-labels">Participant-created labels</label>
+        <span class="prompt-fill__hint">One cluster per line, e.g. &quot;Cluster 1: Settings, Preferences, Config (8 participants)&quot;</span>
+        <textarea id="pf-category-label-synthesis-participant-created-labels" class="js-prompt-input" data-token="PARTICIPANT_CREATED_LABELS" data-placeholder="One cluster per line, e.g. &quot;Cluster 1: Settings, Preferences, Config (8 participants)&quot;" placeholder="One cluster per line, e.g. &quot;Cluster 1: Settings, Preferences, Config (8 participants)&quot;"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-category-label-synthesis-domain">Domain</label>
+        <span class="prompt-fill__hint">Short phrase, e.g. &quot;Developer documentation&quot;</span>
+        <input type="text" id="pf-category-label-synthesis-domain" class="js-prompt-input" data-token="DOMAIN" data-placeholder="Short phrase, e.g. &quot;Developer documentation&quot;" placeholder="Short phrase, e.g. &quot;Developer documentation&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-category-label-synthesis-audience">Audience</label>
+        <span class="prompt-fill__hint">e.g. &quot;New developers&quot;</span>
+        <input type="text" id="pf-category-label-synthesis-audience" class="js-prompt-input" data-token="AUDIENCE" data-placeholder="e.g. &quot;New developers&quot;" placeholder="e.g. &quot;New developers&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-category-label-synthesis-existing-terminology">Existing terminology</label>
+        <span class="prompt-fill__hint">Current labels in use, or &quot;none&quot;</span>
+        <input type="text" id="pf-category-label-synthesis-existing-terminology" class="js-prompt-input" data-token="EXISTING_TERMINOLOGY" data-placeholder="Current labels in use, or &quot;none&quot;" placeholder="Current labels in use, or &quot;none&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-category-label-synthesis-brand-voice">Brand voice</label>
+        <span class="prompt-fill__hint">Pick the tone that fits your site.</span>
+        <select id="pf-category-label-synthesis-brand-voice" class="js-prompt-input" data-token="BRAND_VOICE">
+          <option value="Formal">Formal</option>
+          <option value="Casual">Casual</option>
+          <option value="Technical">Technical</option>
+        </select>
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="index.html">← Chapter overview</a>
+    <span class="chunk-footer__center">Chapter 5 · 1 of 7</span>
+    <a href="chunk-02.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="../../assets/js/prompt-fill.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

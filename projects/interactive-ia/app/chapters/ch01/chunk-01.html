@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Defining Information Architecture — Chapter 1 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 1</a>
+      <span aria-hidden="true">›</span>
+      <span>Defining Information Architecture</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 1 of 5">1 of 5</div>
+    <div class="mini-nav__links">
+      <a href="index.html">← Chapter overview</a>
+      <span class="spacer"></span>
+      <a href="chunk-02.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Defining Information Architecture &amp; Its Goals
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Richard Saul Wurman coined the term "information architecture" in 1975, but it was Lou Rosenfeld and Peter Morville who, in 1998, defined it as a practice — one focused on organizing content, assigning clear labels, and designing navigation and search systems so people can find what they need. That practical, structure-first definition is the one this course uses throughout.
+      </p>
+      <p>
+        IA exists to achieve specific goals: making information easy to find, providing information scent so people know they're on the right path, supporting both browsing and search, creating a sense of place within a digital space, and combating information overload. Every structural decision an information architect makes should trace back to one or more of these goals.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      IA is not the visual design of a page. It's the underlying decisions about what content exists, how it's grouped, and how people can find it — decisions that hold up regardless of what the page eventually looks like.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch01-chunk-01" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A product team is building a new internal employee handbook portal. In a planning meeting, four different statements come up. Classify each one by the discipline it most directly reflects.
+        </p>
+      </div>
+
+      <!-- Statement 1 -->
+      <fieldset style="border:none; padding:0; margin-bottom: 1.5rem;">
+        <legend style="font-size:1rem; line-height:1.65; margin-bottom:0.75rem; font-weight:500;">
+          1. "We're deciding whether policies should be grouped by department or by topic, and what to call each group."
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="statement-1" value="ia">
+            <span class="exercise__option-text">Information Architecture</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="statement-1" value="visual">
+            <span class="exercise__option-text">Visual Design</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="statement-1" value="content">
+            <span class="exercise__option-text">Content Strategy</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <!-- Statement 2 -->
+      <fieldset style="border:none; padding:0; margin-bottom: 1.5rem;">
+        <legend style="font-size:1rem; line-height:1.65; margin-bottom:0.75rem; font-weight:500;">
+          2. "We're choosing the typeface and color palette for the new portal so it matches the brand guidelines."
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="statement-2" value="ia">
+            <span class="exercise__option-text">Information Architecture</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="statement-2" value="visual">
+            <span class="exercise__option-text">Visual Design</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="statement-2" value="content">
+            <span class="exercise__option-text">Content Strategy</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <!-- Statement 3 -->
+      <fieldset style="border:none; padding:0; margin-bottom: 1.5rem;">
+        <legend style="font-size:1rem; line-height:1.65; margin-bottom:0.75rem; font-weight:500;">
+          3. "We're figuring out what tone the HR policies should be written in, and who's responsible for keeping them updated."
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="statement-3" value="ia">
+            <span class="exercise__option-text">Information Architecture</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="statement-3" value="visual">
+            <span class="exercise__option-text">Visual Design</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="statement-3" value="content">
+            <span class="exercise__option-text">Content Strategy</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <!-- Statement 4 -->
+      <fieldset style="border:none; padding:0; margin-bottom: 1.75rem;">
+        <legend style="font-size:1rem; line-height:1.65; margin-bottom:0.75rem; font-weight:500;">
+          4. "We're deciding how many levels deep the navigation should go before someone gets frustrated looking for their expense policy."
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="statement-4" value="ia">
+            <span class="exercise__option-text">Information Architecture</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="statement-4" value="visual">
+            <span class="exercise__option-text">Visual Design</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="statement-4" value="content">
+            <span class="exercise__option-text">Content Strategy</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          Statement 3 sits closest to the line between content strategy and IA. In your own words, explain why the two disciplines overlap there, and where you'd draw the boundary.
+        </label>
+        <textarea
+          id="justification"
+          name="justification"
+          required
+          placeholder="Write a few sentences."
+        ></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p><strong>Statement 1 — Information Architecture.</strong> Deciding how to group content and what to call the groups is a direct organizational-structure and labeling decision — the core of IA work.</p>
+
+      <p><strong>Statement 2 — Visual Design.</strong> Typeface and color are presentation decisions. They affect how the portal looks, not how its content is structured or found.</p>
+
+      <p><strong>Statement 3 — Content Strategy.</strong> Tone of voice and ownership of ongoing updates are content strategy concerns — they're about the content itself and its lifecycle, not its structure.</p>
+
+      <p><strong>Statement 4 — Information Architecture.</strong> This is a breadth-versus-depth decision in the navigation hierarchy — a defining IA concern covered in depth later in this course.</p>
+
+      <span class="feedback__highlight">
+        The overlap in statement 3 is real. Content strategy defines what the content says and who maintains it; IA defines how that content is classified and labeled so it can be found. In practice, the same person often does both in smaller organizations — but they remain distinct decisions. A content strategist could pick a perfect tone of voice for a policy that's still buried under the wrong category label. Getting the label right is IA's job; getting the tone right is content strategy's job.
+      </span>
+
+      <p>
+        This distinction matters because it tells you what to fix when something goes wrong. If users can't find a policy, that's an IA problem — check labels, categories, and navigation. If users find the policy but don't trust or understand it, that's more likely a content strategy problem — check tone, clarity, and currency.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="index.html">← Chapter overview</a>
+    <span class="chunk-footer__center">Chapter 1 · 1 of 5</span>
+    <a href="chunk-02.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

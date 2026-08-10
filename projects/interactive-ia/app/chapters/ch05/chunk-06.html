@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Path Analysis — Chapter 5 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 5</a>
+      <span aria-hidden="true">›</span>
+      <span>Path Analysis</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 6 of 7">6 of 7</div>
+    <div class="mini-nav__links">
+      <a href="chunk-05.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-07.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Path Analysis
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Path analysis, also called clickstream analysis, looks at the specific sequences of pages users move through, rather than evaluating individual pages in isolation. For multi-step processes, you can configure a goal funnel to see exactly what percentage — and what raw number — of users drop off at each step. This reveals not just that people are leaving, but precisely where in a journey they're leaving.
+      </p>
+      <p>
+        Not all drop-off points are equally significant. A high drop-out rate early in a funnel, before a user has invested much effort or commitment, is less concerning than a high drop-out rate later, after they've already invested time completing several earlier steps. Recovering users who abandon late in a process — closer to their goal — typically delivers more value than fixing an early step, because those users have already demonstrated real intent.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      Losing someone on step one of five might just mean they weren't that interested to begin with. Losing them on step four means something in your design actively pushed away someone who was already most of the way to finishing.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch05-chunk-06" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> An insurance company's online quote process has five steps: Basic Information, Vehicle Details, Coverage Options, Payment Details, and Confirmation. The funnel data shows the following drop-off rates: Basic Information to Vehicle Details, 15 percent drop-off; Vehicle Details to Coverage Options, 12 percent drop-off; Coverage Options to Payment Details, 58 percent drop-off; Payment Details to Confirmation, 8 percent drop-off.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          Based on the principle that late-funnel drop-off is more concerning than early drop-off, which step should the team prioritize investigating first?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="priority-step" value="basic-info">
+            <span class="exercise__option-text">Basic Information to Vehicle Details</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="priority-step" value="coverage-payment">
+            <span class="exercise__option-text">Coverage Options to Payment Details</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="priority-step" value="payment-confirmation">
+            <span class="exercise__option-text">Payment Details to Confirmation</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="priority-step" value="all-equal">
+            <span class="exercise__option-text">All steps deserve equal priority regardless of position in the funnel</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          The 58 percent drop-off happens right as users move from selecting coverage to entering payment details. Propose one specific hypothesis for what might be causing this particular drop-off, given where it falls in the funnel.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>Coverage Options to Payment Details is the correct priority.</strong> At 58 percent, this drop-off is dramatically higher than any other step, and it happens after users have already completed three prior steps — Basic Information, Vehicle Details, and Coverage Options. These are users who have already invested real time and demonstrated genuine intent to get a quote. Losing more than half of them at this specific point represents the most significant, and most recoverable, loss in the entire funnel.
+      </p>
+
+      <span class="feedback__highlight">
+        By contrast, the 15 percent drop-off between Basic Information and Vehicle Details happens at the very start, before users have invested much of anything — some of that early loss may simply reflect people who were never seriously shopping for a quote to begin with, which is a normal and less actionable pattern.
+      </span>
+
+      <p>
+        One reasonable hypothesis for the Coverage-to-Payment drop-off: this is the exact point where an insurance quote typically becomes a real financial commitment rather than an exploratory exercise — users may be experiencing sticker shock at the price once coverage is selected, or the payment step may be asking for more sensitive information than they expected at this stage, causing hesitation. This is precisely the kind of hypothesis that path analysis surfaces but can't confirm on its own — it would need to be validated with complementary research, such as usability testing focused specifically on this transition, or exit-intent surveys asking users why they left at that step.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-05.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 5 · 6 of 7</span>
+    <a href="chunk-07.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

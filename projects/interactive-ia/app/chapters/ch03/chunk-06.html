@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Information Architecture — Chapter 3 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 3</a>
+      <span aria-hidden="true">›</span>
+      <span>Accessible IA</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 6 of 6">6 of 6</div>
+    <div class="mini-nav__links">
+      <a href="chunk-05.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="index.html">Chapter overview →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Accessible Information Architecture
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Accessibility is not a layer you paint on after the structure is done. The same decisions that make a site findable — clear labels, predictable landmarks, a depth people can keep in working memory, headings that match the outline — are what make it usable with a screen reader, a keyboard, or a high zoom level. An IA that buries a critical task three ambiguous clicks deep fails a screen-reader user harder than a mouse user, because every wrong turn costs more to reverse.
+      </p>
+      <p>
+        Treat structure as an accessibility surface. Navigation should expose a consistent order and naming system so assistive tech can announce a stable map. Skip links and landmark regions only help if the underlying sections are real. Labels must be unique within a view; two "Learn more" links that go to different places are an IA failure as much as an a11y failure. Search is often the fastest path for people who cannot efficiently browse — which is why a broken zero-results page is an accessibility bug, not only a findability one.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      If a structure only works when you can see the whole page at once, it is not finished. Accessible IA is the same IA, held to a harder test.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch03-chunk-06" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A city services portal is redesigning its top navigation. The proposed bar has twelve items, three of which are labeled "Apply," "Apply online," and "Applications." The team also plans to hide the search field behind an icon that only appears after scrolling, and to use a single "More" overflow for everything that does not fit on mobile.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          Which change most clearly improves the information architecture for accessibility — not just visual polish?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="a11y-ia" value="labels-search">
+            <span class="exercise__option-text">Rename the three near-duplicate Apply items into distinct tasks, and keep search in a consistent, keyboard-reachable place on every page</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="a11y-ia" value="color">
+            <span class="exercise__option-text">Increase the contrast of the navigation bar background and add a subtle drop shadow</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="a11y-ia" value="more">
+            <span class="exercise__option-text">Move even more items into the mobile "More" menu so the top bar looks cleaner</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="a11y-ia" value="aria">
+            <span class="exercise__option-text">Leave the structure as-is and add ARIA labels that repeat the same ambiguous names</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          A stakeholder says accessibility can wait until "after IA is approved." In two or three sentences, explain why that sequencing usually fails.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>Rename the ambiguous Apply items and keep search consistently available.</strong> Ambiguous sibling labels and a search field that comes and goes are structure and wayfinding problems — exactly what assistive-tech users hit first. Contrast and shadows can help vision, but they do not fix a map that cannot be told apart by name. Stuffing more into "More" and papering over names with ARIA leave the underlying IA confusion in place.
+      </p>
+
+      <span class="feedback__highlight">
+        Approving an IA first and "adding accessibility later" usually locks in depth, labeling, and navigation patterns that are expensive to unwind. The cheaper moment to ask "can this be operated without sight, and without a mouse?" is while the structure is still a draft.
+      </span>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-05.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 3 · 6 of 6</span>
+    <a href="../ch04/chunk-01.html" class="chunk-footer__next-chapter">Next: Chapter 4 <span>· Structural Patterns and Organization Schemes</span> →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

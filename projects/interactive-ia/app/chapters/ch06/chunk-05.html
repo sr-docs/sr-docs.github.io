@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Mapping — Chapter 6 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 6</a>
+      <span aria-hidden="true">›</span>
+      <span>Content Mapping</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 5 of 7">5 of 7</div>
+    <div class="mini-nav__links">
+      <a href="chunk-04.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-06.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Content Mapping
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Content mapping turns an inventory and audit into something visual — a representation of how pages and content objects relate to each other, which is often far easier to reason about than rows in a spreadsheet. A map might show an entire information hierarchy, just its upper levels, an individual section in detail, or a specific page type's internal components for content reuse. Teams often build these with boxes and arrows, or physically with Post-it notes on a wall that can be rearranged and photographed as the structure evolves.
+      </p>
+      <p>
+        A content map becomes most useful when paired with usage-data analytics — overlaying what's actually popular or struggling onto the visual structure reveals patterns that neither the map nor the analytics would show on their own.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      A spreadsheet tells you what exists. A map tells you what's actually connected to what — and it's often the second question that reveals where a structure has quietly gone wrong.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch06-chunk-05" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A content map for a professional training company's website shows six sections. Five of the sections link richly to each other — course pages link to related courses, instructor bios, and testimonials. The sixth section, a resource library of downloadable guides, has no incoming or outgoing links to or from any other section; it exists as an isolated cluster on the map, reachable only through one link on the homepage. User research shows people rarely find the resource library, and once they do, they never navigate from it back into the course catalog.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          What does the content map reveal here that the user complaints alone might not have made as clear?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="reveals" value="structural-isolation">
+            <span class="exercise__option-text">The resource library is structurally isolated from the rest of the site, not just poorly labeled</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="reveals" value="content-quality">
+            <span class="exercise__option-text">The resource library's individual guides are low quality</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="reveals" value="wrong-audience">
+            <span class="exercise__option-text">The resource library is targeted at the wrong audience</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          Propose one specific change to the content map — new links to add — that would connect the resource library into the rest of the site's structure, and explain which two sections you'd link it to and why.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>The resource library is structurally isolated, not just poorly labeled.</strong> This is exactly the kind of finding a content map surfaces that a spreadsheet or a list of user complaints might leave ambiguous. Complaints alone could plausibly be explained by unclear labeling, low content quality, or a mismatched audience — the map rules those alternative explanations out visually by showing that the section simply has no meaningful connections to the rest of the site, reachable only through a single homepage link.
+      </p>
+
+      <span class="feedback__highlight">
+        This is precisely why content mapping earns its place alongside the inventory and audit: a spreadsheet could tell you the resource library exists and even that its pages are individually well written, but it wouldn't as immediately reveal that the section is cut off from the site's connective tissue. Seeing the isolated cluster on the map makes the structural nature of the problem obvious in a way rows of data alone often don't.
+      </span>
+
+      <p>
+        A reasonable fix is adding contextual links from relevant course pages to related guides in the resource library — for example, linking a specific course to the downloadable guide that complements it — and adding a link back from each guide to the course catalog or to a related course, so users who land in the resource library have a natural path back into the site rather than a dead end.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <section class="prompt-fill" id="gap-analysis" aria-labelledby="prompt-fill-label-gap-analysis">
+
+    <div class="prompt-fill__zone-label" id="prompt-fill-label-gap-analysis">
+      Try It With Your Data — Gap Analysis
+    </div>
+
+    <div class="prompt-fill__intro">
+      <p>
+        Fill in your own details below; the prompt updates as you type. When it's ready, copy it into Claude or whatever AI tool you use.
+      </p>
+    </div>
+
+    <details class="prompt-fill__guidance">
+      <summary>What this prompt is made of (RICE breakdown)</summary>
+      <div class="prompt-fill__guidance-body">
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">R</span>
+          <h4>Role</h4>
+          <p>Casts the AI as: You&#x27;re a content strategist analyzing content coverage and identifying gaps.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">I</span>
+          <h4>Instructions</h4>
+          <p>Names 4 specific outputs to produce, so the response comes back structured rather than a general summary.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">C</span>
+          <h4>Context</h4>
+          <p>Product/service, Target users and Known pain points tell the AI what your specific situation is, not a generic one.</p>
+        </div>
+        <div class="prompt-fill__guidance-item">
+          <span class="prompt-fill__guidance-tag">E</span>
+          <h4>Expected format</h4>
+          <p>Prioritized gap list with content recommendations</p>
+        </div>
+      </div>
+    </details>
+
+    <div class="js-prompt-fill">
+
+      <script type="text/plain" class="js-prompt-template">[R - ROLE]
+You're a content strategist analyzing content coverage and identifying gaps.
+
+[I - INSTRUCTIONS]
+Analyze content coverage for {{DOMAIN_OR_PRODUCT}} and identify gaps.
+
+Current content inventory:
+{{EXISTING_CONTENT_BY_TOPIC}}
+
+Compare against:
+- User needs: {{COMMON_USER_TASKS_AND_QUESTIONS}}
+- Product features: {{FEATURES_NEEDING_DOCUMENTATION}}
+- User journey stages: {{USER_JOURNEY_STAGES}}
+- Competitor coverage: {{COMPETITOR_COVERAGE}}
+
+Identify:
+1. Topic gaps (subjects not covered)
+2. Depth gaps (covered but not thoroughly)
+3. Audience gaps (missing user segment content)
+4. Format gaps (need different content types)
+
+[C - CONTEXT]
+Product/service: {{PRODUCT_OR_SERVICE}}
+Target users: {{TARGET_USERS}}
+Known pain points: {{KNOWN_PAIN_POINTS}}
+
+[E - EXPECTED FORMAT]
+Prioritized gap list with content recommendations
+
+
+VALIDATION REQUIREMENTS:
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
+- When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
+</script>
+
+      <div class="prompt-fill__field">
+        <label for="pf-gap-analysis-domain-or-product">Domain or product</label>
+        <span class="prompt-fill__hint">e.g. &quot;our REST API documentation&quot;</span>
+        <input type="text" id="pf-gap-analysis-domain-or-product" class="js-prompt-input" data-token="DOMAIN_OR_PRODUCT" data-placeholder="e.g. &quot;our REST API documentation&quot;" placeholder="e.g. &quot;our REST API documentation&quot;">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-gap-analysis-existing-content-by-topic">Existing content by topic</label>
+        <span class="prompt-fill__hint">Summarize what you already have, by topic</span>
+        <textarea id="pf-gap-analysis-existing-content-by-topic" class="js-prompt-input" data-token="EXISTING_CONTENT_BY_TOPIC" data-placeholder="Summarize what you already have, by topic" placeholder="Summarize what you already have, by topic"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-gap-analysis-common-user-tasks-and-questions">Common user tasks and questions</label>
+        <span class="prompt-fill__hint">What users are trying to do or ask</span>
+        <textarea id="pf-gap-analysis-common-user-tasks-and-questions" class="js-prompt-input" data-token="COMMON_USER_TASKS_AND_QUESTIONS" data-placeholder="What users are trying to do or ask" placeholder="What users are trying to do or ask"></textarea>
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-gap-analysis-features-needing-documentation">Features needing documentation</label>
+        <span class="prompt-fill__hint">Features that may need docs</span>
+        <input type="text" id="pf-gap-analysis-features-needing-documentation" class="js-prompt-input" data-token="FEATURES_NEEDING_DOCUMENTATION" data-placeholder="Features that may need docs" placeholder="Features that may need docs">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-gap-analysis-user-journey-stages">User journey stages</label>
+        <span class="prompt-fill__hint">e.g. awareness through mastery</span>
+        <input type="text" id="pf-gap-analysis-user-journey-stages" class="js-prompt-input" data-token="USER_JOURNEY_STAGES" data-placeholder="e.g. awareness through mastery" placeholder="e.g. awareness through mastery">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-gap-analysis-competitor-coverage">Competitor coverage</label>
+        <span class="prompt-fill__hint">If applicable</span>
+        <input type="text" id="pf-gap-analysis-competitor-coverage" class="js-prompt-input" data-token="COMPETITOR_COVERAGE" data-placeholder="If applicable" placeholder="If applicable">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-gap-analysis-product-or-service">Product or service</label>
+        <span class="prompt-fill__hint">Brief description</span>
+        <input type="text" id="pf-gap-analysis-product-or-service" class="js-prompt-input" data-token="PRODUCT_OR_SERVICE" data-placeholder="Brief description" placeholder="Brief description">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-gap-analysis-target-users">Target users</label>
+        <span class="prompt-fill__hint">Audience segments</span>
+        <input type="text" id="pf-gap-analysis-target-users" class="js-prompt-input" data-token="TARGET_USERS" data-placeholder="Audience segments" placeholder="Audience segments">
+      </div>
+
+      <div class="prompt-fill__field">
+        <label for="pf-gap-analysis-known-pain-points">Known pain points</label>
+        <span class="prompt-fill__hint">User complaints or support patterns</span>
+        <input type="text" id="pf-gap-analysis-known-pain-points" class="js-prompt-input" data-token="KNOWN_PAIN_POINTS" data-placeholder="User complaints or support patterns" placeholder="User complaints or support patterns">
+      </div>
+
+      <div class="prompt-fill__output">
+        <div class="prompt-fill__output-label">Assembled prompt</div>
+        <pre class="prompt-fill__preview js-prompt-preview"></pre>
+        <button type="button" class="prompt-fill__copy js-prompt-copy" aria-label="Copy assembled prompt">
+          Copy prompt
+        </button>
+        <span class="prompt-fill__copied js-prompt-copied" style="display:none;" aria-live="polite">
+          <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Copied
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-04.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 6 · 5 of 7</span>
+    <a href="chunk-06.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="../../assets/js/prompt-fill.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>

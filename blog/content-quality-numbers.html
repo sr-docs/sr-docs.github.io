@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Demonstrating quantifiable improvements in content quality · Blog</title>
+    <meta name="description" content="When you use AI to build an online course, how do you know if it's actually good? I can answer that in corporate speak: measure it." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../js/theme-boot.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-start">
+        <a class="brand" href="../index.html">Sabita Rao's <span>Portfolio</span></a>
+        <nav class="nav nav--primary" aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../projects/index.html">Projects</a>
+          <a href="index.html" aria-current="page">Blog</a>
+        </nav>
+      </div>
+      <div class="header-tools">
+        <nav class="nav nav--meta" aria-label="About and social">
+          <a href="../about.html">About</a>
+          <a
+            href="https://linkedin.com/in/sabitarao"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+          <a
+            href="https://github.com/sr-docs"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <article class="prose">
+        <header class="post-header page-hero">
+          <time datetime="2025-11-16">November 16, 2025</time>
+          <h1>Demonstrating quantifiable improvements in content quality</h1>
+        </header>
+        <p>When you use AI to build an online course, how do you know if it&#39;s actually <em>good</em>?</p>
+        <p>I can answer that in corporate speak: <strong>measure it</strong>.</p>
+        <h3>The problem with &quot;It looks good&quot;</h3>
+        <p>The worst way to create content with AI would be to:</p>
+        <ol>
+        <li>Generate a module with Claude/ChatGPT</li>
+        <li>Read through it, think &quot;this looks good&quot;</li>
+        <li>Publish it</li>
+        <li>Hope your readers find it useful 😬</li>
+        </ol>
+        <p>&quot;Looks good&quot; is subjective. &quot;Hope readers succeed&quot; is a prayer, not a strategy. I wasn&#39;t going to pray for quality! </p>
+        <h3>Building an audit system</h3>
+        <p>I created a custom Claude Skill called <code>course-content-auditor</code> that evaluates educational content across eight core learning dimensions and specialized criteria for documentation. Every audit finding includes:</p>
+        <ul>
+        <li><strong>Severity level</strong> (Critical, High, Medium, Low)</li>
+        <li><strong>Effort estimate</strong> in hours</li>
+        <li><strong>Category</strong> (Learning Objectives, Scaffolding, Exercise Quality, etc.)</li>
+        <li><strong>Implementation phase</strong> (Phase 1-4 based on priority)</li>
+        </ul>
+        <p>The skill generates an overall quality score out of 10 and a readiness status: Ready to Launch, Needs Revision, or Requires Rework.</p>
+        <p>Most importantly, everything gets tracked in Notion databases with timestamps, allowing me to measure improvement over time with actual numbers.</p>
+        <h3>The first audit: a reality check</h3>
+        <p>On November 2, 2025, I ran the first audit on Module 2.1 (Taxonomy &amp; Classification Systems). The results were...humbling.</p>
+        <pre><code>**Quality Score: 7.5/10**
+
+        **Status: Needs Revision**
+
+         Critical Findings: 3
+         High Priority Findings: 5  
+         Medium Priority Findings: 8
+         Low Priority Findings: 4
+         Total Issues: 20
+
+        Estimated Fix Time: 40-48 hours
+        </code></pre>
+        <p>The numbers told me what my &quot;looks good&quot; eye test had missed:</p>
+        <pre><code>
+        **Critical Issue #1: Time Estimates Wildly Inaccurate**
+
+         - Module claimed: &quot;1-2 hours to complete&quot;
+         - Realistic time: 8-12 hours
+         - Impact: Damages learner trust, causes frustration
+         - Fix effort: 30 minutes
+
+        **Critical Issue #2: Tutorial Section Incomplete**
+
+         - Stopped at Step 3 of 6-step process
+         - Missing implementation guidance
+         - No validation examples
+         - Fix effort: 3.5 hours
+
+        **Critical Issue #3: No Self-Validation Framework**
+
+         - Learners couldn&#39;t check if their work was quality
+         - No rubrics or success criteria
+         - Zero troubleshooting guidance
+         - Fix effort: 4 hours
+        </code></pre>
+        <p>The pattern was clear: <strong>Excellent technical content, inadequate learner support</strong>.</p>
+        <p>My prompts had generated comprehensive, accurate information about taxonomy design. What they <em>hadn&#39;t</em> generated were the scaffolding, validation mechanisms, and troubleshooting frameworks that learners need to succeed.</p>
+        <h3>Fixing it with systematic improvements</h3>
+        <p>I spent the next week addressing every finding, prioritizing by severity and learner impact. I added:</p>
+        <p><strong>1. A comprehensive 5-check validation system</strong></p>
+        <ul>
+        <li>Depth check (2-3 levels for most sites)</li>
+        <li>Balance check (no category &gt;40% of content)</li>
+        <li>Granularity check (parallel abstraction levels)</li>
+        <li>Exclusivity check (clear content homes)</li>
+        <li>Clarity check (specific, descriptive labels)</li>
+        </ul>
+        <p><strong>2. An extensive troubleshooting section</strong></p>
+        <ul>
+        <li>8 common issues with recovery steps</li>
+        <li>Decision tree for diagnosing problems</li>
+        <li>Quick recovery checklist</li>
+        <li>Platform-specific guidance</li>
+        </ul>
+        <p><strong>3. Progressive scaffolding in self-assessments</strong></p>
+        <ul>
+        <li>7 phases from heavily guided to independent</li>
+        <li>Detailed rubrics with point values</li>
+        <li>Sample outputs for comparison</li>
+        </ul>
+        <p><strong>4. Realistic time estimates</strong></p>
+        <ul>
+        <li>Changed from &quot;1-2 hours&quot; to &quot;4-5 hours total&quot;</li>
+        <li>Breakdown: 90 min instruction + 2-3 hrs exercises</li>
+        <li>Aligned with actual content volume</li>
+        </ul>
+        <h3>The second audit: quantifying success</h3>
+        <p>On November 16, 2025, I ran the audit again. Same module, same evaluation framework. Vastly different results!</p>
+        <pre><code>**Quality Score: 8.5/10** (+1.0 improvement)
+
+        **Status: Ready to Launch** (upgraded from &quot;Needs Revision&quot;)
+
+        Critical Findings: 0 (-3)
+        High Priority Findings: 0 (-5)
+        Medium Priority Findings: 3 (-5)
+        Low Priority Findings: 5 (+1)
+        Total Issues: 8 (-12, a 60% reduction)
+
+        Estimated Fix Time: 4.5 hours (-35.5 hours, 88% reduction)
+        </code></pre>
+        <p>Here&#39;s what these measurements actually mean:</p>
+        <ul>
+        <li><p>Quality Score Improvement: +13%</p>
+        <p> Moving from 7.5 to 8.5 out of 10 represents a <em>13% increase in overall quality</em>. But more importantly, it crosses the threshold from &quot;needs work&quot; to &quot;production-ready.&quot;</p>
+        </li>
+        <li><p>Critical Issues: -100%</p>
+        <p> Going from 3 critical issues to zero means the module went from &quot;will frustrate learners&quot; to &quot;learners can succeed independently.&quot;</p>
+        </li>
+        <li><p>Total Issues: -60%</p>
+        <p> Reducing from 20 findings to 8 shows systematic improvement across multiple dimensions, not just fixing the obvious problems.</p>
+        </li>
+        <li><p>Fix Time: -88%</p>
+        <p>The remaining issues require 4.5 hours to address versus the original 40-48 hours. This means the module is 88% closer to ideal state.</p>
+        </li>
+        <li><p>Readiness Status: Upgraded</p>
+        <p> &quot;Needs Revision&quot; → &quot;Ready to Launch&quot; is the metric that matters most. The module can now be deployed to learners with confidence.</p>
+        </li>
+        </ul>
+        <h3>Identifying a recurring problem across modules</h3>
+        <p>I hadn&#39;t expected to see an <em>issue pattern</em> through multiple audits:</p>
+        <ol>
+        <li>Time estimates 50-75% too low</li>
+        <li>Missing validation frameworks</li>
+        <li>Inadequate scaffolding</li>
+        <li>No troubleshooting guidance</li>
+        <li>Incomplete examples/tutorials</li>
+        </ol>
+        <p>An important takeaway for me was: my prompts were consistently excellent at content generation but consistently missed learner support systems.</p>
+        <h3>The humbling lesson in prompt engineering</h3>
+        <p>What I learned about working with AI on educational content:</p>
+        <ul>
+        <li>AI generates great content when you prompt for content.</li>
+        <li>AI doesn&#39;t generate learner support unless you explicitly prompt for it.</li>
+        </ul>
+        <p>My prompts focused on:</p>
+        <ul>
+        <li>&quot;Generate comprehensive content about taxonomy design&quot;</li>
+        <li>&quot;Include real-world examples&quot;</li>
+        <li>&quot;Show prompt patterns&quot;</li>
+        </ul>
+        <p>What I should have also prompted for:</p>
+        <ul>
+        <li>&quot;Include validation rubrics so learners can self-assess&quot;</li>
+        <li>&quot;Add troubleshooting for common failure modes&quot;</li>
+        <li>&quot;Create progressive scaffolding from guided to independent&quot;</li>
+        <li>&quot;Provide realistic time estimates based on content volume&quot;</li>
+        </ul>
+        <p>The audit system revealed this gap quantitatively, making it fixable. </p>
+        <blockquote>
+        <p><em>In hindsight, I should&#39;ve run an audit right after generating a single module to know if my prompts needed fixing, before generating the remaining 10 modules!</em> 😒 </p>
+        </blockquote>
+        <h3>Why measurement matters</h3>
+        <p>Without systematic audits with numerical tracking, I would have:</p>
+        <ol>
+        <li>Published inferior content: A 7.0/10 module <em>feels</em> good enough until you measure it</li>
+        <li>Missed patterns: Wouldn&#39;t have noticed the consistent gap in learner support</li>
+        <li>Couldn&#39;t prove improvement: &quot;It&#39;s better now&quot; vs. &quot;60% fewer issues, 13% higher quality&quot;</li>
+        <li>Wasted time guessing: Which issues to fix first? Numbers tell you.</li>
+        </ol>
+        <p>The quantitative approach transforms content improvement from guesswork to a process.</p>
+        <h3>What&#39;s next</h3>
+        <p>I&#39;m continuing this audit process across all 11 modules, tracking improvements in the same Notion databases. The goal is to:</p>
+        <ol>
+        <li>Establish baseline quality scores for each module</li>
+        <li>Identify systematic patterns in AI-generated content gaps</li>
+        <li>Improve prompt engineering to reduce common issues</li>
+        <li>Document the process for others building educational content with AI</li>
+        <li>Measure longitudinal improvement over multiple revision cycles</li>
+        </ol>
+        <p>The ultimate efficiency gain would be to train my prompts to generate content that <em>audits well on first pass</em>!</p>
+        <p><img src="../assets/img/course-audit.png" alt="course audit"></p>
+        <h3>Practical takeaways</h3>
+        <p>If you&#39;re creating educational content with AI:</p>
+        <ol>
+        <li><p><strong>Build systematic evaluation into your process</strong></p>
+        <p>Don&#39;t rely on &quot;looks good&quot;; create rubrics and frameworks for evaluation.</p>
+        </li>
+        <li><p><strong>Track metrics over time</strong></p>
+        <p>Use a database system (Notion, Airtable, etc.) to capture:</p>
+        <ul>
+        <li>Quality scores</li>
+        <li>Finding counts by severity</li>
+        <li>Effort estimates</li>
+        <li>Timestamps for comparison</li>
+        </ul>
+        </li>
+        <li><p><strong>Look for patterns across content</strong></p>
+        <p>If the same issues appear repeatedly, that&#39;s your prompt engineering gap.</p>
+        </li>
+        <li><p><strong>Prompt explicitly for learner support</strong></p>
+        <p>Don&#39;t just prompt for content. Prompt for scaffolding, validation, troubleshooting, realistic time estimates.</p>
+        </li>
+        <li><p><strong>Use the numbers to prioritize</strong></p>
+        <p>Fix Critical issues first, then High, then Medium. Low priority can wait for revision cycles.</p>
+        </li>
+        <li><p><strong>Measure improvement quantitatively</strong></p>
+        <p>&quot;60% fewer issues&quot; is more compelling than &quot;much better.&quot;</p>
+        </li>
+        </ol>
+        <h3>The bigger picture</h3>
+        <p>This systematic, quantitative approach to content quality showed me that AI can help create high-quality educational content, but it requires:</p>
+        <ul>
+        <li>Systematic evaluation frameworks</li>
+        <li>Quantitative measurement</li>
+        <li>Iterative improvement</li>
+        <li>Human validation of learner experience</li>
+        </ul>
+        <p class="post-back"><a href="./">← Back to all posts</a></p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        <a href="../index.html">Home</a>
+        ·
+        <a href="https://github.com/sr-docs">GitHub</a>
+        · Built for GitHub Pages
+      </p>
+    </footer>
+        <script src="../js/theme.js"></script>
+<script src="../js/main.js"></script>
+    <script src="../js/blog-redirect.js"></script>
+  </body>
+</html>

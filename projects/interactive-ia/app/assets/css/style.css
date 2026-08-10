@@ -1,0 +1,1472 @@
+/* ============================================
+   IA COURSE — SHARED STYLES
+   Token system confirmed in design plan
+   ============================================ */
+
+/* --- Self-hosted fonts (latin subsets; see assets/fonts/SOURCES.txt) --- */
+@import url('../fonts/fonts.css');
+
+/* --- Tokens --- */
+:root {
+  --ground:    #F7F5F0;
+  --ink:       #1A1A18;
+  --structure: #2D5BE3;
+  --trace:     #E8E4DC;
+  --found:     #1A7A5E;
+
+  /* Muted ink steps replace opacity-based dimming so secondary text keeps a
+     real contrast ratio. Measured against both --ground and white:
+     --ink-muted  6.9:1 / 7.6:1   --ink-subtle  4.9:1 / 5.3:1
+     Both clear the WCAG AA 4.5:1 minimum for body text. */
+  --ink-muted:  #57544D;
+  --ink-subtle: #706B61;
+
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --text-display: 2rem;
+  --text-title:   1.25rem;
+  --text-body:    1rem;
+  --text-small:   0.875rem;
+  --text-label:   0.75rem;
+
+  --max-width: 680px;
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  1.75rem;
+  --space-lg:  3rem;
+  --space-xl:  4.5rem;
+
+  --radius: 4px;
+  --transition-reveal: 0.35s ease;
+}
+
+/* --- Reset --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Base --- */
+/* No font-size here on purpose: the type scale is in rem, so the root must
+   stay at the browser default for user text-size preferences to apply. */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* --- Layout container --- */
+.course-wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+}
+
+/* Index and library pages are directories, not prose. The 680px reading
+   measure is right for a lesson and too narrow for a grid of cards, so those
+   pages opt into a wider shell and constrain their own text blocks instead. */
+.course-wrap--wide {
+  max-width: 1040px;
+}
+
+/* ============================================
+   MINI-NAV
+   ============================================ */
+.mini-nav {
+  padding: var(--space-md) 0 var(--space-sm);
+  border-bottom: 1px solid var(--trace);
+  margin-bottom: var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.mini-nav__breadcrumb {
+  font-size: var(--text-small);
+  color: var(--ink-muted);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.mini-nav__breadcrumb a {
+  color: var(--structure);
+  text-decoration: none;
+  font-size: var(--text-small);
+}
+
+.mini-nav__breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.mini-nav__breadcrumb span {
+  color: var(--ink-subtle);
+}
+
+.mini-nav__position {
+  font-size: var(--text-small);
+  color: var(--ink-subtle);
+}
+
+.mini-nav__links {
+  display: flex;
+  gap: var(--space-md);
+  width: 100%;
+  margin-top: var(--space-xs);
+}
+
+.mini-nav__links a {
+  font-size: var(--text-small);
+  color: var(--structure);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.mini-nav__links a:hover {
+  text-decoration: underline;
+}
+
+.mini-nav__links .spacer {
+  flex: 1;
+}
+
+/* ============================================
+   CONCEPT ZONE
+   ============================================ */
+.concept {
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--trace);
+}
+
+.concept__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--ink);
+  margin-bottom: var(--space-md);
+}
+
+.concept__body {
+  font-size: var(--text-body);
+  line-height: 1.75;
+  color: var(--ink);
+}
+
+.concept__body p + p {
+  margin-top: var(--space-sm);
+}
+
+.concept__anchor {
+  margin-top: var(--space-md);
+  padding-left: var(--space-md);
+  border-left: 2px solid var(--trace);
+  font-size: var(--text-body);
+  color: var(--ink-muted);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* ============================================
+   EXERCISE ZONE
+   ============================================ */
+.exercise {
+  margin-bottom: var(--space-lg);
+}
+
+.exercise__zone-label {
+  font-size: var(--text-small);
+  font-weight: 500;
+  color: var(--structure);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.exercise__zone-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--trace);
+}
+
+.exercise__scenario {
+  font-size: var(--text-body);
+  line-height: 1.75;
+  margin-bottom: var(--space-md);
+}
+
+.exercise__scenario p + p {
+  margin-top: var(--space-sm);
+}
+
+.exercise__scenario strong {
+  font-weight: 600;
+}
+
+/* --- Question fieldset (for multi-question exercises) --- */
+.exercise__question {
+  border: none;
+  padding: 0;
+  margin: 0 0 var(--space-md) 0;
+}
+
+.exercise__question-prompt {
+  font-size: var(--text-body);
+  line-height: 1.65;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+  padding: 0;
+}
+
+/* --- Options (radio / checkbox) --- */
+.exercise__options {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+.exercise__option {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--trace);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+  background: white;
+}
+
+.exercise__option:hover {
+  border-color: var(--structure);
+}
+
+.exercise__option input[type="radio"],
+.exercise__option input[type="checkbox"] {
+  margin-top: 0.2rem;
+  accent-color: var(--structure);
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}
+
+/* :has() keeps the tile highlighted even if JS has not mirrored the checked
+   state into .is-selected yet (or at all). */
+.exercise__option.is-selected,
+.exercise__option:has(input:checked) {
+  border-color: var(--structure);
+  background: #F0F4FF;
+}
+
+.exercise__option-text {
+  font-size: var(--text-body);
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+/* --- Text area for justification --- */
+.exercise__justification {
+  margin-bottom: var(--space-md);
+}
+
+.exercise__justification label {
+  display: block;
+  font-size: var(--text-small);
+  font-weight: 500;
+  color: var(--ink-muted);
+  margin-bottom: var(--space-xs);
+}
+
+.exercise__justification textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: var(--space-sm);
+  border: 1px solid var(--trace);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: 1.6;
+  color: var(--ink);
+  background: white;
+  resize: vertical;
+  transition: border-color 0.15s ease;
+}
+
+.exercise__justification textarea:focus {
+  outline: none;
+  border-color: var(--structure);
+  box-shadow: 0 0 0 3px rgba(45, 91, 227, 0.12);
+}
+
+.exercise__justification textarea:disabled {
+  background: var(--ground);
+  color: var(--ink-muted);
+  cursor: not-allowed;
+}
+
+/* --- Commit button --- */
+.exercise__commit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 0.75rem var(--space-md);
+  background: var(--structure);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: var(--text-label);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.15s ease, opacity 0.15s ease;
+}
+
+.exercise__commit:hover:not(:disabled) {
+  background: #2450C8;
+}
+
+.exercise__commit:focus-visible {
+  outline: 3px solid var(--structure);
+  outline-offset: 3px;
+}
+
+/* Disabled controls are exempt from the contrast minimum, but 40% opacity on a
+   saturated blue was nearly illegible — a flat muted fill still reads as
+   inactive while keeping the label readable. */
+.exercise__commit:disabled {
+  background: #C9C4BA;
+  color: #4A4843;
+  cursor: not-allowed;
+}
+
+/* --- Completion indicator (replaces commit button) --- */
+.exercise__complete {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--text-small);
+  font-weight: 500;
+  color: var(--found);
+  padding: 0.75rem 0;
+}
+
+.exercise__complete svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  flex-shrink: 0;
+}
+
+/* --- Try again (created by progress.js once a chunk is committed) --- */
+.exercise__retry {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-left: var(--space-md);
+  padding: 0.75rem 0;
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  font-weight: 500;
+  color: var(--structure);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.exercise__retry:hover {
+  color: #2450C8;
+}
+
+.exercise__retry:focus-visible {
+  outline: 3px solid var(--structure);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ============================================
+   FEEDBACK ZONE
+   ============================================ */
+/* The answer key must be genuinely absent before the reader commits, not just
+   invisible: the `hidden` attribute keeps it out of the accessibility tree and
+   out of in-page find. progress.js removes the attribute on commit, then adds
+   .is-revealed on the next frame so the reveal still animates. */
+.feedback[hidden] {
+  display: none;
+}
+
+.feedback {
+  border-top: 1px solid var(--trace);
+  padding-top: var(--space-lg);
+  margin-top: var(--space-lg);
+
+  /* Collapsed state, used only for the transition after `hidden` is removed */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-height var(--transition-reveal),
+    opacity var(--transition-reveal);
+}
+
+.feedback.is-revealed {
+  max-height: 2000px;
+  opacity: 1;
+}
+
+.feedback:focus-visible {
+  outline: 3px solid var(--found);
+  outline-offset: 4px;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .feedback {
+    transition: none;
+  }
+}
+
+.feedback__zone-label {
+  font-size: var(--text-small);
+  font-weight: 500;
+  color: var(--found);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.feedback__zone-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--trace);
+}
+
+.feedback__body {
+  font-size: var(--text-body);
+  line-height: 1.75;
+  color: var(--ink);
+}
+
+.feedback__body p + p {
+  margin-top: var(--space-sm);
+}
+
+.feedback__body strong {
+  font-weight: 600;
+}
+
+.feedback__body ul,
+.feedback__body ol {
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  padding-left: var(--space-md);
+}
+
+.feedback__body li {
+  margin-bottom: var(--space-xs);
+  line-height: 1.65;
+}
+
+/* Highlighted answer in feedback */
+.feedback__highlight {
+  display: block;
+  margin: var(--space-md) 0;
+  padding: var(--space-sm) var(--space-md);
+  background: #F0F7F4;
+  border-left: 3px solid var(--found);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: var(--text-body);
+  line-height: 1.65;
+}
+
+/* ============================================
+   CHUNK FOOTER NAV
+   ============================================ */
+.chunk-footer {
+  margin-top: var(--space-xl);
+  padding: var(--space-md) 0 var(--space-xl);
+  border-top: 1px solid var(--trace);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.chunk-footer a {
+  font-size: var(--text-small);
+  color: var(--structure);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.chunk-footer a:hover {
+  text-decoration: underline;
+}
+
+.chunk-footer a:focus-visible {
+  outline: 3px solid var(--structure);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.chunk-footer__center {
+  font-size: var(--text-small);
+  color: var(--ink-subtle);
+  text-align: center;
+}
+
+/* Forward link at the end of a chapter — the only emphasised link in the
+   footer, since it is the one that keeps the reader moving. */
+.chunk-footer__next-chapter {
+  font-weight: 500;
+}
+
+.chunk-footer__next-chapter span {
+  color: var(--ink-subtle);
+  font-weight: 400;
+}
+
+/* ============================================
+   COURSE HOME — Chapter cards
+   ============================================ */
+.course-home {
+  padding: var(--space-xl) 0;
+  text-align: center;
+}
+
+.course-home__header {
+  margin-bottom: var(--space-xl);
+}
+
+.course-home__title {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--ink);
+  margin-bottom: var(--space-sm);
+}
+
+.course-home__subtitle {
+  font-size: var(--text-body);
+  color: var(--ink-muted);
+  max-width: 520px;
+  margin-inline: auto;
+  line-height: 1.65;
+}
+
+.course-home__note {
+  margin-top: var(--space-md);
+  font-size: var(--text-small);
+  color: var(--ink-subtle);
+  line-height: 1.6;
+}
+
+/* Keep prose and the search field at a readable measure even though the page
+   shell is wide — only the card grid should use the full width. */
+.course-home__header,
+.course-home .site-search {
+  max-width: var(--max-width);
+  margin-inline: auto;
+}
+
+.course-home .site-search__input {
+  text-align: center;
+}
+
+.course-home .chapter-card__progress {
+  justify-content: center;
+}
+
+.chapter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-md);
+}
+
+.chapter-card {
+  display: block;
+  background: white;
+  border: 1px solid var(--trace);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.chapter-card:hover {
+  border-color: var(--structure);
+  box-shadow: 0 2px 12px rgba(45, 91, 227, 0.08);
+}
+
+.chapter-card:focus-visible {
+  outline: 3px solid var(--structure);
+  outline-offset: 3px;
+}
+
+.chapter-card__number {
+  font-size: var(--text-small);
+  color: var(--ink-subtle);
+  margin-bottom: var(--space-xs);
+  font-weight: 500;
+}
+
+.chapter-card__title {
+  font-size: var(--text-title);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.35;
+  margin-bottom: var(--space-xs);
+}
+
+.chapter-card__time {
+  font-size: var(--text-small);
+  color: var(--ink-subtle);
+  margin-bottom: var(--space-md);
+}
+
+.chapter-card__progress {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.chapter-card__bar {
+  flex: 1;
+  height: 3px;
+  background: var(--trace);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.chapter-card__bar-fill {
+  height: 100%;
+  background: var(--found);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.chapter-card__fraction {
+  font-size: var(--text-small);
+  color: var(--ink-subtle);
+  white-space: nowrap;
+}
+
+/* --- Toolkit variant (appendix chapters — no exercises, no progress bar) --- */
+.chapter-card--toolkit {
+  border-left: 3px solid var(--found);
+}
+
+.chapter-card__toolkit-label {
+  font-size: var(--text-small);
+  color: var(--found);
+  font-weight: 500;
+}
+
+/* ============================================
+   CHAPTER PAGE — Chunk list
+   ============================================ */
+.chapter-page {
+  padding: var(--space-xl) 0;
+}
+
+.chapter-page__back {
+  font-size: var(--text-small);
+  color: var(--structure);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-bottom: var(--space-lg);
+}
+
+.chapter-page__back:hover {
+  text-decoration: underline;
+}
+
+.chapter-page__number {
+  font-size: var(--text-small);
+  color: var(--ink-subtle);
+  font-weight: 500;
+  margin-bottom: var(--space-xs);
+}
+
+.chapter-page__title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--ink);
+  margin-bottom: var(--space-md);
+}
+
+.chapter-page__toolkit-note {
+  font-size: var(--text-small);
+  color: var(--ink-muted);
+  line-height: 1.6;
+  margin-bottom: var(--space-xl);
+  max-width: 46ch;
+}
+
+.chunk-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.chunk-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.chunk-item__link {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-sm) var(--space-md);
+  background: white;
+  border: 1px solid var(--trace);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--ink);
+  font-size: var(--text-body);
+  transition: border-color 0.15s ease;
+  gap: var(--space-sm);
+}
+
+.chunk-item__link:hover {
+  border-color: var(--structure);
+}
+
+.chunk-item__link:focus-visible {
+  outline: 3px solid var(--structure);
+  outline-offset: 3px;
+}
+
+.chunk-item__title {
+  line-height: 1.4;
+}
+
+.chunk-item__status {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  border: 1.5px solid var(--trace);
+  background: transparent;
+  transition: background 0.15s ease, border-color 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chunk-item__status.is-complete {
+  background: var(--found);
+  border-color: var(--found);
+}
+
+.chunk-item__status.is-complete svg {
+  width: 0.65rem;
+  height: 0.65rem;
+  color: white;
+}
+
+/* ============================================
+   UTILITY
+   ============================================ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ============================================
+   PROMPT-FILL ZONE
+   Fill-in-the-blank AI prompt, live-assembled,
+   copy-to-clipboard. No network calls — the
+   reader pastes the result into their own AI tool.
+   ============================================ */
+.prompt-fill {
+  margin-bottom: var(--space-lg);
+  padding: var(--space-md);
+  background: #FFFFFF;
+  border: 1px solid var(--trace);
+  border-left: 3px solid var(--found);
+  border-radius: var(--radius);
+}
+
+.prompt-fill__zone-label {
+  font-size: var(--text-small);
+  font-weight: 500;
+  color: var(--found);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.prompt-fill__intro {
+  font-size: var(--text-small);
+  line-height: 1.7;
+  color: var(--ink-muted);
+  margin-bottom: var(--space-md);
+}
+
+/* --- RICE guidance toggle (collapsed by default) --- */
+.prompt-fill__guidance {
+  margin-bottom: var(--space-md);
+  border: 1px solid var(--trace);
+  border-radius: var(--radius);
+  background: var(--ground);
+}
+
+.prompt-fill__guidance summary {
+  cursor: pointer;
+  padding: 0.6rem var(--space-sm);
+  font-size: var(--text-small);
+  font-weight: 500;
+  color: var(--structure);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  list-style: none;
+}
+
+.prompt-fill__guidance summary::-webkit-details-marker {
+  display: none;
+}
+
+.prompt-fill__guidance summary::before {
+  content: '▸';
+  font-size: 0.65rem;
+  transition: transform 0.15s ease;
+  flex-shrink: 0;
+}
+
+.prompt-fill__guidance[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.prompt-fill__guidance-body {
+  padding: 0 var(--space-sm) var(--space-sm);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xs);
+}
+
+.prompt-fill__guidance-body--simple {
+  display: block;
+  padding: 0 var(--space-sm) var(--space-sm);
+}
+
+.prompt-fill__guidance-body--simple p {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--ink-muted);
+  margin-bottom: var(--space-xs);
+}
+
+.prompt-fill__guidance-body--simple ul {
+  padding-left: 1.1rem;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--ink-muted);
+}
+
+.prompt-fill__guidance-item {
+  background: white;
+  border: 1px solid var(--trace);
+  border-radius: var(--radius);
+  padding: var(--space-xs) 0.6rem 0.6rem;
+}
+
+.prompt-fill__guidance-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 50%;
+  background: var(--structure);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.prompt-fill__guidance-item h4 {
+  font-size: var(--text-small);
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.2rem;
+}
+
+.prompt-fill__guidance-item p {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--ink-muted);
+}
+
+/* --- Fillable fields --- */
+.prompt-fill__field {
+  margin-bottom: var(--space-sm);
+}
+
+.prompt-fill__field-row {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.prompt-fill__field-row .prompt-fill__field {
+  flex: 1;
+  min-width: 0;
+}
+
+.prompt-fill__field label {
+  display: block;
+  font-size: var(--text-small);
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+}
+
+.prompt-fill__hint {
+  display: block;
+  font-size: 0.8125rem;
+  color: var(--ink-muted);
+  margin-bottom: 0.35rem;
+  line-height: 1.4;
+}
+
+.prompt-fill__field input[type="text"],
+.prompt-fill__field select,
+.prompt-fill__field textarea {
+  width: 100%;
+  padding: 0.6rem var(--space-sm);
+  border: 1px solid var(--trace);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  line-height: 1.5;
+  color: var(--ink);
+  background: white;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.prompt-fill__field textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.prompt-fill__field input:focus,
+.prompt-fill__field select:focus,
+.prompt-fill__field textarea:focus {
+  outline: none;
+  border-color: var(--found);
+  box-shadow: 0 0 0 3px rgba(26, 122, 94, 0.12);
+}
+
+/* --- Assembled prompt preview + copy --- */
+.prompt-fill__output {
+  margin-top: var(--space-md);
+}
+
+.prompt-fill__output-label {
+  font-size: var(--text-label);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 0.5rem;
+}
+
+.prompt-fill__preview {
+  display: block;
+  background: var(--ink);
+  color: var(--ground);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  padding: var(--space-md);
+  border-radius: var(--radius);
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 360px;
+  overflow-y: auto;
+  margin-bottom: var(--space-sm);
+}
+
+.prompt-fill__preview .is-unfilled {
+  color: #E8963D;
+}
+
+.prompt-fill__copy,
+.prompt-fill__copied {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 0.75rem var(--space-md);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: var(--text-label);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.prompt-fill__copy {
+  background: var(--found);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.prompt-fill__copy:hover {
+  background: #145F4A;
+}
+
+.prompt-fill__copy:focus-visible {
+  outline: 3px solid var(--found);
+  outline-offset: 3px;
+}
+
+.prompt-fill__copied {
+  color: var(--found);
+}
+
+.prompt-fill__copied svg {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+/* Shown by prompt-fill.js when neither the async clipboard API nor the
+   execCommand fallback is available — e.g. opened over file://, where the
+   origin is not a secure context and navigator.clipboard is undefined. */
+.prompt-fill__copy-error {
+  display: block;
+  margin-top: var(--space-xs);
+  font-size: var(--text-small);
+  line-height: 1.5;
+  color: #8A3A18;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 600px) {
+  :root {
+    --text-display: 1.625rem;
+    --space-lg: 2.25rem;
+    --space-xl: 3rem;
+  }
+
+  .mini-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .chapter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chunk-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+
+  .prompt-fill__field-row {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .prompt-fill__guidance-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   PROMPT LIBRARY
+   ============================================ */
+.library-header {
+  padding-top: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.library-header h1 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: var(--space-xs);
+}
+
+.library-header p {
+  font-size: var(--text-small);
+  color: var(--ink-muted);
+  max-width: 52ch;
+  line-height: 1.6;
+}
+
+.library-controls {
+  margin-bottom: var(--space-lg);
+  position: sticky;
+  top: 0;
+  background: var(--ground);
+  padding: var(--space-sm) 0;
+  z-index: 5;
+}
+
+.library-search {
+  width: 100%;
+  padding: 0.7rem var(--space-sm);
+  border: 1px solid var(--trace);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--ink);
+  background: white;
+  margin-bottom: var(--space-sm);
+}
+
+.library-search:focus {
+  outline: none;
+  border-color: var(--found);
+  box-shadow: 0 0 0 3px rgba(26, 122, 94, 0.12);
+}
+
+.library-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.library-filter {
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--trace);
+  border-radius: 999px;
+  background: white;
+  color: var(--ink-muted);
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.library-filter:hover {
+  color: var(--ink);
+  border-color: var(--found);
+}
+
+.library-filter:focus-visible {
+  outline: 3px solid var(--found);
+  outline-offset: 2px;
+}
+
+.library-filter.is-active {
+  background: var(--found);
+  border-color: var(--found);
+  color: white;
+}
+
+.library-count {
+  font-size: var(--text-small);
+  color: var(--ink-subtle);
+  margin-bottom: var(--space-sm);
+}
+
+.library-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: var(--space-sm);
+  padding-bottom: var(--space-xl);
+}
+
+.library-item__link {
+  display: block;
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--trace);
+  border-left: 3px solid var(--found);
+  border-radius: var(--radius);
+  background: white;
+  text-decoration: none;
+  color: var(--ink);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.library-item__link:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transform: translateY(-1px);
+}
+
+.library-item__link:focus-visible {
+  outline: 3px solid var(--found);
+  outline-offset: 2px;
+}
+
+.library-item__category {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--structure);
+  margin-bottom: 0.3rem;
+}
+
+.library-item__title {
+  display: block;
+  font-weight: 500;
+  font-size: var(--text-body);
+  margin-bottom: 0.2rem;
+}
+
+.library-item__purpose {
+  display: block;
+  font-size: var(--text-small);
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+
+.library-item.is-hidden {
+  display: none;
+}
+
+.library-empty {
+  font-size: var(--text-small);
+  color: var(--ink-muted);
+  padding: var(--space-lg) 0;
+  display: none;
+}
+
+.library-empty.is-visible {
+  display: block;
+}
+
+/* --- Home page: link to library + chapter card badges --- */
+.home-library-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem var(--space-md);
+  border: 1px solid var(--found);
+  border-radius: 999px;
+  color: var(--found);
+  font-size: var(--text-small);
+  font-weight: 500;
+  text-decoration: none;
+  margin-bottom: var(--space-lg);
+  transition: background 0.15s ease;
+}
+
+.home-library-link:hover {
+  background: rgba(26, 122, 94, 0.08);
+}
+
+.chapter-card__prompt-count {
+  display: inline-block;
+  font-size: var(--text-small);
+  font-weight: 500;
+  color: var(--found);
+  margin-top: 0.3rem;
+}
+
+/* --- Chapter chunk-list: prompt tag --- */
+.chunk-item__prompt-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--found);
+  border: 1px solid var(--found);
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+/* --- Reset all progress (course home) --- */
+.progress-reset {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-xs);
+  padding: 0;
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  color: var(--structure);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.progress-reset:hover {
+  color: #2450C8;
+}
+
+.progress-reset:focus-visible {
+  outline: 3px solid var(--structure);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.progress-reset__done {
+  display: block;
+  margin-top: var(--space-xs);
+  font-size: var(--text-small);
+  color: var(--found);
+}
+
+/* ============================================
+   SITE SEARCH (home page)
+   ============================================ */
+.site-search {
+  margin-bottom: var(--space-lg);
+}
+
+.site-search__input {
+  width: 100%;
+  padding: 0.85rem var(--space-md);
+  border: 1px solid var(--trace);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--ink);
+  background: white;
+}
+
+.site-search__input:focus {
+  outline: none;
+  border-color: var(--found);
+  box-shadow: 0 0 0 3px rgba(26, 122, 94, 0.12);
+}
+
+.site-search__count {
+  font-size: var(--text-small);
+  color: var(--ink-muted);
+  margin-top: 0.6rem;
+  min-height: 1.2em;
+}
+
+.site-search__results {
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-top: var(--space-sm);
+}
+
+.site-search__results.is-visible {
+  display: flex;
+}
+
+.site-search__item-link {
+  display: block;
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--trace);
+  border-radius: var(--radius);
+  background: white;
+  text-decoration: none;
+  color: var(--ink);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.site-search__item-link:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transform: translateY(-1px);
+}
+
+.site-search__item-link:focus-visible {
+  outline: 3px solid var(--found);
+  outline-offset: 2px;
+}
+
+.site-search__item-type {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  margin-right: 0.5rem;
+}
+
+.site-search__item-type--lesson {
+  color: var(--structure);
+  border: 1px solid var(--structure);
+}
+
+.site-search__item-type--prompt {
+  color: var(--found);
+  border: 1px solid var(--found);
+}
+
+.site-search__item-chapter {
+  font-size: 0.75rem;
+  color: var(--ink-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.site-search__item-title {
+  display: block;
+  font-weight: 500;
+  font-size: var(--text-body);
+  margin: 0.25rem 0 0.15rem;
+}
+
+.site-search__item-snippet {
+  display: block;
+  font-size: var(--text-small);
+  color: var(--ink-muted);
+  line-height: 1.5;
+}

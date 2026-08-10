@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Synonym Rings and Authority Files — Chapter 7 · IA Course</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<div class="course-wrap">
+
+  <nav class="mini-nav" aria-label="Chunk navigation">
+    <div class="mini-nav__breadcrumb">
+      <a href="../../index.html">Course Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="index.html">Chapter 7</a>
+      <span aria-hidden="true">›</span>
+      <span>Synonym Rings and Authority Files</span>
+    </div>
+    <div class="mini-nav__position" aria-label="Chunk 3 of 10">3 of 10</div>
+    <div class="mini-nav__links">
+      <a href="chunk-02.html">← Previous</a>
+      <span class="spacer"></span>
+      <a href="chunk-04.html">Next →</a>
+    </div>
+  </nav>
+
+
+  <section class="concept" aria-labelledby="concept-headline">
+
+    <h1 class="concept__headline" id="concept-headline">
+      Controlled Vocabularies: Synonym Rings and Authority Files
+    </h1>
+
+    <div class="concept__body">
+      <p>
+        Natural language creates two problems for information spaces: <strong>ambiguity</strong>, where the same word means different things, and <strong>synonymy</strong>, where different words mean the same thing. A controlled vocabulary is a well-defined subset of language that solves this by establishing preferred terms for concepts, along with their variant, broader, narrower, and related terms. Choosing preferred terms draws on three warrants: literary warrant (how the term appears in existing literature), user warrant (how your actual audience talks), and organizational warrant (how your own organization refers to it).
+      </p>
+      <p>
+        <strong>Synonym rings</strong> are the simplest form: just a list of equivalent terms for a concept, used to broaden what a search retrieves — importantly, they're not used for indexing content, only for expanding queries at search time. <strong>Authority files</strong> are the next step up: an index of authority records, each defining one preferred term along with its cross-referenced variants and a note validating why that term is authoritative. They come in two flavors — name authority files, for unique entities like people or organizations, and subject-heading authority files, for standard topic terms.
+      </p>
+    </div>
+
+    <p class="concept__anchor">
+      A synonym ring just widens the net at search time. An authority file goes further — it actually declares which term is correct, and keeps a record of why.
+    </p>
+
+  </section>
+
+
+  <section class="exercise" aria-labelledby="exercise-label">
+
+    <div class="exercise__zone-label" id="exercise-label" aria-label="Exercise">
+      Exercise
+    </div>
+
+    <form class="js-exercise-form" data-chunk-id="ch07-chunk-03" novalidate>
+
+      <div class="exercise__scenario">
+        <p>
+          <strong>The scenario:</strong> A large retail chain is experiencing two distinct search problems. First, customers searching for products using brand names, generic names, common misspellings, and regional variants get inconsistent results — a search for "trainers" and a search for "sneakers" don't reliably return the same products. Second, the product catalog uses inconsistent names for the same supplier organizations across internal records, causing reporting failures when someone tries to total purchases from a single supplier.
+        </p>
+      </div>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          Which tool is the better fit for the first problem — inconsistent product search results across synonymous terms?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-1" value="synonym-ring">
+            <span class="exercise__option-text">Synonym ring</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-1" value="authority-file">
+            <span class="exercise__option-text">Authority file</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="exercise__question">
+        <legend class="exercise__question-prompt">
+          Which tool is the better fit for the second problem — inconsistent supplier names breaking internal reporting?
+        </legend>
+        <ul class="exercise__options" role="list">
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-2" value="synonym-ring">
+            <span class="exercise__option-text">Synonym ring</span>
+          </label></li>
+          <li><label class="exercise__option js-option">
+            <input type="radio" name="problem-2" value="authority-file">
+            <span class="exercise__option-text">Authority file</span>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="exercise__justification">
+        <label for="justification">
+          Neither tool solves everything. Explain one thing that remains unsolved even after both fixes are in place — something that would require a more structured controlled vocabulary to address.
+        </label>
+        <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
+      </div>
+
+      <button type="button" class="exercise__commit js-commit" disabled aria-label="Commit your answer and reveal feedback">
+        Commit answer
+      </button>
+
+      <span class="exercise__complete js-complete" style="display:none;" aria-live="polite">
+        <svg viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5 9l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Chunk complete
+      </span>
+
+    </form>
+
+  </section>
+
+
+  <section class="feedback js-feedback" aria-labelledby="feedback-label" tabindex="-1" hidden>
+
+    <div class="feedback__zone-label" id="feedback-label">
+      Feedback
+    </div>
+
+    <div class="feedback__body">
+
+      <p>
+        <strong>1 — Synonym ring.</strong> "Trainers" and "sneakers" are a textbook case of near-synonymous regional terms that a synonym ring is built to handle — broadening search so either term retrieves the same products, without needing to index or officially rename anything.
+      </p>
+
+      <p>
+        <strong>2 — Authority file.</strong> Reporting requires a single, official, unique name for each supplier — exactly what a name authority file provides: one declared preferred term per entity, with any variant spellings or names cross-referenced back to it, so totals can be reliably calculated against one canonical name.
+      </p>
+
+      <span class="feedback__highlight">
+        Even with both fixes in place, neither tool defines the relationships between terms — a synonym ring has no concept of broader or narrower categories, and an authority file, while it disambiguates names, doesn't organize suppliers or products into a hierarchy of categories and subcategories. If the retailer later wants customers to browse footwear by category — athletic shoes, which include trainers and sneakers as a narrower group within it — that requires a taxonomy or thesaurus, which explicitly models broader and narrower relationships in a way neither synonym rings nor authority files are designed to do.
+      </span>
+
+    </div>
+
+  </section>
+
+
+  <nav class="chunk-footer" aria-label="Chapter navigation">
+    <a href="chunk-02.html">← Previous chunk</a>
+    <span class="chunk-footer__center">Chapter 7 · 3 of 10</span>
+    <a href="chunk-04.html">Next chunk →</a>
+  </nav>
+
+</div>
+
+<script src="../../assets/js/progress.js"></script>
+<script src="/js/site-chrome.js"></script>
+</body>
+</html>
