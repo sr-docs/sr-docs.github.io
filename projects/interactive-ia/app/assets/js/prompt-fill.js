@@ -45,7 +45,7 @@ const PromptFill = {
       if (value) localStorage.setItem(key, value);
       else localStorage.removeItem(key);
     } catch (e) {
-      // Storage unavailable or full — the prompt still works, it just
+      // Storage unavailable or full, the prompt still works, it just
       // will not be remembered.
     }
   },
@@ -188,7 +188,7 @@ const PromptFill = {
       note.setAttribute('role', 'status');
       block.querySelector('.prompt-fill__output').appendChild(note);
     }
-    note.textContent = 'This browser blocked the copy. The prompt is selected — press Ctrl+C (or Cmd+C) to copy it.';
+    note.textContent = 'This browser blocked the copy. The prompt is selected: press Ctrl+C (or Cmd+C) to copy it.';
 
     try {
       const range = document.createRange();
@@ -197,7 +197,7 @@ const PromptFill = {
       sel.removeAllRanges();
       sel.addRange(range);
     } catch (e) {
-      // Selection unavailable — the message above still tells the reader what to do.
+      // Selection unavailable, the message above still tells the reader what to do.
     }
   },
 

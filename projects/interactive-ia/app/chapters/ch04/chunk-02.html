@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Relational Database Pattern — Chapter 4 · IA Course</title>
+  <title>The Relational Database Pattern: Chapter 4 · IA Course</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
@@ -35,15 +35,15 @@
 
     <div class="concept__body">
       <p>
-        A relational database structure organizes content as records that share the same fields, stored in tables where rows are individual records and columns are attributes. This pattern works best for large collections of fairly homogeneous content, where the same components need to be displayed in different ways across different pages — search results and product pages showing the same product data, for instance.
+        A relational database structure organizes content as records that share the same fields, stored in tables where rows are individual records and columns are attributes. This pattern works best for large collections of fairly homogeneous content, where the same components need to be displayed in different ways across different pages, search results and product pages showing the same product data, for instance.
       </p>
       <p>
-        A database requires at least one field with a clearly distinguishable value for each record, and it isn't suited to heterogeneous content that lacks that kind of uniformity. Faceted metadata extends the database pattern further: facets are independent sets of categories that describe the same content from different angles — a recipe site, for example, might use facets for meal, course, cooking method, main ingredient, dietary restriction, and cuisine, letting users approach the same recipes from whichever angle matches their need.
+        A database requires at least one field with a clearly distinguishable value for each record, and it isn't suited to heterogeneous content that lacks that kind of uniformity. Faceted metadata extends the database pattern further: facets are independent sets of categories that describe the same content from different angles, a recipe site, for example, might use facets for meal, course, cooking method, main ingredient, dietary restriction, and cuisine, letting users approach the same recipes from whichever angle matches their need.
       </p>
     </div>
 
     <p class="concept__anchor">
-      The test for whether a database structure fits isn't how much content you have — it's whether that content is uniform enough to describe with the same set of fields.
+      The test for whether a database structure fits isn't how much content you have: it's whether that content is uniform enough to describe with the same set of fields.
     </p>
 
   </section>
@@ -85,7 +85,7 @@
 
       <fieldset class="exercise__question">
         <legend class="exercise__question-prompt">
-          2. A company's "About Us" section, containing a mission statement, a leadership bio page, a company history timeline, and a careers page — four entirely different content types with no shared structure.
+          2. A company's "About Us" section, containing a mission statement, a leadership bio page, a company history timeline, and a careers page, four entirely different content types with no shared structure.
         </legend>
         <ul class="exercise__options" role="list">
           <li><label class="exercise__option js-option">
@@ -156,19 +156,19 @@
     <div class="feedback__body">
 
       <p>
-        <strong>1 — Database fits well.</strong> Every recipe shares the same fields — ingredients, cook time, cuisine, dietary tags, ratings — across all 5,000 entries. This is exactly the uniform, homogeneous content the database pattern is built for, and it's a natural candidate for faceted metadata on top of it.
+        <strong>1: Database fits well.</strong> Every recipe shares the same fields, ingredients, cook time, cuisine, dietary tags, ratings, across all 5,000 entries. This is exactly the uniform, homogeneous content the database pattern is built for, and it's a natural candidate for faceted metadata on top of it.
       </p>
 
       <p>
-        <strong>2 — Database doesn't fit.</strong> A mission statement, a bio page, a history timeline, and a careers page share no common fields at all. This is heterogeneous content, which the source material explicitly says a database structure isn't suited to. A hierarchy or hypertext pattern fits this content far better.
+        <strong>2: Database doesn't fit.</strong> A mission statement, a bio page, a history timeline, and a careers page share no common fields at all. This is heterogeneous content, which the source material explicitly says a database structure isn't suited to. A hierarchy or hypertext pattern fits this content far better.
       </p>
 
       <p>
-        <strong>3 — Ambiguous.</strong> The core directory data — name, department, office hours — is uniform enough for a database. But the growing variety of embedded video, syllabi, and personal blogs introduces exactly the kind of heterogeneity the database pattern struggles with.
+        <strong>3: Ambiguous.</strong> The core directory data, name, department, office hours, is uniform enough for a database. But the growing variety of embedded video, syllabi, and personal blogs introduces exactly the kind of heterogeneity the database pattern struggles with.
       </p>
 
       <span class="feedback__highlight">
-        The stronger case is adapting rather than abandoning. The underlying directory record — name, department, office hours — remains genuinely uniform across every faculty member and continues to justify a database structure. The variable content doesn't have to break that: it can exist as flexible additional fields or as hypertext links layered onto the same database record, rather than forcing the whole directory into a different pattern. This is a common real-world situation — most large information spaces end up as hybrid structures precisely because pure uniformity is rare once a space grows large enough.
+        The stronger case is adapting rather than abandoning. The underlying directory record, name, department, office hours, remains genuinely uniform across every faculty member and continues to justify a database structure. The variable content doesn't have to break that: it can exist as flexible additional fields or as hypertext links layered onto the same database record, rather than forcing the whole directory into a different pattern. This is a common real-world situation, most large information spaces end up as hybrid structures precisely because pure uniformity is rare once a space grows large enough.
       </span>
 
     </div>

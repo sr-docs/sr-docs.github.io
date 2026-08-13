@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>URLs and Browser Titles — Chapter 9 · IA Course</title>
+  <title>URLs and Browser Titles: Chapter 9 · IA Course</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
@@ -35,15 +35,15 @@
 
     <div class="concept__body">
       <p>
-        A URL is itself a label, and a human-readable one lets people understand a link's destination before clicking it, or confirm they've arrived at the right place after. Good URLs stay short, use common, correctly spelled words, and mirror the same terminology as the navigation system and content categories — so a page about power drills sits under a path like "/tools/power-drills" rather than an opaque string of characters. Pages should ideally persist forever; when a URL genuinely has to change, a redirect from the old address protects both users with old bookmarks and any links pointing in from elsewhere on the web.
+        A URL is itself a label, and a human-readable one lets people understand a link's destination before clicking it, or confirm they've arrived at the right place after. Good URLs stay short, use common, correctly spelled words, and mirror the same terminology as the navigation system and content categories, so a page about power drills sits under a path like "/tools/power-drills" rather than an opaque string of characters. Pages should ideally persist forever; when a URL genuinely has to change, a redirect from the old address protects both users with old bookmarks and any links pointing in from elsewhere on the web.
       </p>
       <p>
-        A browser title is a related but distinct label — the metadata that appears on a browser tab, becomes the default name for a bookmark, and is exactly what search engines display as the clickable link text on a results page. A vague or generic browser title can quietly suppress traffic that would otherwise have clicked through, even when the underlying page content is exactly what the searcher wanted.
+        A browser title is a related but distinct label, the metadata that appears on a browser tab, becomes the default name for a bookmark, and is exactly what search engines display as the clickable link text on a results page. A vague or generic browser title can quietly suppress traffic that would otherwise have clicked through, even when the underlying page content is exactly what the searcher wanted.
       </p>
     </div>
 
     <p class="concept__anchor">
-      A URL and a browser title are both promises made before a click happens — break either one, and a visitor either never clicks at all, or clicks and immediately doubts they're in the right place.
+      A URL and a browser title are both promises made before a click happens, break either one, and a visitor either never clicks at all, or clicks and immediately doubts they're in the right place.
     </p>
 
   </section>
@@ -98,7 +98,7 @@
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="problem-2" value="no-issue">
-            <span class="exercise__option-text">No issue — internal file names make good browser titles</span>
+            <span class="exercise__option-text">No issue, internal file names make good browser titles</span>
           </label></li>
         </ul>
       </fieldset>
@@ -136,15 +136,15 @@
     <div class="feedback__body">
 
       <p>
-        <strong>1 — A human-readable URL was replaced with an opaque one, and no redirect exists.</strong> "/pricing" told visitors exactly what they'd find before clicking; "/page?id=3391&v=2" tells them nothing. Compounding that, the lack of a redirect means every bookmark, every inbound link from elsewhere on the web, and every saved reference to the old URL now breaks outright rather than quietly forwarding people to the new location.
+        <strong>1: A human-readable URL was replaced with an opaque one, and no redirect exists.</strong> "/pricing" told visitors exactly what they'd find before clicking; "/page?id=3391&v=2" tells them nothing. Compounding that, the lack of a redirect means every bookmark, every inbound link from elsewhere on the web, and every saved reference to the old URL now breaks outright rather than quietly forwarding people to the new location.
       </p>
 
       <p>
-        <strong>2 — The browser title fails to represent the page's actual content.</strong> "Post-4821-Draft-FINAL2" is internal production metadata that accidentally became public-facing. Anyone encountering this page in search results would see that meaningless string as the clickable link text, with nothing to indicate the page is actually about onboarding best practices — directly suppressing click-through regardless of how well the content itself ranks.
+        <strong>2: The browser title fails to represent the page's actual content.</strong> "Post-4821-Draft-FINAL2" is internal production metadata that accidentally became public-facing. Anyone encountering this page in search results would see that meaningless string as the clickable link text, with nothing to indicate the page is actually about onboarding best practices, directly suppressing click-through regardless of how well the content itself ranks.
       </p>
 
       <span class="feedback__highlight">
-        The fix for the pricing page: restore a human-readable URL — "/pricing" — and if the underlying path genuinely had to change, implement a redirect from the old address to the new one, so existing bookmarks and inbound links continue to work rather than breaking outright. The fix for the blog post: replace the leftover internal file name with a descriptive browser title that reflects the actual content, something like "Onboarding Best Practices — [Company Name] Blog," so both search engines and visitors browsing tabs or bookmarks can immediately understand what the page contains.
+        The fix for the pricing page: restore a human-readable URL, "/pricing", and if the underlying path genuinely had to change, implement a redirect from the old address to the new one, so existing bookmarks and inbound links continue to work rather than breaking outright. The fix for the blog post: replace the leftover internal file name with a descriptive browser title that reflects the actual content, something like "Onboarding Best Practices, [Company Name] Blog," so both search engines and visitors browsing tabs or bookmarks can immediately understand what the page contains.
       </span>
 
     </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Semantic Search — Chapter 12 · IA Course</title>
+  <title>Semantic Search: Chapter 12 · IA Course</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
@@ -35,12 +35,12 @@
 
     <div class="concept__body">
       <p>
-        Semantic search interprets what a query means rather than matching its literal keywords. It typically works through vector search: content and queries both get represented as dense embeddings — points in a high-dimensional space that capture semantic meaning rather than exact wording — and a k-nearest neighbor algorithm finds the content whose vector sits closest to the query's vector in that space. This lets a system account for searcher intent and contextual meaning, matching conceptually related content even when zero keywords are literally shared, handling synonyms and ambiguous words correctly based on context, and making sense of natural, conversational language rather than requiring a carefully chosen set of keywords.
+        Semantic search interprets what a query means rather than matching its literal keywords. It typically works through vector search: content and queries both get represented as dense embeddings, points in a high-dimensional space that capture semantic meaning rather than exact wording, and a k-nearest neighbor algorithm finds the content whose vector sits closest to the query's vector in that space. This lets a system account for searcher intent and contextual meaning, matching conceptually related content even when zero keywords are literally shared, handling synonyms and ambiguous words correctly based on context, and making sense of natural, conversational language rather than requiring a carefully chosen set of keywords.
       </p>
     </div>
 
     <p class="concept__anchor">
-      Keyword search asks "do these words appear." Semantic search asks "does this mean the same thing" — and that shift changes which failures are even possible.
+      Keyword search asks "do these words appear." Semantic search asks "does this mean the same thing", and that shift changes which failures are even possible.
     </p>
 
   </section>
@@ -62,12 +62,12 @@
 
       <fieldset class="exercise__question">
         <legend class="exercise__question-prompt">
-          1. Users search by describing what a product does — "something to keep my coffee hot for hours" — rather than the product's actual name.
+          1. Users search by describing what a product does, "something to keep my coffee hot for hours", rather than the product's actual name.
         </legend>
         <ul class="exercise__options" role="list">
           <li><label class="exercise__option js-option">
             <input type="radio" name="failure-1" value="solves">
-            <span class="exercise__option-text">Semantic search would solve this — it captures meaning and intent, not just literal product names</span>
+            <span class="exercise__option-text">Semantic search would solve this, it captures meaning and intent, not just literal product names</span>
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="failure-1" value="does-not-solve">
@@ -78,12 +78,12 @@
 
       <fieldset class="exercise__question">
         <legend class="exercise__question-prompt">
-          2. Users searching with synonyms — "sneakers" versus "trainers" — get inconsistent results under the current keyword system.
+          2. Users searching with synonyms, "sneakers" versus "trainers", get inconsistent results under the current keyword system.
         </legend>
         <ul class="exercise__options" role="list">
           <li><label class="exercise__option js-option">
             <input type="radio" name="failure-2" value="solves">
-            <span class="exercise__option-text">Semantic search would solve this — synonymous terms map to similar regions in the embedding space</span>
+            <span class="exercise__option-text">Semantic search would solve this, synonymous terms map to similar regions in the embedding space</span>
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="failure-2" value="does-not-solve">
@@ -94,7 +94,7 @@
 
       <fieldset class="exercise__question">
         <legend class="exercise__question-prompt">
-          3. Users want to search by visual characteristics — "a red patterned scarf" based on an image they have in mind — which the current text-only system can't interpret at all.
+          3. Users want to search by visual characteristics, "a red patterned scarf" based on an image they have in mind, which the current text-only system can't interpret at all.
         </legend>
         <ul class="exercise__options" role="list">
           <li><label class="exercise__option js-option">
@@ -115,7 +115,7 @@
         <ul class="exercise__options" role="list">
           <li><label class="exercise__option js-option">
             <input type="radio" name="failure-4" value="does-not-solve">
-            <span class="exercise__option-text">Semantic search would not solve this — it's a regional inventory and filtering problem, unrelated to how well the system understands query meaning</span>
+            <span class="exercise__option-text">Semantic search would not solve this: it's a regional inventory and filtering problem, unrelated to how well the system understands query meaning</span>
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="failure-4" value="solves">
@@ -156,16 +156,16 @@
 
     <div class="feedback__body">
 
-      <p><strong>1 — Semantic search would solve this.</strong> A natural-language, intent-based description like "something to keep my coffee hot for hours" is exactly what semantic search is designed to interpret — matching meaning and intent to relevant products, like a thermal travel mug, even with zero shared keywords.</p>
+      <p><strong>1: Semantic search would solve this.</strong> A natural-language, intent-based description like "something to keep my coffee hot for hours" is exactly what semantic search is designed to interpret, matching meaning and intent to relevant products, like a thermal travel mug, even with zero shared keywords.</p>
 
-      <p><strong>2 — Semantic search would solve this.</strong> Synonymous terms like "sneakers" and "trainers" naturally map to similar regions in a semantic embedding space, since they carry essentially the same meaning — one of the clearest use cases for this approach.</p>
+      <p><strong>2: Semantic search would solve this.</strong> Synonymous terms like "sneakers" and "trainers" naturally map to similar regions in a semantic embedding space, since they carry essentially the same meaning, one of the clearest use cases for this approach.</p>
 
-      <p><strong>3 — Semantic search would only partially help.</strong> Descriptive text like "red patterned scarf" could benefit from semantic understanding of the words involved, but genuinely visual search — matching based on an image rather than a text description — requires image-based search capability, which is a separate technology from text-based semantic search.</p>
+      <p><strong>3: Semantic search would only partially help.</strong> Descriptive text like "red patterned scarf" could benefit from semantic understanding of the words involved, but genuinely visual search, matching based on an image rather than a text description, requires image-based search capability, which is a separate technology from text-based semantic search.</p>
 
-      <p><strong>4 — Semantic search would not solve this.</strong> Regional inventory differences are a filtering and business-logic problem entirely unrelated to how well the system understands the meaning behind a search query — even a perfect semantic understanding of what someone is searching for wouldn't know which warehouse's stock to show them.</p>
+      <p><strong>4: Semantic search would not solve this.</strong> Regional inventory differences are a filtering and business-logic problem entirely unrelated to how well the system understands the meaning behind a search query, even a perfect semantic understanding of what someone is searching for wouldn't know which warehouse's stock to show them.</p>
 
       <span class="feedback__highlight">
-        The additional capability needed for failure 3 is image-based or visual search — a different technology that represents images themselves as vectors and matches a query image against a catalog of product images, distinct from text embeddings that represent word meaning. A retailer wanting to fully solve visual search would need to implement this alongside semantic search, not as a substitute for it, since the two address genuinely different kinds of queries.
+        The additional capability needed for failure 3 is image-based or visual search, a different technology that represents images themselves as vectors and matches a query image against a catalog of product images, distinct from text embeddings that represent word meaning. A retailer wanting to fully solve visual search would need to implement this alongside semantic search, not as a substitute for it, since the two address genuinely different kinds of queries.
       </span>
 
     </div>

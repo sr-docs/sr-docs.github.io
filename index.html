@@ -6,7 +6,11 @@
     <title>Sabita Rao's Portfolio</title>
     <meta
       name="description"
-      content="Portfolio, projects, and writing from Sabita Rao — static sites and documentation on GitHub Pages."
+      content="Sabita Rao's technical writing portfolio"
+    />
+    <meta
+      name="keywords"
+      content="technical writer, information architect, documentation, docs-as-code, content strategy, API documentation, AI documentation"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,6 +19,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
     <script src="js/theme-boot.js"></script>
   </head>
   <body class="home">
@@ -51,7 +56,8 @@
       <div class="hero-inner">
         <h1>Content, Workflows, and&nbsp;AI</h1>
         <p class="hero-lead">
-          A home base for GitHub Pages work — demos you can open, repos you can fork, and writing about how it all fits&nbsp;together.
+          A collection of personal projects and learning notes about AI-assisted
+          technical writing and information architecture
         </p>
       </div>
     </section>
@@ -59,9 +65,6 @@
     <main>
       <section class="section" id="featured">
         <h2>Featured projects</h2>
-        <p class="section-lead">
-          Demos you can open, repos you can fork, and experiments&nbsp;in documentation&nbsp;systems.
-        </p>
 
         <ul class="card-grid">
           <li>
@@ -84,27 +87,20 @@
                 />
               </div>
               <h3 class="card-title" id="card-title-playground">
-                Documentation ecosystem playground
+                Docs as Code playground
               </h3>
               <p class="card-desc">
-                Learn the design, automation, and operation of doc ecosystems.
+                Learn the design, automation, and operation of docs-as-code
+                ecosystems through an interactive GitHub-integrated sandbox.
               </p>
-              <div class="card-more" id="card-more-playground" aria-hidden="true">
-                <p>
-                  A hands-on sandbox for docs-as-code workflows: content structure,
-                  publishing pipelines, and the tooling that keeps a documentation
-                  ecosystem healthy as it grows.
-                </p>
-              </div>
-              <div class="card-actions">
-                <button
-                  type="button"
-                  class="card-toggle"
-                  aria-expanded="false"
-                  aria-controls="card-more-playground"
-                >
-                  Tools Used
-                </button>
+              <div class="card-more">
+                <p>Built using:</p>
+                <ul>
+                  <li>Claude as a sounding board and coding partner</li>
+                  <li>Cursor for finishing touches</li>
+                  <li>Google AI Studio to plan the video storyboards</li>
+                  <li>Google Flow to animate the storyboards</li>
+                </ul>
               </div>
             </article>
           </li>
@@ -139,26 +135,35 @@
                 NimbusWiz content portal
               </h3>
               <p class="card-desc">
-                Fictional SaaS case study — product ideation, IA, tech docs,
-                UX writing, Docs QA, docs-as-code, analytics, and AI experiments.
+                A fictional SaaS case study spanning product ideation, IA, tech
+                docs, UX writing, Docs QA, docs-as-code, analytics, and AI
+                experiments.
               </p>
-              <div class="card-more" id="card-more-nimbuswiz" aria-hidden="true">
-                <p>
-                  End-to-end portfolio piece for a made-up modernization platform:
-                  personas and journey maps, user and admin guides, API reference,
-                  voice and tone, Vale linting, and experiments with AI-assisted
-                  authoring and docs analytics.
-                </p>
-              </div>
-              <div class="card-actions">
-                <button
-                  type="button"
-                  class="card-toggle"
-                  aria-expanded="false"
-                  aria-controls="card-more-nimbuswiz"
-                >
-                  Tools Used
-                </button>
+              <div class="card-more">
+                <div>
+                  <p>
+                    Built using Docusaurus, Claude Code, Figma, and Google
+                    NotebookLM.
+                  </p>
+                  <p class="card-related-label">Related blog posts:</p>
+                  <ul class="card-related">
+                    <li>
+                      <a href="blog/index.html?post=why-i-documented-a-fictional-product"
+                        >Why I built a fictional product (and a documentation portfolio around it)</a
+                      >
+                    </li>
+                    <li>
+                      <a href="blog/index.html?post=structure-before-sentences"
+                        >Structure first, sentences next</a
+                      >
+                    </li>
+                    <li>
+                      <a href="blog/index.html?post=ai-assisted-docs-pipeline-guide"
+                        >What works and what breaks in an AI-assisted docs pipeline</a
+                      >
+                    </li>
+                  </ul>
+                </div>
               </div>
             </article>
           </li>
@@ -180,73 +185,44 @@
                 />
               </div>
               <h3 class="card-title" id="card-title-ia">
-                Designing Information Architecture
+                Practical Information Architecture
               </h3>
               <p class="card-desc">
-                Interactive course: IA concepts in commit-then-reveal chunks,
-                plus a library of AI prompts for IA work.
+                An interactive IA course with quick exercises and an original
+                prompt library.
               </p>
-              <div class="card-more" id="card-more-ia" aria-hidden="true">
-                <p>
-                  Practice taxonomy, navigation, and content models in small
-                  exercises that reveal answers after you commit — then reuse the
-                  prompt library when you take the same methods into real projects.
-                </p>
-              </div>
-              <div class="card-actions">
-                <button
-                  type="button"
-                  class="card-toggle"
-                  aria-expanded="false"
-                  aria-controls="card-more-ia"
-                >
-                  Tools Used
-                </button>
+              <div class="card-more">
+                <div>
+                  <p>
+                    Practice taxonomy, navigation, and content structure in small
+                    chunks; reuse the prompt library on real projects.
+                  </p>
+                  <p>Built using Claude Code and Cursor.</p>
+                  <p class="card-related-label">Related blog posts:</p>
+                  <ul class="card-related">
+                    <li>
+                      <a href="blog/index.html?post=content-ontology-pivot"
+                        >Unstructured content, the bane of RAG systems. Or is it?</a
+                      >
+                    </li>
+                    <li>
+                      <a href="blog/index.html?post=content-quality-numbers"
+                        >Demonstrating quantifiable improvements in content quality</a
+                      >
+                    </li>
+                    <li>
+                      <a href="blog/index.html?post=prompt-architect-complex-content"
+                        >Prompt architecting complex content</a
+                      >
+                    </li>
+                  </ul>
+                </div>
               </div>
             </article>
           </li>
         </ul>
         <p class="section-footer">
           <a href="projects/index.html">All projects →</a>
-        </p>
-      </section>
-
-      <section class="section" id="writing">
-        <h2>From the blog</h2>
-        <p class="section-lead">
-          Recent notes on documentation systems, AI workflows, and content&nbsp;structure.
-        </p>
-        <ul class="card-grid">
-          <li>
-            <a class="card" href="blog/index.html?post=ai-assisted-docs-pipeline-guide">
-              <span class="card-meta">May 9, 2026</span>
-              <span class="card-title">What works and what breaks in an AI-assisted docs pipeline</span>
-              <p class="card-desc">
-                AI-generated docs look finished before they are — and that’s the trap.
-              </p>
-            </a>
-          </li>
-          <li>
-            <a class="card" href="blog/index.html?post=structure-before-sentences">
-              <span class="card-meta">Mar 6, 2026</span>
-              <span class="card-title">Structure first, sentences next</span>
-              <p class="card-desc">
-                Asking what the structure needs to be before what you need to write.
-              </p>
-            </a>
-          </li>
-          <li>
-            <a class="card" href="blog/index.html?post=why-i-documented-a-fictional-product">
-              <span class="card-meta">Feb 28, 2026</span>
-              <span class="card-title">Why I built a fictional product (and a documentation portfolio around it)</span>
-              <p class="card-desc">
-                Building a public portfolio when the best real work is under NDA.
-              </p>
-            </a>
-          </li>
-        </ul>
-        <p class="section-footer">
-          <a href="blog/index.html">All posts →</a>
         </p>
       </section>
     </main>
@@ -256,7 +232,7 @@
         <a href="index.html">Home</a>
         ·
         <a href="https://github.com/sr-docs">GitHub</a>
-        · Built for GitHub Pages
+        · Copyright © Sabita Rao
       </p>
     </footer>
     <script src="js/theme.js"></script>

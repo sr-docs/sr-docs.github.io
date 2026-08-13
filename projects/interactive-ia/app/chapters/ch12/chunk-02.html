@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Optimizing Search Result Quality — Chapter 12 · IA Course</title>
+  <title>Optimizing Search Result Quality: Chapter 12 · IA Course</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
@@ -35,15 +35,15 @@
 
     <div class="concept__body">
       <p>
-        What a search system actually searches shapes everything about its quality. Indexing specific semantic elements — a title field versus a body field — lets a system weight matches differently depending on where a term appears. Search zones divide content into separate areas that can be indexed and searched with different rules. Latent semantic indexing goes further still, using statistical techniques to find conceptually related content even when the exact keywords don't match at all.
+        What a search system actually searches shapes everything about its quality. Indexing specific semantic elements, a title field versus a body field, lets a system weight matches differently depending on where a term appears. Search zones divide content into separate areas that can be indexed and searched with different rules. Latent semantic indexing goes further still, using statistical techniques to find conceptually related content even when the exact keywords don't match at all.
       </p>
       <p>
-        All of this optimization work has to balance two competing goals: precision, the percentage of returned results that are actually relevant, and recall, the percentage of all genuinely relevant content the search actually manages to surface. Pushing hard on one of these tends to cost you the other — a system tuned to guarantee every result is relevant will often miss some genuinely useful matches, and a system tuned to catch everything relevant will often let some irrelevant noise through with it.
+        All of this optimization work has to balance two competing goals: precision, the percentage of returned results that are actually relevant, and recall, the percentage of all genuinely relevant content the search actually manages to surface. Pushing hard on one of these tends to cost you the other, a system tuned to guarantee every result is relevant will often miss some genuinely useful matches, and a system tuned to catch everything relevant will often let some irrelevant noise through with it.
       </p>
     </div>
 
     <p class="concept__anchor">
-      A search system that returns three results, all perfectly relevant, hasn't necessarily done a better job than one that returns thirty, some of them noise — it depends entirely on whether the thing the user actually needed was inside those thirty or left out of the three.
+      A search system that returns three results, all perfectly relevant, hasn't necessarily done a better job than one that returns thirty, some of them noise, it depends entirely on whether the thing the user actually needed was inside those thirty or left out of the three.
     </p>
 
   </section>
@@ -70,7 +70,7 @@
         <ul class="exercise__options" role="list">
           <li><label class="exercise__option js-option">
             <input type="radio" name="failure-1" value="precision">
-            <span class="exercise__option-text">A precision problem — too many irrelevant results diluting the relevant ones</span>
+            <span class="exercise__option-text">A precision problem, too many irrelevant results diluting the relevant ones</span>
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="failure-1" value="recall">
@@ -86,7 +86,7 @@
         <ul class="exercise__options" role="list">
           <li><label class="exercise__option js-option">
             <input type="radio" name="failure-2" value="recall">
-            <span class="exercise__option-text">A recall problem — genuinely relevant content exists but isn't being retrieved</span>
+            <span class="exercise__option-text">A recall problem, genuinely relevant content exists but isn't being retrieved</span>
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="failure-2" value="precision-2">
@@ -102,7 +102,7 @@
         <ul class="exercise__options" role="list">
           <li><label class="exercise__option js-option">
             <input type="radio" name="failure-3" value="what-is-indexed">
-            <span class="exercise__option-text">A problem with what's being indexed — the system is searching the wrong content entirely</span>
+            <span class="exercise__option-text">A problem with what's being indexed, the system is searching the wrong content entirely</span>
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="failure-3" value="stemming">
@@ -118,7 +118,7 @@
         <ul class="exercise__options" role="list">
           <li><label class="exercise__option js-option">
             <input type="radio" name="failure-4" value="search-zones">
-            <span class="exercise__option-text">A search zones problem — zones are being searched in isolation rather than together</span>
+            <span class="exercise__option-text">A search zones problem, zones are being searched in isolation rather than together</span>
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="failure-4" value="lsi">
@@ -159,16 +159,16 @@
 
     <div class="feedback__body">
 
-      <p><strong>1 — A precision problem.</strong> Hundreds of loosely related results for a precise query means too much irrelevant material is getting through — the defining signature of low precision.</p>
+      <p><strong>1: A precision problem.</strong> Hundreds of loosely related results for a precise query means too much irrelevant material is getting through, the defining signature of low precision.</p>
 
-      <p><strong>2 — A recall problem.</strong> Relevant content genuinely exists but isn't being retrieved because of a terminology mismatch — exactly what a recall failure looks like, and a strong candidate for controlled vocabulary integration to fix.</p>
+      <p><strong>2: A recall problem.</strong> Relevant content genuinely exists but isn't being retrieved because of a terminology mismatch, exactly what a recall failure looks like, and a strong candidate for controlled vocabulary integration to fix.</p>
 
-      <p><strong>3 — A problem with what's being indexed.</strong> The search system is searching the wrong content entirely — navigation text instead of actual page content — which no amount of query refinement could fix, since the real content was never indexed in the first place.</p>
+      <p><strong>3: A problem with what's being indexed.</strong> The search system is searching the wrong content entirely, navigation text instead of actual page content, which no amount of query refinement could fix, since the real content was never indexed in the first place.</p>
 
-      <p><strong>4 — A search zones problem.</strong> Zones being searched in isolation, rather than together or with appropriate cross-zone weighting, causes exactly this kind of incomplete retrieval for topics that legitimately span more than one zone.</p>
+      <p><strong>4: A search zones problem.</strong> Zones being searched in isolation, rather than together or with appropriate cross-zone weighting, causes exactly this kind of incomplete retrieval for topics that legitimately span more than one zone.</p>
 
       <span class="feedback__highlight">
-        Fixing failure 2 by broadening the system's ability to match different terminology to the same concept — for example, through latent semantic indexing or a controlled vocabulary — could reduce precision as a trade-off. The same broadening that helps someone find content described with different words can also start surfacing more loosely related results for other queries, since the system is now casting a wider net by design. This is exactly the precision-recall tension the concept section describes: the fix for one failure mode can quietly introduce the other, which is why tuning search quality is rarely a one-directional improvement.
+        Fixing failure 2 by broadening the system's ability to match different terminology to the same concept, for example, through latent semantic indexing or a controlled vocabulary, could reduce precision as a trade-off. The same broadening that helps someone find content described with different words can also start surfacing more loosely related results for other queries, since the system is now casting a wider net by design. This is exactly the precision-recall tension the concept section describes: the fix for one failure mode can quietly introduce the other, which is why tuning search quality is rarely a one-directional improvement.
       </span>
 
     </div>
@@ -180,7 +180,7 @@
   <section class="prompt-fill" id="search-sprint-task-generator" aria-labelledby="prompt-fill-label-search-sprint-task-generator">
 
     <div class="prompt-fill__zone-label" id="prompt-fill-label-search-sprint-task-generator">
-      Try It With Your Data — Search Optimization Sprint Task Generator
+      Try It With Your Data: Search Optimization Sprint Task Generator
     </div>
 
     <div class="prompt-fill__intro">
@@ -251,7 +251,7 @@ OUTPUT FORMAT:
 
 
 VALIDATION REQUIREMENTS:
-- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly: do not invent quotes, counts, labels, page titles, or categories.
 - Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
 - When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
 </script>
@@ -276,8 +276,8 @@ VALIDATION REQUIREMENTS:
 
       <div class="prompt-fill__field">
         <label for="pf-search-sprint-task-generator-team-capabilities">Team capabilities</label>
-        <span class="prompt-fill__hint">Skills available — content, dev, design</span>
-        <input type="text" id="pf-search-sprint-task-generator-team-capabilities" class="js-prompt-input" data-token="TEAM_CAPABILITIES" data-placeholder="Skills available — content, dev, design" placeholder="Skills available — content, dev, design">
+        <span class="prompt-fill__hint">Skills available, content, dev, design</span>
+        <input type="text" id="pf-search-sprint-task-generator-team-capabilities" class="js-prompt-input" data-token="TEAM_CAPABILITIES" data-placeholder="Skills available, content, dev, design" placeholder="Skills available, content, dev, design">
       </div>
 
       <div class="prompt-fill__field">
@@ -309,7 +309,7 @@ VALIDATION REQUIREMENTS:
   <section class="prompt-fill" id="title-metadata-optimizer" aria-labelledby="prompt-fill-label-title-metadata-optimizer">
 
     <div class="prompt-fill__zone-label" id="prompt-fill-label-title-metadata-optimizer">
-      Try It With Your Data — Title &amp; Metadata Optimizer
+      Try It With Your Data: Title &amp; Metadata Optimizer
     </div>
 
     <div class="prompt-fill__intro">
@@ -376,7 +376,7 @@ Before/after comparison with rationale
 
 
 VALIDATION REQUIREMENTS:
-- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly: do not invent quotes, counts, labels, page titles, or categories.
 - Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
 - When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
 </script>

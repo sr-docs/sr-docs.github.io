@@ -1,5 +1,5 @@
 /* ============================================
-   IA COURSE — SHARED STYLES
+   IA COURSE: SHARED STYLES
    Token system confirmed in design plan
    ============================================ */
 
@@ -356,7 +356,7 @@ body {
 }
 
 /* Disabled controls are exempt from the contrast minimum, but 40% opacity on a
-   saturated blue was nearly illegible — a flat muted fill still reads as
+   saturated blue was nearly illegible, a flat muted fill still reads as
    inactive while keeping the label readable. */
 .exercise__commit:disabled {
   background: #C9C4BA;
@@ -546,7 +546,7 @@ body {
   text-align: center;
 }
 
-/* Forward link at the end of a chapter — the only emphasised link in the
+/* Forward link at the end of a chapter, the only emphasised link in the
    footer, since it is the one that keeps the reader moving. */
 .chunk-footer__next-chapter {
   font-weight: 500;
@@ -558,7 +558,7 @@ body {
 }
 
 /* ============================================
-   COURSE HOME — Chapter cards
+   COURSE HOME: Chapter cards
    ============================================ */
 .course-home {
   padding: var(--space-xl) 0;
@@ -594,7 +594,7 @@ body {
 }
 
 /* Keep prose and the search field at a readable measure even though the page
-   shell is wide — only the card grid should use the full width. */
+   shell is wide, only the card grid should use the full width. */
 .course-home__header,
 .course-home .site-search {
   max-width: var(--max-width);
@@ -684,7 +684,7 @@ body {
   white-space: nowrap;
 }
 
-/* --- Toolkit variant (appendix chapters — no exercises, no progress bar) --- */
+/* --- Toolkit variant (appendix chapters, no exercises, no progress bar) --- */
 .chapter-card--toolkit {
   border-left: 3px solid var(--found);
 }
@@ -696,7 +696,7 @@ body {
 }
 
 /* ============================================
-   CHAPTER PAGE — Chunk list
+   CHAPTER PAGE: Chunk list
    ============================================ */
 .chapter-page {
   padding: var(--space-xl) 0;
@@ -824,7 +824,7 @@ body {
 /* ============================================
    PROMPT-FILL ZONE
    Fill-in-the-blank AI prompt, live-assembled,
-   copy-to-clipboard. No network calls — the
+   copy-to-clipboard. No network calls, the
    reader pastes the result into their own AI tool.
    ============================================ */
 .prompt-fill {
@@ -1085,7 +1085,7 @@ body {
 }
 
 /* Shown by prompt-fill.js when neither the async clipboard API nor the
-   execCommand fallback is available — e.g. opened over file://, where the
+   execCommand fallback is available: e.g. opened over file://, where the
    origin is not a secure context and navigator.clipboard is undefined. */
 .prompt-fill__copy-error {
   display: block;

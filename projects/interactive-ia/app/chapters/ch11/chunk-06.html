@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Testing Navigation Design — Chapter 11 · IA Course</title>
+  <title>Testing Navigation Design: Chapter 11 · IA Course</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
@@ -35,12 +35,12 @@
 
     <div class="concept__body">
       <p>
-        Different stages of a project call for different navigation testing methods. Paper prototyping is cheap and fast, well suited to very early iteration when the structure is still fluid. Interactive prototype testing offers a more realistic sense of how navigation actually behaves once real interaction is involved. Tree testing, covered earlier in this course, evaluates whether a hierarchy's labels and structure support real findability. Once a site is live, A/B and multivariate testing let you compare actual navigation variants against real traffic, and ongoing data analytics reveal real usage patterns over time. A navigation stress test — deliberately pushing the system with edge cases like unusually long labels or unexpectedly deep content — helps surface breaking points before real users find them the hard way.
+        Different stages of a project call for different navigation testing methods. Paper prototyping is cheap and fast, well suited to very early iteration when the structure is still fluid. Interactive prototype testing offers a more realistic sense of how navigation actually behaves once real interaction is involved. Tree testing, covered earlier in this course, evaluates whether a hierarchy's labels and structure support real findability. Once a site is live, A/B and multivariate testing let you compare actual navigation variants against real traffic, and ongoing data analytics reveal real usage patterns over time. A navigation stress test, deliberately pushing the system with edge cases like unusually long labels or unexpectedly deep content, helps surface breaking points before real users find them the hard way.
       </p>
     </div>
 
     <p class="concept__anchor">
-      Testing a navigation system once, at one point in its life, tells you whether it worked for the people and content that existed at that exact moment — which is exactly why the right testing method keeps changing as the project itself moves forward.
+      Testing a navigation system once, at one point in its life, tells you whether it worked for the people and content that existed at that exact moment, which is exactly why the right testing method keeps changing as the project itself moves forward.
     </p>
 
   </section>
@@ -67,7 +67,7 @@
         <ul class="exercise__options" role="list">
           <li><label class="exercise__option js-option">
             <input type="radio" name="moment-1" value="tree-testing">
-            <span class="exercise__option-text">Tree testing — evaluates whether the proposed structure and labels actually support findability, before anything is built</span>
+            <span class="exercise__option-text">Tree testing, evaluates whether the proposed structure and labels actually support findability, before anything is built</span>
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="moment-1" value="ab-testing">
@@ -102,7 +102,7 @@
 
       <div class="exercise__justification">
         <label for="justification">
-          For the six-month moment — understanding navigation for users arriving via external search rather than the home page — propose the most appropriate method, and explain why the two-week analytics from question 2 alone might not answer this specific question.
+          For the six-month moment, understanding navigation for users arriving via external search rather than the home page, propose the most appropriate method, and explain why the two-week analytics from question 2 alone might not answer this specific question.
         </label>
         <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
       </div>
@@ -133,15 +133,15 @@
     <div class="feedback__body">
 
       <p>
-        <strong>1 — Tree testing.</strong> With the hierarchy still adjustable and nothing built yet, tree testing is exactly the right tool: it evaluates whether the proposed labels and structure actually support findability before any development investment has been made, making changes cheap at this stage.
+        <strong>1: Tree testing.</strong> With the hierarchy still adjustable and nothing built yet, tree testing is exactly the right tool: it evaluates whether the proposed labels and structure actually support findability before any development investment has been made, making changes cheap at this stage.
       </p>
 
       <p>
-        <strong>2 — Data analytics on real usage patterns.</strong> Once the site is live and generating actual behavior data, that real data becomes available and directly relevant in a way pre-launch methods can no longer offer — analytics at this stage reveals how real users, not test participants, are actually navigating the finished site.
+        <strong>2: Data analytics on real usage patterns.</strong> Once the site is live and generating actual behavior data, that real data becomes available and directly relevant in a way pre-launch methods can no longer offer, analytics at this stage reveals how real users, not test participants, are actually navigating the finished site.
       </p>
 
       <span class="feedback__highlight">
-        For the six-month question about external-search arrivals specifically, path analysis segmented by entry point — filtering the data to look specifically at sessions that began on a page other than the home page — would be the appropriate method, since it isolates exactly the population the team wants to understand. Two-week analytics alone might not answer this, for two reasons: general usage data averaged across all visitors doesn't necessarily separate out the external-search-entry segment specifically, and two weeks may simply be too short a window to gather a reliable enough sample of this particular segment's behavior, especially if external-search traffic is a smaller portion of overall visits that needs more time to accumulate meaningful data.
+        For the six-month question about external-search arrivals specifically, path analysis segmented by entry point, filtering the data to look specifically at sessions that began on a page other than the home page, would be the appropriate method, since it isolates exactly the population the team wants to understand. Two-week analytics alone might not answer this, for two reasons: general usage data averaged across all visitors doesn't necessarily separate out the external-search-entry segment specifically, and two weeks may simply be too short a window to gather a reliable enough sample of this particular segment's behavior, especially if external-search traffic is a smaller portion of overall visits that needs more time to accumulate meaningful data.
       </span>
 
       <p>
@@ -157,7 +157,7 @@
   <section class="prompt-fill" id="navigation-validator" aria-labelledby="prompt-fill-label-navigation-validator">
 
     <div class="prompt-fill__zone-label" id="prompt-fill-label-navigation-validator">
-      Try It With Your Data — Navigation Validation
+      Try It With Your Data: Navigation Validation
     </div>
 
     <div class="prompt-fill__intro">
@@ -221,7 +221,7 @@ If FAIL: Provide revised navigation structure addressing all Critical and High i
 
 
 VALIDATION REQUIREMENTS:
-- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly: do not invent quotes, counts, labels, page titles, or categories.
 - Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
 - When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
 </script>
@@ -254,7 +254,7 @@ VALIDATION REQUIREMENTS:
   <nav class="chunk-footer" aria-label="Chapter navigation">
     <a href="chunk-05.html">← Previous chunk</a>
     <span class="chunk-footer__center">Chapter 11 · 6 of 6</span>
-    <a href="../ch12/chunk-01.html" class="chunk-footer__next-chapter">Next: Chapter 12 <span>· Designing Search</span> →</a>
+    <a href="../ch12/chunk-01.html" class="chunk-footer__next-chapter">Next: Chapter 12 <span>· Site Search</span> →</a>
   </nav>
 
 </div>

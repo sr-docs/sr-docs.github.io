@@ -17,18 +17,4 @@
 
     sections.forEach((section) => observer.observe(section));
   }
-
-  document.querySelectorAll(".card-toggle").forEach((button) => {
-    button.addEventListener("click", () => {
-      const card = button.closest(".card--project");
-      const moreId = button.getAttribute("aria-controls");
-      const more = moreId ? document.getElementById(moreId) : null;
-      if (!card || !more) return;
-
-      const expanded = card.classList.toggle("is-expanded");
-      button.setAttribute("aria-expanded", String(expanded));
-      button.textContent = expanded ? "Show Less" : "Tools Used";
-      more.setAttribute("aria-hidden", String(!expanded));
-    });
-  });
 })();

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Synonym Rings and Authority Files — Chapter 7 · IA Course</title>
+  <title>Synonym Rings and Authority Files: Chapter 7 · IA Course</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
@@ -38,12 +38,12 @@
         Natural language creates two problems for information spaces: <strong>ambiguity</strong>, where the same word means different things, and <strong>synonymy</strong>, where different words mean the same thing. A controlled vocabulary is a well-defined subset of language that solves this by establishing preferred terms for concepts, along with their variant, broader, narrower, and related terms. Choosing preferred terms draws on three warrants: literary warrant (how the term appears in existing literature), user warrant (how your actual audience talks), and organizational warrant (how your own organization refers to it).
       </p>
       <p>
-        <strong>Synonym rings</strong> are the simplest form: just a list of equivalent terms for a concept, used to broaden what a search retrieves — importantly, they're not used for indexing content, only for expanding queries at search time. <strong>Authority files</strong> are the next step up: an index of authority records, each defining one preferred term along with its cross-referenced variants and a note validating why that term is authoritative. They come in two flavors — name authority files, for unique entities like people or organizations, and subject-heading authority files, for standard topic terms.
+        <strong>Synonym rings</strong> are the simplest form: just a list of equivalent terms for a concept, used to broaden what a search retrieves, importantly: they're not used for indexing content, only for expanding queries at search time. <strong>Authority files</strong> are the next step up: an index of authority records, each defining one preferred term along with its cross-referenced variants and a note validating why that term is authoritative. They come in two flavors, name authority files, for unique entities like people or organizations, and subject-heading authority files, for standard topic terms.
       </p>
     </div>
 
     <p class="concept__anchor">
-      A synonym ring just widens the net at search time. An authority file goes further — it actually declares which term is correct, and keeps a record of why.
+      A synonym ring just widens the net at search time. An authority file goes further, it actually declares which term is correct, and keeps a record of why.
     </p>
 
   </section>
@@ -59,13 +59,13 @@
 
       <div class="exercise__scenario">
         <p>
-          <strong>The scenario:</strong> A large retail chain is experiencing two distinct search problems. First, customers searching for products using brand names, generic names, common misspellings, and regional variants get inconsistent results — a search for "trainers" and a search for "sneakers" don't reliably return the same products. Second, the product catalog uses inconsistent names for the same supplier organizations across internal records, causing reporting failures when someone tries to total purchases from a single supplier.
+          <strong>The scenario:</strong> A large retail chain is experiencing two distinct search problems. First, customers searching for products using brand names, generic names, common misspellings, and regional variants get inconsistent results, a search for "trainers" and a search for "sneakers" don't reliably return the same products. Second, the product catalog uses inconsistent names for the same supplier organizations across internal records, causing reporting failures when someone tries to total purchases from a single supplier.
         </p>
       </div>
 
       <fieldset class="exercise__question">
         <legend class="exercise__question-prompt">
-          Which tool is the better fit for the first problem — inconsistent product search results across synonymous terms?
+          Which tool is the better fit for the first problem, inconsistent product search results across synonymous terms?
         </legend>
         <ul class="exercise__options" role="list">
           <li><label class="exercise__option js-option">
@@ -81,7 +81,7 @@
 
       <fieldset class="exercise__question">
         <legend class="exercise__question-prompt">
-          Which tool is the better fit for the second problem — inconsistent supplier names breaking internal reporting?
+          Which tool is the better fit for the second problem, inconsistent supplier names breaking internal reporting?
         </legend>
         <ul class="exercise__options" role="list">
           <li><label class="exercise__option js-option">
@@ -97,7 +97,7 @@
 
       <div class="exercise__justification">
         <label for="justification">
-          Neither tool solves everything. Explain one thing that remains unsolved even after both fixes are in place — something that would require a more structured controlled vocabulary to address.
+          Neither tool solves everything. Explain one thing that remains unsolved even after both fixes are in place, something that would require a more structured controlled vocabulary to address.
         </label>
         <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
       </div>
@@ -128,15 +128,15 @@
     <div class="feedback__body">
 
       <p>
-        <strong>1 — Synonym ring.</strong> "Trainers" and "sneakers" are a textbook case of near-synonymous regional terms that a synonym ring is built to handle — broadening search so either term retrieves the same products, without needing to index or officially rename anything.
+        <strong>1: Synonym ring.</strong> "Trainers" and "sneakers" are a textbook case of near-synonymous regional terms that a synonym ring is built to handle, broadening search so either term retrieves the same products, without needing to index or officially rename anything.
       </p>
 
       <p>
-        <strong>2 — Authority file.</strong> Reporting requires a single, official, unique name for each supplier — exactly what a name authority file provides: one declared preferred term per entity, with any variant spellings or names cross-referenced back to it, so totals can be reliably calculated against one canonical name.
+        <strong>2: Authority file.</strong> Reporting requires a single, official, unique name for each supplier, exactly what a name authority file provides: one declared preferred term per entity, with any variant spellings or names cross-referenced back to it, so totals can be reliably calculated against one canonical name.
       </p>
 
       <span class="feedback__highlight">
-        Even with both fixes in place, neither tool defines the relationships between terms — a synonym ring has no concept of broader or narrower categories, and an authority file, while it disambiguates names, doesn't organize suppliers or products into a hierarchy of categories and subcategories. If the retailer later wants customers to browse footwear by category — athletic shoes, which include trainers and sneakers as a narrower group within it — that requires a taxonomy or thesaurus, which explicitly models broader and narrower relationships in a way neither synonym rings nor authority files are designed to do.
+        Even with both fixes in place, neither tool defines the relationships between terms, a synonym ring has no concept of broader or narrower categories, and an authority file, while it disambiguates names, doesn't organize suppliers or products into a hierarchy of categories and subcategories. If the retailer later wants customers to browse footwear by category, athletic shoes, which include trainers and sneakers as a narrower group within it, that requires a taxonomy or thesaurus, which explicitly models broader and narrower relationships in a way neither synonym rings nor authority files are designed to do.
       </span>
 
     </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Taxonomies — Chapter 7 · IA Course</title>
+  <title>Taxonomies: Chapter 7 · IA Course</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
@@ -35,15 +35,15 @@
 
     <div class="concept__body">
       <p>
-        A taxonomy is a top-down hierarchical classification scheme of preferred terms, dividing general concepts into progressively more specific ones through parent-child relationships. Three types of logical relationship can connect terms within a taxonomy: <strong>broader/narrower</strong>, the most common — "a narrower term is a kind of the broader term," like "oak is a tree"; <strong>instance-of</strong>, where a general category has specific, often proper-named instances, like "Zoom is an instance of an online-meeting application"; and <strong>whole/part</strong>, like "a page is part of a website."
+        A taxonomy is a top-down hierarchical classification scheme of preferred terms, dividing general concepts into progressively more specific ones through parent-child relationships. Three types of logical relationship can connect terms within a taxonomy: <strong>broader/narrower</strong>, the most common: "a narrower term is a kind of the broader term," like "oak is a tree"; <strong>instance-of</strong>, where a general category has specific, often proper-named instances, like "Zoom is an instance of an online-meeting application"; and <strong>whole/part</strong>, like "a page is part of a website."
       </p>
       <p>
-        Most taxonomies place each term in exactly one location — a strict hierarchy — but a <strong>polyhierarchy</strong> allows a term to appear in more than one place when a concept genuinely belongs in multiple categories, like a piano being both a percussion instrument and a stringed instrument. Polyhierarchy improves findability but is harder to maintain, so it's used sparingly rather than by default. Interestingly, the categories people find easiest to work with aren't at the very top or bottom of a taxonomy — mid-level categories, concrete enough to picture but general enough to be widely understood, are the most cognitively natural starting point for most people.
+        Most taxonomies place each term in exactly one location, a strict hierarchy, but a <strong>polyhierarchy</strong> allows a term to appear in more than one place when a concept genuinely belongs in multiple categories, like a piano being both a percussion instrument and a stringed instrument. Polyhierarchy improves findability but is harder to maintain, so it's used sparingly rather than by default. Interestingly, the categories people find easiest to work with aren't at the very top or bottom of a taxonomy. Mid-level categories, concrete enough to picture but general enough to be widely understood, are the most cognitively natural starting point for most people.
       </p>
     </div>
 
     <p class="concept__anchor">
-      "Animal" is too abstract to picture. "Himalayan cat" requires knowledge most people don't have. "Cat" sits in the middle — and that middle is where most people's natural thinking actually lives.
+      "Animal" is too abstract to picture. "Himalayan cat" requires knowledge most people don't have. "Cat" sits in the middle, and that middle is where most people's natural thinking actually lives.
     </p>
 
   </section>
@@ -78,7 +78,7 @@
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="problem-1" value="no-issue">
-            <span class="exercise__option-text">No issue — this is a valid whole/part relationship</span>
+            <span class="exercise__option-text">No issue: this is a valid whole/part relationship</span>
           </label></li>
         </ul>
       </fieldset>
@@ -125,7 +125,7 @@
 
       <div class="exercise__justification">
         <label for="justification">
-          Propose the correct structural fix for problem 1 — where should "Podcasts" actually sit in the taxonomy relative to "Articles"?
+          Propose the correct structural fix for problem 1, where should "Podcasts" actually sit in the taxonomy relative to "Articles"?
         </label>
         <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
       </div>
@@ -156,19 +156,19 @@
     <div class="feedback__body">
 
       <p>
-        <strong>1 — A broader/narrower relationship has been misapplied.</strong> "A podcast is a kind of article" doesn't hold up — podcasts and articles are two different content types that happen to sit side by side, not one nested inside the other.
+        <strong>1: A broader/narrower relationship has been misapplied.</strong> "A podcast is a kind of article" doesn't hold up, podcasts and articles are two different content types that happen to sit side by side, not one nested inside the other.
       </p>
 
       <p>
-        <strong>2 — Should be modeled as an instance-of relationship.</strong> "The New York Times" is a specific, named entity — an instance of the general category "News Sources" — which is a different logical relationship from broader/narrower and should be modeled that way to keep the taxonomy's relationships meaningful.
+        <strong>2: Should be modeled as an instance-of relationship.</strong> "The New York Times" is a specific, named entity, an instance of the general category "News Sources", which is a different logical relationship from broader/narrower and should be modeled that way to keep the taxonomy's relationships meaningful.
       </p>
 
       <p>
-        <strong>3 — Inconsistent polyhierarchy.</strong> Placing content in two categories isn't wrong on its own — polyhierarchy is a legitimate, if sparingly used, technique — but doing it without a consistent rule for when it applies is what creates the actual problem, since other similar articles may not receive the same dual placement.
+        <strong>3: Inconsistent polyhierarchy.</strong> Placing content in two categories isn't wrong on its own, polyhierarchy is a legitimate, if sparingly used, technique, but doing it without a consistent rule for when it applies is what creates the actual problem, since other similar articles may not receive the same dual placement.
       </p>
 
       <span class="feedback__highlight">
-        The correct fix for problem 1 is placing "Podcasts" as a sibling category to "Articles" — both narrower terms under a shared broader category like "Content Types" — rather than nesting one inside the other. This preserves the taxonomy's logical integrity: each level should only contain terms that are genuinely kinds of the level above them, and two unrelated content formats sitting at the same level, side by side, reflects their actual relationship far more accurately than forcing one to be a subtype of the other.
+        The correct fix for problem 1 is placing "Podcasts" as a sibling category to "Articles", both narrower terms under a shared broader category like "Content Types", rather than nesting one inside the other. This preserves the taxonomy's logical integrity: each level should only contain terms that are genuinely kinds of the level above them, and two unrelated content formats sitting at the same level, side by side, reflects their actual relationship far more accurately than forcing one to be a subtype of the other.
       </span>
 
     </div>
@@ -180,7 +180,7 @@
   <section class="prompt-fill" id="hierarchical-generator" aria-labelledby="prompt-fill-label-hierarchical-generator">
 
     <div class="prompt-fill__zone-label" id="prompt-fill-label-hierarchical-generator">
-      Try It With Your Data — Hierarchical Taxonomy Generator
+      Try It With Your Data: Hierarchical Taxonomy Generator
     </div>
 
     <div class="prompt-fill__intro">
@@ -249,7 +249,7 @@ Output as markdown indented list with:
 
 
 VALIDATION REQUIREMENTS:
-- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly: do not invent quotes, counts, labels, page titles, or categories.
 - Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
 - When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
 </script>
@@ -343,7 +343,7 @@ VALIDATION REQUIREMENTS:
   <section class="prompt-fill" id="exploratory-pattern" aria-labelledby="prompt-fill-label-exploratory-pattern">
 
     <div class="prompt-fill__zone-label" id="prompt-fill-label-exploratory-pattern">
-      Try It With Your Data — Exploratory Taxonomy Pattern
+      Try It With Your Data: Exploratory Taxonomy Pattern
     </div>
 
     <div class="prompt-fill__intro">
@@ -412,7 +412,7 @@ For each taxonomy option:
 
 
 VALIDATION REQUIREMENTS:
-- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly: do not invent quotes, counts, labels, page titles, or categories.
 - Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
 - When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
 </script>
@@ -488,7 +488,7 @@ VALIDATION REQUIREMENTS:
   <section class="prompt-fill" id="diataxis-integration" aria-labelledby="prompt-fill-label-diataxis-integration">
 
     <div class="prompt-fill__zone-label" id="prompt-fill-label-diataxis-integration">
-      Try It With Your Data — Diátaxis Integration Pattern
+      Try It With Your Data: Diátaxis Integration Pattern
     </div>
 
     <div class="prompt-fill__intro">
@@ -552,7 +552,7 @@ Output as indented list with:
 
 
 VALIDATION REQUIREMENTS:
-- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly: do not invent quotes, counts, labels, page titles, or categories.
 - Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
 - When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
 </script>
@@ -622,7 +622,7 @@ VALIDATION REQUIREMENTS:
   <section class="prompt-fill" id="taxonomy-validator" aria-labelledby="prompt-fill-label-taxonomy-validator">
 
     <div class="prompt-fill__zone-label" id="prompt-fill-label-taxonomy-validator">
-      Try It With Your Data — Taxonomy Validator
+      Try It With Your Data: Taxonomy Validator
     </div>
 
     <div class="prompt-fill__intro">
@@ -740,7 +740,7 @@ Provide:
   <section class="prompt-fill" id="balance-validator" aria-labelledby="prompt-fill-label-balance-validator">
 
     <div class="prompt-fill__zone-label" id="prompt-fill-label-balance-validator">
-      Try It With Your Data — Balance Validator
+      Try It With Your Data: Balance Validator
     </div>
 
     <div class="prompt-fill__intro">
@@ -843,7 +843,7 @@ Category | Pages | % | Status
   <section class="prompt-fill" id="refinement-pattern" aria-labelledby="prompt-fill-label-refinement-pattern">
 
     <div class="prompt-fill__zone-label" id="prompt-fill-label-refinement-pattern">
-      Try It With Your Data — Taxonomy Refinement Pattern
+      Try It With Your Data: Taxonomy Refinement Pattern
     </div>
 
     <div class="prompt-fill__intro">
@@ -909,7 +909,7 @@ Output:
 
 
 VALIDATION REQUIREMENTS:
-- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly: do not invent quotes, counts, labels, page titles, or categories.
 - Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
 - When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
 </script>

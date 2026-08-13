@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Hub-and-Spoke Pattern — Chapter 4 · IA Course</title>
+  <title>The Hub-and-Spoke Pattern: Chapter 4 · IA Course</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
@@ -35,7 +35,7 @@
 
     <div class="concept__body">
       <p>
-        In a hub-and-spoke structure, a central hub page is the single entry point from which users navigate to individual spoke pages, then return to the hub before moving to another spoke. This reflects a common browsing behavior — click a link, view its content, return, click another link. Hub-and-spoke is very common in mobile apps and can work well for information spaces with a limited scope or for individual sections within a larger space, though it's less common as the structure for an entire large information space. More complex versions nest smaller hub-and-spoke structures within individual spokes.
+        In a hub-and-spoke structure, a central hub page is the single entry point from which users navigate to individual spoke pages, then return to the hub before moving to another spoke. This reflects a common browsing behavior, click a link, view its content, return, click another link. Hub-and-spoke is very common in mobile apps and can work well for information spaces with a limited scope or for individual sections within a larger space, though it's less common as the structure for an entire large information space. More complex versions nest smaller hub-and-spoke structures within individual spokes.
       </p>
     </div>
 
@@ -56,7 +56,7 @@
 
       <div class="exercise__scenario">
         <p>
-          <strong>The scenario:</strong> A mobile app for a financial services company structures its multi-step loan application as a hub-and-spoke pattern. A central "Application Hub" screen lists all required sections — Income, Employment, Assets, References — and completing any one section always returns the user to the Application Hub before they can start the next section.
+          <strong>The scenario:</strong> A mobile app for a financial services company structures its multi-step loan application as a hub-and-spoke pattern. A central "Application Hub" screen lists all required sections, Income, Employment, Assets, References, and completing any one section always returns the user to the Application Hub before they can start the next section.
         </p>
         <p>
           Users complain that completing the full application "feels exhausting," and say they wish they could move directly from one section to the next without detouring back to the hub every time.
@@ -70,15 +70,15 @@
         <ul class="exercise__options" role="list">
           <li><label class="exercise__option js-option">
             <input type="radio" name="pattern-fit" value="yes-intended">
-            <span class="exercise__option-text">Yes — the pattern is working exactly as intended</span>
+            <span class="exercise__option-text">Yes, the pattern is working exactly as intended</span>
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="pattern-fit" value="no-linear">
-            <span class="exercise__option-text">No — a linear sequence would better fit a task that has a required order and a clear endpoint</span>
+            <span class="exercise__option-text">No, a linear sequence would better fit a task that has a required order and a clear endpoint</span>
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="pattern-fit" value="no-hypertext">
-            <span class="exercise__option-text">No — this should be a pure hypertext structure with no required order at all</span>
+            <span class="exercise__option-text">No, this should be a pure hypertext structure with no required order at all</span>
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="pattern-fit" value="yes-redesign-hub">
@@ -89,7 +89,7 @@
 
       <div class="exercise__justification">
         <label for="justification">
-          Explain why the specific complaint — needing to detour back to the hub before every next section — is a natural consequence of the hub-and-spoke pattern rather than a bug in its implementation.
+          Explain why the specific complaint, needing to detour back to the hub before every next section, is a natural consequence of the hub-and-spoke pattern rather than a bug in its implementation.
         </label>
         <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
       </div>
@@ -120,15 +120,15 @@
     <div class="feedback__body">
 
       <p>
-        <strong>No — a linear sequence would better fit a task that has a required order and a clear endpoint.</strong> The loan application has exactly the traits the source material associates with a linear sequence: a defined set of steps, a required order, and a clear endpoint — submission. Hub-and-spoke is built around a different behavior entirely: visiting individual, largely self-contained spokes and returning to a central hub between each one.
+        <strong>No, a linear sequence would better fit a task that has a required order and a clear endpoint.</strong> The loan application has exactly the traits the source material associates with a linear sequence: a defined set of steps, a required order, and a clear endpoint, submission. Hub-and-spoke is built around a different behavior entirely: visiting individual, largely self-contained spokes and returning to a central hub between each one.
       </p>
 
       <span class="feedback__highlight">
-        This is not an implementation flaw — it's the pattern behaving exactly as designed, applied to a task it was never meant to serve. The mandatory return-to-hub between every section is hub-and-spoke's defining behavior, not an accident of this particular build. No redesign of the hub screen itself would remove that friction, because the friction comes from the pattern's basic structure, not its visual execution.
+        This is not an implementation flaw: it's the pattern behaving exactly as designed, applied to a task it was never meant to serve. The mandatory return-to-hub between every section is hub-and-spoke's defining behavior, not an accident of this particular build. No redesign of the hub screen itself would remove that friction, because the friction comes from the pattern's basic structure, not its visual execution.
       </span>
 
       <p>
-        A linear sequence would let users move directly from Income to Employment to Assets to References using Next and Previous controls, with a visible list of steps showing their progress toward the clear endpoint of submission — addressing the "exhausting" complaint directly, because it removes the repeated, unnecessary detour that hub-and-spoke requires by design.
+        A linear sequence would let users move directly from Income to Employment to Assets to References using Next and Previous controls, with a visible list of steps showing their progress toward the clear endpoint of submission, addressing the "exhausting" complaint directly, because it removes the repeated, unnecessary detour that hub-and-spoke requires by design.
       </p>
 
     </div>

@@ -12,6 +12,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
     <script src="../js/theme-boot.js"></script>
   </head>
   <body>
@@ -46,9 +47,6 @@
     <main>
       <header class="page-hero">
         <h1>Projects</h1>
-        <p>
-          Demos, experiments, and documentation systems you can open and explore.
-        </p>
       </header>
 
       <section class="section is-visible">
@@ -73,27 +71,20 @@
                 />
               </div>
               <h3 class="card-title" id="card-title-playground">
-                Documentation ecosystem playground
+                Docs as Code playground
               </h3>
               <p class="card-desc">
-                Learn the design, automation, and operation of doc ecosystems.
+                Learn the design, automation, and operation of docs-as-code
+                ecosystems through an interactive GitHub-integrated sandbox.
               </p>
-              <div class="card-more" id="card-more-playground" aria-hidden="true">
-                <p>
-                  A hands-on sandbox for docs-as-code workflows: content structure,
-                  publishing pipelines, and the tooling that keeps a documentation
-                  ecosystem healthy as it grows.
-                </p>
-              </div>
-              <div class="card-actions">
-                <button
-                  type="button"
-                  class="card-toggle"
-                  aria-expanded="false"
-                  aria-controls="card-more-playground"
-                >
-                  Tools Used
-                </button>
+              <div class="card-more">
+                <p>Built using:</p>
+                <ul>
+                  <li>Claude as a sounding board and coding partner</li>
+                  <li>Cursor for finishing touches</li>
+                  <li>Google AI Studio to plan the video storyboards</li>
+                  <li>Google Flow to animate the storyboards</li>
+                </ul>
               </div>
             </article>
           </li>
@@ -128,26 +119,35 @@
                 NimbusWiz content portal
               </h3>
               <p class="card-desc">
-                Fictional SaaS case study — product ideation, IA, tech docs,
-                UX writing, Docs QA, docs-as-code, analytics, and AI experiments.
+                A fictional SaaS case study spanning product ideation, IA, tech
+                docs, UX writing, Docs QA, docs-as-code, analytics, and AI
+                experiments.
               </p>
-              <div class="card-more" id="card-more-nimbuswiz" aria-hidden="true">
-                <p>
-                  End-to-end portfolio piece for a made-up modernization platform:
-                  personas and journey maps, user and admin guides, API reference,
-                  voice and tone, Vale linting, and experiments with AI-assisted
-                  authoring and docs analytics.
-                </p>
-              </div>
-              <div class="card-actions">
-                <button
-                  type="button"
-                  class="card-toggle"
-                  aria-expanded="false"
-                  aria-controls="card-more-nimbuswiz"
-                >
-                  Tools Used
-                </button>
+              <div class="card-more">
+                <div>
+                  <p>
+                    Built using Docusaurus, Claude Code, Figma, and Google
+                    NotebookLM.
+                  </p>
+                  <p class="card-related-label">Related blog posts:</p>
+                  <ul class="card-related">
+                    <li>
+                      <a href="../blog/index.html?post=why-i-documented-a-fictional-product"
+                        >Why I built a fictional product (and a documentation portfolio around it)</a
+                      >
+                    </li>
+                    <li>
+                      <a href="../blog/index.html?post=structure-before-sentences"
+                        >Structure first, sentences next</a
+                      >
+                    </li>
+                    <li>
+                      <a href="../blog/index.html?post=ai-assisted-docs-pipeline-guide"
+                        >What works and what breaks in an AI-assisted docs pipeline</a
+                      >
+                    </li>
+                  </ul>
+                </div>
               </div>
             </article>
           </li>
@@ -169,28 +169,38 @@
                 />
               </div>
               <h3 class="card-title" id="card-title-ia">
-                Designing Information Architecture
+                Practical Information Architecture
               </h3>
               <p class="card-desc">
-                Interactive course: IA concepts in commit-then-reveal chunks,
-                plus a library of AI prompts for IA work.
+                An interactive IA course with quick exercises and an original
+                prompt library.
               </p>
-              <div class="card-more" id="card-more-ia" aria-hidden="true">
-                <p>
-                  Practice taxonomy, navigation, and content models in small
-                  exercises that reveal answers after you commit — then reuse the
-                  prompt library when you take the same methods into real projects.
-                </p>
-              </div>
-              <div class="card-actions">
-                <button
-                  type="button"
-                  class="card-toggle"
-                  aria-expanded="false"
-                  aria-controls="card-more-ia"
-                >
-                  Tools Used
-                </button>
+              <div class="card-more">
+                <div>
+                  <p>
+                    Practice taxonomy, navigation, and content structure in small
+                    chunks; reuse the prompt library on real projects.
+                  </p>
+                  <p>Built using Claude Code and Cursor.</p>
+                  <p class="card-related-label">Related blog posts:</p>
+                  <ul class="card-related">
+                    <li>
+                      <a href="../blog/index.html?post=content-ontology-pivot"
+                        >Unstructured content, the bane of RAG systems. Or is it?</a
+                      >
+                    </li>
+                    <li>
+                      <a href="../blog/index.html?post=content-quality-numbers"
+                        >Demonstrating quantifiable improvements in content quality</a
+                      >
+                    </li>
+                    <li>
+                      <a href="../blog/index.html?post=prompt-architect-complex-content"
+                        >Prompt architecting complex content</a
+                      >
+                    </li>
+                  </ul>
+                </div>
               </div>
             </article>
           </li>
@@ -324,7 +334,7 @@
                 An interactive React-based tool that guides users through the
                 Japanese concept of Ikigai to find their purpose.
               </p>
-              <div class="card-more" id="card-more-purpose" aria-hidden="true">
+              <div class="card-more">
                 <div>
                   <p>
                     I converted a PDF (and complex philosophical concepts) into an
@@ -351,16 +361,6 @@
                   </ul>
                 </div>
               </div>
-              <div class="card-actions">
-                <button
-                  type="button"
-                  class="card-toggle"
-                  aria-expanded="false"
-                  aria-controls="card-more-purpose"
-                >
-                  Tools Used
-                </button>
-              </div>
             </article>
           </li>
         </ul>
@@ -372,7 +372,7 @@
         <a href="../index.html">Home</a>
         ·
         <a href="https://github.com/sr-docs">GitHub</a>
-        · Built for GitHub Pages
+        · Copyright © Sabita Rao
       </p>
     </footer>
     <script src="../js/theme.js"></script>

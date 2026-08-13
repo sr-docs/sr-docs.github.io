@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Filtering Search Results — Chapter 12 · IA Course</title>
+  <title>Filtering Search Results: Chapter 12 · IA Course</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
@@ -35,7 +35,7 @@
 
     <div class="concept__body">
       <p>
-        Filtering narrows a result set based on specific criteria, which is a different job from sorting — sorting reorders the same set of results, while filtering removes some of them from consideration entirely. Good filter design means clear labels, visibly showing which filters are currently active, and making them easy to remove or reset. When many filter types exist, collapsible groups keep the interface manageable, and on mobile, filters often move into a full-screen overlay or bottom sheet given how little space is available otherwise. Filtering and sorting typically work together — narrow the set with filters first, then sort whatever remains.
+        Filtering narrows a result set based on specific criteria, which is a different job from sorting, sorting reorders the same set of results, while filtering removes some of them from consideration entirely. Good filter design means clear labels, visibly showing which filters are currently active, and making them easy to remove or reset. When many filter types exist, collapsible groups keep the interface manageable, and on mobile, filters often move into a full-screen overlay or bottom sheet given how little space is available otherwise. Filtering and sorting typically work together, narrow the set with filters first, then sort whatever remains.
       </p>
       <p>
         The real risk with filtering is over-constraining: stacking enough simultaneous filters can produce zero results, even when the underlying content the searcher actually wants does exist somewhere in the catalog. Handling this well means showing result counts before a filter is fully applied, or suggesting which specific filter to relax when a combination has gone too far.
@@ -43,7 +43,7 @@
     </div>
 
     <p class="concept__anchor">
-      Filters that each make sense individually can still combine into a search with no possible answer — the interface's job is catching that moment before the searcher hits a wall they didn't see coming.
+      Filters that each make sense individually can still combine into a search with no possible answer, the interface's job is catching that moment before the searcher hits a wall they didn't see coming.
     </p>
 
   </section>
@@ -59,7 +59,7 @@
 
       <div class="exercise__scenario">
         <p>
-          <strong>The scenario:</strong> A job search platform is redesigning its search and filtering experience. The platform has a large database of job listings with consistent structured metadata — job title, company, location, salary range, job type, industry, experience level, remote options, and date posted. Mobile usage accounts for sixty percent of all searches. Users frequently complain that filtering produces zero results, particularly when they combine salary range with location and experience level filters.
+          <strong>The scenario:</strong> A job search platform is redesigning its search and filtering experience. The platform has a large database of job listings with consistent structured metadata, job title, company, location, salary range, job type, industry, experience level, remote options, and date posted. Mobile usage accounts for sixty percent of all searches. Users frequently complain that filtering produces zero results, particularly when they combine salary range with location and experience level filters.
         </p>
       </div>
 
@@ -116,15 +116,15 @@
     <div class="feedback__body">
 
       <p>
-        <strong>Showing live counts and suggesting which filter to relax is correct.</strong> Salary range, location, and experience level are all legitimate, individually useful filters — removing any of them would take away real value from users who genuinely need to narrow by those criteria for other searches that work fine. The actual problem isn't the filters themselves, it's the interface's failure to help users recover gracefully when a specific combination happens to over-constrain the result set. Showing counts as filters are applied lets someone see they're heading toward zero before committing fully, and suggesting which filter to relax turns a dead end into a next step.
+        <strong>Showing live counts and suggesting which filter to relax is correct.</strong> Salary range, location, and experience level are all legitimate, individually useful filters, removing any of them would take away real value from users who genuinely need to narrow by those criteria for other searches that work fine. The actual problem isn't the filters themselves: it's the interface's failure to help users recover gracefully when a specific combination happens to over-constrain the result set. Showing counts as filters are applied lets someone see they're heading toward zero before committing fully, and suggesting which filter to relax turns a dead end into a next step.
       </p>
 
       <span class="feedback__highlight">
-        Removing the filters would be a real loss for the majority of searches where those same criteria work perfectly well — the fix belongs in how over-constraining is handled, not in eliminating useful filtering criteria. Telling users to combine filters more carefully ignores that this is fundamentally an interface design problem the platform is responsible for solving, not a training problem for users to work around on their own.
+        Removing the filters would be a real loss for the majority of searches where those same criteria work perfectly well, the fix belongs in how over-constraining is handled, not in eliminating useful filtering criteria. Telling users to combine filters more carefully ignores that this is fundamentally an interface design problem the platform is responsible for solving, not a training problem for users to work around on their own.
       </span>
 
       <p>
-        With sixty percent of searches happening on mobile, this platform should design its filters as a full-screen overlay or bottom sheet, consistent with the general mobile filtering pattern, rather than trying to compress several filter categories into limited on-screen space alongside the results list. This matters more here than it would for a desktop-first product because mobile screens have so much less room to display filter controls, active filter state, and results simultaneously — a cramped mobile filter experience would make the existing over-constraining problem even harder for users to diagnose and recover from, since they'd have even less visual context to notice a filter combination heading toward zero results.
+        With sixty percent of searches happening on mobile, this platform should design its filters as a full-screen overlay or bottom sheet, consistent with the general mobile filtering pattern, rather than trying to compress several filter categories into limited on-screen space alongside the results list. This matters more here than it would for a desktop-first product because mobile screens have so much less room to display filter controls, active filter state, and results simultaneously, a cramped mobile filter experience would make the existing over-constraining problem even harder for users to diagnose and recover from, since they'd have even less visual context to notice a filter combination heading toward zero results.
       </p>
 
     </div>
@@ -136,7 +136,7 @@
   <section class="prompt-fill" id="faceted-search-designer" aria-labelledby="prompt-fill-label-faceted-search-designer">
 
     <div class="prompt-fill__zone-label" id="prompt-fill-label-faceted-search-designer">
-      Try It With Your Data — Faceted Search Designer
+      Try It With Your Data: Faceted Search Designer
     </div>
 
     <div class="prompt-fill__intro">
@@ -205,7 +205,7 @@ Complete facet specification with UX recommendations
 
 
 VALIDATION REQUIREMENTS:
-- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly: do not invent quotes, counts, labels, page titles, or categories.
 - Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
 - When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
 </script>

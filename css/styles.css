@@ -386,14 +386,15 @@ html[data-theme="dark"] .theme-toggle .icon-sun {
 }
 
 .hero h1 {
-  margin: 0 auto 0.55rem;
-  max-width: 18ch;
+  margin: 0 auto 0.7rem;
+  max-width: 16em;
   font-family: var(--font-display);
   font-size: clamp(1.65rem, 3.6vw, 2.35rem);
   font-weight: 700;
   letter-spacing: -0.035em;
   line-height: 1.15;
   color: var(--ink);
+  text-wrap: balance;
   text-shadow:
     0 1px 0 color-mix(in srgb, var(--paper) 92%, transparent),
     0 0 20px color-mix(in srgb, var(--paper) 88%, transparent),
@@ -402,11 +403,13 @@ html[data-theme="dark"] .theme-toggle .icon-sun {
 
 .hero-lead {
   margin: 0 auto;
-  max-width: 42ch;
+  max-width: 36em;
   color: var(--ink-soft);
   font-size: 0.98rem;
   font-weight: 500;
-  line-height: 1.6;
+  line-height: 1.55;
+  text-align: center;
+  text-wrap: balance;
   text-shadow:
     0 1px 0 color-mix(in srgb, var(--paper) 88%, transparent),
     0 0 16px color-mix(in srgb, var(--paper) 78%, transparent);
@@ -493,6 +496,16 @@ main {
   transform: none;
 }
 
+body.home #featured {
+  padding: 1.35rem 1.35rem 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: color-mix(in srgb, var(--card-bg) 72%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 1px 0 var(--card-shadow);
+}
+
 .section-label {
   margin: 0 0 0.5rem;
   font-family: var(--font-ui);
@@ -512,10 +525,11 @@ main {
 }
 
 .section-lead {
-  max-width: min(42rem, 100%);
+  max-width: none;
   margin: 0 0 1.15rem;
   color: var(--ink-soft);
   font-size: 0.95rem;
+  line-height: 1.55;
 }
 
 /* Option 3 text treatments over the home backdrop */
@@ -602,7 +616,7 @@ body.home .section-footer {
 .card-stretch-link {
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: 1;
   border-radius: inherit;
 }
 
@@ -613,8 +627,7 @@ body.home .section-footer {
 
 .card--project .card-title,
 .card--project .card-desc,
-.card--project .card-more,
-.card--project .card-actions {
+.card--project .card-more {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
@@ -624,22 +637,12 @@ body.home .section-footer {
   font-size: 1.15rem;
 }
 
-.card--project .card-desc {
-  flex: 1;
-}
-
 .card-more {
-  display: grid;
-  grid-template-rows: 0fr;
-  opacity: 0;
-  transition:
-    grid-template-rows 280ms ease,
-    opacity 220ms ease;
-}
-
-.card-more > * {
-  overflow: hidden;
-  min-height: 0;
+  position: relative;
+  z-index: 2;
+  margin-top: 0.1rem;
+  margin-bottom: 1.15rem;
+  pointer-events: none;
 }
 
 .card-more p {
@@ -649,62 +652,46 @@ body.home .section-footer {
   line-height: 1.5;
 }
 
+.card-more ul {
+  margin: 0.45rem 0 0;
+  padding-left: 1.15rem;
+  list-style: disc;
+}
+
+.card-more li {
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
 .card-related-label {
-  margin-top: 0.85rem;
+  margin: 1.15rem 0 0;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--line);
   font-family: var(--font-ui);
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--ink);
+  color: var(--accent-deep);
 }
 
 .card-related {
-  margin: 0.35rem 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 0.35rem;
+  margin: 0.45rem 0 0;
+  padding-left: 1.15rem;
+  list-style: disc;
 }
 
-.card-related a {
-  position: relative;
-  z-index: 1;
+.card-related a,
+.card-more a {
+  pointer-events: auto;
   font-size: 0.92rem;
   line-height: 1.4;
+  color: var(--accent-deep);
   text-decoration: underline;
   text-underline-offset: 0.15em;
 }
 
-.card--project.is-expanded .card-more {
-  grid-template-rows: 1fr;
-  opacity: 1;
-}
-
-.card--project .card-actions {
-  position: relative;
-  z-index: 1;
-  margin-top: 0.15rem;
-  margin-bottom: 1.15rem;
-  font-family: var(--font-ui);
-  font-size: 0.92rem;
-  font-weight: 600;
-}
-
-.card-toggle {
-  appearance: none;
-  border: 0;
-  padding: 0;
-  margin: 0;
-  background: none;
-  color: var(--accent-deep);
-  font: inherit;
-  font-weight: 600;
-  cursor: pointer;
-  text-align: left;
-  position: relative;
-  z-index: 1;
-}
-
-.card-toggle:hover {
+.card-related a:hover,
+.card-more a:hover {
   color: var(--copper);
 }
 
@@ -1109,6 +1096,87 @@ a.card .card-desc {
   color: var(--ink-soft);
 }
 
+/* In-post collapsible TOC (not the left "All posts" rail) */
+.post-toc {
+  margin: 0 0 1.5rem;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 0.65rem;
+  background: color-mix(in srgb, var(--reader-bg) 88%, var(--ink) 4%);
+  font-family: var(--font-ui);
+}
+
+.post-toc > summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: 0.88rem;
+  font-weight: 650;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  user-select: none;
+}
+
+.post-toc > summary::-webkit-details-marker {
+  display: none;
+}
+
+.post-toc > summary::before {
+  content: "";
+  display: inline-block;
+  width: 0.45em;
+  height: 0.45em;
+  margin-right: 0.55em;
+  border-right: 1.5px solid var(--ink-soft);
+  border-bottom: 1.5px solid var(--ink-soft);
+  transform: rotate(-45deg) translateY(-0.1em);
+  transition: transform 0.15s ease;
+  vertical-align: middle;
+}
+
+.post-toc[open] > summary::before {
+  transform: rotate(45deg) translateY(-0.15em);
+}
+
+.post-toc nav {
+  margin-top: 0.65rem;
+  padding-top: 0.55rem;
+  border-top: 1px solid var(--line);
+}
+
+.post-toc__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.post-toc__item {
+  margin: 0;
+}
+
+.post-toc__item a {
+  display: block;
+  padding: 0.28rem 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.post-toc__item a:hover,
+.post-toc__item a:focus-visible {
+  color: var(--accent);
+}
+
+.post-toc__item--h3 a {
+  padding-left: 0.85rem;
+  font-size: 0.86rem;
+}
+
+#blog-article .post-toc + h2,
+.blog-reader .post-toc + h2 {
+  margin-top: 1.25rem;
+}
+
 .blog-reader .page-hero {
   padding: 0 0 1.1rem;
 }
@@ -1136,6 +1204,7 @@ a.card .card-desc {
   font-weight: 650;
   letter-spacing: -0.02em;
   line-height: 1.3;
+  scroll-margin-top: 5.5rem;
 }
 
 .blog-reader h3,
@@ -1146,6 +1215,7 @@ a.card .card-desc {
   font-weight: 650;
   letter-spacing: -0.015em;
   line-height: 1.35;
+  scroll-margin-top: 5.5rem;
 }
 
 .blog-reader h4,
@@ -1179,6 +1249,10 @@ a.card .card-desc {
   font-weight: 700;
   letter-spacing: -0.035em;
   line-height: 1.15;
+}
+
+.page-hero h1:last-child {
+  margin-bottom: 0;
 }
 
 .page-hero p {

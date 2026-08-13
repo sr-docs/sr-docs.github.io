@@ -46,4 +46,4 @@ if (problems.length) {
   problems.forEach((p) => console.error('  - ' + p));
   process.exit(1);
 }
-console.log('OK — all local links and anchors resolve.');
+console.log('OK: all local links and anchors resolve.');

@@ -1,5 +1,5 @@
 /* ============================================
-   IA COURSE — PROGRESS & EXERCISE JS
+   IA COURSE: PROGRESS & EXERCISE JS
    Handles: localStorage state, progress map
    updates, exercise commit behavior,
    feedback reveal, option selection UI
@@ -8,7 +8,7 @@
 'use strict';
 
 /* ============================================
-   PROGRESS — localStorage interface
+   PROGRESS: localStorage interface
    ============================================ */
 
 const Progress = {
@@ -29,7 +29,7 @@ const Progress = {
     try {
       localStorage.setItem(this.key(chunkId), 'complete');
     } catch (e) {
-      // localStorage unavailable — fail silently, course still usable
+      // localStorage unavailable: fail silently, course still usable
     }
   },
 
@@ -69,7 +69,7 @@ const Progress = {
 
 
 /* ============================================
-   EXERCISE — commit and feedback reveal
+   EXERCISE: commit and feedback reveal
    ============================================ */
 
 const Exercise = {
@@ -91,7 +91,7 @@ const Exercise = {
       return;
     }
 
-    // Option selection — visual feedback on choose
+    // Option selection, visual feedback on choose
     this.initOptions(form, commitBtn);
 
     // Commit
@@ -209,7 +209,7 @@ const Exercise = {
     if (completeEl) completeEl.style.display = 'inline-flex';
     if (retryBtn) retryBtn.style.display = 'inline-flex';
 
-    // Reveal feedback. Dropping `hidden` is what actually exposes the answers —
+    // Reveal feedback. Dropping `hidden` is what actually exposes the answers:
     // until now they were absent from the accessibility tree and from find-in-page.
     if (feedback) {
       feedback.hidden = false;
@@ -295,7 +295,7 @@ const Exercise = {
     if (completeEl) completeEl.style.display = 'inline-flex';
     if (retryBtn) retryBtn.style.display = 'inline-flex';
     if (feedback) {
-      // No transition on restore — just show immediately
+      // No transition on restore: just show immediately
       feedback.style.transition = 'none';
       feedback.hidden = false;
       feedback.classList.add('is-revealed');
@@ -306,7 +306,7 @@ const Exercise = {
 
 
 /* ============================================
-   PROGRESS UI — updates DOM indicators
+   PROGRESS UI: updates DOM indicators
    ============================================ */
 
 const ProgressUI = {
@@ -314,7 +314,7 @@ const ProgressUI = {
   CHECK_SVG: '<svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 
   // The dot carries the only indication of completion, so its accessible name
-  // has to move with its visual state — otherwise assistive tech keeps
+  // has to move with its visual state, otherwise assistive tech keeps
   // reporting "Not yet complete" for finished chunks.
   paintDot: function(dot, complete) {
     dot.classList.toggle('is-complete', complete);

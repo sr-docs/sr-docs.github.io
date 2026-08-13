@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mobile Navigation Patterns — Chapter 11 · IA Course</title>
+  <title>Mobile Navigation Patterns: Chapter 11 · IA Course</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
@@ -35,7 +35,7 @@
 
     <div class="concept__body">
       <p>
-        Mobile navigation patterns all wrestle with the same fundamental trade-off: discoverability versus screen real estate. A horizontal tab bar, typically holding three to five items and staying visible at all times, maximizes discoverability — users can always see their options — but eats into a small screen's already limited space. A hamburger menu does the opposite: it hides the navigation behind a single icon, freeing up nearly the whole screen for content, at the direct cost of making those options invisible until someone taps to reveal them.
+        Mobile navigation patterns all wrestle with the same fundamental trade-off: discoverability versus screen real estate. A horizontal tab bar, typically holding three to five items and staying visible at all times, maximizes discoverability, users can always see their options, but eats into a small screen's already limited space. A hamburger menu does the opposite: it hides the navigation behind a single icon, freeing up nearly the whole screen for content, at the direct cost of making those options invisible until someone taps to reveal them.
       </p>
       <p>
         Accordions and navigation drawers with sequential, drill-down menus offer ways to manage deep hierarchies within a hidden menu once it's open. Hub-and-spoke navigation, common in mobile apps, presents a central hub screen linking out to individual features, with users returning to that hub between visits to each spoke.
@@ -43,7 +43,7 @@
     </div>
 
     <p class="concept__anchor">
-      A tab bar keeps everything visible but takes up space every single visitor pays for, whether they need it or not. A hamburger menu costs nothing visually until the moment someone actually needs to navigate — and then it costs them a tap, and a little bit of trust that the right option is even in there.
+      A tab bar keeps everything visible but takes up space every single visitor pays for, whether they need it or not. A hamburger menu costs nothing visually until the moment someone actually needs to navigate, and then it costs them a tap, and a little bit of trust that the right option is even in there.
     </p>
 
   </section>
@@ -59,7 +59,7 @@
 
       <div class="exercise__scenario">
         <p>
-          <strong>The scenario:</strong> A recipe website is redesigning its mobile experience. The site has a moderately complex hierarchy — eight top-level cuisine categories, each with multiple subcategories, plus a secondary hierarchy organized by dietary requirement, cooking time, and occasion. The primary user behavior on mobile is exploratory browsing rather than known-item seeking, and the product team wants maximum content visibility on the home screen.
+          <strong>The scenario:</strong> A recipe website is redesigning its mobile experience. The site has a moderately complex hierarchy, eight top-level cuisine categories, each with multiple subcategories, plus a secondary hierarchy organized by dietary requirement, cooking time, and occasion. The primary user behavior on mobile is exploratory browsing rather than known-item seeking, and the product team wants maximum content visibility on the home screen.
         </p>
         <p>
           Two team members disagree: one wants a tab bar with five icons for quick access to top categories; the other wants a hamburger menu with accordions to accommodate the full depth of the hierarchy without cluttering the screen.
@@ -73,7 +73,7 @@
         <ul class="exercise__options" role="list">
           <li><label class="exercise__option js-option">
             <input type="radio" name="pattern-choice" value="hamburger-accordion">
-            <span class="exercise__option-text">Hamburger menu with accordions — it preserves screen space for content, which matters more here than constant visibility of every category given how deep and varied the hierarchy is</span>
+            <span class="exercise__option-text">Hamburger menu with accordions, it preserves screen space for content, which matters more here than constant visibility of every category given how deep and varied the hierarchy is</span>
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="pattern-choice" value="tab-bar">
@@ -115,15 +115,15 @@
     <div class="feedback__body">
 
       <p>
-        <strong>The hamburger menu with accordions is the stronger fit.</strong> A tab bar realistically holds three to five items, which can't come close to representing eight top-level cuisine categories plus an entirely separate secondary hierarchy by dietary requirement, cooking time, and occasion — something would have to be omitted or compressed regardless. A hamburger menu with accordions can house that full depth without permanently occupying screen space, which directly serves the team's stated goal of maximizing content visibility on the home screen.
+        <strong>The hamburger menu with accordions is the stronger fit.</strong> A tab bar realistically holds three to five items, which can't come close to representing eight top-level cuisine categories plus an entirely separate secondary hierarchy by dietary requirement, cooking time, and occasion, something would have to be omitted or compressed regardless. A hamburger menu with accordions can house that full depth without permanently occupying screen space, which directly serves the team's stated goal of maximizing content visibility on the home screen.
       </p>
 
       <span class="feedback__highlight">
-        The trade-off being accepted here is discoverability: hiding the navigation behind a hamburger icon means the full richness of the hierarchy — all eight cuisines, all the secondary filtering options — is invisible until someone deliberately taps to open it. For a site whose primary behavior is exploratory browsing, this is a real cost, since exploratory users benefit especially from seeing options laid out in front of them rather than having to go looking for a menu first.
+        The trade-off being accepted here is discoverability: hiding the navigation behind a hamburger icon means the full richness of the hierarchy, all eight cuisines, all the secondary filtering options, is invisible until someone deliberately taps to open it. For a site whose primary behavior is exploratory browsing: this is a real cost, since exploratory users benefit especially from seeing options laid out in front of them rather than having to go looking for a menu first.
       </span>
 
       <p>
-        A reasonable mitigation is featuring a curated selection of popular or seasonal recipes directly on the home screen, outside the hidden menu entirely — giving exploratory browsers something immediately visible to engage with, so the full hierarchy sitting behind the hamburger icon isn't the only way into the site's content. This doesn't eliminate the discoverability trade-off, but it offsets it by giving the majority use case — casual, exploratory browsing — a visible starting point that doesn't depend on the hidden menu at all.
+        A reasonable mitigation is featuring a curated selection of popular or seasonal recipes directly on the home screen, outside the hidden menu entirely, giving exploratory browsers something immediately visible to engage with, so the full hierarchy sitting behind the hamburger icon isn't the only way into the site's content. This doesn't eliminate the discoverability trade-off, but it offsets it by giving the majority use case, casual, exploratory browsing, a visible starting point that doesn't depend on the hidden menu at all.
       </p>
 
     </div>
@@ -135,7 +135,7 @@
   <section class="prompt-fill" id="mobile-navigation-auditor" aria-labelledby="prompt-fill-label-mobile-navigation-auditor">
 
     <div class="prompt-fill__zone-label" id="prompt-fill-label-mobile-navigation-auditor">
-      Try It With Your Data — Mobile Navigation Auditor
+      Try It With Your Data: Mobile Navigation Auditor
     </div>
 
     <div class="prompt-fill__intro">
@@ -212,7 +212,7 @@ OUTPUT FORMAT:
 
 
 VALIDATION REQUIREMENTS:
-- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly: do not invent quotes, counts, labels, page titles, or categories.
 - Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
 - When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
 </script>

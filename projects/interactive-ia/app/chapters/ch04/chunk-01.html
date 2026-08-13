@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Structural Patterns and the Hierarchy — Chapter 4 · IA Course</title>
+  <title>Structural Patterns and the Hierarchy: Chapter 4 · IA Course</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
@@ -38,7 +38,7 @@
         Structural patterns are the solutions information architects use to define a coherent, navigable structure for a digital information space's pages. The <strong>hierarchy</strong>, or taxonomy, is the most common structural pattern: a top-down structure with the home page at the top, comprising content organized into categories that have parent-child relationships, progressing from general to specific.
       </p>
       <p>
-        A strict hierarchy keeps categories mutually exclusive, with each page belonging to just one category. A <strong>polyhierarchy</strong> allows a page to belong to more than one category, which is often necessary for large spaces but should be used sparingly to avoid confusing users' mental model of the structure. Designing a hierarchy means balancing its breadth — the number of items at each level — against its depth — the number of levels overall. As a general guideline, keep the number of categories at any one level below fifty; if a category has too many items, divide it, and if there are too many categories, combine similar ones.
+        A strict hierarchy keeps categories mutually exclusive, with each page belonging to just one category. A <strong>polyhierarchy</strong> allows a page to belong to more than one category, which is often necessary for large spaces but should be used sparingly to avoid confusing users' mental model of the structure. Designing a hierarchy means balancing its breadth, the number of items at each level, against its depth, the number of levels overall. As a general guideline, keep the number of categories at any one level below fifty; if a category has too many items, divide it, and if there are too many categories, combine similar ones.
       </p>
     </div>
 
@@ -62,7 +62,7 @@
           <strong>The scenario:</strong> A software documentation site's hierarchy has three top-level categories: "Getting Started," "Reference," and "Troubleshooting."
         </p>
         <p>
-          Under "Reference," there are 68 subcategories listed alphabetically with no further grouping — one per API endpoint. Under "Troubleshooting," there are only 2 subcategories, each containing over 40 individual articles with no further breakdown.
+          Under "Reference," there are 68 subcategories listed alphabetically with no further grouping, one per API endpoint. Under "Troubleshooting," there are only 2 subcategories, each containing over 40 individual articles with no further breakdown.
         </p>
         <p>
           Analytics show a high bounce rate on the "Reference" landing page, and long session times with many back-clicks on "Troubleshooting" articles.
@@ -76,11 +76,11 @@
         <ul class="exercise__options" role="list">
           <li><label class="exercise__option js-option">
             <input type="radio" name="reference-problem" value="too-broad">
-            <span class="exercise__option-text">Too broad — 68 subcategories at one level overwhelms users</span>
+            <span class="exercise__option-text">Too broad, 68 subcategories at one level overwhelms users</span>
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="reference-problem" value="too-deep">
-            <span class="exercise__option-text">Too deep — too many levels to click through</span>
+            <span class="exercise__option-text">Too deep, too many levels to click through</span>
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="reference-problem" value="polyhierarchy">
@@ -88,7 +88,7 @@
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="reference-problem" value="none">
-            <span class="exercise__option-text">No problem — this reflects good practice</span>
+            <span class="exercise__option-text">No problem, this reflects good practice</span>
           </label></li>
         </ul>
       </fieldset>
@@ -104,7 +104,7 @@
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="troubleshooting-problem" value="too-narrow">
-            <span class="exercise__option-text">Too narrow and shallow — only 2 categories forcing over 40 items into each, with too little further breakdown</span>
+            <span class="exercise__option-text">Too narrow and shallow, only 2 categories forcing over 40 items into each, with too little further breakdown</span>
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="troubleshooting-problem" value="polyhierarchy">
@@ -150,19 +150,19 @@
     <div class="feedback__body">
 
       <p>
-        <strong>1 — Too broad.</strong> 68 subcategories at a single level far exceeds the guideline of keeping categories under fifty per level. A flat alphabetical list of that size gives users no meaningful way to narrow down before scanning nearly seventy options, which lines up with the high bounce rate on that landing page.
+        <strong>1: Too broad.</strong> 68 subcategories at a single level far exceeds the guideline of keeping categories under fifty per level. A flat alphabetical list of that size gives users no meaningful way to narrow down before scanning nearly seventy options, which lines up with the high bounce rate on that landing page.
       </p>
 
       <p>
-        <strong>2 — Too narrow and shallow.</strong> Only 2 categories, each holding more than 40 articles with no further breakdown, is the opposite failure — the guidance to divide an oversized category into subcategories was never applied here. Users end up wading through undifferentiated lists, which matches the long sessions and repeated back-clicks as they hunt through each bucket.
+        <strong>2: Too narrow and shallow.</strong> Only 2 categories, each holding more than 40 articles with no further breakdown, is the opposite failure, the guidance to divide an oversized category into subcategories was never applied here. Users end up wading through undifferentiated lists, which matches the long sessions and repeated back-clicks as they hunt through each bucket.
       </p>
 
       <span class="feedback__highlight">
-        These two sections fail in opposite directions but for the same underlying reason: nobody applied the breadth-and-depth balancing guidance. Reference needs to be divided — for instance, grouping the 68 endpoints by product area or resource type before listing individual endpoints — so no single level presents more than a manageable number of choices. Troubleshooting needs the reverse: its 2 oversized categories should be split into meaningful subcategories, perhaps by symptom or feature area, so users aren't scanning 40-plus undifferentiated articles to find the one that matches their problem.
+        These two sections fail in opposite directions but for the same underlying reason: nobody applied the breadth-and-depth balancing guidance. Reference needs to be divided, for instance, grouping the 68 endpoints by product area or resource type before listing individual endpoints, so no single level presents more than a manageable number of choices. Troubleshooting needs the reverse: its 2 oversized categories should be split into meaningful subcategories, perhaps by symptom or feature area, so users aren't scanning 40-plus undifferentiated articles to find the one that matches their problem.
       </span>
 
       <p>
-        Neither section needs more levels for their own sake — the goal is balance, not depth. Adding one well-chosen intermediate grouping level to each section would likely resolve both problems without making the hierarchy needlessly deep.
+        Neither section needs more levels for their own sake, the goal is balance, not depth. Adding one well-chosen intermediate grouping level to each section would likely resolve both problems without making the hierarchy needlessly deep.
       </p>
 
     </div>

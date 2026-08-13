@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Faceted Search — Chapter 12 · IA Course</title>
+  <title>Faceted Search: Chapter 12 · IA Course</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
@@ -35,15 +35,15 @@
 
     <div class="concept__body">
       <p>
-        Faceted search builds directly on the faceted classification covered earlier in this course, integrating full-text search with facet-based browsing so people can narrow results along whichever independent attributes matter to them — price, brand, material, whatever the domain calls for. At real scale, this creates a genuine computational challenge: calculating accurate result counts for every possible combination of facets and values, in real time, across a large catalog, is far from trivial.
+        Faceted search builds directly on the faceted classification covered earlier in this course, integrating full-text search with facet-based browsing so people can narrow results along whichever independent attributes matter to them, price, brand, material, whatever the domain calls for. At real scale, this creates a genuine computational challenge: calculating accurate result counts for every possible combination of facets and values, in real time, across a large catalog, is far from trivial.
       </p>
       <p>
-        Not every facet deserves equal prominence — choosing which ones to surface, and which specific values within them to show by default, should be guided by usage frequency and business value rather than simply exposing everything the underlying data happens to contain. Facet controls typically take the form of checkboxes for multi-select options, radio buttons for single-select, and range sliders for continuous values like price. On mobile, faceted controls generally move into the same kind of full-screen overlay pattern that general filtering uses. For searchers who need more precision than faceted browsing alone offers, advanced or parametric search — letting someone combine multiple fields and operators directly — serves as a useful complement for power users.
+        Not every facet deserves equal prominence, choosing which ones to surface, and which specific values within them to show by default, should be guided by usage frequency and business value rather than simply exposing everything the underlying data happens to contain. Facet controls typically take the form of checkboxes for multi-select options, radio buttons for single-select, and range sliders for continuous values like price. On mobile, faceted controls generally move into the same kind of full-screen overlay pattern that general filtering uses. For searchers who need more precision than faceted browsing alone offers, advanced or parametric search, letting someone combine multiple fields and operators directly, serves as a useful complement for power users.
       </p>
     </div>
 
     <p class="concept__anchor">
-      Faceted search doesn't replace the taxonomy underneath it — it gives people a second, third, and fourth door into the same building, each opening onto a different way of thinking about what's inside.
+      Faceted search doesn't replace the taxonomy underneath it, it gives people a second, third, and fourth door into the same building, each opening onto a different way of thinking about what's inside.
     </p>
 
   </section>
@@ -85,7 +85,7 @@
 
       <div class="exercise__justification">
         <label for="justification">
-          Propose a mobile layout approach for these facets given that seventy percent of traffic is mobile, and address the over-constraining risk specifically for the price range and taste profile combination — a shopper who sets a narrow price range and a very specific taste profile together.
+          Propose a mobile layout approach for these facets given that seventy percent of traffic is mobile, and address the over-constraining risk specifically for the price range and taste profile combination, a shopper who sets a narrow price range and a very specific taste profile together.
         </label>
         <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
       </div>
@@ -116,11 +116,11 @@
     <div class="feedback__body">
 
       <p>
-        <strong>Prioritizing facets by usage frequency and business value is correct.</strong> The concept section is direct that not every facet deserves equal prominence, and that choice should be guided by what customers actually use and what matters to the business — not simply exposing every field the underlying data happens to contain. Given the computational overhead the development team has already flagged, building all ten fields as facets simultaneously would compound an acknowledged technical risk for marginal benefit, since some fields — producer or vintage year, for instance — are plausibly less commonly used for browsing than country, grape variety, price, or food pairing. Skipping faceted search entirely would fail the stated user need directly: customers who know roughly what they want but can't express it as a keyword query are exactly the audience faceted browsing serves.
+        <strong>Prioritizing facets by usage frequency and business value is correct.</strong> The concept section is direct that not every facet deserves equal prominence, and that choice should be guided by what customers actually use and what matters to the business, not simply exposing every field the underlying data happens to contain. Given the computational overhead the development team has already flagged, building all ten fields as facets simultaneously would compound an acknowledged technical risk for marginal benefit, since some fields, producer or vintage year, for instance, are plausibly less commonly used for browsing than country, grape variety, price, or food pairing. Skipping faceted search entirely would fail the stated user need directly: customers who know roughly what they want but can't express it as a keyword query are exactly the audience faceted browsing serves.
       </p>
 
       <span class="feedback__highlight">
-        With seventy percent mobile traffic, these facets should use the same full-screen overlay or bottom-sheet pattern general mobile filtering relies on, rather than trying to cram multiple facet categories into limited on-screen space alongside the wine listings themselves. For the price-range-and-taste-profile over-constraining risk, the platform should show live result counts as each facet is applied and, if the combination approaches zero results, suggest which specific facet to relax — most likely recommending the shopper widen the price range slightly, since price is often the more flexible of the two criteria for someone who has a specific taste preference but a softer budget ceiling.
+        With seventy percent mobile traffic, these facets should use the same full-screen overlay or bottom-sheet pattern general mobile filtering relies on, rather than trying to cram multiple facet categories into limited on-screen space alongside the wine listings themselves. For the price-range-and-taste-profile over-constraining risk, the platform should show live result counts as each facet is applied and, if the combination approaches zero results, suggest which specific facet to relax, most likely recommending the shopper widen the price range slightly, since price is often the more flexible of the two criteria for someone who has a specific taste preference but a softer budget ceiling.
       </span>
 
     </div>
@@ -131,7 +131,7 @@
   <nav class="chunk-footer" aria-label="Chapter navigation">
     <a href="chunk-10.html">← Previous chunk</a>
     <span class="chunk-footer__center">Chapter 12 · 11 of 11</span>
-    <a href="../ch13/chunk-01.html" class="chunk-footer__next-chapter">Next: Chapter 13 · Appendix <span>· AI Tools for IA Prototyping</span> →</a>
+    <a href="../ch13/chunk-01.html" class="chunk-footer__next-chapter">Next: Chapter 13 · Appendix <span>· AI Prompts for Structure</span> →</a>
   </nav>
 
 </div>

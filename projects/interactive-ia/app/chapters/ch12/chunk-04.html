@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ordering and Ranking Search Results — Chapter 12 · IA Course</title>
+  <title>Ordering and Ranking Search Results: Chapter 12 · IA Course</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
@@ -35,7 +35,7 @@
 
     <div class="concept__body">
       <p>
-        Simple sorting — alphabetically, chronologically, numerically — is deterministic and predictable, but most search systems default to ranking by relevance instead, weighing factors like keyword frequency, where a term appears on the page, and how different fields are weighted against each other. Relevance isn't the only useful ranking option, though: recency ranking surfaces the newest content first, popularity ranking surfaces what's been viewed, purchased, or cited most, and document-type ranking can prioritize one kind of content over another when that distinction matters to the searcher's goal.
+        Simple sorting, alphabetically, chronologically, numerically, is deterministic and predictable, but most search systems default to ranking by relevance instead, weighing factors like keyword frequency, where a term appears on the page, and how different fields are weighted against each other. Relevance isn't the only useful ranking option, though: recency ranking surfaces the newest content first, popularity ranking surfaces what's been viewed, purchased, or cited most, and document-type ranking can prioritize one kind of content over another when that distinction matters to the searcher's goal.
       </p>
       <p>
         AI-powered ranking approaches extend beyond traditional keyword-based relevance, incorporating semantic meaning, broader context, and patterns in user behavior to judge relevance in ways a simple keyword-frequency count never could.
@@ -43,7 +43,7 @@
     </div>
 
     <p class="concept__anchor">
-      Relevance ranking is the default for a reason, but "default" and "correct for this specific query" aren't always the same thing — sometimes what a searcher actually needs is simply the newest thing, or the thing everyone else already found useful.
+      Relevance ranking is the default for a reason, but "default" and "correct for this specific query" aren't always the same thing, sometimes what a searcher actually needs is simply the newest thing, or the thing everyone else already found useful.
     </p>
 
   </section>
@@ -175,16 +175,16 @@
 
     <div class="feedback__body">
 
-      <p><strong>1 — Recency.</strong> An unfolding story is exactly the case where the newest content is almost always the most useful — recency ranking directly serves this need.</p>
+      <p><strong>1: Recency.</strong> An unfolding story is exactly the case where the newest content is almost always the most useful, recency ranking directly serves this need.</p>
 
-      <p><strong>2 — Popularity.</strong> "Most authoritative and widely cited" is fundamentally a popularity signal — this researcher wants what other credible sources have already validated, not necessarily the newest take.</p>
+      <p><strong>2: Popularity.</strong> "Most authoritative and widely cited" is fundamentally a popularity signal, this researcher wants what other credible sources have already validated, not necessarily the newest take.</p>
 
-      <p><strong>3 — Popularity.</strong> Wanting to see what other readers found most useful is a direct popularity-ranking request, even though the underlying query is about gift ideas rather than news.</p>
+      <p><strong>3: Popularity.</strong> Wanting to see what other readers found most useful is a direct popularity-ranking request, even though the underlying query is about gift ideas rather than news.</p>
 
-      <p><strong>4 — Document type or comprehensive relevance, prioritizing completeness.</strong> A journalist needing every article on a topic cares about recall above all — no single ranking order matters as much as making sure nothing relevant gets left out or buried too deep to find.</p>
+      <p><strong>4: Document type or comprehensive relevance, prioritizing completeness.</strong> A journalist needing every article on a topic cares about recall above all, no single ranking order matters as much as making sure nothing relevant gets left out or buried too deep to find.</p>
 
       <span class="feedback__highlight">
-        For the researcher in context 2, relevance ranking and recency ranking genuinely pull in different directions: relevance ranking would tend to surface content based on keyword match and general authority signals, while pure recency ranking would push the newest coverage to the top regardless of whether it's actually the most authoritative treatment of an event from years ago. Given that this researcher explicitly wants the most authoritative and widely cited analysis — not the most recent — the system should weight popularity and citation signals over recency here, since ranking by newness alone could bury the well-established, heavily-cited piece beneath a recent but less substantial article that simply happens to be newer.
+        For the researcher in context 2, relevance ranking and recency ranking genuinely pull in different directions: relevance ranking would tend to surface content based on keyword match and general authority signals, while pure recency ranking would push the newest coverage to the top regardless of whether it's actually the most authoritative treatment of an event from years ago. Given that this researcher explicitly wants the most authoritative and widely cited analysis, not the most recent, the system should weight popularity and citation signals over recency here, since ranking by newness alone could bury the well-established, heavily-cited piece beneath a recent but less substantial article that simply happens to be newer.
       </span>
 
     </div>

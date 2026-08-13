@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Search UI Design Patterns — Chapter 12 · IA Course</title>
+  <title>Search UI Design Patterns: Chapter 12 · IA Course</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
@@ -40,7 +40,7 @@
     </div>
 
     <p class="concept__anchor">
-      Autocomplete finishes your sentence. Autosuggest offers you a better one. Confusing the two in an interface — or building only one when the situation calls for both — quietly limits what the search experience can actually do.
+      Autocomplete finishes your sentence. Autosuggest offers you a better one. Confusing the two in an interface, or building only one when the situation calls for both, quietly limits what the search experience can actually do.
     </p>
 
   </section>
@@ -152,14 +152,14 @@
 
     <div class="feedback__body">
 
-      <p><strong>1 — Search bar visibility.</strong> A thin, low-contrast field tucked into a corner directly fails the basic requirement that a search bar needs to be visible and appropriately sized — no other design pattern issue is at play here.</p>
+      <p><strong>1: Search bar visibility.</strong> A thin, low-contrast field tucked into a corner directly fails the basic requirement that a search bar needs to be visible and appropriately sized, no other design pattern issue is at play here.</p>
 
-      <p><strong>2 — Missing or broken autocomplete.</strong> Typing a full, correct product name and getting no completion suggestions is precisely an autocomplete failure — the system should be completing the query as the searcher types, especially when an exact match exists.</p>
+      <p><strong>2: Missing or broken autocomplete.</strong> Typing a full, correct product name and getting no completion suggestions is precisely an autocomplete failure, the system should be completing the query as the searcher types, especially when an exact match exists.</p>
 
-      <p><strong>3 — Missing scoped search.</strong> Wanting to restrict a search to a category already being browsed, with no way to do so, is a direct scoped search gap.</p>
+      <p><strong>3: Missing scoped search.</strong> Wanting to restrict a search to a category already being browsed, with no way to do so, is a direct scoped search gap.</p>
 
       <span class="feedback__highlight">
-        A reasonable fix for failure 1: increase the search bar's size and contrast, and give it a more prominent, consistent position in the header rather than a low-visibility corner placement. A reasonable fix for failure 2: implement autocomplete so that partial typing completes toward exact matching product names in real time. It's worth being precise about the distinction the concept section draws: autocomplete finishes what the searcher is already typing toward an exact match, while autosuggest offers a broader set of related or popular query suggestions that may go beyond literally completing the typed characters. Failure 2 specifically describes a missing exact-match completion, which points to an autocomplete fix rather than autosuggest — though this retailer could reasonably add autosuggest as a further enhancement on top of it.
+        A reasonable fix for failure 1: increase the search bar's size and contrast, and give it a more prominent, consistent position in the header rather than a low-visibility corner placement. A reasonable fix for failure 2: implement autocomplete so that partial typing completes toward exact matching product names in real time. It's worth being precise about the distinction the concept section draws: autocomplete finishes what the searcher is already typing toward an exact match, while autosuggest offers a broader set of related or popular query suggestions that may go beyond literally completing the typed characters. Failure 2 specifically describes a missing exact-match completion, which points to an autocomplete fix rather than autosuggest, though this retailer could reasonably add autosuggest as a further enhancement on top of it.
       </span>
 
     </div>

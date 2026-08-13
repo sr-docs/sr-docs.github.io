@@ -42,14 +42,24 @@
       article.innerHTML = source.innerHTML;
       updateTitle(doc);
 
+      // Instant top reset before TOC build (which may scroll to a hash).
+      // Smooth scrollTo(0) breaks later in-post anchor jumps in Chromium.
+      const root = document.documentElement;
+      const previousBehavior = root.style.scrollBehavior;
+      root.style.scrollBehavior = "auto";
+      window.scrollTo(0, 0);
+      root.style.scrollBehavior = previousBehavior;
+
       if (push) {
         const url = new URL(window.location.href);
         url.searchParams.set("post", slug);
+        url.hash = "";
         history.pushState({ post: slug }, "", url);
       }
 
-      article.closest(".blog-reader")?.scrollTo({ top: 0, behavior: "smooth" });
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      if (typeof window.buildPostToc === "function") {
+        window.buildPostToc(article);
+      }
     } catch (err) {
       article.innerHTML =
         '<p class="blog-reader-empty">Couldn’t load that post. <a href="' +

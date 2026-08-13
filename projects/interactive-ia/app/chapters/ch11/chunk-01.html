@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navigation Elements and Desktop Patterns — Chapter 11 · IA Course</title>
+  <title>Navigation Elements and Desktop Patterns: Chapter 11 · IA Course</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
@@ -35,15 +35,15 @@
 
     <div class="concept__body">
       <p>
-        Every navigation system is built from a small set of fundamental elements. Hyperlinks are the basic building block, with distinct states — unvisited, visited, hover, active, focus — that quietly communicate status to the user. Icons, logos, and images can serve as links too, often paired with text for clarity, and action buttons are a distinct category from links entirely: they trigger an action rather than take someone somewhere, with their own states and relative visual weight signaling primary versus secondary importance.
+        Every navigation system is built from a small set of fundamental elements. Hyperlinks are the basic building block, with distinct states, unvisited, visited, hover, active, focus, that quietly communicate status to the user. Icons, logos, and images can serve as links too, often paired with text for clarity, and action buttons are a distinct category from links entirely: they trigger an action rather than take someone somewhere, with their own states and relative visual weight signaling primary versus secondary importance.
       </p>
       <p>
-        On desktop, these elements combine into recognizable patterns. Horizontal navigation bars are the most common top-level pattern but have limited room for items. Drop-down menus and megamenus reveal subordinate links on interaction — megamenus in particular suit wide, flat content structures where many categories need to be visible at once. Vertical navigation menus, often paired with accordions or tree views, handle deep or numerous categories better than a horizontal bar ever could. Navigation drawers and rails offer more compact, often collapsible alternatives when screen space is at a premium even on desktop.
+        On desktop, these elements combine into recognizable patterns. Horizontal navigation bars are the most common top-level pattern but have limited room for items. Drop-down menus and megamenus reveal subordinate links on interaction, megamenus in particular suit wide, flat content structures where many categories need to be visible at once. Vertical navigation menus, often paired with accordions or tree views, handle deep or numerous categories better than a horizontal bar ever could. Navigation drawers and rails offer more compact, often collapsible alternatives when screen space is at a premium even on desktop.
       </p>
     </div>
 
     <p class="concept__anchor">
-      Every navigation pattern is a trade-off between how much it reveals and how much space it costs — the mistake is picking a pattern without noticing which side of that trade-off actually matters for the content in front of you.
+      Every navigation pattern is a trade-off between how much it reveals and how much space it costs, the mistake is picking a pattern without noticing which side of that trade-off actually matters for the content in front of you.
     </p>
 
   </section>
@@ -77,7 +77,7 @@
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="problem-1" value="no-problem">
-            <span class="exercise__option-text">No problem — more top-level links always give users more direct access</span>
+            <span class="exercise__option-text">No problem, more top-level links always give users more direct access</span>
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="problem-1" value="wrong-pattern">
@@ -139,19 +139,19 @@
     <div class="feedback__body">
 
       <p>
-        <strong>1 — It overloads the limited horizontal space.</strong> A horizontal navigation bar has a hard ceiling on how many labels it can present clearly before crowding sets in. Twelve top-level links pushes well past what this pattern comfortably supports, which is exactly the kind of situation where a different pattern — grouping into fewer top-level categories, or shifting to a vertical layout — becomes the better fit.
+        <strong>1: It overloads the limited horizontal space.</strong> A horizontal navigation bar has a hard ceiling on how many labels it can present clearly before crowding sets in. Twelve top-level links pushes well past what this pattern comfortably supports, which is exactly the kind of situation where a different pattern, grouping into fewer top-level categories, or shifting to a vertical layout, becomes the better fit.
       </p>
 
       <p>
-        <strong>2 — Hover-triggered megamenus are the likely cause.</strong> A megamenu that opens on hover can trigger the instant a cursor merely passes over it en route somewhere else, with no deliberate action required. This is a well-known source of accidental activation, and it's precisely the kind of interaction problem that surfaces once real users, rather than designers moving carefully through a mockup, start using the navigation at normal speed.
+        <strong>2: Hover-triggered megamenus are the likely cause.</strong> A megamenu that opens on hover can trigger the instant a cursor merely passes over it en route somewhere else, with no deliberate action required. This is a well-known source of accidental activation, and it's precisely the kind of interaction problem that surfaces once real users, rather than designers moving carefully through a mockup, start using the navigation at normal speed.
       </p>
 
       <span class="feedback__highlight">
-        Together, these findings point to a pattern: several individually plausible decisions — more top-level links, hover-triggered reveals, icon-only utility items — combine into a navigation system that feels crowded and unpredictable in practice, even though none of them looks obviously wrong in isolation. This is common in real navigation problems: the failure is rarely one dramatic mistake, it's several reasonable-looking choices compounding together.
+        Together, these findings point to a pattern: several individually plausible decisions, more top-level links, hover-triggered reveals, icon-only utility items, combine into a navigation system that feels crowded and unpredictable in practice, even though none of them looks obviously wrong in isolation. This is common in real navigation problems: the failure is rarely one dramatic mistake: it's several reasonable-looking choices compounding together.
       </span>
 
       <p>
-        For current location, a visible highlight on the active top-level item, along with breadcrumbs on deeper pages, would give users a persistent, low-effort way to confirm where they are. For the unlabeled header icons, adding visible text labels alongside each icon — even small ones — would resolve the ambiguity directly, consistent with the general principle that icons should rarely stand alone without text to anchor their meaning.
+        For current location, a visible highlight on the active top-level item, along with breadcrumbs on deeper pages, would give users a persistent, low-effort way to confirm where they are. For the unlabeled header icons, adding visible text labels alongside each icon, even small ones, would resolve the ambiguity directly, consistent with the general principle that icons should rarely stand alone without text to anchor their meaning.
       </p>
 
     </div>

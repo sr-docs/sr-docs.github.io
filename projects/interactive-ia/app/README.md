@@ -1,4 +1,4 @@
-# Designing Information Architecture — an interactive course
+# Practical Information Architecture: an interactive course
 
 A self-paced, browser-based course that teaches information architecture in small
 units, each pairing a concept with an exercise that has to be answered before the
@@ -11,20 +11,15 @@ runs.
 
 ## Provenance and originality
 
-The **topic sequence and conceptual scaffolding** are inspired by a
-Packt Publishing textbook on information architecture. That book is the source of
-the subject-matter outline only.
+Topic outline inspired by *Designing Information Architecture* by Pabini
+Gabriel-Petit (Packt), which I studied via Coursera. Not affiliated with Packt
+or Coursera; all exercises, scenarios, and prompts in this course are original.
 
-**Every word of prose, every exercise, every scenario, every distractor, and every
-AI prompt in this repository is original and written for this course.** All
-worked examples are fictional. The organizations, products, teams, page counts,
-research findings, and quoted user statements throughout are invented to
-illustrate a concept — none describe a real company, and none should be cited as
+All worked examples are fictional. The organizations, products, teams, page
+counts, research findings, and quoted user statements throughout are invented to
+illustrate a concept; none describe a real company, and none should be cited as
 evidence about one. Where an exercise needs a number ("a 400-page intranet",
 "three of eight participants"), that number is illustrative.
-
-No text, figures, exercises, or data were reproduced from the source textbook or
-from any other copyrighted work.
 
 ## Why it's built this way
 
@@ -37,7 +32,7 @@ wrong, and *then* reading the explanation actually is. Once you commit to that,
 two things follow:
 
 - **The answer must genuinely be unavailable beforehand.** Hiding it with CSS is
-  not enough — it stays in the accessibility tree and in find-in-page, so a
+  not enough, it stays in the accessibility tree and in find-in-page, so a
   screen reader user or anyone pressing Ctrl+F gets the answer for free while a
   sighted mouse user does not. Feedback sections therefore carry the `hidden`
   attribute, which `assets/js/progress.js` removes on commit.
@@ -56,7 +51,7 @@ usable as a reference after a first pass, not just as a linear read.
 
 59 prompts across the course and its two appendix chapters. Each is a template
 with labeled placeholders that update live as the reader types, plus a
-breakdown of how the prompt is constructed — most against the RICE frame
+breakdown of how the prompt is constructed, most against the RICE frame
 (Role, Instructions, Context, Expected format). The point is not to hand over
 prompts to paste but to make their structure legible, so a reader can write their
 own.
@@ -79,7 +74,7 @@ is listed under [Known limitations](#known-limitations).
 
 Progress lives in `localStorage` under the `ia-course:` prefix. There is no
 sign-in, nothing is transmitted anywhere, and the course works with storage
-disabled — you just lose progress tracking. Prompt fields are saved the same way,
+disabled, you just lose progress tracking. Prompt fields are saved the same way,
 so a half-filled prompt survives navigating away. The course home page has a
 **Reset all progress** control that clears both.
 
@@ -120,7 +115,7 @@ looks like: `--ground`, `--ink`, `--structure` (interactive), `--trace`
 (borders), `--found` (success and prompt affordances).
 
 Secondary text uses `--ink-muted` and `--ink-subtle` rather than reduced opacity.
-Opacity was the original approach and it failed WCAG AA at the levels used —
+Opacity was the original approach and it failed WCAG AA at the levels used:
 a token that always resolves to a known contrast ratio (6.9:1 and 4.9:1 against
 both backgrounds in use) is harder to get wrong than a percentage.
 
@@ -144,7 +139,7 @@ seriously.
 
 - **Exercises are not graded.** Committing an answer reveals the explanation
   regardless of what was selected. The explanation names the correct option and
-  says why the others are wrong, so a reader can self-check — but the course
+  says why the others are wrong, so a reader can self-check, but the course
   does not tell them whether they were right, and it records completion rather
   than correctness. The scoring logic is deliberately absent, not missing by
   accident; adding it means deciding what a "wrong" answer should cost, and that
@@ -167,8 +162,8 @@ seriously.
   progress tracking for that reason, which is why the home page counts teaching
   chunks across 12 chapters rather than all 14.
 - **Not tested against real assistive technology.** The markup follows the
-  practices it should — landmarks, real form controls, visible focus, contrast
-  above AA, answers absent from the accessibility tree before commit — but that
+  practices it should, landmarks, real form controls, visible focus, contrast
+  above AA, answers absent from the accessibility tree before commit, but that
   is reasoning about correctness, not evidence of it. No screen reader run has
   been done.
 
@@ -182,7 +177,7 @@ What has been done deliberately, so a reviewer can check the claims:
   their default text size gets larger text. An earlier `html { font-size: 16px }`
   silently overrode that preference.
 - Exercise answers are `hidden` before commit, keeping them out of the
-  accessibility tree and out of find-in-page — the same information available to
+  accessibility tree and out of find-in-page, the same information available to
   every reader at the same time.
 - On commit, focus moves into the revealed explanation rather than being left
   behind on a button that has just disappeared.
@@ -193,7 +188,7 @@ What has been done deliberately, so a reviewer can check the claims:
 
 ## Style
 
-American English (en-US) is the course locale — *organization*, *labeling*, *catalog*, *behavior*. British spellings that slipped in during drafting were normalized to match the majority of the existing prose.
+American English (en-US) is the course locale, *organization*, *labeling*, *catalog*, *behavior*. British spellings that slipped in during drafting were normalized to match the majority of the existing prose.
 
 ## Design rationale
 

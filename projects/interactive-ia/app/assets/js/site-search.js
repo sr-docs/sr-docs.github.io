@@ -1,7 +1,7 @@
 /* ============================================
    SITE SEARCH
    Filters the inline SEARCH_INDEX (see
-   search-index.js) — no fetch, no network call,
+   search-index.js), no fetch, no network call,
    so this works identically whether the site is
    hosted or opened as local files.
    ============================================ */

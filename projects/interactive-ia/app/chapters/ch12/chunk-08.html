@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Generative AI Search — Chapter 12 · IA Course</title>
+  <title>Generative AI Search: Chapter 12 · IA Course</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
@@ -43,7 +43,7 @@
     </div>
 
     <p class="concept__anchor">
-      A generative search answer reads with the same confident, fluent voice whether it's exactly right or completely wrong — which is precisely what makes its failures so much harder to notice than a broken link or an empty results page ever was.
+      A generative search answer reads with the same confident, fluent voice whether it's exactly right or completely wrong, which is precisely what makes its failures so much harder to notice than a broken link or an empty results page ever was.
     </p>
 
   </section>
@@ -85,7 +85,7 @@
 
       <div class="exercise__justification">
         <label for="justification">
-          Of the three risks illustrated in this scenario — hallucination, failing to signal low confidence, and bias reinforcement — which is most consequential specifically in a medical information context, and why? Then propose two specific design interventions that would reduce the most serious risks without abandoning the generative AI implementation entirely.
+          Of the three risks illustrated in this scenario, hallucination, failing to signal low confidence, and bias reinforcement, which is most consequential specifically in a medical information context, and why? Then propose two specific design interventions that would reduce the most serious risks without abandoning the generative AI implementation entirely.
         </label>
         <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
       </div>
@@ -116,15 +116,15 @@
     <div class="feedback__body">
 
       <p>
-        <strong>The drug interaction response is a hallucination.</strong> A confident, plausible-sounding answer that isn't actually supported by the underlying sources is exactly what hallucination describes — the system generated something that reads correctly without the substance to back it up.
+        <strong>The drug interaction response is a hallucination.</strong> A confident, plausible-sounding answer that isn't actually supported by the underlying sources is exactly what hallucination describes, the system generated something that reads correctly without the substance to back it up.
       </p>
 
       <span class="feedback__highlight">
-        In a medical information context specifically, hallucination is the most consequential of the three risks illustrated here. Confidently stated but incorrect drug interaction information isn't just an inconvenience — it's the kind of error that could directly and immediately affect someone's health decisions, in a domain where the cost of being confidently wrong is dramatically higher than it would be on, say, a recipe site or a general news search. The failure to signal low confidence on a thin-knowledge topic is a closely related and serious risk, since it compounds the hallucination problem by giving users no cue to be more skeptical. Bias reinforcement is genuinely serious too, but its harm tends to unfold more gradually, through skewed understanding over time, rather than through a single acute, confidently wrong answer someone might act on immediately.
+        In a medical information context specifically, hallucination is the most consequential of the three risks illustrated here. Confidently stated but incorrect drug interaction information isn't just an inconvenience: it's the kind of error that could directly and immediately affect someone's health decisions, in a domain where the cost of being confidently wrong is dramatically higher than it would be on, say, a recipe site or a general news search. The failure to signal low confidence on a thin-knowledge topic is a closely related and serious risk, since it compounds the hallucination problem by giving users no cue to be more skeptical. Bias reinforcement is genuinely serious too, but its harm tends to unfold more gradually, through skewed understanding over time, rather than through a single acute, confidently wrong answer someone might act on immediately.
       </span>
 
       <p>
-        Two reasonable design interventions: first, make the system explicitly signal its confidence level and flag when a topic falls outside strong source support, rather than presenting every answer in the same uniformly confident tone — particularly critical for anything touching drug interactions or dosing. Second, make source attribution far more granular and visible, so each specific claim in a synthesized answer links clearly back to the exact source supporting it, directly addressing source obscurity and giving users — and clinicians reviewing the system — a way to verify individual claims rather than trusting the answer as an undifferentiated whole. Neither intervention requires abandoning generative search; both make its real limitations visible instead of hidden behind a uniformly confident voice.
+        Two reasonable design interventions: first, make the system explicitly signal its confidence level and flag when a topic falls outside strong source support, rather than presenting every answer in the same uniformly confident tone, particularly critical for anything touching drug interactions or dosing. Second, make source attribution far more granular and visible, so each specific claim in a synthesized answer links clearly back to the exact source supporting it, directly addressing source obscurity and giving users, and clinicians reviewing the system, a way to verify individual claims rather than trusting the answer as an undifferentiated whole. Neither intervention requires abandoning generative search; both make its real limitations visible instead of hidden behind a uniformly confident voice.
       </p>
 
     </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prompt Chain Designer — Chapter 13 · IA Course</title>
+  <title>Prompt Chain Designer: Chapter 13 · IA Course</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
@@ -35,15 +35,15 @@
 
     <div class="concept__body">
       <p>
-        Some IA tasks are too big for one prompt. Ask a model to read forty interview excerpts, derive themes, propose a taxonomy, and validate that taxonomy against the themes, and you will get something plausible for all four steps and dependable for none — the later steps quietly invent the evidence the earlier steps were supposed to supply. A <strong>prompt chain</strong> splits the work into stages, each with its own prompt, its own output format, and a point where you look at the result before it becomes the input to the next stage.
+        Some IA tasks are too big for one prompt. Ask a model to read forty interview excerpts, derive themes, propose a taxonomy, and validate that taxonomy against the themes, and you will get something plausible for all four steps and dependable for none, the later steps quietly invent the evidence the earlier steps were supposed to supply. A <strong>prompt chain</strong> splits the work into stages, each with its own prompt, its own output format, and a point where you look at the result before it becomes the input to the next stage.
       </p>
       <p>
-        Chains earn their complexity when there is a genuine handoff: discovery producing material that analysis consumes, analysis producing candidates that synthesis ranks. They are wasted effort when the stages are really one question cut into pieces. Be concrete about where a human has to look, because that is the part a model will otherwise design away in the interest of a tidy workflow. Then read the chain it produces and check the handoffs specifically — if stage three's prompt does not name the exact output stage two produced, the chain breaks the first time you run it.
+        Chains earn their complexity when there is a genuine handoff: discovery producing material that analysis consumes, analysis producing candidates that synthesis ranks. They are wasted effort when the stages are really one question cut into pieces. Be concrete about where a human has to look, because that is the part a model will otherwise design away in the interest of a tidy workflow. Then read the chain it produces and check the handoffs specifically, if stage three's prompt does not name the exact output stage two produced, the chain breaks the first time you run it.
       </p>
     </div>
 
     <p class="concept__anchor">
-      The value of a chain isn't the number of steps. It's the checkpoints between them — the places where a wrong turn gets caught before it's baked into everything downstream.
+      The value of a chain isn't the number of steps. It's the checkpoints between them, the places where a wrong turn gets caught before it's baked into everything downstream.
     </p>
 
   </section>
@@ -52,7 +52,7 @@
   <section class="prompt-fill" id="prompt-chain-designer" aria-labelledby="prompt-fill-label-prompt-chain-designer">
 
     <div class="prompt-fill__zone-label" id="prompt-fill-label-prompt-chain-designer">
-      Try It With Your Data — Prompt Chain Designer
+      Try It With Your Data: Prompt Chain Designer
     </div>
 
     <div class="prompt-fill__intro">
@@ -122,7 +122,7 @@ ALSO PROVIDE:
 
 
 VALIDATION REQUIREMENTS:
-- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly: do not invent quotes, counts, labels, page titles, or categories.
 - Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
 - When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
 </script>

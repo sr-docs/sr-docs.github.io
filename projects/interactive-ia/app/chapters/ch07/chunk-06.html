@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ontologies — Chapter 7 · IA Course</title>
+  <title>Ontologies: Chapter 7 · IA Course</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
@@ -35,7 +35,7 @@
 
     <div class="concept__body">
       <p>
-        An ontology is a formal, machine-readable specification of a controlled vocabulary, built to represent large numbers of very specific semantic relationships within a domain. Where a thesaurus is designed for people to browse and search, an ontology is designed for machines to reason with — it defines classes, their attributes, the relationships between them, and even inference rules that let software draw new conclusions from what's explicitly stated. The Resource Description Framework, an official web standard, expresses these relationships as triples — subject, predicate, object — such as "Cat is a type of Pet," which a machine can process directly.
+        An ontology is a formal, machine-readable specification of a controlled vocabulary, built to represent large numbers of very specific semantic relationships within a domain. Where a thesaurus is designed for people to browse and search, an ontology is designed for machines to reason with, it defines classes, their attributes, the relationships between them, and even inference rules that let software draw new conclusions from what's explicitly stated. The Resource Description Framework, an official web standard, expresses these relationships as triples, subject, predicate, object, such as "Cat is a type of Pet," which a machine can process directly.
       </p>
       <p>
         Building an ontology is significant work, and the source material is clear that organizations should generally adopt or extend an existing shared ontology within their domain community rather than building their own from scratch, since interoperability depends on different systems agreeing on the same underlying model.
@@ -43,7 +43,7 @@
     </div>
 
     <p class="concept__anchor">
-      A thesaurus helps a person find the right term. An ontology helps a machine understand that two differently-worded facts actually mean the same thing — which is a fundamentally different, and much harder, problem to solve.
+      A thesaurus helps a person find the right term. An ontology helps a machine understand that two differently-worded facts actually mean the same thing, which is a fundamentally different, and much harder, problem to solve.
     </p>
 
   </section>
@@ -59,7 +59,7 @@
 
       <div class="exercise__scenario">
         <p>
-          <strong>The scenario:</strong> A healthcare technology company is building a knowledge system that needs to connect patient symptoms, diagnoses, treatments, medications, and contraindications across multiple medical specialties — and needs software to automatically flag when a prescribed medication conflicts with a patient's existing condition. A colleague argues that a well-maintained thesaurus would be sufficient for this project.
+          <strong>The scenario:</strong> A healthcare technology company is building a knowledge system that needs to connect patient symptoms, diagnoses, treatments, medications, and contraindications across multiple medical specialties, and needs software to automatically flag when a prescribed medication conflicts with a patient's existing condition. A colleague argues that a well-maintained thesaurus would be sufficient for this project.
         </p>
       </div>
 
@@ -70,22 +70,22 @@
         <ul class="exercise__options" role="list">
           <li><label class="exercise__option js-option">
             <input type="radio" name="assessment" value="thesaurus-insufficient">
-            <span class="exercise__option-text">No — automatically detecting conflicts between medications and conditions requires machine-processable relationships and inference, which is what an ontology provides and a thesaurus does not</span>
+            <span class="exercise__option-text">No, automatically detecting conflicts between medications and conditions requires machine-processable relationships and inference, which is what an ontology provides and a thesaurus does not</span>
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="assessment" value="thesaurus-sufficient">
-            <span class="exercise__option-text">Yes — a thesaurus's broader, narrower, and related terms are sufficient to represent all of this</span>
+            <span class="exercise__option-text">Yes, a thesaurus's broader, narrower, and related terms are sufficient to represent all of this</span>
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="assessment" value="neither-needed">
-            <span class="exercise__option-text">Neither is needed — a simple synonym ring would be enough</span>
+            <span class="exercise__option-text">Neither is needed, a simple synonym ring would be enough</span>
           </label></li>
         </ul>
       </fieldset>
 
       <div class="exercise__justification">
         <label for="justification">
-          The colleague's underlying concern — cost and complexity — is legitimate even if the conclusion is wrong. Identify one genuine limitation or cost of building an ontology that the colleague's worry is pointing at.
+          The colleague's underlying concern, cost and complexity, is legitimate even if the conclusion is wrong. Identify one genuine limitation or cost of building an ontology that the colleague's worry is pointing at.
         </label>
         <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
       </div>
@@ -116,11 +116,11 @@
     <div class="feedback__body">
 
       <p>
-        <strong>No — a thesaurus alone would not suffice.</strong> Automatically flagging a medication-condition conflict requires software to reason over relationships — to combine "this medication treats condition X" with "this patient has condition Y" with "condition Y is a contraindication for this medication class" and draw a conclusion no human explicitly stated. A thesaurus's broader, narrower, and related terms are built for humans to browse and search, not for machines to run inference over. This is precisely the gap an ontology's inference rules and formal, machine-readable relationships are designed to fill.
+        <strong>No, a thesaurus alone would not suffice.</strong> Automatically flagging a medication-condition conflict requires software to reason over relationships, to combine "this medication treats condition X" with "this patient has condition Y" with "condition Y is a contraindication for this medication class" and draw a conclusion no human explicitly stated. A thesaurus's broader, narrower, and related terms are built for humans to browse and search, not for machines to run inference over. This is precisely the gap an ontology's inference rules and formal, machine-readable relationships are designed to fill.
       </p>
 
       <span class="feedback__highlight">
-        The colleague's underlying worry is legitimate, though: ontologies require significant investment to build correctly, and the source material is explicit that building one from scratch is generally the wrong move — the better path is adopting or extending an existing, shared ontology within the medical domain, of which several already exist for exactly this kind of clinical relationship data, rather than a single company attempting to construct medical-domain reasoning capability entirely on its own.
+        The colleague's underlying worry is legitimate, though: ontologies require significant investment to build correctly, and the source material is explicit that building one from scratch is generally the wrong move, the better path is adopting or extending an existing, shared ontology within the medical domain, of which several already exist for exactly this kind of clinical relationship data, rather than a single company attempting to construct medical-domain reasoning capability entirely on its own.
       </span>
 
       <p>

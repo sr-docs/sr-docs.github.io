@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Semantic Networks — Chapter 7 · IA Course</title>
+  <title>Semantic Networks: Chapter 7 · IA Course</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
@@ -35,15 +35,15 @@
 
     <div class="concept__body">
       <p>
-        A semantic network, also called a knowledge graph, represents relationships between concepts using a directed graph of labeled <strong>nodes</strong> and labeled <strong>arcs</strong>. Each node represents a concept, category, or instance; each arc connects an ordered pair of nodes and describes the relationship between them, expressed as a subject-predicate-object triple. Four arc types are especially common: <strong>is-a</strong> links, which describe class and subclass relationships and form inheritance chains — the most common type; <strong>has-a</strong> links, describing an attribute or characteristic of a node; <strong>inst</strong> links, describing an instance-of relationship; and <strong>part-of</strong> links, describing a whole/part relationship.
+        A semantic network, also called a knowledge graph, represents relationships between concepts using a directed graph of labeled <strong>nodes</strong> and labeled <strong>arcs</strong>. Each node represents a concept, category, or instance; each arc connects an ordered pair of nodes and describes the relationship between them, expressed as a subject-predicate-object triple. Four arc types are especially common: <strong>is-a</strong> links, which describe class and subclass relationships and form inheritance chains, the most common type; <strong>has-a</strong> links, describing an attribute or characteristic of a node; <strong>inst</strong> links, describing an instance-of relationship; and <strong>part-of</strong> links, describing a whole/part relationship.
       </p>
       <p>
-        Inheritance is central to how semantic networks work — a child node connected to a parent by an is-a link inherits the parent's attributes automatically, which is what makes the network more than just a collection of disconnected facts.
+        Inheritance is central to how semantic networks work, a child node connected to a parent by an is-a link inherits the parent's attributes automatically, which is what makes the network more than just a collection of disconnected facts.
       </p>
     </div>
 
     <p class="concept__anchor">
-      A semantic network is a taxonomy that's been given a vocabulary for the connections themselves — instead of just "this is under that," it can say exactly how one thing relates to another, and let a machine follow that reasoning.
+      A semantic network is a taxonomy that's been given a vocabulary for the connections themselves, instead of just "this is under that," it can say exactly how one thing relates to another, and let a machine follow that reasoning.
     </p>
 
   </section>
@@ -59,7 +59,7 @@
 
       <div class="exercise__scenario">
         <p>
-          <strong>The scenario:</strong> A museum is building a knowledge graph to connect its collection objects — artworks, artists, historical periods, geographic origins, materials, and techniques. Five relationships between collection objects need to be represented. For each one, identify the correct arc type.
+          <strong>The scenario:</strong> A museum is building a knowledge graph to connect its collection objects, artworks, artists, historical periods, geographic origins, materials, and techniques. Five relationships between collection objects need to be represented. For each one, identify the correct arc type.
         </p>
       </div>
 
@@ -165,7 +165,7 @@
 
       <div class="exercise__justification">
         <label for="justification">
-          Which of these five relationships would participate in an inheritance chain — meaning the node on one side would automatically inherit attributes from the node on the other side? Name the relationship and explain what gets inherited.
+          Which of these five relationships would participate in an inheritance chain, meaning the node on one side would automatically inherit attributes from the node on the other side? Name the relationship and explain what gets inherited.
         </label>
         <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
       </div>
@@ -195,18 +195,18 @@
 
     <div class="feedback__body">
 
-      <p><strong>1 — Has-a.</strong> The casting technique is an attribute or characteristic of the sculpture, not a category it belongs to — this is a has-a relationship.</p>
+      <p><strong>1: Has-a.</strong> The casting technique is an attribute or characteristic of the sculpture, not a category it belongs to: this is a has-a relationship.</p>
 
-      <p><strong>2 — Inst.</strong> This specific vase is a concrete instance of the broader category "Ming dynasty porcelain" — the defining trait of an inst link.</p>
+      <p><strong>2: Inst.</strong> This specific vase is a concrete instance of the broader category "Ming dynasty porcelain", the defining trait of an inst link.</p>
 
-      <p><strong>3 — Is-a.</strong> "Sculpture is a kind of visual art" is a class/subclass relationship, the clearest example of an is-a link, and it forms part of an inheritance chain.</p>
+      <p><strong>3: Is-a.</strong> "Sculpture is a kind of visual art" is a class/subclass relationship, the clearest example of an is-a link, and it forms part of an inheritance chain.</p>
 
-      <p><strong>4 — Part-of.</strong> The fresco is a physical component of a larger whole, the Sistine Chapel ceiling — a whole/part relationship.</p>
+      <p><strong>4: Part-of.</strong> The fresco is a physical component of a larger whole, the Sistine Chapel ceiling, a whole/part relationship.</p>
 
-      <p><strong>5 — Has-a.</strong> "Oil on canvas" is an attribute of the painting, describing what it's made of, not a category the painting is a subtype of.</p>
+      <p><strong>5: Has-a.</strong> "Oil on canvas" is an attribute of the painting, describing what it's made of, not a category the painting is a subtype of.</p>
 
       <span class="feedback__highlight">
-        Relationship 3 — "Sculpture is a kind of visual art" — is the one that participates in an inheritance chain. Is-a links are specifically what form these chains: if "visual art" has certain shared attributes defined for it in the network, then "Sculpture," connected to it by an is-a link, automatically inherits those attributes without needing to have them separately defined. This is what makes is-a links structurally different from the other three arc types in this exercise — has-a, inst, and part-of describe a single relationship each, but is-a links are the ones that propagate shared characteristics downward through the network.
+        Relationship 3, "Sculpture is a kind of visual art", is the one that participates in an inheritance chain. Is-a links are specifically what form these chains: if "visual art" has certain shared attributes defined for it in the network, then "Sculpture," connected to it by an is-a link, automatically inherits those attributes without needing to have them separately defined. This is what makes is-a links structurally different from the other three arc types in this exercise, has-a, inst, and part-of describe a single relationship each, but is-a links are the ones that propagate shared characteristics downward through the network.
       </span>
 
     </div>
@@ -218,7 +218,7 @@
   <section class="prompt-fill" id="polyhierarchy-analysis" aria-labelledby="prompt-fill-label-polyhierarchy-analysis">
 
     <div class="prompt-fill__zone-label" id="prompt-fill-label-polyhierarchy-analysis">
-      Try It With Your Data — Polyhierarchy Analysis Pattern
+      Try It With Your Data: Polyhierarchy Analysis Pattern
     </div>
 
     <div class="prompt-fill__intro">
@@ -287,7 +287,7 @@ For each polyhierarchy item:
 
 
 VALIDATION REQUIREMENTS:
-- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly: do not invent quotes, counts, labels, page titles, or categories.
 - Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
 - When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
 </script>

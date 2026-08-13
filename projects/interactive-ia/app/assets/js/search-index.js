@@ -2,700 +2,700 @@ const SEARCH_INDEX = [
   {
     "type": "Lesson",
     "title": "Defining Information Architecture & Its Goals",
-    "chapter": "What Is Information Architecture",
+    "chapter": "IA Scope and Goals",
     "snippet": "Richard Saul Wurman coined the term \"information architecture\" in 1975, but it was Lou Rosenfeld and Peter Morville who, in 1998, defined...",
     "href": "chapters/ch01/chunk-01.html"
   },
   {
     "type": "Lesson",
     "title": "The Value of Information Architecture",
-    "chapter": "What Is Information Architecture",
+    "chapter": "IA Scope and Goals",
     "snippet": "Good IA delivers value on two fronts at once. For users, it means finding information faster, making better decisions, and needing less...",
     "href": "chapters/ch01/chunk-02.html"
   },
   {
     "type": "Lesson",
     "title": "Information Ecosystems",
-    "chapter": "What Is Information Architecture",
-    "snippet": "Every digital information space exists within a broader ecosystem — a network of interconnected users, content, business goals, and...",
+    "chapter": "IA Scope and Goals",
+    "snippet": "Every digital information space exists within a broader ecosystem, a network of interconnected users, content, business goals, and context....",
     "href": "chapters/ch01/chunk-03.html"
   },
   {
     "type": "Lesson",
     "title": "Who Does Information Architecture & How the Process Unfolds",
-    "chapter": "What Is Information Architecture",
-    "snippet": "Large organizations with high design maturity often employ dedicated information architects. Everywhere else — which is most organizations...",
+    "chapter": "IA Scope and Goals",
+    "snippet": "Large organizations with high design maturity often employ dedicated information architects. Everywhere else, which is most organizations,...",
     "href": "chapters/ch01/chunk-04.html"
   },
   {
     "type": "Lesson",
     "title": "The Key Components of Information Architecture",
-    "chapter": "What Is Information Architecture",
+    "chapter": "IA Scope and Goals",
     "snippet": "Six components make up the practice of IA. Taxonomy classifies content into categories. Metadata describes attributes of individual content...",
     "href": "chapters/ch01/chunk-05.html"
   },
   {
     "type": "Lesson",
     "title": "Understanding Users' Information-Seeking Needs",
-    "chapter": "How People Seek Information",
+    "chapter": "Seeking Behaviors",
     "snippet": "People's information needs vary widely. Peter Morville and Lou Rosenfeld describe four common categories: known-item seeking , where a...",
     "href": "chapters/ch02/chunk-01.html"
   },
   {
     "type": "Lesson",
     "title": "How Real Searches Unfold: Patterns and Berrypicking",
-    "chapter": "How People Seek Information",
+    "chapter": "Seeking Behaviors",
     "snippet": "David Ellis identified eight recurring patterns in how people seek information: starting (an initial search for relevant sources), chaining...",
     "href": "chapters/ch02/chunk-02.html"
   },
   {
     "type": "Lesson",
     "title": "The Emotional Arc of Searching: Kuhlthau's Model",
-    "chapter": "How People Seek Information",
+    "chapter": "Seeking Behaviors",
     "snippet": "Carol Kuhlthau's six-stage information-search process tracks not just what a person does during a search, but how they feel at each stage....",
     "href": "chapters/ch02/chunk-03.html"
   },
   {
     "type": "Lesson",
     "title": "Information Foraging: Scent, Patches, and Diet",
-    "chapter": "How People Seek Information",
+    "chapter": "Seeking Behaviors",
     "snippet": "Peter Pirolli and Stuart Card's information foraging theory compares information-seeking to animals foraging for food. People follow...",
     "href": "chapters/ch02/chunk-04.html"
   },
   {
     "type": "Lesson",
     "title": "Four Modes of Seeking Information on the Web",
-    "chapter": "How People Seek Information",
+    "chapter": "Seeking Behaviors",
     "snippet": "Chun Wei Choo, Brian Detlor, and Don Turnbull described four modes people move through when using the web, ranging from passive to highly...",
     "href": "chapters/ch02/chunk-05.html"
   },
   {
     "type": "Lesson",
     "title": "Building on What You Find: Pearl-Growing and Sensemaking",
-    "chapter": "How People Seek Information",
-    "snippet": "Citation pearl growing, described by Sheryl Ramer, uses a strong initial source — the \"pearl\" — as a starting point: the searcher notes its...",
+    "chapter": "Seeking Behaviors",
+    "snippet": "Citation pearl growing, described by Sheryl Ramer, uses a strong initial source, the \"pearl\", as a starting point: the searcher notes its...",
     "href": "chapters/ch02/chunk-06.html"
   },
   {
     "type": "Lesson",
     "title": "The Effort Spectrum: From Passive Awareness to Active Search",
-    "chapter": "How People Seek Information",
+    "chapter": "Seeking Behaviors",
     "snippet": "Marcia Bates describes four modes of getting information, ordered by how much effort a person invests. Context awareness is the least...",
     "href": "chapters/ch02/chunk-07.html"
   },
   {
     "type": "Lesson",
     "title": "Known-Item and Exploratory Behaviors",
-    "chapter": "How People Seek Information",
+    "chapter": "Seeking Behaviors",
     "snippet": "People display two broad classes of information-seeking behavior. Known-item behaviors happen when a person is looking for a specific item...",
     "href": "chapters/ch02/chunk-08.html"
   },
   {
     "type": "Lesson",
     "title": "Design Principles and Human Capabilities",
-    "chapter": "Design Principles",
+    "chapter": "Wayfinding Principles",
     "snippet": "UX design principles are basic truths, laws, or assumptions that embody the accumulated knowledge of the researchers and designers who came...",
     "href": "chapters/ch03/chunk-01.html"
   },
   {
     "type": "Lesson",
     "title": "Wayfinding and the Placemaking Principles",
-    "chapter": "Design Principles",
+    "chapter": "Wayfinding Principles",
     "snippet": "Wayfinding describes how people find their way through digital information spaces by making a series of decisions: deciding to begin...",
     "href": "chapters/ch03/chunk-02.html"
   },
   {
     "type": "Lesson",
     "title": "Orientation Principles",
-    "chapter": "Design Principles",
-    "snippet": "Before people can navigate successfully, they have to orient themselves — to the space as a whole, and to their current location within it....",
+    "chapter": "Wayfinding Principles",
+    "snippet": "Before people can navigate successfully, they have to orient themselves, to the space as a whole, and to their current location within it....",
     "href": "chapters/ch03/chunk-03.html"
   },
   {
     "type": "Lesson",
     "title": "Navigation Principles",
-    "chapter": "Design Principles",
+    "chapter": "Wayfinding Principles",
     "snippet": "Once people are oriented, navigation principles determine whether they can actually get where they're going. Provide the appropriate...",
     "href": "chapters/ch03/chunk-04.html"
   },
   {
     "type": "Lesson",
     "title": "Labeling and Search Principles",
-    "chapter": "Design Principles",
+    "chapter": "Wayfinding Principles",
     "snippet": "Labeling principles govern how link labels, page titles, and other wayfinding elements communicate meaning. Create clear,...",
     "href": "chapters/ch03/chunk-05.html"
   },
   {
     "type": "Lesson",
     "title": "Accessible Information Architecture",
-    "chapter": "Design Principles",
-    "snippet": "Accessibility is not a layer you paint on after the structure is done. The same decisions that make a site findable — clear labels,...",
+    "chapter": "Wayfinding Principles",
+    "snippet": "Accessibility is not a layer you paint on after the structure is done. The same decisions that make a site findable, clear labels,...",
     "href": "chapters/ch03/chunk-06.html"
   },
   {
     "type": "Lesson",
     "title": "Structural Patterns and the Hierarchy",
-    "chapter": "Structural Patterns and Organization Schemes",
+    "chapter": "Hierarchies, Databases, Hybrids",
     "snippet": "Structural patterns are the solutions information architects use to define a coherent, navigable structure for a digital information...",
     "href": "chapters/ch04/chunk-01.html"
   },
   {
     "type": "Lesson",
     "title": "The Relational Database Pattern",
-    "chapter": "Structural Patterns and Organization Schemes",
+    "chapter": "Hierarchies, Databases, Hybrids",
     "snippet": "A relational database structure organizes content as records that share the same fields, stored in tables where rows are individual records...",
     "href": "chapters/ch04/chunk-02.html"
   },
   {
     "type": "Lesson",
     "title": "Two Opposite Patterns: Hypertext and Linear Sequence",
-    "chapter": "Structural Patterns and Organization Schemes",
-    "snippet": "Hypertext imposes no overarching structure at all — content objects connect only through associative links, forming a web rather than a...",
+    "chapter": "Hierarchies, Databases, Hybrids",
+    "snippet": "Hypertext imposes no overarching structure at all, content objects connect only through associative links, forming a web rather than a...",
     "href": "chapters/ch04/chunk-03.html"
   },
   {
     "type": "Lesson",
     "title": "The Hub-and-Spoke Pattern",
-    "chapter": "Structural Patterns and Organization Schemes",
+    "chapter": "Hierarchies, Databases, Hybrids",
     "snippet": "In a hub-and-spoke structure, a central hub page is the single entry point from which users navigate to individual spoke pages, then return...",
     "href": "chapters/ch04/chunk-04.html"
   },
   {
     "type": "Lesson",
     "title": "Matrix and Hybrid Structures",
-    "chapter": "Structural Patterns and Organization Schemes",
-    "snippet": "A matrix structure, as Jesse James Garrett describes it, lets users move through content along two or more dimensions — horizontally,...",
+    "chapter": "Hierarchies, Databases, Hybrids",
+    "snippet": "A matrix structure, as Jesse James Garrett describes it, lets users move through content along two or more dimensions, horizontally,...",
     "href": "chapters/ch04/chunk-05.html"
   },
   {
     "type": "Lesson",
     "title": "Exact Organization Schemes",
-    "chapter": "Structural Patterns and Organization Schemes",
+    "chapter": "Hierarchies, Databases, Hybrids",
     "snippet": "Exact, or objective, organization schemes sort content into discrete, mutually exclusive categories whose boundaries are generally well...",
     "href": "chapters/ch04/chunk-06.html"
   },
   {
     "type": "Lesson",
     "title": "Ambiguous Organization Schemes",
-    "chapter": "Structural Patterns and Organization Schemes",
+    "chapter": "Hierarchies, Databases, Hybrids",
     "snippet": "Ambiguous, or subjective, organization schemes are tailored to a specific information space's content and audience rather than relying on...",
     "href": "chapters/ch04/chunk-07.html"
   },
   {
     "type": "Lesson",
     "title": "Hybrid Organization Schemes",
-    "chapter": "Structural Patterns and Organization Schemes",
-    "snippet": "A hybrid organization scheme combines multiple schemes to serve different needs within the same information space — often using one scheme...",
+    "chapter": "Hierarchies, Databases, Hybrids",
+    "snippet": "A hybrid organization scheme combines multiple schemes to serve different needs within the same information space, often using one scheme...",
     "href": "chapters/ch04/chunk-08.html"
   },
   {
     "type": "Lesson",
     "title": "LATCH: Wurman's Five Modes of Organization",
-    "chapter": "Structural Patterns and Organization Schemes",
-    "snippet": "Richard Saul Wurman's LATCH model proposes five ways of organizing information: Location (organizing by place — atlases, travel sites, real...",
+    "chapter": "Hierarchies, Databases, Hybrids",
+    "snippet": "Richard Saul Wurman's LATCH model proposes five ways of organizing information: Location (organizing by place, atlases, travel sites, real...",
     "href": "chapters/ch04/chunk-09.html"
   },
   {
     "type": "Lesson",
     "title": "Card Sorting and Generative Methods",
-    "chapter": "UX Research Methods for Information Architecture",
-    "snippet": "Card sorting is a foundational research method for understanding how people mentally organize information. You create a set of cards —...",
+    "chapter": "Card Sorts and Tree Tests",
+    "snippet": "Card sorting is a foundational research method for understanding how people mentally organize information. You create a set of cards,...",
     "href": "chapters/ch05/chunk-01.html"
   },
   {
     "type": "Lesson",
     "title": "Evaluative Card-Sorting Methods",
-    "chapter": "UX Research Methods for Information Architecture",
-    "snippet": "Where open and modified-Delphi card sorts are generative — used to discover a structure — closed card sorting and reverse card sorting are...",
+    "chapter": "Card Sorts and Tree Tests",
+    "snippet": "Where open and modified-Delphi card sorts are generative, used to discover a structure, closed card sorting and reverse card sorting are...",
     "href": "chapters/ch05/chunk-02.html"
   },
   {
     "type": "Lesson",
     "title": "Free-Listing",
-    "chapter": "UX Research Methods for Information Architecture",
-    "snippet": "Rashmi Sinha describes free-listing as a method for discovering how participants naturally understand a domain — its scope, its boundaries,...",
+    "chapter": "Card Sorts and Tree Tests",
+    "snippet": "Rashmi Sinha describes free-listing as a method for discovering how participants naturally understand a domain, its scope, its boundaries,...",
     "href": "chapters/ch05/chunk-03.html"
   },
   {
     "type": "Lesson",
     "title": "Testing Findability: Card-Based Classification Evaluation and Tree Testing",
-    "chapter": "UX Research Methods for Information Architecture",
+    "chapter": "Card Sorts and Tree Tests",
     "snippet": "Donna Spencer's card-based classification evaluation tests a hierarchy in isolation from the actual user interface. Rather than sorting...",
     "href": "chapters/ch05/chunk-04.html"
   },
   {
     "type": "Lesson",
     "title": "Usage Data Analytics",
-    "chapter": "UX Research Methods for Information Architecture",
+    "chapter": "Card Sorts and Tree Tests",
     "snippet": "Where card sorting and tree testing capture a snapshot from a research session, usage data analytics tracks how real users behave on an...",
     "href": "chapters/ch05/chunk-05.html"
   },
   {
     "type": "Lesson",
     "title": "Path Analysis",
-    "chapter": "UX Research Methods for Information Architecture",
+    "chapter": "Card Sorts and Tree Tests",
     "snippet": "Path analysis, also called clickstream analysis, looks at the specific sequences of pages users move through, rather than evaluating...",
     "href": "chapters/ch05/chunk-06.html"
   },
   {
     "type": "Lesson",
     "title": "Search-Log Analytics",
-    "chapter": "UX Research Methods for Information Architecture",
-    "snippet": "A site's internal search log is a direct record of the actual words people use to describe what they want — arguably one of the most honest...",
+    "chapter": "Card Sorts and Tree Tests",
+    "snippet": "A site's internal search log is a direct record of the actual words people use to describe what they want, arguably one of the most honest...",
     "href": "chapters/ch05/chunk-07.html"
   },
   {
     "type": "Lesson",
     "title": "Content Analysis Heuristics",
-    "chapter": "Understanding and Structuring Content",
+    "chapter": "Inventories and Audits",
     "snippet": "Fred Leise developed eleven heuristics for qualitatively evaluating a content collection: collocation (are similar things grouped together...",
     "href": "chapters/ch06/chunk-01.html"
   },
   {
     "type": "Lesson",
     "title": "Content-Owner Interviews",
-    "chapter": "Understanding and Structuring Content",
-    "snippet": "Content-owner interviews are the fastest way to get an overview of an organization's content — its current state, what's planned, and how...",
+    "chapter": "Inventories and Audits",
+    "snippet": "Content-owner interviews are the fastest way to get an overview of an organization's content, its current state, what's planned, and how it...",
     "href": "chapters/ch06/chunk-02.html"
   },
   {
     "type": "Lesson",
     "title": "Content Inventories",
-    "chapter": "Understanding and Structuring Content",
-    "snippet": "A content inventory catalogs what content actually exists — every page, document, and content object, and where it lives in the current...",
+    "chapter": "Inventories and Audits",
+    "snippet": "A content inventory catalogs what content actually exists, every page, document, and content object, and where it lives in the current...",
     "href": "chapters/ch06/chunk-03.html"
   },
   {
     "type": "Lesson",
     "title": "Content Audits: Quantitative and Qualitative",
-    "chapter": "Understanding and Structuring Content",
-    "snippet": "Where an inventory catalogs what exists, a content audit assesses it. A quantitative audit counts — how many pages, how many belong to each...",
+    "chapter": "Inventories and Audits",
+    "snippet": "Where an inventory catalogs what exists, a content audit assesses it. A quantitative audit counts, how many pages, how many belong to each...",
     "href": "chapters/ch06/chunk-04.html"
   },
   {
     "type": "Lesson",
     "title": "Content Mapping",
-    "chapter": "Understanding and Structuring Content",
-    "snippet": "Content mapping turns an inventory and audit into something visual — a representation of how pages and content objects relate to each...",
+    "chapter": "Inventories and Audits",
+    "snippet": "Content mapping turns an inventory and audit into something visual, a representation of how pages and content objects relate to each other,...",
     "href": "chapters/ch06/chunk-05.html"
   },
   {
     "type": "Lesson",
     "title": "Competitive Content Analysis",
-    "chapter": "Understanding and Structuring Content",
+    "chapter": "Inventories and Audits",
     "snippet": "A competitive content analysis follows five steps: identify your key competitors, prioritizing a handful of direct competitors over a...",
     "href": "chapters/ch06/chunk-06.html"
   },
   {
     "type": "Lesson",
     "title": "Content Modeling",
-    "chapter": "Understanding and Structuring Content",
+    "chapter": "Inventories and Audits",
     "snippet": "Content modeling decomposes content into its logical components and elements, and it's what makes dynamic, structured pages possible. A...",
     "href": "chapters/ch06/chunk-07.html"
   },
   {
     "type": "Lesson",
     "title": "Why Classification Is Hard, and What Metadata Does About It",
-    "chapter": "Classifying Information",
+    "chapter": "Taxonomies and Facets",
     "snippet": "Eleanor Roach's two principles of categorization explain why classification feels intuitive when it's right and jarring when it's wrong:...",
     "href": "chapters/ch07/chunk-01.html"
   },
   {
     "type": "Lesson",
     "title": "Metadata Schema",
-    "chapter": "Classifying Information",
+    "chapter": "Taxonomies and Facets",
     "snippet": "A metadata schema is a defined collection of labeled attributes used to describe the content objects in an information space, typically...",
     "href": "chapters/ch07/chunk-02.html"
   },
   {
     "type": "Lesson",
     "title": "Controlled Vocabularies: Synonym Rings and Authority Files",
-    "chapter": "Classifying Information",
+    "chapter": "Taxonomies and Facets",
     "snippet": "Natural language creates two problems for information spaces: ambiguity , where the same word means different things, and synonymy , where...",
     "href": "chapters/ch07/chunk-03.html"
   },
   {
     "type": "Lesson",
     "title": "Taxonomies",
-    "chapter": "Classifying Information",
+    "chapter": "Taxonomies and Facets",
     "snippet": "A taxonomy is a top-down hierarchical classification scheme of preferred terms, dividing general concepts into progressively more specific...",
     "href": "chapters/ch07/chunk-04.html"
   },
   {
     "type": "Lesson",
     "title": "Thesauri",
-    "chapter": "Classifying Information",
-    "snippet": "A thesaurus is the most commonly used controlled vocabulary in digital information spaces — a highly structured, database-resident...",
+    "chapter": "Taxonomies and Facets",
+    "snippet": "A thesaurus is the most commonly used controlled vocabulary in digital information spaces, a highly structured, database-resident...",
     "href": "chapters/ch07/chunk-05.html"
   },
   {
     "type": "Lesson",
     "title": "Ontologies",
-    "chapter": "Classifying Information",
+    "chapter": "Taxonomies and Facets",
     "snippet": "An ontology is a formal, machine-readable specification of a controlled vocabulary, built to represent large numbers of very specific...",
     "href": "chapters/ch07/chunk-06.html"
   },
   {
     "type": "Lesson",
     "title": "Semantic Networks",
-    "chapter": "Classifying Information",
+    "chapter": "Taxonomies and Facets",
     "snippet": "A semantic network, also called a knowledge graph, represents relationships between concepts using a directed graph of labeled nodes and...",
     "href": "chapters/ch07/chunk-07.html"
   },
   {
     "type": "Lesson",
     "title": "Faceted Classification",
-    "chapter": "Classifying Information",
-    "snippet": "Facets are independent, mutually exclusive attributes of content that together describe an entire domain — think of an outdoor gear catalog...",
+    "chapter": "Taxonomies and Facets",
+    "snippet": "Facets are independent, mutually exclusive attributes of content that together describe an entire domain, think of an outdoor gear catalog...",
     "href": "chapters/ch07/chunk-08.html"
   },
   {
     "type": "Lesson",
     "title": "Developing a Controlled Vocabulary",
-    "chapter": "Classifying Information",
+    "chapter": "Taxonomies and Facets",
     "snippet": "Building a controlled vocabulary follows a sequence, even though the steps often overlap in practice. It starts with research: conducting...",
     "href": "chapters/ch07/chunk-09.html"
   },
   {
     "type": "Lesson",
     "title": "Social Classification",
-    "chapter": "Classifying Information",
-    "snippet": "Social classification, or a folksonomy — a term coined by Thomas Vander Wal — is what emerges when ordinary users tag content themselves,...",
+    "chapter": "Taxonomies and Facets",
+    "snippet": "Social classification, or a folksonomy, a term coined by Thomas Vander Wal, is what emerges when ordinary users tag content themselves,...",
     "href": "chapters/ch07/chunk-10.html"
   },
   {
     "type": "Lesson",
     "title": "Aligning IA Strategy With Business Strategy",
-    "chapter": "Defining an Information Architecture Strategy",
-    "snippet": "An information architecture strategy has to derive from the organization's actual business strategy — its unique, differentiated goals...",
+    "chapter": "Strategy and Deliverables",
+    "snippet": "An information architecture strategy has to derive from the organization's actual business strategy, its unique, differentiated goals...",
     "href": "chapters/ch08/chunk-01.html"
   },
   {
     "type": "Lesson",
     "title": "Synthesizing Research and Creating Personas",
-    "chapter": "Defining an Information Architecture Strategy",
+    "chapter": "Strategy and Deliverables",
     "snippet": "A persona is a user archetype representing a distinct set of behavior patterns and goals, built by triangulating qualitative and...",
     "href": "chapters/ch08/chunk-02.html"
   },
   {
     "type": "Lesson",
     "title": "Writing Usage Scenarios",
-    "chapter": "Defining an Information Architecture Strategy",
-    "snippet": "If a persona is a character, a usage scenario is the plot — a story of how that persona interacts with a proposed information space to...",
+    "chapter": "Strategy and Deliverables",
+    "snippet": "If a persona is a character, a usage scenario is the plot, a story of how that persona interacts with a proposed information space to...",
     "href": "chapters/ch08/chunk-03.html"
   },
   {
     "type": "Lesson",
     "title": "Understanding the Organization's Content and Its Implementation Technology",
-    "chapter": "Defining an Information Architecture Strategy",
-    "snippet": "Before defining an IA strategy, you need a real understanding of what content already exists, what's planned, and what gaps need filling —...",
+    "chapter": "Strategy and Deliverables",
+    "snippet": "Before defining an IA strategy, you need a real understanding of what content already exists, what's planned, and what gaps need filling,...",
     "href": "chapters/ch08/chunk-04.html"
   },
   {
     "type": "Lesson",
     "title": "Balancing Top-Down and Bottom-Up Information Architecture",
-    "chapter": "Defining an Information Architecture Strategy",
-    "snippet": "Top-down IA work focuses on the home page, section main pages, and landing pages — the structural navigation, organization schemes, and...",
+    "chapter": "Strategy and Deliverables",
+    "snippet": "Top-down IA work focuses on the home page, section main pages, and landing pages, the structural navigation, organization schemes, and...",
     "href": "chapters/ch08/chunk-05.html"
   },
   {
     "type": "Lesson",
     "title": "Factoring SEO Into IA Strategy",
-    "chapter": "Defining an Information Architecture Strategy",
+    "chapter": "Strategy and Deliverables",
     "snippet": "Search-engine optimization depends on two main ranking factors: how well keywords perform in a page's title, headings, and body text, and...",
     "href": "chapters/ch08/chunk-06.html"
   },
   {
     "type": "Lesson",
     "title": "Envisioning and Communicating Conceptual Models",
-    "chapter": "Defining an Information Architecture Strategy",
+    "chapter": "Strategy and Deliverables",
     "snippet": "Different moments in an IA project call for different deliverables. Usage scenarios and storyboards work well for conveying vision and...",
     "href": "chapters/ch08/chunk-07.html"
   },
   {
     "type": "Lesson",
     "title": "Documenting and Presenting IA Strategy",
-    "chapter": "Defining an Information Architecture Strategy",
-    "snippet": "An IA strategy document typically opens with a concise overview for busy executives who won't read the full document — key issues,...",
+    "chapter": "Strategy and Deliverables",
+    "snippet": "An IA strategy document typically opens with a concise overview for busy executives who won't read the full document, key issues,...",
     "href": "chapters/ch08/chunk-08.html"
   },
   {
     "type": "Lesson",
     "title": "Governing Information Architecture After Launch",
-    "chapter": "Defining an Information Architecture Strategy",
+    "chapter": "Strategy and Deliverables",
     "snippet": "A shipped IA starts decaying the day the next team adds a page in the wrong place. Governance is the set of agreements that slow that...",
     "href": "chapters/ch08/chunk-09.html"
   },
   {
     "type": "Lesson",
     "title": "Labeling Systems and What Makes a Label Effective",
-    "chapter": "Labeling Information",
-    "snippet": "A labeling system is more than a collection of individual good labels — it needs to cover the full breadth and depth of the information...",
+    "chapter": "Label Systems",
+    "snippet": "A labeling system is more than a collection of individual good labels, it needs to cover the full breadth and depth of the information...",
     "href": "chapters/ch09/chunk-01.html"
   },
   {
     "type": "Lesson",
     "title": "Types of Labels",
-    "chapter": "Labeling Information",
+    "chapter": "Label Systems",
     "snippet": "Not every label does the same job. Navigation labels derive much of their meaning from the hierarchy they sit within, and the labels...",
     "href": "chapters/ch09/chunk-02.html"
   },
   {
     "type": "Lesson",
     "title": "Constructing URLs and Browser Titles",
-    "chapter": "Labeling Information",
+    "chapter": "Label Systems",
     "snippet": "A URL is itself a label, and a human-readable one lets people understand a link's destination before clicking it, or confirm they've...",
     "href": "chapters/ch09/chunk-03.html"
   },
   {
     "type": "Lesson",
     "title": "Icons and Translation: Labeling Under Constraint",
-    "chapter": "Labeling Information",
-    "snippet": "Icons work best when every concept in a set can be represented clearly as a physical object — a magnifying glass for search, a house for...",
+    "chapter": "Label Systems",
+    "snippet": "Icons work best when every concept in a set can be represented clearly as a physical object, a magnifying glass for search, a house for...",
     "href": "chapters/ch09/chunk-04.html"
   },
   {
     "type": "Lesson",
     "title": "Discovering Possible Labels for Categories",
-    "chapter": "Labeling Information",
-    "snippet": "Good labels rarely come from a single source. Analyzing existing content — page titles, subheadings, summaries — surfaces the vocabulary...",
+    "chapter": "Label Systems",
+    "snippet": "Good labels rarely come from a single source. Analyzing existing content, page titles, subheadings, summaries, surfaces the vocabulary...",
     "href": "chapters/ch09/chunk-05.html"
   },
   {
     "type": "Lesson",
     "title": "Defining Optimal Labels for Categories",
-    "chapter": "Labeling Information",
+    "chapter": "Label Systems",
     "snippet": "Once candidate terms have been gathered from multiple sources, the real work begins: reconciling them into one coherent vocabulary. This...",
     "href": "chapters/ch09/chunk-06.html"
   },
   {
     "type": "Lesson",
     "title": "Designing Labels for Navigation Systems and Pages",
-    "chapter": "Labeling Information",
-    "snippet": "A navigation label's whole job is to let someone predict, accurately, what they'll find before they click — never making them click just to...",
+    "chapter": "Label Systems",
+    "snippet": "A navigation label's whole job is to let someone predict, accurately, what they'll find before they click, never making them click just to...",
     "href": "chapters/ch09/chunk-07.html"
   },
   {
     "type": "Lesson",
     "title": "Testing Labels With Users",
-    "chapter": "Labeling Information",
-    "snippet": "Labels should be tested with real, representative users — not just during initial design, but again after launch, since a labeling system...",
+    "chapter": "Label Systems",
+    "snippet": "Labels should be tested with real, representative users, not just during initial design, but again after launch, since a labeling system...",
     "href": "chapters/ch09/chunk-08.html"
   },
   {
     "type": "Lesson",
     "title": "Navigation Design: Key Concerns, Objectives, and Guidelines",
-    "chapter": "Foundations of Navigation Design",
+    "chapter": "Navigation Elements",
     "snippet": "A navigation system has to satisfy several concerns at once: understanding real user needs through both generative and evaluative research,...",
     "href": "chapters/ch10/chunk-01.html"
   },
   {
     "type": "Lesson",
     "title": "Structural Navigation",
-    "chapter": "Foundations of Navigation Design",
+    "chapter": "Navigation Elements",
     "snippet": "Structural navigation comes in several forms, each scoped to a different level of the information architecture. Global navigation links to...",
     "href": "chapters/ch10/chunk-02.html"
   },
   {
     "type": "Lesson",
     "title": "Navigation Pages",
-    "chapter": "Foundations of Navigation Design",
-    "snippet": "Some pages exist mainly to help people get somewhere else — home pages, section main pages, product-listing pages, and search-results pages...",
+    "chapter": "Navigation Elements",
+    "snippet": "Some pages exist mainly to help people get somewhere else, home pages, section main pages, product-listing pages, and search-results pages...",
     "href": "chapters/ch10/chunk-03.html"
   },
   {
     "type": "Lesson",
     "title": "Associative Links",
-    "chapter": "Foundations of Navigation Design",
-    "snippet": "Associative links live within a page's actual content — words, phrases, or images that connect a concept being discussed to related...",
+    "chapter": "Navigation Elements",
+    "snippet": "Associative links live within a page's actual content, words, phrases, or images that connect a concept being discussed to related...",
     "href": "chapters/ch10/chunk-04.html"
   },
   {
     "type": "Lesson",
     "title": "Supplementary and Complementary Navigation",
-    "chapter": "Foundations of Navigation Design",
+    "chapter": "Navigation Elements",
     "snippet": "Supplementary, or utility, navigation covers useful tools that sit outside the main information hierarchy but remain available throughout a...",
     "href": "chapters/ch10/chunk-05.html"
   },
   {
     "type": "Lesson",
     "title": "Fundamental Navigation Elements and Desktop Patterns",
-    "chapter": "Designing Navigation",
-    "snippet": "Every navigation system is built from a small set of fundamental elements. Hyperlinks are the basic building block, with distinct states —...",
+    "chapter": "Navigation Layouts",
+    "snippet": "Every navigation system is built from a small set of fundamental elements. Hyperlinks are the basic building block, with distinct states,...",
     "href": "chapters/ch11/chunk-01.html"
   },
   {
     "type": "Lesson",
     "title": "Desktop Navigation Layouts",
-    "chapter": "Designing Navigation",
-    "snippet": "Five layouts cover most desktop navigation needs. Horizontal global only is the simplest — one bar, best suited to shallow, broad...",
+    "chapter": "Navigation Layouts",
+    "snippet": "Five layouts cover most desktop navigation needs. Horizontal global only is the simplest, one bar, best suited to shallow, broad structures...",
     "href": "chapters/ch11/chunk-02.html"
   },
   {
     "type": "Lesson",
     "title": "Mobile Navigation Patterns",
-    "chapter": "Designing Navigation",
+    "chapter": "Navigation Layouts",
     "snippet": "Mobile navigation patterns all wrestle with the same fundamental trade-off: discoverability versus screen real estate. A horizontal tab...",
     "href": "chapters/ch11/chunk-03.html"
   },
   {
     "type": "Lesson",
     "title": "Progressive Disclosure in Navigation",
-    "chapter": "Designing Navigation",
+    "chapter": "Navigation Layouts",
     "snippet": "Progressive disclosure hides subordinate information until someone deliberately asks for it, and it shows up across nearly every navigation...",
     "href": "chapters/ch11/chunk-04.html"
   },
   {
     "type": "Lesson",
     "title": "Visualizing Navigation Design and Producing Deliverables",
-    "chapter": "Designing Navigation",
+    "chapter": "Navigation Layouts",
     "snippet": "Navigation design deliverables move through increasing fidelity: sketches, then wireframes, then mockups, then interactive prototypes....",
     "href": "chapters/ch11/chunk-05.html"
   },
   {
     "type": "Lesson",
     "title": "Testing Navigation Design",
-    "chapter": "Designing Navigation",
+    "chapter": "Navigation Layouts",
     "snippet": "Different stages of a project call for different navigation testing methods. Paper prototyping is cheap and fast, well suited to very early...",
     "href": "chapters/ch11/chunk-06.html"
   },
   {
     "type": "Lesson",
     "title": "Challenges of Searching and Assessing the Need for Search",
-    "chapter": "Designing Search",
-    "snippet": "Searching is cognitively demanding in a way browsing usually isn't — a person has to formulate a query, choose the right words, and then...",
+    "chapter": "Site Search",
+    "snippet": "Searching is cognitively demanding in a way browsing usually isn't, a person has to formulate a query, choose the right words, and then...",
     "href": "chapters/ch12/chunk-01.html"
   },
   {
     "type": "Lesson",
     "title": "Optimizing Search Result Quality",
-    "chapter": "Designing Search",
-    "snippet": "What a search system actually searches shapes everything about its quality. Indexing specific semantic elements — a title field versus a...",
+    "chapter": "Site Search",
+    "snippet": "What a search system actually searches shapes everything about its quality. Indexing specific semantic elements, a title field versus a...",
     "href": "chapters/ch12/chunk-02.html"
   },
   {
     "type": "Lesson",
     "title": "Automatically Refining Search Queries",
-    "chapter": "Designing Search",
+    "chapter": "Site Search",
     "snippet": "Several techniques quietly improve a search query before or during retrieval, without requiring the searcher to do anything differently....",
     "href": "chapters/ch12/chunk-03.html"
   },
   {
     "type": "Lesson",
     "title": "Ordering and Ranking Search Results",
-    "chapter": "Designing Search",
-    "snippet": "Simple sorting — alphabetically, chronologically, numerically — is deterministic and predictable, but most search systems default to...",
+    "chapter": "Site Search",
+    "snippet": "Simple sorting, alphabetically, chronologically, numerically, is deterministic and predictable, but most search systems default to ranking...",
     "href": "chapters/ch12/chunk-04.html"
   },
   {
     "type": "Lesson",
     "title": "Search User Interface Design Patterns",
-    "chapter": "Designing Search",
+    "chapter": "Site Search",
     "snippet": "A search interface is built from a handful of recurring components, each with its own design requirements. The search bar or box needs to...",
     "href": "chapters/ch12/chunk-05.html"
   },
   {
     "type": "Lesson",
     "title": "Presenting and Navigating Search Results",
-    "chapter": "Designing Search",
+    "chapter": "Site Search",
     "snippet": "A search result carries several content elements that each do specific work: a thumbnail or title identifies what it is, a URL and date...",
     "href": "chapters/ch12/chunk-06.html"
   },
   {
     "type": "Lesson",
     "title": "Filtering Search Results",
-    "chapter": "Designing Search",
-    "snippet": "Filtering narrows a result set based on specific criteria, which is a different job from sorting — sorting reorders the same set of...",
+    "chapter": "Site Search",
+    "snippet": "Filtering narrows a result set based on specific criteria, which is a different job from sorting, sorting reorders the same set of results,...",
     "href": "chapters/ch12/chunk-07.html"
   },
   {
     "type": "Lesson",
     "title": "Generative AI Search",
-    "chapter": "Designing Search",
+    "chapter": "Site Search",
     "snippet": "Generative AI transforms internal search from a list of links into a synthesized answer, drawn from and citing multiple sources at once. It...",
     "href": "chapters/ch12/chunk-08.html"
   },
   {
     "type": "Lesson",
     "title": "Personalized Search",
-    "chapter": "Designing Search",
+    "chapter": "Site Search",
     "snippet": "Personalized search tailors results to an individual through a three-step process: gathering data about that person's history and behavior,...",
     "href": "chapters/ch12/chunk-09.html"
   },
   {
     "type": "Lesson",
     "title": "Semantic Search",
-    "chapter": "Designing Search",
+    "chapter": "Site Search",
     "snippet": "Semantic search interprets what a query means rather than matching its literal keywords. It typically works through vector search: content...",
     "href": "chapters/ch12/chunk-10.html"
   },
   {
     "type": "Lesson",
     "title": "Faceted Search",
-    "chapter": "Designing Search",
+    "chapter": "Site Search",
     "snippet": "Faceted search builds directly on the faceted classification covered earlier in this course, integrating full-text search with facet-based...",
     "href": "chapters/ch12/chunk-11.html"
   },
   {
     "type": "Lesson",
     "title": "Custom GPT/Project System Instructions Generator",
-    "chapter": "AI Tools for IA Prototyping",
+    "chapter": "AI Prompts for Structure",
     "snippet": "A prompt you retype every week is a prompt you should have turned into a tool. Custom GPTs in ChatGPT and Projects in Claude let you fix a...",
     "href": "chapters/ch13/chunk-01.html"
   },
   {
     "type": "Lesson",
     "title": "Prompt Chain Designer",
-    "chapter": "AI Tools for IA Prototyping",
+    "chapter": "AI Prompts for Structure",
     "snippet": "Some IA tasks are too big for one prompt. Ask a model to read forty interview excerpts, derive themes, propose a taxonomy, and validate...",
     "href": "chapters/ch13/chunk-02.html"
   },
   {
     "type": "Lesson",
     "title": "Prompt Documentation Template",
-    "chapter": "AI Tools for IA Prototyping",
+    "chapter": "AI Prompts for Structure",
     "snippet": "A prompt that worked once and lives in someone's chat history is not a team asset. Documentation is what turns it into one: what the prompt...",
     "href": "chapters/ch13/chunk-03.html"
   },
   {
     "type": "Lesson",
     "title": "Prompt-to-Template Converter",
-    "chapter": "AI Tools for IA Prototyping",
-    "snippet": "Every so often you write a prompt that works unusually well — the output comes back structured, specific, and useful on the first try. The...",
+    "chapter": "AI Prompts for Structure",
+    "snippet": "Every so often you write a prompt that works unusually well, the output comes back structured, specific, and useful on the first try. The...",
     "href": "chapters/ch13/chunk-04.html"
   },
   {
     "type": "Lesson",
     "title": "Research Validation Checkpoint",
-    "chapter": "AI Tools for IA Prototyping",
+    "chapter": "AI Prompts for Structure",
     "snippet": "Ask a model to synthesise research and it will produce something that reads like a finding whether or not the data supports it. Patterns...",
     "href": "chapters/ch13/chunk-05.html"
   },
   {
     "type": "Lesson",
     "title": "Interview Theme Analysis",
-    "chapter": "Research Synthesis Toolkit",
+    "chapter": "AI Prompts for Research",
     "snippet": "Interview transcripts contain IA evidence that a general summary will flatten. When a participant says \"I gave up and just searched for...",
     "href": "chapters/ch14/chunk-01.html"
   },
   {
     "type": "Lesson",
     "title": "Mental Model Mapper",
-    "chapter": "Research Synthesis Toolkit",
+    "chapter": "AI Prompts for Research",
     "snippet": "A navigation structure usually fails not because it is illogical but because its logic is not the reader's. This prompt reads interview...",
     "href": "chapters/ch14/chunk-02.html"
   },
   {
     "type": "Lesson",
     "title": "Pain Point Synthesis",
-    "chapter": "Research Synthesis Toolkit",
+    "chapter": "AI Prompts for Research",
     "snippet": "A list of problems is not a plan. This prompt turns research into IA pain points that each carry a description, the evidence behind them,...",
     "href": "chapters/ch14/chunk-03.html"
   },
   {
     "type": "Lesson",
     "title": "Cross-Method Synthesis",
-    "chapter": "Research Synthesis Toolkit",
+    "chapter": "AI Prompts for Research",
     "snippet": "Every research method is wrong in its own particular way. Card sorts show how people group things when grouping is the task, which is not...",
     "href": "chapters/ch14/chunk-04.html"
   },

@@ -114,7 +114,7 @@ function parseCourse() {
         const firstLi = (body.match(/guidance-body--simple">[\s\S]*?<li>([^<]+)/) || [, ''])[1].trim();
         if (!purpose) purpose = firstLi || simpleP || fromMeta.title;
 
-        const titleFromLabel = (body.match(/Try It With Your Data —\s*([^<]+)/) || [, ''])[1].trim();
+        const titleFromLabel = (body.match(/Try It With Your Data:\s*([^<]+)/) || [, ''])[1].trim();
         const promptTitle = fromMeta.title || titleFromLabel || id;
 
         prompts.push({
@@ -206,12 +206,12 @@ function renderLibrary(prompts) {
   <div class="library-header">
     <h1>Prompt Library</h1>
     <p>
-      All ${total} AI prompts from the course, in one place. Filter by category or search to find the one you need — each result jumps straight to that prompt, wherever it lives in the course.
+      All ${total} AI prompts from the course, in one place. Filter by category or search to find the one you need: each result jumps straight to that prompt, wherever it lives in the course.
     </p>
   </div>
 
   <div class="library-controls">
-    <input type="text" class="library-search js-library-search" placeholder="Search prompts — e.g. &quot;card sort&quot;, &quot;sitemap&quot;, &quot;audit&quot;" aria-label="Search prompts">
+    <input type="text" class="library-search js-library-search" placeholder="Search prompts: e.g. &quot;card sort&quot;, &quot;sitemap&quot;, &quot;audit&quot;" aria-label="Search prompts">
     <div class="library-filters" role="group" aria-label="Filter by category">
 ${filters}
     </div>
@@ -234,7 +234,7 @@ ${items}
 }
 
 function renderSearchIndex(lessons, prompts) {
-  // Prompt "chapter" in the search index is the library category — that is how
+  // Prompt "chapter" in the search index is the library category: that is how
   // readers filter conceptually, and it matches the hand-maintained index.
   const entries = [
     ...lessons,
@@ -269,7 +269,7 @@ function patchHomeCounts(promptsByChapter, chunkIdsByChapter) {
     `${totalChunks} chunks across 12 chapters.`
   );
 
-  // ~8 minutes per exercise chunk — the design target from DESIGN.md
+  // ~8 minutes per exercise chunk: the design target from DESIGN.md
   const MINUTES_PER_CHUNK = 8;
 
   home = home.replace(
@@ -344,7 +344,7 @@ function main() {
       console.error('Run: node scripts/generate.mjs');
       process.exit(1);
     }
-    console.log(`OK — ${lessons.length} lessons, ${prompts.length} prompts in sync.`);
+    console.log(`OK: ${lessons.length} lessons, ${prompts.length} prompts in sync.`);
     return;
   }
 

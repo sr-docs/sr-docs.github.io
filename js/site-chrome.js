@@ -59,6 +59,7 @@
         <a href="/projects/index.html">All projects</a>
         ·
         <a href="https://github.com/sr-docs">GitHub</a>
+        · Copyright © Sabita Rao
       </p>
     </footer>
   `;
@@ -73,6 +74,14 @@
   font.href =
     "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap";
   document.head.appendChild(font);
+
+  if (!document.querySelector('link[rel="icon"]')) {
+    const icon = document.createElement("link");
+    icon.rel = "icon";
+    icon.href = "/favicon.ico";
+    icon.sizes = "any";
+    document.head.appendChild(icon);
+  }
 
   const appRoot = document.getElementById("__docusaurus");
   if (appRoot) {

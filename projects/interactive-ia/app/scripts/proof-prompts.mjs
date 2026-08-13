@@ -130,7 +130,7 @@ for (const ch of fs.readdirSync('chapters').filter((d) => /^ch\d+$/.test(d)).sor
         const gBrackets = [...g.matchAll(/\[([A-Z][A-Z0-9_]{2,})\]/g)].map((x) => x[1]);
         for (const b of gBrackets) {
           if (SECTION_HEADERS.has(b)) continue;
-          note('high', id, rel, `Guidance shows literal [${b}] — use field name prose instead`, g);
+          note('high', id, rel, `Guidance shows literal [${b}]: use field name prose instead`, g);
         }
       }
     }

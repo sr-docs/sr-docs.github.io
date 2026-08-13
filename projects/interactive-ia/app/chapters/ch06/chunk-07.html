@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Content Modeling — Chapter 6 · IA Course</title>
+  <title>Content Modeling: Chapter 6 · IA Course</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
@@ -35,7 +35,7 @@
 
     <div class="concept__body">
       <p>
-        Content modeling decomposes content into its logical components and elements, and it's what makes dynamic, structured pages possible. A static page is manually built and self-contained; a dynamic page is generated from a consistent set of components governed by a template. Structuring content this way enables real capabilities: contextual navigation through metadata-driven links between related pages, content chunked into well-labeled sections that improve scanability, and content reuse — the same underlying content displayed differently depending on where and how it appears.
+        Content modeling decomposes content into its logical components and elements, and it's what makes dynamic, structured pages possible. A static page is manually built and self-contained; a dynamic page is generated from a consistent set of components governed by a template. Structuring content this way enables real capabilities: contextual navigation through metadata-driven links between related pages, content chunked into well-labeled sections that improve scanability, and content reuse, the same underlying content displayed differently depending on where and how it appears.
       </p>
       <p>
         A content model has three key elements: <strong>content types</strong>, the distinct kinds of content objects a space comprises, each sharing common attributes and a common purpose; <strong>content components</strong>, the logical parts each content type breaks down into, balanced against the cost and complexity of actually building and maintaining that many discrete pieces; and <strong>access structures</strong>, the metadata that defines how components and pages relate to and link with each other.
@@ -59,7 +59,7 @@
 
       <div class="exercise__scenario">
         <p>
-          <strong>The scenario:</strong> A recipe website is moving from static HTML pages — each recipe hand-built as a single unstructured page — to a CMS-driven architecture. The product team wants three specific capabilities: contextual navigation between related recipes, filtering by ingredient and dietary requirement, and personalized recipe recommendations.
+          <strong>The scenario:</strong> A recipe website is moving from static HTML pages, each recipe hand-built as a single unstructured page, to a CMS-driven architecture. The product team wants three specific capabilities: contextual navigation between related recipes, filtering by ingredient and dietary requirement, and personalized recipe recommendations.
         </p>
       </div>
 
@@ -90,7 +90,7 @@
         <ul class="exercise__options" role="list">
           <li><label class="exercise__option js-option">
             <input type="radio" name="element-navigation" value="access-structures">
-            <span class="exercise__option-text">Access structures — metadata defining relationships between recipe pages</span>
+            <span class="exercise__option-text">Access structures, metadata defining relationships between recipe pages</span>
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="element-navigation" value="content-types-only">
@@ -105,7 +105,7 @@
 
       <div class="exercise__justification">
         <label for="justification">
-          Decompose a single recipe into its logical content components — list at least four — and explain how having these as separate components, rather than one unstructured block of text, supports the third capability the team wants: personalized recommendations.
+          Decompose a single recipe into its logical content components, list at least four, and explain how having these as separate components, rather than one unstructured block of text, supports the third capability the team wants: personalized recommendations.
         </label>
         <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
       </div>
@@ -136,19 +136,19 @@
     <div class="feedback__body">
 
       <p>
-        <strong>1 — Content components broken out with structured, filterable metadata for each attribute.</strong> Filtering by ingredient and dietary requirement requires that "ingredient" and "dietary requirement" exist as distinct, structured pieces of data on every recipe, not buried inside a single block of prose. A static, unstructured page has no way to support this at all — there's nothing for a filter to query against.
+        <strong>1: Content components broken out with structured, filterable metadata for each attribute.</strong> Filtering by ingredient and dietary requirement requires that "ingredient" and "dietary requirement" exist as distinct, structured pieces of data on every recipe, not buried inside a single block of prose. A static, unstructured page has no way to support this at all, there's nothing for a filter to query against.
       </p>
 
       <p>
-        <strong>2 — Access structures.</strong> Contextual navigation between related recipes depends on metadata that defines how pages relate to each other — the access structures element of a content model. Without that relationship metadata, there's no mechanism for the site to know which recipes are actually related to which.
+        <strong>2: Access structures.</strong> Contextual navigation between related recipes depends on metadata that defines how pages relate to each other, the access structures element of a content model. Without that relationship metadata, there's no mechanism for the site to know which recipes are actually related to which.
       </p>
 
       <span class="feedback__highlight">
-        A reasonable decomposition of a single recipe into components: an ingredients list component, a cook-time and difficulty component, a step-by-step instructions component, a dietary-tags component, and a ratings or reviews component — each with its own well-defined purpose, matching how the source material describes decomposing a content type into its constituent parts.
+        A reasonable decomposition of a single recipe into components: an ingredients list component, a cook-time and difficulty component, a step-by-step instructions component, a dietary-tags component, and a ratings or reviews component, each with its own well-defined purpose, matching how the source material describes decomposing a content type into its constituent parts.
       </span>
 
       <p>
-        Having these as separate components, each with its own metadata, is exactly what makes personalized recommendations possible: a recommendation system needs structured signals to work with — this user has favorited several recipes tagged "vegetarian" with a short cook time, so surface similar recipes — and none of that reasoning is possible if a recipe exists only as one undifferentiated paragraph of text. This is the same underlying mechanism the source material describes for reusable content generally: separating content into components is what lets the same underlying data power multiple different features, not just the single page it originally appeared on.
+        Having these as separate components, each with its own metadata, is exactly what makes personalized recommendations possible: a recommendation system needs structured signals to work with, this user has favorited several recipes tagged "vegetarian" with a short cook time, so surface similar recipes, and none of that reasoning is possible if a recipe exists only as one undifferentiated paragraph of text. This is the same underlying mechanism the source material describes for reusable content generally: separating content into components is what lets the same underlying data power multiple different features, not just the single page it originally appeared on.
       </p>
 
     </div>
@@ -160,7 +160,7 @@
   <section class="prompt-fill" id="content-type-discovery" aria-labelledby="prompt-fill-label-content-type-discovery">
 
     <div class="prompt-fill__zone-label" id="prompt-fill-label-content-type-discovery">
-      Try It With Your Data — Content Type Discovery
+      Try It With Your Data: Content Type Discovery
     </div>
 
     <div class="prompt-fill__intro">
@@ -231,7 +231,7 @@ Include summary distribution table at end.
 
 
 VALIDATION REQUIREMENTS:
-- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly: do not invent quotes, counts, labels, page titles, or categories.
 - Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
 - When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
 </script>
@@ -277,7 +277,7 @@ VALIDATION REQUIREMENTS:
   <section class="prompt-fill" id="classification-prompt" aria-labelledby="prompt-fill-label-classification-prompt">
 
     <div class="prompt-fill__zone-label" id="prompt-fill-label-classification-prompt">
-      Try It With Your Data — Content Classification
+      Try It With Your Data: Content Classification
     </div>
 
     <div class="prompt-fill__intro">
@@ -403,7 +403,7 @@ Output as structured table:
   <section class="prompt-fill" id="schema-generator" aria-labelledby="prompt-fill-label-schema-generator">
 
     <div class="prompt-fill__zone-label" id="prompt-fill-label-schema-generator">
-      Try It With Your Data — Metadata Schema Generator
+      Try It With Your Data: Metadata Schema Generator
     </div>
 
     <div class="prompt-fill__intro">
@@ -478,7 +478,7 @@ End with example frontmatter showing all fields.
 
 
 VALIDATION REQUIREMENTS:
-- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly: do not invent quotes, counts, labels, page titles, or categories.
 - Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
 - When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
 </script>
@@ -548,7 +548,7 @@ VALIDATION REQUIREMENTS:
   <section class="prompt-fill" id="relationship-mapper" aria-labelledby="prompt-fill-label-relationship-mapper">
 
     <div class="prompt-fill__zone-label" id="prompt-fill-label-relationship-mapper">
-      Try It With Your Data — Relationship Mapper
+      Try It With Your Data: Relationship Mapper
     </div>
 
     <div class="prompt-fill__intro">
@@ -602,15 +602,15 @@ User needs: {{USER_NEEDS}}
 
 
 VALIDATION REQUIREMENTS:
-- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly: do not invent quotes, counts, labels, page titles, or categories.
 - Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
 - When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
 </script>
 
       <div class="prompt-fill__field">
         <label for="pf-relationship-mapper-content-types">Content types</label>
-        <span class="prompt-fill__hint">One per line: Type name — brief description</span>
-        <textarea id="pf-relationship-mapper-content-types" class="js-prompt-input" data-token="CONTENT_TYPES" data-placeholder="One per line: Type name — brief description" placeholder="One per line: Type name — brief description"></textarea>
+        <span class="prompt-fill__hint">One per line: Type name, brief description</span>
+        <textarea id="pf-relationship-mapper-content-types" class="js-prompt-input" data-token="CONTENT_TYPES" data-placeholder="One per line: Type name, brief description" placeholder="One per line: Type name, brief description"></textarea>
       </div>
 
       <div class="prompt-fill__field">
@@ -653,7 +653,7 @@ VALIDATION REQUIREMENTS:
   <nav class="chunk-footer" aria-label="Chapter navigation">
     <a href="chunk-06.html">← Previous chunk</a>
     <span class="chunk-footer__center">Chapter 6 · 7 of 7</span>
-    <a href="../ch07/chunk-01.html" class="chunk-footer__next-chapter">Next: Chapter 7 <span>· Classifying Information</span> →</a>
+    <a href="../ch07/chunk-01.html" class="chunk-footer__next-chapter">Next: Chapter 7 <span>· Taxonomies and Facets</span> →</a>
   </nav>
 
 </div>

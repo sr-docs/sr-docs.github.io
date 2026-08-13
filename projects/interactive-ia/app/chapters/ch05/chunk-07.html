@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Search-Log Analytics — Chapter 5 · IA Course</title>
+  <title>Search-Log Analytics: Chapter 5 · IA Course</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
@@ -35,10 +35,10 @@
 
     <div class="concept__body">
       <p>
-        A site's internal search log is a direct record of the actual words people use to describe what they want — arguably one of the most honest sources of vocabulary data available, since users type these terms with no awareness anyone is analyzing them. Lou Rosenfeld describes five approaches to analyzing this data: <strong>pattern analysis</strong>, which looks at trends in search behavior, vocabulary, and timing; <strong>failure analysis</strong>, which focuses on queries that return zero or poor results — these are top priority, since they represent confirmed, immediate findability failures; <strong>session analysis</strong>, which follows a single user's sequence of queries to see how their understanding evolves within one visit; <strong>audience analysis</strong>, which segments search behavior by user group; and <strong>goal-based analysis</strong>, which ties search performance directly to business KPIs.
+        A site's internal search log is a direct record of the actual words people use to describe what they want, arguably one of the most honest sources of vocabulary data available, since users type these terms with no awareness anyone is analyzing them. Lou Rosenfeld describes five approaches to analyzing this data: <strong>pattern analysis</strong>, which looks at trends in search behavior, vocabulary, and timing; <strong>failure analysis</strong>, which focuses on queries that return zero or poor results: these are top priority, since they represent confirmed, immediate findability failures; <strong>session analysis</strong>, which follows a single user's sequence of queries to see how their understanding evolves within one visit; <strong>audience analysis</strong>, which segments search behavior by user group; and <strong>goal-based analysis</strong>, which ties search performance directly to business KPIs.
       </p>
       <p>
-        Good search-log analysis balances two competing goals: precision, the percentage of returned results that are actually relevant, and recall, the percentage of all relevant content that the search actually surfaces. Learnings from search logs feed directly back into the rest of the IA work covered in this chapter — aligning controlled vocabulary and labels with users' real terms, identifying missing content, and informing where navigation or faceted search needs improvement.
+        Good search-log analysis balances two competing goals: precision, the percentage of returned results that are actually relevant, and recall, the percentage of all relevant content that the search actually surfaces. Learnings from search logs feed directly back into the rest of the IA work covered in this chapter, aligning controlled vocabulary and labels with users' real terms, identifying missing content, and informing where navigation or faceted search needs improvement.
       </p>
     </div>
 
@@ -70,15 +70,15 @@
         <ul class="exercise__options" role="list">
           <li><label class="exercise__option js-option">
             <input type="radio" name="priority" value="renew-membership">
-            <span class="exercise__option-text">"Renew membership" — highest volume, zero results, caused by a labeling mismatch</span>
+            <span class="exercise__option-text">"Renew membership", highest volume, zero results, caused by a labeling mismatch</span>
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="priority" value="conference-schedule">
-            <span class="exercise__option-text">"Conference schedule" — moderate volume, some results returned</span>
+            <span class="exercise__option-text">"Conference schedule", moderate volume, some results returned</span>
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="priority" value="code-of-ethics">
-            <span class="exercise__option-text">"Code of ethics" — lowest volume, zero results, caused by missing content</span>
+            <span class="exercise__option-text">"Code of ethics", lowest volume, zero results, caused by missing content</span>
           </label></li>
         </ul>
       </fieldset>
@@ -116,15 +116,15 @@
     <div class="feedback__body">
 
       <p>
-        <strong>"Renew membership" should be prioritized first.</strong> Failure analysis treats zero-result and poor-result queries as top priority, and at 400 searches a month, this query represents by far the largest volume of confirmed, immediate findability failure on the site — twenty times the volume of "code of ethics" and more than double "conference schedule."
+        <strong>"Renew membership" should be prioritized first.</strong> Failure analysis treats zero-result and poor-result queries as top priority, and at 400 searches a month, this query represents by far the largest volume of confirmed, immediate findability failure on the site, twenty times the volume of "code of ethics" and more than double "conference schedule."
       </p>
 
       <span class="feedback__highlight">
-        The two zero-result queries fail for genuinely different reasons, which is exactly why failure analysis matters: it doesn't just count failures, it diagnoses their cause. "Renew membership" fails because of a labeling mismatch — the content exists, but under a name, "Annual Subscription Continuation," that doesn't match how members actually describe the action. "Code of ethics" fails because the content simply doesn't exist yet — no page has ever been written to answer that query.
+        The two zero-result queries fail for genuinely different reasons, which is exactly why failure analysis matters: it doesn't just count failures, it diagnoses their cause. "Renew membership" fails because of a labeling mismatch, the content exists, but under a name, "Annual Subscription Continuation," that doesn't match how members actually describe the action. "Code of ethics" fails because the content simply doesn't exist yet, no page has ever been written to answer that query.
       </span>
 
       <p>
-        These require different fixes entirely. The labeling mismatch can likely be resolved quickly — by renaming the page, adding "renew membership" as a synonym in the site's controlled vocabulary, or both — without creating any new content. The missing content problem requires an entirely different kind of work: someone has to research, write, and publish a code of ethics page before any search or labeling fix could possibly help. Treating both as the same type of "zero-result problem" would miss that one is a same-day fix and the other is a content-development project.
+        These require different fixes entirely. The labeling mismatch can likely be resolved quickly, by renaming the page, adding "renew membership" as a synonym in the site's controlled vocabulary, or both, without creating any new content. The missing content problem requires an entirely different kind of work: someone has to research, write, and publish a code of ethics page before any search or labeling fix could possibly help. Treating both as the same type of "zero-result problem" would miss that one is a same-day fix and the other is a content-development project.
       </p>
 
     </div>
@@ -135,7 +135,7 @@
   <nav class="chunk-footer" aria-label="Chapter navigation">
     <a href="chunk-06.html">← Previous chunk</a>
     <span class="chunk-footer__center">Chapter 5 · 7 of 7</span>
-    <a href="../ch06/chunk-01.html" class="chunk-footer__next-chapter">Next: Chapter 6 <span>· Understanding and Structuring Content</span> →</a>
+    <a href="../ch06/chunk-01.html" class="chunk-footer__next-chapter">Next: Chapter 6 <span>· Inventories and Audits</span> →</a>
   </nav>
 
 </div>

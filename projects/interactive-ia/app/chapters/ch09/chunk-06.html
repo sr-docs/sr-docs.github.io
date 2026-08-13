@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Defining Optimal Labels — Chapter 9 · IA Course</title>
+  <title>Defining Optimal Labels: Chapter 9 · IA Course</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
@@ -35,15 +35,15 @@
 
     <div class="concept__body">
       <p>
-        Once candidate terms have been gathered from multiple sources, the real work begins: reconciling them into one coherent vocabulary. This means collecting every candidate into a single list, resolving inconsistencies in spelling, punctuation, and case, and — where several sources offer different words for the same underlying concept — deciding which one becomes the preferred term, with the others recorded as variants that authors and indexers should avoid using going forward.
+        Once candidate terms have been gathered from multiple sources, the real work begins: reconciling them into one coherent vocabulary. This means collecting every candidate into a single list, resolving inconsistencies in spelling, punctuation, and case, and, where several sources offer different words for the same underlying concept, deciding which one becomes the preferred term, with the others recorded as variants that authors and indexers should avoid using going forward.
       </p>
       <p>
-        This process should also surface gaps: does the resulting vocabulary actually cover every important concept the content needs, or are there topics with no proper term at all yet? At the same time, restraint matters — adding a term for every edge case bloats the system and causes the whole vocabulary to lose focus. Terminology isn't static either; as usage evolves, categories that go unused should be reconsidered, either folded into something more relevant or relabeled to match how people are talking about the topic now.
+        This process should also surface gaps: does the resulting vocabulary actually cover every important concept the content needs, or are there topics with no proper term at all yet? At the same time, restraint matters, adding a term for every edge case bloats the system and causes the whole vocabulary to lose focus. Terminology isn't static either; as usage evolves, categories that go unused should be reconsidered, either folded into something more relevant or relabeled to match how people are talking about the topic now.
       </p>
     </div>
 
     <p class="concept__anchor">
-      The hardest part of this work usually isn't finding candidate terms — it's what to do when the term your own organization prefers and the term your actual users search for turn out to be two different things.
+      The hardest part of this work usually isn't finding candidate terms: it's what to do when the term your own organization prefers and the term your actual users search for turn out to be two different things.
     </p>
 
   </section>
@@ -70,22 +70,22 @@
         <ul class="exercise__options" role="list">
           <li><label class="exercise__option js-option">
             <input type="radio" name="preferred-term" value="ira">
-            <span class="exercise__option-text">"IRA" — the widely recognized industry term that also matches common competitive usage and search behavior</span>
+            <span class="exercise__option-text">"IRA", the widely recognized industry term that also matches common competitive usage and search behavior</span>
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="preferred-term" value="internal-name">
-            <span class="exercise__option-text">"Future Fund Vehicle" — the company's own internal product name</span>
+            <span class="exercise__option-text">"Future Fund Vehicle", the company's own internal product name</span>
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="preferred-term" value="misspelling">
-            <span class="exercise__option-text">"Retirment account" — since it appeared in search logs</span>
+            <span class="exercise__option-text">"Retirment account", since it appeared in search logs</span>
           </label></li>
         </ul>
       </fieldset>
 
       <div class="exercise__justification">
         <label for="justification">
-          For each of the other three candidate terms — "individual retirement account," "retirement savings account," and "retirment account" — explain how each should be handled in the final vocabulary: as a variant term, and why, or excluded entirely, and why.
+          For each of the other three candidate terms, "individual retirement account," "retirement savings account," and "retirment account", explain how each should be handled in the final vocabulary: as a variant term, and why, or excluded entirely, and why.
         </label>
         <textarea id="justification" name="justification" required placeholder="Write a few sentences."></textarea>
       </div>
@@ -116,15 +116,15 @@
     <div class="feedback__body">
 
       <p>
-        <strong>"IRA" is the strongest choice for preferred term.</strong> It's recognized broadly across the industry, matches what competitors already use, and aligns with how people commonly search — giving it the widest real-world support across independent sources. "Future Fund Vehicle," however well-intentioned internally, reflects the company's own branding rather than language any customer would recognize or search for, which is exactly the conflict between organizational vocabulary and user vocabulary this kind of work most often runs into — and user vocabulary should generally win that conflict when the goal is findability.
+        <strong>"IRA" is the strongest choice for preferred term.</strong> It's recognized broadly across the industry, matches what competitors already use, and aligns with how people commonly search, giving it the widest real-world support across independent sources. "Future Fund Vehicle," however well-intentioned internally, reflects the company's own branding rather than language any customer would recognize or search for, which is exactly the conflict between organizational vocabulary and user vocabulary this kind of work most often runs into, and user vocabulary should generally win that conflict when the goal is findability.
       </p>
 
       <span class="feedback__highlight">
-        "Individual retirement account" and "retirement savings account" should both become variant terms mapped to the preferred term "IRA," since they refer to the same underlying concept using fuller or slightly different phrasing that some users will still search with — keeping them as variants ensures those searches still succeed. "Retirment account," the misspelling, should also be captured as a variant rather than excluded outright: search-log analytics revealing a common misspelling is exactly the kind of finding a controlled vocabulary can quietly absorb, mapping the misspelled query to the correct preferred term so the user still gets a useful result despite the typo.
+        "Individual retirement account" and "retirement savings account" should both become variant terms mapped to the preferred term "IRA," since they refer to the same underlying concept using fuller or slightly different phrasing that some users will still search with, keeping them as variants ensures those searches still succeed. "Retirment account," the misspelling, should also be captured as a variant rather than excluded outright: search-log analytics revealing a common misspelling is exactly the kind of finding a controlled vocabulary can quietly absorb, mapping the misspelled query to the correct preferred term so the user still gets a useful result despite the typo.
       </span>
 
       <p>
-        The internal name "Future Fund Vehicle" doesn't disappear entirely from the organization's internal usage, but it should not become the label surfaced to customers navigating this content — that's the practical outcome of letting user and organizational vocabulary conflict get resolved in the user's favor.
+        The internal name "Future Fund Vehicle" doesn't disappear entirely from the organization's internal usage, but it should not become the label surfaced to customers navigating this content: that's the practical outcome of letting user and organizational vocabulary conflict get resolved in the user's favor.
       </p>
 
     </div>

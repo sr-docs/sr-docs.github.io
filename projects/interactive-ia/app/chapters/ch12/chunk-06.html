@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Presenting Search Results — Chapter 12 · IA Course</title>
+  <title>Presenting Search Results: Chapter 12 · IA Course</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
@@ -35,15 +35,15 @@
 
     <div class="concept__body">
       <p>
-        A search result carries several content elements that each do specific work: a thumbnail or title identifies what it is, a URL and date help judge currency and source, and a snippet — a short excerpt showing the query terms in context — helps a searcher judge relevance before clicking through. The results page around them matters too: showing and letting someone easily edit their original query, offering "Did you mean?" suggestions when a query looks like a likely typo, surfacing partial matches when no exact match exists, and handling long result sets with pagination, incremental loading, or infinite scrolling depending on what suits the content.
+        A search result carries several content elements that each do specific work: a thumbnail or title identifies what it is, a URL and date help judge currency and source, and a snippet, a short excerpt showing the query terms in context, helps a searcher judge relevance before clicking through. The results page around them matters too: showing and letting someone easily edit their original query, offering "Did you mean?" suggestions when a query looks like a likely typo, surfacing partial matches when no exact match exists, and handling long result sets with pagination, incremental loading, or infinite scrolling depending on what suits the content.
       </p>
       <p>
-        A no-results page deserves particular care. Simply stating that nothing was found and stopping there wastes an opportunity — offering spelling suggestions, related terms, or a path back to browsing gives a searcher somewhere to go instead of a dead end.
+        A no-results page deserves particular care. Simply stating that nothing was found and stopping there wastes an opportunity, offering spelling suggestions, related terms, or a path back to browsing gives a searcher somewhere to go instead of a dead end.
       </p>
     </div>
 
     <p class="concept__anchor">
-      A snippet is a small preview making a big promise — it tells the searcher, before they click, whether this result is worth the click at all.
+      A snippet is a small preview making a big promise, it tells the searcher, before they click, whether this result is worth the click at all.
     </p>
 
   </section>
@@ -59,7 +59,7 @@
 
       <div class="exercise__scenario">
         <p>
-          <strong>The scenario:</strong> A legal research platform's search results page shows only case titles with no snippets, no dates, and no indication of jurisdiction. There's no way to see or edit the original query from the results page. When a search returns nothing, the page simply displays the words "No results found," with no further guidance. Legal researchers using the platform need high recall — they cannot afford to miss a relevant case, and need to be able to confirm confidently when a search has genuinely turned up nothing relevant.
+          <strong>The scenario:</strong> A legal research platform's search results page shows only case titles with no snippets, no dates, and no indication of jurisdiction. There's no way to see or edit the original query from the results page. When a search returns nothing, the page simply displays the words "No results found," with no further guidance. Legal researchers using the platform need high recall, they cannot afford to miss a relevant case, and need to be able to confirm confidently when a search has genuinely turned up nothing relevant.
         </p>
       </div>
 
@@ -74,7 +74,7 @@
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="consequence-1" value="no-consequence">
-            <span class="exercise__option-text">No meaningful consequence — case titles alone are generally sufficient</span>
+            <span class="exercise__option-text">No meaningful consequence, case titles alone are generally sufficient</span>
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="consequence-1" value="pagination-issue">
@@ -90,7 +90,7 @@
         <ul class="exercise__options" role="list">
           <li><label class="exercise__option js-option">
             <input type="radio" name="consequence-2" value="cant-trust">
-            <span class="exercise__option-text">A bare no-results message gives no way to tell whether nothing relevant truly exists or whether the query itself simply failed to match — a serious problem for someone who cannot afford to miss a case</span>
+            <span class="exercise__option-text">A bare no-results message gives no way to tell whether nothing relevant truly exists or whether the query itself simply failed to match, a serious problem for someone who cannot afford to miss a case</span>
           </label></li>
           <li><label class="exercise__option js-option">
             <input type="radio" name="consequence-2" value="minor-issue">
@@ -136,15 +136,15 @@
     <div class="feedback__body">
 
       <p>
-        <strong>1 — Researchers can't judge relevance or currency before clicking.</strong> Case titles alone give almost no context. A snippet showing why a case matched, a date establishing how current the ruling is, and a jurisdiction indicator are all essential for a legal researcher trying to quickly triage a results list — without them, every single result requires a full open-and-read just to make a basic relevance judgment.
+        <strong>1: Researchers can't judge relevance or currency before clicking.</strong> Case titles alone give almost no context. A snippet showing why a case matched, a date establishing how current the ruling is, and a jurisdiction indicator are all essential for a legal researcher trying to quickly triage a results list, without them, every single result requires a full open-and-read just to make a basic relevance judgment.
       </p>
 
       <p>
-        <strong>2 — A bare no-results message can't be trusted.</strong> For an audience that needs high recall and cannot afford to miss a relevant case, "No results found" with nothing further offers no way to distinguish "this legal question genuinely has no precedent" from "the query just didn't match the way the case law happens to be indexed or worded." That distinction matters enormously in legal research, and the current page collapses both possibilities into one unhelpful message.
+        <strong>2: A bare no-results message can't be trusted.</strong> For an audience that needs high recall and cannot afford to miss a relevant case, "No results found" with nothing further offers no way to distinguish "this legal question genuinely has no precedent" from "the query just didn't match the way the case law happens to be indexed or worded." That distinction matters enormously in legal research, and the current page collapses both possibilities into one unhelpful message.
       </p>
 
       <span class="feedback__highlight">
-        A redesigned no-results page for this platform should go well beyond a simple restatement that nothing was found. It should show the exact query that was searched so the researcher can verify nothing was mistyped, offer "Did you mean?" suggestions for likely alternate phrasings or legal terminology, suggest broadening the search — perhaps removing a jurisdiction filter or trying a related legal term — and, given the stakes of legal research specifically, make clear that a genuine zero-result outcome doesn't necessarily mean no relevant precedent exists at all, but that this particular query didn't surface one, encouraging the researcher to try alternate terms before concluding the research question itself has no answer.
+        A redesigned no-results page for this platform should go well beyond a simple restatement that nothing was found. It should show the exact query that was searched so the researcher can verify nothing was mistyped, offer "Did you mean?" suggestions for likely alternate phrasings or legal terminology, suggest broadening the search, perhaps removing a jurisdiction filter or trying a related legal term, and, given the stakes of legal research specifically, make clear that a genuine zero-result outcome doesn't necessarily mean no relevant precedent exists at all, but that this particular query didn't surface one, encouraging the researcher to try alternate terms before concluding the research question itself has no answer.
       </span>
 
     </div>

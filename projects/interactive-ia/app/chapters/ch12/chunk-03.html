@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Automatically Refining Search Queries — Chapter 12 · IA Course</title>
+  <title>Automatically Refining Search Queries: Chapter 12 · IA Course</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
@@ -35,12 +35,12 @@
 
     <div class="concept__body">
       <p>
-        Several techniques quietly improve a search query before or during retrieval, without requiring the searcher to do anything differently. Spelling checking and autocorrection catch typos and suggest fixes. Stemming and lemmatization reduce words to a common root, so "running," "runs," and "ran" all match content about "run" — stemming does this with simple rules, while lemmatization uses a dictionary-based approach that's slower but more accurate. Controlled vocabulary integration automatically maps a searcher's variant term to the system's preferred term. Stop words — common connective words like "the" or "of" — get filtered out since they carry no real search meaning. And "search for similar pages" functionality lets someone find more of what a specific result already gave them, without composing a fresh query.
+        Several techniques quietly improve a search query before or during retrieval, without requiring the searcher to do anything differently. Spelling checking and autocorrection catch typos and suggest fixes. Stemming and lemmatization reduce words to a common root, so "running," "runs," and "ran" all match content about "run", stemming does this with simple rules, while lemmatization uses a dictionary-based approach that's slower but more accurate. Controlled vocabulary integration automatically maps a searcher's variant term to the system's preferred term. Stop words, common connective words like "the" or "of", get filtered out since they carry no real search meaning. And "search for similar pages" functionality lets someone find more of what a specific result already gave them, without composing a fresh query.
       </p>
     </div>
 
     <p class="concept__anchor">
-      Each of these techniques fixes a different, specific failure — which means diagnosing which one actually happened matters more than reaching for whichever fix comes to mind first.
+      Each of these techniques fixes a different, specific failure, which means diagnosing which one actually happened matters more than reaching for whichever fix comes to mind first.
     </p>
 
   </section>
@@ -62,7 +62,7 @@
 
       <fieldset class="exercise__question">
         <legend class="exercise__question-prompt">
-          1. Users consistently misspell medical terms — "diabetis" instead of "diabetes."
+          1. Users consistently misspell medical terms, "diabetis" instead of "diabetes."
         </legend>
         <ul class="exercise__options" role="list">
           <li><label class="exercise__option js-option">
@@ -192,18 +192,18 @@
 
     <div class="feedback__body">
 
-      <p><strong>1 — Spelling correction.</strong> A misspelled term needs correction to the intended word — exactly what spelling checking and autocorrection exist to catch.</p>
+      <p><strong>1: Spelling correction.</strong> A misspelled term needs correction to the intended word, exactly what spelling checking and autocorrection exist to catch.</p>
 
-      <p><strong>2 — Stemming or lemmatization.</strong> "Allergy" and "allergies" share the same root, so reducing both to a common form is exactly the kind of variation stemming or lemmatization handles.</p>
+      <p><strong>2: Stemming or lemmatization.</strong> "Allergy" and "allergies" share the same root, so reducing both to a common form is exactly the kind of variation stemming or lemmatization handles.</p>
 
-      <p><strong>3 — Controlled vocabulary integration.</strong> "Heart attack" and "myocardial infarction" aren't grammatical variants of the same word — they're two entirely different terms for the same concept, which is precisely what controlled vocabulary mapping is built to bridge.</p>
+      <p><strong>3: Controlled vocabulary integration.</strong> "Heart attack" and "myocardial infarction" aren't grammatical variants of the same word: they're two entirely different terms for the same concept, which is precisely what controlled vocabulary mapping is built to bridge.</p>
 
-      <p><strong>4 — Stop words.</strong> "The" and "for" carry no real search meaning and should be filtered out so the meaningful terms — "treatment" and "flu" — drive the results instead.</p>
+      <p><strong>4: Stop words.</strong> "The" and "for" carry no real search meaning and should be filtered out so the meaningful terms, "treatment" and "flu", drive the results instead.</p>
 
-      <p><strong>5 — Search for similar pages.</strong> Finding more content like one already-successful result, without composing a new query, is exactly what this feature is designed for.</p>
+      <p><strong>5: Search for similar pages.</strong> Finding more content like one already-successful result, without composing a new query, is exactly what this feature is designed for.</p>
 
       <span class="feedback__highlight">
-        Stemming only handles variations of the same word sharing a common root — it could never connect "heart attack" to "myocardial infarction," since these are two completely different words with no shared root at all. Controlled vocabulary integration is built specifically for this situation: mapping distinct terms that refer to the same underlying concept, regardless of whether they share any linguistic root. This is a good example of why matching the fix to the actual failure matters — reaching for stemming here would do nothing at all to solve the problem, no matter how well-implemented the stemming itself was.
+        Stemming only handles variations of the same word sharing a common root, it could never connect "heart attack" to "myocardial infarction," since these are two completely different words with no shared root at all. Controlled vocabulary integration is built specifically for this situation: mapping distinct terms that refer to the same underlying concept, regardless of whether they share any linguistic root. This is a good example of why matching the fix to the actual failure matters, reaching for stemming here would do nothing at all to solve the problem, no matter how well-implemented the stemming itself was.
       </span>
 
     </div>
@@ -215,7 +215,7 @@
   <section class="prompt-fill" id="query-analysis" aria-labelledby="prompt-fill-label-query-analysis">
 
     <div class="prompt-fill__zone-label" id="prompt-fill-label-query-analysis">
-      Try It With Your Data — Query Analysis
+      Try It With Your Data: Query Analysis
     </div>
 
     <div class="prompt-fill__intro">
@@ -278,7 +278,7 @@ Query analysis with actionable recommendations
 
 
 VALIDATION REQUIREMENTS:
-- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly: do not invent quotes, counts, labels, page titles, or categories.
 - Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
 - When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
 </script>
@@ -291,8 +291,8 @@ VALIDATION REQUIREMENTS:
 
       <div class="prompt-fill__field">
         <label for="pf-query-analysis-queries-with-frequency">Queries with frequency</label>
-        <span class="prompt-fill__hint">One per line: query — frequency/count</span>
-        <textarea id="pf-query-analysis-queries-with-frequency" class="js-prompt-input" data-token="QUERIES_WITH_FREQUENCY" data-placeholder="One per line: query — frequency/count" placeholder="One per line: query — frequency/count"></textarea>
+        <span class="prompt-fill__hint">One per line: query, frequency/count</span>
+        <textarea id="pf-query-analysis-queries-with-frequency" class="js-prompt-input" data-token="QUERIES_WITH_FREQUENCY" data-placeholder="One per line: query, frequency/count" placeholder="One per line: query, frequency/count"></textarea>
       </div>
 
       <div class="prompt-fill__field">
@@ -346,7 +346,7 @@ VALIDATION REQUIREMENTS:
   <section class="prompt-fill" id="synonym-generator" aria-labelledby="prompt-fill-label-synonym-generator">
 
     <div class="prompt-fill__zone-label" id="prompt-fill-label-synonym-generator">
-      Try It With Your Data — Synonym Generator
+      Try It With Your Data: Synonym Generator
     </div>
 
     <div class="prompt-fill__intro">
@@ -413,7 +413,7 @@ Structured synonym dictionary ready for implementation
 
 
 VALIDATION REQUIREMENTS:
-- Ground every claim in the provided input. If the input does not support a claim, say so explicitly — do not invent quotes, counts, labels, page titles, or categories.
+- Ground every claim in the provided input. If the input does not support a claim, say so explicitly: do not invent quotes, counts, labels, page titles, or categories.
 - Separate observations (what the input shows) from inferences (what you conclude). Mark low-confidence items and anything that needs human review.
 - When you recommend a change, state the evidence that motivates it. If evidence is thin, say what additional input would change the recommendation.
 </script>

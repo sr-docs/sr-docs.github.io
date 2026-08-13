@@ -12,4 +12,12 @@
   } catch {
     document.documentElement.setAttribute("data-theme", "light");
   }
+
+  if (!document.querySelector('link[rel="icon"]')) {
+    const link = document.createElement("link");
+    link.rel = "icon";
+    link.href = "/favicon.ico";
+    link.sizes = "any";
+    document.head.appendChild(link);
+  }
 })();
