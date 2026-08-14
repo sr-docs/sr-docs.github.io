@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="SR">
+  <circle cx="32" cy="32" r="30" fill="#0b6e6e"/>
+  <text
+    x="32"
+    y="38"
+    text-anchor="middle"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="26"
+    font-weight="700"
+    fill="#f5f8fb"
+    letter-spacing="-0.5"
+  >SR</text>
+</svg>
