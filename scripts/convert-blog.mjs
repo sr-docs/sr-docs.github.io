@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { spawnSync } from "node:child_process";
 import { marked } from "marked";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
@@ -261,6 +262,36 @@ for (const name of imageNames) {
   } else {
     console.warn("Missing image:", name);
   }
+}
+
+const optimize = spawnSync(
+  "python",
+  [path.join(ROOT, "scripts", "optimize-images.py")],
+  { cwd: ROOT, stdio: "inherit" }
+);
+if (optimize.status !== 0) {
+  console.warn("Image optimize step failed; blog HTML may still point at originals");
+}
+
+function rewriteRasterToWebp(html) {
+  return html.replace(
+    /(src=["'](?:\.\.\/)?assets\/img\/)([^"']+)\.(png|jpe?g)(["'])/gi,
+    (full, prefix, stem, _ext, quote) => {
+      if (fs.existsSync(path.join(IMG_OUT, `${stem}.webp`))) {
+        return `${prefix}${stem}.webp${quote}`;
+      }
+      return full;
+    }
+  );
+}
+
+for (const name of fs.readdirSync(BLOG_OUT)) {
+  if (!name.endsWith(".html")) continue;
+  const filePath = path.join(BLOG_OUT, name);
+  fs.writeFileSync(
+    filePath,
+    rewriteRasterToWebp(fs.readFileSync(filePath, "utf8"))
+  );
 }
 
 // Drop leftover Docusaurus build HTML and starter placeholders.
